@@ -13,18 +13,23 @@ BUS ID, Time, PlateID, Latitude, Longitude, Speed
 
 Truck ID, Date Time, Latitude, Longitude, Speed
 """
+#install.packages()
 library("data.table")
 library("h2o")
 library("ff")
 
-setwd("~/Vjera/DIPLOMSKI RAD/data/samples")
+#setwd("~/Vjera/DIPLOMSKI RAD/data/samples")
 #setwd("~/Vjera/DIPLOMSKI RAD/data")
 
-#file = file.choose()
+setwd("~/CODM/masters-thesis/data/samples")
+setwd("~/CODM/masters-thesis/data")
+
+file = file.choose()
 #data <- read.csv(file)
 ##Error: cannot allocate vector of size 125.0 Mb
 
-#data = fread(file=file, sep="auto", nrow=10)
+#TaxiData = fread(file=file, sep="auto", VERBOSE=TRUE)
+##Windows:
 ##Error in fread(file = file, sep = "auto") : 
 ##Opened 0TB (1947283562 bytes) file ok but could not memory map it. This is a 32bit process. Please upgrade to 64bit.
 
@@ -33,16 +38,19 @@ setwd("~/Vjera/DIPLOMSKI RAD/data/samples")
 ##Error in guess_header_(datasource, tokenizer, locale) : 
 ##Cannot read file C:/Users/admin/Documents/Vjera/DIPLOMSKI RAD/data/BusData: Not enough storage is available to process this command.
 
-file = "~/Vjera/DIPLOMSKI RAD/data/TaxiData"
-taxi = c("Taxi ID", "Time", "Latitude", "Longitude", "Occupancy Status", "Speed")
-TaxiData <- read.csv.ffdf(file=file, header=FALSE, col.names=taxi, VERBOSE=TRUE)#fileEncoding 
-#csv-read=621.46sec  ffdf-write=72.23sec  TOTAL=693.69sec
+##TaxiData <- read.csv.ffdf(file=file, header=FALSE, col.names=taxi, VERBOSE=TRUE)#fileEncoding 
+##csv-read=621.46sec  ffdf-write=72.23sec  TOTAL=693.69sec
 
-file = "~/Vjera/DIPLOMSKI RAD/data/BusData"
-# csv-read=440.33sec  ffdf-write=16.94sec  TOTAL=457.27sec
+file = paste(getwd(),"/TaxiData",sep="")
+taxi = c("Taxi ID", "Time", "Latitude", "Longitude", "Occupancy Status", "Speed")
+TaxiData = fread(file=file, sep="auto", header=FALSE)
+
+file = paste(getwd(),"/BusData",sep="")
 bus = c("BUS", "ID", "Time", "PlateID", "Latitude", "Longitude", "Speed")
-BusData <- read.csv.ffdf(file=file, header=FALSE, col.names=bus, VERBOSE=TRUE)#fileEncoding 
-x<- read.csv.ffdf(file=file, header=FALSE, VERBOSE=TRUE, first.rows=10000, next.rows=50000, colClasses=NA, col.names=bus)
+BusData = fread(file=file, sep="auto", header=FALSE)
+
+#BusData <- read.csv.ffdf(file=file, header=FALSE, col.names=bus, VERBOSE=TRUE)#fileEncoding 
+#x<- read.csv.ffdf(file=file, header=FALSE, VERBOSE=TRUE, first.rows=10000, next.rows=50000, colClasses=NA, col.names=bus)
 
 file = "~/Vjera/DIPLOMSKI RAD/data/PhoneData"
 

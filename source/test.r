@@ -14,17 +14,20 @@ BUS ID, Time, PlateID, Latitude, Longitude, Speed
 Truck ID, Date Time, Latitude, Longitude, Speed
 """
 #install.packages()
+
 library("data.table")
 library("h2o")
 library("ff")
+library("readr")
 
+#windows
 #setwd("~/Vjera/DIPLOMSKI RAD/data/samples")
 #setwd("~/Vjera/DIPLOMSKI RAD/data")
 
 setwd("~/CODM/masters-thesis/data/samples")
 setwd("~/CODM/masters-thesis/data")
 
-file = file.choose()
+#file = file.choose()
 #data <- read.csv(file)
 ##Error: cannot allocate vector of size 125.0 Mb
 
@@ -40,6 +43,7 @@ file = file.choose()
 
 ##TaxiData <- read.csv.ffdf(file=file, header=FALSE, col.names=taxi, VERBOSE=TRUE)#fileEncoding 
 ##csv-read=621.46sec  ffdf-write=72.23sec  TOTAL=693.69sec
+## variable size 3.6 Mb ?!
 
 file = paste(getwd(),"/TaxiData",sep="")
 taxi = c("Taxi ID", "Time", "Latitude", "Longitude", "Occupancy Status", "Speed")
@@ -49,10 +53,20 @@ file = paste(getwd(),"/BusData",sep="")
 bus = c("BUS", "ID", "Time", "PlateID", "Latitude", "Longitude", "Speed")
 BusData = fread(file=file, sep="auto", header=FALSE)
 
-#BusData <- read.csv.ffdf(file=file, header=FALSE, col.names=bus, VERBOSE=TRUE)#fileEncoding 
-#x<- read.csv.ffdf(file=file, header=FALSE, VERBOSE=TRUE, first.rows=10000, next.rows=50000, colClasses=NA, col.names=bus)
+file = paste(getwd(),"/PhoneData",sep="")
+phone = c("SIM Card ID", "Time", "Latitude", "Longitude")
+PhoneData = fread(file=file, sep="auto", header=FALSE)
 
-file = "~/Vjera/DIPLOMSKI RAD/data/PhoneData"
+#########
+file = paste(getwd(),"/SmartCardData",sep="")
+smartCard = c("Smartcard ID", "Time", "Transaction type", "Metro Station or Bus Line")
+SmartCardData = fread(file=file, sep="auto", header=FALSE)
 
-library("readr")
+file = paste(getwd(),"/TruckData",sep="")
+truck = c("Truck ID", "Date Time", "Latitude", "Longitude", "Speed")
+TruckData = fread(file=file, sep="auto", header=FALSE)
+
+##TODO: data.table -> matrix or data.frame ?!
+### save Environment
+save.image("~/CODM/masters-thesis/source/data.RData")
 

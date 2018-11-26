@@ -16,6 +16,6 @@ ___
 
 Šifra modula diplomskog studija računarstva:
 
-Programsko inženjerstvo: **1441**
+    Programsko inženjerstvo: **1441**
 
-Računalni sustavi: 1442
+    Računalni sustavi: 1442

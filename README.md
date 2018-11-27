@@ -21,10 +21,7 @@ ___
 
 6. 14.05.2019. 21.05.2019. 
 
-Šifra diplomskog studija računarstva: **1400**
-
-Šifra modula diplomskog studija računarstva:
-
-    Programsko inženjerstvo: **1441**
-
-    Računalni sustavi: 1442
+Šifra diplomskog studija računarstva: **1400**  
+Šifra modula diplomskog studija računarstva:  
+Programsko inženjerstvo: **1441**  
+Računalni sustavi: 1442

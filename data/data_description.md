@@ -11,7 +11,14 @@ Occupancy Status: 1-with passengers & 0-with passengers
 BUS ID, Time, PlateID, Latitude, Longitude, Speed
 
 Truck ID, Date Time, Latitude, Longitude, Speed
-
 ___
+/samples 
+
+sampelse of data, with header included
+___
+/cell
+
 OpenCellID https://www.opencellid.org
 token: 87c071c289c482
+
+

@@ -1,0 +1,48 @@
+https://bitbucket.org/blog/deprecating-tlsv1-tlsv1-1-2018-12-01
+
+GIT_CURL_VERBOSE=1 git ls-remote https://bitbucket.org/ > bitucket_TLSv1.2.txt
+
+output:
+* Couldn't find host bitbucket.org in the .netrc file; using defaults
+*   Trying 18.205.93.2...
+* Connected to bitbucket.org (18.205.93.2) port 443 (#0)
+* found 148 certificates in /etc/ssl/certs/ca-certificates.crt
+* found 604 certificates in /etc/ssl/certs
+* ALPN, offering http/1.1
+* SSL connection using TLS1.2 / ECDHE_ECDSA_AES_128_GCM_SHA256
+* 	 server certificate verification OK
+* 	 server certificate status verification SKIPPED
+* 	 common name: bitbucket.org (matched)
+* 	 server certificate expiration date OK
+* 	 server certificate activation date OK
+* 	 certificate public key: EC
+* 	 certificate version: #3
+* 	 subject: businessCategory=Private Organization,jurisdictionOfIncorporationCountryName=US,jurisdictionOfIncorporationStateOrProvinceName=Delaware,serialNumber=3928449,C=US,ST=California,L=San Francisco,O=Atlassian\, Inc.,OU=Bitbucket,CN=bitbucket.org
+* 	 start date: Thu, 19 Apr 2018 00:00:00 GMT
+* 	 expire date: Tue, 21 Apr 2020 12:00:00 GMT
+* 	 issuer: C=US,O=DigiCert Inc,OU=www.digicert.com,CN=DigiCert SHA2 Extended Validation Server CA
+* 	 compression: NULL
+* ALPN, server accepted to use http/1.1
+> GET /info/refs?service=git-upload-pack HTTP/1.1
+Host: bitbucket.org
+User-Agent: git/2.7.4
+Accept: */*
+Accept-Encoding: gzip
+Accept-Language: en-US, *;q=0.9
+Pragma: no-cache
+
+< HTTP/1.1 404 Not Found
+< Cache-Control: max-age=900
+< Content-Type: text/plain; charset=utf-8
+< X-B3-Traceid: 3d7471401307d9ee7bd935e29964a183
+< Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+< Date: Wed, 28 Nov 2018 23:06:43 GMT
+< X-Server: 8d3c06bc242c
+< X-Content-Type-Options: nosniff
+< Connection: close
+< X-Version: a8c3445ad7
+< Content-Length: 31
+< 
+* Closing connection 0
+remote: Repository info/refs not found
+

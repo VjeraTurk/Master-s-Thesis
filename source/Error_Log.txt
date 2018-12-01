@@ -1,0 +1,30 @@
+1.data <- read.csv(file.choose())
+Error: cannot allocate vector of size 125.0 Mb
+
+2.data = fread(file=file,sep="auto")
+
+Error in fread(file = file, sep = "auto") : 
+  Opened 0TB (1947283562 bytes) file ok but could not memory map it. This is a 32bit process. Please upgrade to 64bit.
+  
+3. data.table::update.dev.pkg(repo="https://Rdatatable.gitlab.io/data.table")
+
+Installing package into ‘C:/Users/admin/Documents/R/win-library/3.4’
+(as ‘lib’ is unspecified)
+Warning: unable to access index for repository https://Rdatatable.gitlab.io/data.table/bin/windows/contrib/3.4:
+  cannot open URL 'https://Rdatatable.gitlab.io/data.table/bin/windows/contrib/3.4/PACKAGES'
+Package which is only available in source form, and may need compilation of C/C++/Fortran:
+  ‘data.table’
+  These will not be installed
+R data.table package has been updated to NA (1.11.8)
+
+4.
+https://www.stat.berkeley.edu/~paciorek/computingTips/Reading_gzipped_bzipped_zip.html
+zz=gzfile('454.csv.gz','rt')
+c454=read.csv(zz,header=T)
+
+1: In read.table(file = file, header = header, sep = sep, quote = quote,  :
+  seek on a gzfile connection returned an internal error
+2: In read.table(file = file, header = header, sep = sep, quote = quote,  :
+  seek on a gzfile connection returned an internal error
+
+https://stackoverflow.com/questions/30834963/seeking-on-a-gz-connection-is-unpredictable

@@ -16,23 +16,18 @@ PhoneData = fread(file=file, sep="auto", header=FALSE, col.names = phone)
 
 TODO: read form gz directly or unzip files from script (FUN ultra()?)
 """
+
 cols<-c("Latitude","Longitude")
-cells = unique(PhoneData[, .SD, .SDcols = cols])
-
-
-gg = ggplot()
-
-ggplot(data = cells, aes(cells$Longitude,cells$Latitude)) +  geom_point(cells,aes(cells$Longitude,cells$Latitude),colour = 'red',size=3) 
+cells = unique(PhoneData[, .SD, .SDcols = cols]) #1090 obs. of 2 variables
 
 #not working:
 #cells = PhoneData[,.cols]
 
 
-names = c("ID", "lon","lat")
-cells = setNames(data.table(matrix(ncol = 3, nrow = 0)), names)
+# aes(x,y) x- Longitude  , y - Latitude |
 
-cells$lon = PhoneData$Longitude
-cells$lat = PhoneData$Latitude
+gg = ggplot()
+ggplot(data = cells, mapping = aes(cells$Longitude,cells$Latitude)) +  geom_point(cells,mapping = aes(cells$Longitude,cells$Latitude),colour = 'red',size=1) 
 
 
 setwd("~/CODM/masters-thesis/data/cell")

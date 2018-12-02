@@ -28,13 +28,13 @@ ___
 
 file size in bytes, date-time of data acquisition
 
-    2992882 Nov 27 12:40 454.csv.gz
-     109719 Nov 27 12:40 455.csv.gz
-   14889486 Nov 27 12:41 460.csv.gz
- 1947283562 Oct 19 19:58 BusData
- 1615783554 Oct 19 19:48 PhoneData
-  225656375 Oct 19 18:45 SmartCardData
- 1875174152 Nov 25 11:36 TaxiData
- 2289131124 Oct 19 20:08 TruckData
+            2992882 Nov 27 12:40 454.csv.gz
+             109719 Nov 27 12:40 455.csv.gz
+           14889486 Nov 27 12:41 460.csv.gz
+         1947283562 Oct 19 19:58 BusData
+         1615783554 Oct 19 19:48 PhoneData
+          225656375 Oct 19 18:45 SmartCardData
+         1875174152 Nov 25 11:36 TaxiData
+         2289131124 Oct 19 20:08 TruckData
 
 

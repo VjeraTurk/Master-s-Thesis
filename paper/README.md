@@ -14,10 +14,10 @@ Official Faculty template is available at http://nastavno.mjoler.info/dipl and [
     2.4 IGNORE (do not uncomment Linux settings) in rithesis_preamble.tex:  
     
     **OR:** (not tested)  
-    2.1. Follow 2.1 as above
-    2.2. Follow 2.2 with **UTF-8** instead of windows-1250 
-    2.3. Follow 2.3. with **UTF-8** instead of windows-1250
-    2.4  Uncomment Linux settings in rithesis_preamble.tex (comment line for Windows): 
+    2.1. Follow 2.1 as above  
+    2.2. Follow 2.2 with **UTF-8** instead of windows-1250  
+    2.3. Follow 2.3. with **UTF-8** instead of windows-1250  
+    2.4  Uncomment Linux settings in rithesis_preamble.tex (comment line for Windows):  
 
         %%%%%%% adjustment for croatian
         \usepackage[croatian]{babel}

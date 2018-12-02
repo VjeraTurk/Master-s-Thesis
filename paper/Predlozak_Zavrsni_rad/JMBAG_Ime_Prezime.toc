@@ -1,6 +1,6 @@
 \select@language {croatian}
-\contentsline {chapter}{Popis slika}{viii}{chapter*.2}
-\contentsline {chapter}{Popis tablica}{ix}{chapter*.3}
+\contentsline {chapter}{Popis slika}{ix}{chapter*.2}
+\contentsline {chapter}{Popis tablica}{x}{chapter*.3}
 \contentsline {chapter}{\numberline {1}Kako koristiti paket za pisanje zavr\v snoga rada u \LaTeX -u}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Opis sadr\v zaja paketa}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}\v Cime se opremiti za pisanje rada}{2}{section.1.2}
@@ -35,8 +35,9 @@
 \contentsline {chapter}{\numberline {4}Vodi\v c za pisanje vlastitoga teksta}{24}{chapter.4}
 \contentsline {section}{\numberline {4.1}Upis uvodnih podataka}{24}{section.4.1}
 \contentsline {section}{\numberline {4.2}Po\v cetak pisanja glavnoga dijela rada}{27}{section.4.2}
-\contentsline {chapter}{Pojmovnik}{29}{chapter*.9}
-\contentsline {chapter}{Saetak}{30}{chapter*.9}
-\contentsline {chapter}{\numberline {A}Naslov priloga}{31}{appendix.A}
-\contentsline {section}{\numberline {A.1}Naslov sekcije}{31}{section.A.1}
-\contentsline {section}{\numberline {A.2}Naslov sekcije}{31}{section.A.2}
+\contentsline {chapter}{Bibliografija}{29}{chapter*.8}
+\contentsline {chapter}{Pojmovnik}{30}{chapter*.10}
+\contentsline {chapter}{Saetak}{31}{chapter*.10}
+\contentsline {chapter}{\numberline {A}Naslov priloga}{32}{appendix.A}
+\contentsline {section}{\numberline {A.1}Naslov sekcije}{32}{section.A.1}
+\contentsline {section}{\numberline {A.2}Naslov sekcije}{32}{section.A.2}

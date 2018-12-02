@@ -1,8 +1,12 @@
-1. Only latex base was installed (as full latex version is over 5GB), leading to few packages missing. Jabref was installed for managing references
+
+### Official Template changes
+Official Faculty template is available at http://nastavno.mjoler.info/dipl and [here](https://drive.google.com/drive/folders/0B8kqcALDDvC_VC0ydU1iM0k3RTA)
+
+1. Only LaTex base was installed (as full version is over 5GB), leading later to few packages missing. **Jabref** was also installed, for managing references.
 
         sudo apt-get install texlive-latex-base jabref
 
-2. Encoding not set correctly for Linux. In TexStudio, under encoding  ...
+2. Encoding not set correctly for **Linux**. In TexStudio, under encoding  ...
 
     2.1. **"Reload With"** each file with **windows-1250** encoding  
     2.2. **"Change To"** ecach file encoding to windows-1250  

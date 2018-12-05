@@ -1,32 +1,30 @@
 ## Data description
 
-Smartcard ID, Time, Transaction type (21, 22, 31), Metro Station or Bus Line  
-Transaction Type:  31-Bus Boarding & 21-Subway Swiped-In  & 22-Subway Swiped-Out
+### / 
+##### Large data files **are not pushed** to remote / are only available locally
 
-SIM Card ID, Time, Latitude, Longitude
-
-Taxi ID, Time, Latitude, Longitude, Occupancy Status, Speed  
-Occupancy Status: 1-with passengers & 0-with passengers
-
-BUS ID, Time, PlateID, Latitude, Longitude, Speed
-
-Truck ID, Date Time, Latitude, Longitude, Speed
+* **SmartCardData** Smartcard ID, Time, Transaction type (21, 22, 31), Metro Station or Bus Line  
+Transaction Type:  31-Bus Boarding & 21-Subway Swiped-In  & 22-Subway Swiped-Out  
+* **PhoneData** SIM Card ID, Time, Latitude, Longitude   
+* **TaxiData** Taxi ID, Time, Latitude, Longitude, Occupancy Status, Speed  
+Occupancy Status: 1-with passengers & 0-with passengers  
+* **BusData** BUS ID, Time, PlateID, Latitude, Longitude, Speed  
+* **TruckData**Truck ID, Date Time, Latitude, Longitude, Speed
 ___
-/samples 
+### /samples 
 
-samples of data, with header included
+samples of data, **header included**
 ___
-/cell
+### /cell
 
 OpenCellID https://www.opencellid.org  
 token: 87c071c289c482
-
 cell_towers.csv.gz
 Updated: 2018-12-01 (911MB)
 
 ___
 
-file size in bytes, date-time of data acquisition
+##### file size in bytes, date-time of data acquisition, filename
 
             2992882 Nov 27 12:40 454.csv.gz
              109719 Nov 27 12:40 455.csv.gz

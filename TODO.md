@@ -2,6 +2,10 @@
 * Što je POM, što je 1 ćelija
 * POM -> Telekomunikacijska POM -> Kontekstualizirana POM
 
+#### R
+* DONE: instalirati noviju verziju! # upgraded to R version 3.5.1 (2018-07-02) -- "Feather Spray"
+
+
 #### **PARAMETRI USPOREDBE**
 * statističko učenje- problem klasifikacije
 
@@ -12,24 +16,24 @@
 * ...rezolucija
 * ...prirast iz perioda u period
 
+* skalabilnost
 
 #### Matrix
-* Voronoi tessellations (base stations)
 * generirati POM iz CDR (prema algoritmu iz objevljanog rada)(validirati)
+* Voronoi tessellations (base stations)
+
 * generirati POM iz TAXI
 
-* PERIOD, twickati 15min-30min-1h-3h (over under fitting)
-* KRAJ PUTNOVANJA
+* twickati PERIOD 15min-30min-1h-3h (over under fitting)
+* twickati definiciju KRAJA PUTOVANJA ?!
 
 * opisati matricu, n x n ...?!
 * derivacija, determinanta ?!
 
-
-#### Graphical representation (matrix image)
+#### Graphical representation (matrix, image)
 
 * heatmapa
-* M: compare 2 images?!
-* 
+* compare 2 images?! 
 
 #### Paper
 

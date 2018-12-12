@@ -1,0 +1,90 @@
+% This file was created with JabRef 2.11.1.
+% Encoding: Cp1250
+
+
+@Book{McFarland:2009,
+  Title                    = {CSS The Missing Manual},
+  Author                   = {D.S. McFarland},
+  Publisher                = {O'Reilly},
+  Year                     = {2009},
+  Edition                  = {2},
+  Owner                    = {mjoler},
+  Timestamp                = {2012.06.05}
+}
+
+@Book{Ullman:2008,
+  Title                    = {PHP 6 and MySQL 5},
+  Author                   = {L. Ullman},
+  Publisher                = {Peachpit Press},
+  Year                     = {2008},
+  Owner                    = {mjoler},
+  Timestamp                = {2012.06.05}
+}
+
+@Electronic{jabref,
+  Title                    = {{JabRef}},
+  Note                     = {{, srpanj 2016.}},
+  Url                      = {http://www.jabref.org/},
+  Owner                    = {MSJ2},
+  Timestamp                = {2016.07.14}
+}
+
+@Electronic{jquery,
+  Organization             = {jQuery},
+  Url                      = {http://jquery.com},
+  Owner                    = {mjoler},
+  Timestamp                = {2012.06.05}
+}
+
+@Electronic{latex_project,
+  Title                    = {{LaTeX} - A document preparation system},
+  Note                     = {{, srpanj 2016.}},
+  Url                      = {http://www.latex-project.org/},
+  Owner                    = {MSJ2},
+  Timestamp                = {2016.07.14}
+}
+
+@Electronic{latex_wiki,
+  Note                     = {{, srpanj 2016.}},
+  Organization             = {WikiBooks:~LaTeX.},
+  Url                      = {http://en.wikibooks.org/wiki/LaTeX/},
+  Owner                    = {mjoler},
+  Timestamp                = {2012.06.05}
+}
+
+@Electronic{mysql,
+  Organization             = {MySQL},
+  Url                      = {http://www.mysql.com},
+  Owner                    = {mjoler},
+  Timestamp                = {2012.06.05}
+}
+
+@Electronic{php,
+  Organization             = {PHP},
+  Url                      = {http://www.php.net},
+  Owner                    = {mjoler},
+  Timestamp                = {2012.06.05}
+}
+
+@Electronic{tex_exchange,
+  Title                    = {{Tex --- Stack Exchange}},
+  Note                     = {{, srpanj 2016.}},
+  Url                      = {http://tex.stackexchange.com/}
+}
+
+@Electronic{texstudio,
+  Title                    = {{TeXstudio}},
+  Note                     = {{, srpanj 2016.}},
+  Url                      = {http://www.texstudio.org/},
+  Owner                    = {MSJ2},
+  Timestamp                = {2016.07.14}
+}
+
+@Manual{riteh_upute,
+  Title                    = {Upute za pisanje završnog/diplomskog rada},
+  Author                   = {{Tehnièki fakultet u Rijeci}},
+  Note                     = {{ srpanj 2016.}}
+}
+
+@comment{jabref-meta: databaseType:biblatex;}
+

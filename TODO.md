@@ -4,7 +4,7 @@
 
 #### R
 * DONE: instalirati noviju verziju! # upgraded to R version 3.5.1 (2018-07-02) -- "Feather Spray"
-
+* DONE: instaliran gdal, rgdal
 
 #### **PARAMETRI USPOREDBE**
 * statističko učenje- problem klasifikacije
@@ -20,7 +20,7 @@
 
 #### Matrix
 * generirati POM iz CDR (prema algoritmu iz objevljanog rada)(validirati)
-* Voronoi tessellations (base stations)
+* IN PROGRESS: Voronoi tessellations (base stations)
 
 * generirati POM iz TAXI
 

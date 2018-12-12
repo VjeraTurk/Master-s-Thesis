@@ -1,6 +1,5 @@
-pkgs <- c("sp","rgdal","deldir","dplyr","ggthemes")
+pkgs <- c("sp","rgdal","deldir","dplyr","ggthemes", "rgdal")
 install.packages(pkgs)
-install.packages("rgdal")
 
 require(sp)
 require(rgdal)
@@ -8,6 +7,8 @@ require(deldir)
 require(dplyr)
 require(ggplot2)
 require(ggthemes)
+
+### All packages loaded
 
 SPointsDF_to_voronoi_SPolysDF <- function(sp) {
   

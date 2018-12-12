@@ -1,6 +1,10 @@
 require("data.table")
 require("readr") #fread
 require("ggplot2")
+###Nema tih paketa u verziji 3.5,
+### TODO: how to install the same packages for new version of R
+### list of packages installed -> install.packages()
+
 setwd("~/CODM/masters-thesis/data/")
 file = paste(getwd(),"/PhoneData",sep="")
 phone = c("SIM Card ID", "Time", "Latitude", "Longitude")

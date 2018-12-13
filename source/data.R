@@ -16,8 +16,6 @@ Truck ID, Date Time, Latitude, Longitude, Speed
 #TODO: install.packages(<list all required packages>)
 #install.packages()
 
-#require("h2o")
-#require("ff")
 require("data.table")
 require("readr")
 
@@ -67,7 +65,7 @@ file = paste(getwd(),"/TruckData",sep="")
 truck = c("Truck ID", "Date Time", "Latitude", "Longitude", "Speed")
 TruckData = fread(file=file, sep="auto", header=FALSE, col.names = truck)
 
-##TODO: data.table -> matrix or data.frame ?!
+## data.table -> matrix or data.frame
 ### save Environment
 save.image("~/CODM/masters-thesis/source/data.RData")
 

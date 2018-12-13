@@ -494,6 +494,29 @@ ali...
         Processing triggers for systemd (229-4ubuntu12) ...
         Processing triggers for ureadahead (0.100.0-19) ...
 
+9. installing stplanr
+
+    https://github.com/ropensci/stplanr
+
+        #sudo apt-get install libgdal1-dev libgdal-dev libgeos-c1v5 libproj-dev
+        
+        install.packages("rgdal", type = "source")
+        install.packages("rgeos", type = "source")
+
+        #sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
+        #sudo apt-get update
+        #sudo apt-get install libudunits2-dev libgdal-dev libgeos-dev libproj-dev 
+
+        ##GDAL (>= 2.0.0), GEOS (>= 3.3.0) and Proj.4 (>= 4.8.0) are required.
+        #gdalinfo --version
+        #GDAL 2.6.0-nextgis-dev[2.3.1], released 2018/06/22
+        #geos-config --version
+        #3.5.1
+
+        install.packages("proj4")        
+
+
+        https://github.com/r-spatial/sf/issues/884
 
 
         

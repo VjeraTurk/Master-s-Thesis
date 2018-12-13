@@ -5,6 +5,7 @@
 #### R
 * DONE: instalirati noviju verziju! # upgraded to R version 3.5.1 (2018-07-02) -- "Feather Spray"
 * DONE: instaliran gdal, rgdal
+* IN PROGRESS: install stplanr
 
 #### **PARAMETRI USPOREDBE**
 * statističko učenje- problem klasifikacije

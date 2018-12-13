@@ -19,9 +19,9 @@
 * skalabilnost
 
 #### Matrix
-* generirati POM iz CDR (prema algoritmu iz objevljanog rada)(validirati)
-* IN PROGRESS: Voronoi tessellations (base stations)
+* DONE: Voronoi tessellations (base stations)
 
+* generirati POM iz CDR (prema algoritmu iz objevljanog rada)(validirati)
 * generirati POM iz TAXI
 
 * twickati PERIOD 15min-30min-1h-3h (over under fitting)

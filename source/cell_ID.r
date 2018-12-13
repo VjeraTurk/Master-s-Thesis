@@ -8,7 +8,7 @@ require("ggplot2")
 
 setwd("~/CODM/masters-thesis/data/")
 file = paste(getwd(),"/PhoneData",sep="")
-phone = c("SIM Card ID", "Time", "Latitude", "Longitude")
+phone = c("SIM Card ID", "Time", "latitude", "longitude")
 PhoneData = fread(file=file, sep="auto", header=FALSE, col.names = phone)
 
 """
@@ -22,17 +22,18 @@ PhoneData = fread(file=file, sep="auto", header=FALSE, col.names = phone)
 TODO: read form gz directly or unzip files from script (FUN ultra()?)
 """
 
-cols<-c("Latitude","Longitude")
-cells = unique(PhoneData[, .SD, .SDcols = cols]) #1090 obs. of 2 variables
+cols<-c("latitude","longitude")
+cells = unique(PhoneData[, .SD, .SDcols = cols]) #1090 obs. of 2 variables #traje
+
 
 #not working:
 #cells = PhoneData[,.cols]
 
 
-# aes(x,y) x- Longitude  , y - Latitude |
+# aes(x,y) x- longitude  , y - latitude |
 
 gg = ggplot()
-ggplot(data = cells, mapping = aes(cells$Longitude,cells$Latitude)) +  geom_point(cells,mapping = aes(cells$Longitude,cells$Latitude),colour = 'red',size=1) 
+ggplot(data = cells, mapping = aes(cells$longitude,cells$latitude)) +  geom_point(cells,mapping = aes(cells$longitude,cells$latitude),colour = 'red',size=1) 
 
 
 setwd("~/CODM/masters-thesis/data/cell")

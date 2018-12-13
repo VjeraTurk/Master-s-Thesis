@@ -20,8 +20,9 @@
 
 #### Matrix
 * DONE: Voronoi tessellations (base stations)
-
+* NEXT: R clipping Lovelence
 * generirati POM iz CDR (prema algoritmu iz objevljanog rada)(validirati)
+
 * generirati POM iz TAXI
 
 * twickati PERIOD 15min-30min-1h-3h (over under fitting)

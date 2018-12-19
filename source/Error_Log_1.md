@@ -1009,7 +1009,119 @@ ___
         The downloaded source packages are in
         ‘/tmp/RtmpOGJu7H/downloaded_packages’
 
-7.
+7. just for fun...
+
+    install.packages("sf")
+        Error in install.packages : Updating loaded packages
+        > install.packages("sf")
+        Installing package into ‘/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5’
+        (as ‘lib’ is unspecified)
+        trying URL 'https://cloud.r-project.org/src/contrib/sf_0.7-1.tar.gz'
+        Content type 'application/x-gzip' length 8330564 bytes (7.9 MB)
+        ==================================================
+        downloaded 7.9 MB
+
+        * installing *source* package ‘sf’ ...
+        ** package ‘sf’ successfully unpacked and MD5 sums checked
+        configure: CC: gcc -std=gnu99
+        configure: CXX: g++ -std=gnu++11
+        checking for gdal-config... /usr/bin/gdal-config
+        checking gdal-config usability... yes
+        configure: GDAL: 2.2.2
+        checking GDAL version >= 2.0.0... yes
+        checking for gcc... gcc -std=gnu99
+        checking whether the C compiler works... yes
+        checking for C compiler default output file name... a.out
+        checking for suffix of executables... 
+        checking whether we are cross compiling... no
+        checking for suffix of object files... o
+        checking whether we are using the GNU C compiler... yes
+        checking whether gcc -std=gnu99 accepts -g... yes
+        checking for gcc -std=gnu99 option to accept ISO C89... none needed
+        checking how to run the C preprocessor... gcc -std=gnu99 -E
+        checking for grep that handles long lines and -e... /bin/grep
+        checking for egrep... /bin/grep -E
+        checking for ANSI C header files... yes
+        checking for sys/types.h... yes
+        checking for sys/stat.h... yes
+        checking for stdlib.h... yes
+        checking for string.h... yes
+        checking for memory.h... yes
+        checking for strings.h... yes
+        checking for inttypes.h... yes
+        checking for stdint.h... yes
+        checking for unistd.h... yes
+        checking gdal.h usability... yes
+        checking gdal.h presence... yes
+        checking for gdal.h... yes
+        checking GDAL: linking with --libs only... yes
+        checking GDAL: /usr/share/gdal/2.2/pcs.csv readable... yes
+        checking GDAL: checking whether PROJ is available for linking:... yes
+        checking GDAL: checking whether PROJ is available fur running:... yes
+        configure: pkg-config proj exists, will use it
+        checking proj_api.h usability... yes
+        checking proj_api.h presence... yes
+        checking for proj_api.h... yes
+        configure: PROJ: 4.9.2
+        checking for pj_init_plus in -lproj... yes
+        checking PROJ: epsg found and readable... yes
+        checking PROJ: conus found and readable... yes
+        checking for geos-config... /usr/bin/geos-config
+        checking geos-config usability... yes
+        configure: GEOS: 3.5.1
+        checking GEOS version >= 3.4.0... yes
+        checking geos_c.h usability... yes
+        checking geos_c.h presence... yes
+        checking for geos_c.h... yes
+        checking geos: linking with -L/usr/lib/x86_64-linux-gnu -lgeos_c -L/usr/lib/x86_64-linux-gnu -lgeos-3.5.1... yes
+        configure: Package CPP flags:   -I/usr/include/gdal -I/usr/include
+        configure: Package LIBS: -lproj   -L/usr/lib -lgdal -L/usr/lib/x86_64-linux-gnu -lgeos_c -L/usr/lib/x86_64-linux-gnu -lgeos-3.5.1
+        configure: creating ./config.status
+        config.status: creating src/Makevars
+        ** libs
+        g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/gdal -I/usr/include -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c RcppExports.cpp -o RcppExports.o
+        g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/gdal -I/usr/include -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c bbox.cpp -o bbox.o
+        g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/gdal -I/usr/include -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c gdal.cpp -o gdal.o
+        g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/gdal -I/usr/include -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c gdal_geom.cpp -o gdal_geom.o
+        g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/gdal -I/usr/include -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c gdal_read.cpp -o gdal_read.o
+        g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/gdal -I/usr/include -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c gdal_utils.cpp -o gdal_utils.o
+        g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/gdal -I/usr/include -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c gdal_write.cpp -o gdal_write.o
+        g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/gdal -I/usr/include -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c geos.cpp -o geos.o
+        g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/gdal -I/usr/include -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c hex.cpp -o hex.o
+        g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/gdal -I/usr/include -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c polygonize.cpp -o polygonize.o
+        g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/gdal -I/usr/include -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c proj.cpp -o proj.o
+        g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/gdal -I/usr/include -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c raster2sf.cpp -o raster2sf.o
+        g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/gdal -I/usr/include -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c sfg.cpp -o sfg.o
+        g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/gdal -I/usr/include -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c signed_area.cpp -o signed_area.o
+        g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/gdal -I/usr/include -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c stars.cpp -o stars.o
+        g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/gdal -I/usr/include -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c wkb.cpp -o wkb.o
+        g++ -std=gnu++11 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o sf.so RcppExports.o bbox.o gdal.o gdal_geom.o gdal_read.o gdal_utils.o gdal_write.o geos.o hex.o polygonize.o proj.o raster2sf.o sfg.o signed_area.o stars.o wkb.o -lproj -L/usr/lib -lgdal -L/usr/lib/x86_64-linux-gnu -lgeos_c -L/usr/lib/x86_64-linux-gnu -lgeos-3.5.1 -L/usr/lib/R/lib -lR
+        installing to /home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/sf/libs
+        ** R
+        ** data
+        ** demo
+        ** inst
+        ** byte-compile and prepare package for lazy loading
+        in method for ‘dbWriteTable’ with signature ‘"PostgreSQLConnection","character","sf"’: no definition for class “PostgreSQLConnection”
+        in method for ‘dbDataType’ with signature ‘"PostgreSQLConnection","sf"’: no definition for class “PostgreSQLConnection”
+        in method for ‘coerce’ with signature ‘"Spatial","sf"’: no definition for class “Spatial”
+        in method for ‘coerce’ with signature ‘"Spatial","sfc"’: no definition for class “Spatial”
+        in method for ‘coerce’ with signature ‘"sf","Spatial"’: no definition for class “Spatial”
+        in method for ‘coerce’ with signature ‘"sfc","Spatial"’: no definition for class “Spatial”
+        in method for ‘coerce’ with signature ‘"XY","Spatial"’: no definition for class “Spatial”
+        ** help
+        *** installing help indices
+        ** building package indices
+        ** installing vignettes
+        ** testing if installed package can be loaded
+        * DONE (sf)
+
+        The downloaded source packages are in
+	        ‘/tmp/RtmpOGJu7H/downloaded_packages’
+
+
+8. 
+
 
 
 

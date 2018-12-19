@@ -1,14 +1,13 @@
 ## 32-bit Windowns:
 
-1.  
+1.
 
     data <- read.csv(file.choose())
         Error: cannot allocate vector of size 125.0 Mb
 
-Problem: 4 GB RAM ?
+Problem: 4 GB RAM ?  
 
-2.  
-
+2.
 
     data.table::update.dev.pkg(repo="https://Rdatatable.gitlab.io/data.table")
         Installing package into ‘C:/Users/admin/Documents/R/win-library/3.4’
@@ -17,21 +16,22 @@ Problem: 4 GB RAM ?
         Warning: unable to access index for repository https://Rdatatable.gitlab.io/data.table/bin/windows/contrib/3.4:     cannot open URL 'https://Rdatatable.gitlab.io/data.table/bin/windows/contrib/3.4/PACKAGES'
         Package which is only available in source form, and may need compilation of C/C++/Fortran:  
         ‘data.table’ These will not be installed R data.table package has been updated to NA (1.11.8)
+
 Solution?!
 
-3.  
+3.
+
     data = fread(file=file,sep="auto")
         Error in fread(file = file, sep = "auto") : Opened 0TB (1947283562 bytes) file ok but could not memory map it. 
         This is a 32bit process. Please upgrade to 64bit.
     
 Problem : 32-bit Windows  
-Solution: Decided to move to 64 bit Linux Mint (Ubuntu)
+Solution: Decided to move to 64 bit Linux Mint (Ubuntu)  
 ___
 
-## 64-bit Linux Mint:
+## 64-bit Linux Mint:  
 
-1.  
-
+1.
 
     zz=gzfile('454.csv.gz','rt')
     c454=read.csv(zz,header=T)
@@ -39,10 +39,10 @@ ___
         1: In read.table(file = file, header = header, sep = sep, quote = quote,  : seek on a gzfile connection returned an internal error
         2: In read.table(file = file, header = header, sep = sep, quote = quote,  : seek on a gzfile connection returned an internal error
     https://www.stat.berkeley.edu/~paciorek/computingTips/Reading_gzipped_bzipped_zip.html
-    https://stackoverflow.com/questions/30834963/seeking-on-a-gz-connection-is-unpredictable  
+    https://stackoverflow.com/questions/30834963/seeking-on-a-gz-connection-is-unpredictable
 
-2.  
-___
+2.
+
     install.packages("vcd")
     install.packages("vcdExtra")
 
@@ -60,8 +60,8 @@ ___
         Copyright (C) 2015 The R Foundation for Statistical Computing
         Platform: x86_64-pc-linux-gnu (64-bit)
 
-3.  
-___
+3.
+
     sudo apt-get install r-base
         [sudo] password for adminuser: 
         Reading package lists... Done
@@ -74,7 +74,7 @@ ___
         #add:
         deb https://cloud.r-project.org/bin/linux/ubuntu trusty-cran35/
 
-    sudo apt-get update
+        sudo apt-get update
         
         W: GPG error: https://cloud.r-project.org/bin/linux/ubuntu trusty-cran35/ InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 51716619E084DAB9
         W: The repository 'https://cloud.r-project.org/bin/linux/ubuntu trusty-cran35/ InRelease' is not signed.
@@ -99,23 +99,27 @@ ___
         Type 'contributors()' for more information and
         'citation()' on how to cite R or R packages in publications.
 
-4.  
+4.
 
-NOT THE WAY: Update all user installed r packages  
+**NOT** THE WAY:  
+Update all user installed r packages  
 use script : update_all_packages.r  
-as proposed in:  https://www.r-bloggers.com/update-all-user-installed-r-packages-again/  
-____
-ONE WAY: install packages again
+as proposed in:  https://www.r-bloggers.com/update-all-user-installed-r-packages-again/
 
-    lib_loc<- "/home/adminuser/R/x86_64-pc-linux-gnu-library/3.2"
-    to_install <- unname(installed.packages(lib.loc = lib_loc)[, "Package"])
-    install.packages(pkgs = to_install)
+ONE WAY:  
+install packages again  
 
-https://community.rstudio.com/t/reinstalling-packages-on-new-version-of-r/7670/4  
+        lib_loc<- "/home/adminuser/R/x86_64-pc-linux-gnu-library/3.2"
+        to_install <- unname(installed.packages(lib.loc = lib_loc)[, "Package"])
+        install.packages(pkgs = to_install)
+
+https://community.rstudio.com/t/reinstalling-packages-on-new-version-of-r/7670/4
+
 ...this is not really updating ALL the packages...
 
-5.  
-___ 
+
+5.
+
     install.packages("rgdal")
         
         Installing package into ‘/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5’
@@ -195,11 +199,11 @@ ali...
     **checking GDAL version >= 1.11.4... no**
 
     
-http://www.sarasafavi.com/installing-gdalogr-on-ubuntu.html
+http://www.sarasafavi.com/installing-gdalogr-on-ubuntu.html  
 ^^nije pomoglo
 ___
 
- ### !!WARNING!! LATER PROVED TO BE BAD SOLUTION!!!: 
+**!!WARNING!! LATER PROVED TO BE BAD SOLUTION!!!: **
 https://askubuntu.com/questions/1068266/how-to-get-gdal-2-0-0-on-ubuntu-16-04-lts   
 
     
@@ -431,19 +435,18 @@ https://askubuntu.com/questions/1068266/how-to-get-gdal-2-0-0-on-ubuntu-16-04-lt
         Processing triggers for systemd (229-4ubuntu12) ...
         Processing triggers for ureadahead (0.100.0-19) ...
 
-### Correct?
+**CORRECT?**
 https://github.com/ropensci/MODIStsp/issues/155
     
     sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
 
+6. 
 
-6.  
-
-installing stplanr  
-https://github.com/ropensci/stplanr  
+installing stplanr
+    https://github.com/ropensci/stplanr
 ___
     sudo apt-get install libgdal1-dev libgdal-dev libgeos-c1v5 libproj-dev
-___
+___    
     install.packages("rgdal", type = "source")
     install.packages("rgeos", type = "source")
         GDAL (>= 2.0.0), GEOS (>= 3.3.0) and Proj.4 (>= 4.8.0) are required.
@@ -452,7 +455,7 @@ ___
     sudo apt-get update
     sudo apt-get install libudunits2-dev libgdal-dev libgeos-dev libproj-dev 
 
-Ove komande ne znace ništa, jer najnovija dostupna verzija GDAL-a je 2.6.0, ovim komandama neće preć na nižu a stabilniju ubuntugit-unstable verziju  
+Ove komande ne znace ništa, jer najnovija dostupna verzija GDAL-a je 2.6.0, ovim komandama neće preć na nižu a stabilniju ubuntugit-unstable verziju
 
 ___
     gdalinfo --version
@@ -461,7 +464,7 @@ ___
         3.5.1
 ___
         install.packages("proj4")        
-WENT OK  
+**WENT OK**
 ___
     install.packages("sf")  
 
@@ -556,11 +559,11 @@ ___
         The downloaded source packages are in
         ‘/tmp/RtmpOGJu7H/downloaded_packages’
 
-https://github.com/r-spatial/sf/issues/884  
+https://github.com/r-spatial/sf/issues/884
         
         configure: GDAL: 2.6.0
 
-link sugests problem is in GDAL version  
+link sugests problem is in GDAL version 
 
         sudo apt-cache policy libgdal-dev
         libgdal-dev:

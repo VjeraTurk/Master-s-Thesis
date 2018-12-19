@@ -100,9 +100,8 @@ ___
         'citation()' on how to cite R or R packages in publications.
 
 4.
-
-**NOT** THE WAY:  
 Update all user installed r packages  
+**NOT** THE WAY:  
 use script : update_all_packages.r  
 as proposed in:  https://www.r-bloggers.com/update-all-user-installed-r-packages-again/
 
@@ -152,16 +151,16 @@ https://community.rstudio.com/t/reinstalling-packages-on-new-version-of-r/7670/4
 ___
     sudo apt-get install libgdal1-dev libproj-dev
        
-^^ nije pomoglo
+^^ did not help
 ___
     sudo apt-get install apt-file
     sudo apt-file update
 
-^^ nije pomoglo
+^^ did not help
 ___
     sudo apt-get install -y libxml2-dev libcurl4-openssl-dev libssl-dev
 
-^^ nije pomoglo
+^^ did not help
 ___
 
     install.packages("rgdal")
@@ -199,12 +198,12 @@ ___
 
     
 http://www.sarasafavi.com/installing-gdalogr-on-ubuntu.html  
-^^nije pomoglo
+^^did not help
 ___
 
 
 
-**!!WARNING!! LATER PROVEN TO BE BAD SOLUTION!!!: **
+**!!WARNING!! PROVEN TO BE BAD SOLUTION!!! SKIP THIS: **
 
 https://askubuntu.com/questions/1068266/how-to-get-gdal-2-0-0-on-ubuntu-16-04-lts   
 
@@ -437,18 +436,19 @@ https://askubuntu.com/questions/1068266/how-to-get-gdal-2-0-0-on-ubuntu-16-04-lt
         Processing triggers for systemd (229-4ubuntu12) ...
         Processing triggers for ureadahead (0.100.0-19) ...
 
-**CORRECT?**  
+**CORRECT WAY**  
 https://github.com/ropensci/MODIStsp/issues/155
     
     sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
-
+    sudo apt-get update
+    sudo apt-get install libgdal1-dev libgdal-dev libgeos-c1v5 libproj-dev
+___ 
 6.
 
 installing stplanr
     https://github.com/ropensci/stplanr
 ___
-    sudo apt-get install libgdal1-dev libgdal-dev libgeos-c1v5 libproj-dev
-___    
+   
     install.packages("rgdal", type = "source")
     install.packages("rgeos", type = "source")
         GDAL (>= 2.0.0), GEOS (>= 3.3.0) and Proj.4 (>= 4.8.0) are required.
@@ -457,7 +457,7 @@ ___
     sudo apt-get update
     sudo apt-get install libudunits2-dev libgdal-dev libgeos-dev libproj-dev 
 
-Ove komande ne znace ništa, jer najnovija dostupna verzija GDAL-a je 2.6.0, ovim komandama neće preć na nižu a stabilniju ubuntugit-unstable verziju
+**WARNING!** This commands wont change anything if `sudo add-apt-repository ppa:nextgis/dev` was already added and "did the damage" when installed GDAL 2.6.0 Keep reading to downgrade GDAL
 
 ___
     gdalinfo --version
@@ -600,8 +600,13 @@ SKIP THIS NEXT COMAND - DO NOT RUN THIS**:
         NextGIS Development builds
         More info: https://launchpad.net/~nextgis/+archive/ubuntu/dev
         Press Enter to continue or Ctrl+C to cancel
+___
+
+**RUN THIS FIRST**:
 
     sudo ppa-purge ppa:nextgis/dev
+OR ELSE YOU GET THIS
+
         W:Target Packages (Packages) is configured multiple times in /etc/apt/sources.list.d/additional-repositories.list:1 and /etc/apt/sources.list.d/additional-repositories.list:2
         W: Target Translations (en_US) is configured multiple times in /etc/apt/sources.list.d/additional-repositories.list:1 and /etc/apt/sources.list.d/additional-repositories.list:2
         W: Target Translations (en) is configured multiple times in /etc/apt/sources.list.d/additional-repositories.list:1 and /etc/apt/sources.list.d/additional-repositories.list:2
@@ -615,6 +620,8 @@ SKIP THIS NEXT COMAND - DO NOT RUN THIS**:
         PPA to be removed: nextgis dev
         Warning:  Could not find package list for PPA: nextgis dev
 ___
+THEN THIS...
+
 
     sudo apt-get update
         Ign:1 http://dl.google.com/linux/chrome/deb stable InRelease
@@ -652,6 +659,8 @@ ___
         W: Target Translations (en) is configured multiple times in /etc/apt/sources.list.d/additional-repositories.list:1 and /etc/apt/sources.list.d/additional-repositories.list:2
 
 ___
+THEN THIS... (notice **priorities have changed!** (500, 100))
+
     sudo apt-cache policy libgdal-dev
         libgdal-dev:
           Installed: 2.6.0+2-0xenial1
@@ -665,6 +674,11 @@ ___
                 500 http://ppa.launchpad.net/ubuntugis/ppa/ubuntu xenial/main amd64 Packages
              1.11.3+dfsg-3build2 500
                 500 http://archive.ubuntu.com/ubuntu xenial/universe amd64 Packages
+___
+SO DO RUN THEM IN THIS ORDER
+
+    sudo ppa-purge ppa:nextgis/dev
+    sudo add-apt-repository -r ppa:nextgis/dev    
 ___
     sudo apt-get upgrade
         Reading package lists... Done
@@ -715,7 +729,7 @@ one more time just for fun:
         0 upgraded, 0 newly installed, 0 to remove and 8 not upgraded.
 
 ___
-**ADD repository back** since I removed it earlier -.-' 
+**ADDED repository back** since I removed it earlier -.-' 
 
 
     sudo add-apt-repository ppa:nextgis/dev 
@@ -792,6 +806,8 @@ Purge removes **packages**?! Does it leave source in source list?!
         Processing triggers for libc-bin (2.23-0ubuntu10) ...
         PPA purged successfully
 ___
+
+NOW no version is installed (no 100) other priories have changed (500)
 
     sudo apt-cache policy libgdal-dev 
         libgdal-dev:
@@ -892,7 +908,7 @@ ___
           /home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/rgdal/libs/rgdal.so: undefined symbol: _ZNK10OGRFeature19GetFieldAsInteger64Ei
 ___
 
-intermetzzo...
+One more time? intermetzzo...
 
     sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
     sudo apt-get update
@@ -900,7 +916,7 @@ intermetzzo...
     
 ___
 
-Nekim čudom sad prošlo...
+This time it went true ...
 
     install.packages("rgdal")
         Installing package into ‘/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5’
@@ -977,6 +993,7 @@ ___
          Linking to sp version: 1.3-1 
 
 ___
+**FINALLY!**
 
     install.packages("stplanr")
         Installing package into ‘/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5’
@@ -1009,7 +1026,11 @@ ___
         The downloaded source packages are in
         ‘/tmp/RtmpOGJu7H/downloaded_packages’
 
-7. just for fun...
+
+7.
+
+
+Installing sf again? (for fun?)
 
     install.packages("sf")
         Error in install.packages : Updating loaded packages
@@ -1119,8 +1140,6 @@ ___
         The downloaded source packages are in
 	        ‘/tmp/RtmpOGJu7H/downloaded_packages’
 
-
-8. 
 
 
 

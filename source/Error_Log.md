@@ -17,16 +17,18 @@ ___
         Package which is only available in source form, and may need compilation of C/C++/Fortran:  
         ‘data.table’ These will not be installed R data.table package has been updated to NA (1.11.8)
 Solution?!
+
 3. 
 ___
     data = fread(file=file,sep="auto")
         Error in fread(file = file, sep = "auto") : Opened 0TB (1947283562 bytes) file ok but could not memory map it. 
         This is a 32bit process. Please upgrade to 64bit.
     
-Problem : 32-bit Windows
+Problem : 32-bit Windows  
 Solution: Decided to move to 64 bit Linux Mint (Ubuntu)
 ___
 ## 64-bit Linux Mint:
+
 4. 
 ___
     zz=gzfile('454.csv.gz','rt')
@@ -69,7 +71,7 @@ ___
         #add:
         deb https://cloud.r-project.org/bin/linux/ubuntu trusty-cran35/
 
-        sudo apt-get update
+    sudo apt-get update
         
         W: GPG error: https://cloud.r-project.org/bin/linux/ubuntu trusty-cran35/ InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 51716619E084DAB9
         W: The repository 'https://cloud.r-project.org/bin/linux/ubuntu trusty-cran35/ InRelease' is not signed.
@@ -95,25 +97,20 @@ ___
         'citation()' on how to cite R or R packages in publications.
 
 7. 
-    Update all user installed r packages
-    use script : update_all_packages.r
-    as proposed in:  https://www.r-bloggers.com/update-all-user-installed-r-packages-again/
-    ...this is not really updating ALL the packages...
+NOT THE WAY: Update all user installed r packages  
+use script : update_all_packages.r  
+as proposed in:  https://www.r-bloggers.com/update-all-user-installed-r-packages-again/  
+____
+ONE WAY: install packages again
 
-8. 
-    
-    NOT THE WAY: Update all user installed r packages
-    use script : update_all_packages.r
-    as proposed in:  https://www.r-bloggers.com/update-all-user-installed-r-packages-again/
+    lib_loc<- "/home/adminuser/R/x86_64-pc-linux-gnu-library/3.2"
+    to_install <- unname(installed.packages(lib.loc = lib_loc)[, "Package"])
+    install.packages(pkgs = to_install)
 
-    ONE WAY: install packages again
-        lib_loc<- "/home/adminuser/R/x86_64-pc-linux-gnu-library/3.2"
-        to_install <- unname(installed.packages(lib.loc = lib_loc)[, "Package"])
-        install.packages(pkgs = to_install)
+https://community.rstudio.com/t/reinstalling-packages-on-new-version-of-r/7670/4  
+...this is not really updating ALL the packages...
 
-    https://community.rstudio.com/t/reinstalling-packages-on-new-version-of-r/7670/4
-
-9.
+8.
 ___ 
     install.packages("rgdal")
         
@@ -436,8 +433,9 @@ https://github.com/ropensci/MODIStsp/issues/155
     sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
 
 
-9. installing stplanr
-    https://github.com/ropensci/stplanr
+9. 
+installing stplanr  
+https://github.com/ropensci/stplanr
 ___
     sudo apt-get install libgdal1-dev libgdal-dev libgeos-c1v5 libproj-dev
 ___    

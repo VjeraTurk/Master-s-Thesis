@@ -1139,8 +1139,25 @@ Installing sf again? (for fun?)
 
         The downloaded source packages are in
 	        ‘/tmp/RtmpOGJu7H/downloaded_packages’
+___
+
+    install.packages("lwgeom")
 
 
+...
+
+        installing to /home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/lwgeom/libs
+        ** R
+        ** inst
+        ** byte-compile and prepare package for lazy loading
+        ** help
+        *** installing help indices
+        ** building package indices
+        ** testing if installed package can be loaded
+        * DONE (lwgeom)
+
+        The downloaded source packages are in
+	        ‘/tmp/RtmpOGJu7H/downloaded_packages’
 
 
 

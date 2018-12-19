@@ -1,13 +1,14 @@
 ## 32-bit Windowns:
-1. 
-___
+
+1.  
+
     data <- read.csv(file.choose())
         Error: cannot allocate vector of size 125.0 Mb
 
 Problem: 4 GB RAM ?
 
-2.
-___
+2.  
+
 
     data.table::update.dev.pkg(repo="https://Rdatatable.gitlab.io/data.table")
         Installing package into ‘C:/Users/admin/Documents/R/win-library/3.4’
@@ -18,8 +19,7 @@ ___
         ‘data.table’ These will not be installed R data.table package has been updated to NA (1.11.8)
 Solution?!
 
-3. 
-___
+3.  
     data = fread(file=file,sep="auto")
         Error in fread(file = file, sep = "auto") : Opened 0TB (1947283562 bytes) file ok but could not memory map it. 
         This is a 32bit process. Please upgrade to 64bit.
@@ -27,18 +27,21 @@ ___
 Problem : 32-bit Windows  
 Solution: Decided to move to 64 bit Linux Mint (Ubuntu)
 ___
+
 ## 64-bit Linux Mint:
 
-4. 
-___
+1.  
+
+
     zz=gzfile('454.csv.gz','rt')
     c454=read.csv(zz,header=T)
 
         1: In read.table(file = file, header = header, sep = sep, quote = quote,  : seek on a gzfile connection returned an internal error
         2: In read.table(file = file, header = header, sep = sep, quote = quote,  : seek on a gzfile connection returned an internal error
     https://www.stat.berkeley.edu/~paciorek/computingTips/Reading_gzipped_bzipped_zip.html
-    https://stackoverflow.com/questions/30834963/seeking-on-a-gz-connection-is-unpredictable
-5.
+    https://stackoverflow.com/questions/30834963/seeking-on-a-gz-connection-is-unpredictable  
+
+2.  
 ___
     install.packages("vcd")
     install.packages("vcdExtra")
@@ -57,7 +60,7 @@ ___
         Copyright (C) 2015 The R Foundation for Statistical Computing
         Platform: x86_64-pc-linux-gnu (64-bit)
 
-6.
+3.  
 ___
     sudo apt-get install r-base
         [sudo] password for adminuser: 
@@ -96,7 +99,8 @@ ___
         Type 'contributors()' for more information and
         'citation()' on how to cite R or R packages in publications.
 
-7. 
+4.  
+
 NOT THE WAY: Update all user installed r packages  
 use script : update_all_packages.r  
 as proposed in:  https://www.r-bloggers.com/update-all-user-installed-r-packages-again/  
@@ -110,7 +114,7 @@ ONE WAY: install packages again
 https://community.rstudio.com/t/reinstalling-packages-on-new-version-of-r/7670/4  
 ...this is not really updating ALL the packages...
 
-8.
+5.  
 ___ 
     install.packages("rgdal")
         
@@ -433,12 +437,13 @@ https://github.com/ropensci/MODIStsp/issues/155
     sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
 
 
-9. 
+6.  
+
 installing stplanr  
-https://github.com/ropensci/stplanr
+https://github.com/ropensci/stplanr  
 ___
     sudo apt-get install libgdal1-dev libgdal-dev libgeos-c1v5 libproj-dev
-___    
+___
     install.packages("rgdal", type = "source")
     install.packages("rgeos", type = "source")
         GDAL (>= 2.0.0), GEOS (>= 3.3.0) and Proj.4 (>= 4.8.0) are required.
@@ -447,7 +452,7 @@ ___
     sudo apt-get update
     sudo apt-get install libudunits2-dev libgdal-dev libgeos-dev libproj-dev 
 
-Ove komande ne znace ništa, jer najnovija dostupna verzija GDAL-a je 2.6.0, ovim komandama neće preć na nižu a stabilniju ubuntugit-unstable verziju
+Ove komande ne znace ništa, jer najnovija dostupna verzija GDAL-a je 2.6.0, ovim komandama neće preć na nižu a stabilniju ubuntugit-unstable verziju  
 
 ___
     gdalinfo --version
@@ -456,7 +461,7 @@ ___
         3.5.1
 ___
         install.packages("proj4")        
-WENT OK
+WENT OK  
 ___
     install.packages("sf")  
 
@@ -551,11 +556,11 @@ ___
         The downloaded source packages are in
         ‘/tmp/RtmpOGJu7H/downloaded_packages’
 
-https://github.com/r-spatial/sf/issues/884
+https://github.com/r-spatial/sf/issues/884  
         
         configure: GDAL: 2.6.0
 
-link sugests problem is in GDAL version 
+link sugests problem is in GDAL version  
 
         sudo apt-cache policy libgdal-dev
         libgdal-dev:

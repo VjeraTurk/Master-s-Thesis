@@ -565,7 +565,12 @@ https://github.com/r-spatial/sf/issues/884
         
         configure: GDAL: 2.6.0
 
-link sugests problem is in GDAL version 
+link sugests problem is in GDAL version.  
+As latest version has highest priority:  
+- Should current version be removed?  
+- Should packages be downgraded after priority is reversed **manually**?
+
+https://launchpad.net/~ubuntugis/+archive/ubuntu/ubuntugis-unstable
 
         sudo apt-cache policy libgdal-dev
         libgdal-dev:
@@ -582,6 +587,427 @@ link sugests problem is in GDAL version
              1.11.3+dfsg-3build2 500
                 500 http://archive.ubuntu.com/ubuntu xenial/universe amd64 Packages
 
+___
+
+    sudo apt-get install ppa-purge
+___
+
+**WARNING!!  
+SKIP THIS NEXT COMAND - DO NOT RUN THIS**:
+
+    sudo add-apt-repository -r ppa:nextgis/dev
+        You are about to remove the following PPA:
+        NextGIS Development builds
+        More info: https://launchpad.net/~nextgis/+archive/ubuntu/dev
+        Press Enter to continue or Ctrl+C to cancel
+
+    sudo ppa-purge ppa:nextgis/dev
+        W:Target Packages (Packages) is configured multiple times in /etc/apt/sources.list.d/additional-repositories.list:1 and /etc/apt/sources.list.d/additional-repositories.list:2
+        W: Target Translations (en_US) is configured multiple times in /etc/apt/sources.list.d/additional-repositories.list:1 and /etc/apt/sources.list.d/additional-repositories.list:2
+        W: Target Translations (en) is configured multiple times in /etc/apt/sources.list.d/additional-repositories.list:1 and /etc/apt/sources.list.d/additional-repositories.list:2
+        W: GPG error: https://cloud.r-project.org/bin/linux/ubuntu trusty-cran35/ InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 51716619E084DAB9
+        W: The repository 'https://cloud.r-project.org/bin/linux/ubuntu trusty-cran35/ InRelease' is not signed.
+        W: GPG error: https://mirror.ibcp.fr/pub/CRAN/bin/linux/ubuntu xenial/ InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 51716619E084DAB9
+        W: The repository 'https://mirror.ibcp.fr/pub/CRAN/bin/linux/ubuntu xenial/ InRelease' is not signed.
+        W: Target Packages (Packages) is configured multiple times in /etc/apt/sources.list.d/additional-repositories.list:1 and /etc/apt/sources.list.d/additional-repositories.list:2
+        W: Target Translations (en_US) is configured multiple times in /etc/apt/sources.list.d/additional-repositories.list:1 and /etc/apt/sources.list.d/additional-repositories.list:2
+        W: Target Translations (en) is configured multiple times in /etc/apt/sources.list.d/additional-repositories.list:1 and /etc/apt/sources.list.d/additional-repositories.list:2
+        PPA to be removed: nextgis dev
+        Warning:  Could not find package list for PPA: nextgis dev
+___
+
+    sudo apt-get update
+        Ign:1 http://dl.google.com/linux/chrome/deb stable InRelease
+        Hit:2 http://archive.ubuntu.com/ubuntu xenial InRelease                           
+        Ign:3 http://www.mirrorservice.org/sites/packages.linuxmint.com/packages serena InRelease
+        Hit:4 http://ppa.launchpad.net/nathan-renniewaldock/flux/ubuntu xenial InRelease  
+        Hit:5 http://archive.ubuntu.com/ubuntu xenial-updates InRelease                   
+        Hit:6 http://www.mirrorservice.org/sites/packages.linuxmint.com/packages serena Release
+        Get:7 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]        
+        Get:8 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]        
+        Hit:9 http://archive.canonical.com/ubuntu xenial InRelease                        
+        Hit:10 http://ppa.launchpad.net/ubuntugis/ppa/ubuntu xenial InRelease             
+        Get:11 https://cloud.r-project.org/bin/linux/ubuntu trusty-cran35/ InRelease [3606 B]
+        Hit:12 http://dl.google.com/linux/chrome/deb stable Release                       
+        Hit:13 http://ppa.launchpad.net/ubuntugis/ubuntugis-unstable/ubuntu xenial InRelease
+        Get:14 https://mirror.ibcp.fr/pub/CRAN/bin/linux/ubuntu xenial/ InRelease [3590 B]
+        Hit:16 https://download.sublimetext.com apt/stable/ InRelease                     
+        Ign:11 https://cloud.r-project.org/bin/linux/ubuntu trusty-cran35/ InRelease
+        Ign:14 https://mirror.ibcp.fr/pub/CRAN/bin/linux/ubuntu xenial/ InRelease
+        Fetched 221 kB in 1s (137 kB/s)
+        Reading package lists... Done
+        W: Target Packages (Packages) is configured multiple times in /etc/apt/sources.list.d/additional-repositories.list:1 and /etc/apt/sources.list.d/additional-repositories.list:2
+        W: Target Translations (en_US) is configured multiple times in /etc/apt/sources.list.d/additional-repositories.list:1 and /etc/apt/sources.list.d/additional-repositories.list:2
+        W: Target Translations (en) is configured multiple times in /etc/apt/sources.list.d/additional-repositories.list:1 and /etc/apt/sources.list.d/additional-repositories.list:2
+        W: GPG error: https://cloud.r-project.org/bin/linux/ubuntu trusty-cran35/ InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 51716619E084DAB9
+        W: The repository 'https://cloud.r-project.org/bin/linux/ubuntu trusty-cran35/ InRelease' is not signed.
+        N: Data from such a repository can't be authenticated and is therefore potentially dangerous to use.
+        N: See apt-secure(8) manpage for repository creation and user configuration details.
+        W: GPG error: https://mirror.ibcp.fr/pub/CRAN/bin/linux/ubuntu xenial/ InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 51716619E084DAB9
+        W: The repository 'https://mirror.ibcp.fr/pub/CRAN/bin/linux/ubuntu xenial/ InRelease' is not signed.
+        N: Data from such a repository can't be authenticated and is therefore potentially dangerous to use.
+        N: See apt-secure(8) manpage for repository creation and user configuration details.
+        W: Target Packages (Packages) is configured multiple times in /etc/apt/sources.list.d/additional-repositories.list:1 and /etc/apt/sources.list.d/additional-repositories.list:2
+        W: Target Translations (en_US) is configured multiple times in /etc/apt/sources.list.d/additional-repositories.list:1 and /etc/apt/sources.list.d/additional-repositories.list:2
+        W: Target Translations (en) is configured multiple times in /etc/apt/sources.list.d/additional-repositories.list:1 and /etc/apt/sources.list.d/additional-repositories.list:2
+
+___
+    sudo apt-cache policy libgdal-dev
+        libgdal-dev:
+          Installed: 2.6.0+2-0xenial1
+          Candidate: 2.6.0+2-0xenial1
+          Version table:
+         *** 2.6.0+2-0xenial1 100
+                100 /var/lib/dpkg/status
+             2.2.2+dfsg-1~xenial1 500
+                500 http://ppa.launchpad.net/ubuntugis/ubuntugis-unstable/ubuntu xenial/main amd64 Packages
+             2.1.3+dfsg-1~xenial2 500
+                500 http://ppa.launchpad.net/ubuntugis/ppa/ubuntu xenial/main amd64 Packages
+             1.11.3+dfsg-3build2 500
+                500 http://archive.ubuntu.com/ubuntu xenial/universe amd64 Packages
+___
+    sudo apt-get upgrade
+        Reading package lists... Done
+        Building dependency tree       
+        Reading state information... Done
+        Calculating upgrade... Done
+        The following packages were automatically installed and are no longer required:
+          cdbs dh-translations intltool libdap-dev libdap17v5 libdapclient6v5 libdapserver7v5 libepsilon1 libgdal1i libgeos-3.5.0 libhdf4-0-alt libjasper-dev libkmlbase1
+          libkmldom1 libkmlengine1 libminizip1 libmysqlclient-dev libmysqlclient20 libnetcdf-dev libnetcdf11 libogdi3.2 liburiparser1 libwebp-dev libxerces-c-dev
+          libxerces-c3.1 mysql-common python-scour unixodbc-dev
+        Use 'sudo apt autoremove' to remove them.
+        The following packages have been kept back:
+          libegl1-mesa libgl1-mesa-dri:i386 libgl1-mesa-dri libwayland-egl1-mesa libxatracker2 r-cran-class r-cran-kernsmooth r-cran-nnet
+        The following packages will be upgraded:
+          chromium-browser chromium-codecs-ffmpeg-extra cpp-5 cups cups-bsd cups-client cups-common cups-core-drivers cups-daemon cups-ppdc cups-server-common dbus dbus-x11
+          firefox firefox-locale-en freerdp-x11 g++-5 gcc-5 gcc-5-base gcc-5-base:i386 gfortran-5 google-chrome-stable grub-common grub-pc grub-pc-bin grub2-common libasan2
+          libatomic1 libcc1-0 libcilkrts5 libcups2 libcups2:i386 libcupscgi1 libcupsimage2:i386 libcupsimage2 libcupsmime1 libcupsppdc1 libdbus-1-3 libdbus-1-3:i386
+          libegl1-mesa-drivers libfreerdp-cache1.1 libfreerdp-client1.1 libfreerdp-codec1.1 libfreerdp-common1.1.0 libfreerdp-core1.1 libfreerdp-crypto1.1 libfreerdp-gdi1.1
+          libfreerdp-locale1.1 libfreerdp-plugins-standard libfreerdp-primitives1.1 libfreerdp-rail1.1 libfreerdp-utils1.1 libgbm1 libgcc-5-dev libgfortran-5-dev libgfortran3
+          libgomp1 libitm1 liblsan0 libmpx0 libpam-systemd libpoppler-glib8 libpoppler-qt4-4 libpoppler-qt5-1 libpoppler58 libquadmath0 libstdc++-5-dev libstdc++6:i386
+          libstdc++6 libsystemd0 libsystemd0:i386 libtsan0 libubsan0 libudev1 libudev1:i386 libwinpr-crt0.1 libwinpr-dsparse0.1 libwinpr-environment0.1 libwinpr-file0.1
+          libwinpr-handle0.1 libwinpr-heap0.1 libwinpr-input0.1 libwinpr-interlocked0.1 libwinpr-library0.1 libwinpr-path0.1 libwinpr-pool0.1 libwinpr-registry0.1
+          libwinpr-rpc0.1 libwinpr-sspi0.1 libwinpr-synch0.1 libwinpr-sysinfo0.1 libwinpr-thread0.1 libwinpr-utils0.1 libxfreerdp-client1.1 linux-firmware linux-libc-dev
+          poppler-utils r-base-dev r-cran-cluster r-cran-lattice r-cran-nlme r-cran-rpart r-cran-survival systemd systemd-sysv udev x11-common xorg xserver-common
+          xserver-xorg xserver-xorg-core xserver-xorg-input-all xserver-xorg-video-all xserver-xorg-video-amdgpu
+        114 upgraded, 0 newly installed, 0 to remove and 8 not upgraded.
+        Need to get 275 MB of archives.
+        After this operation, 83,9 MB of additional disk space will be used.
+        Do you want to continue? [Y/n] 
+(...)
+___
+
+one more time just for fun:
+
+    sudo apt-get upgrade
+        [sudo] password for adminuser: 
+        Reading package lists... Done
+        Building dependency tree       
+        Reading state information... Done
+        Calculating upgrade... Done
+        The following packages were automatically installed and are no longer required:
+          cdbs dh-translations intltool libdap-dev libdap17v5 libdapclient6v5 libdapserver7v5 libepsilon1 libgdal1i libgeos-3.5.0 libhdf4-0-alt libjasper-dev libkmlbase1
+          libkmldom1 libkmlengine1 libminizip1 libmysqlclient-dev libmysqlclient20 libnetcdf-dev libnetcdf11 libogdi3.2 liburiparser1 libwebp-dev libxerces-c-dev
+          libxerces-c3.1 mysql-common python-scour unixodbc-dev
+        Use 'sudo apt autoremove' to remove them.
+        The following packages have been kept back:
+          libegl1-mesa libgl1-mesa-dri:i386 libgl1-mesa-dri libwayland-egl1-mesa libxatracker2 r-cran-class r-cran-kernsmooth r-cran-nnet
+        0 upgraded, 0 newly installed, 0 to remove and 8 not upgraded.
+
+___
+**ADD repository back** since I removed it earlier -.-' 
+
+
+    sudo add-apt-repository ppa:nextgis/dev 
+        You are about to add the following PPA:
+         NextGIS Development builds
+         More info: https://launchpad.net/~nextgis/+archive/ubuntu/dev
+        Press Enter to continue or Ctrl+C to cancel
+
+        Executing: /tmp/tmp.yUTS08bsD3/gpg.1.sh --keyserver
+        hkp://keyserver.ubuntu.com:80
+        --recv-keys
+        CF0CF9F7
+        gpg: requesting key CF0CF9F7 from hkp server keyserver.ubuntu.com
+        gpg: key CF0CF9F7: "Launchpad PPA for NextGIS" not changed
+        gpg: Total number processed: 1
+        gpg:              unchanged: 1
+____
+Purge removes **packages**?! Does it leave source in source list?!
+
+    sudo ppa-purge ppa:nextgis/dev 
+        Updating packages lists
+        W: Target Packages (Packages) is configured multiple times in /etc/apt/sources.list.d/additional-repositories.list:1 and /etc/apt/sources.list.d/additional-repositories.list:2
+        W: Target Translations (en_US) is configured multiple times in /etc/apt/sources.list.d/additional-repositories.list:1 and /etc/apt/sources.list.d/additional-repositories.list:2
+        W: Target Translations (en) is configured multiple times in /etc/apt/sources.list.d/additional-repositories.list:1 and /etc/apt/sources.list.d/additional-repositories.list:2
+        W: GPG error: https://cloud.r-project.org/bin/linux/ubuntu trusty-cran35/ InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 51716619E084DAB9
+        W: The repository 'https://cloud.r-project.org/bin/linux/ubuntu trusty-cran35/ InRelease' is not signed.
+        W: GPG error: https://mirror.ibcp.fr/pub/CRAN/bin/linux/ubuntu xenial/ InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 51716619E084DAB9
+        W: The repository 'https://mirror.ibcp.fr/pub/CRAN/bin/linux/ubuntu xenial/ InRelease' is not signed.
+        W: Target Packages (Packages) is configured multiple times in /etc/apt/sources.list.d/additional-repositories.list:1 and /etc/apt/sources.list.d/additional-repositories.list:2
+        W: Target Translations (en_US) is configured multiple times in /etc/apt/sources.list.d/additional-repositories.list:1 and /etc/apt/sources.list.d/additional-repositories.list:2
+        W: Target Translations (en) is configured multiple times in /etc/apt/sources.list.d/additional-repositories.list:1 and /etc/apt/sources.list.d/additional-repositories.list:2
+        PPA to be removed: nextgis dev
+        Package revert list generated:
+         gdal-bin- gdal-data- libgdal-dev- libgdal1i- libgdal20- libopencad-dev- 
+        libopencad1-
+
+        Disabling nextgis PPA from /etc/apt/sources.list.d/nextgis-dev-xenial.list
+        Updating packages lists
+        W: Target Packages (Packages) is configured multiple times in /etc/apt/sources.list.d/additional-repositories.list:1 and /etc/apt/sources.list.d/additional-repositories.list:2
+        W: Target Translations (en_US) is configured multiple times in /etc/apt/sources.list.d/additional-repositories.list:1 and /etc/apt/sources.list.d/additional-repositories.list:2
+        W: Target Translations (en) is configured multiple times in /etc/apt/sources.list.d/additional-repositories.list:1 and /etc/apt/sources.list.d/additional-repositories.list:2
+        W: GPG error: https://cloud.r-project.org/bin/linux/ubuntu trusty-cran35/ InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 51716619E084DAB9
+        W: The repository 'https://cloud.r-project.org/bin/linux/ubuntu trusty-cran35/ InRelease' is not signed.
+        W: GPG error: https://mirror.ibcp.fr/pub/CRAN/bin/linux/ubuntu xenial/ InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 51716619E084DAB9
+        W: The repository 'https://mirror.ibcp.fr/pub/CRAN/bin/linux/ubuntu xenial/ InRelease' is not signed.
+        W: Target Packages (Packages) is configured multiple times in /etc/apt/sources.list.d/additional-repositories.list:1 and /etc/apt/sources.list.d/additional-repositories.list:2
+        W: Target Translations (en_US) is configured multiple times in /etc/apt/sources.list.d/additional-repositories.list:1 and /etc/apt/sources.list.d/additional-repositories.list:2
+        W: Target Translations (en) is configured multiple times in /etc/apt/sources.list.d/additional-repositories.list:1 and /etc/apt/sources.list.d/additional-repositories.list:2
+        Reading package lists... Done
+        Building dependency tree       
+        Reading state information... Done
+        The following packages were automatically installed and are no longer required:
+          cdbs dh-translations hdf5-helpers intltool libaec-dev libaec0 libarmadillo-dev libarmadillo6 libarpack2 libarpack2-dev libdap-dev libdap17v5 libdapclient6v5
+          libdapserver7v5 libepsilon1 libfreexl1 libgeos-3.5.0 libgeotiff-dev libgeotiff2 libgif-dev libhdf4-0 libhdf4-0-alt libhdf4-dev libhdf5-10 libhdf5-cpp-11 libhdf5-dev
+          libjasper-dev libjbig-dev libjson-c-dev libkmlbase1 libkmldom1 libkmlengine1 libminizip1 libmysqlclient-dev libmysqlclient20 libnetcdf-dev libnetcdf11 libogdi3.2
+          libopenjp2-7 libopenjp2-7-dev libqhull-dev libqhull7 libspatialite-dev libspatialite7 libsqlite3-dev libsuperlu-dev libsuperlu4 libsz2 libtiff5-dev libtiffxx5
+          liburiparser1 libwebp-dev libxerces-c-dev libxerces-c3.1 mysql-common python-scour unixodbc-dev
+        Use 'sudo apt autoremove' to remove them.
+        The following packages will be REMOVED:
+          gdal-bin gdal-data libgdal-dev libgdal1-dev libgdal1i libgdal20 libopencad-dev libopencad1
+        0 upgraded, 0 newly installed, 8 to remove and 8 not upgraded.
+        After this operation, 78,3 MB disk space will be freed.
+        Do you want to continue? [Y/n] 
+        (Reading database ... 291599 files and directories currently installed.)
+        Removing gdal-bin (2.6.0+2-0xenial1) ...
+        Removing libgdal1-dev (1.11.3+dfsg-3build2) ...
+        Removing libgdal-dev (2.6.0+2-0xenial1) ...
+        Removing libgdal20 (2.6.0+2-0xenial1) ...
+        Removing gdal-data (2.6.0+2-0xenial1) ...
+        Removing libgdal1i (1.11.3+dfsg-3build2) ...
+        Removing libopencad-dev (0.3.3+8-0xenial1) ...
+        Removing libopencad1 (0.3.3+8-0xenial1) ...
+        Processing triggers for man-db (2.7.5-1) ...
+        Processing triggers for libc-bin (2.23-0ubuntu10) ...
+        PPA purged successfully
+___
+
+    sudo apt-cache policy libgdal-dev 
+        libgdal-dev:
+          Installed: (none)
+          Candidate: 2.2.2+dfsg-1~xenial1
+          Version table:
+             2.2.2+dfsg-1~xenial1 500
+                500 http://ppa.launchpad.net/ubuntugis/ubuntugis-unstable/ubuntu xenial/main amd64 Packages
+             2.1.3+dfsg-1~xenial2 500
+                500 http://ppa.launchpad.net/ubuntugis/ppa/ubuntu xenial/main amd64 Packages
+             1.11.3+dfsg-3build2 500
+                500 http://archive.ubuntu.com/ubuntu xenial/universe amd64 Packages
+___
+   
+    sudo apt-get install libgdal1-dev libproj-dev
+___
+
+    sudo apt-cache policy libgdal-dev
+        libgdal-dev:
+          Installed: 2.2.2+dfsg-1~xenial1
+          Candidate: 2.2.2+dfsg-1~xenial1
+          Version table:
+         *** 2.2.2+dfsg-1~xenial1 500
+                500 http://ppa.launchpad.net/ubuntugis/ubuntugis-unstable/ubuntu xenial/main amd64 Packages
+                100 /var/lib/dpkg/status
+             2.1.3+dfsg-1~xenial2 500
+                500 http://ppa.launchpad.net/ubuntugis/ppa/ubuntu xenial/main amd64 Packages
+             1.11.3+dfsg-3build2 500
+                500 http://archive.ubuntu.com/ubuntu xenial/universe amd64 Packages
+___
+    gdalinfo --version
+        bash: /usr/bin/gdalinfo: No such file or directory
+___
+    
+    install.packages("stplanr")
+
+(...)
+
+        installing to /home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/stplanr/libs
+        ** R
+        ** data
+        *** moving datasets to lazyload DB
+        ** demo
+        ** inst
+        ** byte-compile and prepare package for lazy loading
+        Error : package ‘lattice’ was installed by an R version with different internals; it needs to be reinstalled for use with this R version
+        ERROR: lazy loading failed for package ‘stplanr’
+        * removing ‘/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/stplanr’
+        Warning in install.packages :
+          installation of package ‘stplanr’ had non-zero exit status
+
+        The downloaded source packages are in
+	        ‘/tmp/RtmpOGJu7H/downloaded_packages’
+___
+
+    install.packages("lattice")
+___
+Again:
+
+    install.packages("stplanr")
+        Installing package into ‘/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5’
+        (as ‘lib’ is unspecified)
+        trying URL 'https://cloud.r-project.org/src/contrib/stplanr_0.2.6.tar.gz'
+        Content type 'application/x-gzip' length 1603631 bytes (1.5 MB)
+        ==================================================
+        downloaded 1.5 MB
+
+        * installing *source* package ‘stplanr’ ...
+        ** package ‘stplanr’ successfully unpacked and MD5 sums checked
+        ** libs
+        g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/RcppArmadillo/include" -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/Rcpp/include"   -DARMA_DONT_PRINT_OPENMP_WARNING -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c RcppExports.cpp -o RcppExports.o
+        g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/RcppArmadillo/include" -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/Rcpp/include"   -DARMA_DONT_PRINT_OPENMP_WARNING -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c spatialnetworks.cpp -o spatialnetworks.o
+        g++ -std=gnu++11 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o stplanr.so RcppExports.o spatialnetworks.o -L/usr/lib/R/lib -lR
+        installing to /home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/stplanr/libs
+        ** R
+        ** data
+        *** moving datasets to lazyload DB
+        ** demo
+        ** inst
+        ** byte-compile and prepare package for lazy loading
+        Error in dyn.load(file, DLLpath = DLLpath, ...) : 
+          unable to load shared object '/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/rgdal/libs/rgdal.so':
+          /home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/rgdal/libs/rgdal.so: undefined symbol: _ZNK10OGRFeature19GetFieldAsInteger64Ei
+        ERROR: lazy loading failed for package ‘stplanr’
+        * removing ‘/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/stplanr’
+        Warning in install.packages :
+          installation of package ‘stplanr’ had non-zero exit status
+
+        The downloaded source packages are in
+	        ‘/tmp/RtmpOGJu7H/downloaded_packages’
+___
+
+
+    require(rgdal)
+        Loading required package: rgdal
+        Error: package or namespace load failed for ‘rgdal’ in dyn.load(file, DLLpath = DLLpath, ...):
+         unable to load shared object '/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/rgdal/libs/rgdal.so':
+          /home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/rgdal/libs/rgdal.so: undefined symbol: _ZNK10OGRFeature19GetFieldAsInteger64Ei
+___
+
+intermetzzo...
+
+    sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
+    sudo apt-get update
+    sudo apt-get install libudunits2-dev libgdal-dev libgeos-dev libproj-dev
+    
+___
+
+Nekim čudom sad prošlo...
+
+    install.packages("rgdal")
+        Installing package into ‘/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5’
+        (as ‘lib’ is unspecified)
+        trying URL 'https://cloud.r-project.org/src/contrib/rgdal_1.3-6.tar.gz'
+        Content type 'application/x-gzip' length 1666975 bytes (1.6 MB)
+        ==================================================
+        downloaded 1.6 MB
+
+        * installing *source* package ‘rgdal’ ...
+        ** package ‘rgdal’ successfully unpacked and MD5 sums checked
+        configure: R_HOME: /usr/lib/R
+        configure: CC: gcc -std=gnu99
+        configure: CXX: g++
+        configure: C++11 support available
+        configure: rgdal: 1.3-6
+        checking for /usr/bin/svnversion... no
+        configure: svn revision: 773
+        checking for gdal-config... /usr/bin/gdal-config
+        checking gdal-config usability... yes
+        configure: GDAL: 2.2.2
+        checking GDAL version >= 1.11.4... yes
+        checking gdal: linking with --libs only... yes
+        checking GDAL: /usr/share/gdal/2.2/pcs.csv readable... yes
+        configure: pkg-config proj exists, will use it
+        configure: PROJ version: 4.9.2
+        checking proj_api.h presence and usability... yes
+        checking PROJ version >= 4.8.0... yes
+        checking projects.h presence and usability... yes
+        checking PROJ.4: epsg found and readable... yes
+        checking PROJ.4: conus found and readable... yes
+        configure: Package CPP flags:  -I/usr/include/gdal
+        configure: Package LIBS:  -L/usr/lib -lgdal -lproj
+        configure: creating ./config.status
+        config.status: creating src/Makevars
+        ** libs
+        g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/gdal -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/sp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c OGR_write.cpp -o OGR_write.o
+        g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/gdal -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/sp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c gdal-bindings.cpp -o gdal-bindings.o
+        gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/gdal -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/sp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g  -c init.c -o init.o
+        gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/gdal -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/sp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g  -c inverser.c -o inverser.o
+        gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/gdal -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/sp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g  -c local_stubs.c -o local_stubs.o
+        g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/gdal -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/sp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c ogr_geom.cpp -o ogr_geom.o
+        gcc -std=gnu99 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/gdal -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/sp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g  -c ogr_polygons.c -o ogr_polygons.o
+        g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/gdal -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/sp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c ogr_proj.cpp -o ogr_proj.o
+        g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/gdal -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/sp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c ogrdrivers.cpp -o ogrdrivers.o
+        g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/gdal -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/sp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c ogrsource.cpp -o ogrsource.o
+        g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I/usr/include/gdal -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/sp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c projectit.cpp -o projectit.o
+        g++ -std=gnu++11 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o rgdal.so OGR_write.o gdal-bindings.o init.o inverser.o local_stubs.o ogr_geom.o ogr_polygons.o ogr_proj.o ogrdrivers.o ogrsource.o projectit.o -L/usr/lib -lgdal -lproj -L/usr/lib/R/lib -lR
+        installing to /home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/rgdal/libs
+        ** R
+        ** data
+        ** inst
+        ** byte-compile and prepare package for lazy loading
+        ** help
+        *** installing help indices
+        ** building package indices
+        ** installing vignettes
+        ** testing if installed package can be loaded
+        * DONE (rgdal)
+
+        The downloaded source packages are in
+	        ‘/tmp/RtmpOGJu7H/downloaded_packages’
+___
+
+    require(rgdal)
+        Loading required package: rgdal
+        rgdal: version: 1.3-6, (SVN revision 773)
+         Geospatial Data Abstraction Library extensions to R successfully loaded
+         Loaded GDAL runtime: GDAL 2.2.2, released 2017/09/15
+         Path to GDAL shared files: /usr/share/gdal/2.2
+         GDAL binary built with GEOS: TRUE 
+         Loaded PROJ.4 runtime: Rel. 4.9.2, 08 September 2015, [PJ_VERSION: 492]
+         Path to PROJ.4 shared files: (autodetected)
+         Linking to sp version: 1.3-1 
+
+___
+
+    install.packages("stplanr")
+        Installing package into ‘/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5’
+        (as ‘lib’ is unspecified)
+        trying URL 'https://cloud.r-project.org/src/contrib/stplanr_0.2.6.tar.gz'
+        Content type 'application/x-gzip' length 1603631 bytes (1.5 MB)
+        ==================================================
+        downloaded 1.5 MB
+
+        * installing *source* package ‘stplanr’ ...
+        ** package ‘stplanr’ successfully unpacked and MD5 sums checked
+        ** libs
+        g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/RcppArmadillo/include" -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/Rcpp/include"   -DARMA_DONT_PRINT_OPENMP_WARNING -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c RcppExports.cpp -o RcppExports.o
+        g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/RcppArmadillo/include" -I"/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/Rcpp/include"   -DARMA_DONT_PRINT_OPENMP_WARNING -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c spatialnetworks.cpp -o spatialnetworks.o
+        g++ -std=gnu++11 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o stplanr.so RcppExports.o spatialnetworks.o -L/usr/lib/R/lib -lR
+        installing to /home/adminuser/R/x86_64-pc-linux-gnu-library/3.5/stplanr/libs
+        ** R
+        ** data
+        *** moving datasets to lazyload DB
+        ** demo
+        ** inst
+        ** byte-compile and prepare package for lazy loading
+        ** help
+        *** installing help indices
+        ** building package indices
+        ** installing vignettes
+        ** testing if installed package can be loaded
+        * DONE (stplanr)
+
+        The downloaded source packages are in
+        ‘/tmp/RtmpOGJu7H/downloaded_packages’
 
 7.
 

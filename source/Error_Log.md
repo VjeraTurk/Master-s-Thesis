@@ -163,7 +163,6 @@ ___
 
 ^^ nije pomoglo
 ___
-ali...
 
     install.packages("rgdal")
         Installing package into ‘/home/adminuser/R/x86_64-pc-linux-gnu-library/3.5’
@@ -203,7 +202,10 @@ http://www.sarasafavi.com/installing-gdalogr-on-ubuntu.html
 ^^nije pomoglo
 ___
 
-**!!WARNING!! LATER PROVED TO BE BAD SOLUTION!!!: **
+
+
+**!!WARNING!! LATER PROVEN TO BE BAD SOLUTION!!!: **
+
 https://askubuntu.com/questions/1068266/how-to-get-gdal-2-0-0-on-ubuntu-16-04-lts   
 
     
@@ -435,12 +437,12 @@ https://askubuntu.com/questions/1068266/how-to-get-gdal-2-0-0-on-ubuntu-16-04-lt
         Processing triggers for systemd (229-4ubuntu12) ...
         Processing triggers for ureadahead (0.100.0-19) ...
 
-**CORRECT?**
+**CORRECT?**  
 https://github.com/ropensci/MODIStsp/issues/155
     
     sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
 
-6. 
+6.
 
 installing stplanr
     https://github.com/ropensci/stplanr
@@ -579,6 +581,9 @@ link sugests problem is in GDAL version
                 500 http://ppa.launchpad.net/ubuntugis/ppa/ubuntu xenial/main amd64 Packages
              1.11.3+dfsg-3build2 500
                 500 http://archive.ubuntu.com/ubuntu xenial/universe amd64 Packages
+
+
+7.
 
 
 

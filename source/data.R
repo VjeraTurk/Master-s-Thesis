@@ -19,10 +19,6 @@ Truck ID, Date Time, Latitude, Longitude, Speed
 require("data.table")
 require("readr")
 
-#windows
-#setwd("~/Vjera/DIPLOMSKI RAD/data/samples")
-#setwd("~/Vjera/DIPLOMSKI RAD/data")
-
 setwd("~/CODM/masters-thesis/data/samples")
 setwd("~/CODM/masters-thesis/data")
 
@@ -44,6 +40,38 @@ setwd("~/CODM/masters-thesis/data")
 ##csv-read=621.46sec  ffdf-write=72.23sec  TOTAL=693.69sec
 ## variable size 3.6 Mb ?!
 
+file = paste(getwd(),"/PhoneData",sep="")
+phone = c("SIM Card ID", "Time", "Latitude", "Longitude")
+
+#system.time( PhoneData = fread(file=file, sep="auto", header=FALSE, col.names = phone))
+## Error in system.time(PhoneData = fread(file = file, sep = "auto", header = FALSE,  : 
+## unused argument (PhoneData = fread(file = file, sep = "auto", header = FALSE, col.names = phone))
+                                       
+system.time( PhoneData <- fread(file=file, sep="auto", header=FALSE, col.names = phone, quote=""))
+
+
+# neka komanda
+##Error: C stack usage  343997353 is too close to the limit
+
+setorder(PhoneData, Time)#radi!! after added quote=""
+
+
+#Cstack_info()
+##size    current  direction eval_depth 
+##7969177      25240          1          2 
+
+#PhoneData[order(Time)]
+##"never" ends
+
+#system.time(setorderv(PhoneData,PhoneData$Time))
+## Error: C stack usage  344004761 is too close to the limit
+## Timing stopped at: 55.25 1.528 115.3
+
+require(h2o)
+
+
+########################################
+
 file = paste(getwd(),"/TaxiData",sep="")
 taxi = c("Taxi ID", "Time", "Latitude", "Longitude", "Occupancy Status", "Speed")
 TaxiData = fread(file=file, sep="auto", header=FALSE, col.names = taxi)
@@ -52,11 +80,6 @@ file = paste(getwd(),"/BusData",sep="")
 bus = c("BUS", "ID", "Time", "PlateID", "Latitude", "Longitude", "Speed")
 BusData = fread(file=file, sep="auto", header=FALSE, col.names = bus)
 
-file = paste(getwd(),"/PhoneData",sep="")
-phone = c("SIM Card ID", "Time", "Latitude", "Longitude")
-PhoneData = fread(file=file, sep="auto", header=FALSE, col.names = phone)
-
-#########
 file = paste(getwd(),"/SmartCardData",sep="")
 smartCard = c("Smartcard ID", "Time", "Transaction type", "Metro Station or Bus Line")
 SmartCardData = fread(file=file, sep="auto", header=FALSE)

@@ -27,6 +27,19 @@ Solution?!
     
 Problem : 32-bit Windows  
 Solution: Decided to move to 64 bit Linux Mint (Ubuntu)  
+
+
+4.
+    data<-read_delim_chunked(file, delim=",", chunk_size = 10000, col_names=TRUE,progress=TRUE)
+        Using ',' as decimal and '.' as grouping mark. Use read_delim() for more control.
+        Error in guess_header_(datasource, tokenizer, locale) : 
+        Cannot read file C:/Users/admin/Documents/Vjera/DIPLOMSKI RAD/data/BusData: Not enough storage is available to process this command.
+
+    TaxiData <- read.csv.ffdf(file=file, header=FALSE, col.names=taxi, VERBOSE=TRUE)#fileEncoding 
+        csv-read=621.46sec  ffdf-write=72.23sec  TOTAL=693.69sec
+
+## variable size 3.6 Mb ?!
+
 ___
 
 ## 64-bit Linux Mint:  

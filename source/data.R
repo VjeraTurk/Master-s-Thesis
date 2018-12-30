@@ -18,54 +18,47 @@ Truck ID, Date Time, Latitude, Longitude, Speed
 
 require("data.table")
 require("readr")
+require("fasttime")
 
 setwd("~/CODM/masters-thesis/data/samples")
 setwd("~/CODM/masters-thesis/data")
-
-#file = file.choose()
-#data <- read.csv(file)
-##Error: cannot allocate vector of size 125.0 Mb
-
-#TaxiData = fread(file=file, sep="auto", VERBOSE=TRUE)
-##Windows:
-##Error in fread(file = file, sep = "auto") : 
-##Opened 0TB (1947283562 bytes) file ok but could not memory map it. This is a 32bit process. Please upgrade to 64bit.
-
-#data<-read_delim_chunked(file, delim=",", chunk_size = 10000, col_names=TRUE,progress=TRUE)
-##Using ',' as decimal and '.' as grouping mark. Use read_delim() for more control.
-##Error in guess_header_(datasource, tokenizer, locale) : 
-##Cannot read file C:/Users/admin/Documents/Vjera/DIPLOMSKI RAD/data/BusData: Not enough storage is available to process this command.
-
-##TaxiData <- read.csv.ffdf(file=file, header=FALSE, col.names=taxi, VERBOSE=TRUE)#fileEncoding 
-##csv-read=621.46sec  ffdf-write=72.23sec  TOTAL=693.69sec
-## variable size 3.6 Mb ?!
-
+########################################
 file = paste(getwd(),"/PhoneData",sep="")
 phone = c("SIM Card ID", "Time", "Latitude", "Longitude")
 
-#system.time( PhoneData = fread(file=file, sep="auto", header=FALSE, col.names = phone))
-## Error in system.time(PhoneData = fread(file = file, sep = "auto", header = FALSE,  : 
-## unused argument (PhoneData = fread(file = file, sep = "auto", header = FALSE, col.names = phone))
-                                       
+setClass('myTime')
+setAs('character','myTime', function(from) as.Date(from, format='%H:%M:%S'))
+
+colCl = c("numeric","myTime","numeric","numeric")
+
+system.time( PhoneData <- fread(file=file, sep="auto", header=FALSE, colClasses = c('numeric','myTime','numeric','numeric'), col.names = phone, quote=""))
+str(PhoneData)
+
+system.time(setorder(PhoneData, Time))#radi!! after added quote=""
+
+########################################
+
+file = paste(getwd(),"/PhoneData_ordered_by_Time.csv",sep="")
+phone = c("SIM Card ID", "Time", "Latitude", "Longitude")
 system.time( PhoneData <- fread(file=file, sep="auto", header=FALSE, col.names = phone, quote=""))
 
-
-# neka komanda
-##Error: C stack usage  343997353 is too close to the limit
-
-setorder(PhoneData, Time)#radi!! after added quote=""
+PDsample = head(PhoneData,50000)
+PDsample_backup = copy(PDsample)
+PDsample = copy(PDsample_backup)
 
 
-#Cstack_info()
-##size    current  direction eval_depth 
-##7969177      25240          1          2 
+#require(hsm)
+#PDsample$Time = as.hsm(PDsample$Time)
 
-#PhoneData[order(Time)]
-##"never" ends
+#strptime(PDsample$Time, format ="%H:%M:%S")#returns class POSIXlt- a list
 
-#system.time(setorderv(PhoneData,PhoneData$Time))
-## Error: C stack usage  344004761 is too close to the limit
-## Timing stopped at: 55.25 1.528 115.3
+#PDsample[, (PDsample$Time):=lapply(PDsample$Time, function(x) as.POSIXct(strptime(x,"%H:%M%S"))), .SDcols=cols]#nisu dobri argumenti
+PDsample[, posixct:= as.POSIXct(paste(Time),format("%H%M%S"),tz="GTM")]
+
+PDsample[, .(count = .N), by = .(Time, interval = hour(Time) %/% 3)]
+
+#split(PDsample, cut(PDsample$Time,breaks = "hour"))
+##PDsample$group = cumsum(ifelse(difftime(PDsample$Time, shift( PDsample$Time, fill = PDsample$Time[1]),units = "hours") >=3))
 
 require(h2o)
 

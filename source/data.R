@@ -44,23 +44,42 @@ system.time(setorder(PhoneData, Time))#radi!! after added quote=""
 
 file = paste(getwd(),"/PhoneData_ordered_by_Time.csv",sep="")
 phone = c("SIM Card ID", "Time", "Latitude", "Longitude")
-system.time( PhoneData <- fread(file=file, sep="auto", header=FALSE, col.names = phone, quote=""))
+system.time( PhoneData <- fread(file=file, sep="auto", header=FALSE, col.names = phone, quote="")) # bitno da ima quote 
 
-PDsample = head(PhoneData,50000)
-PDsample_backup = copy(PDsample)
+#PDsample = head(PhoneData,50000)
+system.time( PDsample -> PhoneData[sample(nrow(PhoneData), 50000), ])#random smaple https://stat.ethz.ch/pipermail/r-help/2007-February/125860.html,  zdere ram, blocka se ako nema dosta
+
+PDsample_backup = copy(PDsample) # copy, inace pointer
 PDsample = copy(PDsample_backup)
 
 
 #require(hsm)
 #PDsample$Time = as.hsm(PDsample$Time)
-
 #strptime(PDsample$Time, format ="%H:%M:%S")#returns class POSIXlt- a list
 
 #PDsample[, (PDsample$Time):=lapply(PDsample$Time, function(x) as.POSIXct(strptime(x,"%H:%M%S"))), .SDcols=cols]#nisu dobri argumenti
-PDsample[, posixct:= as.POSIXct(paste(Time),format("%H%M%S"),tz="GTM")]
+#PDsample[, posixct:= as.POSIXct(paste(Time),format("%H:%M:%S"),tz="GTM")]
+#PDsample[, posixct:= as.POSIXct(paste(Time),format("%T"),tz="GTM")]
+# POSIX jednostavno nema format, klasa je datetime i tjt.
+
+#t = strptime(PDsample$Time,"%T") #doda datum
+
+
+require(lubridate)
+require(chron)
+
+#onlytime <- times(t)
+onlytime = lubridate::hms(PDsample$Time)
+PDsample[, .(count = .N), by = .(Time, interval = hour(onlytime) %/% 3)]
+
+onlytime = lubridate::hms(PhoneData$Time)
+PhoneData[, .(count = .N), by = .(Time, interval = hour(onlytime) %/% 3)]
+
+
+
+t=parse_date_time(PDsample$Time, "H%:M%:S%") #doda datum, ali ne danasnji
 
 PDsample[, .(count = .N), by = .(Time, interval = hour(Time) %/% 3)]
-
 #split(PDsample, cut(PDsample$Time,breaks = "hour"))
 ##PDsample$group = cumsum(ifelse(difftime(PDsample$Time, shift( PDsample$Time, fill = PDsample$Time[1]),units = "hours") >=3))
 

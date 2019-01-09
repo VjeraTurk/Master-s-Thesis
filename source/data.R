@@ -1,62 +1,66 @@
-"""
-Data descriptions
-
-Smartcard ID, Time, Transaction type (21, 22, 31), Metro Station or Bus Line
-Transaction Type:  31-Bus Boarding & 21-Subway Swiped-In  & 22-Subway Swiped-Out
-
-SIM Card ID, Time, Latitude, Longitude
-
-Taxi ID, Time, Latitude, Longitude, Occupancy Status, Speed
-Occupancy Status: 1-with passengers & 0-with passengers
-
-BUS ID, Time, PlateID, Latitude, Longitude, Speed
-
-Truck ID, Date Time, Latitude, Longitude, Speed
-"""
 #TODO: install.packages(<list all required packages>)
 #install.packages()
 
 require("data.table")
 require("readr")
-require("fasttime")
+#require("fasttime")
 
 setwd("~/CODM/masters-thesis/data/samples")
 setwd("~/CODM/masters-thesis/data")
-########################################
-file = paste(getwd(),"/PhoneData",sep="")
+
+########## Import PhoneData ################
+file = paste(getwd(),"/PhoneData", sep="")
 phone = c("SIM Card ID", "Time", "Latitude", "Longitude")
-
-#setClass('myTime')
-#setAs('character','myTime', function(from) as.Date(from, format='%H:%M:%S'))
-#colCl = c("numeric","myTime","numeric","numeric")
-
-require(chron)
-require(hsm)
-
 system.time( PhoneData <- fread(file=file, sep="auto", header=FALSE, colClasses = c('numeric','numeric','numeric','numeric'), col.names = phone, quote=""))
-##ignorira colClasses, cak ne baci ni warning (**rage**)
-
-str(PhoneData)
-
+    #38218717 obs. of  4 variables
+str(PhoneData)##Time je chr -> "ignorira" colClasses, cak ne baci ni warning da Time ne moze ucitati ko numeric
 system.time(setorder(PhoneData, Time))#radi!! after added quote=""
 
-########################################
+  # save()/load() - save multiple objects to a file - RDATA, saveRDS()/loadRDS() - for one object to a file - RDS, save.image() save workspace 
+system.time(fwrite(PhoneData, file = paste(getwd(),"/PhoneData_ordered_by_Time.csv", sep="" )))# size 1,5 GB
+save(PhoneData, file = paste(getwd(),"/PhoneData_ordered_by_Time.RData", sep="")) #file ima samo 254,8 MB 
 
-file = paste(getwd(),"/PhoneData_ordered_by_Time.csv",sep="")
+### Import PhoneData_ordered_by_Time.csv  ###
+file = paste(getwd(),"/PhoneData_ordered_by_Time.csv", sep="")
 phone = c("SIM Card ID", "Time", "Latitude", "Longitude")
-system.time( PhoneData <- fread(file=file, sep="auto", header=FALSE, col.names = phone, quote="")) # bitno da ima quote 
+system.time( PhoneData <- fread(file=file, sep="auto", header=FALSE, col.names = phone, quote="")) # bitno je da ima quote 
+  #38218718 obs. of  4 variables
+  #   user  system elapsed 
+  # 37.640   1.308  70.624 
 
+### load PhoneData_ordered_by_Time.RData  ###
+file = paste(getwd(),"/PhoneData_ordered_by_Time.RData", sep="")
+system.time(load(file = file))
+  #  user  system elapsed 
+  # 17.132   0.636  18.107
 
+##########  Random sample 50k  ############
 #PDsample = head(PhoneData,50000)
-system.time( PDsample -> PhoneData[sample(nrow(PhoneData), 50000), ])
-#random smaple https://stat.ethz.ch/pipermail/r-help/2007-February/125860.html,  zdere ram, blocka se ako nema dosta
-#TODO: izgubi se ORDER!
+system.time( PDsample <- PhoneData[sample(nrow(PhoneData), 50000), ])
+#random sample https://stat.ethz.ch/pipermail/r-help/2007-February/125860.html,  zdere ram, blocka se ako nema dosta
 system.time(setorder(PDsample, Time))
 
+PDsample_50k = PDsample 
+system.time(save( PDsample_50k, file = paste(getwd(),"/PDsample_50k.RData", sep="")))
+
+##########  Random sample 500k  ############
+#PDsample = head(PhoneData,500000)
+system.time( PDsample <- PhoneData[sample(nrow(PhoneData), 500000), ])
+# user   system  elapsed 
+# 2.036    8.120 1487.620
+system.time(setorder(PDsample, Time))
+
+PDsample_500k = PDsample 
+system.time(save( PDsample_500k, file = paste(getwd(),"/PDsample_500k.RData", sep="")))
+
+
+##########  Import sample 50k  ############
 file = paste(getwd(),"/PDsample_50k.RData",sep="")
-load(file = file)
+system.time( load(file = file))
 
 PDsample = PDsample_50k
+
+#### Sample #### Good for both 50k and 500k samples
 
 PDsample_backup = copy(PDsample) # copy, inace pointer
 PDsample = copy(PDsample_backup)
@@ -70,25 +74,35 @@ PDsample = copy(PDsample_backup)
 #PDsample[, posixct:= as.POSIXct(paste(Time),format("%T"),tz="GTM")]
 # POSIX jednostavno nema format, klasa je datetime i tjt.
 
-t = strptime(PDsample$Time,"%T") #doda datum
-#t = parse_date_time(PDsample$Time, "H%:M%:S%") #doda datum, ali ne danasnji
-
-
 require(lubridate)
-require(chron)
 
-onlytime <- times(t)
+t1 = strptime(PDsample$Time,"%T") #doda danasnji datum "2019-01-09 01:20:18 CET" POSIXlt
+t2 = parse_date_time(PDsample$Time, "H%:M%:S%") #doda datum, ali ne danasnji "0-01-01 01:20:10 UTC" POSIXct
+
+t = t1 # 2.5 MB
+t = t2 # 391.2 KB
+
+#require(chron)
+#onlytime <- times(t) #izgleda ne radi
+
 system.time(onlytime <- lubridate::hms(PDsample$Time))
-# 50 k    
-# user  system elapsed 
-#0.036   0.000   0.068 
-
 PDsample[, .(count = .N), by = .(Time, interval = hour(onlytime) %/% 3)] #GOOD # rijesenje su stupci Time interval i count, no nisu pridodani kao dio PDsample
 
-#traje dugo (ne dovrsava se):
-onlytime = lubridate::hms(PhoneData$Time) 
 
-PhoneData[, .(count = .N), by = .(Time, interval = hour(onlytime) %/% 3)]
+t1 = strptime(PhoneData$Time,"%T") #doda danasnji datum "2019-01-09 01:20:18 CET" POSIXlt
+t = t1 # 2.5 MB
+
+system.time( t2 = parse_date_time(PhoneData$Time, "H%:M%:S%")) #doda datum, ali ne danasnji "0-01-01 01:20:10 UTC" POSIXct
+t = t2 # 391.2 KB
+
+#traje dugo (ne dovrsava se)
+system.time(onlytime <- lubridate::hms(PhoneData$Time)) 
+# Error: cannot allocate vector of size 291.6 Mb
+# Timing stopped at: 4.908 3.772 124.8
+PhoneData[, .(count = .N), by = .(Time, interval = hour(lubridate::hms(PhoneData$Time)) %/% 3)]
+
+
+
 
 
 """
@@ -110,7 +124,6 @@ hts. thief uses hierarchical methods to reconcile forecasts of temporally aggreg
 An alternative approach to reconciling forecasts of hierarchical time series is provided by gtop. thief
 """
 
-
 require(timeSeries)#rovides a class and various tools for financial time series. This includes basic functions such as scaling and sorting, subsetting, mathematical operations and statistical functions.
 require(jmotif)#jmotif implements tools based on time series symbolic discretization for finding motifs in time series and facilitates interpretable time series classification.
 require(xts)
@@ -122,7 +135,23 @@ PDsample$Time
 ##PDsample$group = cumsum(ifelse(difftime(PDsample$Time, shift( PDsample$Time, fill = PDsample$Time[1]),units = "hours") >=3))
 
 require(h2o)
-########################################
+"""
+Data descriptions
+
+Smartcard ID, Time, Transaction type (21, 22, 31), Metro Station or Bus Line
+Transaction Type:  31-Bus Boarding & 21-Subway Swiped-In  & 22-Subway Swiped-Out
+
+SIM Card ID, Time, Latitude, Longitude
+
+Taxi ID, Time, Latitude, Longitude, Occupancy Status, Speed
+Occupancy Status: 1-with passengers & 0-with passengers
+
+BUS ID, Time, PlateID, Latitude, Longitude, Speed
+
+Truck ID, Date Time, Latitude, Longitude, Speed
+"""
+
+
 
 file = paste(getwd(),"/TaxiData",sep="")
 taxi = c("Taxi ID", "Time", "Latitude", "Longitude", "Occupancy Status", "Speed")

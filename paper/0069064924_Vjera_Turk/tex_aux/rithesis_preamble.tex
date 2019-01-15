@@ -19,22 +19,22 @@
 %\setlist[enumerate,1]{leftmargin=1cm}
 %\setlist[enumerate,2]{leftmargin=1.5cm}
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-%\usepackage{datetime}  % automatic months, years, days
-%\newcommand{\MONTH}{%
-%  \ifcase\the\month
-%  \or sijeèanj% 1
-%  \or veljaèa% 2
-%  \or ožujak% 3
-%  \or travanj% 4
-%  \or svibanj% 5
-%  \or lipanj% 6
-%  \or srpanj% 7
-%  \or kolovoz% 8
-%  \or rujan% 9
-%  \or listopad% 10
-%  \or studeni% 11
-%  \or prosinac% 12
-%  \fi}
+\usepackage{datetime}  % automatic months, years, days
+\renewcommand{\MONTH}{% renew
+  \ifcase\the\month
+  \or sijeèanj% 1
+  \or veljaèa% 2
+  \or ožujak% 3
+  \or travanj% 4
+  \or svibanj% 5
+  \or lipanj% 6
+  \or srpanj% 7
+  \or kolovoz% 8
+  \or rujan% 9
+  \or listopad% 10
+  \or studeni% 11
+  \or prosinac% 12
+  \fi}
 %%::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 %\usepackage{setspace}
 %\usepackage{lipsum,lineno}

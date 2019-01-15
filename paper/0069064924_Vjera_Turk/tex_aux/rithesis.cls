@@ -1282,9 +1282,9 @@
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 \newcommand{\MONTH}{%
 	\ifcase\the\month
-	\or sijeèanj% 1
-	\or veljaèa% 2
-	\or ožujak% 3
+	\or sij?anj% 1
+	\or velja?a% 2
+	\or o?ujak% 3
 	\or travanj% 4
 	\or svibanj% 5
 	\or lipanj% 6

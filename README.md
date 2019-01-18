@@ -12,8 +12,7 @@ ___
 
 [ROKOVI PRIJAVE I PREDAJE DIPLOMSKIH RADOVA ](http://www.riteh.uniri.hr/media/filer_public/4f/ed/4fed789d-5ea3-4b31-b755-6da490814196/rokovi_za_predaju_zavrsnih_radova_2017-18_dsvra.pdf)
 
-
-4. 15.01.2019. 22.01.2019.
+...
 
 5. 12.03.2019. 19.03.2019.
 

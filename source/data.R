@@ -100,7 +100,7 @@ t = t2 # 391.2 KB
 # Rstudio freeza sve, katastrofa:
 # PhoneData[, Time:= as.POSIXct(paste(Time),format("%H:%M:%S"),tz="GTM")]
 
-#t1 = strptime(PhoneData$Time,"%T") #doda danasnji datum "2019-01-09 01:20:18 CET" POSIXlt
+t1 = strptime(PhoneData$Time,"%T") #doda danasnji datum "2019-01-09 01:20:18 CET" POSIXlt
 #t = t1 # 2.5 MB
 
 #system.time( t2 = parse_date_time(PhoneData$Time, "H%:M%:S%")) #doda datum, ali ne danasnji "0-01-01 01:20:10 UTC" POSIXct
@@ -128,12 +128,26 @@ PhoneData = split(PhoneData$Time)
 ### ffdf Import PhoneData
 require(ff)
 file = paste(getwd(),"/PhoneData_ordered_by_Time.csv", sep="")
-phone = c("SIM Card ID", "Time", "Latitude", "Longitude")
-system.time(PhoneData <- read.csv.ffdf(file = file, col.names = phone, VERBOSE= TRUE))
+phone = c("SIM_Card_ID", "Time", "Latitude", "Longitude") #stavi točku umjesto razmaka
+system.time(PhoneData <- read.csv.ffdf(file = file, col.names = phone, VERBOSE= TRUE, colClass = c('numeric','ordered','numeric','numeric')))
+
 # user  system elapsed 
 # 59.76    2.10   76.57 
+require(ffbase)
 
-PhoneData[, Time:= as.POSIXct(paste(Time),format("%H:%M:%S"),tz="GTM")]
+t = as.data.frame(PhoneData$Time)
+PhoneData$Time <- with(PhoneData, as.POSIXct(as.character(Time)), by = 10000)
+ramclass(xff$time)
+
+
+
+
+PhoneData[, Time:= as.POSIXct(paste(PhoneData$Time),format("%H:%M:%S"),tz="GTM")]
+require(lubridate)
+t = parse_date_time(PhoneData$Time, "H%:M%:S%")
+t = strptime(PhoneData$Time,"%T")
+
+PhoneData$Time= ff(as.POSIXct(PhoneData$Time,format("%H:%M:%S"),tz="GTM"))
 
 require(dplyr)
 

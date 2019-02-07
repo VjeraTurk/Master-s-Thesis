@@ -8,17 +8,20 @@ require("readr")
 setwd("~/CODM/masters-thesis/data/samples")
 setwd("~/CODM/masters-thesis/data")
 
-  ########## Import PhoneData ################
+########## Import PhoneData ################
   file = paste(getwd(),"/PhoneData", sep="")
   phone = c("SIM Card ID", "Time", "Latitude", "Longitude")
   system.time( PhoneData <- fread(file=file, sep="auto", header=FALSE, colClasses = c('numeric','numeric','numeric','numeric'), col.names = phone, quote=""))
       #38218717 obs. of  4 variables
   str(PhoneData)##Time je chr -> "ignorira" colClasses, cak ne baci ni warning da Time ne moze ucitati ko numeric
+  ##### Order by Time
   system.time(setorder(PhoneData, Time))#radi!! after added quote=""
   
-    # save()/load() - save multiple objects to a file - RDATA, saveRDS()/loadRDS() - for one object to a file - RDS, save.image() save workspace 
+  # save()/load() - save multiple objects to a file - RDATA, saveRDS()/loadRDS() - for one object to a file - RDS, save.image() save workspace 
   system.time(fwrite(PhoneData, file = paste(getwd(),"/PhoneData_ordered_by_Time.csv", sep="" )))# size 1,5 GB
   save(PhoneData, file = paste(getwd(),"/PhoneData_ordered_by_Time.RData", sep="")) #file ima samo 254,8 MB 
+  save(PhoneData, file = paste(getwd(),"/PhoneData_Time_POSIXct.RData", sep=""))
+  system.time(fwrite(PhoneData, file = paste(getwd(),"/PhoneData_Time_POSIXct.csv", sep="" )))
   
   ### Import PhoneData_ordered_by_Time.csv  ###
   file = paste(getwd(),"/PhoneData_ordered_by_Time.csv", sep="")
@@ -27,134 +30,98 @@ setwd("~/CODM/masters-thesis/data")
     #38218718 obs. of  4 variables
     #   user  system elapsed 
     # 37.640   1.308  70.624
-  
+
   ### load PhoneData_ordered_by_Time.RData  ###
   file = paste(getwd(),"/PhoneData_ordered_by_Time.RData", sep="")
   system.time(load(file = file))
-    #  user  system elapsed 
-    # 17.132   0.636  18.107
+  #  user  system elapsed 
+  # 17.132   0.636  18.107
+  # 35.772   1.540 103.500 
 
-  ##########  Random sample 50k  ############
-  #PDsample = head(PhoneData,50000)
-  system.time( PDsample <- PhoneData[sample(nrow(PhoneData), 50000), ])
-  #random sample https://stat.ethz.ch/pipermail/r-help/2007-February/125860.html,  zdere ram, blocka se ako nema dosta
-  system.time(setorder(PDsample, Time))
+  ### Import PhoneData_Time_POSIXct.csv  ###
+
+  file = paste(getwd(),"/PhoneData_Time_POSIXct.csv", sep="")
+  phone = c("SIM Card ID", "Time", "Latitude", "Longitude")
+  system.time( PhoneData <- fread(file = file, sep="auto", header=FALSE, col.names = phone, quote = "")) # bitno je da ima quote 
+  #  user  system elapsed 
+  # 39.388   1.604  78.404
+
+  require(ff)
+  file = paste(getwd(),"/PhoneData_Time_POSIXct.csv", sep="")
+  phone = c("SIM_Card_ID", "Time", "Latitude", "Longitude") #stavi točku umjesto razmaka
+  system.time(PhoneData <- read.csv.ffdf(file = file, col.names = phone, VERBOSE= TRUE, colClass = c('numeric','POSIXct','numeric','numeric')))
+  # user  system elapsed 
+  # 59.76    2.10   76.57
   
-  PDsample_50k = PDsample 
-  system.time(save( PDsample_50k, file = paste(getwd(),"/PDsample_50k.RData", sep="")))
-  
-  ##########  Random sample 500k  ############
-  #PDsample = head(PhoneData,500000)
-  system.time( PDsample <- PhoneData[sample(nrow(PhoneData), 500000), ])
-  # user   system  elapsed 
-  # 2.036    8.120 1487.620
-  system.time(setorder(PDsample, Time))
-  
-  PDsample_500k = PDsample 
-  system.time(save( PDsample_500k, file = paste(getwd(),"/PDsample_500k.RData", sep="")))
+  ### load PhoneData_Time_POSIXct.RData  ###
+  file = paste(getwd(),"/PhoneData_Time_POSIXct.RData", sep="")
+  system.time(load(file = file))
+  # user  system elapsed 
+  # 6.692   0.624   7.679 
+    
+###### set time type to POSIXct #############
 
-  ##########  Random sample 1 M  ############
-  #PDsample = head(PhoneData,1000000)
-  system.time( PDsample <- PhoneData[sample(nrow(PhoneData), 1000000), ])
+  # Rstudio freeza sve, katastrofa:
+  # PhoneData[, Time:= as.POSIXct(paste(Time),format("%H:%M:%S"),tz="GTM")]
+  # PhoneData[, posixct:= as.POSIXct(paste(Time),format("%T"),tz="GTM")]
 
-  
-  system.time(setorder(PDsample, Time))
-  
-  PDsample_1M = PDsample 
-  system.time(save( PDsample_1M, file = paste(getwd(),"/PDsample_1M.RData", sep="")))
+  system.time( t1 <- strptime(PhoneData$Time,"%T")) #doda danasnji datum "2019-01-09 01:20:18 CET" POSIXlt
+  #t = t1 # 2.5 MB
 
-##########  Import sample 50k  ############
-file = paste(getwd(),"/PDsample_50k.RData",sep="")
-system.time( load(file = file))
-PDsample = PDsample_50k
+  system.time( t2 <- parse_date_time(PhoneData$Time, "H%:M%:S%")) #doda datum, ali ne danasnji "0-01-01 01:20:10 UTC" POSIXct
+  t = t2 # 291,6 KB
+  save(t2, file = paste(getwd(),"/Time_POSIXct.RData", sep="")) 
+  system.time(PhoneData$Time <- t2)
 
-##########  Import sample 500k  ############
-file = paste(getwd(),"/PDsample_500k.RData",sep="")
-system.time( load(file = file))
-PDsample = PDsample_500k
-
-#### Sample #### Good for both 50k and 500k samples
-
-PDsample_backup = copy(PDsample) # copy, inace pointer
-PDsample = copy(PDsample_backup)
-
-# PDsample[, Time:= as.POSIXct(paste(Time),format("%H:%M:%S"),tz="GTM")]
-# POSIX jednostavno nema format, klasa je datetime i tjt.
-
-#require(hsm)
-#PDsample$Time = as.hsm(PDsample$Time)
-
-require(lubridate)
-system.time(onlytime <- lubridate::hms(PDsample$Time))
-PDsample[, .(count = .N), by = .(Time, interval = hour(onlytime) %/% 3)] #GOOD # rijesenje su stupci Time interval i count, no nisu pridodani kao dio PDsample
-
-t1 = strptime(PDsample$Time,"%T") #doda danasnji datum "2019-01-09 01:20:18 CET" POSIXlt
-t2 = parse_date_time(PDsample$Time, "H%:M%:S%") #doda datum, ali ne danasnji "0-01-01 01:20:10 UTC" POSIXct
-
-t = t1 # 2.5 MB
-t = t2 # 391.2 KB
-
-
-#######
-
-# Rstudio freeza sve, katastrofa:
-# PhoneData[, Time:= as.POSIXct(paste(Time),format("%H:%M:%S"),tz="GTM")]
-
-t1 = strptime(PhoneData$Time,"%T") #doda danasnji datum "2019-01-09 01:20:18 CET" POSIXlt
-#t = t1 # 2.5 MB
-
-#system.time( t2 = parse_date_time(PhoneData$Time, "H%:M%:S%")) #doda datum, ali ne danasnji "0-01-01 01:20:10 UTC" POSIXct
-#t = t2 # 391.2 KB
-
-system.time(onlytime <- lubridate::hms(PhoneData$Time))
-
+####### split into intervals ################
+   
+  system.time(onlytime <- lubridate::hms(PhoneData$Time))
   # Error: cannot allocate vector of size 2.0 Gb
   # Error: cannot allocate vector of size 291.6 Mb
   # Timing stopped at: 4.908 3.772 124.8
   # traje dugo (ne dovrsava se)
   # zablokira mi Linux, cak ni Ctrl+Alt+F* ne reagira
+  # PhoneData[, .(count = .N), by = .(Time, interval = hour(lubridate::hms(PhoneData$Time)) %/% 3)]
 
-# PhoneData[, .(count = .N), by = .(Time, interval = hour(lubridate::hms(PhoneData$Time)) %/% 3)]
+  #system.time(cut(PDsample$Time), breaks = c("00:03:00","00:09:00","00:012:00","00:15:00","00:18:00","00:21:00", right=FALSE))
+  # pogresni argumenti
+  PhoneData = split(PhoneData$Time) #Error in split.default(PhoneData$Time) : argument "f" is missing, with no default
 
-#######
-# PhoneData[, posixct:= as.POSIXct(paste(Time),format("%T"),tz="GTM")]
-  # blokira
 
-#system.time(cut(PDsample$Time), breaks = c("00:03:00","00:09:00","00:012:00","00:15:00","00:18:00","00:21:00", right=FALSE))
- # pogresni argumenti
-
-PhoneData = split(PhoneData$Time)
-
-### ffdf Import PhoneData
 require(ff)
-file = paste(getwd(),"/PhoneData_ordered_by_Time.csv", sep="")
+file = paste(getwd(),"/PhoneData_Time_POSIXct.csv", sep="")
 phone = c("SIM_Card_ID", "Time", "Latitude", "Longitude") #stavi točku umjesto razmaka
-system.time(PhoneData <- read.csv.ffdf(file = file, col.names = phone, VERBOSE= TRUE, colClass = c('numeric','ordered','numeric','numeric')))
-
+system.time(PhoneData <- read.csv.ffdf(file = file, col.names = phone, VERBOSE= TRUE, colClass = c('numeric','POSIXct','numeric','numeric')))
 # user  system elapsed 
 # 59.76    2.10   76.57 
-require(ffbase)
 
+require(ffbase)
 t = as.data.frame(PhoneData$Time)
 PhoneData$Time <- with(PhoneData, as.POSIXct(as.character(Time)), by = 10000)
 ramclass(xff$time)
 
-
-
-
+###Test these:
 PhoneData[, Time:= as.POSIXct(paste(PhoneData$Time),format("%H:%M:%S"),tz="GTM")]
 require(lubridate)
 t = parse_date_time(PhoneData$Time, "H%:M%:S%")
 t = strptime(PhoneData$Time,"%T")
-
 PhoneData$Time= ff(as.POSIXct(PhoneData$Time,format("%H:%M:%S"),tz="GTM"))
 
+
+
+### load PhoneData_Time_POSIXct.RData  ###
+file = paste(getwd(),"/PhoneData_Time_POSIXct.RData", sep="")
+system.time(load(file = file))
+# user  system elapsed 
+# 6.692   0.624   7.679 
+
+
+
+
 require(dplyr)
-
-
-
-
 library(chron)
+
+
 
 """
 Analysis of large groups of time series
@@ -178,8 +145,6 @@ An alternative approach to reconciling forecasts of hierarchical time series is 
 require(timeSeries)#rovides a class and various tools for financial time series. This includes basic functions such as scaling and sorting, subsetting, mathematical operations and statistical functions.
 require(jmotif)#jmotif implements tools based on time series symbolic discretization for finding motifs in time series and facilitates interpretable time series classification.
 require(xts)
-
-
 
 #split(PDsample, cut(PDsample$Time,breaks = "hour"))
 ##PDsample$group = cumsum(ifelse(difftime(PDsample$Time, shift( PDsample$Time, fill = PDsample$Time[1]),units = "hours") >=3))

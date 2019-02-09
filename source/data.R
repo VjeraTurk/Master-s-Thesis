@@ -72,6 +72,9 @@ setwd("~/CODM/masters-thesis/data")
 
 file = paste(getwd(),"/PhoneData_ordered_by_ID_Time.RData", sep="")
 system.time(load(file = file))
+  
+  #POSIXct is the signed number of seconds since “the epoch”. For example it was
+  #POSIXlt is one of many text | character | string formats
 
   ##### set time format to POSIXct #####
   # Rstudio freeza sve, katastrofa:
@@ -85,13 +88,13 @@ system.time(load(file = file))
   #system.time(PhoneData$Time <- ff(as.POSIXct(PhoneData$Time,format("%H:%M:%S"),tz="GTM")))
   #Error: cannot allocate vector of size 291.6 Mb
 
-  # system.time( t1 <- strptime(PhoneData$Time,"%T")) # doda danasnji datum "2019-01-09 01:20:18 CET" POSIXlt
-  # t = t1 # 2.5 MB
+  # system.time( t1 <- strptime(PhoneData$Time,"%T")) "ne radi #(inace) doda danasnji datum "2019-01-09 01:20:18 CET" POSIXlt
+  # t = t1 
   
   system.time( t2 <- parse_date_time(PhoneData$Time, "H%:M%:S%")) # doda datum, ali ne danasnji "0-01-01 01:20:10 UTC" POSIXct
   # user  system elapsed 
   # 16.240   3.148 180.255 
-  t = t2 # 291,6 KB
+  t = t2 
   save(t, file = paste(getwd(),"/Time_POSIXct.RData", sep="")) 
   
   system.time(PhoneData$Time <- t) # long, but works
@@ -120,7 +123,6 @@ system.time(load(file = file))
     # 59.76    2.10   76.57
 
     
-    
 require("data.table")
 require("readr")
 setwd("~/CODM/masters-thesis/data")
@@ -138,7 +140,7 @@ system.time(load(file = file))
 require(ff)
 require(ffbase)
 
-PhoneData_ffdf = as.ffdf(PhoneData)
+system.time(PhoneData_ffdf <- as.ffdf(PhoneData))
 #no point in saving, can't load
 #save(PhoneData_ffdf, file = paste(getwd(),"/PhoneData_ffdf.RData", sep=""))# good
 #file = paste(getwd(),"/PhoneData_ffdf.RData", sep="")
@@ -147,7 +149,7 @@ PhoneData_ffdf = as.ffdf(PhoneData)
 # Error in open.ff(x, assert = TRUE) : 
 # file.access(filename, 0) == 0 is not TRUE
 
-####### split into intervals ################
+####### split into time intervals #############
    
   # system.time(onlytime <- lubridate::hms(PhoneData$Time))
   # Error: cannot allocate vector of size 2.0 Gb
@@ -164,12 +166,16 @@ PhoneData_ffdf = as.ffdf(PhoneData)
 require(lubridate)
 ramclass(PhoneData$Time)
 
+
+
 system.time(onlytime <- lubridate::hms(PhoneData_ffdf$Time))
 PDsample[, .(count = .N), by = .(Time, interval = hour(onlytime) %/% 3)] #GOOD # rijesenje su stupci Time interval i count, no nisu pridodani kao dio PDsample
 
 # Error in matrix(.Call(C_parse_hms, hms, order), nrow = 3L, dimnames = list(c("H",  : 
 # HMS argument must be a character vector
 # Timing stopped at: 96.67 3.688 194.2
+
+system.time(onlytime <- lubridate::hms(PhoneData$Time))
 
 require(dplyr)
 library(chron)

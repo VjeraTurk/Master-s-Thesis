@@ -1,11 +1,5 @@
-#system('free -m')
-
-# installing package TSdist
-# probem regarding rgl package
-# https://stackoverflow.com/questions/15292905/how-to-solve-the-error-missing-required-header-gl-gl-h-while-installing-the-p
-# apt-get install  libx11-dev mesa-common-dev libglu1-mesa-dev
-
-
+#system('free -m') # gc()
+#stackoverlfow "R: running function on multiple rows (groups) in data.frame" # view Do any of these answer your question?
 require("data.table")
 require("readr")
 require("ff")
@@ -19,6 +13,9 @@ setwd("~/CODM/masters-thesis/data")
 
   file = paste(getwd(),"/PhoneData_ID_Time_POSIXct.RData", sep="")
   system.time(load(file = file))
+  #   user  system elapsed 
+  # 5.416   0.572   6.122 
+  
   system.time(PhoneData_ffdf <- as.ffdf(PhoneData))
   system.time(ffsave(PhoneData_ffdf, file = paste(getwd(),"/PhoneData_ffdf",sep="")))
 
@@ -26,16 +23,6 @@ system.time(ffload(paste(getwd(),"/PhoneData_ffdf",sep="")))
 # user  system elapsed 
 # 6.756   0.880  28.701
 
-i = 1
-
-abc<-function(){
-  i = i+1
-  print(i) # ne povecava se
-}
-
-abcd<-function(){
-  
-}
 
 ffrowapply(X = PhoneData_ffdf, abcd())
 
@@ -61,14 +48,16 @@ system.time(trip())
 #((nrow(PhoneData_ffdf)/556186) * 259.4 )/60/60
 #[1] 4.951349 - pet sati? mora postojati bolje rjesenje
 
-#
 
 require(doMC)
-register
+########
+require("dplyr")
+system.time(group_by(PhoneData_ffdf,ID))
+#Error in UseMethod("group_by_") : 
+#no applicable method for 'group_by_' applied to an object of class "ffdf"
+#Timing stopped at: 0 0 0.002
 
-
-
-
+#PhoneData = as.data.frame(PhoneData_ffdf) #bad idea
 
 phone = c("ID", "Time", "Latitude", "Longitude")
 stops_df<-data.frame(phone)
@@ -76,12 +65,15 @@ starts_df<-data.frame(phone)
 
 
 require("dplyr")
+require("gapminder") # "Mind the gap"
+gapminder %>%
+  group_by(ID) %>%
+    do()
 
-
-
-
-#ja ovo valjda smijem i u pythonu...
-
+gapminder %>%
+  group_by(continent) %>%
+    summarize(qdiff = qdiff(lifeExp, probs = c(0.2, 0.8)))
+  
 #s= 2 min, k = 2, d = 10 min, g = 4 hours
 
 false_movement_reduction<-function(s){
@@ -96,6 +88,20 @@ stop_indentification<-function(k,d,g){
     
 }
 
+foo <- function (dataframe) {
+  print(dataframe)
+  #dataframe[sample(nrow(dataframe), 1), ]
+}
+
+df = head(PhoneData,100000)
+system.time(sapply(unique(df$ID), function (value) foo(df[df$ID == value, ]),simplify = FALSE))
+system.time(sapply(unique(PhoneData$ID), function (value) foo(PhoneData[PhoneData$ID == value, ]),simplify = FALSE))
+
+# 5 sati minumum racunajuci 2 usera po sekundi
+#ima dosta usera koji imaju samo 1 zapis, mozda je najpametnije njih prvo izbaciti 
+#definitivno algoritam testirati na dijelu podataka dok se ne usavrsi pokrenuti na svima
+# isprobati dply i ostale prijedloge, usporediti brzine, vazno je jer planiram pokretati sa vise razlicitih 
+# parametara/izvora
 
 
 # main()
@@ -136,7 +142,14 @@ stop_indentification<-function(k,d,g){
 #        d(previous_trip_start(trip_set), puak) > dmin)
 #    origin = previous_trip_start(trip_set)
 #  end
-#end
+#endID Time location
 
 
+fo<-function(group_of_rows_same_ID){
+  
+}
 
+# installing package TSdist
+# probem regarding rgl package
+# https://stackoverflow.com/questions/15292905/how-to-solve-the-error-missing-required-header-gl-gl-h-while-installing-the-p
+# apt-get install  libx11-dev mesa-common-dev libglu1-mesa-dev

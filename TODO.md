@@ -23,6 +23,10 @@
 * TAXI POM VS CDR POM ?
 * TAXI CPOM VS CDR CPOM ?
 * CDR POM VS CDR POM (TWICK TRIP DEFINITION, PERIOD)
+* grand-truth
+
+* simulacija cdr?
+* zbrojene matrice?! usporedba zbrojenih
 
 #### Matrix
 

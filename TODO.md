@@ -5,7 +5,7 @@
 #### R
 * DONE: instalirati noviju verziju! # upgraded to R version 3.5.1 (2018-07-02) -- "Feather Spray"
 * DONE: instaliran gdal, rgdal
-* IN PROGRESS: install stplanr
+* DONE: install stplanr
 
 #### **PARAMETRI USPOREDBE**
 * statističko učenje- problem klasifikacije
@@ -19,31 +19,38 @@
 
 * skalabilnost
 
+#### **USPOREDBA** RAZMISLITI
+* TAXI POM VS CDR POM ?
+* TAXI CPOM VS CDR CPOM ?
+* CDR POM VS CDR POM (TWICK TRIP DEFINITION, PERIOD)
+
 #### Matrix
+
 * DONE: Voronoi tessellations (base stations)
 * NEXT: R clipping Lovelence
-* generirati POM iz CDR (prema algoritmu iz objevljanog rada)(validirati)
+* IN PROGRESS: generirati POM iz CDR (prema algoritmu iz objevljanog rada- teško)(validirati)
 
-* generirati POM iz TAXI
+* generirati POM iz TAXI (pomoć Petra)
+* generirati CPOM iz CDR i TAXI (pomoć Petra, TehRep)
 
 * twickati PERIOD 15min-30min-1h-3h (over under fitting)
-* twickati definiciju KRAJA PUTOVANJA ?!
+* IN PROGRESS: twickati definiciju KRAJA PUTOVANJA ?!
 
 * opisati matricu, n x n ...?!
 * derivacija, determinanta ?!
 
 #### Graphical representation (matrix, image)
-
 * heatmapa
-* compare 2 images?! 
+* compare 2 images?! (MSSI)
 
 #### Paper
 
-* Sadržaj
-* RELATED WORK-> pozvati se na radove, spomenuti ključne ljude
+* IN PROGRESS: Sadržaj
+* IN PROGRESS: RELATED WORK-> pozvati se na radove, spomenuti ključne ljude
 
 * Prometna vs Napredna
 * Fizička mobilnost vs socio-ekonomska aktivnost
+
 * Voronoi ćelije vs druga prostorna podjela
 * skalabilnost
 

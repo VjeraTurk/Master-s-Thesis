@@ -24,6 +24,7 @@ setwd("~/CODM/masters-thesis/data")
   #PhoneData = as.data.frame(PhoneData_ffdf) #bad idea
 
   ######## remove unique ID rows
+  #https://stackoverflow.com/questions/21946201/remove-all-unique-rows
   df = PhoneData
   system.time( PhoneData <- df[as.logical(ave(1:nrow(df), df$ID, FUN=function(x) length(x) > 1)), ])
   save(PhoneData, file = paste(getwd(),"/PhoneData_no_unique_ID.RData", sep=""))

@@ -23,10 +23,14 @@ setwd("~/CODM/masters-thesis/data")
   # 6.756   0.880  28.701
   #PhoneData = as.data.frame(PhoneData_ffdf) #bad idea
 
-  ######## remove unique ID rows
+######## remove users with less than k events! (won't confirm a single stop)
+# I guess k * 2 events is needed to confirm 2 stops (confirm movement) #TODO test this
+# rijesi se svih usera s < k evenata ili < 2k ?! 
+
   #https://stackoverflow.com/questions/21946201/remove-all-unique-rows
   df = PhoneData
-  system.time( PhoneData <- df[as.logical(ave(1:nrow(df), df$ID, FUN=function(x) length(x) > 1)), ])
+  k = 2 
+  system.time( PhoneData <- df[as.logical(ave(1:nrow(df), df$ID, FUN=function(x) length(x) >= k)), ])
   save(PhoneData, file = paste(getwd(),"/PhoneData_no_unique_ID.RData", sep=""))
   #user  system elapsed
   #66.268   4.760 245.830
@@ -36,10 +40,36 @@ setwd("~/CODM/masters-thesis/data")
 file = paste(getwd(),"/PhoneData_no_unique_ID.RData", sep="")
 system.time(load(file = file))
 #38170135 obs. of 4 variables 38,170,135
-system.time(any(is.na(PhoneData))) #ne daje rezultat uz system.time(), bez system.time FALSE
+  any(is.na(PhoneData)) #ne daje rezultat uz system.time(), bez system.time FALSE
+
+df100k = head(PhoneData,100000)
+df10k = head(PhoneData,10000)
+df49 = head(PhoneData,49)
+
+df = df100k
+df = df10k
+df = df49
+
+sapply(df, function(x) length(unique(x)))
+#ID      Time  Latitude Longitude 
+#1319     42453       586       599 
 
 #### Proximity Merging
+####
 
+"""
+False Movement reduction: At this point any events occurring at a new tower that occur within a
+duration s of a prior event at a different tower are assumed to be load balancing artifacts and
+removed from the dataset. 
+
+This was set at a very conservative value of 2 minutes to ensure protection
+of false movement (a direct implementation of the solution discussed in section 5.3);
+
+Note, that if the minimum time threshold is set to zero, OD matrices will degenerate to what is known 
+as a transient approach containing all sub-journeys - and won’t truly describe movements between
+origins and destinations at all per se. Elimination of static trips/false positives is therefore 
+the priority
+"""
 ### False movement reduction
 #s= 2 min, k = 2, d = 10 min, g = 4 hours
 to_remove_df<<-data.frame()
@@ -55,75 +85,77 @@ false_movement_reduction<-function(dataframe,s){
     {
       #remove row curr from df
       #Load balancing
-      print((curr$Time - prev$Time))
+      #print((curr$Time - prev$Time))
       to_remove_df<<- rbind(to_remove_df, curr)
     }
   }
 }
+
 require(lubridate)
 s = difftime( parse_date_time("00:02:00", "H%:M%:S%"),parse_date_time("00:00:00", "H%:M%:S%")) 
-sapply(unique(df$ID), function (value) false_movement_reduction(df[df$ID == value, ],s),simplify = FALSE)
+system.time(sapply(unique(df$ID), function (value) false_movement_reduction(df[df$ID == value, ],s),simplify = FALSE))
+#df100k
+#user  system elapsed 
+#100.044   0.400 100.602 
 
 require(dplyr)
-df_fmr<-setdiff(df,to_remove_df)
+df_fmr<-setdiff(df,to_remove_df) #I want sth. like: df_fmr <- df[sapply(unique(df$ID), function (value) false_movement_reduction(df[df$ID == value, ],s),simplify = FALSE)]
 
-#I want sth like: df_fmr <- df[sapply(unique(df$ID), function (value) false_movement_reduction(df[df$ID == value, ],s),simplify = FALSE)]
+#again remove 
+# rijesi se svih usera s < k evenata ili < 2k ?!
+df<-df_fmr
+#k = 2
+system.time( df <- df[as.logical(ave(1:nrow(df), df$ID, FUN=function(x) length(x) >= k)), ])
 
 #### Stop Indentification
 k = 2
-d = difftime( parse_date_time("00:10:00", "H%:M%:S%"),parse_date_time("00:00:00", "H%:M%:S%")) 
-g = difftime( parse_date_time("04:00:00", "H%:M%:S%"),parse_date_time("00:00:00", "H%:M%:S%")) 
+d = difftime(parse_date_time("00:10:00", "H%:M%:S%"),parse_date_time("00:00:00", "H%:M%:S%")) 
+g = difftime(parse_date_time("04:00:00", "H%:M%:S%"),parse_date_time("00:00:00", "H%:M%:S%")) # period definition
+
+# if pozicija ostala ista && vrijeme manje od 4 h 
+  # korak ++
+  #if (skupis k ili > koraka) i (istekne 10 min od prve) 
+    #potvrdi stop
+#else 
+  # prva pozicija = nova pozicija
 
 valid_stop_df<<-data.frame()
 
-#tako dugo dok stojis, broji "korake" i cekaj ili da istekne 10 min ili da skupis k koraka
-  #kad istekne 10 min provjeri kolko koraka imas,
-    #ako imas >=k -> potvrdi stop
-    #ako imas <k - broji dalje -> cekaj hoces doc do k ili ces se pomaknuti
-      #ako imas >=k -> potvrdi stops
-      #pomaknuo si se ->nije stop
+# substract time as later - earlier
+#ofc ne radi za nrow(dataframe) = 1, 
+stop_indentification<-function(dataframe,k,d,g){
 
-  #kad skupis k koraka provjeri jel proslo 10 min
-    #ako je proslo -> potvrdi stop
-    #ako nije proslo -> cekaj hoce proci ili ces se pomaknuti
-      #proslo je -> potvrdi stop n > k
-      #pomaknuo si se ->nije stop
-
-  #if skupis k ili > koraka i istekne 10 min potvrdi stop
-  #else if pozicija ostala ista && vrijeme manje od 4 h 
-      # korak ++
-
-
-stop_indentification<-function(dataframe, k,d,g){
-
-  for(i in 2:nrow(dataframe)){
+  n<-1
+  stop_comfirmed <-FALSE
+  first = dataframe[1,]
+  
+  #try doing this with apply/dplyr!!:
+  for(i in 2:(nrow(dataframe))){
+    
     curr = dataframe[i,]
     prev = dataframe[i-1 ,]
     
-    trip_active = TRUE
-    if(n < k || trip_acive ){
-  
-      if((curr$Latitude == prev$Latitude && curr$Longitude == prev$Longitude ) && (curr$Time - prev$Time < g) )
-      {
+    if(curr$Latitude == first$Latitude && curr$Longitude == first$Longitude && ((curr$Time - prev$Time) < g)){
         n = n + 1
+      if (n >= k && ((curr$Time - first$Time) >= d) && (stop_comfirmed == FALSE)){
+        valid_stop_df<<-rbind(valid_stop_df, first)
+        stop_comfirmed <-TRUE
       }
-      else{
         
-        trip_acive = FALSE
-      }
-      
+    }else{
+      first = curr
+      n<-1
+      stop_comfirmed<-FALSE
     }
     
-    valid_stop_df<<- rbind(valid_stop_df , ) #prva od registriranih tocaka
-  
-    }
+  }
 }
-sapply(unique(df$ID), function (value) stop_indentification(df[df$ID == value, ],k,d,g),simplify = FALSE)
 
+system.time(sapply(unique(df$ID), function (value) stop_indentification(df[df$ID == value, ],k,d,g),simplify = TRUE))
+df<-valid_stop_df
+system.time( df <- df[as.logical(ave(1:nrow(df), df$ID, FUN=function(x) length(x) >= 2)), ])
+valid_stop_df<-df
 
-#alternative:
-#detect_trip_start() 
-#detect_trip_end()
 
 phone = c("ID", "Time", "Latitude", "Longitude")
 stops_df<-data.frame(phone)
@@ -142,13 +174,6 @@ foo <- function (dataframe) {
     
   #dataframe[sample(nrow(dataframe), 1), ]
 }
-
-df100 = head(PhoneData,100000)
-df10 = head(PhoneData,10000)
-df = df100
-df = df10
-
-any(is.na(df100)) #ne daje rezultat uz system.time(), bez system.time FALSE
 
 
 system.time(sapply(unique(df$ID), function (value) foo(df[df$ID == value, ]),simplify = FALSE))

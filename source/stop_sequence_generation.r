@@ -13,8 +13,15 @@ setwd("~/CODM/masters-thesis/data")
 #"raw" CDR
   file = paste(getwd(),"/PhoneData_ID_Time_POSIXct.RData", sep="")
   system.time(load(file = file))
-  #   user  system elapsed 
-  # 5.416   0.572   6.122 
+  #user  system elapsed 
+  # 5.272   0.436   5.713 
+  
+  require(dplyr)
+  system.time(setorder(PhoneData,Latitude,Longitude))
+  system.time(LatLon<-select(PhoneData, Latitude, Longitude))
+  system.time(LatLon<-distinct(LatLon)) 
+  #1090 obs.
+  save(LatLon, file = paste(getwd(),"/LatLon.RData", sep=""))
   
   system.time(PhoneData_ffdf <- as.ffdf(PhoneData))
   system.time(ffsave(PhoneData_ffdf, file = paste(getwd(),"/PhoneData_ffdf",sep="")))
@@ -50,6 +57,7 @@ df = df100k
 df = df10k
 df = df49
 
+#https://www.dummies.com/programming/r/how-to-count-unique-data-values-in-r/
 sapply(df, function(x) length(unique(x)))
 #ID      Time  Latitude Longitude 
 #1319     42453       586       599 
@@ -57,7 +65,7 @@ sapply(df, function(x) length(unique(x)))
 #### Proximity Merging
 ####
 
-"""
+"
 False Movement reduction: At this point any events occurring at a new tower that occur within a
 duration s of a prior event at a different tower are assumed to be load balancing artifacts and
 removed from the dataset. 
@@ -69,10 +77,10 @@ Note, that if the minimum time threshold is set to zero, OD matrices will degene
 as a transient approach containing all sub-journeys - and won’t truly describe movements between
 origins and destinations at all per se. Elimination of static trips/false positives is therefore 
 the priority
-"""
+"
 ### False movement reduction
 #s= 2 min, k = 2, d = 10 min, g = 4 hours
-to_remove_df<<-data.frame()
+to_remove_df<<-data.frame() #GLOBALNA_VARIJABLA <<- 
 
 false_movement_reduction<-function(dataframe,s){
 
@@ -108,6 +116,9 @@ df<-df_fmr
 system.time( df <- df[as.logical(ave(1:nrow(df), df$ID, FUN=function(x) length(x) >= k)), ])
 
 #### Stop Indentification
+#TODO: Confidence Assessment
+# 1 - ratio of the longest event gap to the whole duration period of the stop
+
 k = 2
 d = difftime(parse_date_time("00:10:00", "H%:M%:S%"),parse_date_time("00:00:00", "H%:M%:S%")) 
 g = difftime(parse_date_time("04:00:00", "H%:M%:S%"),parse_date_time("00:00:00", "H%:M%:S%")) # period definition
@@ -130,6 +141,7 @@ stop_indentification<-function(dataframe,k,d,g){
   first = dataframe[1,]
   
   #try doing this with apply/dplyr!!:
+  #https://stackoverflow.com/questions/2275896/is-rs-apply-family-more-than-syntactic-sugar?rq=1
   for(i in 2:(nrow(dataframe))){
     
     curr = dataframe[i,]
@@ -157,27 +169,13 @@ system.time( df <- df[as.logical(ave(1:nrow(df), df$ID, FUN=function(x) length(x
 valid_stop_df<-df
 
 
+
+
+
+
 phone = c("ID", "Time", "Latitude", "Longitude")
 stops_df<-data.frame(phone)
 starts_df<-data.frame(phone)
-
-
-#GLOBALNA VARIJABLA
-count <<- 0
-foo <- function (dataframe) {
-  #print(size(dataframe))
-  if(nrow(dataframe)==1){
-    #assign("count", count+1, envir = .GlobalEnv )
-    count <<- count + 1
-    print(count)
-  }
-    
-  #dataframe[sample(nrow(dataframe), 1), ]
-}
-
-
-system.time(sapply(unique(df$ID), function (value) foo(df[df$ID == value, ]),simplify = FALSE))
-
 
  #system.time(sapply(unique(PhoneData$ID), function (value) foo(PhoneData[PhoneData$ID == value, ]),simplify = FALSE))
 

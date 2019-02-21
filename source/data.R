@@ -185,7 +185,7 @@ library(chron)
 
 
 
-"""
+"
 Analysis of large groups of time series
 Time series clustering is implemented in TSclust, dtwclust, BNPTSclust and pdc.
 
@@ -202,7 +202,7 @@ a best match under Dynamic Time Warping and Euclidean Distance.
 Methods for plotting and forecasting collections of hierarchical and grouped time series are provided by
 hts. thief uses hierarchical methods to reconcile forecasts of temporally aggregated time series. 
 An alternative approach to reconciling forecasts of hierarchical time series is provided by gtop. thief
-"""
+"
 
 require(timeSeries)#rovides a class and various tools for financial time series. This includes basic functions such as scaling and sorting, subsetting, mathematical operations and statistical functions.
 require(jmotif)#jmotif implements tools based on time series symbolic discretization for finding motifs in time series and facilitates interpretable time series classification.
@@ -213,7 +213,7 @@ require(xts)
 
 require(h2o)
 
-"""
+"
 Data descriptions
 
 Smartcard ID, Time, Transaction type (21, 22, 31), Metro Station or Bus Line
@@ -227,7 +227,7 @@ Occupancy Status: 1-with passengers & 0-with passengers
 BUS ID, Time, PlateID, Latitude, Longitude, Speed
 
 Truck ID, Date Time, Latitude, Longitude, Speed
-"""
+"
 
 file = paste(getwd(),"/TaxiData",sep="")
 taxi = c("Taxi ID", "Time", "Latitude", "Longitude", "Occupancy Status", "Speed")

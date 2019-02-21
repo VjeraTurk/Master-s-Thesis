@@ -28,17 +28,20 @@
 * simulacija cdr?
 * zbrojene matrice?! usporedba zbrojenih
 
+* distribucije podataka/putovanja... (kao u radovima) -> bolje ne, samo koncentracija na matrice
+
 #### Matrix
 
 * DONE: Voronoi tessellations (base stations)
-* NEXT: R clipping Lovelence
+* R clipping Lovelence
 * IN PROGRESS: generirati POM iz CDR (prema algoritmu iz objevljanog rada- teško)(validirati)
+* NEXT: twickati PERIOD 15min-30min-1h-3h (over under fitting)
+
+* IN PROGRESS: twickati definiciju KRAJA PUTOVANJA ?!
 
 * generirati POM iz TAXI (pomoć Petra)
 * generirati CPOM iz CDR i TAXI (pomoć Petra, TehRep)
 
-* twickati PERIOD 15min-30min-1h-3h (over under fitting)
-* IN PROGRESS: twickati definiciju KRAJA PUTOVANJA ?!
 
 * opisati matricu, n x n ...?!
 * derivacija, determinanta ?!

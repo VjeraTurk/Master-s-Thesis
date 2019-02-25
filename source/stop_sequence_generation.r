@@ -1,70 +1,40 @@
 #system('free -m') # gc()
 #stackoverlfow "R: running function on multiple rows (groups) in data.frame" # view Do any of these answer your question?
+#require("ff")
+#require("ffbase")
+
+# installing package TSdist
+# probem regarding rgl package
+# https://stackoverflow.com/questions/15292905/how-to-solve-the-error-missing-required-header-gl-gl-h-while-installing-the-p
+# apt-get install  libx11-dev mesa-common-dev libglu1-mesa-dev
+
 require("data.table")
 require("readr")
-require("ff")
-require("ffbase")
 setwd("~/CODM/masters-thesis/data")
 
-  ### %H:%M:%S OK ali POSIXct ima diffTime
-  #file = paste(getwd(),"/PhoneData_ordered_by_ID_Time.RData", sep="")
-  #system.time(load(file = file))
-
-#"raw" CDR
-  file = paste(getwd(),"/PhoneData_ID_Time_POSIXct.RData", sep="")
-  system.time(load(file = file))
-  #user  system elapsed 
-  # 5.272   0.436   5.713 
-  
-  require(dplyr)
-  system.time(setorder(PhoneData,Latitude,Longitude))
-  system.time(LatLon<-select(PhoneData, Latitude, Longitude))
-  system.time(LatLon<-distinct(LatLon)) 
-  #1090 obs.
-  save(LatLon, file = paste(getwd(),"/LatLon.RData", sep=""))
-  
-  system.time(PhoneData_ffdf <- as.ffdf(PhoneData))
-  system.time(ffsave(PhoneData_ffdf, file = paste(getwd(),"/PhoneData_ffdf",sep="")))
-  system.time(ffload(paste(getwd(),"/PhoneData_ffdf",sep="")))
-  # user  system elapsed 
-  # 6.756   0.880  28.701
-  #PhoneData = as.data.frame(PhoneData_ffdf) #bad idea
-
-######## remove users with less than k events! (won't confirm a single stop)
-# I guess k * 2 events is needed to confirm 2 stops (confirm movement) #TODO test this
-# rijesi se svih usera s < k evenata ili < 2k ?! 
-
-  #https://stackoverflow.com/questions/21946201/remove-all-unique-rows
-  df = PhoneData
-  k = 2 
-  system.time( PhoneData <- df[as.logical(ave(1:nrow(df), df$ID, FUN=function(x) length(x) >= k)), ])
-  save(PhoneData, file = paste(getwd(),"/PhoneData_no_unique_ID.RData", sep=""))
-  #user  system elapsed
-  #66.268   4.760 245.830
-  ########
-
-#prepared for trip extraction
 file = paste(getwd(),"/PhoneData_no_unique_ID.RData", sep="")
 system.time(load(file = file))
 #38170135 obs. of 4 variables 38,170,135
   any(is.na(PhoneData)) #ne daje rezultat uz system.time(), bez system.time FALSE
 
+df1m = head(PhoneData, 1000000)
 df100k = head(PhoneData,100000)
 df10k = head(PhoneData,10000)
 df49 = head(PhoneData,49)
 
+df = df1m
 df = df100k
 df = df10k
 df = df49
 
 #https://www.dummies.com/programming/r/how-to-count-unique-data-values-in-r/
 sapply(df, function(x) length(unique(x)))
-#ID      Time  Latitude Longitude 
-#1319     42453       586       599 
+        #ID      Time  Latitude Longitude 
+#100k  1319     42453       586       599 
+#1m    9514                 717       752
 
-#### Proximity Merging
+#### Proximity Merging - TODO
 ####
-
 "
 False Movement reduction: At this point any events occurring at a new tower that occur within a
 duration s of a prior event at a different tower are assumed to be load balancing artifacts and
@@ -106,14 +76,20 @@ system.time(sapply(unique(df$ID), function (value) false_movement_reduction(df[d
 #user  system elapsed 
 #100.044   0.400 100.602 
 
+#df1m
+#user   system  elapsed 
+#1122.544    1.548 1126.023 
 require(dplyr)
-df_fmr<-setdiff(df,to_remove_df) #I want sth. like: df_fmr <- df[sapply(unique(df$ID), function (value) false_movement_reduction(df[df$ID == value, ],s),simplify = FALSE)]
+system.time(df_fmr<-setdiff(df,to_remove_df))
+
+#I want sth. like: df_fmr <- df[sapply(unique(df$ID), function (value) false_movement_reduction(df[df$ID == value, ],s),simplify = FALSE)]
 
 #again remove 
 # rijesi se svih usera s < k evenata ili < 2k ?!
 df<-df_fmr
-#k = 2
+k = 2
 system.time( df <- df[as.logical(ave(1:nrow(df), df$ID, FUN=function(x) length(x) >= k)), ])
+#1m -> 999949 obs.
 
 #### Stop Indentification
 #TODO: Confidence Assessment
@@ -164,22 +140,22 @@ stop_indentification<-function(dataframe,k,d,g){
 }
 
 system.time(sapply(unique(df$ID), function (value) stop_indentification(df[df$ID == value, ],k,d,g),simplify = TRUE))
+# 1m
+#    user   system  elapsed 
+#1234.444    0.792 1237.060
+
 df<-valid_stop_df
 system.time( df <- df[as.logical(ave(1:nrow(df), df$ID, FUN=function(x) length(x) >= 2)), ])
+
 valid_stop_df<-df
-
-
-
-
-
-
-phone = c("ID", "Time", "Latitude", "Longitude")
-stops_df<-data.frame(phone)
-starts_df<-data.frame(phone)
+valid_stop_df_1m<-data.frame()
+valid_stop_df_1m<-df
+#1m ->14389 obs. 
+save(valid_stop_df, file = paste(getwd(),"/valid_stop_df_1m.RData", sep=""))
 
  #system.time(sapply(unique(PhoneData$ID), function (value) foo(PhoneData[PhoneData$ID == value, ]),simplify = FALSE))
 
-require(doMC)
+require("doMC")
 require("dplyr")
 #system.time(group_by(PhoneData_ffdf,ID))
 #Error in UseMethod("group_by_") : 
@@ -201,49 +177,85 @@ gapminder %>%
 # isprobati dply i ostale prijedloge, usporediti brzine, vazno je jer planiram pokretati sa vise razlicitih 
 # parametara/izvora
 
+############## journey generation ##################
 
-# main()
-#for each user u
-# for each day a
-#   for each CDR event k
-#     let puak = position for event k
-#     if(trip_active == false)
-#        trip_active = detect_trip_start()
-#     end
-#     if(trip_active == true)
-#       trip_ended = detect_trip_end()
-#     end
-#       if(trip_ended)
-#       store_trip()
-#     end
-#   end
-# end
-#end
+require("optimbase")
 
-#if (trip_set empty)
-#  if(p uak != homebase and d(puak,homebase) < dmax and
-#        d(puak,homebase) > dmin)
-#    trip_active = true
-#    origin = homebase
-#  end
-#  if(p uak != homebase and d(puak,homebase) > dmax)
-#    trip_active = true
-#    origin = puak
-#  end
-#  if(p uak == workbase and d(puak,homebase) > d max)
-#    trip_active = true
-#    origin = homebase
-#    destination = workbase
-#  end
-#else
-#  if(p uak != previous_trip_start(trip_set) and
-#        d(previous_trip_start(trip_set), puak) > dmin)
-#    origin = previous_trip_start(trip_set)
-#  end
-#endID Time location
+file = paste(getwd(),"/valid_stop_df_1m.RData", sep="")
+system.time(load(file = file))
 
 
-# installing package TSdist
-# probem regarding rgl package
-# https://stackoverflow.com/questions/15292905/how-to-solve-the-error-missing-required-header-gl-gl-h-while-installing-the-p
-# apt-get install  libx11-dev mesa-common-dev libglu1-mesa-dev
+file = paste(getwd(),"/LatLon.RData", sep="")
+system.time(load(file = file))
+system.time(Lat_Lon <- paste(LatLon$Latitude,LatLon$Longitude, sep= "_"))
+
+OD_0_24_SH<<-zeros(length(Lat_Lon),length(Lat_Lon))
+#names(OD_0_24_SH)<- Lat_Lon# names je krivo, treba dimnames()
+#http://www.r-tutor.com/r-introduction/matrix
+
+dimnames(OD_0_24_SH)<-list(Lat_Lon,Lat_Lon)
+"
+Journey Identification: Stop sequences were then converted into a set of journeys for each subscriber.
+A journey is defined as 2 contiguous 'stops' that are separated by a period of at least t_min, but no more
+than t_max. The value for t_min ensures that false movement hasn't slipped through the net(a double check
+of the solution discussed in section 5.3). Setting t_max ensures that we are unlikely to have reconstructed
+a journey that, in actually, is missing a midpoint destination.
+"
+#Journey Identification
+to_keep_df<<-data.frame()
+#journeys<<-data.frame()
+#c("Start_Time","Stop_Time","Origin","Destinaton")
+
+journey_identification<-function(dataframe,t_min, t_max){
+  
+  for(i in 2:nrow(dataframe)){
+    curr = dataframe[i,]
+    prev = dataframe[i-1 ,]
+    
+    if((curr$Latitude != prev$Latitude || curr$Longitude != prev$Longitude ) 
+       && (curr$Time - prev$Time > t_min)
+       && (curr$Time - prev$Time < t_max) )
+    {
+      #stop ce dodati 2 puta, jednom kao destination, jednom kao origin
+      to_keep_df<<- rbind(to_keep_df, prev) 
+      to_keep_df<<- rbind(to_keep_df, curr)
+      
+      orig = paste(prev$Latitude,prev$Longitude,sep = "_")
+      dest = paste(curr$Latitude,curr$Longitude,sep = "_")
+      
+      OD_0_24_SH[origin,dest] = OD_0_24_SH[orig,dest] + 1
+      
+    }
+  }
+}
+t_min = difftime(parse_date_time("00:10:00", "H%:M%:S%"), parse_date_time("00:00:00", "H%:M%:S%"))  
+t_max = difftime(parse_date_time("04:00:00", "H%:M%:S%"), parse_date_time("00:00:00", "H%:M%:S%"))
+
+#1094. observations -> 547 journeys
+# sugesting 198 000 journeys in a day from 36 000 000 events
+# which makes average of 24750 journeys per 3 hour period
+
+df<-valid_stop_df
+system.time(sapply(unique(df$ID), function (value) journey_identification(df[df$ID == value, ],t_min,t_max),simplify = FALSE))
+#user  system elapsed 
+#16.196   0.000  16.213
+# 9086 obs.
+
+journey_set<-to_keep_df
+journey_set_1m<-journey_set
+
+save(journey_set_1m, file = paste(getwd(),"/journey_set_1m.RData", sep=""))
+
+#### Confidence Tresholding
+#### Journey Cleansing
+"
+ Matrix Generation: From this journey set a corresponding OD matrix was created (via a simple process
+of counting the number of journeys identified between each BTS). The input journey set used was also
+varied through filtering to allow various forms of analysis: time of day, day of week, time of year,
+minimum journey duration, minimum journey distance or journey purpose (based on work, home or
+other), etc. However, at this point journey counts are restricted to our sample size.
+"
+### Matrix Generation
+system.time(setorder(journey_set,Latitude,Longitude))
+
+

@@ -1,0 +1,57 @@
+1. Uvod
+2. Polazišno-Odredišna Matrica (POM)
+    2.1. Primjena
+    2.2. Tradicionalni načini
+    2.3. POM iz CDR
+        2.3.1. Voronoi teselacija
+        2.3.2. Razlike u generiranju CDR-POM
+            2.3.2.1 Definiranje putovanja
+            2.3.2.2. Tranzitna t-POM
+            2.3.2.3. CDR- POM u zemljama u razvoju
+        2.3.3 Dobre prakse u generiranju POM iz CDR
+            2.3.3.1. Skaliranje CDR POM (primjerak -> pouplacija)
+            2.3.3.2. (linking to transport infrastructure?)
+            2.3.3.3. ...
+3. Kontekstualizirane POM
+    3.1. Kontekst
+        Izvori konteksta (pregled radova) 
+        3.1.1.  Kontekst izvučen iz CDR (long term modeli- CDR više mjeseci/tjedana)
+           HBW,HBO,NHB (The path most Traveled), HWO (?), HWHA (?) 
+           HW WH (Estimating origin-Destination flows using opportunistically collected 
+           mobile phone location data from one milion users in Boston Metropolitan Area)
+           (2012 Estimation of urban commuting patterns using cellphone network data)
+        3.1.2. Vanjski izvori
+            3.1.2.1. Points of Interes (Urban Attractors ima 22 kategorije koristi bazu s POI)
+            3.1.2.2. Open Street Map
+    3.2. OSM kao izvor
+        3.2.2. OSM kao izvor infrastrukture (jedan od radova koristi za broj traka na auto cesti jedan za provjeru naseljenosti područja/broj katova zgrada) 
+        3.2.1 Model raspodjele toka (naš model)
+
+4. Validacija matrica - usporedba
+    4.1. Grand truth matrica, goodness of fit
+    4.2. Metrike
+        4.2.1. R^2
+        4.2.2. GEH
+        4.2.3. SEM
+    4.3. Strukturalna sličnost
+        4.3.1. MSSI
+            4.3.1.1.osnovni
+            4.3.1.2.poboljšani
+
+5. Metodologija za usporedbu KONTEKSTUALIZIRANIH matrica
+    Parametri 
+        Rezolucija
+        Period
+        Prirast
+        ... 
+    Usporedba s referentnom matricom? 
+    Usporedba 2 s različitim izvorima?
+    Klasifikacija - dobra/loša?! 
+    Apsolutna i relativna točnost?! 
+    Rezultati
+6. Zaključak
+7. Sažetak
+
+Dodatak A implementacija (?)
+
+    Literatura

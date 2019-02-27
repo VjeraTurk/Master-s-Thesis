@@ -29,7 +29,6 @@ cells = unique(PhoneData[, .SD, .SDcols = cols]) #1090 obs. of 2 variables #traj
 #not working:
 #cells = PhoneData[,.cols]
 
-
 # aes(x,y) x- longitude  , y - latitude |
 
 gg = ggplot()

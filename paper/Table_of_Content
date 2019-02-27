@@ -3,23 +3,34 @@
     2.1. Primjena
     2.2. Tradicionalni načini
     2.3. POM iz CDR
+        točnost lokacije - aproksimacija s BS ili signal strenght
         2.3.1. Voronoi teselacija
+                Zip code geometry, municipality, Heksagoni (Terralytics), , 
+                (Best practices- zonal units interpolation?! 1km^2 grid)
         2.3.2. Razlike u generiranju CDR-POM
-            2.3.2.1 Definiranje putovanja
-            2.3.2.2. Tranzitna t-POM
-            2.3.2.3. CDR- POM u zemljama u razvoju
-        2.3.3 Dobre prakse u generiranju POM iz CDR
+            2.3.2.1. Definiranje putovanja
+            2.3.2.2. Tranzitna t-POM,
+            2.3.2.3. Period - Departure/Arrival time
+            2.3.2.4. CDR- POM u zemljama u razvoju
+        2.3.3. Dobre prakse u generiranju POM iz CDR
             2.3.3.1. Skaliranje CDR POM (primjerak -> pouplacija)
             2.3.3.2. (linking to transport infrastructure?)
-            2.3.3.3. ...
+            2.3.3.3. k-anonymization
+        2.3.4.
+    2.4. POM iz drugih izvora automatskog prikupljanja
+        2.4.1. GPS
+        2.4.2. ostalo
+ 
 3. Kontekstualizirane POM
     3.1. Kontekst
         Izvori konteksta (pregled radova) 
         3.1.1.  Kontekst izvučen iz CDR (long term modeli- CDR više mjeseci/tjedana)
-           HBW,HBO,NHB (The path most Traveled), HWO (?), HWHA (?) 
+           HBW,HBO,NHB (The path most Traveled, HBW,WBH,HBO,NBO (Best Practices), 
+           HWO (?), HWHA (?) 
            HW WH (Estimating origin-Destination flows using opportunistically collected 
            mobile phone location data from one milion users in Boston Metropolitan Area)
            (2012 Estimation of urban commuting patterns using cellphone network data)
+           - "MODE" kao kontekst, car/public transport/flight Terralytics
         3.1.2. Vanjski izvori
             3.1.2.1. Points of Interes (Urban Attractors ima 22 kategorije koristi bazu s POI)
             3.1.2.2. Open Street Map
@@ -33,12 +44,14 @@
         4.2.1. R^2
         4.2.2. GEH
         4.2.3. SEM
+        4.2.4. Wasserstein Metric (?)
     4.3. Strukturalna sličnost
         4.3.1. MSSI
             4.3.1.1.osnovni
             4.3.1.2.poboljšani
 
 5. Metodologija za usporedbu KONTEKSTUALIZIRANIH matrica
+    "Large and sparse matrix" -many zero cells
     Parametri 
         Rezolucija
         Period

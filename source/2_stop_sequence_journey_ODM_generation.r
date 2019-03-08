@@ -1,6 +1,5 @@
 #system('free -m') # gc()
 #stackoverlfow "R: running function on multiple rows (groups) in data.frame" # view Do any of these answer your question?
-
 require("data.table")
 require("readr")
 setwd("~/CODM/masters-thesis/data")
@@ -31,7 +30,55 @@ sapply(df, function(x) length(unique(x)))
 #    365689     83493       824       859 
 
 #### Proximity Merging - TODO
-####
+#installing fields : https://stackoverflow.com/questions/34939878/error-in-installing-r-package-appliedpredictivemodeling
+require("fields")
+require("optimbase")
+
+file = paste(getwd(),"/LatLon.RData", sep="")
+system.time(load(file = file))
+Lat_Lon <- paste(LatLon$Latitude,LatLon$Longitude, sep= "_")
+
+require("magrittr")
+require("dplyr")
+frequency<-PhoneData %>% group_by(Latitude,Longitude) %>%
+  summarize(n=n())
+frequency<-as.data.frame(frequency) #nrow 1027 ?!?!
+
+
+distances<-zeros(length(Lat_Lon),length(Lat_Lon))
+##dimnames(distances)<-list(Lat_Lon,Lat_Lon) iz nekog glupog razloga nakon rdist.earth() dimnames atribute vise ne postoji
+distances<- rdist.earth(LatLon, miles=FALSE)
+dimnames(distances)<-list(Lat_Lon,Lat_Lon)
+# threshold value in km ( 75 m)
+sum(distances < 0) #1358 -> 679 celija bi trebalo spojiti 
+
+pm = 0.075
+treshold<-matrix(pm, nrow= length(Lat_Lon),ncol=length(Lat_Lon))
+distances<-distances-treshold
+#gdje je vrijednost negativna tu treba merge?
+
+
+require(sp) 
+system.time(i <- apply(spDists(as.matrix(LatLon[, c('Latitude', 'Longitude')])), 2, function(x) paste(which(x < pm & x != 0), collapse=', ')))
+closest_LatLon<-data.frame(Latitude=LatLon$Latitude, Longitude=LatLon$Longitude, Closest=i)
+
+#dst <- as.matrix(dist(LatLon[-1])) ; diag(dst) <- NA ; apply(dst, 1, function(x) paste(which(x < 75), collapse=", "))                                                   
+
+#dst <- as.matrix(dist(LatLon[-1])) ; diag(dst) <- NA ; apply(dst, 1, function(x) paste(which(x < pm), collapse=", "))
+#blocka komp
+
+M = LatLon
+DM = as.matrix(dist(M))
+neighbors = which(DM < 0.075, arr.ind=T)
+neighbors= neighbors[neighbors[,1]!=neighbors[,2]]
+
+plot(M)
+points(M[neighbors,], col="red" )
+
+require("hutils")
+
+haversine_distance(LatLon$Latitude, LatLon$Longitude, LatLon$Latitude, LatLon$Longitude) < 0.075
+
 "
 False Movement reduction: At this point any events occurring at a new tower that occur within a
 duration s of a prior event at a different tower are assumed to be load balancing artifacts and

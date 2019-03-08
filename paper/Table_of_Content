@@ -3,7 +3,7 @@
     2.1. Primjena
     2.2. Tradicionalni načini
     2.3. POM iz CDR
-        točnost lokacije - aproksimacija s BS ili signal strenght
+        točnost lokacije - aproksimacija s BS ili signal strenght (RSSI)
         2.3.1. Voronoi teselacija
                 Zip code geometry, municipality, Heksagoni (Terralytics), , 
                 (Best practices- zonal units interpolation?! 1km^2 grid)
@@ -11,16 +11,15 @@
             2.3.2.1. Definiranje putovanja
             2.3.2.2. Tranzitna t-POM,
             2.3.2.3. Period - Departure/Arrival time
-            2.3.2.4. CDR- POM u zemljama u razvoju
+            2.3.2.4. Grad, Država
+            2.3.2.5. CDR- POM u zemljama u razvoju
         2.3.3. Dobre prakse u generiranju POM iz CDR
             2.3.3.1. Skaliranje CDR POM (primjerak -> pouplacija)
             2.3.3.2. (linking to transport infrastructure?)
             2.3.3.3. k-anonymization
-        2.3.4.
     2.4. POM iz drugih izvora automatskog prikupljanja
         2.4.1. GPS
         2.4.2. ostalo
- 
 3. Kontekstualizirane POM
     3.1. Kontekst
         Izvori konteksta (pregled radova) 
@@ -37,14 +36,18 @@
     3.2. OSM kao izvor
         3.2.2. OSM kao izvor infrastrukture (jedan od radova koristi za broj traka na auto cesti jedan za provjeru naseljenosti područja/broj katova zgrada) 
         3.2.1 Model raspodjele toka (naš model)
+    3.3. 
 
 4. Validacija matrica - usporedba
     4.1. Grand truth matrica, goodness of fit
     4.2. Metrike
-        4.2.1. R^2
-        4.2.2. GEH
+        4.2.1. R^2 (How close the models are to the reality, ...)
+        4.2.2. GEH (How close the models are to the reality, ...)
         4.2.3. SEM
-        4.2.4. Wasserstein Metric (?)
+        4.2.4. RMSE (How close the models are to the reality, ...)
+        4.2.5. EBM (SAE) (How close the models are to the reality)
+        4.2.6. pearson correlation row to row (Estimation of urban commuting paterns using cellphone network data)        
+        4.2.7. Wasserstein Metric (?)
     4.3. Strukturalna sličnost
         4.3.1. MSSI
             4.3.1.1.osnovni
@@ -53,7 +56,7 @@
 5. Metodologija za usporedbu KONTEKSTUALIZIRANIH matrica
     "Large and sparse matrix" -many zero cells
     Parametri 
-        Rezolucija
+        Rezolucija (proximity merging)
         Period
         Prirast
         ... 

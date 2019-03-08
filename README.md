@@ -14,9 +14,7 @@ ___
 
 ...
 
-5. 12.03.2019. 19.03.2019.
 
-6. 14.05.2019. 21.05.2019. 
 
 Šifra diplomskog studija računarstva: **1400**  
 Šifra modula diplomskog studija računarstva:  

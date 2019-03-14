@@ -6,6 +6,8 @@
 * **SmartCardData** Smartcard ID, Time, Transaction type (21, 22, 31), Metro Station or Bus Line  
 Transaction Type:  31-Bus Boarding & 21-Subway Swiped-In  & 22-Subway Swiped-Out  
 * **PhoneData** SIM Card ID, Time, Latitude, Longitude   
+WARNING:" it is actually Longtude, Latitude
+
 * **TaxiData** Taxi ID, Time, Latitude, Longitude, Occupancy Status, Speed  
 Occupancy Status: 1-with passengers & 0-with passengers  
 * **BusData** BUS ID, Time, PlateID, Latitude, Longitude, Speed  
@@ -34,3 +36,5 @@ ___
           225656375 Oct 19 18:45 SmartCardData
          1875174152 Nov 25 11:36 TaxiData
          2289131124 Oct 19 20:08 TruckData
+
+          741651985 Mar 14 22:55 cell_towers_2017.csv.gz

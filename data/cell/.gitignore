@@ -1,2 +1,4 @@
 cell_towers_2017.csv.gz
 cell_towers_2017.csv
+*.csv
+*.csv.gz

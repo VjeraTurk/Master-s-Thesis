@@ -34,26 +34,26 @@ sapply(df, function(x) length(unique(x)))
 require("fields")
 require("optimbase")
 
-file = paste(getwd(),"/LatLon.RData", sep="")
+file = paste(getwd(),"/LonLat_from_CDR_1090_pairs.RData", sep="")
 system.time(load(file = file))
-Lat_Lon <- paste(LatLon$Latitude,LatLon$Longitude, sep= "_")
+Lon_Lat <- paste(LonLat$Longitude,LonLat$Latitude, sep= "_") # ..O,P, Red, Stupac
 
 require("magrittr")
 require("dplyr")
-frequency<-PhoneData %>% group_by(Latitude,Longitude) %>%
-  summarize(n=n())
-frequency<-as.data.frame(frequency) #nrow 1027 ?!?!
+  frequency<-PhoneData %>% group_by(Latitude,Longitude) %>%
+    summarize(n=n())
+  frequency<-as.data.frame(frequency) #nrow 1027 ?!?!
 
 
-distances<-zeros(length(Lat_Lon),length(Lat_Lon))
-##dimnames(distances)<-list(Lat_Lon,Lat_Lon) iz nekog glupog razloga nakon rdist.earth() dimnames atribute vise ne postoji
-distances<- rdist.earth(LatLon, miles=FALSE)
-dimnames(distances)<-list(Lat_Lon,Lat_Lon)
+distances<-zeros(length(Lon_Lat),length(Lon_Lat))
+##dimnames(distances)<-list(Lon_Lat,Lon_Lat) iz nekog glupog razloga nakon rdist.earth() dimnames atribute vise ne postoji
+distances<- rdist.earth(LonLat, miles=FALSE)
+dimnames(distances)<-list(Lon_Lat,Lon_Lat)
 # threshold value in km ( 75 m)
 sum(distances < 0) #1358 -> 679 celija bi trebalo spojiti 
 
 pm = 0.075
-treshold<-matrix(pm, nrow= length(Lat_Lon),ncol=length(Lat_Lon))
+treshold<-matrix(pm, nrow= length(Lon_Lat),ncol=length(Lon_Lat))
 distances<-distances-treshold
 #gdje je vrijednost negativna tu treba merge?
 
@@ -234,13 +234,13 @@ system.time(load(file = file))
 
 file = paste(getwd(),"/LatLon.RData", sep="")
 system.time(load(file = file))
-system.time(Lat_Lon <- paste(LatLon$Latitude,LatLon$Longitude, sep= "_"))
+system.time(Lon_Lat <- paste(LatLon$Latitude,LatLon$Longitude, sep= "_"))
 
-OD_0_24_SH<<-zeros(length(Lat_Lon),length(Lat_Lon))
-#names(OD_0_24_SH)<- Lat_Lon# names je krivo, treba dimnames()
+OD_0_24_SH<<-zeros(length(Lon_Lat),length(Lon_Lat))
+#names(OD_0_24_SH)<- Lon_Lat# names je krivo, treba dimnames()
 #http://www.r-tutor.com/r-introduction/matrix
 
-dimnames(OD_0_24_SH)<-list(Lat_Lon,Lat_Lon)
+dimnames(OD_0_24_SH)<-list(Lon_Lat,Lon_Lat)
 "
 Journey Identification: Stop sequences were then converted into a set of journeys for each subscriber.
 A journey is defined as 2 contiguous 'stops' that are separated by a period of at least t_min, but no more

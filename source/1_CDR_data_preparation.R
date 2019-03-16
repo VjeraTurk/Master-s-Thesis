@@ -7,7 +7,8 @@ setwd("~/CODM/masters-thesis/data")
 require("data.table")
 require("readr")
 file = paste(getwd(),"/PhoneData", sep="")
-phone = c("ID", "Time", "Latitude", "Longitude")
+##phone = c("ID", "Time", "Latitude", "Longitude") #WRONG
+phone = c("ID", "Time", "Longitude", "Latitude") #CORRECTED
 system.time( PhoneData <- fread(file=file, sep="auto", header=FALSE, colClasses = c('numeric','numeric','numeric','numeric'), col.names = phone, quote=""))
 # user  system elapsed 
 # 26.160   1.492  41.811 
@@ -41,16 +42,24 @@ save(PhoneData, file = paste(getwd(),"/PhoneData_ID_Time_POSIXct.RData", sep="")
   system.time(load(file = file))
   #user  system elapsed 
   # 5.272   0.436   5.713 
-      
+  
 ######## 4. Get Base Stations locaton from CDR #########
+require("data.table")
 require(dplyr)
-system.time(setorder(PhoneData,Latitude,Longitude))
-system.time(LatLon<-select(PhoneData, Latitude, Longitude))
-system.time(LatLon<-distinct(LatLon)) 
+  
+LonLat<-data.frame(PhoneData$Longitude,PhoneData$Latitude)
+names(LonLat) <- c("Longitude", "Latitude")
+#system.time(LonLat<-select(PhoneData, Longitude,Latitude))
+
+
+#system.time(setorder(PhoneData,Longitude,Latitude))
+
+system.time(LonLat<-distinct(LonLat)) 
+system.time(setorder(LonLat,Longitude,Latitude))
 
 #1090 obs.
-save(LatLon, file = paste(getwd(),"/LatLon.RData", sep=""))
-file = paste(getwd(),"/LatLon.RData", sep="")
+save(LonLat, file = paste(getwd(),"/LonLat_from_CDR_1090_pairs.RData", sep=""))
+file = paste(getwd(),"/LonLat_from_CDR_1090_pairs.RData", sep="")
 system.time(load(file = file))
 
 ##### 5. Remove suers with one event

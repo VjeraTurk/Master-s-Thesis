@@ -22,7 +22,7 @@ Lon_Lat_CDR <- as.data.frame(paste(LonLat_CDR$Longitude,LonLat_CDR$Latitude, sep
 names(Lon_Lat_CDR)<-c("Lon_Lat")
 
 "
-LonLat form OpenCellID 2018:
+LonLat form OpenCellID 2018 China:
 openCell ID column names are: lon and lat
             min         max
 Longitude  113.7877    114.519
@@ -66,8 +66,6 @@ file = paste(getwd(),"/LonLat_from_OpenCellID_25309_pairs.RData",sep="")
 load(file = file)
 LonLat_2018 = LonLat
 
-
-
 gg = ggplot()
 ggplot(data = LonLat, mapping = aes(LonLat$Longitude,LonLat$Latitude)) +  geom_point(LonLat,mapping = aes(LonLat$Longitude,LonLat$Latitude),colour = 'red',size=1) + ggtitle("OpenCellID China 454 455 460")
 
@@ -93,6 +91,33 @@ setwd("~/CODM/masters-thesis/data/cell")
 file = paste(getwd(),"/LonLat_from_OpenCellID_2017_43705_pairs.RData",sep="")
 load(file = file)
 LonLat_2017 = LonLat
+
+
+gg = ggplot()
+ggplot(data = LonLat, mapping = aes(LonLat$Longitude,LonLat$Latitude)) +  geom_point(LonLat,mapping = aes(LonLat$Longitude,LonLat$Latitude),colour = 'red',size=1) + ggtitle("OpenCellID 2017")
+
+"
+LonLat form OpenCellID 2019 entire world database:
+openCell ID column names are: lon and lat
+            min         max
+Longitude  113.7876    114.5191
+Latitude   22.4882     22.82795
+"
+setwd("~/CODM/masters-thesis/data/cell")
+file = paste(getwd(),"/cell_towers_2019-03-16-T000000.csv",sep="")
+system.time(cells <- fread(file=file, sep="auto", header=T))
+subset = cells[lat >= 22.48819 & lat <= 22.828 & lon >= 113.7876 & lon <= 114.5192]
+nrow(subset)
+LonLat<-data.frame(subset$lon, subset$lat)
+names(LonLat) <- c("Longitude", "Latitude")
+LonLat<-distinct(LonLat)
+nrow(LonLat) #25922
+save(LonLat, file = paste(getwd(),"/LonLat_from_OpenCellID_2019_25922_pairs.RData",sep=""))
+
+setwd("~/CODM/masters-thesis/data/cell")
+file = paste(getwd(),"/",sep="")
+load(file = file)
+LonLat_2019 = LonLat
 
 
 gg = ggplot()
@@ -130,11 +155,12 @@ intersection = intersect(LonLat_CDR, LonLat_SC) #nrow(intersection) 943
 intersection = intersect(LonLat_CDR, LonLat_ODM) #nrow(intersection) 675
 intersection = intersect(LonLat_ODM, LonLat_SC) # 675 943 nrow(intersection) 670
 
-
+intersection = intersect(LonLat_CDR, LonLat_2019) #nrow(intersection) 0
 intersection = intersect(LonLat_CDR, LonLat_2018) #nrow(intersection) 0
 intersection = intersect(LonLat_CDR, LonLat_2017) #nrow(intersection) 0
 
 intersection = intersect(LonLat_2018, LonLat_2017)#nrow(intersection) 0 #HOW?!?!?!
 
+intersection = intersect(LonLat_2019, LonLat_2018)#nrow(intersection) 25118 (25922 and 25309)
 
 

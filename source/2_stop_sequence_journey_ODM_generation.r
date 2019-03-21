@@ -149,9 +149,9 @@ require("dplyr")
   #61.524   1.764  63.320 
   save(df_2k, file = paste(getwd(),"/df_2k_PhoneData.RData", sep=""))
 
-  file = paste(getwd(),"/df_2k_PhoneData.RData", sep="")
-  load(file=file)
-  df<-df_2k
+file = paste(getwd(),"/df_2k_PhoneData.RData", sep="")
+load(file=file)
+df<-df_2k
 
   delta_df<-tail(df, -1) - head(df, -1) #vektorizirana verzija?
   file = paste(getwd(),"/delta_df_PhoneData.RData", sep="")
@@ -163,6 +163,8 @@ require("dplyr")
   file = paste(getwd(),"/temp_df_PhoneData.RData", sep="")
   save(temp_df,file=file)
   temp_df_2<-data.frame(head(df, -1)$ID, delta_df$ID, delta_df$Time, delta_df$Latitude, delta_df$Longitude)
+  names(temp_df_2)<-c("ID","ID-ID","time_dif","lon_dif","lat_dif")
+  
   file = paste(getwd(),"/temp_df_2_PhoneData.RData", sep="")
   save(temp_df_2,file=file)
   
@@ -172,14 +174,24 @@ file = paste(getwd(),"/temp_df_PhoneData.RData", sep="")
 load(file=file)  
 file = paste(getwd(),"/temp_df_2_PhoneData.RData", sep="")
 load(file=file)
-
-
-
 ###Dovde dosla sa full data
 
-#TODO: makni one ID koji imaju manje od k-1 puta redak 0,0 (moze i umnožak svih lat i lon !=0?) #nisu stajali
-# (izbaci i one kojima je zbroj 0?) #nisu se micali
+#TODO: makni one ID koji imaju manje od k-1 puta redak 0,0 
+  # za k=2 (moze i umnožak svih lat i lon !=0?) #nisu stajali
+#(izbaci i one kojima je zbroj 0?) #nisu se micali
 
+#system.time( temp_df_00 <- temp_df_2[as.logical(ave(1:nrow(temp_df_2), temp_df_2$ID, FUN=function(x) with(x,x$lon_dif,x$lat_dif) == 0)), ])
+#Error: numeric 'envir' arg not of length one
+#Timing stopped at: 57.74 0.94 58.78
+
+#system.time( temp_df_00 <- temp_df_2[as.logical(ave(1:nrow(temp_df_2), temp_df_2$ID, FUN=function(x) x$lon_dif*x$lat_dif == 0)), ])
+#Error in x$lon_dif : $ operator is invalid for atomic vectors
+#Timing stopped at: 56.58 1.108 64.66
+
+system.time( temp_df_00 <- temp_df_2[as.logical(ave(1:nrow(temp_df_2), temp_df_2$ID, FUN=function(x) x*x == 0)), ])
+
+df_200=head(df,200)
+df<-df_200
 
 #### Stop Indentification
 #TODO: Confidence Assessment
@@ -205,27 +217,31 @@ stop_indentification<-function(dataframe,k,d,g){
   stop_comfirmed <-FALSE
   first = dataframe[1,]
   
-  
   #try doing this with apply/dplyr!!:
   #https://stackoverflow.com/questions/2275896/is-rs-apply-family-more-than-syntactic-sugar?rq=1
   for(i in 2:(nrow(dataframe))){
-    
     curr = dataframe[i,]
     prev = dataframe[i-1 ,]
     
     if(curr$Latitude == first$Latitude && curr$Longitude == first$Longitude && ((curr$Time - prev$Time) < g)){
         n = n + 1
       if (n >= k && ((curr$Time - first$Time) >= d) && (stop_comfirmed == FALSE)){
-        valid_stop_df<<-rbind(valid_stop_df, first)
+        #valid_stop_df<<-rbind(valid_stop_df, first) # ja sam stavljala samo firs, tako da imam arrival time, a nemam departure time
+        #valid_stop_df<<-rbind(valid_stop_df, cbind(first,curr$Time)) # ja sam stavljala samo first, tako da imam arrival time, a nemam departure time
         stop_comfirmed <-TRUE
       }
         
     }else{
+      
+      if(stop_comfirmed==TRUE)valid_stop_df<<-rbind(valid_stop_df, cbind(first,prev$Time)) #Arrival i Departure Time
       first = curr
       n<-1
       stop_comfirmed<-FALSE
     }
   }
+  
+  if(stop_comfirmed==TRUE)valid_stop_df<<-rbind(valid_stop_df, cbind(first,prev$Time)) #Arrival i Departure Time
+  
 }
 
 system.time(sapply(unique(df$ID), function (value) stop_indentification(df[df$ID == value, ],k,d,g),simplify = TRUE))

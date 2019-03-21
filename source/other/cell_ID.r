@@ -15,9 +15,6 @@ file = paste(getwd(),"/LonLat_from_CDR_1090_pairs.RData",sep="")
 load(file = file)
 LonLat_CDR = LonLat
 
-gg = ggplot()
-ggplot(data = LonLat, mapping = aes(LonLat$Longitude,LonLat$Latitude)) +  geom_point(LonLat,mapping = aes(LonLat$Longitude,LonLat$Latitude),colour = 'red',size=1) + ggtitle("CDR")
-
 Lon_Lat_CDR <- as.data.frame(paste(LonLat_CDR$Longitude,LonLat_CDR$Latitude, sep= "_")) # ..O,P, Red, Stupac
 names(Lon_Lat_CDR)<-c("Lon_Lat")
 
@@ -59,49 +56,42 @@ Latitude   22.48821    22.82753
   
   LonLat<-data.frame(LatLon$Longitude, LatLon$Latitude)
   names(LonLat) <- c("Longitude", "Latitude")
-  save(LonLat, file = paste(getwd(),"/LonLat_from_OpenCellID_25309_pairs.RData",sep=""))
+  save(LonLat, file = paste(getwd(),"/LonLat_from_OpenCellID_2018_China_25309_pairs.RData",sep=""))
 
 setwd("~/CODM/masters-thesis/data/cell")
-file = paste(getwd(),"/LonLat_from_OpenCellID_25309_pairs.RData",sep="")
+file = paste(getwd(),"/LonLat_from_OpenCellID_2018_China_25309_pairs.RData",sep="")
 load(file = file)
-LonLat_2018 = LonLat
-
-gg = ggplot()
-ggplot(data = LonLat, mapping = aes(LonLat$Longitude,LonLat$Latitude)) +  geom_point(LonLat,mapping = aes(LonLat$Longitude,LonLat$Latitude),colour = 'red',size=1) + ggtitle("OpenCellID China 454 455 460")
+LonLat_2018_China = LonLat
 
 "
-LonLat form OpenCellID 2017 entire world database:
+LonLat form OpenCellID 2018 entire world database:
 openCell ID column names are: lon and lat
             min         max
-Longitude  113.7876    114.5191
-Latitude   22.4882     22.82795
+Longitude  
+Latitude   
 "
   setwd("~/CODM/masters-thesis/data/cell")
-  file = paste(getwd(),"/cell_towers_2017.csv",sep="")
+  file = paste(getwd(),"/cell_towers_2018.csv",sep="")
   system.time(cells <- fread(file=file, sep="auto", header=T))
   subset = cells[lat >= 22.48819 & lat <= 22.828 & lon >= 113.7876 & lon <= 114.5192]
   nrow(subset)
   LonLat<-data.frame(subset$lon, subset$lat)
   names(LonLat) <- c("Longitude", "Latitude")
   LonLat<-distinct(LonLat)
-  nrow(LonLat) #43705
-  save(LonLat, file = paste(getwd(),"/LonLat_from_OpenCellID_2017_43705_pairs.RData",sep=""))
+  nrow(LonLat) #25905
+  save(LonLat, file = paste(getwd(),"/LonLat_from_OpenCellID_2018_25905_pairs.RData",sep=""))
 
 setwd("~/CODM/masters-thesis/data/cell")
-file = paste(getwd(),"/LonLat_from_OpenCellID_2017_43705_pairs.RData",sep="")
+file = paste(getwd(),"/LonLat_from_OpenCellID_2018_25905_pairs.RData",sep="")
 load(file = file)
-LonLat_2017 = LonLat
-
-
-gg = ggplot()
-ggplot(data = LonLat, mapping = aes(LonLat$Longitude,LonLat$Latitude)) +  geom_point(LonLat,mapping = aes(LonLat$Longitude,LonLat$Latitude),colour = 'red',size=1) + ggtitle("OpenCellID 2017")
+LonLat_2018 = LonLat
 
 "
 LonLat form OpenCellID 2019 entire world database:
 openCell ID column names are: lon and lat
             min         max
-Longitude  113.7876    114.5191
-Latitude   22.4882     22.82795
+Longitude  
+Latitude   
 "
 setwd("~/CODM/masters-thesis/data/cell")
 file = paste(getwd(),"/cell_towers_2019-03-16-T000000.csv",sep="")
@@ -118,10 +108,6 @@ setwd("~/CODM/masters-thesis/data/cell")
 file = paste(getwd(),"/",sep="")
 load(file = file)
 LonLat_2019 = LonLat
-
-
-gg = ggplot()
-ggplot(data = LonLat, mapping = aes(LonLat$Longitude,LonLat$Latitude)) +  geom_point(LonLat,mapping = aes(LonLat$Longitude,LonLat$Latitude),colour = 'red',size=1) + ggtitle("OpenCellID 2017")
 
 "
 LonLat form SC:
@@ -147,20 +133,21 @@ load(file = file)
 LonLat_SC = LonLat
 #1090 -> 943 # obuhvaćeno područje je manje
 
+
 gg = ggplot()
 ggplot(data = LonLat, mapping = aes(LonLat$Longitude,LonLat$Latitude)) +  geom_point(LonLat,mapping = aes(LonLat$Longitude,LonLat$Latitude),colour = 'red',size=1) + ggtitle("SC 2016")
 
 library(dplyr)
-intersection = intersect(LonLat_CDR, LonLat_SC) #nrow(intersection) 943
-intersection = intersect(LonLat_CDR, LonLat_ODM) #nrow(intersection) 675
+intersection = intersect(LonLat_CDR, LonLat_SC) # 1090 943 nrow(intersection) 943
+intersection = intersect(LonLat_CDR, LonLat_ODM)# 1090 675 nrow(intersection) 675
 intersection = intersect(LonLat_ODM, LonLat_SC) # 675 943 nrow(intersection) 670
 
 intersection = intersect(LonLat_CDR, LonLat_2019) #nrow(intersection) 0
 intersection = intersect(LonLat_CDR, LonLat_2018) #nrow(intersection) 0
-intersection = intersect(LonLat_CDR, LonLat_2017) #nrow(intersection) 0
+intersection = intersect(LonLat_CDR, LonLat_2018_China) #nrow(intersection) 0
 
-intersection = intersect(LonLat_2018, LonLat_2017)#nrow(intersection) 0 #HOW?!?!?!
+intersection = intersect(LonLat_2018, LonLat_2019)#25309 25922 nrow(intersection) 25118
 
-intersection = intersect(LonLat_2019, LonLat_2018)#nrow(intersection) 25118 (25922 and 25309)
+intersection = intersect(LonLat_2018_China, LonLat_2018)#nrow(intersection) 0
 
 

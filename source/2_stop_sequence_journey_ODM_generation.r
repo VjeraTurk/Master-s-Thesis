@@ -1,5 +1,5 @@
-#system('free -m') 
-# gc()
+system('free -m') 
+ gc()
 #stackoverlfow "R: running function on multiple rows (groups) in data.frame" # view Do any of these answer your question?
 require("data.table")
 require("readr")
@@ -174,6 +174,14 @@ file = paste(getwd(),"/temp_df_PhoneData.RData", sep="")
 load(file=file)  
 file = paste(getwd(),"/temp_df_2_PhoneData.RData", sep="")
 load(file=file)
+#missing how to get big_df sth. like df + head(df,-1)-tail(df,-1)
+save(big_df,file=file)
+names(big_df)<-c("ID","Time","Longitude","Latitude","ID-ID","time_dif","lon_dif","lat_dif")
+
+file = paste(getwd(),"/big_df_PhoneData.RData", sep="")
+load(file=file)
+
+
 ###Dovde dosla sa full data
 
 #TODO: makni one ID koji imaju manje od k-1 puta redak 0,0 
@@ -188,14 +196,15 @@ load(file=file)
 #Error in x$lon_dif : $ operator is invalid for atomic vectors
 #Timing stopped at: 56.58 1.108 64.66
 
-system.time( temp_df_00 <- temp_df_2[as.logical(ave(1:nrow(temp_df_2), temp_df_2$ID, FUN=function(x) x*x == 0)), ])
-
-df_200=head(df,200)
-df<-df_200
+#system.time( temp_df_00 <- temp_df_2[as.logical(ave(1:nrow(temp_df_2), temp_df_2$ID, FUN=function(x) x*x == 0)), ])
 
 #### Stop Indentification
 #TODO: Confidence Assessment
 # 1 - ratio of the longest event gap to the whole duration period of the stop
+
+
+require("lubridate")
+require("dplyr")
 
 k = 2
 d = difftime(parse_date_time("00:10:00", "H%:M%:S%"),parse_date_time("00:00:00", "H%:M%:S%")) 
@@ -207,8 +216,6 @@ g = difftime(parse_date_time("04:00:00", "H%:M%:S%"),parse_date_time("00:00:00",
     #potvrdi stop
 #else 
   # prva pozicija = nova pozicija
-
-valid_stop_df<<-data.frame()
 
 # substract time as later - earlier
 #ofc ne radi za nrow(dataframe) = 1, 
@@ -244,9 +251,57 @@ stop_indentification<-function(dataframe,k,d,g){
   
 }
 
+#sum pocenu vrijednost staviti ko globalnu varijablu
+s<<-difftime(parse_date_time("00:00:00", "H%:M%:S%"),parse_date_time("00:00:00", "H%:M%:S%")) # period definition
+stop_indentification_big<-function(dataframe,k,d,g){
+  
+  n<-1
+  stop_comfirmed <-FALSE
+  first = dataframe[1,]
+  #sum = difftime(parse_date_time("00:00:00", "H%:M%:S%"),parse_date_time("00:00:00", "H%:M%:S%")) # period definition
+  sum = s
+  
+ for(i in 1:nrow(dataframe)){
+    curr = dataframe[i,]
+
+    if(curr$lat_dif == 0 && curr$lon_dif == 0 && (curr$time_dif < g)){
+      n = n + 1
+      sum=sum+curr$time_dif
+      if (n >= (k-1) && (sum >= d) && (stop_comfirmed == FALSE)){
+        stop_comfirmed <-TRUE
+      }
+      
+    }else{
+      
+      #if(stop_comfirmed==TRUE)valid_stop_df<<-rbind(valid_stop_df, cbind(first,dataframe[i-1,]$Time)) #Arrival i Departure Time
+      if(stop_comfirmed==TRUE)valid_stop_df<<-rbind(valid_stop_df, cbind(first$ID,dataframe[i-1,]$Time,first$Time,first$Longitude,first$Latitude)) #Arrival i Departure Time
+      first = curr
+      n<-1
+      stop_comfirmed<-FALSE
+      #sum = difftime(parse_date_time("00:00:00", "H%:M%:S%"),parse_date_time("00:00:00", "H%:M%:S%")) # period definition
+      sum = s
+    }
+  }
+  
+  if(stop_comfirmed==TRUE)valid_stop_df<<-rbind(valid_stop_df, cbind(first$ID,dataframe[i-1,]$Time,first$Time,first$Longitude,first$Latitude)) #Arrival i Departure Time
+  
+}
+valid_stop_df<<-data.frame()
+
 system.time(sapply(unique(df$ID), function (value) stop_indentification(df[df$ID == value, ],k,d,g),simplify = TRUE))
-#    user   system  elapsed 
-# 1m 595.116   1.448 597.260 
+#    user     system    elapsed 
+# 1m 595.116  1.448     597.260 
+
+#big_df_1m<-head(big_df,1000000)
+#df<-big_df_1m
+df<-big_df
+system.time(sapply(unique(df$ID), function (value) stop_indentification_big(df[df$ID == value, ],k,d,g),simplify = TRUE))
+save(valid_stop_df, file = paste(getwd(),"/valid_stop_big_df.RData", sep=""))
+print("dada")
+##tu sa full data?
+#   user      system    elapsed 
+#1m 516.224   1.932     518.782 = 8.64 min
+#1m                 cca 474.999 =  min izmjena + bez monitora
 
 
 df<-valid_stop_df

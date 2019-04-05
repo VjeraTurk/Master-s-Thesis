@@ -1,6 +1,0 @@
-install.packages("vcd")
-install.packages("vcdExtra")
-install.packages("plyr")
-require("vcd")
-require("vcdExtra")
-require("plyr")

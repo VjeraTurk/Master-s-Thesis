@@ -134,6 +134,11 @@ LonLat_SC = LonLat
 #1090 -> 943 # obuhvaćeno područje je manje
 
 
+setwd("~/CODM/Matrice")
+file = paste(getwd(),"/LonLat_from_ODM_675_pairs.RData",sep="")
+load(file = file)
+LonLat_ODM = LonLat
+
 gg = ggplot()
 ggplot(data = LonLat, mapping = aes(LonLat$Longitude,LonLat$Latitude)) +  geom_point(LonLat,mapping = aes(LonLat$Longitude,LonLat$Latitude),colour = 'red',size=1) + ggtitle("SC 2016")
 

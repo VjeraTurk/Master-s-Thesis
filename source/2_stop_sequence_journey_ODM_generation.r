@@ -426,6 +426,7 @@ system.time(sapply(unique(df$ID), function (value) journey_identification(df[df$
 
 save(OD_0_24_SH, file = paste(getwd(),"/OD_0_24_SH.RData", sep=""))
 
+load(file = paste(getwd(),"/OD_0_24_SH.RData", sep=""))
 
 journey_set<-to_keep_df
 journey_set_1m<-journey_set

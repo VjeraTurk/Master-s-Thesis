@@ -1,23 +1,51 @@
 ### TODO's
 * Što je POM, što je 1 ćelija
+   * opisati matricu, n x n ?!
 * POM -> Telekomunikacijska POM -> Kontekstualizirana POM
 
-#### R
-* DONE: instalirati noviju verziju! # upgraded to R version 3.5.1 (2018-07-02) -- "Feather Spray"
-* DONE: instaliran gdal, rgdal
-* DONE: install stplanr
-
 #### **PARAMETRI USPOREDBE**
-* statističko učenje- problem klasifikacije
+* Koji uvjeti moraju biti zadovoljeni za usporedbu?
+   * rezolucija: ne - ona je indikator kvalitete
+   * isto područje: da - isti grad
+   * isto doba godine: da
+   * isto vremensko razdoblje: da (dani, mjeseci godine?)
 
-* točnost lokacije
-* vremenski okvir
-* širina toka
+* statističko učenje - problem klasifikacije za SVAKI PARAMETAR ZASEBNO (parametat!=značajka)
+  - odrediti "Granice vrijednosti parametara OD - DO" pronaći optimum
 
-* ...rezolucija
-* ...prirast iz perioda u period
+* Međusobna ovisnost parametara
+  - ako je velika ćelija, nema potrebe za jako preciznom vremenskom definicijom kraja putovanja
+  - važna je optimizacija rezolucije
+  - kako ćemo dokazati napredak u odnosu na referentnu?!
 
-* skalabilnost
+**PERIOD** vremenski okvir - o ćemu ovosi optimum?
+**ŠIRINA UKUPNOG TOKA** po periodu 
+   * uz omjer 0 i !0 ćelija?
+   * (jednaka će biti ulaznog/izlaznog)
+   * distribucija tokova - NE
+**REZOLUCIJA** broj ćelija
+   * točnost položaja (samo utječe na rezoluciju)
+**PROSTORNA PODJELA**
+   * OBLIK ĆELIJE
+   * (ne)uniformna podjela
+**DEFINICIJA PUTOVANJA**
+   *  početak/kraj putovanja u dodjeljenom periodu
+**SREDSTVO KRETANJA I INFRASTRUKTURA**   eng. mode
+   * infrastruktura (npr. samo ceste)
+   * sredstvo (npr. samo Taxi)
+**DAJE LI MATRICA KONTEKST ILI SAMO POMAK**
+   * gustoća informacija
+**ROBUSNOST** 
+   * u dodatku šuma - ostaje li matrica vjerna? 
+
+#### Graphical representation (matrix, image)
+
+**COLOUR PALETTE - gray scale?**
+   * s koliko nijansi prikazati tokove, 256, manje ili više?!
+
+* heatmapa
+* TODO: compare 2 images using 3 definitions of MSSIM, compare results
+
 
 #### **USPOREDBA** RAZMISLITI
 * TAXI POM VS CDR POM ?
@@ -27,28 +55,20 @@
 
 * simulacija cdr?
 * zbrojene matrice?! usporedba zbrojenih
-
-* distribucije podataka/putovanja... (kao u radovima) -> bolje ne, samo koncentracija na matrice
-
 #### Matrix
-
 * DONE: Voronoi tessellations (base stations)
 * R clipping Lovelence
+
 * IN PROGRESS: generirati POM iz CDR (prema algoritmu iz objevljanog rada- teško)(validirati)
 * NEXT: twickati PERIOD 15min-30min-1h-3h (over under fitting)
-
 * IN PROGRESS: twickati definiciju KRAJA PUTOVANJA ?!
 
 * generirati POM iz TAXI (pomoć Petra)
 * generirati CPOM iz CDR i TAXI (pomoć Petra, TehRep)
 
-
-* opisati matricu, n x n ...?!
-* derivacija, determinanta ?!
-
-#### Graphical representation (matrix, image)
-* heatmapa
-* compare 2 images?! (MSSI)
+#### R
+* DONE: instalirati noviju verziju! # upgraded to R version 3.5.1 (2018-07-02) -- "Feather Spray"
+* DONE: instaliran gdal, rgdal, stplanr
 
 #### Paper
 

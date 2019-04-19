@@ -11,17 +11,17 @@
 \frontmatter   % - ne dirati
 
 % upisati naziv studija
-\degreesubject{Preddiplomski studij raèunarstva} % upisati odgovarajuci naziv studija
+\degreesubject{Diplomski studij raèunarstva} % upisati odgovarajuci naziv studija
 
 % upisati vrstu rada
-\documenttype{Završni rad}  % Zavrsni rad ili Diplomski rad
+\documenttype{Diplomski rad}  % Zavrsni rad ili Diplomski rad
 
-\title{Naslov rada}   % upisati specificni naslov rada
+\title{Metodologija za usporedbu kontekstualiziranih \\ polazišno-odredišnih matrica}   % upisati specificni naslov rada
 
 \date{\MONTH~\the\year.}   % ne dirati - mjesec i godina æe se upisati sami
 
-\author{Ime Prezime}  % upisati svoje ime i prezime
-\jmbag{12345678901}  % upisati vlastiti JMBAG
+\author{Vjera Turk}  % upisati svoje ime i prezime
+\jmbag{0069064924}  % upisati vlastiti JMBAG
 \maketitle		% ne dirati
 
 %\makecopyright
@@ -31,7 +31,7 @@
 %	Ovo je posveta nekome
 %\end{dedication}
 
-\mentor{izv.prof.dr.sc.~Miroslav Joler}   % zamijeniti podacima o svojem mentoru
+\mentor{izv.prof.dr.sc.~Renato Filjar}   % zamijeniti podacima o svojem mentoru
 \maketitleabstract
 
 % kreira mjesto za umetnuti stranicu s opisom zadatka - ne dirati
@@ -56,11 +56,13 @@
 \mainmatter		% ne dirati
 
 % Ovdje pomoæu include funkcije ucitavati kreirana poglavlja. Poglavljima dajte logicna imena s obzirom na sadrzaj prikazan u njima (bez razmaka u imenu).
-\include{Intro}   % ovo poslije staviti pod komentar kada se nauèi koristiti
-%\include{Poglavlje_1}  % dati neko logicno ime umjesto ``Poglavlje_1''
-%\include{Poglavlje_2} 
-%\include{Poglavlje_3} % itd.
-
+%\include{Intro}   % ovo poslije staviti pod komentar kada se nauèi koristiti
+\include{1_Uvod}
+\include{2_Kontekst}  % dati neko logicno ime umjesto ``Poglavlje_1''
+\include{3_Validacija} 
+\include{4_Parametri} % itd.
+\include{5_Demonstracija} % itd.
+\include{6_Zakljucak}
 
 \include{Literatura}  % ovo je ime Bibtex datoteke koju korisnik kreira
 

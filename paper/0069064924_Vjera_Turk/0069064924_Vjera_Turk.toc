@@ -1,42 +1,59 @@
 \select@language {croatian}
-\contentsline {chapter}{Popis slika}{viii}{chapter*.2}
-\contentsline {chapter}{Popis tablica}{ix}{chapter*.3}
-\contentsline {chapter}{\numberline {1}Kako koristiti paket za pisanje zavr\v snoga rada u \LaTeX -u}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Opis sadr\v zaja paketa}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}\v Cime se opremiti za pisanje rada}{2}{section.1.2}
-\contentsline {subsection}{\numberline {1.2.1}Instalacija \LaTeX -a}{3}{subsection.1.2.1}
-\contentsline {subsection}{\numberline {1.2.2}Instalacija editora teksta}{3}{subsection.1.2.2}
-\contentsline {subsection}{\numberline {1.2.3}Instalacija programa za opis kori\v stene literature}{4}{subsection.1.2.3}
-\contentsline {subsubsection}{Osnovna uporaba JabRef programa}{5}{section*.4}
-\contentsline {chapter}{\numberline {2}Primjeri naj\v ce\v s\'cih sintakti\v ckih struktura}{8}{chapter.2}
-\contentsline {section}{\numberline {2.1}Postavljanje naslova poglavlja i sekcija}{8}{section.2.1}
-\contentsline {section}{\numberline {2.2}Reference na literaturu}{8}{section.2.2}
-\contentsline {section}{\numberline {2.3}Referenca na sekciju, sliku, tabelu ili stranicu}{9}{section.2.3}
-\contentsline {section}{\numberline {2.4}Poveznica na neki dokument ili URL adresu}{10}{section.2.4}
-\contentsline {section}{\numberline {2.5}Ubacivanje slike}{11}{section.2.5}
-\contentsline {section}{\numberline {2.6}Ubacivanje podslika}{12}{section.2.6}
-\contentsline {section}{\numberline {2.7}Ubacivanje tabele}{13}{section.2.7}
-\contentsline {section}{\numberline {2.8}Uporaba kratica u tekstu. Automatsko generiranje popisa kratica.}{15}{section.2.8}
-\contentsline {section}{\numberline {2.9}Nagla\v savanje teksta}{16}{section.2.9}
-\contentsline {subsection}{\numberline {2.9.1}Navodnici}{16}{subsection.2.9.1}
-\contentsline {subsection}{\numberline {2.9.2}Kosa i podebljana slova}{16}{subsection.2.9.2}
-\contentsline {section}{\numberline {2.10}Verbatim: okru\v zenje za doslovni tekst}{17}{section.2.10}
-\contentsline {section}{\numberline {2.11}Kreiranje jedne jednad\v zbe ili serije jednad\v zba}{17}{section.2.11}
-\contentsline {subsection}{\numberline {2.11.1}Kreiranje jedne jednad\v zbe}{17}{subsection.2.11.1}
-\contentsline {subsection}{\numberline {2.11.2}Kreiranje grupe jednad\v zba}{18}{subsection.2.11.2}
-\contentsline {section}{\numberline {2.12}Liste}{18}{section.2.12}
-\contentsline {subsection}{\numberline {2.12.1}Lista s to\v ckama}{19}{subsection.2.12.1}
-\contentsline {subsection}{\numberline {2.12.2}Lista s brojevima}{19}{subsection.2.12.2}
-\contentsline {subsection}{\numberline {2.12.3}Proizvoljno ozna\v cena lista}{20}{subsection.2.12.3}
-\contentsline {chapter}{\numberline {3}Dodatne informacije}{21}{chapter.3}
-\contentsline {section}{\numberline {3.1}Primjeri uporabe sintakti\v ckih struktura}{21}{section.3.1}
-\contentsline {section}{\numberline {3.2}Savjeti za lak\v se ure\IeC {\dj }ivanje teksta}{21}{section.3.2}
-\contentsline {section}{\numberline {3.3}Zavr\v sne napomene}{22}{section.3.3}
-\contentsline {chapter}{\numberline {4}Vodi\v c za pisanje vlastitoga teksta}{24}{chapter.4}
-\contentsline {section}{\numberline {4.1}Upis uvodnih podataka}{24}{section.4.1}
-\contentsline {section}{\numberline {4.2}Po\v cetak pisanja glavnoga dijela rada}{27}{section.4.2}
-\contentsline {chapter}{Pojmovnik}{29}{Item.32}
-\contentsline {chapter}{Sažetak}{30}{Item.32}
-\contentsline {chapter}{\numberline {A}Naslov priloga}{31}{appendix.A}
-\contentsline {section}{\numberline {A.1}Naslov sekcije}{31}{section.A.1}
-\contentsline {section}{\numberline {A.2}Naslov sekcije}{31}{section.A.2}
+\contentsline {chapter}{Popis slika}{ix}{chapter*.2}
+\contentsline {chapter}{Popis tablica}{x}{chapter*.3}
+\contentsline {chapter}{\numberline {1}Uvod}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Polazi\v sno-odredi\v sna matrica}{2}{chapter.2}
+\contentsline {section}{\numberline {2.1}Tradicionalni pristupi generiranju POM-a}{2}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Ankete}{2}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Prebrojavanje vozila}{2}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Gravitacijski model}{2}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Problematika i ograni\v cenja tradicionalnih na\v cina}{2}{subsection.2.1.4}
+\contentsline {section}{\numberline {2.2}POM iz zapisa o aktivnostima u javnoj pokretnoj mre\v zi}{3}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Razlike u pristupima}{3}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}To\v cnost polo\v zaja}{3}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Geometrija prostorne podjele}{3}{subsection.2.2.3}
+\contentsline {subsubsection}{Heksagoni}{3}{section*.4}
+\contentsline {subsubsection}{Voronoi tesalacije}{3}{section*.5}
+\contentsline {subsubsection}{Jedinice samouprave}{3}{section*.6}
+\contentsline {subsubsection}{Pravokutna mre\v za}{3}{section*.7}
+\contentsline {subsection}{\numberline {2.2.4}Dobre prakse u generiranju POM iz CDR}{3}{subsection.2.2.4}
+\contentsline {section}{\numberline {2.3}Drugi primjeri automatskog prikupljanja}{4}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}GNSS}{4}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Javni prijevoz}{4}{subsection.2.3.2}
+\contentsline {chapter}{\numberline {3}Kontekstualizirane matrice}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Kontekst iz samog izvora podataka o kretanju}{5}{section.3.1}
+\contentsline {section}{\numberline {3.2}Kontekst iz vanjskih izvora}{5}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}\textit {Points of Interes}}{5}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Open Street Map}{6}{subsection.3.2.2}
+\contentsline {subsubsection}{Model raspodjele toka (na\v s model)}{6}{section*.8}
+\contentsline {subsubsection}{Izvor infrastrukture}{6}{section*.9}
+\contentsline {section}{\numberline {3.3}Sredstvo (na\v cin) kretanja}{6}{section.3.3}
+\contentsline {chapter}{\numberline {4}Postoje\'ce metrike kvalitete POM-e}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}Referentna matirca - \textit {Grand Truth matrix}}{7}{section.4.1}
+\contentsline {section}{\numberline {4.2}Metrike}{7}{section.4.2}
+\contentsline {subsubsection}{$R^{2}$ }{7}{section*.10}
+\contentsline {subsubsection}{GEH}{7}{section*.11}
+\contentsline {subsubsection}{ MSE, SEM, RMSE, EBM (SAE)}{7}{section*.12}
+\contentsline {subsubsection}{Pearson korelacija redova}{7}{section*.13}
+\contentsline {subsubsection}{Wasserstein Metric}{8}{section*.14}
+\contentsline {subsection}{\numberline {4.2.1}Strukturalna sli\v cnost}{8}{subsection.4.2.1}
+\contentsline {subsubsection}{MSSI}{8}{section*.15}
+\contentsline {chapter}{\numberline {5}Odnosni parametri kvalitete}{9}{chapter.5}
+\contentsline {section}{\numberline {5.1}To\v cnost POM-e}{9}{section.5.1}
+\contentsline {section}{\numberline {5.2}Zajedni\v cki, objektivni kriteriji usporedbe}{9}{section.5.2}
+\contentsline {section}{\numberline {5.3}Komparacijski indikatori}{9}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Vremenski okvir}{9}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Rezolucija}{9}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}\v Sirina toka}{10}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Geometrija prostorne podjele}{10}{subsection.5.3.4}
+\contentsline {subsection}{\numberline {5.3.5}Definicija putovanja}{10}{subsection.5.3.5}
+\contentsline {subsection}{\numberline {5.3.6}}{10}{subsection.5.3.6}
+\contentsline {subsubsection}{Infrastruktura}{10}{section*.16}
+\contentsline {subsubsection}{Sredstvo kretanja}{10}{section*.17}
+\contentsline {subsection}{\numberline {5.3.7}Gusto\'ca informacija - kontekst}{10}{subsection.5.3.7}
+\contentsline {section}{\numberline {5.4}Me\IeC {\dj }uovisnost parametara}{10}{section.5.4}
+\contentsline {chapter}{Pojmovnik}{11}{section.5.4}
+\contentsline {chapter}{Sažetak}{12}{section.5.4}
+\contentsline {chapter}{\numberline {A}Naslov priloga}{13}{appendix.A}
+\contentsline {section}{\numberline {A.1}Naslov sekcije}{13}{section.A.1}
+\contentsline {section}{\numberline {A.2}Naslov sekcije}{13}{section.A.2}

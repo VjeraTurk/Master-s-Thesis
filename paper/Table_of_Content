@@ -3,7 +3,7 @@
     2.1. Primjena
     2.2. Tradicionalni načini
     2.3. POM iz CDR
-        točnost lokacije - aproksimacija s BS ili signal strenght (RSSI)
+        točnost položaja - aproksimacija s BS ili signal strenght (RSSI)
         2.3.1. Voronoi teselacija
                 Zip code geometry, municipality, Heksagoni (Terralytics), , 
                 (Best practices- zonal units interpolation?! 1km^2 grid)

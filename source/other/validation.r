@@ -42,6 +42,9 @@ rAB <- intersect(rownames(A), rownames(B)) #432
 AA<-A[rAB,cAB]
 BB<-B[rAB,cAB]
 
+SSIM(AA,BB,256)
+
+
 "
 Lon_Lat form ODM:
             min         max

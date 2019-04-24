@@ -1,89 +1,72 @@
-% This file was created with JabRef 2.11.1.
-% Encoding: Cp1250
+% This file was created with JabRef 2.10.
+% Encoding: ASCII
 
 
-@Book{McFarland:2009,
-  Title                    = {CSS The Missing Manual},
-  Author                   = {D.S. McFarland},
-  Publisher                = {O'Reilly},
-  Year                     = {2009},
-  Edition                  = {2},
-  Owner                    = {mjoler},
-  Timestamp                = {2012.06.05}
+@Article{Alhazzani:2016.,
+  Title                    = {Urban Attractors: Discovering Patterns in Regions of Attraction in Cities},
+  Author                   = {May Alhazzani and Fahad Alhasoun and Zeyad Alawwad and Marta C. Gonz\'alez},
+  Journal                  = {Public Library of Science},
+  Year                     = {2016.},
+
+  Owner                    = {adminuser},
+  Timestamp                = {24.04.2019}
 }
 
-@Book{Ullman:2008,
-  Title                    = {PHP 6 and MySQL 5},
-  Author                   = {L. Ullman},
-  Publisher                = {Peachpit Press},
-  Year                     = {2008},
-  Owner                    = {mjoler},
-  Timestamp                = {2012.06.05}
+@Article{Bera:2011.,
+  Title                    = {Estimation of origin-destination matrix from traffic counts: the state of the art},
+  Author                   = {Sharminda Bera and K. V. Krishna Rao},
+  Journal                  = {European Transport \ Trasporti Europei n. 49},
+  Year                     = {2011.},
+
+  Owner                    = {adminuser},
+  Timestamp                = {24.04.2019}
 }
 
-@Electronic{jabref,
-  Title                    = {{JabRef}},
-  Note                     = {{, srpanj 2016.}},
-  Url                      = {http://www.jabref.org/},
-  Owner                    = {MSJ2},
-  Timestamp                = {2016.07.14}
+@Article{Djukic:2013.,
+  Title                    = {Reliability assessment of dynamic OD estimation methods based on structural similarity index},
+  Author                   = {Tamara Djuki\'c},
+  Journal                  = {92nd meeting of the Transportation Reasearch Board},
+  Year                     = {2013.},
+
+  Owner                    = {adminuser},
+  Timestamp                = {24.04.2019}
 }
 
-@Electronic{jquery,
-  Organization             = {jQuery},
-  Url                      = {http://jquery.com},
-  Owner                    = {mjoler},
-  Timestamp                = {2012.06.05}
+@Manual{Goulding:2016.,
+  Title                    = {Best Practices and Methodology for OD Matrix Creation from CDR data},
+  Author                   = {James Goulding},
+  Organization             = {N/LAB, University of Nottingham},
+  Year                     = {2016.},
+
+  Owner                    = {adminuser},
+  Timestamp                = {2019.04.23}
 }
 
-@Electronic{latex_project,
-  Title                    = {{LaTeX} - A document preparation system},
-  Note                     = {{, srpanj 2016.}},
-  Url                      = {http://www.latex-project.org/},
-  Owner                    = {MSJ2},
-  Timestamp                = {2016.07.14}
+@PhdThesis{Peterson:2007.,
+  Title                    = {The Origin-Destination Matrix Estimation Problem- Analysis and Computations},
+  Author                   = {Anders Peterson},
+  School                   = {Link\"oping Studies in Science and Technology},
+  Year                     = {2007.},
+
+  Owner                    = {adminuser},
+  Timestamp                = {24.04.2019}
 }
 
-@Electronic{latex_wiki,
-  Note                     = {{, srpanj 2016.}},
-  Organization             = {WikiBooks:~LaTeX.},
-  Url                      = {http://en.wikibooks.org/wiki/LaTeX/},
-  Owner                    = {mjoler},
-  Timestamp                = {2012.06.05}
+@Article{test:,
+  Author                   = {test},
+
+  Owner                    = {adminuser},
+  Timestamp                = {24.04.2019}
 }
 
-@Electronic{mysql,
-  Organization             = {MySQL},
-  Url                      = {http://www.mysql.com},
-  Owner                    = {mjoler},
-  Timestamp                = {2012.06.05}
-}
+@Article{Vuren:2015.,
+  Title                    = {256 shades of gray -comparing OD matrices using image quality assessment tehniques},
+  Author                   = {Tom van Vuren},
+  Journal                  = {Scottish Transport Applications Research (STAR)},
+  Year                     = {2015.},
 
-@Electronic{php,
-  Organization             = {PHP},
-  Url                      = {http://www.php.net},
-  Owner                    = {mjoler},
-  Timestamp                = {2012.06.05}
-}
-
-@Electronic{tex_exchange,
-  Title                    = {{Tex --- Stack Exchange}},
-  Note                     = {{, srpanj 2016.}},
-  Url                      = {http://tex.stackexchange.com/}
-}
-
-@Electronic{texstudio,
-  Title                    = {{TeXstudio}},
-  Note                     = {{, srpanj 2016.}},
-  Url                      = {http://www.texstudio.org/},
-  Owner                    = {MSJ2},
-  Timestamp                = {2016.07.14}
-}
-
-@Manual{riteh_upute,
-  Title                    = {Upute za pisanje završnog/diplomskog rada},
-  Author                   = {{Tehnièki fakultet u Rijeci}},
-  Note                     = {{ srpanj 2016.}}
+  Owner                    = {adminuser},
+  Timestamp                = {24.04.2019}
 }
 
 @comment{jabref-meta: databaseType:biblatex;}

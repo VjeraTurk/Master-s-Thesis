@@ -5,7 +5,7 @@
 \BOOKMARK [1][-]{section.2.1}{Tradicionalni pristupi generiranju POM-a}{chapter.2}% 5
 \BOOKMARK [2][-]{subsection.2.1.1}{Ankete}{section.2.1}% 6
 \BOOKMARK [2][-]{subsection.2.1.2}{Prebrojavanje vozila}{section.2.1}% 7
-\BOOKMARK [2][-]{subsection.2.1.3}{Gravitacijski model}{section.2.1}% 8
+\BOOKMARK [2][-]{subsection.2.1.3}{Modeliranje toka}{section.2.1}% 8
 \BOOKMARK [2][-]{subsection.2.1.4}{Problematika i ogranicenja tradicionalnih nacina}{section.2.1}% 9
 \BOOKMARK [1][-]{section.2.2}{POM iz zapisa o aktivnostima u javnoj pokretnoj mre\236i}{chapter.2}% 10
 \BOOKMARK [2][-]{subsection.2.2.1}{Razlike u pristupima}{section.2.2}% 11
@@ -13,8 +13,8 @@
 \BOOKMARK [2][-]{subsection.2.2.3}{Geometrija prostorne podjele}{section.2.2}% 13
 \BOOKMARK [2][-]{subsection.2.2.4}{Dobre prakse u generiranju POM iz CDR}{section.2.2}% 14
 \BOOKMARK [1][-]{section.2.3}{Drugi primjeri automatskog prikupljanja}{chapter.2}% 15
-\BOOKMARK [2][-]{subsection.2.3.1}{GNSS}{section.2.3}% 16
-\BOOKMARK [2][-]{subsection.2.3.2}{Javni prijevoz}{section.2.3}% 17
+\BOOKMARK [2][-]{subsection.2.3.1}{Zdru\236ena ocitanja prijamnika za satelitsku navigacij}{section.2.3}% 16
+\BOOKMARK [2][-]{subsection.2.3.2}{Javni prijevoz i pametne kartice \(Smart Card sustavi\)}{section.2.3}% 17
 \BOOKMARK [0][-]{chapter.3}{Kontekstualizirane matrice}{}% 18
 \BOOKMARK [1][-]{section.3.1}{Kontekst iz samog izvora podataka o kretanju}{chapter.3}% 19
 \BOOKMARK [1][-]{section.3.2}{Kontekst iz vanjskih izvora}{chapter.3}% 20
@@ -30,15 +30,16 @@
 \BOOKMARK [1][-]{section.5.2}{Zajednicki, objektivni kriteriji usporedbe}{chapter.5}% 30
 \BOOKMARK [1][-]{section.5.3}{Komparacijski indikatori}{chapter.5}% 31
 \BOOKMARK [2][-]{subsection.5.3.1}{Vremenski okvir}{section.5.3}% 32
-\BOOKMARK [2][-]{subsection.5.3.2}{Rezolucija}{section.5.3}% 33
+\BOOKMARK [2][-]{subsection.5.3.2}{Razlucivost \(Rezolucija\)}{section.5.3}% 33
 \BOOKMARK [2][-]{subsection.5.3.3}{\227irina toka}{section.5.3}% 34
 \BOOKMARK [2][-]{subsection.5.3.4}{Geometrija prostorne podjele}{section.5.3}% 35
 \BOOKMARK [2][-]{subsection.5.3.5}{Definicija putovanja}{section.5.3}% 36
 \BOOKMARK [2][-]{subsection.5.3.6}{}{section.5.3}% 37
 \BOOKMARK [2][-]{subsection.5.3.7}{Gustoca informacija - kontekst}{section.5.3}% 38
 \BOOKMARK [1][-]{section.5.4}{Meuovisnost parametara}{chapter.5}% 39
-\BOOKMARK [0][-]{section.5.4}{Pojmovnik}{}% 40
-\BOOKMARK [0][-]{section.5.4}{Sažetak}{}% 41
-\BOOKMARK [0][-]{appendix.A}{Naslov priloga}{}% 42
-\BOOKMARK [1][-]{section.A.1}{Naslov sekcije}{appendix.A}% 43
-\BOOKMARK [1][-]{section.A.2}{Naslov sekcije}{appendix.A}% 44
+\BOOKMARK [0][-]{chapter*.18}{Bibliografija}{}% 40
+\BOOKMARK [0][-]{chapter*.18}{Pojmovnik}{}% 41
+\BOOKMARK [0][-]{chapter*.18}{Sažetak}{}% 42
+\BOOKMARK [0][-]{appendix.A}{Naslov priloga}{}% 43
+\BOOKMARK [1][-]{section.A.1}{Naslov sekcije}{appendix.A}% 44
+\BOOKMARK [1][-]{section.A.2}{Naslov sekcije}{appendix.A}% 45

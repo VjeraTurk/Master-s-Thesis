@@ -1,16 +1,16 @@
-\ifglsentryexists{nfc}{}%
+\ifglsentryexists{pom}{}%
 {%
-\gls@defglossaryentry{nfc}%
+\gls@defglossaryentry{pom}%
 {%
-name={\acronymfont {\glsentryshort {nfc}}},%
-sort={NFC},%
+name={\acronymfont {\glsentryshort {pom}}},%
+sort={POM},%
 type={main},%
-first={NFC},%
-firstplural={NFCs},%
-text={NFC},%
-plural={NFCs},%
-description={Near Field Communication},%
-descriptionplural={Near Field Communication},%
+first={POM},%
+firstplural={POMs},%
+text={POM},%
+plural={POMs},%
+description={Polazišno-Odredišna Matrica},%
+descriptionplural={Polazišno-Odredišna Matrica},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -19,28 +19,28 @@ user3={},%
 user4={},%
 user5={},%
 user6={},%
-long={Near Field Communication},%
-longplural={Near Field Communications},%
-short={NFC},%
-shortplural={NFCs},%
+long={Polazi\v sno-Odredi\v sna Matrica},%
+longplural={Polazi\v sno-Odredi\v sna Matricas},%
+short={POM},%
+shortplural={POMs},%
 counter={page},%
 parent={},%
 %
 }%
 }%
-\ifglsentryexists{wlan}{}%
+\ifglsentryexists{odm}{}%
 {%
-\gls@defglossaryentry{wlan}%
+\gls@defglossaryentry{odm}%
 {%
-name={\acronymfont {\glsentryshort {wlan}}},%
-sort={WLAN},%
+name={\acronymfont {\glsentryshort {odm}}},%
+sort={ODM},%
 type={main},%
-first={WLAN},%
-firstplural={WLANs},%
-text={WLAN},%
-plural={WLANs},%
-description={Wireless Local Area Network},%
-descriptionplural={Wireless Local Area Network},%
+first={ODM},%
+firstplural={ODMs},%
+text={ODM},%
+plural={ODMs},%
+description={Origin-destination Martix},%
+descriptionplural={Origin-destination Martix},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -49,10 +49,10 @@ user3={},%
 user4={},%
 user5={},%
 user6={},%
-long={Wireless Local Area Network},%
-longplural={Wireless Local Area Networks},%
-short={WLAN},%
-shortplural={WLANs},%
+long={Origin-destination Martix},%
+longplural={Origin-destination Martixs},%
+short={ODM},%
+shortplural={ODMs},%
 counter={page},%
 parent={},%
 %

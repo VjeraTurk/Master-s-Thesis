@@ -4,56 +4,57 @@
 \contentsline {chapter}{\numberline {1}Uvod}{1}{chapter.1}
 \contentsline {chapter}{\numberline {2}Polazi\v sno-odredi\v sna matrica}{2}{chapter.2}
 \contentsline {section}{\numberline {2.1}Tradicionalni pristupi generiranju POM-a}{2}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Ankete}{2}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Prebrojavanje vozila}{2}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}Gravitacijski model}{2}{subsection.2.1.3}
-\contentsline {subsection}{\numberline {2.1.4}Problematika i ograni\v cenja tradicionalnih na\v cina}{2}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {2.1.1}Ankete}{3}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Prebrojavanje vozila}{3}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Modeliranje toka}{3}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Problematika i ograni\v cenja tradicionalnih na\v cina}{3}{subsection.2.1.4}
 \contentsline {section}{\numberline {2.2}POM iz zapisa o aktivnostima u javnoj pokretnoj mre\v zi}{3}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Razlike u pristupima}{3}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}To\v cnost polo\v zaja}{3}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Geometrija prostorne podjele}{3}{subsection.2.2.3}
-\contentsline {subsubsection}{Heksagoni}{3}{section*.4}
-\contentsline {subsubsection}{Voronoi tesalacije}{3}{section*.5}
-\contentsline {subsubsection}{Jedinice samouprave}{3}{section*.6}
-\contentsline {subsubsection}{Pravokutna mre\v za}{3}{section*.7}
-\contentsline {subsection}{\numberline {2.2.4}Dobre prakse u generiranju POM iz CDR}{3}{subsection.2.2.4}
-\contentsline {section}{\numberline {2.3}Drugi primjeri automatskog prikupljanja}{4}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}GNSS}{4}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Javni prijevoz}{4}{subsection.2.3.2}
-\contentsline {chapter}{\numberline {3}Kontekstualizirane matrice}{5}{chapter.3}
-\contentsline {section}{\numberline {3.1}Kontekst iz samog izvora podataka o kretanju}{5}{section.3.1}
-\contentsline {section}{\numberline {3.2}Kontekst iz vanjskih izvora}{5}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}\textit {Points of Interes}}{5}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Open Street Map}{6}{subsection.3.2.2}
-\contentsline {subsubsection}{Model raspodjele toka (na\v s model)}{6}{section*.8}
-\contentsline {subsubsection}{Izvor infrastrukture}{6}{section*.9}
-\contentsline {section}{\numberline {3.3}Sredstvo (na\v cin) kretanja}{6}{section.3.3}
-\contentsline {chapter}{\numberline {4}Postoje\'ce metrike kvalitete POM-e}{7}{chapter.4}
-\contentsline {section}{\numberline {4.1}Referentna matirca - \textit {Grand Truth matrix}}{7}{section.4.1}
-\contentsline {section}{\numberline {4.2}Metrike}{7}{section.4.2}
-\contentsline {subsubsection}{$R^{2}$ }{7}{section*.10}
-\contentsline {subsubsection}{GEH}{7}{section*.11}
-\contentsline {subsubsection}{ MSE, SEM, RMSE, EBM (SAE)}{7}{section*.12}
-\contentsline {subsubsection}{Pearson korelacija redova}{7}{section*.13}
-\contentsline {subsubsection}{Wasserstein Metric}{8}{section*.14}
-\contentsline {subsection}{\numberline {4.2.1}Strukturalna sli\v cnost}{8}{subsection.4.2.1}
-\contentsline {subsubsection}{MSSI}{8}{section*.15}
-\contentsline {chapter}{\numberline {5}Odnosni parametri kvalitete}{9}{chapter.5}
-\contentsline {section}{\numberline {5.1}To\v cnost POM-e}{9}{section.5.1}
-\contentsline {section}{\numberline {5.2}Zajedni\v cki, objektivni kriteriji usporedbe}{9}{section.5.2}
-\contentsline {section}{\numberline {5.3}Komparacijski indikatori}{9}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Vremenski okvir}{9}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Rezolucija}{9}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}\v Sirina toka}{10}{subsection.5.3.3}
-\contentsline {subsection}{\numberline {5.3.4}Geometrija prostorne podjele}{10}{subsection.5.3.4}
-\contentsline {subsection}{\numberline {5.3.5}Definicija putovanja}{10}{subsection.5.3.5}
-\contentsline {subsection}{\numberline {5.3.6}}{10}{subsection.5.3.6}
-\contentsline {subsubsection}{Infrastruktura}{10}{section*.16}
-\contentsline {subsubsection}{Sredstvo kretanja}{10}{section*.17}
-\contentsline {subsection}{\numberline {5.3.7}Gusto\'ca informacija - kontekst}{10}{subsection.5.3.7}
-\contentsline {section}{\numberline {5.4}Me\IeC {\dj }uovisnost parametara}{10}{section.5.4}
-\contentsline {chapter}{Pojmovnik}{11}{section.5.4}
-\contentsline {chapter}{Sažetak}{12}{section.5.4}
-\contentsline {chapter}{\numberline {A}Naslov priloga}{13}{appendix.A}
-\contentsline {section}{\numberline {A.1}Naslov sekcije}{13}{section.A.1}
-\contentsline {section}{\numberline {A.2}Naslov sekcije}{13}{section.A.2}
+\contentsline {subsection}{\numberline {2.2.1}Razlike u pristupima}{4}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}To\v cnost polo\v zaja}{4}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Geometrija prostorne podjele}{5}{subsection.2.2.3}
+\contentsline {subsubsection}{Heksagoni}{5}{section*.4}
+\contentsline {subsubsection}{Voronoi tesalacije}{5}{section*.5}
+\contentsline {subsubsection}{Jedinice samouprave}{5}{section*.6}
+\contentsline {subsubsection}{Pravokutna mre\v za}{5}{section*.7}
+\contentsline {subsection}{\numberline {2.2.4}Dobre prakse u generiranju POM iz CDR}{5}{subsection.2.2.4}
+\contentsline {section}{\numberline {2.3}Drugi primjeri automatskog prikupljanja}{6}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Zdru\v zena o\v citanja prijamnika za satelitsku navigacij}{6}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Javni prijevoz i \textit {pametne kartice }(\textit {Smart Card }sustavi)}{6}{subsection.2.3.2}
+\contentsline {chapter}{\numberline {3}Kontekstualizirane matrice}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}Kontekst iz samog izvora podataka o kretanju}{7}{section.3.1}
+\contentsline {section}{\numberline {3.2}Kontekst iz vanjskih izvora}{7}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}\textit {Points of Interes}}{7}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Open Street Map}{8}{subsection.3.2.2}
+\contentsline {subsubsection}{Model raspodjele toka (na\v s model)}{8}{section*.8}
+\contentsline {subsubsection}{Izvor infrastrukture}{8}{section*.9}
+\contentsline {section}{\numberline {3.3}Sredstvo (na\v cin) kretanja}{8}{section.3.3}
+\contentsline {chapter}{\numberline {4}Postoje\'ce metrike kvalitete POM-e}{9}{chapter.4}
+\contentsline {section}{\numberline {4.1}Referentna matirca - \textit {Grand Truth matrix}}{9}{section.4.1}
+\contentsline {section}{\numberline {4.2}Metrike}{9}{section.4.2}
+\contentsline {subsubsection}{$R^{2}$ }{9}{section*.10}
+\contentsline {subsubsection}{GEH}{9}{section*.11}
+\contentsline {subsubsection}{ MSE, SEM, RMSE, EBM (SAE)}{9}{section*.12}
+\contentsline {subsubsection}{Pearson korelacija redova}{9}{section*.13}
+\contentsline {subsubsection}{Wasserstein Metric}{10}{section*.14}
+\contentsline {subsection}{\numberline {4.2.1}Strukturalna sli\v cnost}{10}{subsection.4.2.1}
+\contentsline {subsubsection}{MSSI}{10}{section*.15}
+\contentsline {chapter}{\numberline {5}Odnosni parametri kvalitete}{11}{chapter.5}
+\contentsline {section}{\numberline {5.1}To\v cnost POM-e}{11}{section.5.1}
+\contentsline {section}{\numberline {5.2}Zajedni\v cki, objektivni kriteriji usporedbe}{11}{section.5.2}
+\contentsline {section}{\numberline {5.3}Komparacijski indikatori}{11}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Vremenski okvir}{11}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Razlu\v civost (Rezolucija)}{12}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}\v Sirina toka}{12}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Geometrija prostorne podjele}{12}{subsection.5.3.4}
+\contentsline {subsection}{\numberline {5.3.5}Definicija putovanja}{12}{subsection.5.3.5}
+\contentsline {subsection}{\numberline {5.3.6}}{12}{subsection.5.3.6}
+\contentsline {subsubsection}{Infrastruktura}{12}{section*.16}
+\contentsline {subsubsection}{Sredstvo kretanja}{12}{section*.17}
+\contentsline {subsection}{\numberline {5.3.7}Gusto\'ca informacija - kontekst}{12}{subsection.5.3.7}
+\contentsline {section}{\numberline {5.4}Me\IeC {\dj }uovisnost parametara}{12}{section.5.4}
+\contentsline {chapter}{Bibliografija}{13}{chapter*.18}
+\contentsline {chapter}{Pojmovnik}{14}{chapter*.18}
+\contentsline {chapter}{Sažetak}{15}{chapter*.18}
+\contentsline {chapter}{\numberline {A}Naslov priloga}{16}{appendix.A}
+\contentsline {section}{\numberline {A.1}Naslov sekcije}{16}{section.A.1}
+\contentsline {section}{\numberline {A.2}Naslov sekcije}{16}{section.A.2}

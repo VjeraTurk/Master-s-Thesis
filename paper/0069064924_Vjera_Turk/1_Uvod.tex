@@ -1,29 +1,57 @@
 % !TeX encoding = windows-1250
 \chapter{Uvod}
 
-Polazišno-odredišna matrica (POM) omoguæuje sustavnu statistièku procjenu migracija stanovništva u zadanom prostorno-vremenskom okviru. Za razliku od tradicionalnog pristupa brojanja putovanja i putnika, za procjenu POM-e danas se sve više koristi statistièka analiza podataka iz suvremenih informacijskih i komunikacijskih sustava (zapisi o aktivnostima u javnoj pokretnoj mreži, združena oèitanja prijamnika za satelitsku navigaciju i sl.), èime je omoguæeno poboljšanje kvalitete procjene preslikavanjem POM-e na kontekst. 
+Polazišno-odredišna matrica (POM) alat je koji omoguæuje sustavnu statistièku procjenu migracija stanovništva na nekom podruèju u zadanom prostorno-vremenskom okviru. Za razliku od tradicionalnog pristupa brojanja putovanja i putnika, za procjenu POM-e danas se sve više koristi statistièka analiza podataka iz suvremenih informacijskih i komunikacijskih sustava (zapisi o aktivnostima u javnoj pokretnoj mreži, združena oèitanja prijamnika za satelitsku navigaciju i sl.), èime je omoguæeno poboljšanje kvalitete procjene preslikavanjem POM-e na kontekst. 
 
 Pojavljuje se potreba za objektivnom procjenom kvalitete POM-e u odnosu na referentnu (kontrolnu). U ovom radu definirani su odnosni parametri kvalitete POM-e te je razvijena metodologija usporedbe dviju POM-a dobivenih razlièitim postupcima procjene i s podatcima iz razlièitih izvora. Usporedba je obavljena korištenjem numerièkog i grafièkog oblika POM-e. 
 
 Metodologija je izvedena u programskom okruženju za statistièko raèunarstvo R te je demonstrirana njena primjena na sluèaju usporedbe dviju POM-a. Dobiveni rezultati komentirani su sa stajališta apsolutne i relativne toènosti matrica.
-
-
+\cite{Peterson:2007.}
+\cite{Alhazzani:2016.}
 
 \chapter{Polazišno-odredišna matrica}
+
+ Polazišno-odredišne matrice (POM) sadrže broj putovanja izmeðu svakog para položaja unutar nekog podruèja za odreðen vremenski okvir. 
+  
+ The Origin-Destination matrices (ODs) provides the number of trips between each pair of locations in the area for a specified time window 
+ 
+ ...which specify the travel demands between the origin and
+ destination nodes in the network. 
+ 
 Tranzitna, t-POM
 koncentracija u radu na CDR (?)
             
 \section{Tradicionalni pristupi generiranju POM-a}
 
+ Traditional methods include running surveys within
+cities and estimating the flows between locations of the city from the feedback of those surveys. Such methods consume longer periods of time and are inaccurate at times. They usually span smaller population sample sizes and thus are more prone to biases.
+
+Recent research in the domain of ubiquitous computing provided alternative methodologies for estimating more accurate ODs from user generated datasets like cell phone data. 
+
 \subsection{Ankete}
 cijena anketiranja  (u jednom od radova 10 eura po ispitaniku?)
 \subsection{Prebrojavanje vozila}
 ruèno, video
-\subsection{Gravitacijski model}
+\subsection{Modeliranje toka}
+
+Mathematical modeling of traffic requires a lot of data and other information about the road network and the travel demand. 
+The accuracy of the modeled traffic situation depends on the quality of the available information, and how this data is combined and weighted from different sources. The
+travel demand is a key component and nearly every traffic model requires a tableau OD/trip matrix/table specifying the travel demand between different places in the network. Such a tableau is called an Origin–Destination matrix, or OD-matrix for short; synonymously used terms are trip table or (origin–destination) trip matrix. 
+
 \subsection{Problematika i ogranièenja tradicionalnih naèina}
 Zastarijevanje 
 
 \section{POM iz zapisa o aktivnostima u javnoj pokretnoj mreži}
+
+Today, with the ubiquity and pervasiveness of technology, data generated from mobile phones enable data analysts to better understand the behavior of individuals across many dimensions including their mobility patterns. 
+
+Unlike traditional analyses, the nature of this data mining approach forces us to first provide rigid, formal definitions of exactly what we mean by the terms origin, destination and journey. Here, both origins and destinations are subcategories of the overarching concept of a ‘stop’. A stop is defined as a set of contiguous network events that occur at the same location, over a minimum period of time. 
+
+This notion is parameterized to ensure we have sufficient confidence that any stop we have detected is not a transient location, but actually a location that the individual has actually settled in.
+
+An algorithm must consequently be developed to exhaustively mine each person’s event series for such stops. Once achieved, the algorithm must next detect pairs of contiguous stops which occur at different locations and hence reveal movement. This pair can then be designated as a journey -
+the initiating stop becoming the journey’s origin, and the concluding stop as the journey’s destination. 
+
 
 \subsection{Razlike u pristupima}
         Tranzitna t-POM,
@@ -54,7 +82,7 @@ k-anonymization
 \newpage
 \section{Drugi primjeri automatskog prikupljanja}
 
-\subsection{GNSS}
-\subsection{Javni prijevoz}
+\subsection{Združena oèitanja prijamnika za satelitsku navigacij}
+\subsection{Javni prijevoz i \textit{pametne kartice }(\textit{Smart Card }sustavi)}
 
 \vspace{10pt}

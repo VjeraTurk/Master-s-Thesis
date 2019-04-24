@@ -18,7 +18,7 @@
   - važna je optimizacija rezolucije
   - kako ćemo dokazati napredak u odnosu na referentnu?!
 
-**PERIOD** vremenski okvir - o ćemu ovosi optimum?
+**PERIOD** vremenski okvir - o čemu ovisi optimum?
 **ŠIRINA UKUPNOG TOKA** po periodu 
    * uz omjer 0 i !0 ćelija?
    * (jednaka će biti ulaznog/izlaznog)
@@ -45,7 +45,7 @@
 
 * heatmapa
 * TODO: compare 2 images using 3 definitions of MSSIM, compare results
-
+* 4D, mogu izračunati udaljenost svih stanica jednih od drugih
 
 #### **USPOREDBA** RAZMISLITI
 * TAXI POM VS CDR POM ?

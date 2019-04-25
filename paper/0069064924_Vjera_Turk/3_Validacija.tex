@@ -1,30 +1,60 @@
 % !TeX encoding = windows-1250
-\chapter{Postojeæe metrike kvalitete POM-e}
-  
-\section{Referentna matirca - \textit{Grand Truth matrix}}
-goodness of fit measure
+\chapter{Postojeæe metrike za validaciju POM-e}
+
+
+\section{Toènost POM-e}
+
+Toènost procijenjenih matrica gotovo uvijek se definira u odnosu na referentnu matricu (eng. \textit{grand truth matrix}) koja je dobivena  tradicionalnim postupcima (anketiranje i/ili prebrojavanje vozila). Statistièke mjere kvantiziraju sliènost procijenjenih i “istinitih“ vrijednosti, ako su nam one poznate. 
+
+Èesto se u literaturi (jednoznaèno?) koriste pojmovi \textit{toènost}, \textit{pouzdanost} i \textit{kvaliteta}. Gotovo uvijek radi se o mjeri koja direktno ima veze sa razina sliènost odnosno razlikom (greška) s referentnom matricom.
+
+%goodness of fit measure
     
 \section{Metrike}
-    
+
+Za procjenu kvalitete matrica dobivenih iskljuèivo anketranjem u radu \cite{Cools:2010.} korištena je mjera Mean Apsolute Percentage Error (MAPE), te je dokazano da se zadovoljavajuæa razina kvalitete takvih matrica postiže tek ako uzorak obuhvaæa 50\% populacije. Istaknuta je važnost korištenja dodatnih izvora za izradu matrica.
+
+\cite{Bera:2011.} navodi statistièke mjere Relative Error (RE), Total Demand Deviation (TDD), Mean Absolute Error (MAE), Root Mean Square Error (RMSE) te Maximum Possible Relative Error (MPRE) i Travel Demand Scale (TDS)  koji procjenjuju kvalitetu neovisno o referentnoj matrici (no MPRE ne dopušta pogreške u prebrojavanju prometa, dok TDS ovisi o topologiji mreže i odabiru ruta). \cite{Djukic:2013.}
+
+U \cite{Frias-Martinez:2012.} korišten je \textit{Pearsonov koeficijent korelacije} -  $r$ da bi se utvrdila sliènost svakog retka matrice dobivene iz CDR s retkom referentne (izlazni tok iz svake polazišne æelije). Isti postupak korišten je za kontekstualizirane \gls{hw} i \gls{wh} matrice  dobivene iz \gls{cdr} u usporedbi s referentnim matricama dobivenim anketiranjem (toènost).
+
+Travassoli u svome radu \cite{Travassoli:2016.} navodi nekoliko uobièajeno korištenih mjera - {$R^{2}$, GEH, \%RMSE te uvodi novu mjeru EBM (temeljenu na svojstvenim vrijednostima matrica) i procjenjuje pouzdanost matrice dobivene iz sustava automatskog prikupljanja podataka u javnom prijevozu (autobus, vlak i trajekt). Spominje i Wasserstein metric, mjeru koja se razlikuje po tome da ne usporeðuje samo vrijednosti parova istih æelija (elementwise). 
+
+Spearmanov koeficijent korelacije ranga korišten je u \cite{Graells-Garrido:2016.} za procjenu sliènosti matrica dobivenih iz CDR sa tada aktualnim matricama dobivenim anketiranjem.
+
+
+\begin{comment}
+
+mozda po jednu recenicu za svako
 \subsubsection{$R^{2}$ }
-    (How close the models are to the reality, ...)
-\subsubsection{GEH} 
-	(How close the models are to the reality, ...)
-    
-\subsubsection{ MSE, SEM, RMSE, EBM (SAE)} 
+The R-squared (R2), as one of the most commonly and widely used (Washington et al., 2011), is a statistical measure of how close the data are to the fitted regression line, and itused for comparing between origin-destination pairs of two OD matrices. R2 values rang from 0 to 1, with higher values indicating less difference between OD matrices. 
+Along with considering higher value of R2 as a higher level of similarity, the regression line should be close to a 45-degree line through the origin. In this condition, the coefficient of the line should be closer to one and the intercept should be closer to zero. The lower and greater coefficient values indicate the tendency of the pattern to overestimate or underestimate values in the reference OD matrix.\cite{Travassoli:2016.}
+
+\subsubsection{GEH}
+Geoffrey E. Havers (GEH) statistic
+The GEH statistic is used to evaluate the level of closeness between origin-destination pairs of two OD matrices. The GEH is applied to every pair in the two matrices, with a GEH of less than 5 indicating a good fit (Hollander and Liu 2008). Then, the percentage of OD pairs that have a GEH equal to or less than 5 is calculated to indicate the level of closeness between two OD matrices.
+ \cite{Travassoli:2016.}   
+ 
+\subsection{RMSE i \%RMSE} 
+The root mean squared error (RMSE) and accordingly the percent root mean squared error(%RMSE) are used to evaluate the closeness of the matrices. The %RMSE is where the variability of the demand is most evident: if two demand matrices were identical, the %RMSE would be equal to zero.
+\subsubsection{ MSE, SEM, EBM (SAE)} 
     (How close the models are to the reality)
-    
+
 \subsubsection{Pearson korelacija redova}
-	pearson correlation row to row 
-    
-    (Estimation of urban commuting paterns using cellphone network data)        
+
+\subsubsection{Sperman rank korelacija}
 
 \subsubsection{Wasserstein Metric} (?)
+
+\end{comment}
+
+
     
-\subsection{Strukturalna sliènost}
+\section{Strukturalna sliènost}
     
-\subsubsection{MSSI} 
+\subsection{MSSI} 
     
-    4.3.1.1.osnovni
+\subsubsection{osnovni}\cite{Djukic:2013.}
+\subsubsection{poboljšani} \cite{Pollard:2013.}\cite{Vuren:2015.}
     
-    4.3.1.2.poboljšani
+     %TODO: Ovdje si 

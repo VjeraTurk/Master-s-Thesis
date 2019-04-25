@@ -58,6 +58,36 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{cdr}{}%
+{%
+\gls@defglossaryentry{cdr}%
+{%
+name={\acronymfont {\glsentryshort {cdr}}},%
+sort={CDR},%
+type={main},%
+first={CDR},%
+firstplural={CDRs},%
+text={CDR},%
+plural={CDRs},%
+description={Call Data Records ili Charging Data Records},%
+descriptionplural={Call Data Records ili Charging Data Records},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Call Data Records ili Charging Data Records},%
+longplural={Call Data Records ili Charging Data Recordss},%
+short={CDR},%
+shortplural={CDRs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{gsm}{}%
 {%
 \gls@defglossaryentry{gsm}%
@@ -83,6 +113,156 @@ long={Global System for Mobile (Communications)},%
 longplural={Global System for Mobile (Communications)s},%
 short={GSM},%
 shortplural={GSMs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{rsi}{}%
+{%
+\gls@defglossaryentry{rsi}%
+{%
+name={\acronymfont {\glsentryshort {rsi}}},%
+sort={RSI},%
+type={main},%
+first={RSI},%
+firstplural={RSIs},%
+text={RSI},%
+plural={RSIs},%
+description={Road Side Interview},%
+descriptionplural={Road Side Interview},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Road Side Interview},%
+longplural={Road Side Interviews},%
+short={RSI},%
+shortplural={RSIs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{pois}{}%
+{%
+\gls@defglossaryentry{pois}%
+{%
+name={\acronymfont {\glsentryshort {pois}}},%
+sort={POIs},%
+type={main},%
+first={POIs},%
+firstplural={POIss},%
+text={POIs},%
+plural={POIss},%
+description={Points of Interest},%
+descriptionplural={Points of Interest},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Points of Interest},%
+longplural={Points of Interests},%
+short={POIs},%
+shortplural={POIss},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{hw}{}%
+{%
+\gls@defglossaryentry{hw}%
+{%
+name={\acronymfont {\glsentryshort {hw}}},%
+sort={HW},%
+type={main},%
+first={HW},%
+firstplural={HWs},%
+text={HW},%
+plural={HWs},%
+description={Home-Work},%
+descriptionplural={Home-Work},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Home-Work},%
+longplural={Home-Works},%
+short={HW},%
+shortplural={HWs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{wh}{}%
+{%
+\gls@defglossaryentry{wh}%
+{%
+name={\acronymfont {\glsentryshort {wh}}},%
+sort={WH},%
+type={main},%
+first={WH},%
+firstplural={WHs},%
+text={WH},%
+plural={WHs},%
+description={Work-Home},%
+descriptionplural={Work-Home},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Work-Home},%
+longplural={Work-Homes},%
+short={WH},%
+shortplural={WHs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ebm}{}%
+{%
+\gls@defglossaryentry{ebm}%
+{%
+name={\acronymfont {\glsentryshort {ebm}}},%
+sort={EBM},%
+type={main},%
+first={EBM},%
+firstplural={EBMs},%
+text={EBM},%
+plural={EBMs},%
+description={Work-Home},%
+descriptionplural={Work-Home},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Work-Home},%
+longplural={Work-Homes},%
+short={EBM},%
+shortplural={EBMs},%
 counter={page},%
 parent={},%
 %

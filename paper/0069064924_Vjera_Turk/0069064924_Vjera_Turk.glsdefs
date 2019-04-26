@@ -268,3 +268,63 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{ssim}{}%
+{%
+\gls@defglossaryentry{ssim}%
+{%
+name={\acronymfont {\glsentryshort {ssim}}},%
+sort={SSIM},%
+type={main},%
+first={SSIM},%
+firstplural={SSIMs},%
+text={SSIM},%
+plural={SSIMs},%
+description={Structural Similarity index},%
+descriptionplural={Structural Similarity index},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Structural Similarity index},%
+longplural={Structural Similarity indexs},%
+short={SSIM},%
+shortplural={SSIMs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{mssim}{}%
+{%
+\gls@defglossaryentry{mssim}%
+{%
+name={\acronymfont {\glsentryshort {mssim}}},%
+sort={MSSIM},%
+type={main},%
+first={MSSIM},%
+firstplural={MSSIMs},%
+text={MSSIM},%
+plural={MSSIMs},%
+description={Mean Structural Similarity index},%
+descriptionplural={Mean Structural Similarity index},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Mean Structural Similarity index},%
+longplural={Mean Structural Similarity indexs},%
+short={MSSIM},%
+shortplural={MSSIMs},%
+counter={page},%
+parent={},%
+%
+}%
+}%

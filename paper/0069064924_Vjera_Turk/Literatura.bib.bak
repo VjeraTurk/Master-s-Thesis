@@ -34,6 +34,15 @@
   Timestamp                = {24.04.2019}
 }
 
+@Article{Cools:2010.,
+  Title                    = {Assessing the Quality of Origin-Destination Matrices Derived from Activity Travel Surveys},
+  Author                   = {Mario Cools and Elke Moons and Geet Wets},
+  Journal                  = {Transportation Research Record: Journal of the Transportation Research Board},
+  Year                     = {2010.},
+
+  Timestamp                = {25.04.2019}
+}
+
 @Article{Djukic:2013.,
   Title                    = {Reliability assessment of dynamic OD estimation methods based on structural similarity index},
   Author                   = {Tamara Djuki\'c},

@@ -6,25 +6,38 @@ Polazišno-odredišna matrica (POM) alat je koji omoguæuje sustavnu statistièku pr
 Pojavljuje se potreba za objektivnom procjenom kvalitete POM-e u odnosu na referentnu (kontrolnu). U ovom radu definirani su odnosni parametri kvalitete POM-e te je razvijena metodologija usporedbe dviju POM-a dobivenih razlièitim postupcima procjene i s podatcima iz razlièitih izvora. Usporedba je obavljena korištenjem numerièkog i grafièkog oblika POM-e. 
 
 Metodologija je izvedena u programskom okruženju za statistièko raèunarstvo R te je demonstrirana njena primjena na sluèaju usporedbe dviju POM-a. Dobiveni rezultati komentirani su sa stajališta apsolutne i relativne toènosti matrica.
-\cite{Peterson:2007.}
-\cite{Alhazzani:2016.}
-\cite{Bahoken:2013.}
-\cite{Filic:2016.}
+
 \chapter{Polazišno-odredišna matrica}
 
- Polazišno-odredišne matrice (POM) sadrže broj putovanja izmeðu svakog para položaja unutar nekog podruèja za odreðen vremenski okvir. 
-  
- The Origin-Destination matrices (ODs) provides the number of trips between each pair of locations in the area for a specified time window 
+\begin{comment}  
+The Origin-Destination matrices (ODs) provides the number of trips between each pair of locations in the area for a specified time window 
+
+...which specify the travel demands between the origin and
+destination nodes in the network. 
+
+\end{comment}
+
+Polazišno-odredišne matrice (POM) sadrže broj putovanja izmeðu svakog para položaja unutar nekog podruèja za odreðen vremenski okvir. 
+
+\begin{comment}  
+ The accuracy of the modeled traffic situation depends on the quality of the available
+ information, and how this data is combined and weighted from different sources. The
+ travel demand is a key component and nearly every traffic model requires a tableaOD/trip matrix/table
+ specifying the travel demand between different places in the network. Such a tableau
+ is called an Origin–Destination matrix, or OD-matrix for short; synonymously used
+ terms are trip table or (origin–destination) trip matrix. 
  
- ...which specify the travel demands between the origin and
- destination nodes in the network. 
- 
+
+
+\end{comment}
+
 Tranzitna, t-POM
-koncentracija u radu na CDR (?)
-            
+
+Koncentracija u radu na CDR (?)
+
 \section{Tradicionalni pristupi generiranju POM-a}
 
- Traditional methods include running surveys within cities and estimating the flows between locations of the city from the feedback of those surveys. Such methods consume longer periods of time and are inaccurate at times. They usually span smaller population sample sizes and thus are more prone to biases.
+Traditional methods include running surveys within cities and estimating the flows between locations of the city from the feedback of those surveys. Such methods consume longer periods of time and are inaccurate at times. They usually span smaller population sample sizes and thus are more prone to biases.
 
 Recent research in the domain of ubiquitous computing provided alternative methodologies for estimating more accurate ODs from user generated datasets like cell phone data. 
 
@@ -38,6 +51,10 @@ Mathematical modeling of traffic requires a lot of data and other information ab
 The accuracy of the modeled traffic situation depends on the quality of the available information, and how this data is combined and weighted from different sources. The
 travel demand is a key component and nearly every traffic model requires a tableau OD/trip matrix/table specifying the travel demand between different places in the network. Such a tableau is called an Origin–Destination matrix, or OD-matrix for short; synonymously used terms are trip table or (origin–destination) trip matrix. 
 
+
+ it is typically assumed that the travel demand is equal in both direction for all OD-pairs, 
+ \cite{Peterson:2007.} 
+ 
 \subsection{Problematika i ogranièenja tradicionalnih naèina}
 Zastarijevanje 
 

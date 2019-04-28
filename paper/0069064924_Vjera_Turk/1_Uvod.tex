@@ -1,39 +1,45 @@
 % !TeX encoding = windows-1250
 \chapter{Uvod}
-
-Polazišno-odredišna matrica (POM) alat je koji omoguæuje sustavnu statistièku procjenu migracija stanovništva na nekom podruèju u zadanom prostorno-vremenskom okviru. Za razliku od tradicionalnog pristupa brojanja putovanja i putnika, za procjenu POM-e danas se sve više koristi statistièka analiza podataka iz suvremenih informacijskih i komunikacijskih sustava (zapisi o aktivnostima u javnoj pokretnoj mreži, združena oèitanja prijamnika za satelitsku navigaciju i sl.), èime je omoguæeno poboljšanje kvalitete procjene preslikavanjem POM-e na kontekst. 
-
-Pojavljuje se potreba za objektivnom procjenom kvalitete POM-e u odnosu na referentnu (kontrolnu). U ovom radu definirani su odnosni parametri kvalitete POM-e te je razvijena metodologija usporedbe dviju POM-a dobivenih razlièitim postupcima procjene i s podatcima iz razlièitih izvora. Usporedba je obavljena korištenjem numerièkog i grafièkog oblika POM-e. 
-
-Metodologija je izvedena u programskom okruženju za statistièko raèunarstvo R te je demonstrirana njena primjena na sluèaju usporedbe dviju POM-a. Dobiveni rezultati komentirani su sa stajališta apsolutne i relativne toènosti matrica.
-
-\chapter{Polazišno-odredišna matrica}
-
 \begin{comment}  
-The Origin-Destination matrices (ODs) provides the number of trips between each pair of locations in the area for a specified time window 
-
-...which specify the travel demands between the origin and
-destination nodes in the network. 
-
+An origin-destination matrix is an important tool for describing group mobility and measuring socio-economic activity in a certain region, often used in traffic science for urban migration analysis and strategic planning.
 \end{comment}
 
-Polazišno-odredišne matrice (POM) sadrže broj putovanja izmeðu svakog para položaja unutar nekog podruèja za odreðen vremenski okvir. 
+Izvorišno-Odredišna matrica \textit{eng. \gls{odm}} alat je koji omoguæuje sustavnu statistièku procjenu migracija stanovništva na nekom podruèju u zadanom prostorno-vremenskom okviru. Služi za opis grupne mobilnosti i mjerenje socio-ekonomske aktivnosti u nekoj regiji, a najèešæe se koristi u prometnoj znanosti za analizu i strateško planiranje prometnog optereæenja i prometne infrastrukture. 
+
+Za razliku od tradicionalnog pristupa prebrojavanja putovanja i putnika, za procjenu matrica danas se sve više koristi statistièka analiza podataka iz suvremenih informacijskih i komunikacijskih sustava (zapisi o aktivnostima u javnoj pokretnoj mreži, združena oèitanja prijamnika za satelitsku navigaciju i sl.), èime je omoguæeno poboljšanje kvalitete procjene preslikavanjem matrice na kontekst. 
+
+Pojavljuje se potreba za objektivnom procjenom kvalitete \gls{odm} u odnosu na referentnu (kontrolnu). U ovom radu definirani su odnosni parametri kvalitete \gls{odm} te je razvijena metodologija usporedbe dviju \gls{odm}-a dobivenih razlièitim postupcima procjene i s podatcima iz razlièitih izvora. Usporedba je obavljena korištenjem numerièkog i grafièkog oblika \gls{odm}. 
+
+Metodologija je izvedena u programskom okruženju za statistièko raèunarstvo R te je demonstrirana njena primjena na sluèaju usporedbe dviju \gls{odm}-a. Dobiveni rezultati komentirani su sa stajališta apsolutne i relativne toènosti matrica.
+
+\chapter{Izvorišno-odredišna matrica}
 
 \begin{comment}  
- The accuracy of the modeled traffic situation depends on the quality of the available
- information, and how this data is combined and weighted from different sources. The
- travel demand is a key component and nearly every traffic model requires a tableaOD/trip matrix/table
- specifying the travel demand between different places in the network. Such a tableau
- is called an Origin–Destination matrix, or OD-matrix for short; synonymously used
- terms are trip table or (origin–destination) trip matrix. 
- 
+
+
+The Origin-Destination matrices (ODs) provides the number of trips between each pair of locations in the area for a specified time window ...which specify the travel demands between the origin and destination nodes in the network. 
+
+Izvorišno-odredišna matrica prikazuje broj putovanja iz izvorišne u ciljnu zonu u promatranom vremenu. Može biti prikazana ukupno ili po pojedinim modulima prometnog sustava (osobna vozila, vozila javnog prijevoza, teretna vozila, pješaka itd). Može biti generirana za sadašnje ili planirano prometno optereæenje.
 
 
 \end{comment}
+Izvorišno-odredišne matrica sadrži broj putovanja izmeðu svakog para zona unutar nekog podruèja za odreðeni vremenski okvir (u svakom smjeru zasebno). Svaka æelija u matrici predstavlja broj putovanja iz izvorišne u ciljnu zonu.
+
+Matrica može biti prikazana ukupno ili po pojedinim modulima prometnog sustava (osobna vozila, vozila javnog prijevoza, teretna vozila, pješaka itd). Može biti generirana za sadašnje ili planirano prometno optereæenje.
+
+Iako intuitivno možemo zakljuèiti da se radi o kvadratnoj matrici, ove matrice su ponekad zbog ogranièenja izvora ili modela predviðanja "rijetko popunjene", odnosno sadrže veliki broj nul-æelija, pa su u nekim sluèajevima prazni redovi ili stupci izbaèeni, a posljedica toga je memorijski (i raèunski) manje zahtjevna, preglednija ne-kvadratna matrica. Ova problematika istaknuta je u radu iz 2010. koji analizira kvalitetu matrica dobivenih iz anketa \cite{Cools:2010.}.
+
+\begin{comment}  
+The accuracy of the modeled traffic situation depends on the quality of the available
+information, and how this data is combined and weighted from different sources. The
+travel demand is a key component and nearly every traffic model requires a tableaOD/trip matrix/table specifying the travel demand between different places in the network. Such a tableau is called an Origin–Destination matrix, or OD-matrix for short; synonymously used
+terms are trip table or (origin–destination) trip matrix. 
 
 Tranzitna, t-POM
 
 Koncentracija u radu na CDR (?)
+\end{comment}
+
 
 \section{Tradicionalni pristupi generiranju POM-a}
 
@@ -84,6 +90,9 @@ coordination with traditional tehniques is key to providing optimal solution in 
        
         Grad, Država
         CDR- POM u zemljama u razvoju
+         Penetracija od 82\%, 9x\% -> pronaæi radove
+Mobilni ureðaji iz godine u godinu zastupljeni su kod sve veæeg postotka stanovništvu, ne samo u razvijenim zemljama veæ i u zemljama u razvoju. 
+         
 \subsection{Toènost položaja}
  toènost položaja - aproksimacija s BS ili signal strenght (RSSI)
  + neka ona drugo baza LTO(?)

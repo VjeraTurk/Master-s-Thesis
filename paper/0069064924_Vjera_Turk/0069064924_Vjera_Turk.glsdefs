@@ -28,6 +28,36 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{iom}{}%
+{%
+\gls@defglossaryentry{iom}%
+{%
+name={\acronymfont {\glsentryshort {iom}}},%
+sort={IOM},%
+type={main},%
+first={IOM},%
+firstplural={IOMs},%
+text={IOM},%
+plural={IOMs},%
+description={Izvorišno-Odredišna Matrica},%
+descriptionplural={Izvorišno-Odredišna Matrica},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Izvori\v sno-Odredi\v sna Matrica},%
+longplural={Izvori\v sno-Odredi\v sna Matricas},%
+short={IOM},%
+shortplural={IOMs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{odm}{}%
 {%
 \gls@defglossaryentry{odm}%

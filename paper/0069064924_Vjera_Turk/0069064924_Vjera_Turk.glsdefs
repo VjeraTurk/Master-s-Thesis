@@ -358,3 +358,33 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{anpr}{}%
+{%
+\gls@defglossaryentry{anpr}%
+{%
+name={\acronymfont {\glsentryshort {anpr}}},%
+sort={ANPR},%
+type={main},%
+first={ANPR},%
+firstplural={ANPRs},%
+text={ANPR},%
+plural={ANPRs},%
+description={Automatic Number Plate Recognition},%
+descriptionplural={Automatic Number Plate Recognition},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Automatic Number Plate Recognition},%
+longplural={Automatic Number Plate Recognitions},%
+short={ANPR},%
+shortplural={ANPRs},%
+counter={page},%
+parent={},%
+%
+}%
+}%

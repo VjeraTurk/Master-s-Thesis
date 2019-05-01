@@ -1,3 +1,0 @@
- First of all, there is in general not possible to observe the flows on all
-links in the network. And even if all link flows could indeed be measured, the data
-would most likely be neither error-free nor consistent. Secondly, even though correct and error-free link flow data would be available for all links in the network, there are still many OD-matrices which assigned onto the network would induce the observed link flows. 

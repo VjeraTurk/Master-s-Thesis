@@ -23,45 +23,45 @@ Warning--empty journal in Frias-Martinez:2012.
 Warning--empty journal in Graells-Garrido:2016.
 
 Done.
-You've used 10 entries,
+You've used 12 entries,
             4087 wiz_defined-function locations,
-            884 strings with 9363 characters,
-and the built_in function-call counts, 3962 in all, are:
-= -- 306
-> -- 94
+            894 strings with 9821 characters,
+and the built_in function-call counts, 4988 in all, are:
+= -- 377
+> -- 140
 < -- 0
-+ -- 44
-- -- 22
-* -- 174
-:= -- 742
-add.period$ -- 19
-call.type$ -- 10
-change.case$ -- 9
++ -- 66
+- -- 33
+* -- 222
+:= -- 907
+add.period$ -- 23
+call.type$ -- 12
+change.case$ -- 11
 chr.to.int$ -- 0
-cite$ -- 12
-duplicate$ -- 342
-empty$ -- 353
-format.name$ -- 28
-if$ -- 858
+cite$ -- 14
+duplicate$ -- 428
+empty$ -- 441
+format.name$ -- 41
+if$ -- 1090
 int.to.chr$ -- 0
-int.to.str$ -- 10
-missing$ -- 65
-newline$ -- 53
-num.names$ -- 10
-pop$ -- 175
+int.to.str$ -- 12
+missing$ -- 84
+newline$ -- 59
+num.names$ -- 12
+pop$ -- 230
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 298
+skip$ -- 372
 stack$ -- 0
-substring$ -- 9
-swap$ -- 186
+substring$ -- 11
+swap$ -- 238
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 10
+type$ -- 12
 warning$ -- 2
-while$ -- 10
-width$ -- 12
-write$ -- 101
+while$ -- 12
+width$ -- 14
+write$ -- 117
 (There were 2 warnings)

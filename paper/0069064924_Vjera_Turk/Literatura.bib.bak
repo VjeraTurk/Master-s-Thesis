@@ -147,5 +147,15 @@
   Timestamp                = {24.04.2019}
 }
 
+@Article{Wang:2016.,
+  Title                    = {A Two-Stage Algorithm for Origin-Destination Matrices Estimation Considering Dynamic Dispersion Parameter for Route Choice},
+  Author                   = {Yong Wang and Xiaolei Ma and Yong Liu1 and  Ke Gong1 and Kristian C. Henricakson and
+Maozeng Xu and Yinhai Wang},
+  Journal                  = {PLOS},
+  Year                     = {2016.},
+
+  Timestamp                = {29.04.2019}
+}
+
 @comment{jabref-meta: databaseType:biblatex;}
 

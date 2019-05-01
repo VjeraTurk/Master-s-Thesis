@@ -4,18 +4,21 @@
 An origin-destination matrix is an important tool for describing group mobility and measuring socio-economic activity in a certain region, often used in traffic science for urban migration analysis and strategic planning.
 \end{comment}
 
-Izvorišno-Odredišna matrica \textit{eng. \gls{odm}} alat je koji omoguæuje sustavnu statistièku procjenu migracija stanovništva na nekom podruèju u zadanom prostorno-vremenskom okviru. Služi za opis grupne mobilnosti i mjerenje socio-ekonomske aktivnosti u nekoj regiji, a najèešæe se koristi u prometnoj znanosti za analizu i strateško planiranje prometnog optereæenja i prometne infrastrukture. 
+
+Izvorišno-Odredišna ili Polazišno-Odredišna matrica \textit{eng. \gls{odm}} ili \textit{Trip Table} alat je koji omoguæuje sustavnu statistièku procjenu migracija stanovništva na nekom podruèju u zadanom prostorno-vremenskom okviru. Služi za opis grupne mobilnosti i mjerenje socio-ekonomske aktivnosti u nekoj regiji, a najèešæe se koristi u prometnoj znanosti za analizu i strateško planiranje prometnog optereæenja i prometne infrastrukture. 
 
 Za razliku od tradicionalnog pristupa prebrojavanja putovanja i putnika, za procjenu matrica danas se sve više koristi statistièka analiza podataka iz suvremenih informacijskih i komunikacijskih sustava (zapisi o aktivnostima u javnoj pokretnoj mreži, združena oèitanja prijamnika za satelitsku navigaciju i sl.), èime je omoguæeno poboljšanje kvalitete procjene preslikavanjem matrice na kontekst. 
 
+\begin{comment}
 Pojavljuje se potreba za objektivnom procjenom kvalitete \gls{odm} u odnosu na referentnu (kontrolnu). U ovom radu definirani su odnosni parametri kvalitete \gls{odm} te je razvijena metodologija usporedbe dviju \gls{odm}-a dobivenih razlièitim postupcima procjene i s podatcima iz razlièitih izvora. Usporedba je obavljena korištenjem numerièkog i grafièkog oblika \gls{odm}. 
 
 Metodologija je izvedena u programskom okruženju za statistièko raèunarstvo R te je demonstrirana njena primjena na sluèaju usporedbe dviju \gls{odm}-a. Dobiveni rezultati komentirani su sa stajališta apsolutne i relativne toènosti matrica.
+	content...
+\end{comment}
 
 \chapter{Izvorišno-odredišna matrica}
 
 \begin{comment}  
-
 
 The Origin-Destination matrices (ODs) provides the number of trips between each pair of locations in the area for a specified time window ...which specify the travel demands between the origin and destination nodes in the network. 
 
@@ -23,48 +26,89 @@ Izvorišno-odredišna matrica prikazuje broj putovanja iz izvorišne u ciljnu zonu 
 
 
 \end{comment}
-Izvorišno-odredišne matrica sadrži broj putovanja izmeðu svakog para zona unutar nekog podruèja za odreðeni vremenski okvir (u svakom smjeru zasebno). Svaka æelija u matrici predstavlja broj putovanja iz izvorišne u ciljnu zonu.
 
-Matrica može biti prikazana ukupno ili po pojedinim modulima prometnog sustava (osobna vozila, vozila javnog prijevoza, teretna vozila, pješaka itd). Može biti generirana za sadašnje ili planirano prometno optereæenje.
+Izvorišno-odredišne matrica sadrži broj putovanja izmeðu svakog para zona unutar nekog podruèja za odreðeni vremenski okvir (u svakom smjeru zasebno). Redovi u matrici predstavljaju polazišta (izvore prometnog toka), a stupci odredišta. Svaki element u matrici predstavlja broj putovanja iz pripadajuæe polazišne u pripadajuæu ciljnu zonu. Može se smatrati matriènim zapisom težinskog usmjerenog grafa, gdje su težinski faktori usmjerenih veza širine prometnih tokova izmeðu èvorova mreže koji predstavljaju zone na koje je promatrano podruèje podijeljeno.  
 
-Iako intuitivno možemo zakljuèiti da se radi o kvadratnoj matrici, ove matrice su ponekad zbog ogranièenja izvora ili modela predviðanja "rijetko popunjene", odnosno sadrže veliki broj nul-æelija, pa su u nekim sluèajevima prazni redovi ili stupci izbaèeni, a posljedica toga je memorijski (i raèunski) manje zahtjevna, preglednija ne-kvadratna matrica. Ova problematika istaknuta je u radu iz 2010. koji analizira kvalitetu matrica dobivenih iz anketa \cite{Cools:2010.}.
+Iako intuitivno možemo zakljuèiti da se radi o kvadratnoj matrici, ove matrice su ponekad zbog ogranièenja izvora ili modela predviðanja "rijetko popunjene", odnosno sadrže veliki broj nul-æelija, pa su u nekim sluèajevima prazni redovi ili stupci izbaèeni, a posljedica toga je memorijski (i raèunski) manje zahtjevna, ne-kvadratna matrica. Ova problematika istaknuta je u radu iz 2010. koji analizira kvalitetu matrica dobivenih iz anketa stanovništva\cite{Cools:2010.}.
+
+Matrica može biti generirana za sadašnje ili planirano prometno optereæenje. Može biti prikazana ukupno ili po pojedinim modulima prometnog sustava (osobna vozila, vozila javnog prijevoza, teretna vozila, pješaka itd).
+
+U prometnoj znanosti postoje brojne metode estimacije matrica. I dok se još uvijek ulaže u razvoj matematièkih modela koji imaju za cilj poveæati kvalitetu matrica generiranih tradicionalnim metodama, u novije vrijeme razvijaju se nove, moderne metode, koje imaju veliki potencijal, zbog svoje jednostavnosti u izvedbi, prednjaèenju u ažurnosti i velikog uzorka stanovništva koji obuhvate, zamijeniti tradicionalne metode i postati standard u analizi prometa pa tako i generiranju \gls{pom}-a.
+
+
+\section{Tradicionalni pristupi generiranju POM-a}
+
+
+\subsection{Ankete}
 
 \begin{comment}  
-The accuracy of the modeled traffic situation depends on the quality of the available
-information, and how this data is combined and weighted from different sources. The
-travel demand is a key component and nearly every traffic model requires a tableaOD/trip matrix/table specifying the travel demand between different places in the network. Such a tableau is called an Origin–Destination matrix, or OD-matrix for short; synonymously used
-terms are trip table or (origin–destination) trip matrix. 
+Traditional methods include running surveys within cities and estimating the flows between locations of the city from the feedback of those surveys. Such methods consume longer periods of time and are inaccurate at times. They usually span smaller population sample sizes and thus are more prone to biases.
+
+Recent research in the domain of ubiquitous computing provided alternative methodologies for estimating more accurate ODs from user generated datasets like cell phone data. 
+\end{comment}
+
+Tradicionalne metode ukljuèuju metode provoðenja anketiranja. Postoji nekoliko vrsta anketa: u kuæanstvima, presretanje vozila, anketiranje  prijevoznih kompanija i tvrtki, tranzit na granici, turisti u hotelima i parking \cite{Cools:2010.}. Ovakve metode su prije svega resursno zahtjevne stoga se ne provode èesto. Anketiranje putovanja u kuæanstvima provodi se na podruèjima brojnih svjetskih metropola tek jednom u deset godina.  
+
+Anketiranje vozaèa presretanjem vozila eng. \gls{rsi} u prosjeku košta èak 10 eura po jednom zabilježenom putovanju i ukupno obuhvati 10\% prometa. Ova vrsta najèešæe se provodi na autocestama. \cite{Pollard:2013.}  
+
+Provoðenje ovih metoda zahtjeva mnogo vremena i ponekad su netoène. Pokrivaju malen dio populacije te iz tog razloga mogu biti pristrane.\cite{Alhazzani:2016.}
+
+\subsection{Prebrojavanje vozila}
+
+\begin{comment}  
+
+Data-driven OD estimation methods relying on link-level traffic flow measurements require less effort and offer significantly reduced time and cost for data acquisition and processing. 
+
+For such methods, observed traffic flows at key points throughout the network should be known as prior information for OD matrix initialization. \cite{Wang:2016.}
+ruèno, video
+\end{comment}
+
+Metode koje ukljuèuju prebrojavanje vozila na kljuènim èvorištima prometne infrastrukture manje su zahtjevne u odnosu na ankete i znaèajno smanjuju vrijeme i troškove prikupljanja podataka. Radi se o analizi nadzornih snimaka prometa, automatskom sustav za prepoznavanje i oèitovanje registarskih ploèica eng. \gls{anpr}, osjetilima prometnog toka (radarski, magnetni, video-senzori, zvuèni...)  i  ruènom prebrojavanju. 
+
+
+
+\subsection{Modeliranje prometa}
+
+\begin{comment}  
+Mathematical modeling of traffic requires a lot of data and other information about the road network and the travel demand. The accuracy of the modeled traffic situation depends on the quality of the available information, and how this data is combined and weighted from different sources. The travel demand is a key component and nearly every traffic model requires a tablea OD/trip matrix/table specifying the travel demand between different places in the network. Such a tableau is called an Origin–Destination matrix, or OD-matrix for short; synonymously used terms are trip table or (origin–destination) trip matrix. 
+
+
+it is typically assumed that the travel demand is equal in both direction for all OD-pairs,
+
+
+An accurately estimated time-dependent OD-matrix is a basis for the decisions in many Intelligent
+Transportation Systems (ITS). This type of operational models are used to produce travel time
+forecasts, which in turn are essential for different kind of route guidance systems.
 
 Tranzitna, t-POM
 
 Koncentracija u radu na CDR (?)
 \end{comment}
 
-
-\section{Tradicionalni pristupi generiranju POM-a}
-
-Traditional methods include running surveys within cities and estimating the flows between locations of the city from the feedback of those surveys. Such methods consume longer periods of time and are inaccurate at times. They usually span smaller population sample sizes and thus are more prone to biases.
-
-Recent research in the domain of ubiquitous computing provided alternative methodologies for estimating more accurate ODs from user generated datasets like cell phone data. 
-
-\subsection{Ankete}
-cijena anketiranja  (u jednom od radova 10 eura po ispitaniku?) \gls{rsi}
-\subsection{Prebrojavanje vozila}
-ruèno, video
-\subsection{Modeliranje toka}
-
-Mathematical modeling of traffic requires a lot of data and other information about the road network and the travel demand. 
-The accuracy of the modeled traffic situation depends on the quality of the available information, and how this data is combined and weighted from different sources. The
-travel demand is a key component and nearly every traffic model requires a tableau OD/trip matrix/table specifying the travel demand between different places in the network. Such a tableau is called an Origin–Destination matrix, or OD-matrix for short; synonymously used terms are trip table or (origin–destination) trip matrix. 
-
-
- it is typically assumed that the travel demand is equal in both direction for all OD-pairs, 
- \cite{Peterson:2007.} 
+Matematièko modeliranje prometa zahtjeva veliku kolièinu podataka - informacija o prometnoj mreži i prometnoj potražnji. Toènost modelirane prometne situacije ovisi o kvaliteti dostupnih informacija te kako su podaci kombinirani, koji težinski faktori su primijenjeni za razlièite izvore. Prometna potražnja kljuèna je komponenta te stoga gotovo svaki prometni model zahtjeva POM-u koja specificira prometnu potražnju izmeðu zona u prometnoj mreži. Toèna \gls{pom}-a osnova je za odluke u mnogim Inteligentnim Transportnim Sustavima engl. Intelligent
+Transportation Systems (ITS) koji su zauzvrat kljuèni za izbor ruta u razlièitim sustavima navigacijskog navoðenja.Neke od pretpostavki kojima se vode u modeliranju su primjerice da je ukupna dnevna potražnja jednaka u oba smjera kod svakog para zona na podruèju grada. \cite{Peterson:2007.}
  
 \subsection{Problematika i ogranièenja tradicionalnih naèina}
 Zastarijevanje 
 
-\section{POM iz zapisa o aktivnostima u javnoj pokretnoj mreži}
+Urban sprawl and population growth have resulted in increasingly severe traffic congestion in
+major cities around the world. City planners and decision makers have recognized the need for
+comprehensive traffic management strategies to meet the challenges of rapidly evolving built
+environments and population demographics. Effective transportation polices and control
+
+
+Alternatively, other sources for observed travel patterns are considerably cheaper, but somehow the profession demands that their value is proven by comparison with traditional roadside interviews. \cite{Pollard:2013.}
+
+
+\subsection{Pokretna osjetila }
+
+rad iz 1972
+
+Osnovna ideja pokretnih osjetila je da vozila koja se kreæu po prometnoj mreži i sastavni su dio prometnog toka prikupljaju i šalju podatke. Nužan zahtjev koji treba biti ispunjen kod pokretnih osjetila je poznavanje pozicije vozila u odreðenim vremenskim trenucima- za to se koristi GNSS ili se vozila identificiraju na odreðenim toèkama.
+
+
+
+\section{Matrice iz zapisa o aktivnostima u javnoj pokretnoj mreži}
 
 Today, with the ubiquity and pervasiveness of technology, data generated from mobile phones enable data analysts to better understand the behavior of individuals across many dimensions including their mobility patterns. 
 
@@ -112,8 +156,12 @@ k-anonymization
 \newpage
 \section{Drugi primjeri automatskog prikupljanja}
 
+
+
 \subsection{Združena oèitanja prijamnika za satelitsku navigacij}
 \subsection{Javni prijevoz i \textit{pametne kartice }(\textit{Smart Card }sustavi)}
 82\% putovanja javnim prijevozom naprave korisnici javnog prijevoza sa pametnim karticama.  \cite{Travassoli:2016.}
+
+%E-call https://en.wikipedia.org/wiki/ECall
 
 \vspace{10pt}

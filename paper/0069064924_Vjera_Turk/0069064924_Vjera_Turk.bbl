@@ -21,6 +21,26 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{Cools:2010.}
+M.~Cools, E.~Moons, and G.~Wets, ``Assessing the quality of origin-destination
+  matrices derived from activity travel surveys,'' \emph{Transportation
+  Research Record: Journal of the Transportation Research Board}, 2010.
+
+\bibitem{Pollard:2013.}
+T.~Pollard, N.~Taylor, T.~van Vuren, and M.~MacDonald, ``Comparing the quality
+  of od matrices in time and between data sources,'' \emph{European Transport
+  Conference}, 2013.
+
+\bibitem{Alhazzani:2016.}
+M.~Alhazzani, F.~Alhasoun, Z.~Alawwad, and M.~C. Gonz\'alez, ``Urban
+  attractors: Discovering patterns in regions of attraction in cities,''
+  \emph{Public Library of Science}, 2016.
+
+\bibitem{Wang:2016.}
+Y.~Wang, X.~Ma, Y.~Liu1, K.~Gong1, K.~C. Henricakson, M.~Xu, and Y.~Wang, ``A
+  two-stage algorithm for origin-destination matrices estimation considering
+  dynamic dispersion parameter for route choice,'' \emph{PLOS}, 2016.
+
 \bibitem{Peterson:2007.}
 A.~Peterson, ``The origin-destination matrix estimation problem- analysis and
   computations,'' Ph.D. dissertation, Link\"oping Studies in Science and
@@ -41,11 +61,6 @@ A.~Travassoli, A.~Alsger, M.~Hickman, and M.~Meshbah, ``How close the models
   automatic fare collection data,'' \emph{Australian Transport Research Forum},
   2016.
 
-\bibitem{Cools:2010.}
-M.~Cools, E.~Moons, and G.~Wets, ``Assessing the quality of origin-destination
-  matrices derived from activity travel surveys,'' \emph{Transportation
-  Research Record: Journal of the Transportation Research Board}, 2010.
-
 \bibitem{Djukic:2013.}
 T.~Djuki\'c, ``Reliability assessment of dynamic od estimation methods based on
   structural similarity index,'' \emph{92nd meeting of the Transportation
@@ -58,11 +73,6 @@ V.~Fr\'ias-Mart\'inez, E.~Fr\'ias-Mart\'inez, and C.~S. Ruiz, ``Estimation of
 \bibitem{Graells-Garrido:2016.}
 E.~Graells-Garrido and D.~Saez-Trumper, ``A day of your days: Estimating
   individual daily journeys using mobile data to understand urban flow,'' 2016.
-
-\bibitem{Pollard:2013.}
-T.~Pollard, N.~Taylor, T.~van Vuren, and M.~MacDonald, ``Comparing the quality
-  of od matrices in time and between data sources,'' \emph{European Transport
-  Conference}, 2013.
 
 \bibitem{Vuren:2015.}
 T.~van Vuren, ``256 shades of gray -comparing od matrices using image quality

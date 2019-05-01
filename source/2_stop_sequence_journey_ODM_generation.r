@@ -64,6 +64,7 @@ require("dplyr")
       ##dimnames(distances)<-list(Lon_Lat,Lon_Lat) iz nekog glupog razloga nakon rdist.earth() dimnames atribute vise ne postoji
       distances<- rdist.earth(LonLat, miles=FALSE)
       dimnames(distances)<-list(Lon_Lat,Lon_Lat)
+      
       # threshold value in km ( 75 m)
       sum(distances < 0) #1358 -> 679 celija bi trebalo spojiti 
       pm = 0.075

@@ -33,6 +33,9 @@ heatmap(ODout_SH_3_6)
 #ne radi
 #delta<-ODout_SH_3_6[dimnames(as.vector(unlist(dimnames(ODout_SH_6_9)[1],use.names=FALSE))),dimnames(as.vector(unlist(dimnames(ODout_SH_6_9)[2],use.names=FALSE)))]
 #intersect(ODout_SH_3_6,ODout_SH_6_9)
+
+load(file="ODout_all.RData")
+
 A<-ODout_SH_3_6
 B<-ODout_SH_6_9
 
@@ -41,6 +44,24 @@ rAB <- intersect(rownames(A), rownames(B)) #432
 
 AA<-A[rAB,cAB]
 BB<-B[rAB,cAB]
+
+Lon_Lat<-unique(dimnames(AA)[1],dimnames(AA)[2])
+LonLat<-as.data.frame(Lon_Lat)
+colnames(LonLat)<-c("LonLat")
+
+require(tidyr)
+LonLat<-separate(data = LonLat, col = LonLat, into = c("Longitude", "Latitude"), sep = "_")
+LonLat$Latitude <-as.numeric(LonLat$Latitude)
+LonLat$Longitude <-as.numeric(LonLat$Longitude)
+
+distances<-zeros(length(LonLat),length(LonLat))
+##dimnames(distances)<-list(Lon_Lat,Lon_Lat) iz nekog glupog razloga nakon rdist.earth() dimnames atribute vise ne postoji
+
+distances<- rdist.earth(LonLat, miles=FALSE)
+#dimnames(distances)<-list(Lon_Lat,Lon_Lat)<- ne radi?!
+
+Lon_Lat <- paste(LonLat$Longitude,LonLat$Latitude, sep= "_")
+dimnames(distances)<-list(Lon_Lat,Lon_Lat)
 
 SSIM(AA,BB,256)
 

@@ -126,3 +126,8 @@ msssim(rAA,rBB,w=50) #0.8276595
 msssim(rAA,rBB,w=10) 
 
 
+mmsim4D<-function(){
+  
+}
+
+

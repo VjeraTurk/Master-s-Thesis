@@ -107,6 +107,15 @@
   Timestamp                = {25.04.2019}
 }
 
+@Booklet{Jelusic:2016.,
+  Title                    = {TELEMATICKA SUCELJA (nastavni tekst)},
+  Author                   = {Niko Jelusic},
+  Year                     = {2016.},
+
+  Owner                    = {Fakultet prometnih znanosti Sveuciliste u Zagrebu},
+  Timestamp                = {06.05.2019}
+}
+
 @PhdThesis{Peterson:2007.,
   Title                    = {The Origin-Destination Matrix Estimation Problem- Analysis and Computations},
   Author                   = {Anders Peterson},
@@ -149,12 +158,20 @@
 
 @Article{Wang:2016.,
   Title                    = {A Two-Stage Algorithm for Origin-Destination Matrices Estimation Considering Dynamic Dispersion Parameter for Route Choice},
-  Author                   = {Yong Wang and Xiaolei Ma and Yong Liu1 and  Ke Gong1 and Kristian C. Henricakson and
+  Author                   = {Yong Wang and Xiaolei Ma and Yong Liu1 and Ke Gong1 and Kristian C. Henricakson and
 Maozeng Xu and Yinhai Wang},
   Journal                  = {PLOS},
   Year                     = {2016.},
 
   Timestamp                = {29.04.2019}
+}
+
+@Electronic{eCall:2018.,
+  Title                    = {e Call},
+  Url                      = {https://en.wikipedia.org/wiki/ECall},
+  Year                     = {06.05.2019},
+
+  Timestamp                = {06.05.2019}
 }
 
 @comment{jabref-meta: databaseType:biblatex;}

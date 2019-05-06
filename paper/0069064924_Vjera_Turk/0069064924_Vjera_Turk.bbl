@@ -36,19 +36,27 @@ M.~Alhazzani, F.~Alhasoun, Z.~Alawwad, and M.~C. Gonz\'alez, ``Urban
   attractors: Discovering patterns in regions of attraction in cities,''
   \emph{Public Library of Science}, 2016.
 
-\bibitem{Wang:2016.}
-Y.~Wang, X.~Ma, Y.~Liu1, K.~Gong1, K.~C. Henricakson, M.~Xu, and Y.~Wang, ``A
-  two-stage algorithm for origin-destination matrices estimation considering
-  dynamic dispersion parameter for route choice,'' \emph{PLOS}, 2016.
-
 \bibitem{Peterson:2007.}
 A.~Peterson, ``The origin-destination matrix estimation problem- analysis and
   computations,'' Ph.D. dissertation, Link\"oping Studies in Science and
   Technology, 2007.
 
-\bibitem{Goulding:2016.}
-J.~Goulding, \emph{Best Practices and Methodology for OD Matrix Creation from
-  CDR data}, N/LAB, University of Nottingham, 2016.
+\bibitem{Jelusic:2016.}
+N.~Jelusic, ``Telematicka sucelja (nastavni tekst),'' 2016.
+
+\bibitem{Frias-Martinez:2012.}
+V.~Fr\'ias-Mart\'inez, E.~Fr\'ias-Mart\'inez, and C.~S. Ruiz, ``Estimation of
+  urban commuting patterns using cellphone network data,'' 2012.
+
+\bibitem{Gundlegard:2016.}
+D.~Gundlegard, C.~Rydergren, N.~Breyer, and B.~Rajna, ``Travel demand
+  estimation and network assignment based on cellular network data,''
+  \emph{COMPUTER COMMUNICATIONS}, 2016.
+
+\bibitem{eCall:2018.}
+\BIBentryALTinterwordspacing
+(06.05.2019) ecall. , s Interneta,  \url{https://en.wikipedia.org/wiki/ECall}
+\BIBentrySTDinterwordspacing
 
 \bibitem{Bera:2011.}
 S.~Bera and K.~V.~K. Rao, ``Estimation of origin-destination matrix from
@@ -65,10 +73,6 @@ A.~Travassoli, A.~Alsger, M.~Hickman, and M.~Meshbah, ``How close the models
 T.~Djuki\'c, ``Reliability assessment of dynamic od estimation methods based on
   structural similarity index,'' \emph{92nd meeting of the Transportation
   Reasearch Board}, 2013.
-
-\bibitem{Frias-Martinez:2012.}
-V.~Fr\'ias-Mart\'inez, E.~Fr\'ias-Mart\'inez, and C.~S. Ruiz, ``Estimation of
-  urban commuting patterns using cellphone network data,'' 2012.
 
 \bibitem{Graells-Garrido:2016.}
 E.~Graells-Garrido and D.~Saez-Trumper, ``A day of your days: Estimating

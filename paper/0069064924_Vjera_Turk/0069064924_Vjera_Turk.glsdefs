@@ -388,3 +388,93 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{fcd}{}%
+{%
+\gls@defglossaryentry{fcd}%
+{%
+name={\acronymfont {\glsentryshort {fcd}}},%
+sort={FCD},%
+type={main},%
+first={FCD},%
+firstplural={FCDs},%
+text={FCD},%
+plural={FCDs},%
+description={Floating Car Data},%
+descriptionplural={Floating Car Data},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Floating Car Data},%
+longplural={Floating Car Datas},%
+short={FCD},%
+shortplural={FCDs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{fpd}{}%
+{%
+\gls@defglossaryentry{fpd}%
+{%
+name={\acronymfont {\glsentryshort {fpd}}},%
+sort={FPD},%
+type={main},%
+first={FPD},%
+firstplural={FPDs},%
+text={FPD},%
+plural={FPDs},%
+description={Floating Phone Data (Floating Cellular Data)},%
+descriptionplural={Floating Phone Data (Floating Cellular Data)},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Floating Phone Data (Floating Cellular Data)},%
+longplural={Floating Phone Data (Floating Cellular Data)s},%
+short={FPD},%
+shortplural={FPDs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{gnss}{}%
+{%
+\gls@defglossaryentry{gnss}%
+{%
+name={\acronymfont {\glsentryshort {gnss}}},%
+sort={GNSS},%
+type={main},%
+first={GNSS},%
+firstplural={GNSSs},%
+text={GNSS},%
+plural={GNSSs},%
+description={Global Navigation Satellite System},%
+descriptionplural={Global Navigation Satellite System},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Global Navigation Satellite System},%
+longplural={Global Navigation Satellite Systems},%
+short={GNSS},%
+shortplural={GNSSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%

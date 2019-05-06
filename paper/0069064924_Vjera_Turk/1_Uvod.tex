@@ -16,7 +16,7 @@ Metodologija je izvedena u programskom okruženju za statistièko raèunarstvo R te
 	content...
 \end{comment}
 
-\chapter{Izvorišno-odredišna matrica}
+\chapter{Polazišno-odredišna matrica}
 
 \begin{comment}  
 
@@ -27,14 +27,28 @@ Izvorišno-odredišna matrica prikazuje broj putovanja iz izvorišne u ciljnu zonu 
 
 \end{comment}
 
-Izvorišno-odredišne matrica sadrži broj putovanja izmeðu svakog para zona unutar nekog podruèja za odreðeni vremenski okvir (u svakom smjeru zasebno). Redovi u matrici predstavljaju polazišta (izvore prometnog toka), a stupci odredišta. Svaki element u matrici predstavlja broj putovanja iz pripadajuæe polazišne u pripadajuæu ciljnu zonu. Može se smatrati matriènim zapisom težinskog usmjerenog grafa, gdje su težinski faktori usmjerenih veza širine prometnih tokova izmeðu èvorova mreže koji predstavljaju zone na koje je promatrano podruèje podijeljeno.  
+Polazišno-odredišna matrica sadrži broj putovanja izmeðu svakog para zona unutar nekog podruèja za odreðeni vremenski okvir (u svakom smjeru zasebno). Redovi u matrici predstavljaju polazišta (izvore prometnog toka), a stupci odredišta. Svaki element u matrici predstavlja broj putovanja iz pripadajuæe polazišne u pripadajuæu ciljnu zonu. Može se smatrati matriènim zapisom težinskog usmjerenog grafa, gdje su težinski faktori usmjerenih veza širine prometnih tokova izmeðu èvorova mreže koji predstavljaju zone na koje je promatrano podruèje podijeljeno.  
 
-Iako intuitivno možemo zakljuèiti da se radi o kvadratnoj matrici, ove matrice su ponekad zbog ogranièenja izvora ili modela predviðanja "rijetko popunjene", odnosno sadrže veliki broj nul-æelija, pa su u nekim sluèajevima prazni redovi ili stupci izbaèeni, a posljedica toga je memorijski (i raèunski) manje zahtjevna, ne-kvadratna matrica. Ova problematika istaknuta je u radu iz 2010. koji analizira kvalitetu matrica dobivenih iz anketa stanovništva\cite{Cools:2010.}.
+U prometnoj znanosti postoje brojne metode estimacije matrica. I dok se još uvijek ulaže u razvoj matematièkih modela koji imaju za cilj poveæati kvalitetu matrica generiranih tradicionalnim metodama, u novije vrijeme razvijaju se nove, moderne metode, koje imaju veliki potencijal, zbog svoje jednostavnosti u izvedbi, ažurnosti podataka i velikog uzorka stanovništva koji obuhvate, (...)
+%zamijeniti tradicionalne metode i postati standard u analizi prometa pa tako i generiranju \gls{pom}-a.
 
-Matrica može biti generirana za sadašnje ili planirano prometno optereæenje. Može biti prikazana ukupno ili po pojedinim modulima prometnog sustava (osobna vozila, vozila javnog prijevoza, teretna vozila, pješaka itd).
+Matrica može biti generirana za sadašnje ili planirano prometno optereæenje. Može biti prikazana ukupno ili po pojedinim modulima prometnog sustava (osobna vozila, vozila javnog prijevoza, teretna vozila, pješaka itd) i/ili razlièitim svrhama putovanja (putovanja na posao, putovanja kuæi...). To odreðivanje konteksta putovanja dodatno obogaæuje matrice jer specificira socio-ekonomske aktivnosti koje su pokretaèi putovanja odnosno razlozi kretanja stanovništva in the first place. 
 
-U prometnoj znanosti postoje brojne metode estimacije matrica. I dok se još uvijek ulaže u razvoj matematièkih modela koji imaju za cilj poveæati kvalitetu matrica generiranih tradicionalnim metodama, u novije vrijeme razvijaju se nove, moderne metode, koje imaju veliki potencijal, zbog svoje jednostavnosti u izvedbi, prednjaèenju u ažurnosti i velikog uzorka stanovništva koji obuhvate, zamijeniti tradicionalne metode i postati standard u analizi prometa pa tako i generiranju \gls{pom}-a.
+Kada kontekst (svrha) putovanja nije inicijalno poznat iz prikupljenih podataka o putovanjima, kada je rijeè o novijim metodama estimacije matrica, autori razlièito pristupaju kontekstualizaciji. O tome je rijeè u poglavlju X.
 
+%Znanstvenici predlažu metode kontekstualizacije za sluèajeve kada kontekst (svrha) putovanja od interesa nije inicijalno poznat iz prikupljenih podataka o putovanjima.
+ 
+% metoda kontekstualizacije i njena ogranièenja ovisit æe o samoj metodi estimacije matrica, vremenskom razdoblju 
+ 
+%prednosti, nedostatke, ogranièenja
+%, a kako se kontekst putovanja ili toka odreðuje zavisi o metodi estimacije i metodi kontekstualizacije.
+  
+  % ali nije uvijek izvedivo, odnosno ovisi o metodi estimacije ili o kolièini i kvaliteti prikupljenih podataka. 
+  
+  %Odreðivanje konteksta putovanja može se promatrati kao zasebna problematika, jer ovisno o metodi prikupljanja podataka za generiranje matrica ovisi i moguænost prikupljanje ili estimacije informacija o kontekstu.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Iako intuitivno možemo zakljuèiti da se radi o kvadratnoj matrici, ove matrice su ponekad, zbog ogranièenja metoda (ili prirode kretanja na nekom podruèju)  "rijetko popunjene", odnosno sadrže veliki broj nul-æelija, pa su u nekim sluèajevima prazni redovi ili stupci izbaèeni, a posljedica toga je memorijski (i raèunski) manje zahtjevna, ne-kvadratna matrica. Ova problematika istaknuta je u radu iz 2010. koji analizira kvalitetu matrica dobivenih iz anketa stanovništva\cite{Cools:2010.}.
 
 \section{Tradicionalni pristupi generiranju POM-a}
 
@@ -85,31 +99,48 @@ Tranzitna, t-POM
 Koncentracija u radu na CDR (?)
 \end{comment}
 
-Matematièko modeliranje prometa zahtjeva veliku kolièinu podataka - informacija o prometnoj mreži i prometnoj potražnji. Toènost modelirane prometne situacije ovisi o kvaliteti dostupnih informacija te kako su podaci kombinirani, koji težinski faktori su primijenjeni za razlièite izvore. Prometna potražnja kljuèna je komponenta te stoga gotovo svaki prometni model zahtjeva POM-u koja specificira prometnu potražnju izmeðu zona u prometnoj mreži. Toèna \gls{pom}-a osnova je za odluke u mnogim Inteligentnim Transportnim Sustavima engl. Intelligent
-Transportation Systems (ITS) koji su zauzvrat kljuèni za izbor ruta u razlièitim sustavima navigacijskog navoðenja.Neke od pretpostavki kojima se vode u modeliranju su primjerice da je ukupna dnevna potražnja jednaka u oba smjera kod svakog para zona na podruèju grada. \cite{Peterson:2007.}
+Matematièko modeliranje prometa zahtjeva veliku kolièinu podataka - informacija o prometnoj mreži i prometnoj potražnji. Toènost modelirane prometne situacije ovisi o kvaliteti dostupnih informacija te kako su podaci kombinirani, koji težinski faktori su primijenjeni za razlièite izvore. Prometna potražnja kljuèna je komponenta te stoga gotovo svaki prometni model zahtjeva POM-u koja specificira prometnu potražnju izmeðu zona u prometnoj mreži. Toèna \gls{pom}-a osnova je za odluke u mnogim Inteligentnim Transportnim Sustavima engl. Intelligent Transportation Systems (ITS) koji su zauzvrat kljuèni za izbor ruta u razlièitim sustavima navigacijskog navoðenja. Neke od pretpostavki kojima se vode u modeliranju su primjerice da je ukupna dnevna potražnja jednaka u oba smjera kod svakog para zona na podruèju grada. \cite{Peterson:2007.}
  
 \subsection{Problematika i ogranièenja tradicionalnih naèina}
-Zastarijevanje 
-
-Urban sprawl and population growth have resulted in increasingly severe traffic congestion in
-major cities around the world. City planners and decision makers have recognized the need for
-comprehensive traffic management strategies to meet the challenges of rapidly evolving built
-environments and population demographics. Effective transportation polices and control
 
 
-Alternatively, other sources for observed travel patterns are considerably cheaper, but somehow the profession demands that their value is proven by comparison with traditional roadside interviews. \cite{Pollard:2013.}
+%Urban sprawl and population growth have resulted in increasingly severe traffic congestion in major cities around the world. City planners and decision makers have recognized the need for comprehensive traffic management strategies to meet the challenges of rapidly evolving built environments and population demographics. Effective transportation polices and control
 
+Širenje gradova i rast stanovništva rezultirali su rastuæim brojem sve ozbiljnijih prometnih zastoja u velikim gradovima diljem svijeta. Prepoznata je potreba za opsežnim strategijama upravljanja prometom kako bi se suoèili s izazovima koje donosi brzo razvijajuæa okolina i demografija populacije. Efektivno upravljanje i kontrola prometa mogu poveæati sigurnost, kvalitetu usluge, poticati ekonomski rast i smanjiti zagaðenje zraka. Zbog dinamike kojom se gradovi mijenjaju razumno je pitati se ima li smisla koristiti matrice stare više godina za modeliranje današnjeg prometa. Dobivanje što toènijih i jeftinijih POM-a privlaèi pažnju znanstvenika i van podruèja prometne znanosti. 
 
-\subsection{Pokretna osjetila }
+Alternativni izvori koje predlažu za promatranje obrazaca putovanja su znaèajno jeftiniji, ali nailaze na problem da profesionalci zahtijevaju da se njihova vrijednost dokazuje usporedbom s tradicionalnim metodama. \cite{Pollard:2013.}
 
-rad iz 1972
+%Obtaining origin-destination (OD) traffic demand matrix in low-cost and high-accuracy manner not only becomes a problem transportation science, but also draws attentions from many scholars in various scientific fields.
 
-Osnovna ideja pokretnih osjetila je da vozila koja se kreæu po prometnoj mreži i sastavni su dio prometnog toka prikupljaju i šalju podatke. Nužan zahtjev koji treba biti ispunjen kod pokretnih osjetila je poznavanje pozicije vozila u odreðenim vremenskim trenucima- za to se koristi GNSS ili se vozila identificiraju na odreðenim toèkama.
+%Generiranje
 
+%Alternatively, other sources for observed travel patterns are considerably cheaper, but somehow the profession demands that their value is proven by comparison with traditional roadside interviews. \cite{Pollard:2013.}
+\newpage
 
+\subsection{Pokretna osjetila}
+%rad iz 1972
+Osnovna ideja pokretnih osjetila je da vozila koja se kreæu po prometnoj mreži i sastavni su dio prometnog toka prikupljaju i šalju podatke. Nužan zahtjev koji treba biti ispunjen kod pokretnih osjetila je poznavanje pozicije vozila u odreðenim vremenskim trenucima. Za to se koristi \gls{gnss} ili se vozila identificiraju na odreðenim toèkama. Engleski naziv za ovu metodu je \gls{fcd}. Danas je \gls{fcd} komplementarni izvor vrijednih podataka i postaje najvažnija tehnologija prikupljanja podataka inteligentnih transportnih sustava. U prikupljanju podataka sudjeluju “namjenska” vozila (taksi, distribucija roba, javni prijevoz, službena vozila i dr.), a mora biti uspostavljen naèin uèestalog slanja podataka o položaju a najèešæe se odvija preko \gls{gsm}, Wi-fi pa i Bluetooth tehnologije. \cite{Jelusic:2016.} 
+
+Ukoliko pokretno osjetilo nije vozilo veæ pametni telefon tada se èesto koristi naziv \gls{fpd}. \gls{fpd} se odnosi na prikupljanje podataka pomoæu mobilnih (pametnih) telefona neovisno o naèinu odreðivanja položaja - korištenjem \gls{gnss} ili pomoæu javne pokretne mreže. %Odreðivanje korištenjem \gls{gnss} prijemnika ponovno zahtjeva slanje podataka kao i kod FCD. 
+
+Zaseban pristup unutar \gls{fpd} je odreðivanje položaja unutar javne pokretne mreže (mreže baznih stanica). Kod ovog naèina položaj pokretne stanice može odrediti triangulacijom (pomoæu signala iz više baznih stanica èije signal hvata pokretna stanica) ili se aproksimira s podruèjem pokrivanja bazne stanice na koju je u trenutku oèitavanja položaja pokretna stanica spojena.
+
+Kako bi pružali i naplaæivali usluge, mobilni operateri moraju prikupljati podatke o pokretnim stanicama korisnika. Pojednostavljeno, da bi se usmjerio poziv do odgovarajuæeg ureðaja, mora se biti poznato s koje bazne stanice odaslati signal. Naziv za podatke koje operateri prikupljaju kako bi naplaæivali usluge glasi \gls{cdr}. Radi se o zapisima aktivnosti u mobilnoj mreži - pozivima, SMS porukama te prijenosu mobilnih podataka.
+	Tipièan zapis sastoji se od (...)
+U novije vrijeme znanstvenici predlažu metode u kojima koriste upravo anonimizirane \gls{cdr} kao izvor podataka za generiranje \gls{pom}-a.
+\cite{Frias-Martinez:2012.} \cite{Alhazzani:2016.} \cite{Gundlegard:2016.} 
+
+Zanimljivo je ovdje spomenuti europsku inicijativu \textit{eCall} za brzu pomoæ stradalima u prometnim nesreæama bilo gdje u Europskoj Uniji. \textit{eCall} zahtjeva da u svakom novom motornom vozilu bude ugraðen ureðaj koji u sluèaju prometne nesreæe automatski obavijesti centar 112 te mu šalje informacije o aktivaciji zraènih jastuka, prikupljene podatke osjetila za procjenu jaèine sudara i u dakako položaj vozila u trenutku prometne nesreæe. Takoðer treba omoguæiti uspostavu poziva. Prognoza je da æe se korištenjem tog sustava vrijeme odziva (dolaska službi na mjesto prometne nesreæe) smanjiti za izmeðu 40\% i 50\%. Od travnja 2018. svi novi automobili u prodaji u Europskoj moraju imaju ugraðen ovaj ureðaj. Nakon uspješnog uspostavljanja sustava oèekuje se da bi se ureðaj mogao poèeti koristiti i u druge svrhe. \cite{eCall:2018.}
+
+%eCall is a European initiative intended to bring rapid assistance to motorists involved in a collision anywhere in the European Union. eCall was made mandatory in all new cars sold within the EU from April 2018.[1]
+
+%sudjeluju “sluèajni” korisnici usluge celularne mreže koji uz svoju suglasnost (ili bez suglasnosti) dijele podatke o svojoj poziciji i kretanju. Pri tome se algoritmima obrade podataka ustanovljava kojim modom transporta se korisnik koristi.
+
+%E-call
 
 \section{Matrice iz zapisa o aktivnostima u javnoj pokretnoj mreži}
 
+\begin{comment}
 Today, with the ubiquity and pervasiveness of technology, data generated from mobile phones enable data analysts to better understand the behavior of individuals across many dimensions including their mobility patterns. 
 
 Unlike traditional analyses, the nature of this data mining approach forces us to first provide rigid, formal definitions of exactly what we mean by the terms origin, destination and journey. Here, both origins and destinations are subcategories of the overarching concept of a ‘stop’. A stop is defined as a set of contiguous network events that occur at the same location, over a minimum period of time. 
@@ -123,6 +154,8 @@ the initiating stop becoming the journey’s origin, and the concluding stop as th
 coordination with traditional tehniques is key to providing optimal solution in future.\cite{Goulding:2016.}
 
 \gls{gsm}
+\end{comment}
+
 
 \subsection{Razlike u pristupima}
         Tranzitna t-POM,

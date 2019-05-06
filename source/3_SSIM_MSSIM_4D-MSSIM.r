@@ -1,15 +1,32 @@
 #https://www.rdocumentation.org/packages/SPUTNIK/versions/1.1.1/topics/SSIM
 #installed rpart,spatstat and SPUTNIK
-require(SPUTNIK)
+#install.packages("devtools")
+#install.packages("SpatialTools")
+#install.packages("geepack")
+#install.packages("gpclib")
+#install.packages("move")
+#install.packages("waveslim")
+#install_github("colinr23/spatialcompare")
 
-SSIM(ODout_SH_3_6,ODout_SH_6_9, 256) #incompatible dimensions
+setwd("~/CODM/Matrice")
+require("SPUTNIK")
+
+require("MLmetrics")
+require("devtools")
+require("spatialcompare")
+require("raster")
+
+load(file="ODout_all.RData")
+load(file = "LonLat_from_ODM_675_pairs.RData")
+LonLat_ODM = LonLat
+load(file = "distances_675.RData")
+
+#SSIM(ODout_SH_3_6,ODout_SH_6_9, 256) #incompatible dimensions
 
 A<-ODout_SH_3_6
 B<-ODout_SH_6_9
-
 cAB <- intersect(colnames(A), colnames(B)) #442
 rAB <- intersect(rownames(A), rownames(B)) #432
-
 AA<-A[rAB,cAB]
 BB<-B[rAB,cAB]
 
@@ -37,6 +54,8 @@ ssim <- function(x, y, numBreaks = 256)
   y.dig <- cut(as.numeric(y), numBreaks, labels = F) - 1
   rm(x, y)
   
+  #K1, K2: constants for numerical stability
+  #0.01 and 0.03 default  values used by Wang et al
   
   C1 <- (0.01 * (numBreaks - 1)) ^ 2
   C2 <- (0.03 * (numBreaks - 1)) ^ 2
@@ -56,37 +75,23 @@ ssim <- function(x, y, numBreaks = 256)
 
 SSIM(AA,BB,256) # 0.931958
 SSIM(BB,AA,256) # 0.931958
+ssim(AA,BB,256) # 0.931958 funkcija
 
-#ssim(AA,BB,256) # 0.931958
-
-require("MLmetrics")
 MSE(AA,BB) # 0.03811065
 MSE(BB,AA) #  0.03811065
 
 # R2_Score not the same!!
-
 R2_Score(AA,BB) #  0.2650466
 R2_Score(BB,AA) #  0.2727839
 
-#install.packages("devtools")
-#library(devtools)
-
-#install.packages("SpatialTools")
-#install.packages("geepack")
-#install.packages("gpclib")
-#install.packages("move")
-#install.packages("waveslim")
-
-#install_github("colinr23/spatialcompare")
-
-require("spatialcompare")
-
 rAA<-raster(AA)
 rBB<-raster(BB)
+
+SSIM(AA,BB,5) #0.9690147
+ssim(rAA,rBB,5) #0.9466467 /NAN
+
 #w is the width of the neighbourhood in number of pixels out from centre cell
-
 #nrow(AA) [1] 432
-
 
 msssim <- function(img1, img2, w, gFIL=TRUE, edge=FALSE, ks=c(0.01, 0.03), level=5, weight=c(0.0448, 0.2856, 0.3001, 0.2363, 0.1333), method='product') {
   im1 <- img1
@@ -116,18 +121,51 @@ msssim <- function(img1, img2, w, gFIL=TRUE, edge=FALSE, ks=c(0.01, 0.03), level
   return(msssimO)
 }
 
-
+ssim<-ssim(rAA,rAA,w=5)#1
 msssim(rAA,rAA,w=5) #1
 
+ssim<-ssim(rAA,rBB,w=5)#0.9466467
 msssim(rAA,rBB,w=5) #0.8342233
 msssim(rBB,rAA,w=5) #0.8342233
 
-msssim(rAA,rBB,w=50) #0.8276595
+msssim(rAA,rBB,w=50) #0.8276595 traje dugo
 msssim(rAA,rBB,w=10) 
 
 
-mmsim4D<-function(){
+mmsim4D<- function(img1, img2, w, gFIL=TRUE, edge=FALSE, ks=c(0.01, 0.03), level=5, weight=c(0.0448, 0.2856, 0.3001, 0.2363, 0.1333), method='product'){
   
 }
 
 
+setwd("~/CODM/Matrice")
+load(file="ODout_all.RData")
+
+A<-ODout_SH_3_6
+B<-ODout_SH_6_9
+
+cAB <- intersect(colnames(A), colnames(B)) #442
+rAB <- intersect(rownames(A), rownames(B)) #432
+
+AA<-A[rAB,cAB]
+BB<-B[rAB,cAB]
+
+Lon_Lat<-unique(dimnames(AA)[1],dimnames(AA)[2])
+LonLat<-as.data.frame(Lon_Lat)
+colnames(LonLat)<-c("LonLat")
+
+require(tidyr)
+LonLat<-separate(data = LonLat, col = LonLat, into = c("Longitude", "Latitude"), sep = "_")
+LonLat$Latitude <-as.numeric(LonLat$Latitude)
+LonLat$Longitude <-as.numeric(LonLat$Longitude)
+
+distances<-zeros(length(LonLat),length(LonLat))
+##dimnames(distances)<-list(Lon_Lat,Lon_Lat) iz nekog glupog razloga nakon rdist.earth() dimnames atribute vise ne postoji
+
+require("fields")
+distances<- rdist.earth(LonLat, miles=FALSE)
+#dimnames(distances)<-list(Lon_Lat,Lon_Lat)<- ne radi?!
+
+Lon_Lat <- paste(LonLat$Longitude,LonLat$Latitude, sep= "_")
+dimnames(distances)<-list(Lon_Lat,Lon_Lat)
+
+SSIM(AA,BB,256)

@@ -7,7 +7,7 @@ An origin-destination matrix is an important tool for describing group mobility 
 
 Izvorišno-Odredišna ili Polazišno-Odredišna matrica \textit{eng. \gls{odm}} ili \textit{Trip Table} alat je koji omoguæuje sustavnu statistièku procjenu migracija stanovništva na nekom podruèju u zadanom prostorno-vremenskom okviru. Služi za opis grupne mobilnosti i mjerenje socio-ekonomske aktivnosti u nekoj regiji, a najèešæe se koristi u prometnoj znanosti za analizu i strateško planiranje prometnog optereæenja i prometne infrastrukture. 
 
-Za razliku od tradicionalnog pristupa prebrojavanja putovanja i putnika, za procjenu matrica danas se sve više koristi statistièka analiza podataka iz suvremenih informacijskih i komunikacijskih sustava (zapisi o aktivnostima u javnoj pokretnoj mreži, združena oèitanja prijamnika za satelitsku navigaciju i sl.), èime je omoguæeno poboljšanje kvalitete procjene preslikavanjem matrice na kontekst. 
+Za razliku od tradicionalnog pristupa prebrojavanja putovanja i putnika na licu mjesta, anketiranjem ili pomoæu razlièitih strateški postavljenih osjetila, za procjenu matrica danas se sve više koristi statistièka analiza podataka iz suvremenih informacijskih i komunikacijskih sustava (zapisi o aktivnostima u javnoj pokretnoj mreži, združena oèitanja prijamnika za satelitsku navigaciju i sl.), èime je omoguæeno poboljšanje kvalitete procjene preslikavanjem matrice na kontekst. (...)
 
 \begin{comment}
 Pojavljuje se potreba za objektivnom procjenom kvalitete \gls{odm} u odnosu na referentnu (kontrolnu). U ovom radu definirani su odnosni parametri kvalitete \gls{odm} te je razvijena metodologija usporedbe dviju \gls{odm}-a dobivenih razlièitim postupcima procjene i s podatcima iz razlièitih izvora. Usporedba je obavljena korištenjem numerièkog i grafièkog oblika \gls{odm}. 
@@ -32,7 +32,7 @@ Polazišno-odredišna matrica sadrži broj putovanja izmeðu svakog para zona unutar
 U prometnoj znanosti postoje brojne metode estimacije matrica. I dok se još uvijek ulaže u razvoj matematièkih modela koji imaju za cilj poveæati kvalitetu matrica generiranih tradicionalnim metodama, u novije vrijeme razvijaju se nove, moderne metode, koje imaju veliki potencijal, zbog svoje jednostavnosti u izvedbi, ažurnosti podataka i velikog uzorka stanovništva koji obuhvate, (...)
 %zamijeniti tradicionalne metode i postati standard u analizi prometa pa tako i generiranju \gls{pom}-a.
 
-Matrica može biti generirana za sadašnje ili planirano prometno optereæenje. Može biti prikazana ukupno ili po pojedinim modulima prometnog sustava (osobna vozila, vozila javnog prijevoza, teretna vozila, pješaka itd) i/ili razlièitim svrhama putovanja (putovanja na posao, putovanja kuæi...). To odreðivanje konteksta putovanja dodatno obogaæuje matrice jer specificira socio-ekonomske aktivnosti koje su pokretaèi putovanja odnosno razlozi kretanja stanovništva in the first place. 
+Matrica može biti generirana za sadašnje ili planirano prometno optereæenje. Može biti prikazana ukupno ili po pojedinim modulima prometnog sustava (osobna vozila, vozila javnog prijevoza, teretna vozila, pješaka itd) i/ili razlièitim svrhama putovanja (putovanja na posao, putovanja kuæi...). To odreðivanje konteksta putovanja dodatno obogaæuje matrice jer specificira socio-ekonomske aktivnosti koje su pokretaèi putovanja odnosno razlozi kretanja stanovništva. %in the first place. 
 
 Kada kontekst (svrha) putovanja nije inicijalno poznat iz prikupljenih podataka o putovanjima, kada je rijeè o novijim metodama estimacije matrica, autori razlièito pristupaju kontekstualizaciji. O tome je rijeè u poglavlju X.
 
@@ -108,7 +108,7 @@ Matematièko modeliranje prometa zahtjeva veliku kolièinu podataka - informacija 
 
 Širenje gradova i rast stanovništva rezultirali su rastuæim brojem sve ozbiljnijih prometnih zastoja u velikim gradovima diljem svijeta. Prepoznata je potreba za opsežnim strategijama upravljanja prometom kako bi se suoèili s izazovima koje donosi brzo razvijajuæa okolina i demografija populacije. Efektivno upravljanje i kontrola prometa mogu poveæati sigurnost, kvalitetu usluge, poticati ekonomski rast i smanjiti zagaðenje zraka. Zbog dinamike kojom se gradovi mijenjaju razumno je pitati se ima li smisla koristiti matrice stare više godina za modeliranje današnjeg prometa. Dobivanje što toènijih i jeftinijih POM-a privlaèi pažnju znanstvenika i van podruèja prometne znanosti. 
 
-Alternativni izvori koje predlažu za promatranje obrazaca putovanja su znaèajno jeftiniji, ali nailaze na problem da profesionalci zahtijevaju da se njihova vrijednost dokazuje usporedbom s tradicionalnim metodama. \cite{Pollard:2013.}
+Alternativni izvori koje on predlažu za promatranje obrazaca putovanja su znaèajno jeftiniji, ali nailaze na problem da profesija zahtijeva da se njihova vrijednost dokazuje usporedbom s tradicionalnim metodama. \cite{Pollard:2013.}
 
 %Obtaining origin-destination (OD) traffic demand matrix in low-cost and high-accuracy manner not only becomes a problem transportation science, but also draws attentions from many scholars in various scientific fields.
 
@@ -148,7 +148,7 @@ Unlike traditional analyses, the nature of this data mining approach forces us t
 This notion is parameterized to ensure we have sufficient confidence that any stop we have detected is not a transient location, but actually a location that the individual has actually settled in.
 \end{comment}
 
-Danas uz sveprisutnost i prodornost tehnologije, podatci koje generiraju pametni telefoni omoguæuju podatkovnim analitièarima razumjeti ponašanje u brojnim domenama pojedinaca, ukljuèujuæi i njihov obrazac kretanja. Kao što je veæ spomenuto matrice je moguæe generirati iz \gls{cdr} koje operateri prikupljaju u vrhu pružanja i naplaæivanja usluge. Stoga za ovu metodu ne postoji potreba za dodatnim sustavima i protokolima prikupljanja položaja kao što je to u sluèaju kada se položaj odreðuje pomoæu \gls{gnss}. Priroda ovog pristupa rudarenju podataka za estimaciju POM-a zahtjeva da prvo definiramo što toèno u ovom kontekstu smatramo putovanjem odnosno polazištem i odredištem putovanja.
+Danas uz sveprisutnost i prodornost tehnologije, podatci koje generiraju pametni telefoni omoguæuju podatkovnim analitièarima razumjeti ponašanje u brojnim domenama pojedinaca, ukljuèujuæi i njihov obrazac kretanja. Kao što je veæ spomenuto matrice je moguæe generirati iz \gls{cdr} koje operateri prikupljaju u svrhu pružanja i naplaæivanja usluge. Stoga za ovu metodu ne postoji potreba za dodatnim sustavima i protokolima prikupljanja položaja kao što je to u sluèaju kada se položaj odreðuje pomoæu \gls{gnss}. Priroda ovog pristupa rudarenju podataka za estimaciju POM-a zahtjeva da prvo definiramo što toèno u ovom kontekstu smatramo putovanjem odnosno polazištem i odredištem putovanja.
 
 Zaustavljanje se definira kao skup minimalno n dogaðaja koji su zabilježeni na istoj poziciji unutar minimalnog vremenskog perioda. Time se osigurava da se ne radi o tranzitnoj veæ namjerenoj poziciji zaustavljanja. 
 

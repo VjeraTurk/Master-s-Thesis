@@ -91,7 +91,8 @@ BUS ID, Time, PlateID, Latitude, Longitude, Speed
 Truck ID, Date Time, Latitude, Longitude, Speed
 "
 file = paste(getwd(),"/TaxiData",sep="")
-taxi = c("Taxi ID", "Time", "Latitude", "Longitude", "Occupancy Status", "Speed")
+#taxi = c("Taxi ID", "Time", "Latitude", "Longitude", "Occupancy Status", "Speed")
+taxi = c("ID", "Time","Longitude", "Latitude", "Occupancy Status", "Speed")
 TaxiData = fread(file=file, sep="auto", header=FALSE, col.names = taxi)
 
 file = paste(getwd(),"/BusData",sep="")

@@ -100,7 +100,7 @@ Koncentracija u radu na CDR (?)
 \end{comment}
 
 Matematièko modeliranje prometa zahtjeva veliku kolièinu podataka - informacija o prometnoj mreži i prometnoj potražnji. Toènost modelirane prometne situacije ovisi o kvaliteti dostupnih informacija te kako su podaci kombinirani, koji težinski faktori su primijenjeni za razlièite izvore. Prometna potražnja kljuèna je komponenta te stoga gotovo svaki prometni model zahtjeva POM-u koja specificira prometnu potražnju izmeðu zona u prometnoj mreži. Toèna \gls{pom}-a osnova je za odluke u mnogim Inteligentnim Transportnim Sustavima engl. Intelligent Transportation Systems (ITS) koji su zauzvrat kljuèni za izbor ruta u razlièitim sustavima navigacijskog navoðenja. Neke od pretpostavki kojima se vode u modeliranju su primjerice da je ukupna dnevna potražnja jednaka u oba smjera kod svakog para zona na podruèju grada. \cite{Peterson:2007.}
- 
+
 \subsection{Problematika i ogranièenja tradicionalnih naèina}
 
 
@@ -141,20 +141,21 @@ Zanimljivo je ovdje spomenuti europsku inicijativu \textit{eCall} za brzu pomoæ 
 \section{Matrice iz zapisa o aktivnostima u javnoj pokretnoj mreži}
 
 \begin{comment}
-Today, with the ubiquity and pervasiveness of technology, data generated from mobile phones enable data analysts to better understand the behavior of individuals across many dimensions including their mobility patterns. 
+%Today, with the ubiquity and pervasiveness of technology, data generated from mobile phones enable data analysts to better understand the behavior of individuals across many dimensions including their mobility patterns. 
 
 Unlike traditional analyses, the nature of this data mining approach forces us to first provide rigid, formal definitions of exactly what we mean by the terms origin, destination and journey. Here, both origins and destinations are subcategories of the overarching concept of a ‘stop’. A stop is defined as a set of contiguous network events that occur at the same location, over a minimum period of time. 
 
 This notion is parameterized to ensure we have sufficient confidence that any stop we have detected is not a transient location, but actually a location that the individual has actually settled in.
-
-An algorithm must consequently be developed to exhaustively mine each person’s event series for such stops. Once achieved, the algorithm must next detect pairs of contiguous stops which occur at different locations and hence reveal movement. This pair can then be designated as a journey -
-the initiating stop becoming the journey’s origin, and the concluding stop as the journey’s destination. 
-
-
-coordination with traditional tehniques is key to providing optimal solution in future.\cite{Goulding:2016.}
-
-\gls{gsm}
 \end{comment}
+
+Danas uz sveprisutnost i prodornost tehnologije, podatci koje generiraju pametni telefoni omoguæuju podatkovnim analitièarima razumjeti ponašanje u brojnim domenama pojedinaca, ukljuèujuæi i njihov obrazac kretanja. Kao što je veæ spomenuto matrice je moguæe generirati iz \gls{cdr} koje operateri prikupljaju u vrhu pružanja i naplaæivanja usluge. Stoga za ovu metodu ne postoji potreba za dodatnim sustavima i protokolima prikupljanja položaja kao što je to u sluèaju kada se položaj odreðuje pomoæu \gls{gnss}. Priroda ovog pristupa rudarenju podataka za estimaciju POM-a zahtjeva da prvo definiramo što toèno u ovom kontekstu smatramo putovanjem odnosno polazištem i odredištem putovanja.
+
+Zaustavljanje se definira kao skup minimalno n dogaðaja koji su zabilježeni na istoj poziciji unutar minimalnog vremenskog perioda. Time se osigurava da se ne radi o tranzitnoj veæ namjerenoj poziciji zaustavljanja. 
+
+
+%An algorithm must consequently be developed to exhaustively mine each person’s event series for such stops. Once achieved, the algorithm must next detect pairs of contiguous stops which occur at different locations and hence reveal movement. This pair can then be designated as a journey - the initiating stop becoming the journey’s origin, and the concluding stop as the journey’s destination. 
+
+%coordination with traditional tehniques is key to providing optimal solution in future.\cite{Goulding:2016.}
 
 
 \subsection{Razlike u pristupima}
@@ -167,7 +168,8 @@ coordination with traditional tehniques is key to providing optimal solution in 
        
         Grad, Država
         CDR- POM u zemljama u razvoju
-         Penetracija od 82\%, 9x\% -> pronaæi radove
+Penetracija od 82\%, 9x\% -> pronaæi radove
+
 Mobilni ureðaji iz godine u godinu zastupljeni su kod sve veæeg postotka stanovništvu, ne samo u razvijenim zemljama veæ i u zemljama u razvoju. 
          
 \subsection{Toènost položaja}
@@ -189,12 +191,8 @@ k-anonymization
 \newpage
 \section{Drugi primjeri automatskog prikupljanja}
 
-
-
-\subsection{Združena oèitanja prijamnika za satelitsku navigacij}
+\subsection{Združena oèitanja prijamnika za satelitsku navigaciju}
 \subsection{Javni prijevoz i \textit{pametne kartice }(\textit{Smart Card }sustavi)}
 82\% putovanja javnim prijevozom naprave korisnici javnog prijevoza sa pametnim karticama.  \cite{Travassoli:2016.}
-
-%E-call https://en.wikipedia.org/wiki/ECall
 
 \vspace{10pt}

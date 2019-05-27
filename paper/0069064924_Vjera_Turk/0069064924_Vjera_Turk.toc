@@ -11,7 +11,7 @@
 \contentsline {subsection}{\numberline {2.1.5}Pokretna osjetila}{5}{subsection.2.1.5}
 \contentsline {section}{\numberline {2.2}Matrice iz zapisa o aktivnostima u javnoj pokretnoj mre\v zi}{6}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Razlike u pristupima}{6}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}To\v cnost polo\v zaja}{6}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.2}To\v cnost polo\v zaja}{7}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}Geometrija prostorne podjele}{7}{subsection.2.2.3}
 \contentsline {subsubsection}{Heksagoni}{7}{section*.4}
 \contentsline {subsubsection}{Voronoi tesalacije}{7}{section*.5}
@@ -19,7 +19,7 @@
 \contentsline {subsubsection}{Pravokutna mre\v za}{7}{section*.7}
 \contentsline {subsection}{\numberline {2.2.4}Dobre prakse u generiranju POM iz CDR}{7}{subsection.2.2.4}
 \contentsline {section}{\numberline {2.3}Drugi primjeri automatskog prikupljanja}{8}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Zdru\v zena o\v citanja prijamnika za satelitsku navigacij}{8}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.1}Zdru\v zena o\v citanja prijamnika za satelitsku navigaciju}{8}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Javni prijevoz i \textit {pametne kartice }(\textit {Smart Card }sustavi)}{8}{subsection.2.3.2}
 \contentsline {chapter}{\numberline {3}Kontekstualizirane matrice}{9}{chapter.3}
 \contentsline {section}{\numberline {3.1}Kontekst iz samog izvora podataka o kretanju}{9}{section.3.1}

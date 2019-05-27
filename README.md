@@ -10,7 +10,7 @@ ___
 
 [Najvažnije informacije o završnim i diplomskim radovima](http://nastavno.mjoler.info/dipl)
 
-[ROKOVI PRIJAVE I PREDAJE DIPLOMSKIH RADOVA ](http://www.riteh.uniri.hr/media/filer_public/4f/ed/4fed789d-5ea3-4b31-b755-6da490814196/rokovi_za_predaju_zavrsnih_radova_2017-18_dsvra.pdf)
+[ROKOVI PRIJAVE I PREDAJE DIPLOMSKIH RADOVA ](http://www.riteh.uniri.hr/media/filer_public/69/f2/69f2b116-0933-46c6-87e6-319d85a1eecb/rokovi_za_predaju_zavrsnih_radova_2018-19_dsvra.pdf)
 
 ...
 

@@ -227,7 +227,6 @@ lonmax = 114.27 #114.6217
 gg<- gg + geom_point(data=taxi_points, aes(x=Longitude, y=Latitude), size=1, shape=21, color="black", fill="gray")
 gg
 
-
 ###############################################
 TaxiData0 = subset(TaxiData,Speed == 0) # ne daje error ako je "Speed"
 #Remove users with less than 2k points 

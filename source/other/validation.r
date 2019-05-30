@@ -16,6 +16,7 @@
     ODout_SH = read.csv(file=filename, sep=",", header=TRUE, row.names = 1, check.names = FALSE ) # check.names! important
     ODout_SH = as.matrix(ODout_SH, row.names=1, col.names=1)
   }
+  ODout_SH_0_3 = get_ODM("ODout_0_3SH.csv")
   ODout_SH_3_6 = get_ODM("ODout_3_6SH.csv") # 481 x 520
   ODout_SH_6_9 = get_ODM("ODout_6_9SH.csv") # 486 x 485 
   ODout_SH_9_12 = get_ODM("ODout_9_12SH.csv")
@@ -53,6 +54,8 @@
     
     Lon_Lat_ODM<<-union(Lon_Lat_ODM,df)
   }
+
+  get_Lon_Lat_form_ODM("ODout_0_6SH.csv")
   get_Lon_Lat_form_ODM("ODout_3_6SH.csv")
   get_Lon_Lat_form_ODM("ODout_6_9SH.csv")
   get_Lon_Lat_form_ODM("ODout_9_12SH.csv")
@@ -66,7 +69,7 @@
   Lon_Lat_ODM_ALL <- Lon_Lat_ODM[-nrow(Lon_Lat_ODM),] #remove "Lat_Lon" row
   Lon_Lat_ODM_ALL <-as.data.frame(Lon_Lat_ODM_ALL) 
   names(Lon_Lat_ODM_ALL)<-c("Lon_Lat")
-  #efektivno postoje 668 ćelije
+  #efektivno postoje 668 ćelije -> ispravak, 675 ćelija!!!!
   require("stringr")
   LonLat <- as.data.frame(str_split_fixed(Lon_Lat_ODM_ALL$Lon_Lat,"_",2),as.numeric)
   names(LonLat)<-c("Longitude","Latitude")

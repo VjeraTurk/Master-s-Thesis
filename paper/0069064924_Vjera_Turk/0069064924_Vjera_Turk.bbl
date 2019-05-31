@@ -58,14 +58,16 @@ D.~Gundlegard, C.~Rydergren, N.~Breyer, and B.~Rajna, ``Travel demand
 (06.05.2019) ecall. , s Interneta,  \url{https://en.wikipedia.org/wiki/ECall}
 \BIBentrySTDinterwordspacing
 
-\bibitem{Goulding:2016.}
-J.~Goulding, \emph{Best Practices and Methodology for OD Matrix Creation from
-  CDR data}, N/LAB, University of Nottingham, 2016.
-
 \bibitem{Bera:2011.}
 S.~Bera and K.~V.~K. Rao, ``Estimation of origin-destination matrix from
   traffic counts: the state of the art,'' \emph{European Transport \ Trasporti
   Europei n. 49}, 2011.
+
+\bibitem{Filic:2016.}
+M.~Fili\'c, R.~Filjar, and K.~Vidovi\'c, ``Graphical representation of
+  origin-destination matrix in r statistical environment,'' in \emph{36. skup o
+  prometnim sustavima s medjunarodnim sudjelovanjem AUTOMATIZACIJA U
+  PROMETU}.\hskip 1em plus 0.5em minus 0.4em\relax KoREMA, November 2016.
 
 \bibitem{Travassoli:2016.}
 A.~Travassoli, A.~Alsger, M.~Hickman, and M.~Meshbah, ``How close the models

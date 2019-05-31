@@ -6,18 +6,17 @@
 \contentsline {section}{\numberline {2.1}Tradicionalni pristupi generiranju POM-a}{3}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Ankete}{3}{subsection.2.1.1}
 \contentsline {subsection}{\numberline {2.1.2}Prebrojavanje vozila}{3}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}Modeliranje prometa}{3}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.3}Modeliranje prometa}{4}{subsection.2.1.3}
 \contentsline {subsection}{\numberline {2.1.4}Problematika i ograni\v cenja tradicionalnih na\v cina}{4}{subsection.2.1.4}
 \contentsline {subsection}{\numberline {2.1.5}Pokretna osjetila}{5}{subsection.2.1.5}
-\contentsline {section}{\numberline {2.2}Matrice iz zapisa o aktivnostima u javnoj pokretnoj mre\v zi}{6}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Razlike u pristupima}{6}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}To\v cnost polo\v zaja}{7}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Geometrija prostorne podjele}{7}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.2}Matrice iz zapisa o telekomunikacijskim aktivnostima u javnoj pokretnoj mre\v zi}{6}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Putovanje}{6}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Geometrija prostorne podjele}{7}{subsection.2.2.2}
 \contentsline {subsubsection}{Heksagoni}{7}{section*.4}
 \contentsline {subsubsection}{Voronoi tesalacije}{7}{section*.5}
 \contentsline {subsubsection}{Jedinice samouprave}{7}{section*.6}
 \contentsline {subsubsection}{Pravokutna mre\v za}{7}{section*.7}
-\contentsline {subsection}{\numberline {2.2.4}Dobre prakse u generiranju POM iz CDR}{7}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.3}Dobre prakse u generiranju POM iz CDR}{7}{subsection.2.2.3}
 \contentsline {section}{\numberline {2.3}Drugi primjeri automatskog prikupljanja}{8}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Zdru\v zena o\v citanja prijamnika za satelitsku navigaciju}{8}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Javni prijevoz i \textit {pametne kartice }(\textit {Smart Card }sustavi)}{8}{subsection.2.3.2}
@@ -40,7 +39,7 @@
 \contentsline {section}{\numberline {5.1}Zajedni\v cki, objektivni kriteriji usporedbe}{14}{section.5.1}
 \contentsline {section}{\numberline {5.2}Komparacijski indikatori}{14}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}Vremenski okvir}{14}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Razlu\v civost (Rezolucija)}{14}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.2}Razlu\v civost (Rezolucija)}{15}{subsection.5.2.2}
 \contentsline {subsection}{\numberline {5.2.3}\v Sirina toka}{15}{subsection.5.2.3}
 \contentsline {subsection}{\numberline {5.2.4}Geometrija prostorne podjele}{15}{subsection.5.2.4}
 \contentsline {subsection}{\numberline {5.2.5}Definicija putovanja}{15}{subsection.5.2.5}

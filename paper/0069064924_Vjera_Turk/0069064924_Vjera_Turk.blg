@@ -25,37 +25,37 @@ Warning--empty journal in Graells-Garrido:2016.
 Done.
 You've used 14 entries,
             4087 wiz_defined-function locations,
-            903 strings with 9912 characters,
-and the built_in function-call counts, 5473 in all, are:
-= -- 418
-> -- 133
+            905 strings with 10030 characters,
+and the built_in function-call counts, 5663 in all, are:
+= -- 423
+> -- 142
 < -- 0
-+ -- 63
-- -- 31
-* -- 232
-:= -- 1005
-add.period$ -- 26
++ -- 67
+- -- 33
+* -- 248
+:= -- 1019
+add.period$ -- 28
 call.type$ -- 14
-change.case$ -- 13
+change.case$ -- 14
 chr.to.int$ -- 0
 cite$ -- 16
-duplicate$ -- 475
-empty$ -- 494
-format.name$ -- 39
-if$ -- 1195
+duplicate$ -- 492
+empty$ -- 526
+format.name$ -- 42
+if$ -- 1245
 int.to.chr$ -- 0
 int.to.str$ -- 14
-missing$ -- 94
+missing$ -- 97
 newline$ -- 67
 num.names$ -- 13
-pop$ -- 259
+pop$ -- 274
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 413
+skip$ -- 421
 stack$ -- 0
-substring$ -- 12
-swap$ -- 261
+substring$ -- 13
+swap$ -- 269
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 5

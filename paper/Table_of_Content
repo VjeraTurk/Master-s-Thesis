@@ -24,12 +24,19 @@
     3.1. Kontekst
         Izvori konteksta (pregled radova) 
         3.1.1.  Kontekst izvučen iz CDR (long term modeli- CDR više mjeseci/tjedana)
-           HBW,HBO,NHB (The path most Traveled, HBW,WBH,HBO,NBO (Best Practices), 
+           
+           HBW,HBO,NHB (The path most Traveled,  
+           HBW,WBH,HBO,NBO (Best Practices), 
+
            HWO (?), HWHA (?) 
+
            HW WH (Estimating origin-Destination flows using opportunistically collected 
            mobile phone location data from one milion users in Boston Metropolitan Area)
+
            (2012 Estimation of urban commuting patterns using cellphone network data)
+
            - "MODE" kao kontekst, car/public transport/flight Terralytics
+
         3.1.2. Vanjski izvori
             3.1.2.1. Points of Interes (Urban Attractors ima 22 kategorije koristi bazu s POI)
             3.1.2.2. Open Street Map

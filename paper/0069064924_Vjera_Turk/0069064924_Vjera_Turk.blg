@@ -20,48 +20,49 @@ Database file #1: Literatura.bib
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 Warning--empty journal in Frias-Martinez:2012.
+Warning--there's a month but no year in Calabrese:2011.
 Warning--empty journal in Graells-Garrido:2016.
 
 Done.
-You've used 14 entries,
+You've used 17 entries,
             4087 wiz_defined-function locations,
-            905 strings with 10030 characters,
-and the built_in function-call counts, 5663 in all, are:
-= -- 423
-> -- 142
-< -- 0
-+ -- 67
-- -- 33
-* -- 248
-:= -- 1019
-add.period$ -- 28
-call.type$ -- 14
-change.case$ -- 14
-chr.to.int$ -- 0
-cite$ -- 16
-duplicate$ -- 492
-empty$ -- 526
-format.name$ -- 42
-if$ -- 1245
+            923 strings with 10727 characters,
+and the built_in function-call counts, 7400 in all, are:
+= -- 562
+> -- 194
+< -- 8
++ -- 93
+- -- 44
+* -- 327
+:= -- 1302
+add.period$ -- 33
+call.type$ -- 17
+change.case$ -- 17
+chr.to.int$ -- 18
+cite$ -- 20
+duplicate$ -- 626
+empty$ -- 662
+format.name$ -- 55
+if$ -- 1643
 int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 97
-newline$ -- 67
-num.names$ -- 13
-pop$ -- 274
+int.to.str$ -- 17
+missing$ -- 125
+newline$ -- 76
+num.names$ -- 16
+pop$ -- 339
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 421
+skip$ -- 553
 stack$ -- 0
-substring$ -- 13
-swap$ -- 269
-text.length$ -- 0
+substring$ -- 58
+swap$ -- 367
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 14
-warning$ -- 2
-while$ -- 13
-width$ -- 16
-write$ -- 133
-(There were 2 warnings)
+type$ -- 17
+warning$ -- 3
+while$ -- 19
+width$ -- 19
+write$ -- 160
+(There were 3 warnings)

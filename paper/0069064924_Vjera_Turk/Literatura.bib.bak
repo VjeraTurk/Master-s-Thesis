@@ -42,18 +42,18 @@
   Month                    = {April},
   Note                     = {2011},
   Number                   = {4},
-  Pages                    = {36 to 44},
+  Pages                    = {36-44.},
 
   Timestamp                = {01.06.2019}
 }
 
 @Article{Cools:2010.,
-  Title                    = {Assessing the Quality of Origin-Destination Matrices Derived from Activity Travel Surveys},
+  Title                    = {{Assessing the Quality of Origin-Destination Matrices Derived from Activity Travel Surveys}},
   Author                   = {Mario Cools and Elke Moons and Geet Wets},
   Journal                  = {Transportation Research Record: Journal of the Transportation Research Board},
   Year                     = {2010.},
 
-  Timestamp                = {25.04.2019}
+  Timestamp                = {01.06.2019}
 }
 
 @Article{Djukic:2013.,
@@ -104,11 +104,11 @@
 }
 
 @Article{Graells-Garrido:2016.,
-  Title                    = {A Day of Your Days: Estimating Individual Daily Journeys Using Mobile Data to Understand Urban Flow},
+  Title                    = {{A Day of Your Days: Estimating Individual Daily Journeys Using Mobile Data to Understand Urban Flow}},
   Author                   = {Eduardo Graells-Garrido and Diego Saez-Trumper},
   Year                     = {2016.},
 
-  Timestamp                = {25.04.2019}
+  Timestamp                = {01.06.2019}
 }
 
 @Article{Gundlegard:2016.,
@@ -160,23 +160,23 @@
 }
 
 @Article{Vuren:2015.,
-  Title                    = {256 shades of gray -comparing OD matrices using image quality assessment tehniques},
+  Title                    = {256 shades of gray - comparing {OD} matrices using image quality assessment tehniques},
   Author                   = {Tom van Vuren},
   Journal                  = {Scottish Transport Applications Research (STAR)},
   Year                     = {2015.},
 
   Owner                    = {adminuser},
-  Timestamp                = {24.04.2019}
+  Timestamp                = {01.06.2019}
 }
 
 @Article{Wang:2016.,
-  Title                    = {A Two-Stage Algorithm for Origin-Destination Matrices Estimation Considering Dynamic Dispersion Parameter for Route Choice},
+  Title                    = {{A Two-Stage Algorithm for Origin-Destination Matrices Estimation Considering Dynamic Dispersion Parameter for Route Choice}},
   Author                   = {Yong Wang and Xiaolei Ma and Yong Liu1 and Ke Gong1 and Kristian C. Henricakson and
 Maozeng Xu and Yinhai Wang},
   Journal                  = {PLOS},
   Year                     = {2016.},
 
-  Timestamp                = {29.04.2019}
+  Timestamp                = {01.06.2019}
 }
 
 @Electronic{eCall:2018.,

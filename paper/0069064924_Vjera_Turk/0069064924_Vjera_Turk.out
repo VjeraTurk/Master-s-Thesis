@@ -10,36 +10,35 @@
 \BOOKMARK [2][-]{subsection.2.1.5}{Pokretna osjetila}{section.2.1}% 10
 \BOOKMARK [1][-]{section.2.2}{Matrice iz zapisa o telekomunikacijskim aktivnostima u javnoj pokretnoj mre\236i}{chapter.2}% 11
 \BOOKMARK [2][-]{subsection.2.2.1}{Putovanje}{section.2.2}% 12
-\BOOKMARK [2][-]{subsection.2.2.2}{Geometrija prostorne podjele}{section.2.2}% 13
-\BOOKMARK [2][-]{subsection.2.2.3}{Dobre prakse u generiranju POM iz CDR}{section.2.2}% 14
-\BOOKMARK [1][-]{section.2.3}{Drugi primjeri automatskog prikupljanja}{chapter.2}% 15
-\BOOKMARK [2][-]{subsection.2.3.1}{Zdru\236ena ocitanja prijamnika za satelitsku navigaciju}{section.2.3}% 16
-\BOOKMARK [2][-]{subsection.2.3.2}{Javni prijevoz i pametne kartice \(Smart Card sustavi\)}{section.2.3}% 17
-\BOOKMARK [0][-]{chapter.3}{Kontekstualizirane matrice}{}% 18
-\BOOKMARK [1][-]{section.3.1}{Kontekst iz samog izvora podataka o kretanju}{chapter.3}% 19
-\BOOKMARK [1][-]{section.3.2}{Kontekst iz vanjskih izvora}{chapter.3}% 20
-\BOOKMARK [2][-]{subsection.3.2.1}{Points of Interes}{section.3.2}% 21
-\BOOKMARK [2][-]{subsection.3.2.2}{Open Street Map}{section.3.2}% 22
-\BOOKMARK [1][-]{section.3.3}{Sredstvo \(nacin\) kretanja}{chapter.3}% 23
-\BOOKMARK [0][-]{chapter.4}{Postojece metrike za validaciju POM-e}{}% 24
-\BOOKMARK [1][-]{section.4.1}{Tocnost POM-e}{chapter.4}% 25
-\BOOKMARK [1][-]{section.4.2}{Metrike}{chapter.4}% 26
-\BOOKMARK [1][-]{section.4.3}{Strukturalna slicnost}{chapter.4}% 27
-\BOOKMARK [2][-]{subsection.4.3.1}{MSSI}{section.4.3}% 28
-\BOOKMARK [0][-]{chapter.5}{Odnosni parametri kvalitete}{}% 29
-\BOOKMARK [1][-]{section.5.1}{Zajednicki, objektivni kriteriji usporedbe}{chapter.5}% 30
-\BOOKMARK [1][-]{section.5.2}{Komparacijski indikatori}{chapter.5}% 31
-\BOOKMARK [2][-]{subsection.5.2.1}{Vremenski okvir}{section.5.2}% 32
-\BOOKMARK [2][-]{subsection.5.2.2}{Razlucivost \(Rezolucija\)}{section.5.2}% 33
-\BOOKMARK [2][-]{subsection.5.2.3}{\227irina toka}{section.5.2}% 34
-\BOOKMARK [2][-]{subsection.5.2.4}{Geometrija prostorne podjele}{section.5.2}% 35
-\BOOKMARK [2][-]{subsection.5.2.5}{Definicija putovanja}{section.5.2}% 36
-\BOOKMARK [2][-]{subsection.5.2.6}{}{section.5.2}% 37
-\BOOKMARK [2][-]{subsection.5.2.7}{Gustoca informacija - kontekst}{section.5.2}% 38
-\BOOKMARK [1][-]{section.5.3}{Meuovisnost parametara}{chapter.5}% 39
-\BOOKMARK [0][-]{chapter*.14}{Bibliografija}{}% 40
-\BOOKMARK [0][-]{chapter*.16}{Pojmovnik}{}% 41
-\BOOKMARK [0][-]{chapter*.16}{Sažetak}{}% 42
-\BOOKMARK [0][-]{appendix.A}{Naslov priloga}{}% 43
-\BOOKMARK [1][-]{section.A.1}{Naslov sekcije}{appendix.A}% 44
-\BOOKMARK [1][-]{section.A.2}{Naslov sekcije}{appendix.A}% 45
+\BOOKMARK [2][-]{subsection.2.2.2}{Kontekst iz samog izvora podataka o kretanju}{section.2.2}% 13
+\BOOKMARK [1][-]{section.2.3}{Kontekst iz vanjskih izvora}{chapter.2}% 14
+\BOOKMARK [2][-]{subsection.2.3.1}{Points of Interes}{section.2.3}% 15
+\BOOKMARK [2][-]{subsection.2.3.2}{Open Street Map}{section.2.3}% 16
+\BOOKMARK [1][-]{section.2.4}{Modul kretanja}{chapter.2}% 17
+\BOOKMARK [2][-]{subsection.2.4.1}{Geometrija prostorne podjele}{section.2.4}% 18
+\BOOKMARK [2][-]{subsection.2.4.2}{Dobre prakse u generiranju POM iz CDR}{section.2.4}% 19
+\BOOKMARK [1][-]{section.2.5}{Drugi primjeri automatskog prikupljanja}{chapter.2}% 20
+\BOOKMARK [2][-]{subsection.2.5.1}{Zdru\236ena ocitanja prijamnika za satelitsku navigaciju}{section.2.5}% 21
+\BOOKMARK [2][-]{subsection.2.5.2}{Javni prijevoz i pametne kartice \(Smart Card sustavi\)}{section.2.5}% 22
+\BOOKMARK [0][-]{chapter.3}{Postojece metrike za validaciju POM-e}{}% 23
+\BOOKMARK [1][-]{section.3.1}{Tocnost POM-e}{chapter.3}% 24
+\BOOKMARK [1][-]{section.3.2}{Metrike}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.3}{Strukturalna slicnost}{chapter.3}% 26
+\BOOKMARK [2][-]{subsection.3.3.1}{MSSI}{section.3.3}% 27
+\BOOKMARK [0][-]{chapter.4}{Odnosni parametri kvalitete}{}% 28
+\BOOKMARK [1][-]{section.4.1}{Zajednicki, objektivni kriteriji usporedbe}{chapter.4}% 29
+\BOOKMARK [1][-]{section.4.2}{Komparacijski indikatori}{chapter.4}% 30
+\BOOKMARK [2][-]{subsection.4.2.1}{Vremenski okvir}{section.4.2}% 31
+\BOOKMARK [2][-]{subsection.4.2.2}{Razlucivost \(Rezolucija\)}{section.4.2}% 32
+\BOOKMARK [2][-]{subsection.4.2.3}{\227irina toka}{section.4.2}% 33
+\BOOKMARK [2][-]{subsection.4.2.4}{Geometrija prostorne podjele}{section.4.2}% 34
+\BOOKMARK [2][-]{subsection.4.2.5}{Definicija putovanja}{section.4.2}% 35
+\BOOKMARK [2][-]{subsection.4.2.6}{}{section.4.2}% 36
+\BOOKMARK [2][-]{subsection.4.2.7}{Gustoca informacija - kontekst}{section.4.2}% 37
+\BOOKMARK [1][-]{section.4.3}{Meuovisnost parametara}{chapter.4}% 38
+\BOOKMARK [0][-]{chapter*.14}{Bibliografija}{}% 39
+\BOOKMARK [0][-]{chapter*.16}{Pojmovnik}{}% 40
+\BOOKMARK [0][-]{chapter*.16}{Sažetak}{}% 41
+\BOOKMARK [0][-]{appendix.A}{Naslov priloga}{}% 42
+\BOOKMARK [1][-]{section.A.1}{Naslov sekcije}{appendix.A}% 43
+\BOOKMARK [1][-]{section.A.2}{Naslov sekcije}{appendix.A}% 44

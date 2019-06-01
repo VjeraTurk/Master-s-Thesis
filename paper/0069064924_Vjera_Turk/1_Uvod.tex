@@ -158,16 +158,20 @@ Danas uz sveprisutnost i prodornost tehnologije, podatci koje generiraju pametni
 
 Priroda ovog pristupa rudarenju podataka za estimaciju POM-a zahtjeva da prvo definiramo što toèno smatramo putovanjem, odnosno polazištem i odredištem putovanja.
 
-Zaustavljanje se definira kao skup minimalno n dogaðaja (aktivnosti) koji su zabilježeni na istoj poziciji unutar minimalnog vremenskog perioda. Time se osigurava da se ne radi o tranzitnoj veæ o namjerenoj poziciji zaustavljanja (! i suzbija se bilježenje lažnog kretanje kod privremenog spajanja na susjednu bazni stanicu). Algoritam u nizu aktivnosti svakog pojedinca traži takva zaustavljanja. Dobiveni niz kontinuiranog zaustavljanja na razlièitim položajima otkriva kretanje. Algoritam izvlaèi uzastopne parove zaustavljanja te, prema dodatno definiranim kriterijima dozvoljenog minimalnog i maksimalnog vremenskog razmaka izmeðu polaska i dolaska na odredište, ranije zaustavljanje postaje polazište, a kasnije odredište putovanja. Skupovi putovanja u pripadajuæem vremenskom period saèinjavaju matricu za taj vremenski period.
- 
+Zaustavljanje se definira kao skup minimalno n dogaðaja (aktivnosti) koji su zabilježeni na istoj poziciji unutar minimalnog vremenskog perioda. Time se osigurava da se ne radi o tranzitnoj veæ o namjerenoj poziciji zaustavljanja (i suzbija se bilježenje lažnog kretanje kod privremenog spajanja na susjednu bazni stanicu). Algoritam u nizu aktivnosti svakog pojedinca traži takva zaustavljanja. Dobiveni niz kontinuiranog zaustavljanja na razlièitim položajima otkriva kretanje. Algoritam izvlaèi uzastopne parove zaustavljanja te, prema dodatno definiranim kriterijima dozvoljenog minimalnog i maksimalnog vremenskog razmaka izmeðu polaska i dolaska na odredište, ranije zaustavljanje postaje polazište, a kasnije odredište putovanja. Skupovi putovanja u pripadajuæem vremenskom period saèinjavaju matricu za taj vremenski period.
+
+\begin{comment}
 %An algorithm must consequently be developed to exhaustively mine each person’s event series for such stops. Once achieved, the algorithm must next detect pairs of contiguous stops which occur at different locations and hence reveal movement. This pair can then be designated as a journey - the initiating stop becoming the journey’s origin, and the concluding stop as the journey’s destination. 
-
 %coordination with traditional tehniques is key to providing optimal solution in future.\cite{Goulding:2016.}
-%\subsection{Razlike u pristupima}
+\end{comment}
 
+\subsection{Kontekst iz samog izvora podataka o kretanju}    
+Kada su dostupni zapisi prikupljani dulje vremensko razdoblje, tjednima ili mjesecima èesto se putovanja odnosno matrice definiraju na drugaèiji naèin. Analizom zapisa može se utvrdi na kojem položaju (u kojoj æeliji) neki pojedinci pretežito borave u tipiènom radnom vremenu te u kojoj tokom noæi. Prva æelija za njihova putovanja postaje \textit{Work} destinacija, druga \textit{Home}, a sve preostale destinacije u zasebnu kategoriju \textit{Other}. Potom se generiraju matrice koje ukljuèuju samo putovanja iz jednog tipa destinacije u drugi (npr. Home-Work). \cite{Goulding:2016.} \cite{Calabrese:2011.} \cite{Frias-Martinez:2012.} \cite{Graells-Garrido:2016.} \cite{Toole:2015.}
+Jedan od razloga je da su takve matrice usporedive s onima dobivenim iz anketa stanovništva s istom podjelom putovanja.
 
-Kada su dostupni zapisi prikupljani u duljem vremenu, u tjednima ili mjesecima èesto se u radovima putovanja definiraju na drugaèiji naèin 
-
+\begin{comment}
+Kada su dostupni zapisi prikupljani dulje vremensko razdoblje, tjednima ili mjesecima èesto se putovanja odnosno matrice definiraju na drugaèiji naèin. Analizom zapisa može se utvrdi na kojem položaju (u kojoj æeliji) neki pojedinci pretežito borave u tipiènom radnom vremenu te u kojoj tokom noæi. Prva æelija za njihova putovanja postaje \textit{Work} destinacija, druga \textit{Home}, a sve preostale destinacije \textit{Other}. potom se generiraju matrice \cite{Goulding:2016.} \cite{Calabrese:2011.} \cite{Frias-Martinez:2012.} \cite{Graells-Garrido:2016.} \cite{Toole:2015.}
+\end{comment}
 
 \begin{comment}
 		Definiranje putovanja
@@ -176,7 +180,20 @@ Kada su dostupni zapisi prikupljani u duljem vremenu, u tjednima ili mjesecima è
 		\cite{Bera:2011.}
 \end{comment}
 %proksimacija s BS ili signal strenght (RSSI) + neka ona drugo baza LTO(?)
-         
+ \section{Kontekst iz vanjskih izvora}
+ 
+ Some studies combined human mobility with land use or POIs data to segment districts in urban areas according to their functions or use. The type of data used to capture human mobility behavior varies between individual GPS traces [10, 11], taxi pick up/drop off locations as in [7, 12] , Call Detail Records (CDRs) as in [2, 8], social media check ins as
+ in [13–15], and bus smart card data as in [16]. 
+ 
+ \subsection{\textit{Points of Interes}} 
+ \gls{pois} Points of Interes (Urban Attractors ima 22 kategorije koristi bazu s POI)
+ \subsection{Open Street Map}
+ \subsubsection{Model raspodjele toka (naš model)}
+ \subsubsection{Izvor infrastrukture} OSM kao izvor infrastrukture 
+ (jedan od radova koristi za broj traka na auto cesti jedan za provjeru naseljenosti podruèja/broj katova zgrada)
+ 
+ \section{Modul kretanja}
+Terralytics - prema brzini kojom pokretna stanica mijenja položaj 
 
 \subsection{Geometrija prostorne podjele}
 

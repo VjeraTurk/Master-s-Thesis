@@ -22,23 +22,23 @@
 \BIBdecl
 
 \bibitem{Cools:2010.}
-M.~Cools, E.~Moons, and G.~Wets, ``Assessing the quality of origin-destination
-  matrices derived from activity travel surveys,'' \emph{Transportation
+M.~Cools, E.~Moons, and G.~Wets, ``{Assessing the Quality of Origin-Destination
+  Matrices Derived from Activity Travel Surveys},'' \emph{Transportation
   Research Record: Journal of the Transportation Research Board}, 2010.
 
 \bibitem{Pollard:2013.}
-T.~Pollard, N.~Taylor, T.~van Vuren, and M.~MacDonald, ``Comparing the quality
-  of od matrices in time and between data sources,'' \emph{European Transport
+T.~Pollard, N.~Taylor, T.~van Vuren, and M.~MacDonald, ``{Comparing the Quality
+  of OD Matrices in Time and Between Data Sources},'' \emph{European Transport
   Conference}, 2013.
 
 \bibitem{Alhazzani:2016.}
-M.~Alhazzani, F.~Alhasoun, Z.~Alawwad, and M.~C. Gonz\'alez, ``Urban
-  attractors: Discovering patterns in regions of attraction in cities,''
+M.~Alhazzani, F.~Alhasoun, Z.~Alawwad, and M.~C. Gonz\'alez, ``{Urban
+  Attractors: Discovering Patterns in Regions of Attraction in Cities},''
   \emph{Public Library of Science}, 2016.
 
 \bibitem{Peterson:2007.}
-A.~Peterson, ``The origin-destination matrix estimation problem- analysis and
-  computations,'' Ph.D. dissertation, Link\"oping Studies in Science and
+A.~Peterson, ``{The Origin-Destination Matrix Estimation Problem- Analysis and
+  Computations},'' Ph.D. dissertation, Link\"oping Studies in Science and
   Technology, 2007.
 
 \bibitem{Jelusic:2016.}
@@ -58,35 +58,51 @@ D.~Gundlegard, C.~Rydergren, N.~Breyer, and B.~Rajna, ``Travel demand
 (06.05.2019) ecall. , s Interneta,  \url{https://en.wikipedia.org/wiki/ECall}
 \BIBentrySTDinterwordspacing
 
-\bibitem{Bera:2011.}
-S.~Bera and K.~V.~K. Rao, ``Estimation of origin-destination matrix from
-  traffic counts: the state of the art,'' \emph{European Transport \ Trasporti
-  Europei n. 49}, 2011.
+\bibitem{Goulding:2016.}
+J.~Goulding, \emph{{Best Practices and Methodology for OD Matrix Creation from
+  CDR data}}, N/LAB, University of Nottingham, 2016.
 
-\bibitem{Filic:2016.}
-M.~Fili\'c, R.~Filjar, and K.~Vidovi\'c, ``Graphical representation of
-  origin-destination matrix in r statistical environment,'' in \emph{36. skup o
-  prometnim sustavima s medjunarodnim sudjelovanjem AUTOMATIZACIJA U
-  PROMETU}.\hskip 1em plus 0.5em minus 0.4em\relax KoREMA, November 2016.
-
-\bibitem{Travassoli:2016.}
-A.~Travassoli, A.~Alsger, M.~Hickman, and M.~Meshbah, ``How close the models
-  are to the reality? comparison of transit ogrigin-destination estimates with
-  automatic fare collection data,'' \emph{Australian Transport Research Forum},
-  2016.
-
-\bibitem{Djukic:2013.}
-T.~Djuki\'c, ``Reliability assessment of dynamic od estimation methods based on
-  structural similarity index,'' \emph{92nd meeting of the Transportation
-  Reasearch Board}, 2013.
+\bibitem{Calabrese:2011.}
+F.~Calabrese, G.~D. Lorenzo, L.~Liu, and C.~Ratti, ``Estimating
+  {Origin-Destination} flows using opportunistically collected mobile phone
+  location data from one million users in {Boston Metropolitan Area},''
+  \emph{IEEE Pervasive Computing 10}, no.~4, pp. 36--44., April, 2011.
 
 \bibitem{Graells-Garrido:2016.}
-E.~Graells-Garrido and D.~Saez-Trumper, ``A day of your days: Estimating
-  individual daily journeys using mobile data to understand urban flow,'' 2016.
+E.~Graells-Garrido and D.~Saez-Trumper, ``{A Day of Your Days: Estimating
+  Individual Daily Journeys Using Mobile Data to Understand Urban Flow},''
+  2016.
+
+\bibitem{Toole:2015.}
+J.~L. Toole, S.~Colak, B.~Sturt, L.~P. Alexander, A.~Evskoff, and M.~C.
+  Gonz\'alez, ``The path most traveled: {Travel} demand estimaton using big
+  data resources,'' \emph{Transport Research Part C}, 2015.
+
+\bibitem{Travassoli:2016.}
+A.~Travassoli, A.~Alsger, M.~Hickman, and M.~Meshbah, ``{How close the models
+  are to the reality? Comparison of Transit Origin-Destination Estimates with
+  Automatic Fare Collection Data},'' \emph{Australian Transport Research
+  Forum}, 2016.
+
+\bibitem{Bera:2011.}
+S.~Bera and K.~V.~K. Rao, ``{Estimation of origin-destination matrix from
+  traffic counts: the state of the art},'' \emph{European Transport \ Trasporti
+  Europei n. 49}, 2011.
+
+\bibitem{Djukic:2013.}
+T.~Djuki\'c, ``Reliability assessment of dynamic {OD} estimation methods based
+  on structural similarity index,'' \emph{92nd meeting of the Transportation
+  Reasearch Board}, 2013.
 
 \bibitem{Vuren:2015.}
-T.~van Vuren, ``256 shades of gray -comparing od matrices using image quality
-  assessment tehniques,'' \emph{Scottish Transport Applications Research
-  (STAR)}, 2015.
+T.~van Vuren, ``256 shades of gray - comparing {OD} matrices using image
+  quality assessment tehniques,'' \emph{Scottish Transport Applications
+  Research (STAR)}, 2015.
+
+\bibitem{Filic:2016.}
+M.~Fili\'c, R.~Filjar, and K.~Vidovi\'c, ``{Graphical Representation of
+  Origin-Destination Matrix in R Statistical Environment},'' in \emph{36. skup
+  o prometnim sustavima s medjunarodnim sudjelovanjem AUTOMATIZACIJA U
+  PROMETU}.\hskip 1em plus 0.5em minus 0.4em\relax KoREMA, November 2016.
 
 \end{thebibliography}

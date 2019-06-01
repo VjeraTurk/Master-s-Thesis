@@ -49,3 +49,11 @@ Official Faculty template is available at http://nastavno.mjoler.info/dipl and [
         sudo apt-get install texlive-generic-extra
         sudo texhash
 
+5. All Titles from .bib file have forced *lowercase* on all words accept first word in Title. Unable to use Capital letters (are ignored) for example: Boston -> boston
+
+Apparently this is a ["Feature"](https://tex.stackexchange.com/questions/86820/incorrect-case-in-bibtex  
+), and can in some cases be [overwritten in .bst file](https://tex.stackexchange.com/a/10775/113519).  
+Other solution is to use [{ }](https://tex.stackexchange.com/questions/10772/bibtex-loses-capitals-when-creating-bbl-file  
+) around parts of title (or entire title) we wish to keep capitalised  
+
+

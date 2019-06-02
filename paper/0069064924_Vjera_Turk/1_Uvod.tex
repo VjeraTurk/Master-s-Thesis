@@ -126,15 +126,17 @@ Osnovna ideja pokretnih osjetila je da vozila koja se kreæu po prometnoj mreži i
 
 Ukoliko pokretno osjetilo nije vozilo veæ pametni telefon tada se èesto koristi naziv \gls{fpd}. \gls{fpd} se odnosi na prikupljanje podataka pomoæu mobilnih (pametnih) telefona neovisno o naèinu odreðivanja položaja - korištenjem \gls{gnss} ili pomoæu javne pokretne mreže. %Odreðivanje korištenjem \gls{gnss} prijemnika ponovno zahtjeva slanje podataka kao i kod FCD. 
 
-Zaseban pristup unutar \gls{fpd} je odreðivanje položaja unutar javne pokretne mreže (mreže baznih stanica). Kod ovog naèina položaj pokretne stanice može se odrediti triangulacijom (pomoæu signala iz više baznih stanica èije signal hvata pokretna stanica) ili se aproksimira s podruèjem pokrivanja bazne stanice na koju je u trenutku oèitavanja položaja pokretna stanica spojena.
+Zaseban pristup unutar \gls{fpd} je odreðivanje položaja unutar javne pokretne mreže (mreže baznih stanica). Kod ovog naèina položaj pokretne stanice može se odrediti triangulacijom (pomoæu signala iz više baznih stanica èije signal hvata pokretna stanica) ili se aproksimira podruèjem pokrivanja bazne stanice na koju je u trenutku oèitavanja položaja pokretna stanica spojena.
+
+\section{Matrice iz zapisa o telekomunikacijskim aktivnostima u javnoj pokretnoj mreži}
 
 Kako bi pružali i naplaæivali usluge, mobilni operateri moraju prikupljati podatke o pokretnim stanicama korisnika. Pojednostavljeno, da bi se usmjerio poziv do odgovarajuæeg ureðaja, mora se biti poznato s koje bazne stanice odaslati signal. Naziv za podatke koje operateri prikupljaju kako bi naplaæivali usluge glasi \gls{cdr}. Radi se o zapisima aktivnosti u mobilnoj mreži - pozivima, porukama (engl. Short Messaging Service - SMS) te zapoèetom prijenosu mobilnih podataka.
-Tipièan zapis izmeðu ostalog sastoji se od indentifikacijske oznake pristupne toèke radijske mreže (bazne stanice) i vremenskog žiga poèetka telekomunikacijske aktivnosti. 
+Tipièan zapis izmeðu ostalog sastoji se od identifikacijske oznake pristupne toèke radijske mreže (bazne stanice) i vremenskog žiga poèetka telekomunikacijske aktivnosti. 
 	
 U novije vrijeme znanstvenici predlažu metode u kojima koriste upravo anonimizirane \gls{cdr} kao izvor podataka za generiranje \gls{pom}-a.
 \cite{Frias-Martinez:2012.} \cite{Alhazzani:2016.} \cite{Gundlegard:2016.} 
 
-Zanimljivo je ovdje spomenuti europsku inicijativu \textit{eCall} za brzu pomoæ stradalima u prometnim nesreæama bilo gdje u Europskoj Uniji. \textit{eCall} zahtjeva da u svakom novom motornom vozilu bude ugraðen ureðaj koji u sluèaju prometne nesreæe automatski obavijesti centar 112 te mu šalje informacije o aktivaciji zraènih jastuka, prikupljene podatke osjetila za procjenu jaèine sudara i u dakako položaj vozila u trenutku prometne nesreæe. Takoðer treba omoguæiti uspostavu poziva. Prognoza je da æe se korištenjem tog sustava vrijeme odziva (dolaska službi na mjesto prometne nesreæe) smanjiti za izmeðu 40\% i 50\%. Od travnja 2018. svi novi automobili u prodaji u Europskoj moraju imaju ugraðen ovaj ureðaj. Nakon uspješnog uspostavljanja sustava oèekuje se da bi se ureðaj mogao poèeti koristiti i u druge svrhe. \cite{eCall:2018.}
+Zanimljivo je ovdje spomenuti europsku inicijativu \textit{eCall} \cite{eCall:2018.} za brzu pomoæ stradalima u prometnim nesreæama bilo gdje u Europskoj Uniji. \textit{eCall} zahtjeva da u svakom novom motornom vozilu bude ugraðen ureðaj koji u sluèaju prometne nesreæe automatski obavijesti centar 112 te mu šalje informacije o aktivaciji zraènih jastuka, prikupljene podatke osjetila za procjenu jaèine sudara i u dakako položaj vozila u trenutku prometne nesreæe. Takoðer treba omoguæiti uspostavu poziva. Prognoza je da æe se korištenjem tog sustava vrijeme odziva (dolaska službi na mjesto prometne nesreæe) smanjiti za izmeðu 40\% i 50\%. Od travnja 2018. svi novi automobili u prodaji u Europskoj moraju imaju ugraðen ovaj ureðaj. Nakon uspješnog uspostavljanja sustava oèekuje se da bi se ureðaj mogao poèeti koristiti i u druge svrhe. 
 
 %eCall is a European initiative intended to bring rapid assistance to motorists involved in a collision anywhere in the European Union. eCall was made mandatory in all new cars sold within the EU from April 2018.[1]
 
@@ -142,7 +144,7 @@ Zanimljivo je ovdje spomenuti europsku inicijativu \textit{eCall} za brzu pomoæ 
 
 %E-call
 
-\section{Matrice iz zapisa o telekomunikacijskim aktivnostima u javnoj pokretnoj mreži}
+
 
 \begin{comment}
 %Today, with the ubiquity and pervasiveness of technology, data generated from mobile phones enable data analysts to better understand the behavior of individuals across many dimensions including their mobility patterns. 
@@ -151,14 +153,17 @@ Unlike traditional analyses, the nature of this data mining approach forces us t
 This notion is parameterized to ensure we have sufficient confidence that any stop we have detected is not a transient location, but actually a location that the individual has actually settled in.
 \end{comment}
 
-Danas uz sveprisutnost i prodornost tehnologije, podatci koje generiraju pametni telefoni omoguæuju podatkovnim analitièarima razumjeti ponašanje u brojnim domenama pojedinaca, ukljuèujuæi i njihov obrazac kretanja. Kao što je veæ spomenuto matrice je moguæe generirati iz \gls{cdr} koje operateri prikupljaju u svrhu pružanja i naplaæivanja usluge. Za ovu metodu stoga ne postoji potreba za dodatnim ureðajima, sustavima ili protokolima centralnog prikupljanja položaja kao što je to u sluèaju kada se položaj odreðuje pomoæu \gls{gnss}. (...anonimizacija i k).
+Danas uz sveprisutnost i prodornost tehnologije, podatci koje generiraju pametni telefoni omoguæuju podatkovnim analitièarima razumjeti ponašanje u brojnim domenama pojedinaca, ukljuèujuæi i njihov obrazac kretanja. Kao što je veæ spomenuto matrice je moguæe generirati iz \gls{cdr} koje operateri prikupljaju u svrhu pružanja i naplaæivanja usluge. Za ovu metodu stoga ne postoji potreba za dodatnim ureðajima, sustavima ili protokolima centralnog prikupljanja položaja kao što je to u sluèaju kada se položaj odreðuje pomoæu \gls{gnss}. 
+
+Pokriva pješaèki promet, 
+%Penetracija od 82\%, 9x\% -> pronaæi radove, Dobra pokrivenost i zemljama u razvoju (u Africi gdje nedostaje landline) Nemaju ni porometnu infrastrukturu pa se može planirati razvoj
+(...anonimizacija i k-anonimizacija...).
+
 
 
 \subsection{Putovanje}
 
-Priroda ovog pristupa rudarenju podataka za estimaciju POM-a zahtjeva da prvo definiramo što toèno smatramo putovanjem, odnosno polazištem i odredištem putovanja.
-
-Zaustavljanje se definira kao skup minimalno n dogaðaja (aktivnosti) koji su zabilježeni na istoj poziciji unutar minimalnog vremenskog perioda. Time se osigurava da se ne radi o tranzitnoj veæ o namjerenoj poziciji zaustavljanja (i suzbija se bilježenje lažnog kretanje kod privremenog spajanja na susjednu bazni stanicu). Algoritam u nizu aktivnosti svakog pojedinca traži takva zaustavljanja. Dobiveni niz kontinuiranog zaustavljanja na razlièitim položajima otkriva kretanje. Algoritam izvlaèi uzastopne parove zaustavljanja te, prema dodatno definiranim kriterijima dozvoljenog minimalnog i maksimalnog vremenskog razmaka izmeðu polaska i dolaska na odredište, ranije zaustavljanje postaje polazište, a kasnije odredište putovanja. Skupovi putovanja u pripadajuæem vremenskom period saèinjavaju matricu za taj vremenski period.
+Priroda ovog pristupa rudarenju podataka za estimaciju POM-a zahtjeva da prvo definiramo što toèno smatramo putovanjem, odnosno polazištem i odredištem putovanja. Zaustavljanje se definira kao skup minimalno n dogaðaja (aktivnosti) koji su zabilježeni na istoj poziciji unutar minimalnog vremenskog perioda. Time se osigurava da se ne radi o tranzitnoj veæ o namjerenoj poziciji zaustavljanja (i suzbija se bilježenje lažnog kretanje kod privremenog spajanja na susjednu bazni stanicu). Algoritam u nizu aktivnosti svakog pojedinca traži takva zaustavljanja. Dobiveni niz kontinuiranog zaustavljanja na razlièitim položajima otkriva kretanje. Algoritam izvlaèi uzastopne parove zaustavljanja te, prema dodatno definiranim kriterijima dozvoljenog minimalnog i maksimalnog vremenskog razmaka izmeðu polaska i dolaska na odredište, ranija æelija zaustavljanja postaje polazište, a kasnija odredište putovanja. Skupovi putovanja u pripadajuæem vremenskom period saèinjavaju matricu za taj vremenski period.
 
 \begin{comment}
 %An algorithm must consequently be developed to exhaustively mine each person’s event series for such stops. Once achieved, the algorithm must next detect pairs of contiguous stops which occur at different locations and hence reveal movement. This pair can then be designated as a journey - the initiating stop becoming the journey’s origin, and the concluding stop as the journey’s destination. 
@@ -166,7 +171,7 @@ Zaustavljanje se definira kao skup minimalno n dogaðaja (aktivnosti) koji su zab
 \end{comment}
 
 \subsection{Kontekst iz samog izvora podataka o kretanju}    
-Kada su dostupni zapisi prikupljani dulje vremensko razdoblje, tjednima ili mjesecima èesto se putovanja odnosno matrice definiraju na drugaèiji naèin. Analizom zapisa može se utvrdi na kojem položaju (u kojoj æeliji) neki pojedinci pretežito borave u tipiènom radnom vremenu te u kojoj tokom noæi. Prva æelija za njihova putovanja postaje \textit{Work} destinacija, druga \textit{Home}, a sve preostale destinacije u zasebnu kategoriju \textit{Other}. Potom se generiraju matrice koje ukljuèuju samo putovanja iz jednog tipa destinacije u drugi (npr. Home-Work). \cite{Goulding:2016.} \cite{Calabrese:2011.} \cite{Frias-Martinez:2012.} \cite{Graells-Garrido:2016.} \cite{Toole:2015.}
+Kada su dostupni zapisi prikupljani dulje vremensko razdoblje, tjednima ili mjesecima èesto se putovanja odnosno matrice definiraju na drugaèiji naèin. Pojednostavljeno, analizom zapisa može se utvrdi na kojem položaju (u kojoj æeliji) neki pojedinci pretežito borave u tipiènom radnom vremenu te u kojoj tokom noæi. Prva æelija za njihova putovanja postaje \textit{Work} destinacija, druga \textit{Home}, a sve preostale destinacije svrstaju se u zasebnu kategoriju \textit{Other}. Potom se generiraju matrice koje ukljuèuju samo putovanja iz jednog tipa destinacije u drugi (npr. Home-Work). \cite{Goulding:2016.} \cite{Calabrese:2011.} \cite{Frias-Martinez:2012.} \cite{Graells-Garrido:2016.} \cite{Toole:2015.}
 Jedan od razloga je da su takve matrice usporedive s onima dobivenim iz anketa stanovništva s istom podjelom putovanja.
 
 \begin{comment}
@@ -179,30 +184,42 @@ Kada su dostupni zapisi prikupljani dulje vremensko razdoblje, tjednima ili mjes
 		"Flow between O-D pair w that departed its origin during time interval k"
 		\cite{Bera:2011.}
 \end{comment}
+
+ \subsection{Moduli kretanja}
+Terralytics je jedna od mladih kompanija koja nudi uslugu modeliranja prometa iz telekomunikacijskih podataka. Izmeðu ostalog prema brzini kojom se pokretna stanica (ili skupina njih istovremeno) mijenja položaj donose zakljuèak o modulu kretanja (pješak, automobil, javni prijevoz, avion).\cite{Teralytics:2017.} 
+%Poznavanjem modula kretanja može se analizirati "carbon footprint grada" jedan rad!!
+
+
 %proksimacija s BS ili signal strenght (RSSI) + neka ona drugo baza LTO(?)
  \section{Kontekst iz vanjskih izvora}
- 
- Some studies combined human mobility with land use or POIs data to segment districts in urban areas according to their functions or use. The type of data used to capture human mobility behavior varies between individual GPS traces [10, 11], taxi pick up/drop off locations as in [7, 12] , Call Detail Records (CDRs) as in [2, 8], social media check ins as
- in [13–15], and bus smart card data as in [16]. 
- 
- \subsection{\textit{Points of Interes}} 
- \gls{pois} Points of Interes (Urban Attractors ima 22 kategorije koristi bazu s POI)
+Neka istraživanja spojila su ljudsku mobilnost s namjenom zemljišta (land use) ili toèkama interesa \textit{engl. \gls{pois}} kako bi grupirala urbane predjele prema njihovoj funkciji ili upotrebi. Izvori podataka o mobilnosti variraju od \gls{gps} putanja, položaja ukrcaja i iskrcaja taxi vozila, zapisi koje generiraju pametne kartice u javnom prijevozu, podatci o dijeljenim lokacijama na društvenim mrežama \textit{(engl. check-in)} i zapisi o telekomunikacijskim aktivnostima (\gls{cdr}). \cite{Alhazzani:2016.}
+% Some studies combined human mobility with land use or POIs data to segment districts in urban areas according to their functions or use. The type of data used to capture human mobility behavior varies between individual GPS traces [10, 11], taxi pick up/drop off locations as in [7, 12] , Call Detail Records (CDRs) as in [2, 8], social media check ins as in [13–15], and bus smart card data as in [16]. 
+  \subsection{\textit{Points of Interes}}
+U jednom od svojih radova grupa autora kvantizira vezu izmeðu ukupno 23 namjenske kategorije \gls{pois} i onim što nazivaju 3 tipa privlaèenja (...nabrojiti neke kategorije). Svaki tip privlaèenja ima karakteristièan tok (gustoæu ukupnog toka, udaljenost i disperziju polazišta tokova usmjerenih prema objektu tog tipa privlaèenja). \cite{Alhazzani:2016.}  U radu koriste podatke iz službene baze s 12,000 \gls{pois} grada u pitanju i \gls{cdr} zapisima iz razdoblja od mjesec dana. 
+% We used a statistical significance testing approach to rigorously quantify the relationship between Points of Interests (POIs) types (services) and the 3 patterns of Urban Attractors we detected. \gls{pois} Points of Interes (Urban Attractors ima 22 kategorije koristi bazu s POI)
+
  \subsection{Open Street Map}
- \subsubsection{Model raspodjele toka (naš model)}
- \subsubsection{Izvor infrastrukture} OSM kao izvor infrastrukture 
- (jedan od radova koristi za broj traka na auto cesti jedan za provjeru naseljenosti podruèja/broj katova zgrada)
+OpenStreetMap je svjetski raširen projekt koji kreira i pruža slobodne zemljopisne podatke (zemljovide gradova i naselja) temeljen na volonterskom doprinosu zajednice. Pruža detaljne i ažurne digitalne zemljovide kompatibilne s \gls{gis} aplikacijama s moguænošæu upisa raznih meta podataka o objektima u prostoru.  
  
- \section{Modul kretanja}
-Terralytics - prema brzini kojom pokretna stanica mijenja položaj 
 
-\subsection{Geometrija prostorne podjele}
+\subsubsection{Izvor infrastrukture} 
+Jedan od naèina na koji OSM doprinosi istraživanjima u ovom podruèju je kao izvor prometne infrastrukture i pripadajuæih meta podataka (kolnik, mostovi, ogranièenja brzine...). Raspodjela toka po prometnoj infrastrukturi nadilazi podruèje ovog rada no jest dio problematike modeliranja prometa. \cite{Toole:2015.} 
+ %(jedan od radova koristi za broj traka na auto cesti jedan za provjeru naseljenosti podruèja/broj katova zgrada)
 
+ \subsubsection{Model raspodjele toka}
+ \cite{Stupar:2018}
+ 
+
+\section{Geometrija prostorne podjele}
+
+\subsubsection{TAZ}
 \subsubsection{Heksagoni}
 \subsubsection{Voronoi tesalacije}
 \subsubsection{Jedinice samouprave}
+
 \subsubsection{Pravokutna mreža}
 
-\subsection {Dobre prakse u generiranju POM iz CDR}
+\section {Dobre prakse u generiranju POM iz CDR}
 Skaliranje CDR POM (primjerak $->$ pouplacija)
 (linking to transport infrastructure?)
 k-anonymization

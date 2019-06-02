@@ -2,7 +2,6 @@ This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: 0069064924_Vjera_Turk.aux
 A level-1 auxiliary file: 1_Uvod.aux
-A level-1 auxiliary file: 2_Kontekst.aux
 A level-1 auxiliary file: 3_Validacija.aux
 A level-1 auxiliary file: 4_Parametri.aux
 A level-1 auxiliary file: 5_Demonstracija.aux
@@ -16,6 +15,8 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: Literatura.bib
+Warning--entry type for "Teralytics:2017." isn't style-file defined
+--line 200 of file Literatura.bib
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -24,45 +25,45 @@ Warning--there's a month but no year in Calabrese:2011.
 Warning--empty journal in Graells-Garrido:2016.
 
 Done.
-You've used 17 entries,
+You've used 19 entries,
             4087 wiz_defined-function locations,
-            923 strings with 10727 characters,
-and the built_in function-call counts, 7400 in all, are:
-= -- 562
-> -- 194
+            931 strings with 11121 characters,
+and the built_in function-call counts, 8091 in all, are:
+= -- 605
+> -- 212
 < -- 8
-+ -- 93
-- -- 44
-* -- 327
-:= -- 1302
-add.period$ -- 33
-call.type$ -- 17
-change.case$ -- 17
++ -- 102
+- -- 48
+* -- 354
+:= -- 1413
+add.period$ -- 36
+call.type$ -- 19
+change.case$ -- 18
 chr.to.int$ -- 18
-cite$ -- 20
-duplicate$ -- 626
-empty$ -- 662
-format.name$ -- 55
-if$ -- 1643
+cite$ -- 22
+duplicate$ -- 690
+empty$ -- 733
+format.name$ -- 60
+if$ -- 1798
 int.to.chr$ -- 0
-int.to.str$ -- 17
-missing$ -- 125
-newline$ -- 76
-num.names$ -- 16
-pop$ -- 339
+int.to.str$ -- 19
+missing$ -- 139
+newline$ -- 84
+num.names$ -- 17
+pop$ -- 388
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 553
+skip$ -- 603
 stack$ -- 0
-substring$ -- 58
-swap$ -- 367
+substring$ -- 59
+swap$ -- 398
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 17
+type$ -- 19
 warning$ -- 3
-while$ -- 19
-width$ -- 19
-write$ -- 160
-(There were 3 warnings)
+while$ -- 20
+width$ -- 21
+write$ -- 175
+(There were 4 warnings)

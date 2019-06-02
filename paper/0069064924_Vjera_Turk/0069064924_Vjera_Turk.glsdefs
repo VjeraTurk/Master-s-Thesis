@@ -478,3 +478,63 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{gps}{}%
+{%
+\gls@defglossaryentry{gps}%
+{%
+name={\acronymfont {\glsentryshort {gps}}},%
+sort={GPS},%
+type={main},%
+first={GPS},%
+firstplural={GPSs},%
+text={GPS},%
+plural={GPSs},%
+description={Global Positioning System},%
+descriptionplural={Global Positioning System},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Global Positioning System},%
+longplural={Global Positioning Systems},%
+short={GPS},%
+shortplural={GPSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{gis}{}%
+{%
+\gls@defglossaryentry{gis}%
+{%
+name={\acronymfont {\glsentryshort {gis}}},%
+sort={GIS},%
+type={main},%
+first={GIS},%
+firstplural={GISs},%
+text={GIS},%
+plural={GISs},%
+description={Geographic Information System},%
+descriptionplural={Geographic Information System},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Geographic Information System},%
+longplural={Geographic Information Systems},%
+short={GIS},%
+shortplural={GISs},%
+counter={page},%
+parent={},%
+%
+}%
+}%

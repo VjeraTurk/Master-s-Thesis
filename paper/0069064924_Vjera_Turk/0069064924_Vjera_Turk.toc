@@ -9,31 +9,32 @@
 \contentsline {subsection}{\numberline {2.1.3}Modeliranje prometa}{4}{subsection.2.1.3}
 \contentsline {subsection}{\numberline {2.1.4}Problematika i ograni\v cenja tradicionalnih na\v cina}{4}{subsection.2.1.4}
 \contentsline {subsection}{\numberline {2.1.5}Pokretna osjetila}{5}{subsection.2.1.5}
-\contentsline {section}{\numberline {2.2}Matrice iz zapisa o telekomunikacijskim aktivnostima u javnoj pokretnoj mre\v zi}{6}{section.2.2}
+\contentsline {section}{\numberline {2.2}Matrice iz zapisa o telekomunikacijskim aktivnostima u javnoj pokretnoj mre\v zi}{5}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Putovanje}{6}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Kontekst iz samog izvora podataka o kretanju}{7}{subsection.2.2.2}
-\contentsline {section}{\numberline {2.3}Kontekst iz vanjskih izvora}{7}{section.2.3}
+\contentsline {subsection}{\numberline {2.2.3}Moduli kretanja}{7}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Kontekst iz vanjskih izvora}{8}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}\textit {Points of Interes}}{8}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Open Street Map}{8}{subsection.2.3.2}
-\contentsline {subsubsection}{Model raspodjele toka (na\v s model)}{8}{section*.4}
-\contentsline {subsubsection}{Izvor infrastrukture}{8}{section*.5}
-\contentsline {section}{\numberline {2.4}Modul kretanja}{8}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Geometrija prostorne podjele}{8}{subsection.2.4.1}
-\contentsline {subsubsection}{Heksagoni}{8}{section*.6}
-\contentsline {subsubsection}{Voronoi tesalacije}{8}{section*.7}
-\contentsline {subsubsection}{Jedinice samouprave}{8}{section*.8}
-\contentsline {subsubsection}{Pravokutna mre\v za}{8}{section*.9}
-\contentsline {subsection}{\numberline {2.4.2}Dobre prakse u generiranju POM iz CDR}{8}{subsection.2.4.2}
-\contentsline {section}{\numberline {2.5}Drugi primjeri automatskog prikupljanja}{10}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Zdru\v zena o\v citanja prijamnika za satelitsku navigaciju}{10}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}Javni prijevoz i \textit {pametne kartice }(\textit {Smart Card }sustavi)}{10}{subsection.2.5.2}
+\contentsline {subsubsection}{Izvor infrastrukture}{8}{section*.4}
+\contentsline {subsubsection}{Model raspodjele toka}{9}{section*.5}
+\contentsline {section}{\numberline {2.4}Geometrija prostorne podjele}{9}{section.2.4}
+\contentsline {subsubsection}{TAZ}{9}{section*.6}
+\contentsline {subsubsection}{Heksagoni}{9}{section*.7}
+\contentsline {subsubsection}{Voronoi tesalacije}{9}{section*.8}
+\contentsline {subsubsection}{Jedinice samouprave}{9}{section*.9}
+\contentsline {subsubsection}{Pravokutna mre\v za}{9}{section*.10}
+\contentsline {section}{\numberline {2.5}Dobre prakse u generiranju POM iz CDR}{9}{section.2.5}
+\contentsline {section}{\numberline {2.6}Drugi primjeri automatskog prikupljanja}{10}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Zdru\v zena o\v citanja prijamnika za satelitsku navigaciju}{10}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}Javni prijevoz i \textit {pametne kartice }(\textit {Smart Card }sustavi)}{10}{subsection.2.6.2}
 \contentsline {chapter}{\numberline {3}Postoje\'ce metrike za validaciju POM-e}{11}{chapter.3}
 \contentsline {section}{\numberline {3.1}To\v cnost POM-e}{11}{section.3.1}
 \contentsline {section}{\numberline {3.2}Metrike}{11}{section.3.2}
 \contentsline {section}{\numberline {3.3}Strukturalna sli\v cnost}{12}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}MSSI}{12}{subsection.3.3.1}
-\contentsline {subsubsection}{osnovni}{13}{section*.10}
-\contentsline {subsubsection}{pobolj\v sani}{13}{section*.11}
+\contentsline {subsubsection}{osnovni}{13}{section*.11}
+\contentsline {subsubsection}{pobolj\v sani}{13}{section*.12}
 \contentsline {chapter}{\numberline {4}Odnosni parametri kvalitete}{14}{chapter.4}
 \contentsline {section}{\numberline {4.1}Zajedni\v cki, objektivni kriteriji usporedbe}{14}{section.4.1}
 \contentsline {section}{\numberline {4.2}Komparacijski indikatori}{15}{section.4.2}
@@ -41,15 +42,14 @@
 \contentsline {subsection}{\numberline {4.2.2}Razlu\v civost (Rezolucija)}{15}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}\v Sirina toka}{15}{subsection.4.2.3}
 \contentsline {subsection}{\numberline {4.2.4}Geometrija prostorne podjele}{15}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}Definicija putovanja}{16}{subsection.4.2.5}
-\contentsline {subsection}{\numberline {4.2.6}}{16}{subsection.4.2.6}
-\contentsline {subsubsection}{Infrastruktura}{16}{section*.12}
-\contentsline {subsubsection}{Sredstvo kretanja}{16}{section*.13}
-\contentsline {subsection}{\numberline {4.2.7}Gusto\'ca informacija - kontekst}{16}{subsection.4.2.7}
-\contentsline {section}{\numberline {4.3}Me\IeC {\dj }uovisnost parametara}{16}{section.4.3}
-\contentsline {chapter}{Bibliografija}{17}{chapter*.14}
-\contentsline {chapter}{Pojmovnik}{19}{chapter*.16}
-\contentsline {chapter}{Sažetak}{20}{chapter*.16}
-\contentsline {chapter}{\numberline {A}Naslov priloga}{21}{appendix.A}
-\contentsline {section}{\numberline {A.1}Naslov sekcije}{21}{section.A.1}
-\contentsline {section}{\numberline {A.2}Naslov sekcije}{21}{section.A.2}
+\contentsline {subsection}{\numberline {4.2.5}Definicija putovanja}{15}{subsection.4.2.5}
+\contentsline {subsubsection}{Infrastruktura}{15}{section*.13}
+\contentsline {subsubsection}{Sredstvo kretanja}{15}{section*.14}
+\contentsline {subsection}{\numberline {4.2.6}Gusto\'ca informacija - kontekst}{15}{subsection.4.2.6}
+\contentsline {section}{\numberline {4.3}Me\IeC {\dj }uovisnost parametara}{15}{section.4.3}
+\contentsline {chapter}{Bibliografija}{16}{chapter*.15}
+\contentsline {chapter}{Pojmovnik}{18}{chapter*.17}
+\contentsline {chapter}{Sažetak}{19}{chapter*.17}
+\contentsline {chapter}{\numberline {A}Naslov priloga}{20}{appendix.A}
+\contentsline {section}{\numberline {A.1}Naslov sekcije}{20}{section.A.1}
+\contentsline {section}{\numberline {A.2}Naslov sekcije}{20}{section.A.2}

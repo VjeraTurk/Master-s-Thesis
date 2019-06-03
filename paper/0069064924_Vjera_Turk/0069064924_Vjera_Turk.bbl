@@ -80,15 +80,24 @@ J.~L. Toole, S.~Colak, B.~Sturt, L.~P. Alexander, A.~Evskoff, and M.~C.
 
 \bibitem{Teralytics:2017.}
 \BIBentryALTinterwordspacing
- , s Interneta,
+(03.06.2019) Teralytics. , s Interneta,
   \url{https://thenewstack.io/teralytics-takes-big-data-approach-human-movement/}
 \BIBentrySTDinterwordspacing
 
-\bibitem{Stupar:2018}
+\bibitem{Stupar:2018.}
 I.~Stupar, P.~Martinjak, V.~Turk, and R.~Filjar, ``{Socio-Economic
   Origin-Destination Matrix Derivation Through Contextualization of Material
   World},'' \emph{41st International Convention on Information and
   Communication Technology, Electronics and Microelectronics (MIPRO)}, 2018.
+
+\bibitem{Filic:}
+M.~Fili\'c, R.~Filjar, and K.~Vidovi\'c.
+
+\bibitem{data:2019.}
+\BIBentryALTinterwordspacing
+Data description for urbancps. , s Interneta,
+  \url{https://www-users.cs.umn.edu/~tianhe/BIGDATA/}
+\BIBentrySTDinterwordspacing
 
 \bibitem{Travassoli:2016.}
 A.~Travassoli, A.~Alsger, M.~Hickman, and M.~Meshbah, ``{How close the models

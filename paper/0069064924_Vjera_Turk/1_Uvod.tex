@@ -39,7 +39,7 @@ Matrica može biti generirana za sadašnje ili planirano prometno optereæenje. Mož
 Odreðivanje konteksta putovanja dodatno obogaæuje matrice jer specificira socio-ekonomske aktivnosti koje su pokretaèi putovanja odnosno razlozi kretanja stanovništva. %in the first place. 
 Moguænost preciznog odreðivanja konteksta zavisi o metodi estimacije matrica.
 
-Kada kontekst (svrha) putovanja nije inicijalno poznat iz prikupljenih podataka o putovanjima, kada je rijeè o novijim metodama estimacije matrica, autori razlièito pristupaju kontekstualizaciji. O tome je rijeè u poglavlju X.
+Kada kontekst (svrha) putovanja nije inicijalno poznat iz prikupljenih podataka o putovanjima, kada je rijeè o novijim metodama estimacije matrica, autori razlièito pristupaju kontekstualizaciji. (...)
 
 %Znanstvenici predlažu metode kontekstualizacije za sluèajeve kada kontekst (svrha) putovanja od interesa nije inicijalno poznat iz prikupljenih podataka o putovanjima.
  
@@ -136,7 +136,7 @@ Tipièan zapis izmeðu ostalog sastoji se od identifikacijske oznake pristupne toè
 U novije vrijeme znanstvenici predlažu metode u kojima koriste upravo anonimizirane \gls{cdr} kao izvor podataka za generiranje \gls{pom}-a.
 \cite{Frias-Martinez:2012.} \cite{Alhazzani:2016.} \cite{Gundlegard:2016.} 
 
-Zanimljivo je ovdje spomenuti europsku inicijativu \textit{eCall} \cite{eCall:2018.} za brzu pomoæ stradalima u prometnim nesreæama bilo gdje u Europskoj Uniji. \textit{eCall} zahtjeva da u svakom novom motornom vozilu bude ugraðen ureðaj koji u sluèaju prometne nesreæe automatski obavijesti centar 112 te mu šalje informacije o aktivaciji zraènih jastuka, prikupljene podatke osjetila za procjenu jaèine sudara i u dakako položaj vozila u trenutku prometne nesreæe. Takoðer treba omoguæiti uspostavu poziva. Prognoza je da æe se korištenjem tog sustava vrijeme odziva (dolaska službi na mjesto prometne nesreæe) smanjiti za izmeðu 40\% i 50\%. Od travnja 2018. svi novi automobili u prodaji u Europskoj moraju imaju ugraðen ovaj ureðaj. Nakon uspješnog uspostavljanja sustava oèekuje se da bi se ureðaj mogao poèeti koristiti i u druge svrhe. 
+Zanimljivo je ovdje spomenuti europsku inicijativu \textit{eCall} \cite{eCall:2018.} za brzu pomoæ stradalima u prometnim nesreæama bilo gdje u Europskoj Uniji. \textit{eCall} zahtjeva da u svakom novom motornom vozilu bude ugraðen ureðaj koji u sluèaju prometne nesreæe automatski obavijesti centar 112 te mu šalje informacije o aktivaciji zraènih jastuka, prikupljene podatke osjetila za procjenu jaèine sudara i u dakako položaj vozila u trenutku prometne nesreæe. Takoðer treba omoguæiti uspostavu poziva (\gls{gsm}). Prognoza je da æe se korištenjem tog sustava vrijeme odziva (dolaska službi na mjesto prometne nesreæe) smanjiti za izmeðu 40\% i 50\%. Od travnja 2018. svi novi automobili u prodaji u Europskoj Uniji imaju ugraðen ovaj ureðaj. Nakon uspješnog uspostavljanja sustava oèekuje se da bi se ureðaj mogao poèeti koristiti i u druge svrhe. 
 
 %eCall is a European initiative intended to bring rapid assistance to motorists involved in a collision anywhere in the European Union. eCall was made mandatory in all new cars sold within the EU from April 2018.[1]
 
@@ -153,7 +153,7 @@ Unlike traditional analyses, the nature of this data mining approach forces us t
 This notion is parameterized to ensure we have sufficient confidence that any stop we have detected is not a transient location, but actually a location that the individual has actually settled in.
 \end{comment}
 
-Danas uz sveprisutnost i prodornost tehnologije, podatci koje generiraju pametni telefoni omoguæuju podatkovnim analitièarima razumjeti ponašanje u brojnim domenama pojedinaca, ukljuèujuæi i njihov obrazac kretanja. Kao što je veæ spomenuto matrice je moguæe generirati iz \gls{cdr} koje operateri prikupljaju u svrhu pružanja i naplaæivanja usluge. Za ovu metodu stoga ne postoji potreba za dodatnim ureðajima, sustavima ili protokolima centralnog prikupljanja položaja kao što je to u sluèaju kada se položaj odreðuje pomoæu \gls{gnss}. 
+Danas uz sveprisutnost i prodornost tehnologije, podatci koje generiraju pametni telefoni omoguæuju podatkovnim analitièarima razumjeti ponašanje u brojnim domenama pojedinaca, ukljuèujuæi i njihov obrazac kretanja. Kao što je veæ spomenuto matrice je moguæe generirati iz \gls{cdr} koje operateri prikupljaju u svrhu pružanja i naplaæivanja usluge. Za ovu metodu stoga ne postoji potreba za dodatnim ureðajima, sustavima ili protokolima centralnog prikupljanja položaja kao što je to u sluèaju kada se položaj odreðuje pomoæu \gls{gnss} prijamnika. 
 
 Pokriva pješaèki promet, 
 %Penetracija od 82\%, 9x\% -> pronaæi radove, Dobra pokrivenost i zemljama u razvoju (u Africi gdje nedostaje landline) Nemaju ni porometnu infrastrukturu pa se može planirati razvoj
@@ -163,7 +163,8 @@ Pokriva pješaèki promet,
 
 \subsection{Putovanje}
 
-Priroda ovog pristupa rudarenju podataka za estimaciju POM-a zahtjeva da prvo definiramo što toèno smatramo putovanjem, odnosno polazištem i odredištem putovanja. Zaustavljanje se definira kao skup minimalno n dogaðaja (aktivnosti) koji su zabilježeni na istoj poziciji unutar minimalnog vremenskog perioda. Time se osigurava da se ne radi o tranzitnoj veæ o namjerenoj poziciji zaustavljanja (i suzbija se bilježenje lažnog kretanje kod privremenog spajanja na susjednu bazni stanicu). Algoritam u nizu aktivnosti svakog pojedinca traži takva zaustavljanja. Dobiveni niz kontinuiranog zaustavljanja na razlièitim položajima otkriva kretanje. Algoritam izvlaèi uzastopne parove zaustavljanja te, prema dodatno definiranim kriterijima dozvoljenog minimalnog i maksimalnog vremenskog razmaka izmeðu polaska i dolaska na odredište, ranija æelija zaustavljanja postaje polazište, a kasnija odredište putovanja. Skupovi putovanja u pripadajuæem vremenskom period saèinjavaju matricu za taj vremenski period.
+Priroda ovog pristupa rudarenju podataka za estimaciju POM-a zahtjeva da prvo definiramo što toèno smatramo putovanjem, odnosno polazištem i odredištem putovanja. Zaustavljanje se definira kao skup minimalno n dogaðaja (aktivnosti) koji su zabilježeni na istoj poziciji unutar minimalnog vremenskog perioda. Time se osigurava da se ne radi o tranzitnoj veæ o namjerenoj poziciji zaustavljanja (i suzbija se bilježenje lažnog kretanje kod privremenog spajanja na susjednu bazni stanicu). Algoritam u nizu aktivnosti svakog pojedinca traži takva zaustavljanja. Dobiveni niz kontinuiranog zaustavljanja na razlièitim položajima otkriva kretanje. Algoritam izvlaèi uzastopne parove zaustavljanja te, prema dodatno definiranim kriterijima dozvoljenog minimalnog i maksimalnog vremenskog razmaka izmeðu polaska i dolaska na odredište, ranija æelija zaustavljanja postaje polazište, a kasnija odredište putovanja.
+Skupovi putovanja u pripadajuæem vremenskom period saèinjavaju matricu za taj vremenski period.
 
 \begin{comment}
 %An algorithm must consequently be developed to exhaustively mine each person’s event series for such stops. Once achieved, the algorithm must next detect pairs of contiguous stops which occur at different locations and hence reveal movement. This pair can then be designated as a journey - the initiating stop becoming the journey’s origin, and the concluding stop as the journey’s destination. 
@@ -198,16 +199,28 @@ Neka istraživanja spojila su ljudsku mobilnost s namjenom zemljišta (land use) i
 U jednom od svojih radova grupa autora kvantizira vezu izmeðu ukupno 23 namjenske kategorije \gls{pois} i onim što nazivaju 3 tipa privlaèenja (...nabrojiti neke kategorije). Svaki tip privlaèenja ima karakteristièan tok (gustoæu ukupnog toka, udaljenost i disperziju polazišta tokova usmjerenih prema objektu tog tipa privlaèenja). \cite{Alhazzani:2016.}  U radu koriste podatke iz službene baze s 12,000 \gls{pois} grada u pitanju i \gls{cdr} zapisima iz razdoblja od mjesec dana. 
 % We used a statistical significance testing approach to rigorously quantify the relationship between Points of Interests (POIs) types (services) and the 3 patterns of Urban Attractors we detected. \gls{pois} Points of Interes (Urban Attractors ima 22 kategorije koristi bazu s POI)
 
- \subsection{Open Street Map}
-OpenStreetMap je svjetski raširen projekt koji kreira i pruža slobodne zemljopisne podatke (zemljovide gradova i naselja) temeljen na volonterskom doprinosu zajednice. Pruža detaljne i ažurne digitalne zemljovide kompatibilne s \gls{gis} aplikacijama s moguænošæu upisa raznih meta podataka o objektima u prostoru.  
+ \subsection{OpenStreetMap}
+OpenStreetMap je svjetski raširen projekt koji kreira i pruža slobodne zemljopisne podatke (zemljovide gradova i naselja) temeljen na volonterskom doprinosu zajednice. Pruža detaljne i ažurne digitalne zemljovide kompatibilne s \gls{gis} aplikacijama. 
+Zapoèet je prije 15 godina, u Ujedinjenom Kraljevstvu, kao odgovor na tehnièka ili pravna ogranièenja postojeæih "slobodnih" baza prostornih podataka kao što je Google Maps. Zajednièki doprinos i meðusobna kontrola unosa održavaju kartu na visokoj razini kvalitete i toènosti.
+
+  %upisa raznih meta podataka o objektima u prostoru.  
  
 
 \subsubsection{Izvor infrastrukture} 
 Jedan od naèina na koji OSM doprinosi istraživanjima u ovom podruèju je kao izvor prometne infrastrukture i pripadajuæih meta podataka (kolnik, mostovi, ogranièenja brzine...). Raspodjela toka po prometnoj infrastrukturi nadilazi podruèje ovog rada no jest dio problematike modeliranja prometa. \cite{Toole:2015.} 
- %(jedan od radova koristi za broj traka na auto cesti jedan za provjeru naseljenosti podruèja/broj katova zgrada)
+%(jedan od radova koristi za broj traka na auto cesti jedan za provjeru naseljenosti podruèja/broj katova zgrada)
 
  \subsubsection{Model raspodjele toka}
- \cite{Stupar:2018}
+Inovativni pristup kontekstualizaciji toka korištenjem OpenStreetMap baze predstavljen je u radu \cite{Stupar:2018.}. Na osnovu pripadajuæih opisnih podataka, prostorni objekti na podruèju interesa kategorizirani su prema tipu socio-ekonomske aktivnosti u koju su ukljuèeni. Definirano je ukupno 6 kategorija:
+Dom (Home), Posao (Work), Zdravlje (Health), Edukacija (Education), Zabava (Leisure) i Ostalo (Other). Razvijen je vjerojatnosni model koji, na osnovu broja objekata pojedine kategorije u odredišnoj æeliji i promatranog vremenskog perioda, ukupni ulazni tok u odredišnu æeliju dijeli na 6 tokova usmjerenih prema objektima tih kategorija. Korištene su matrice dobivene iz javno dostupnih, anonimiziranih telekomunikacijskih zapisa na podruèju kineskog grada Shenzhena. \cite{Filic:}\cite{data:2019.}
+
+ 
+
+\begin{comment}
+Spatial objects within the area of interest were categorized by type of socio-economic activity they are involved  with. This new information about context of each origin and  destination cell allowed development of probability model which separates initial migration flows into contextualized streams. 
+\end{comment}
+
+
  
 
 \section{Geometrija prostorne podjele}

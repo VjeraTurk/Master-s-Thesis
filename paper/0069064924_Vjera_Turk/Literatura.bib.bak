@@ -56,6 +56,15 @@
   Timestamp                = {01.06.2019}
 }
 
+@Article{Coscia:2015.,
+  Title                    = {{Evidence that Calls-based Mobility Networks are Isomorphic}},
+  Author                   = {Michele Coscia and Ricardo Hausmann},
+  Journal                  = {Working Papers - Cernter for International Development at Harvard University},
+  Year                     = {2015.},
+
+  Timestamp                = {06.06.2019}
+}
+
 @Article{Djukic:2013.,
   Title                    = {Reliability assessment of dynamic {OD} estimation methods based on structural similarity index},
   Author                   = {Tamara Djuki\'c},
@@ -111,12 +120,6 @@
   Timestamp                = {01.06.2019}
 }
 
-@Article{Gundelegard:,
-  Author                   = {David Gundelegard and Clas Rydergren and Nils Brey},
-
-  Timestamp                = {04.06.2019}
-}
-
 @Article{Gundlegard:2016.,
   Title                    = {Travel demand estimation and network assignment based on cellular network data},
   Author                   = {David Gundlegard and Clas Rydergren and Nils Breyer and Botond Rajna},
@@ -136,7 +139,7 @@
 }
 
 @MastersThesis{Mellegard:2011.,
-  Title                    = {Obtaining Origin-Destination- matrices from  cellular network data},
+  Title                    = {Obtaining Origin-Destination- matrices from cellular network data},
   Author                   = {Erik Mellegard},
   School                   = {Chalmers University of Technology, Department of Mathematical Sciences},
   Year                     = {2011.},
@@ -222,6 +225,17 @@ Maozeng Xu and Yinhai Wang},
   Year                     = {2016.},
 
   Timestamp                = {01.06.2019}
+}
+
+@Article{Xie:2017.,
+  Title                    = {Testing the proportionality condition with taxi trajectory data},
+  Author                   = {Jun Xie and Yu Nie and Xiaobo Liu},
+  Journal                  = {Transportation Research Part B Methodological},
+  Year                     = {2017.},
+
+  Month                    = {May},
+
+  Timestamp                = {07.06.2019}
 }
 
 @Article{Zhao:2017.,

@@ -185,8 +185,7 @@ Kada su dostupni zapisi prikupljani dulje vremensko razdoblje, tjednima ili mjes
 		\cite{Bera:2011.}
 \end{comment}
 
-
- \subsection{Moduli kretanja}
+\subsection{Moduli kretanja}
 \gls{cdr} zapisi ne osiguravaju rezoluciju pogodnu za odreðivanje modula kretanja \cite{Toole:2015.}. Iznimno se mogu izdvojiti bazen stanice dedicirane pružanju usluge iskljuèivo u podzemnoj željeznici.
  
 %Osim \gls{cdr} operateri prikupljaju dodatne podatke o preusmjeravanju poziva (engl. handover) na druge bazne stanice, (...)  
@@ -223,7 +222,7 @@ Spatial objects within the area of interest were categorized by type of socio-ec
 \end{comment}
 
 \section{Geometrija prostorne podjele}
-Konaèna geometrija prostorne podjele alternativnih izvora uglavnom ovisi o prostornoj podjeli \textit{grand truth } matrice èija jedinica prostorne podjele se naziva \gls{taz} kod analize prometa. 
+Konaèna geometrija prostorne podjele alternativnih izvora uglavnom ovisi o prostornoj podjeli \textit{grand truth } matrice. Obièno se radi o jedinici prostorne podjele naziva \gls{taz} kod analize prometa, o anketnim jedinicama ili jedinicama samouprave.
 
 
 \subsubsection{\gls{taz}}
@@ -235,21 +234,35 @@ uvedena 2010. naziva se Traffic Analisys Disrict (TAD).\cite{Zhao:2017.}
 
 Kod analize na podruèju cijele države \cite{Goulding:2016.} koristi \textit{k-sredina} algoritam za grupiranje baznih stanica u broj grupa jednak broju \gls{taz} na podruèju Senegala.
 
+%Shenzhen Transportation Planning Network consists of 21,114 road segments and 3,199 traffic analysis zones (TAZ). 
+
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[width=15cm,keepaspectratio=true]{TAZ-Shenzhen}
+\caption{Mreža za analizu prometa sastoji se od 221,14  cesta - plave linije i 3,199 \gls{taz} zona - granice oznaèene iscrtanom crnom linijom  \cite{Xie:2017.}}
+\label{fig:prva}
+\end{center}
+\end{figure}
+
 \subsubsection{Jedinice samouprave  i anketne jedinice}
 \cite{Mellegard:2011.} ne definira unaprijed broj grupa veæ za grupaciju koristi \textit{mean-shift} algoritam koji sam odreðuje broj grupa na podruèju Švedske, potom koristeæi \gls{osm} grupe veže uz imena gradova i mjesta.
 U istraživanju \cite{Coscia:2015.} bazne stanice na podruèju Kolumbije grupiraju po jedinicama samouprave (eng. \textit{municipalities}). isti postupak je korišten i u istraživanju na podruèju Madrida, kako bi matrice u konaènici bile usporedive s onima dobivenim iz anketa. \cite{Frias-Martinez:2012.}
 
 % a potom grupirane koristeæi \textit{Infomap} algoritam  .
 
-\subsubsection{Voronoi tesalacije}
-Najfinija rezolucija koju je moguæe postiæi kada je rijeè o matricama dobivenim iz \gls{cdr}. 
+\subsubsection{Voronoi teselacija}
+Najfinija rezolucija koju je moguæe postiæi kada je rijeè o matricama dobivenim iz \gls{cdr} je Voronoieva teselacija. 
 
-(...defnicija...)
+Opæenito, u ravnini, za svaku toèku iz skupa toèaka postoji odgovarajuæa regija koju èine sve toèke ravnine bliže toj toèki negoli ikojoj drugoj iz skupa. Te regije se nazivaju Voronoievim æelijama. Svaka takva æelija dobiva se presjecištem pola prostora izmeðu susjednih toèaka skupa, pa stoga èini konveksni poligon. 
+Dijelovi Voronoiova dijagrama su sve toèke u ravnini koje su ekvidistantne prema dva najbliža položaja (granice poligona). Voronoiovi vrhovi su toèke ekvidistantne tri (ili više) položaja.
+
 %The base stations are grouped together to form Location Areas (LA) for reasons to do with management of the mobile phone network as this makes it possible to identify mobile phones more rapidly in the case of a call or an SMS. The LA in which a mobile phone is located is known all the time, while at base station level its position is only known in the event of a call
 
-Ponekad operateri u \gls{cdr} zapisima ne otkrivaju položaje baznih stanica veæ njihov ID. Postoji više javno dostupnih baza nastalih volonterskim doprinosom koje pohranjuju podatke o procjenama položaja baznih stanica, snazi signala i sl.
+Toèke skupa su bazne stanice, a æelije oko njih aproksimacija površine koju ta bazna stanica pokriva. U stvarnosti se površine prekrivanja preklapaju.
 
-Položaji se prikupljaju pomoæu aplikacije instaliranena mobilnom ureðaju, registriranjem \gls{gps} pozicije i identifikacijske oznake bazne stanice na koju je ureðaj trenutno spojen. Dakle, ove baze ne sadrže "najtoèniji" položaje baznih stanica veæ usrednjeni položaj mobilnih ureðaja koji su u nekom trenutku bili spojeni na tu baznu stanicu. Može se reæi da taj procijenjeni položaj za potrebe izrada matrica èak i više odgovara od stvarnog. \cite{Mellegard:2011.}
+Ponekad operateri u \gls{cdr} zapisima ne otkrivaju položaje baznih stanica veæ samo njihov ID. Postoji više javno dostupnih baza nastalih volonterskim doprinosom koje pohranjuju podatke o procjenama položaja baznih stanica, snazi signala i sl.
+
+Položaji se prikupljaju pomoæu aplikacije instaliranena mobilnom ureðaju, registriranjem \gls{gps} pozicije i identifikacijske oznake bazne stanice na koju je ureðaj trenutno spojen. Dakle, ove baze ne sadrže "najtoèniji" položaje baznih stanica veæ usrednjene položaje mobilnih ureðaja koji su u nekom trenutku bili spojeni na tu baznu stanicu. Može se reæi da taj procijenjeni položaj za potrebe izrada matrica èak i više odgovara od stvarnog položaja. \cite{Mellegard:2011.}
  
 \cite{Gundlegard:2016.}
 
@@ -263,7 +276,21 @@ Podruèje pokrivanja bazne stanice na grafikama se standardno prikazuje kao heksa
 \cite{Toole:2015.}
 
 \subsection{Redefiniranje prostorne podjele na temelju matrica}
+
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=13cm,keepaspectratio=true]{Revisiting_the_border}
+		\caption{Prijedlog izmjene (prilagodbe) jedinica lokalne samouprave prometnoj mreži  \cite{Scepanovic:2015.}}
+		\label{fig:Revisiting}
+	\end{center}
+\end{figure}
+
+
+
 \cite{Bahoken:2013.} 11/15
+
+
 \cite{Coscia:2015.}
 Revisiting the broders -clustering based on derived mobility graph
 

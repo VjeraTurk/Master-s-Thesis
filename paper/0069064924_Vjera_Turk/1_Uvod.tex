@@ -250,6 +250,14 @@ U istraživanju \cite{Coscia:2015.} bazne stanice na podruèju Kolumbije grupiraju
 
 % a potom grupirane koristeæi \textit{Infomap} algoritam  .
 
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=13cm,keepaspectratio=true]{Municipality-Shenzhen}
+		\caption{Jedinice lokalne samouprave za grad Shenzhen \cite{Ng:2014.}}
+		\label{fig:Municipality}
+	\end{center}
+\end{figure}
+
 \subsubsection{Voronoi teselacija}
 Najfinija rezolucija koju je moguæe postiæi kada je rijeè o matricama dobivenim iz \gls{cdr} je Voronoieva teselacija. 
 
@@ -258,13 +266,22 @@ Dijelovi Voronoiova dijagrama su sve toèke u ravnini koje su ekvidistantne prema
 
 %The base stations are grouped together to form Location Areas (LA) for reasons to do with management of the mobile phone network as this makes it possible to identify mobile phones more rapidly in the case of a call or an SMS. The LA in which a mobile phone is located is known all the time, while at base station level its position is only known in the event of a call
 
-Toèke skupa su bazne stanice, a æelije oko njih aproksimacija površine koju ta bazna stanica pokriva. U stvarnosti se površine prekrivanja preklapaju.
+Toèke skupa su bazne stanice, a æelije oko njih aproksimacija površine koju ta bazna stanica pokriva. U stvarnosti se te površine prekrivanja preklapaju.
 
 Ponekad operateri u \gls{cdr} zapisima ne otkrivaju položaje baznih stanica veæ samo njihov ID. Postoji više javno dostupnih baza nastalih volonterskim doprinosom koje pohranjuju podatke o procjenama položaja baznih stanica, snazi signala i sl.
-
 Položaji se prikupljaju pomoæu aplikacije instaliranena mobilnom ureðaju, registriranjem \gls{gps} pozicije i identifikacijske oznake bazne stanice na koju je ureðaj trenutno spojen. Dakle, ove baze ne sadrže "najtoèniji" položaje baznih stanica veæ usrednjene položaje mobilnih ureðaja koji su u nekom trenutku bili spojeni na tu baznu stanicu. Može se reæi da taj procijenjeni položaj za potrebe izrada matrica èak i više odgovara od stvarnog položaja. \cite{Mellegard:2011.}
  
 \cite{Gundlegard:2016.}
+
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=13cm,keepaspectratio=true]{Voronoi-Shenzhen}
+		\caption{Voronoi dijagram baznih stanica - Shenzhen}
+		\label{fig:Voronoi}
+	\end{center}
+\end{figure}
+
 
 \subsubsection{Pravokutna mreža i mreža Heksagona}
 Uniformna podjela na pravokutne blokove od 1km spominje se kao dobra praksa
@@ -274,26 +291,21 @@ Podruèje pokrivanja bazne stanice na grafikama se standardno prikazuje kao heksa
 
 \subsubsection{Interpolacija i usporedba}
 \cite{Toole:2015.}
+\cite{Bahoken:2013.}
 
 \subsection{Redefiniranje prostorne podjele na temelju matrica}
 
+U sklopu projekta \gls{d4d} francuski operater \textit{Orange} ustupio je na korištenje \gls{cdr} višemjeseène zapise s podruèja Obale Bjelokosti. Razlièita istraživanja u ovom podruèju raðena su upravo na tim podacima. Jedno od njih \cite{Coscia:2015.} istièe da je dobar broj istraživanja dokazao da administrativne regije u zemlji faktor koji definira ljudsku mobilnost i interakcije na podruèju države. Da bi testirali tu tvrdnju oni, nakon što generiraju matricu kretanja, æelije prostorne podjele grupiraju prema  \textit{comunity detection} algoritmu. Iako se dio grupa vrlo lijepo preklapa sa postojeæim administrativnim jedinicama, one administrativne jedinice u kojima se nalaze veliki gradovi, grupacije nastale na temelju mobilnosti bitno su drugaèije. Zakljuèak je da potencijalno postoji potreba da se granice administrativnih jedinica izmjene (Slika \ref{fig:Revisiting})
+
+%Revisiting the broders -clustering based on derived mobility graph
 
 \begin{figure}[!htbp]
 	\begin{center}
-		\includegraphics[width=13cm,keepaspectratio=true]{Revisiting_the_border}
-		\caption{Prijedlog izmjene (prilagodbe) jedinica lokalne samouprave prometnoj mreži  \cite{Scepanovic:2015.}}
+		\includegraphics[width=10cm,keepaspectratio=true]{Revisiting_the_border}
+		\caption{Prijedlog izmjene (prilagodbe) administrativnih jedinica mreži kretanja - bojom su oznaèene grupacije nastale na temelju matrice kretanja, crnom su oznaèene postojeæe granice administrativnih jedinica.  \cite{Scepanovic:2015.}}
 		\label{fig:Revisiting}
 	\end{center}
 \end{figure}
-
-
-
-\cite{Bahoken:2013.} 11/15
-
-
-\cite{Coscia:2015.}
-Revisiting the broders -clustering based on derived mobility graph
-
 
 \section {Dobre prakse u generiranju POM iz CDR}
 %Skaliranje CDR POM (primjerak $->$ pouplacija)

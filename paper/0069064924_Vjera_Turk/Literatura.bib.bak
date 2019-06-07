@@ -147,6 +147,15 @@
   Timestamp                = {06.06.2019}
 }
 
+@Article{Ng:2014.,
+  Title                    = {{The Role of Planning in the Development of Shenzhen, China: Rhetoric and Realities}},
+  Author                   = {Mee Kam Ng and Wing Shing Tang},
+  Journal                  = {Eurasian Geography and Economics},
+  Year                     = {2014.},
+
+  Timestamp                = {07.06.2019}
+}
+
 @PhdThesis{Peterson:2007.,
   Title                    = {{The Origin-Destination Matrix Estimation Problem- Analysis and Computations}},
   Author                   = {Anders Peterson},
@@ -165,6 +174,15 @@
 
   Owner                    = {adminuser},
   Timestamp                = {01.06.2019}
+}
+
+@Article{Scepanovic:2015.,
+  Title                    = {{Mobile Phone Call Data as Regional Socio-Economic Proxy Indicator}},
+  Author                   = {Sanja Scepanovic and Igor Mishovski and Pan Hui and Jukka K. Nurminen and Anitti Yla-Jaaski},
+  Journal                  = {PLos ONE},
+  Year                     = {2015.},
+
+  Timestamp                = {07.06.2019}
 }
 
 @Article{Schneider:2013.,

@@ -598,3 +598,33 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{d4d}{}%
+{%
+\gls@defglossaryentry{d4d}%
+{%
+name={\acronymfont {\glsentryshort {d4d}}},%
+sort={D4D},%
+type={main},%
+first={D4D},%
+firstplural={D4Ds},%
+text={D4D},%
+plural={D4Ds},%
+description={Data for Development},%
+descriptionplural={Data for Development},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Data for Development},%
+longplural={Data for Developments},%
+short={D4D},%
+shortplural={D4Ds},%
+counter={page},%
+parent={},%
+%
+}%
+}%

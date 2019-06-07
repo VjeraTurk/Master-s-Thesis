@@ -538,3 +538,63 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{osm}{}%
+{%
+\gls@defglossaryentry{osm}%
+{%
+name={\acronymfont {\glsentryshort {osm}}},%
+sort={OSM},%
+type={main},%
+first={OSM},%
+firstplural={OSMs},%
+text={OSM},%
+plural={OSMs},%
+description={OpenStreetMap},%
+descriptionplural={OpenStreetMap},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={OpenStreetMap},%
+longplural={OpenStreetMaps},%
+short={OSM},%
+shortplural={OSMs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{taz}{}%
+{%
+\gls@defglossaryentry{taz}%
+{%
+name={\acronymfont {\glsentryshort {taz}}},%
+sort={TAZ},%
+type={main},%
+first={TAZ},%
+firstplural={TAZs},%
+text={TAZ},%
+plural={TAZs},%
+description={Traffic Analisys Zone},%
+descriptionplural={Traffic Analisys Zone},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Traffic Analisys Zone},%
+longplural={Traffic Analisys Zones},%
+short={TAZ},%
+shortplural={TAZs},%
+counter={page},%
+parent={},%
+%
+}%
+}%

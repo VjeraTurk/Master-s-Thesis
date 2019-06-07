@@ -111,6 +111,12 @@
   Timestamp                = {01.06.2019}
 }
 
+@Article{Gundelegard:,
+  Author                   = {David Gundelegard and Clas Rydergren and Nils Brey},
+
+  Timestamp                = {04.06.2019}
+}
+
 @Article{Gundlegard:2016.,
   Title                    = {Travel demand estimation and network assignment based on cellular network data},
   Author                   = {David Gundlegard and Clas Rydergren and Nils Breyer and Botond Rajna},
@@ -127,6 +133,15 @@
 
   Owner                    = {Fakultet prometnih znanosti Sveuciliste u Zagrebu},
   Timestamp                = {06.05.2019}
+}
+
+@MastersThesis{Mellegard:2011.,
+  Title                    = {Obtaining Origin-Destination- matrices from  cellular network data},
+  Author                   = {Erik Mellegard},
+  School                   = {Chalmers University of Technology, Department of Mathematical Sciences},
+  Year                     = {2011.},
+
+  Timestamp                = {06.06.2019}
 }
 
 @PhdThesis{Peterson:2007.,
@@ -147,6 +162,18 @@
 
   Owner                    = {adminuser},
   Timestamp                = {01.06.2019}
+}
+
+@Article{Schneider:2013.,
+  Title                    = {Unraveling daily human motifs},
+  Author                   = {Christian M. Schneider and Vitaly Beik and Thomas Courone\'e and Zbigniew Smoreda and Marta C. Gonz\'alez},
+  Journal                  = {J. R. Soc. Interface},
+  Year                     = {2013.`},
+
+  Month                    = {May},
+  Number                   = {10},
+
+  Timestamp                = {05.06.2019}
 }
 
 @Article{Stupar:2018.,
@@ -195,6 +222,15 @@ Maozeng Xu and Yinhai Wang},
   Year                     = {2016.},
 
   Timestamp                = {01.06.2019}
+}
+
+@Article{Zhao:2017.,
+  Title                    = {Traffic analysis zones - how do we move forward?},
+  Author                   = {Huimin Zhao and Yong Zhao},
+  Journal                  = {AASHTO CTPP and TRB Joint Conference, Applying Census Data for Transportation},
+  Year                     = {2017.},
+
+  Timestamp                = {04.06.2019}
 }
 
 @Electronic{data:2019.,

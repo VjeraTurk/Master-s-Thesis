@@ -153,6 +153,8 @@
   Journal                  = {Eurasian Geography and Economics},
   Year                     = {2014.},
 
+  Month                    = {July},
+
   Timestamp                = {07.06.2019}
 }
 
@@ -263,6 +265,15 @@ Maozeng Xu and Yinhai Wang},
   Year                     = {2017.},
 
   Timestamp                = {04.06.2019}
+}
+
+@Article{Zheng:2018.,
+  Title                    = {UndUnderstand coupling ddynamic of public transport network},
+  Author                   = {Zhihao Zheng and Zhiren Haung and Fan Zhang and Pu Wang},
+  Journal                  = {EPJ Data Science},
+  Year                     = {2018.},
+
+  Timestamp                = {10.06.2019}
 }
 
 @Electronic{data:2019.,

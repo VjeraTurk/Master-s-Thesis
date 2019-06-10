@@ -186,7 +186,7 @@ Kada su dostupni zapisi prikupljani dulje vremensko razdoblje, tjednima ili mjes
 \end{comment}
 
 \subsection{Moduli kretanja}
-\gls{cdr} zapisi ne osiguravaju rezoluciju pogodnu za odreðivanje modula kretanja \cite{Toole:2015.}. Iznimno se mogu izdvojiti bazen stanice dedicirane pružanju usluge iskljuèivo u podzemnoj željeznici.
+\gls{cdr} zapisi ne osiguravaju rezoluciju pogodnu za odreðivanje modula kretanja iako su razvijene metodologije \cite{Toole:2015.}. Iznimno se mogu izdvojiti bazen stanice dedicirane pružanju usluge iskljuèivo u podzemnoj željeznici.
  
 %Osim \gls{cdr} operateri prikupljaju dodatne podatke o preusmjeravanju poziva (engl. handover) na druge bazne stanice, (...)  
 
@@ -222,15 +222,13 @@ Spatial objects within the area of interest were categorized by type of socio-ec
 \end{comment}
 
 \section{Geometrija prostorne podjele}
-Konaèna geometrija prostorne podjele alternativnih izvora uglavnom ovisi o prostornoj podjeli \textit{grand truth } matrice. Obièno se radi o jedinici prostorne podjele naziva \gls{taz} kod analize prometa, o anketnim jedinicama ili jedinicama samouprave.
-
+Konaèna geometrija prostorne podjele alternativnih izvora uglavnom ovisi o prostornoj podjeli \textit{grand truth } matrice. Obièno se radi o jedinici prostorne podjele naziva \gls{taz} kod analize prometa, o anketnim jedinicama ili jedinicama samouprave. Neprihvaæenija prostorna podjela kod matrica izvedenih iz CDR je ona na Voronoi æelije.
 
 \subsubsection{\gls{taz}}
 \gls{taz} je strani naziv za jedinicu prostorne podjele (æeliju) kod analize prometa. Kod programskih podrška za analizu prometa velièina jedinica varira i nije uniformna. Podjela se može temeljiti na populaciji ili broju zaposlenih na nekom prostoru, primjerice svaka æelija pokriva prostor na kojem obitava otprilike tri tisuæe ljudi (propisanih preporuèenih vrijednosti nema), ili podjela u kojoj æelije generiraju podjednak broj izlaznih putovanja (jednaka širina izlaznih tokova) \cite{Goulding:2016.}*. U hijerarhijskoj podjeli kod ankete stanovništva opæenito postoje manje i veæe jedinice podjele, a nema podjele koja bi precizno odgovarala \gls{taz}. %grad, država
 %*meðuovisnost		
 Do 2000. godine zastupljen je bio jedan model predviðanja prometa, a velièina \gls{taz}  bila je uvijek približno jednaka anketnom bloku od 600 do 3000 ljudi. Pojavom kompleksnijih modela predviðanja prometa (i modela upotrebe zemljišta) %land use
-poèinju se koristiti sve manje prostorne jedinice jer se poveæava i razina detalja koju noviji modeli mogu ostvariti. Jedinica veæa od \gls{taz} u
-uvedena 2010. naziva se Traffic Analisys Disrict (TAD).\cite{Zhao:2017.}  
+poèinju se koristiti sve manje prostorne jedinice jer se poveæava i razina detalja koju noviji modeli mogu ostvariti. Jedinica veæa od \gls{taz} uvedena 2010. naziva se Traffic Analisys Disrict (TAD) koji obuhvaæa oko 20,000 stanovnika.\cite{Zhao:2017.}  
 
 Kod analize na podruèju cijele države \cite{Goulding:2016.} koristi \textit{k-sredina} algoritam za grupiranje baznih stanica u broj grupa jednak broju \gls{taz} na podruèju Senegala.
 
@@ -243,6 +241,10 @@ Kod analize na podruèju cijele države \cite{Goulding:2016.} koristi \textit{k-sr
 \label{fig:prva}
 \end{center}
 \end{figure}
+
+Prema podatcima korištenim u istraživanju iz 2018. \cite{Zheng:2018.} Shenzhen je podijeljen na 996 \gls{taz} od kojih 844 zone imaju barem jednu autobusnu ili stanicu podzemne željeznice. Godinu dana ranije istraživanje spominje više zona (Vidi sliku \ref{fig:prva}).
+
+%The GIS data of traffic zones in Shenzhen were provided by Shenzhen Transportation Authority. In this dataset, the geographic area of Shenzhen is partitioned into 996 traffic zones,
 
 \subsubsection{Jedinice samouprave  i anketne jedinice}
 \cite{Mellegard:2011.} ne definira unaprijed broj grupa veæ za grupaciju koristi \textit{mean-shift} algoritam koji sam odreðuje broj grupa na podruèju Švedske, potom koristeæi \gls{osm} grupe veže uz imena gradova i mjesta.
@@ -266,12 +268,12 @@ Dijelovi Voronoiova dijagrama su sve toèke u ravnini koje su ekvidistantne prema
 
 %The base stations are grouped together to form Location Areas (LA) for reasons to do with management of the mobile phone network as this makes it possible to identify mobile phones more rapidly in the case of a call or an SMS. The LA in which a mobile phone is located is known all the time, while at base station level its position is only known in the event of a call
 
-Toèke skupa su bazne stanice, a æelije oko njih aproksimacija površine koju ta bazna stanica pokriva. U stvarnosti se te površine prekrivanja preklapaju.
+Toèke skupa su položaji baznih stanice, a æelije oko njih aproksimacija površine koju ta bazna stanica pokriva. U stvarnosti se te površine prekrivanja preklapaju. (Vidi sliku \ref{fig:Voronoi})
 
 Ponekad operateri u \gls{cdr} zapisima ne otkrivaju položaje baznih stanica veæ samo njihov ID. Postoji više javno dostupnih baza nastalih volonterskim doprinosom koje pohranjuju podatke o procjenama položaja baznih stanica, snazi signala i sl.
-Položaji se prikupljaju pomoæu aplikacije instaliranena mobilnom ureðaju, registriranjem \gls{gps} pozicije i identifikacijske oznake bazne stanice na koju je ureðaj trenutno spojen. Dakle, ove baze ne sadrže "najtoèniji" položaje baznih stanica veæ usrednjene položaje mobilnih ureðaja koji su u nekom trenutku bili spojeni na tu baznu stanicu. Može se reæi da taj procijenjeni položaj za potrebe izrada matrica èak i više odgovara od stvarnog položaja. \cite{Mellegard:2011.}
- 
-\cite{Gundlegard:2016.}
+Položaji se prikupljaju pomoæu aplikacije instalirane na mobilnom ureðaju, registriranjem \gls{gps} pozicije i identifikacijske oznake bazne stanice na koju je ureðaj trenutno spojen. Dakle, ove baze ne sadrže "najtoèniji" položaje baznih stanica veæ usrednjene položaje mobilnih ureðaja koji su u nekom trenutku bili spojeni na tu baznu stanicu. Može se reæi da taj procijenjeni položaj za potrebe izrada matrica èak i više odgovara od stvarnog položaja. \cite{Mellegard:2011.}
+
+Gustoæa Voronoi æelija snažno je korelirana s gustoæom stanovništva te stoga bolju prostornu rezoluciju ima na podruèjima veæe gustoæe populacije. No Gundlegard \cite{Gundlegard:2016.} smatra da neuniformnost æelija nije problem, veæ preklapanje podruèja pokrivanja. Posljedica toga su stalne oscilacije - ureðaj mijenja baznu stanicu na koju je spojen iako svo vrijeme zadržava isti položaj. Jedan od naèina na koji se može ublažiti efekt koji oscilacija ima na definiranje putovanja je odrediti minimalnu udaljenost putovanja ili potpuno zanemariti putovanja u susjedne æelije.
 
 
 \begin{figure}[!htbp]

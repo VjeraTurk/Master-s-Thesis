@@ -1,9 +1,12 @@
 library(reshape2)
 SCcdrODM<-acast(rbind(melt(ODout_SH_0_3), melt(ODout_SH_3_6), melt(ODout_SH_6_9), melt(ODout_SH_9_12), 
                       melt(ODout_SH_12_15), melt(ODout_SH_15_18),melt(ODout_SH_18_21),melt(ODout_SH_21_24)), Var1~Var2, sum) 
+SCcdrODM<-acast(rbind(melt(ODout_SH_3_6), melt(ODout_SH_6_9), melt(ODout_SH_9_12), 
+                      melt(ODout_SH_12_15), melt(ODout_SH_15_18),melt(ODout_SH_18_21),melt(ODout_SH_21_24)), Var1~Var2, sum) 
+
 heatmap(SCcdrODM, col = heat.colors(256), Rowv=NA, Colv=NA) #prekrasna je :')
 
-max(SCcdrODM)# 1757
+max(SCcdrODM)# 1757 #148
 max(SCcdrODM[SCcdrODM<1757])#396
 sum(SCcdrODM)#42831 ->lijep broj
 

@@ -230,9 +230,10 @@ Spatial objects within the area of interest were categorized by type of socio-ec
 \end{comment}
 
 \section{Geometrija prostorne podjele}
-Konaèna geometrija prostorne podjele alternativnih izvora uglavnom ovisi o prostornoj podjeli \textit{grand truth } matrice. Obièno se radi o jedinici prostorne podjele naziva \gls{taz} kod analize prometa, o anketnim jedinicama ili jedinicama samouprave. Neprihvaæenija prostorna podjela kod matrica izvedenih iz CDR je ona na Voronoi æelije.
+Konaèna geometrija prostorne podjele alternativnih izvora uglavnom ovisi o prostornoj podjeli \textit{grand truth } matrice. Obièno se radi o jedinici prostorne podjele naziva \glsfirst{taz} kod analize prometa, o anketnim jedinicama ili jedinicama samouprave. Neprihvaæenija prostorna podjela kod matrica izvedenih iz CDR je ona na Voronoi æelije.
 
-\subsubsection{\gls{taz}}
+%\subsubsection{\glsfirst{taz}}
+\subsubsection{\glsfirst{taz}}
 \gls{taz} je strani naziv za jedinicu prostorne podjele (æeliju) kod analize prometa. Kod programskih podrška za analizu prometa velièina jedinica varira i nije uniformna. Podjela se može temeljiti na populaciji ili broju zaposlenih na nekom prostoru, primjerice svaka æelija pokriva prostor na kojem obitava otprilike tri tisuæe ljudi (propisanih preporuèenih vrijednosti nema), ili podjela u kojoj æelije generiraju podjednak broj izlaznih putovanja (jednaka širina izlaznih tokova) \cite{Goulding:2016.}*. U hijerarhijskoj podjeli kod ankete stanovništva opæenito postoje manje i veæe jedinice podjele, a nema podjele koja bi precizno odgovarala \gls{taz}. %grad, država
 %*meðuovisnost		
 Do 2000. godine zastupljen je bio jedan model predviðanja prometa, a velièina \gls{taz}  bila je uvijek približno jednaka anketnom bloku od 600 do 3000 ljudi. Pojavom kompleksnijih modela predviðanja prometa (i modela upotrebe zemljišta) %land use
@@ -246,17 +247,18 @@ Kod analize na podruèju cijele države \cite{Goulding:2016.} koristi \textit{k-sr
 \begin{center}
 \includegraphics[width=15cm,keepaspectratio=true]{TAZ-Shenzhen}
 \caption{Mreža za analizu prometa sastoji se od 221,14  cesta - plave linije i 3,199 \gls{taz} zona - granice oznaèene iscrtanom crnom linijom  \cite{Xie:2017.}}
-\label{fig:prva}
+\label{fig:taz}
 \end{center}
 \end{figure}
 
-Prema podatcima korištenim u istraživanju iz 2018. \cite{Zheng:2018.} Shenzhen je podijeljen na 996 \gls{taz} od kojih 844 zone imaju barem jednu autobusnu ili stanicu podzemne željeznice. Godinu dana ranije istraživanje spominje više zona (Vidi sliku \ref{fig:prva}).
+Prema podatcima korištenim u istraživanju iz 2018. \cite{Zheng:2018.} Shenzhen je podijeljen na 996 \gls{taz} od kojih 844 zone imaju barem jednu autobusnu ili stanicu podzemne željeznice. Godinu dana ranije istraživanje spominje više zona (Vidi sliku \ref{fig:taz}).
 
 %The GIS data of traffic zones in Shenzhen were provided by Shenzhen Transportation Authority. In this dataset, the geographic area of Shenzhen is partitioned into 996 traffic zones,
 
 \subsubsection{Jedinice samouprave  i anketne jedinice}
 \cite{Mellegard:2011.} ne definira unaprijed broj grupa veæ za grupaciju koristi \textit{mean-shift} algoritam koji sam odreðuje broj grupa na podruèju Švedske, potom koristeæi \gls{osm} grupe veže uz imena gradova i mjesta.
-U istraživanju \cite{Coscia:2015.} bazne stanice na podruèju Kolumbije grupiraju po jedinicama samouprave (eng. \textit{municipalities}). isti postupak je korišten i u istraživanju na podruèju Madrida, kako bi matrice u konaènici bile usporedive s onima dobivenim iz anketa. \cite{Frias-Martinez:2012.}
+U istraživanju \cite{Coscia:2015.} bazne stanice na podruèju Kolumbije grupiraju po jedinicama samouprave (eng. \textit{municipalities}). Isti postupak je korišten i u istraživanju na podruèju Madrida, kako bi matrice u konaènici bile usporedive s onima dobivenim iz anketa. \cite{Frias-Martinez:2012.}.
+Prikaz jedinica samouprave za grad Shenzhen možemo vidjeti an slici \ref{fig:Municipality}
 
 % a potom grupirane koristeæi \textit{Infomap} algoritam  .
 
@@ -298,11 +300,13 @@ Uniformna podjela na pravokutne blokove od 1 kvadratni kilometar spominje se kao
 
 Podruèje pokrivanja bazne stanice na grafikama se standardno prikazuje kao šesterokut ( heksagon). \cite{Teralytics:2017.} izmeðu ostalih podjela koristi i šesterokute koje po potrebi ugnježðuje i tako mijenja rezoluciju u kojoj promatra gibanja. Tvrde da su se u nekim segmentima pokazali i 13\% bolji od pravokutne mreže. 
 
+Prikaz šesterokuta za grad Shenzhen možemo vidjeti an slici \ref{fig:Hexagons}
+
 \begin{figure}[!htbp]
 	\begin{center}
 		\includegraphics[width=12cm,keepaspectratio=true]{Hexagons-Shenzhen}
 		\caption{Podjela na šesterokute Shenzhen - grupacija u razlièite boje na osnovu širine toka \cite{Zhou:2018.} }
-		\label{fig:Hexsagons}
+		\label{fig:Hexagons}
 	\end{center}
 \end{figure}
 
@@ -313,7 +317,7 @@ Podruèje pokrivanja bazne stanice na grafikama se standardno prikazuje kao šeste
 
 \subsubsection{Redefiniranje prostorne podjele na temelju matrica}
 
-U sklopu projekta \gls{d4d} francuski operater \textit{Orange} ustupio je na korištenje \gls{cdr} višemjeseène zapise s podruèja Obale Bjelokosti. Razlièita istraživanja u ovom podruèju raðena su upravo na tim podacima. Jedno od njih \cite{Coscia:2015.} istièe da je dobar broj istraživanja dokazao da administrativne regije u zemlji faktor koji definira ljudsku mobilnost i interakcije na podruèju države. Da bi testirali tu tvrdnju oni, nakon što generiraju matricu kretanja, æelije prostorne podjele grupiraju prema  \textit{comunity detection} algoritmu. Iako se dio grupa vrlo lijepo preklapa sa postojeæim administrativnim jedinicama, one administrativne jedinice u kojima se nalaze veliki gradovi, grupacije nastale na temelju mobilnosti bitno su drugaèije. Zakljuèak je da potencijalno postoji potreba da se granice administrativnih jedinica izmjene (Slika \ref{fig:Revisiting})
+U sklopu projekta \gls{d4d} francuski operater \textit{Orange} ustupio je na korištenje \gls{cdr} višemjeseène zapise s podruèja Obale Bjelokosti. Razlièita istraživanja u ovom podruèju raðena su upravo na tim podacima. Jedno od njih \cite{Coscia:2015.} istièe da je dobar broj istraživanja dokazao da administrativne regije u zemlji faktor koji definira ljudsku mobilnost i interakcije na podruèju države. Da bi testirali tu tvrdnju oni, nakon što generiraju matricu kretanja, æelije prostorne podjele grupiraju prema  \textit{comunity detection} algoritmu. Iako se dio grupa vrlo lijepo preklapa sa postojeæim administrativnim jedinicama, one administrativne jedinice u kojima se nalaze veliki gradovi, grupacije nastale na temelju mobilnosti bitno su drugaèije. Zakljuèak je da potencijalno postoji potreba da se granice administrativnih jedinica izmjene (Slika \ref{fig:revisiting})
 
 %Revisiting the broders -clustering based on derived mobility graph
 
@@ -321,7 +325,7 @@ U sklopu projekta \gls{d4d} francuski operater \textit{Orange} ustupio je na kor
 	\begin{center}
 		\includegraphics[width=10cm,keepaspectratio=true]{Revisiting_the_border}
 		\caption{Prijedlog izmjene (prilagodbe) administrativnih jedinica mreži kretanja - bojom su oznaèene grupacije nastale na temelju matrice kretanja, crnom su oznaèene postojeæe granice administrativnih jedinica.  \cite{Scepanovic:2015.}}
-		\label{fig:Revisiting}
+		\label{fig:revisiting}
 	\end{center}
 \end{figure}
 

@@ -23,16 +23,28 @@ nastaju putovanja unutar novih æelija (koje su veæe od bs æelija) \cite{Graells-
 \subsection{Prostorna razluèivost (Rezolucija)}
 
 Prema hrvatskoj enciklopediji definicija razluèivosti (rezolucije) glasi: mjera za razaznavanje sitnih pojedinosti na nekom prikazu (npr. televizijskoj slici). U raèunalstvu se odnosi na finoæu rasterske slike iskazanu ukupnim brojem slikovnih elemenata (relativna razluèivost) ili brojem slikovnih elemenata po inèu (stvarna razluèivost).
-toènost položaja
+(...)\\
+Kod \gls{pom} ...\\
+Rezolucija æe ovisiti o toènosti položaja ...
+
+Voronoi æelije takoðer je moguæe ugnijezditi (što se èesto radi kod usporedbe s matricama dobivenim drugim postupkom),a pritom se može u matricu zabilježiti i aproksimacija internog toka, odnosno broja putovanja unutar nove æelije (popuniti dijagonalu). Postotak eksternih putovanja koji se gubi u procesu agregacije Voronoi æelija analiziran je  za matrice iz regije Picardie u Francuskoj \cite{Bahoken:2013.}. 
+
+Agregacijom na razinu \textit{Urban Areas} (gradova) 85\% svih putovanja postaje internim putovanjima, a na razini \textit{Urban Cores} èak 97\% poèetno zabilježenih putovanja je interno, te ostaje samo 3\% eksternih putovanja.
+
+Ruralna podruèja rjeðe zahtijevaju agregiranje æelija.
+
+
+
+Na temelju usporedbi matrica kretanja u 4 razlièita grada, dobivenih iz \gls{cdr} i iz anketa, gdje je svaki grad u anketnim matricama imao svoju prostornu podjelu odnosno rezoluciju, Toole u svom radu \cite{Toole:2015.} (oèekivano) zakljuèuje da sa \textbf{smanjenjem rezolucije (visokim stupnjem agregacije Voronoi æelija) stupanj korelacije s matricama iz ankete raste}. 
+
 
 \begin{figure}[!htbp]
 	\begin{center}
 		\includegraphics[width=10cm,keepaspectratio=true]{spaghetti_effect}
-		\caption{\textit{Spaghetti-effect} - problem koji se može javiti kod grafièkog prikaza tokova matrice prikaz matrica visoke prostorne rezolucije \cite{Bahoken:2013.}}
+		\caption{\textit{Spaghetti-effect} - problem koji se može javiti kod grafièkog prikaza tokova matrice visoke prostorne rezolucije.  \cite{Bahoken:2013.}}
 		\label{fig:Revisiting}
 	\end{center}
 \end{figure}
-
 
 \subsection{Vremenska razlièivost}
 
@@ -46,14 +58,16 @@ Departure/Arrival time
 \subsection{Širina toka}
 
 Ukupan broj odlazaka/dolazaka po vremenskom okviru za cijelu matricu.\\
--Obuhvaæa pješaèki promet
-
+-Obuhvaæa pješaèki promet\\
+- velièina uzorka (postotak stanovništva)
 
 %\subsection{Geometrija prostorne podjele}
 %(ne)uniformna podjela ...
 %Interpolacija - ima li smisla 2 razlièite podjele?!
 
 \subsection{Definicija putovanja}
+
+prosjeèan broj putovanja po stanovniku/ispitaniku
 
 \subsubsection{Infrastruktura}
 Obuhvaæa pješaèki promet

@@ -222,7 +222,7 @@ Jedan od naèina na koji \gls{osm} doprinosi istraživanjima u ovom podruèju je ka
 
  \subsubsection{Model raspodjele toka}
 Inovativni pristup kontekstualizaciji toka korištenjem OpenStreetMap baze predstavljen je u radu \cite{Stupar:2018.}. Na osnovu pripadajuæih opisnih podataka, prostorni objekti na podruèju interesa kategorizirani su prema tipu socio-ekonomske aktivnosti u koju su ukljuèeni. Definirano je ukupno 6 kategorija:
-Dom (Home), Posao (Work), Zdravlje (Health), Edukacija (Education), Zabava (Leisure) i Ostalo (Other). Razvijen je vjerojatnosni model koji, na osnovu broja objekata pojedine kategorije u odredišnoj æeliji i promatranog vremenskog okvira, ukupni ulazni tok u odredišnu æeliju dijeli na 6 tokova usmjerenih prema objektima tih kategorija. Iz jedne matrice tako  se dobije 6 matrica, po jedna za svaku od kategorija. Korištene su matrice dobivene iz javno dostupnih, anonimiziranih telekomunikacijskih zapisa na podruèju kineskog grada Shenzhena. \cite{Filic:}\cite{data:2019.}
+Dom (Home), Posao (Work), Zdravlje (Health), Edukacija (Education), Zabava (Leisure) i Ostalo (Other). Razvijen je vjerojatnosni model koji, na osnovu broja objekata pojedine kategorije u odredišnoj æeliji i promatranog vremenskog okvira, ukupni ulazni tok u odredišnu æeliju dijeli na 6 tokova usmjerenih prema objektima tih kategorija. Iz jedne matrice tako  se dobije 6 matrica, po jedna za svaku od kategorija. Korištene su matrice dobivene iz javno dostupnih, anonimiziranih telekomunikacijskih zapisa na podruèju kineskog grada Shenzhena. \cite{Filic:2016.}\cite{data:2019.}
 Na ovaj naèin definicijom putovanja saèuvana je moguænost dobre rezolucije u vremenu a istovremeno je dan kontekst koju ukljuèuje \textit{home} i \textit{work} kategorije.
 
 \begin{comment}
@@ -286,18 +286,26 @@ Gustoæa Voronoi æelija snažno je korelirana s gustoæom stanovništva te stoga bol
 
 \begin{figure}[!htbp]
 	\begin{center}
-		\includegraphics[width=13cm,keepaspectratio=true]{Voronoi-Shenzhen}
+		\includegraphics[width=15cm,keepaspectratio=true]{Voronoi-Shenzhen}
 		\caption{Voronoi dijagram baznih stanica - Shenzhen}
 		\label{fig:Voronoi}
 	\end{center}
 \end{figure}
 
 
-\subsubsection{Pravokutna mreža i mreža Heksagona}
-Uniformna podjela na pravokutne blokove od 1km spominje se kao dobra praksa
-\cite{Goulding:2016.} (...)
+\subsubsection{Pravokutna mreža i mreža šeterokuta}
+Uniformna podjela na pravokutne blokove od 1 kvadratni kilometar spominje se kao dobra praksa \cite{Goulding:2016.} (...)
 
-Podruèje pokrivanja bazne stanice na grafikama se standardno prikazuje kao heksagon. \cite{Teralytics:2017.} izmeðu ostalih podjela koristi i heksagone koje po potrebi ugnježðuje i tako mijenja rezoluciju u kojoj promatra gibanja. Tvrde da su se u nekim segmentima pokazali i 13\% bolji od pravokutne mreže. 
+Podruèje pokrivanja bazne stanice na grafikama se standardno prikazuje kao šesterokut ( heksagon). \cite{Teralytics:2017.} izmeðu ostalih podjela koristi i šesterokute koje po potrebi ugnježðuje i tako mijenja rezoluciju u kojoj promatra gibanja. Tvrde da su se u nekim segmentima pokazali i 13\% bolji od pravokutne mreže. 
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=12cm,keepaspectratio=true]{Hexagons-Shenzhen}
+		\caption{Podjela na šesterokute Shenzhen - grupacija u razlièite boje na osnovu širine toka \cite{Zhou:2018.} }
+		\label{fig:Hexsagons}
+	\end{center}
+\end{figure}
+
 
 \subsubsection{Interpolacija i usporedba}
 \cite{Toole:2015.}

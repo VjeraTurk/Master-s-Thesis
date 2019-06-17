@@ -9,14 +9,13 @@ Parametar - varijabla o kojoj ovisi odreðeni logièki izraz, matematièka formula 
 
 -Isti grad\\
 -Isto doba godine\\
--Isto vremensko razdoblje
--Week day, work day
+-Isto vremensko razdoblje \\
+-Week day, work day\\
+-Isto pridodijeljena putovanja periodu
+-Ima li matrica diagonalu? 
+(...)
 
-Kod generiranja matrica treba definirati hoæe li se putovanja koja se protežu kroz više perioda dodijeliti vremenskom periodu u kojem zapoèinju ili u kojem završavaju. Iako ponekad nije specificirano, \cite{Bera:2011.} \cite{Filic:2016.} sva putovanja dodjeljuju intervalu u kojem je putovanje zapoèeto. 
-cite{Netko:nekad} Ne zanemaruje one zapise iz kojih nije jasno vidljiv poèetak putovanja veæ takva putovanja dodjeljuje na osnovu vjerojatnosti da je zapoèelo u odreðenom periodu.
-
--Ima li matrica diagonalu? - kada se preslikava bs æelije na drugi oblik, 
-nastaju putovanja unutar novih æelija (koje su veæe od bs æelija) \cite{Graells-Garrido:2016.}  
+%kada se preslikava bs æelije na drugi oblik, nastaju putovanja unutar novih æelija (koje su veæe od bs æelija) \cite{Graells-Garrido:2016.}  
 
 \section{Komparacijski indikatori}
 
@@ -27,12 +26,18 @@ Prema hrvatskoj enciklopediji definicija razluèivosti (rezolucije) glasi: mjera 
 Kod \gls{pom} ...\\
 Rezolucija æe ovisiti o toènosti položaja ...
 
-Voronoi æelije takoðer je moguæe ugnijezditi (što se èesto radi kod usporedbe s matricama dobivenim drugim postupkom),a pritom se može u matricu zabilježiti i aproksimacija internog toka, odnosno broja putovanja unutar nove æelije (popuniti dijagonalu). Postotak eksternih putovanja koji se gubi u procesu agregacije Voronoi æelija analiziran je  za matrice iz regije Picardie u Francuskoj \cite{Bahoken:2013.}. 
+Voronoi æelije takoðer je moguæe ugnijezditi (što se èesto radi kod usporedbe s matricama dobivenim drugim postupkom),a pritom se može u matricu zabilježiti i aproksimacija internog toka, odnosno broja putovanja unutar nove æelije (popuniti dijagonalu). Postotak eksternih putovanja koji se gubi u procesu agregacije Voronoi æelija analiziran je  za matrice iz regije Picardie u Francuskoj.
+Agregacijom na razinu \textit{Urban Areas} (podruèja oko gradova) 85\% svih putovanja postaje internim putovanjima, a na razini \textit{Urban Cores} (podruèja oko veæih gradova) èak 97\% poèetno zabilježenih putovanja je interno, te ostaje samo 3\% eksternih putovanja. \cite{Bahoken:2013.}. Sliènu situaciju opisuje i \cite{Graells-Garrido:2016.} (Vidi sliku \ref{fig:diagonal})
 
-Agregacijom na razinu \textit{Urban Areas} (gradova) 85\% svih putovanja postaje internim putovanjima, a na razini \textit{Urban Cores} èak 97\% poèetno zabilježenih putovanja je interno, te ostaje samo 3\% eksternih putovanja.
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=10cm,keepaspectratio=true]{diagonal_CDR}
+		\caption{** dodati caption ***}
+		\label{fig:diagonal}
+	\end{center}
+\end{figure}
 
-Ruralna podruèja rjeðe zahtijevaju agregiranje æelija.
-
+%Ruralna podruèja rjeðe zahtijevaju agregiranje æelija.
 
 
 Na temelju usporedbi matrica kretanja u 4 razlièita grada, dobivenih iz \gls{cdr} i iz anketa, gdje je svaki grad u anketnim matricama imao svoju prostornu podjelu odnosno rezoluciju, Toole u svom radu \cite{Toole:2015.} (oèekivano) zakljuèuje da sa \textbf{smanjenjem rezolucije (visokim stupnjem agregacije Voronoi æelija) stupanj korelacije s matricama iz ankete raste}. 
@@ -41,24 +46,55 @@ Na temelju usporedbi matrica kretanja u 4 razlièita grada, dobivenih iz \gls{cdr
 \begin{figure}[!htbp]
 	\begin{center}
 		\includegraphics[width=10cm,keepaspectratio=true]{spaghetti_effect}
-		\caption{\textit{Spaghetti-effect} - problem koji se može javiti kod grafièkog prikaza tokova matrice visoke prostorne rezolucije.  \cite{Bahoken:2013.}}
+		\caption{\textit{Spaghetti-effect} - problem koji se može javiti kod grafièkog prikaza tokova matrice visoke prostorne i niske vremenske rezolucije. Na slici su prikazani su jednodnevni tokovi.  \cite{Bahoken:2013.}}
 		\label{fig:spaghetti}
 	\end{center}
 \end{figure}
 
 \subsection{Vremenska razlièivost}
 
-Departure/Arrival time
+- Departure/Arrival time\\
+- razlièite definicija dana 0-24 ili 3-3 {Netko:nekad.}
 
-\subsubsection{Dani u tjednu - radni dani/petak/vikend}
+\subsubsection{Dani u tjednu - radni dani/petak/vikend/nacionalni praznici}
+%utorak- najviše prometa \cite{Travassoli:2016.}
+
+Istraživanja modernih pristupa generiranju matrica ukazuju na smanjenu mobilnost za neradnih dana u tjednu, najviše u nedjelju.\cite{Calabrese:2011.} Bitno je napomenuti da dio istraživanja istièe da je vikendima takoðer zabilježen i manji broj telekomunikacijske aktivnosti. \cite{Bahoken:2013.}
+
+% We obtain an average of 5 trips per day during the weekday, and 4.5 during the weekend. This number is reasonable when compared to the US National Household Travel Survey2 which evaluated this number to be between 4.18 during weekdays and 3.86 during weekends3 .
+
+Osim oèekivane bitne razlike u radnim i neradnim danima, uoèeno je da je petak, kao zadnji radni dan u tjednu, bitno drugaèiji od ostalih radnih dana. \cite{Travassoli:2016.} \cite{Calabrese:2011.}  \cite{Scepanovic:2015.} Uoèena je pojaèana mobilnost petkom na razini regije (Boston Metropolitan Area) \cite{Calabrese:2011.} i na razini cijele države (Obale Bjelokosti) s poveæanjem od 35\% u odnosu na nedjelju \cite{Scepanovic:2015.} na temelju matrica izraðenih iz \gls{cdr}, no zanimljivo uèena je smanjena mobilnost vezana za javni prijevoz (izvor za generiranje matrica \textit{Pametne kartice za javni prijevoz}) na razini regije (Southeast Queensland, Australia). Osim prosjeènog broja dnevnih putovanja, petak ima i nešto drugaèiji dnevni uzorak po satima (rast prometa prema kraju radnog vremena zapoèinje ranije). Ponovno, petkom je takoðer uoèena i najviša razina telekomunikacijske aktivnosti \cite{Bahoken:2013.} \cite{Bonnel:2015.} što ukazuje na moguæu pristranost kada su u pitanju matrice generirane iz \gls{cdr}.
+Rezultati nacionalne ankete u Sjedinjenim Amerièkim Državama pokazuju da je prosjeèan broj dnevnih putovanja po stanovniku 4.18 tijekom radnog dana te 3.86 tijekom neradnih dana u tjednu, što je u skladu sa zakljuècima modernih metoda.
+
+
+
+\begin{comment}
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[width=10cm,keepaspectratio=true]{weekday}
+\caption{  \cite{Bahoken:2013.}}
+\label{fig:weekday}
+\end{center}
+\end{figure}
+\end{comment}
+
+%While the census gives only a static information about origin-destination flows, the OD matrices derived from mobile phone data allows us to appreciate the differences in travel demand over time. Figure 5(a) shows the total daily travel demand for 3 different weeks in October 2009. A weekly pattern clearly appears in the travel demand, with the minimum over weekends (especially sundays) and a maximum over fridays. Moreover, Figure 5(a) shows a particular change in travel demand in the second monday (day number 9 in figure), corresponding to Columbus Day. For a better look at this pattern, we plot the hourly travel demand for Columbus Day compared to the other mondays (see Figure 5(b)). We clearly see a higher travel demand in the first 2 hours of the day, followed by lower demand from 4 to 9, and from 12 to 20, due to the holiday.  \cite{Calabrese:2011.}
 
 \subsubsection{Sezonske razlike}
 
+%grafika str 61.
+\cite{Kuhlm:2015.}
+
+
+ 
+%Compared with traditional census data, our methodology to detect OD matrices from mobile phone traces has several advantages: It can capture the weekday and weekend patterns as well as seasonal variations. It can capture work trips and non-work trips, which is essential for trip chaining and activity based modeling.Zakljuèak 
+
+\cite{Calabrese:2011.}
 
 \subsection{Širina toka}
 
 Ukupan broj odlazaka/dolazaka po vremenskom okviru za cijelu matricu.\\
--Obuhvaæa pješaèki promet\\
+- Obuhvaæa pješaèki promet\\
 - velièina uzorka (postotak stanovništva)
 
 %\subsection{Geometrija prostorne podjele}
@@ -67,7 +103,16 @@ Ukupan broj odlazaka/dolazaka po vremenskom okviru za cijelu matricu.\\
 
 \subsection{Definicija putovanja}
 
-prosjeèan broj putovanja po stanovniku/ispitaniku
+Kod generiranja matrica treba definirati hoæe li se putovanja koja se protežu kroz više perioda dodijeliti vremenskom periodu u kojem zapoèinju ili u kojem završavaju. Iako ponekad nije specificirano, \cite{Bera:2011.} \cite{Filic:2016.} sva putovanja dodjeljuju intervalu u kojem je putovanje zapoèeto. 
+cite{Netko:nekad} Ne zanemaruje one zapise iz kojih nije jasno vidljiv poèetak putovanja veæ takva putovanja dodjeljuje na osnovu vjerojatnosti da je zapoèelo u odreðenom periodu.
+ 
+
+Usporedba matrica iz razlièitih izvora (ankete i \gls{cdr}) s 2 razlièite definicije putovanja (samo putovanja \gls{hw} i \gls{wh} te sva putovanja) pokazala se kao loš pristup, razumljivo su matrice imale mali stupanj sliènosti no neoèekivano je i strukturalna sliènost bila vrlo mala. \cite{Bonnel:2015.}
+
+%The comparison between the matrices obtained from commuting and mobile phone data provide quite limited results. It is reasonable for the estimated number of trips to differ, as commuting data only relates to trips from the individual’s home to their place of work or study, while mobile phone data cover all trip purposes. But the analysis we have performed also show that the structures of the matrices have little in common. There is thus a high degree of dispersion in the rates of variation between the two sources of origin-destination data. This preliminary work was conducted on the basis of fairly strong hypotheses. It is therefore quite possible that more detailed analysis would make it possible to moderate some of the strongest hypotheses and improve comparability. Nevertheless, the only trip purposes covered by commuting data are work and study. It would therefore be necessary to be able to estimate the location of the home and place of work or study of the individuals from mobile phone data in order to significantly improve the matrices produced from this source. Even if a number of algorithms have been described in the literature (Chen et al., 2014; Calabrese et al., 2013; Phithakkitnukoon et al., 2012), our identification of these locations is bound to be uncertain unless we have a large number of events for each mobile phone, which is not the case with the data that we have used. It seems certain that the analysis of the mobile phone data from smartphones which are frequently connected to web-based applications would make it possible to attempt this type of analysis.
+
+
+- prosjeèan broj putovanja po stanovniku/ispitaniku Netko:nekad nešto tipa 3 i 4.5, ugl nešto veæi broj za CDR \\
 
 \subsubsection{Infrastruktura}
 Obuhvaæa pješaèki promet

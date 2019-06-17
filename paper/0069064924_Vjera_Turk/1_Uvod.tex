@@ -63,7 +63,7 @@ Traditional methods include running surveys within cities and estimating the flo
 Recent research in the domain of ubiquitous computing provided alternative methodologies for estimating more accurate ODs from user generated datasets like cell phone data. 
 \end{comment}
 
-Tradicionalne metode ukljuèuju metode provoðenja anketiranja. Postoji nekoliko vrsta anketa: u kuæanstvima, presretanje vozila, anketiranje  prijevoznih kompanija i tvrtki, tranzit na granici, turisti u hotelima i parking \cite{Cools:2010.}. Ovakve metode su prije svega resursno zahtjevne stoga se ne provode èesto. Anketiranje putovanja u kuæanstvima provodi se na podruèjima brojnih svjetskih metropola tek jednom u deset godina.  
+Tradicionalne metode ukljuèuju metode provoðenja anketiranja. Postoji nekoliko vrsta anketa: u kuæanstvima, presretanje vozila, anketiranje  prijevoznih kompanija i tvrtki, tranzit na granici, turisti u hotelima i parking \cite{Cools:2010.}. Ovakve metode su prije svega resursno zahtjevne stoga se ne provode èesto. Anketiranje putovanja u kuæanstvima provodi se na podruèjima brojnih svjetskih metropola tek jednom u deset godina. U veæini svjetskih metropola na provoðenje anketa odlazi najveæi postotak budžeta planiranja, u procjeni oko 7.4 milijuna dolara godišnje izdvaja se za ankete po kuæanstvima. \cite{Cools:2010.}
 
 Anketiranje vozaèa presretanjem vozila eng. \gls{rsi} u prosjeku košta èak 10 eura po jednom zabilježenom putovanju i ukupno obuhvati 10\% prometa. Ova vrsta najèešæe se provodi na autocestama. \cite{Pollard:2013.}  
 
@@ -94,7 +94,7 @@ Tranzitna, t-POM
 Koncentracija u radu na CDR (?)
 \end{comment}
 
-Matematièko modeliranje prometa zahtjeva veliku kolièinu podataka - informacija o prometnoj mreži i prometnoj potražnji. Toènost modelirane (planirane) prometne situacije ovisi o kvaliteti dostupnih informacija te kako su podaci kombinirani, koji težinski faktori su primijenjeni za razlièite izvore. Prometna potražnja kljuèna je komponenta te stoga gotovo svaki prometni model zahtjeva POM-u koja specificira prometnu potražnju izmeðu zona u prometnoj mreži. Toèna \gls{pom}-a osnova je za odluke u mnogim Inteligentnim Transportnim Sustavima engl. Intelligent Transportation Systems (ITS) koji su zauzvrat kljuèni za izbor ruta u razlièitim sustavima navigacijskog navoðenja. Neke od pretpostavki kojima se vode u modeliranju su primjerice da je ukupna dnevna potražnja  podjednaka u oba smjera kod svakog para zona na podruèju grada. \cite{Peterson:2007.}
+Matematièko modeliranje prometa zahtjeva veliku kolièinu podataka - informacija o prometnoj mreži i prometnoj potražnji. Toènost modelirane (planirane) prometne situacije ovisi o kvaliteti dostupnih informacija te kako su podaci kombinirani, koji težinski faktori su primijenjeni za razlièite izvore. Prometna potražnja kljuèna je komponenta te stoga gotovo svaki prometni model zahtjeva POM-u koja specificira prometnu potražnju izmeðu zona u prometnoj mreži. Toèna \gls{pom}-a osnova je za odluke u mnogim Inteligentnim Transportnim Sustavima engl. Intelligent Transportation Systems (ITS) koji su zauzvrat kljuèni za izbor ruta u razlièitim sustavima navigacijskog navoðenja. Neke od pretpostavki kojima se vode u modeliranju su primjerice da je ukupna dnevna potražnja  podjednaka u oba smjera kod svakog para zona na podruèju grada \cite{Peterson:2007.}, te da je mobilnost opæenito manja tijekom zime nego tijekom ljeta \cite{Bonnel:2015.}. %383
 
 \subsection{Problematika i ogranièenja tradicionalnih naèina}
 
@@ -158,8 +158,8 @@ Pokriva pješaèki promet,
 (...anonimizacija i k-anonimizacija...).
 
 \subsection{Putovanje}
-Priroda ovog pristupa rudarenju podataka za estimaciju POM-a zahtjeva da prvo definiramo što toèno smatramo putovanjem, odnosno polazištem i odredištem putovanja. Zaustavljanje se definira kao skup minimalno n dogaðaja (aktivnosti) koji su zabilježeni na istoj poziciji unutar definiranog minimalnog vremenskog perioda. Time se osigurava da se ne radi o tranzitnoj veæ o namjerenoj poziciji zaustavljanja (i suzbija se bilježenje lažnog kretanje kod privremenog spajanja na susjednu bazni stanicu). Algoritam u nizu aktivnosti svakog pojedinca traži takva zaustavljanja. Dobiveni niz kontinuiranog zaustavljanja na razlièitim položajima otkriva kretanje. Algoritam izvlaèi uzastopne parove zaustavljanja te, prema dodatno definiranim kriterijima dozvoljenog minimalnog i maksimalnog vremenskog razmaka  izmeðu polaska i dolaska na odredište, ranija æelija zaustavljanja postaje polazište, a kasnija odredište putovanja.
-Skupovi putovanja u pripadajuæem vremenskom okviru saèinjavaju matricu za taj vremenski okvir.
+Priroda ovog pristupa rudarenju podataka za estimaciju POM-a zahtjeva da prvo definiramo što toèno smatramo putovanjem, odnosno polazištem i odredištem putovanja. Zaustavljanje se definira kao skup minimalno \textit{n} dogaðaja (aktivnosti) koji su zabilježeni na istoj poziciji unutar definiranog minimalnog vremenskog perioda. Time se osigurava da se ne radi o tranzitnoj veæ o namjerenoj poziciji zaustavljanja (i suzbija se bilježenje lažnog kretanje kod privremenog spajanja na susjednu bazni stanicu). Algoritam u nizu aktivnosti svakog pojedinca traži takva zaustavljanja. Dobiveni niz kontinuiranog zaustavljanja na razlièitim položajima otkriva kretanje. Algoritam izvlaèi uzastopne parove zaustavljanja te, prema dodatno definiranim kriterijima dozvoljenog minimalnog i maksimalnog vremenskog razmaka  izmeðu polaska i dolaska na odredište, ranija æelija zaustavljanja postaje polazište, a kasnija odredište putovanja.
+Skupovi svih putovanja u pripadajuæem vremenskom okviru saèinjavaju matricu za taj vremenski okvir.
 	
 
 \begin{comment}
@@ -289,7 +289,7 @@ Gustoæa Voronoi æelija snažno je korelirana s gustoæom stanovništva te stoga bol
 \begin{figure}[!htbp]
 	\begin{center}
 		\includegraphics[width=15cm,keepaspectratio=true]{Voronoi-Shenzhen}
-		\caption{Voronoi dijagram baznih stanica - Shenzhen}
+		\caption{Voronoi dijagram 1090 æelija baznih stanica - Shenzhen}
 		\label{fig:Voronoi}
 	\end{center}
 \end{figure}
@@ -342,10 +342,11 @@ U sklopu projekta \gls{d4d} francuski operater \textit{Orange} ustupio je na kor
 %(linking to transport infrastructure?)
 	-k-anonymization \\
 	-Grad, Država\\ 
-		A potential is also recognized for a planet-scale mobilitiy measurement through opening to researchers and combining the different big dataset carrying location  information.\cite{Scepanovic:2015.}
+		A potential is also recognized for a planet-scale mobilitiy measurement through opening to researchers and combining the different big dataset carrying location information. \cite{Scepanovic:2015.}  \cite{Hui:2010.}
 		
 	-CDR- POM u zemljama u razvoju  \\
  	-Penetracija od 82\%, 9x\% -> pronaæi radove\\
+ 	2008.  Francuska 80\% starijih od 12 godina \cite{Bonnel:2015.}\\ 
  	-Mobilni ureðaji iz godine u godinu zastupljeni su kod sve veæeg postotka stanovništvu, ne samo u razvijenim zemljama veæ i u zemljama u razvoju. 
         
 \newpage

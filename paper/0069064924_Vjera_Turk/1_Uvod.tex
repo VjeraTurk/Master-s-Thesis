@@ -1,5 +1,8 @@
 % !TeX encoding = windows-1250
 \chapter{Uvod}
+
+%temu rada na temelju dostupne literature smjestiti u šire podruèje struke. U pravilu Uvod ne bi trebao biti duži od dvije stranice. 
+
 \begin{comment}  
 An origin-destination matrix is an important tool for describing group mobility and measuring socio-economic activity in a certain region, often used in traffic science for urban migration analysis and strategic planning.
 \end{comment}
@@ -15,6 +18,18 @@ Pojavljuje se potreba za objektivnom procjenom kvalitete \gls{odm} u odnosu na r
 
 Metodologija je izvedena u programskom okruženju za statistièko raèunarstvo R te je demonstrirana njena primjena na sluèaju usporedbe dviju \gls{odm}-a. Dobiveni rezultati komentirani su sa stajališta apsolutne i relativne toènosti matrica.
 \end{comment}
+
+% POGLAVLJA
+% - analizira problem i daju osnovne poznate zakonitosti vezane uz njegovo rješavanje, 
+
+% - opisuje rješavanje zadatka i odgovarajuæi proraèuni,
+
+% - opisuje sklop ili programska podrška,
+
+% - iznose i analiziraju rezultati do kojih se došlo rješavajuæi problematiku zadatka, rezultati mjerenja, grafièki prikazi, ispisi i sl.
+
+
+% - Poglavlja bi trebala biti uravnoteženog obima. 
 
 \chapter{Polazišno-odredišna matrica}
 
@@ -94,7 +109,9 @@ Tranzitna, t-POM
 Koncentracija u radu na CDR (?)
 \end{comment}
 
-Matematièko modeliranje prometa zahtjeva veliku kolièinu podataka - informacija o prometnoj mreži i prometnoj potražnji. Toènost modelirane (planirane) prometne situacije ovisi o kvaliteti dostupnih informacija te kako su podaci kombinirani, koji težinski faktori su primijenjeni za razlièite izvore. Prometna potražnja kljuèna je komponenta te stoga gotovo svaki prometni model zahtjeva POM-u koja specificira prometnu potražnju izmeðu zona u prometnoj mreži. Toèna \gls{pom}-a osnova je za odluke u mnogim Inteligentnim Transportnim Sustavima engl. Intelligent Transportation Systems (ITS) koji su zauzvrat kljuèni za izbor ruta u razlièitim sustavima navigacijskog navoðenja. Neke od pretpostavki kojima se vode u modeliranju su primjerice da je ukupna dnevna potražnja  podjednaka u oba smjera kod svakog para zona na podruèju grada \cite{Peterson:2007.}, te da je mobilnost opæenito manja tijekom zime nego tijekom ljeta \cite{Bonnel:2015.}. %383
+Matematièko modeliranje prometa zahtjeva veliku kolièinu podataka - informacija o prometnoj mreži i prometnoj potražnji. Toènost modelirane (planirane) prometne situacije ovisi o kvaliteti dostupnih informacija te kako su podaci kombinirani, koji težinski faktori su primijenjeni za razlièite izvore. Prometna potražnja kljuèna je komponenta te stoga gotovo svaki prometni model zahtjeva POM-u koja specificira prometnu potražnju izmeðu zona u prometnoj mreži. Toèna \gls{pom}-a osnova je za odluke u mnogim Inteligentnim Transportnim Sustavima engl. Intelligent Transportation Systems (ITS) koji su zauzvrat kljuèni za izbor ruta u razlièitim sustavima navigacijskog navoðenja. Neke od pretpostavki kojima se vode u modeliranju su primjerice da je ukupna dnevna potražnja  podjednaka u oba smjera kod svakog para zona na podruèju grada \cite{Peterson:2007.}, da svi korisnici imaju saznanja o situaciji na cesti \cite{Goulding:2016.} te da je mobilnost opæenito manja tijekom zime nego tijekom ljeta \cite{Bonnel:2015.}. %383 
+
+Klasièan bazni model za procjenu prometne potražnje je Gravitacijski model (eng. \textit{Gravity model})  koji kod proraèuna "privlaènosti" 2 zone uzima u obzir gustoæu populacije, udaljenost i troškove putovanja. Izvedene verzije integriraju i neke druge (socio-ekonomske) faktore. \cite{Gundlegard:2016.}
 
 \subsection{Problematika i ogranièenja tradicionalnih naèina}
 
@@ -158,7 +175,7 @@ Pokriva pješaèki promet,
 (...anonimizacija i k-anonimizacija...).
 
 \subsection{Putovanje}
-Priroda ovog pristupa rudarenju podataka za estimaciju POM-a zahtjeva da prvo definiramo što toèno smatramo putovanjem, odnosno polazištem i odredištem putovanja. Zaustavljanje se definira kao skup minimalno \textit{n} dogaðaja (aktivnosti) koji su zabilježeni na istoj poziciji unutar definiranog minimalnog vremenskog perioda. Time se osigurava da se ne radi o tranzitnoj veæ o namjerenoj poziciji zaustavljanja (i suzbija se bilježenje lažnog kretanje kod privremenog spajanja na susjednu bazni stanicu). Algoritam u nizu aktivnosti svakog pojedinca traži takva zaustavljanja. Dobiveni niz kontinuiranog zaustavljanja na razlièitim položajima otkriva kretanje. Algoritam izvlaèi uzastopne parove zaustavljanja te, prema dodatno definiranim kriterijima dozvoljenog minimalnog i maksimalnog vremenskog razmaka  izmeðu polaska i dolaska na odredište, ranija æelija zaustavljanja postaje polazište, a kasnija odredište putovanja.
+Priroda ovog pristupa rudarenju podataka za estimaciju POM-a zahtjeva da prvo definiramo što toèno smatramo putovanjem, odnosno polazištem i odredištem putovanja. Zaustavljanje se definira kao skup minimalno \textit{n} dogaðaja (aktivnosti) koji su zabilježeni na istoj poziciji unutar definiranog minimalnog vremenskog perioda. Time se osigurava da se ne radi o tranzitnoj veæ o namjerenoj poziciji zaustavljanja (i suzbija se bilježenje lažnog kretanje kod privremenog spajanja na susjednu bazni stanicu). Algoritam u nizu aktivnosti svakog pojedinca traži takva zaustavljanja. Dobiveni niz kontinuiranog zaustavljanja na razlièitim položajima otkriva kretanje. Algoritam izvlaèi uzastopne parove zaustavljanja te, prema dodatno definiranim kriterijima dozvoljenog minimalnog i maksimalnog vremenskog razmaka izmeðu polaska i dolaska na odredište, ranija æelija zaustavljanja postaje polazište, a kasnija odredište putovanja.
 Skupovi svih putovanja u pripadajuæem vremenskom okviru saèinjavaju matricu za taj vremenski okvir.
 	
 
@@ -195,7 +212,7 @@ Iskljuèivo \gls{cdr} zapisi ne osiguravaju rezoluciju pogodnu za odreðivanje mod
  
 %Osim \gls{cdr} operateri prikupljaju dodatne podatke o preusmjeravanju poziva (engl. handover) na druge bazne stanice, (...)  
 
-Terralytics je jedna od mladih kompanija koja nudi uslugu modeliranja prometa iz telekomunikacijskih podataka. Izmeðu ostalog prema brzini kojom se pokretna stanica (ili skupina njih istovremeno) mijenja položaj donose zakljuèak o dominantnom modulu kretanja (pješak, automobil, javni prijevoz, avion). Tajna njihovog uspjeha je da osim \gls{cdr} koriste i ranije spomenute dodatne podatke koji se prikupljaju. \cite{Teralytics:2017.} 
+Teralytics je jedna od mladih kompanija koja nudi uslugu modeliranja prometa iz telekomunikacijskih podataka. Izmeðu ostalog prema brzini kojom se pokretna stanica (ili skupina njih istovremeno) mijenja položaj donose zakljuèak o dominantnom modulu kretanja (pješak, automobil, javni prijevoz, avion). Tajna njihovog uspjeha je da osim \gls{cdr} koriste i ranije spomenute dodatne podatke koji se prikupljaju. \cite{Teralytics:2017.} 
 
 Za razliku od tradicionalnih modela prebrojavanja vozila, telekomunikacijski zapisi obuhvaæaju sve module kretanja kao is svu prometnu infrastrukturu, ne samo onu gdje se provode intervjui ili gdje su postavljena osjetila za prebrojavanje prometa. Uklanja potrebu za razlièiti pristup prebrojavanja za pojedini modul kretanja. 
  
@@ -219,6 +236,8 @@ Zapoèet je prije 15 godina, u Ujedinjenom Kraljevstvu, kao odgovor na tehnièka i
 \subsubsection{Izvor infrastrukture} 
 Jedan od naèina na koji \gls{osm} doprinosi istraživanjima u ovom podruèju je kao izvor prometne infrastrukture i pripadajuæih meta podataka (kolnik, mostovi, ogranièenja brzine...). Raspodjela toka po prometnoj infrastrukturi nadilazi podruèje ovog rada no jest dio problematike modeliranja prometa. \cite{Toole:2015.} 
 %(jedan od radova koristi za broj traka na auto cesti jedan za provjeru naseljenosti podruèja/broj katova zgrada)
+
+
 
  \subsubsection{Model raspodjele toka}
 Inovativni pristup kontekstualizaciji toka korištenjem OpenStreetMap baze predstavljen je u radu \cite{Stupar:2018.}. Na osnovu pripadajuæih opisnih podataka, prostorni objekti na podruèju interesa kategorizirani su prema tipu socio-ekonomske aktivnosti u koju su ukljuèeni. Definirano je ukupno 6 kategorija:
@@ -315,12 +334,12 @@ Prikaz šesterokuta za grad Shenzhen možemo vidjeti an slici \ref{fig:Hexagons}
 \cite{Toole:2015.}
 \cite{Bahoken:2013.}
 
-\cite{Goulding:2016.} Voronoi -> pravokutna uniformna podjela
+\cite{Goulding:2016.} Voronoi $->$ pravokutna uniformna podjela
 
 \begin{figure}[!htbp]
 	\begin{center}
-		\includegraphics[width=5cm,keepaspectratio=true]{interpolation}
-		\caption{  \cite{Goulding:2016.}}
+		\includegraphics[width=6cm,keepaspectratio=true]{interpolation}
+		\caption{  ** dodati caption ** \cite{Goulding:2016.}}
 		\label{fig:interpolation}
 	\end{center}
 \end{figure}
@@ -333,8 +352,8 @@ U sklopu projekta \gls{d4d} francuski operater \textit{Orange} ustupio je na kor
 
 \begin{figure}[!htbp]
 	\begin{center}
-		\includegraphics[width=10cm,keepaspectratio=true]{Revisiting_the_border}
-		\caption{Prijedlog izmjene (prilagodbe) administrativnih jedinica mreži kretanja - bojom su oznaèene grupacije nastale na temelju matrice kretanja, crnom su oznaèene postojeæe granice administrativnih jedinica.  \cite{Scepanovic:2015.}}
+		\includegraphics[width=8cm,keepaspectratio=true]{Revisiting_the_border}
+		\caption{Prijedlog izmjene (prilagodbe) administrativnih jedinica mreži kretanja - bojom su oznaèene grupacije nastale na temelju matrice kretanja, crnom su oznaèene postojeæe granice administrativnih jedinica \cite{Scepanovic:2015.}}
 		\label{fig:revisiting}
 	\end{center}
 \end{figure}
@@ -350,7 +369,8 @@ U sklopu projekta \gls{d4d} francuski operater \textit{Orange} ustupio je na kor
 \section {Dobre prakse u generiranju POM iz CDR}
 %Skaliranje CDR POM (primjerak $->$ pouplacija)
 %(linking to transport infrastructure?)
-	-k-anonymization \\
+	-k-anonymization 5 - 10 \cite{Teralytics:2017.}   i in rural area \cite{Goulding:2016.}
+	\\
 	-Grad, Država\\ 
 		A potential is also recognized for a planet-scale mobilitiy measurement through opening to researchers and combining the different big dataset carrying location information. \cite{Scepanovic:2015.}  \cite{Hui:2010.}
 		

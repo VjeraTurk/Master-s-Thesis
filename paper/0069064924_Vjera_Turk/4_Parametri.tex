@@ -11,13 +11,41 @@ Parametar - varijabla o kojoj ovisi odreðeni logièki izraz, matematièka formula 
 -Isto doba godine\\
 -Isto vremensko razdoblje \\
 -Week day, work day\\
--Isto pridodijeljena putovanja periodu
--Ima li matrica diagonalu? 
+-Ista ili slièna definicija putovanja \\
+-Isto pridodijeljena putovanja periodu \\
+-Ima li matrica diagonalu? \\
+
 (...)
 
 %kada se preslikava bs æelije na drugi oblik, nastaju putovanja unutar novih æelija (koje su veæe od bs æelija) \cite{Graells-Garrido:2016.}  
 
 \section{Komparacijski indikatori}
+
+
+\subsection{Definicija putovanja}
+
+Kod generiranja matrica treba definirati hoæe li se putovanja koja se protežu kroz više perioda dodijeliti vremenskom okviru u kojem zapoèinju ili u kojem završavaju. Iako ponekad nije specificirano, autori \cite{Bera:2011.} \cite{Filic:2016.} \cite{Gundlegard:2016.} sva putovanja dodjeljuju intervalu u kojem je putovanje zapoèeto. Teralytics u praksi generira obje vrste matrica \cite{Teralytics:2017.}.
+\cite{Gundlegard:2016.} kako bi uvrstio što više putovanja, ne zanemaruje one zapise iz kojih nije jasno vidljiv poèetak putovanja veæ takva putovanja dodjeljuje na osnovu vjerojatnosti da su zapoèela u odreðenom periodu.
+
+Usporedba matrica iz razlièitih izvora (ankete i \gls{cdr}) s 2 razlièite definicije putovanja (samo putovanja \gls{hw} i \gls{wh} te sva putovanja) pokazala se kao loš pristup, razumljivo su matrice imale mali stupanj sliènosti no neoèekivano je i strukturalna sliènost bila vrlo mala. \cite{Bonnel:2015.}
+
+
+
+%The comparison between the matrices obtained from commuting and mobile phone data provide quite limited results. It is reasonable for the estimated number of trips to differ, as commuting data only relates to trips from the individual’s home to their place of work or study, while mobile phone data cover all trip purposes. But the analysis we have performed also show that the structures of the matrices have little in common. There is thus a high degree of dispersion in the rates of variation between the two sources of origin-destination data. This preliminary work was conducted on the basis of fairly strong hypotheses. It is therefore quite possible that more detailed analysis would make it possible to moderate some of the strongest hypotheses and improve comparability. Nevertheless, the only trip purposes covered by commuting data are work and study. It would therefore be necessary to be able to estimate the location of the home and place of work or study of the individuals from mobile phone data in order to significantly improve the matrices produced from this source. Even if a number of algorithms have been described in the literature (Chen et al., 2014; Calabrese et al., 2013; Phithakkitnukoon et al., 2012), our identification of these locations is bound to be uncertain unless we have a large number of events for each mobile phone, which is not the case with the data that we have used. It seems certain that the analysis of the mobile phone data from smartphones which are frequently connected to web-based applications would make it possible to attempt this type of analysis.
+
+
+- prosjeèan broj putovanja po stanovniku/ispitaniku Netko:nekad nešto tipa 3 i 4.5, ugl nešto veæi broj za CDR \\
+
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=15cm,keepaspectratio=true]{short_n_long_journeys}
+		\caption{** dodati caption **\cite{Gundlegard:2016.}}
+		\label{fig:journeys}
+	\end{center}
+\end{figure}
+
+
 
 \subsection{Prostorna razluèivost (Rezolucija)}
 
@@ -32,7 +60,7 @@ Agregacijom na razinu \textit{Urban Areas} (podruèja oko gradova) 85\% svih puto
 \begin{figure}[!htbp]
 	\begin{center}
 		\includegraphics[width=10cm,keepaspectratio=true]{diagonal_CDR}
-		\caption{** dodati caption ***}
+		\caption{** dodati caption ** \cite{Graells-Garrido:2016.}}
 		\label{fig:diagonal}
 	\end{center}
 \end{figure}
@@ -53,19 +81,24 @@ Na temelju usporedbi matrica kretanja u 4 razlièita grada, dobivenih iz \gls{cdr
 
 \subsection{Vremenska razlièivost}
 
-- Departure/Arrival time\\
-- razlièite definicija dana 0-24 ili 3-3 {Netko:nekad.}
+Neki autori predlažu da kraj odnosno poèetak jednog dana bude u 3:00 kako bi putovanja zapoèeta prethodnog dana, a koja prelaze u novi dan, u analizi spadala u raniji dan, odnosno kako dobar dio putovanja ne bi bio izostavljen samo zato jer se proteže kroz 2 dana \cite{Toole:2015.}. 
 
-\subsubsection{Dani u tjednu - radni dani/petak/vikend/nacionalni praznici}
+%Daily trips are estimated from filtered users by analyzing consecutive observations at different stay points during a given time window. They begin by defining an effective day as a period between 3 am one morning and 3 am on the next consecutive morning. This definition is used to minimize the number of trips that are prematurely ended due to the assumption that users start and end each day at hom
+
+%\cite{Gundlegard:2016.} 5 min
+%U praksi Teralytics generira matrice od 15 min, 1h i 1 dan
+
+\subsubsection{Doba dana}
+
+\subsubsection{Dani u tjednu i praznici}
 %utorak- najviše prometa \cite{Travassoli:2016.}
 
 Istraživanja modernih pristupa generiranju matrica ukazuju na smanjenu mobilnost za neradnih dana u tjednu, najviše u nedjelju.\cite{Calabrese:2011.} Bitno je napomenuti da dio istraživanja istièe da je vikendima takoðer zabilježen i manji broj telekomunikacijske aktivnosti. \cite{Bahoken:2013.}
 
 % We obtain an average of 5 trips per day during the weekday, and 4.5 during the weekend. This number is reasonable when compared to the US National Household Travel Survey2 which evaluated this number to be between 4.18 during weekdays and 3.86 during weekends3 .
 
-Osim oèekivane bitne razlike u radnim i neradnim danima, uoèeno je da je petak, kao zadnji radni dan u tjednu, bitno drugaèiji od ostalih radnih dana. \cite{Travassoli:2016.} \cite{Calabrese:2011.}  \cite{Scepanovic:2015.} Uoèena je pojaèana mobilnost petkom na razini regije (Boston Metropolitan Area) \cite{Calabrese:2011.} i na razini cijele države (Obale Bjelokosti) s poveæanjem od 35\% u odnosu na nedjelju \cite{Scepanovic:2015.} na temelju matrica izraðenih iz \gls{cdr}, no zanimljivo uèena je smanjena mobilnost vezana za javni prijevoz (izvor za generiranje matrica \textit{Pametne kartice za javni prijevoz}) na razini regije (Southeast Queensland, Australia). Osim prosjeènog broja dnevnih putovanja, petak ima i nešto drugaèiji dnevni uzorak po satima (rast prometa prema kraju radnog vremena zapoèinje ranije). Ponovno, petkom je takoðer uoèena i najviša razina telekomunikacijske aktivnosti \cite{Bahoken:2013.} \cite{Bonnel:2015.} što ukazuje na moguæu pristranost kada su u pitanju matrice generirane iz \gls{cdr}.
-Rezultati nacionalne ankete u Sjedinjenim Amerièkim Državama pokazuju da je prosjeèan broj dnevnih putovanja po stanovniku 4.18 tijekom radnog dana te 3.86 tijekom neradnih dana u tjednu, što je u skladu sa zakljuècima modernih metoda.
-
+Osim oèekivane bitne razlike u radnim i neradnim danima, uoèeno je da je petak, kao zadnji radni dan u tjednu, bitno drugaèiji od ostalih radnih dana. \cite{Travassoli:2016.} \cite{Calabrese:2011.}  \cite{Scepanovic:2015.} Uoèena je pojaèana mobilnost petkom na razini regije (Boston Metropolitan Area) \cite{Calabrese:2011.} i na razini cijele države (Obale Bjelokosti) s poveæanjem od 35\% u odnosu na nedjelju \cite{Scepanovic:2015.} na temelju matrica izraðenih iz \gls{cdr}, no zanimljivo uèena je smanjena mobilnost vezana za javni prijevoz (izvor za generiranje matrica \textit{Pametne kartice za javni prijevoz}) na razini regije (Southeast Queensland, Australija). Osim prosjeènog broja dnevnih putovanja, petak ima i nešto drugaèiji dnevni uzorak po satima (rast prometa prema kraju radnog vremena zapoèinje ranije). Ponovno, petkom je takoðer uoèena i najviša razina telekomunikacijske aktivnosti \cite{Bahoken:2013.} \cite{Bonnel:2015.} što ukazuje na moguæu pristranost kada su u pitanju matrice generirane iz \gls{cdr}.
+Rezultati nacionalne ankete u Sjedinjenim Amerièkim Državama pokazuju da je prosjeèan broj dnevnih putovanja po stanovniku 4.18 tijekom radnog dana te 3.86 tijekom neradnih dana u tjednu, što jest u skladu sa zakljuècima modernih metoda.
 
 
 \begin{comment}
@@ -85,8 +118,6 @@ Rezultati nacionalne ankete u Sjedinjenim Amerièkim Državama pokazuju da je pros
 %grafika str 61.
 \cite{Kuhlm:2015.}
 
-
- 
 %Compared with traditional census data, our methodology to detect OD matrices from mobile phone traces has several advantages: It can capture the weekday and weekend patterns as well as seasonal variations. It can capture work trips and non-work trips, which is essential for trip chaining and activity based modeling.Zakljuèak 
 
 \cite{Calabrese:2011.}
@@ -96,23 +127,11 @@ Rezultati nacionalne ankete u Sjedinjenim Amerièkim Državama pokazuju da je pros
 Ukupan broj odlazaka/dolazaka po vremenskom okviru za cijelu matricu.\\
 - Obuhvaæa pješaèki promet\\
 - velièina uzorka (postotak stanovništva)
-
+- k-anonimizacija
 %\subsection{Geometrija prostorne podjele}
 %(ne)uniformna podjela ...
 %Interpolacija - ima li smisla 2 razlièite podjele?!
-
-\subsection{Definicija putovanja}
-
-Kod generiranja matrica treba definirati hoæe li se putovanja koja se protežu kroz više perioda dodijeliti vremenskom periodu u kojem zapoèinju ili u kojem završavaju. Iako ponekad nije specificirano, \cite{Bera:2011.} \cite{Filic:2016.} sva putovanja dodjeljuju intervalu u kojem je putovanje zapoèeto. 
-cite{Netko:nekad} Ne zanemaruje one zapise iz kojih nije jasno vidljiv poèetak putovanja veæ takva putovanja dodjeljuje na osnovu vjerojatnosti da je zapoèelo u odreðenom periodu.
- 
-
-Usporedba matrica iz razlièitih izvora (ankete i \gls{cdr}) s 2 razlièite definicije putovanja (samo putovanja \gls{hw} i \gls{wh} te sva putovanja) pokazala se kao loš pristup, razumljivo su matrice imale mali stupanj sliènosti no neoèekivano je i strukturalna sliènost bila vrlo mala. \cite{Bonnel:2015.}
-
-%The comparison between the matrices obtained from commuting and mobile phone data provide quite limited results. It is reasonable for the estimated number of trips to differ, as commuting data only relates to trips from the individual’s home to their place of work or study, while mobile phone data cover all trip purposes. But the analysis we have performed also show that the structures of the matrices have little in common. There is thus a high degree of dispersion in the rates of variation between the two sources of origin-destination data. This preliminary work was conducted on the basis of fairly strong hypotheses. It is therefore quite possible that more detailed analysis would make it possible to moderate some of the strongest hypotheses and improve comparability. Nevertheless, the only trip purposes covered by commuting data are work and study. It would therefore be necessary to be able to estimate the location of the home and place of work or study of the individuals from mobile phone data in order to significantly improve the matrices produced from this source. Even if a number of algorithms have been described in the literature (Chen et al., 2014; Calabrese et al., 2013; Phithakkitnukoon et al., 2012), our identification of these locations is bound to be uncertain unless we have a large number of events for each mobile phone, which is not the case with the data that we have used. It seems certain that the analysis of the mobile phone data from smartphones which are frequently connected to web-based applications would make it possible to attempt this type of analysis.
-
-
-- prosjeèan broj putovanja po stanovniku/ispitaniku Netko:nekad nešto tipa 3 i 4.5, ugl nešto veæi broj za CDR \\
+- dakako za pojedinu matricu ovisi o prostornoj i vremenskoj rezoluciji 
 
 \subsubsection{Infrastruktura}
 Obuhvaæa pješaèki promet
@@ -122,7 +141,11 @@ Obuhvaæa pješaèki promet
 
 
 \section{Meðuovisnost parametara}
-Ukoliko je rezlucija mala (velike æelije) nema potrebe za preciznim definiranjem kraja putovanja
+- Ukoliko je rezlucija mala (velike æelije) nema potrebe za preciznim definiranjem kraja putovanja \\
+- o definiciji putovanja ovisit æe i zero-cells ?
+- \cite{Gundlegard:2016.} str. 9 definicija putovanja i prostorna i vremenska rezolucija, DEFINICIJA PUOVANJA JE KLJUÈNA\\
+-Za analizu Peak houre - intervali od 5 minuta! \cite{Gundlegard:2016.} str. 10
+
 
 \begin{comment}
 2 modela

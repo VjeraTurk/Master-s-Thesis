@@ -153,12 +153,12 @@
   Timestamp                = {06.05.2019}
 }
 
-@MastersThesis{Kuhlm:2015.,
+@TechReport{Kuhlm:2015.,
   Title                    = {The conconstruct of purpose specific OD Matrices Using public transport smart card data},
   Author                   = {W Kuhlman},
-  School                   = {Delft University of Technology},
   Year                     = {2015.},
 
+  School                   = {Delft University of Technology},
   Timestamp                = {17.06.2019}
 }
 

@@ -25,7 +25,7 @@ Parametar - varijabla o kojoj ovisi odreðeni logièki izraz, matematièka formula 
 \subsection{Definicija putovanja}
 
 Kod generiranja matrica treba definirati hoæe li se putovanja koja se protežu kroz više perioda dodijeliti vremenskom okviru u kojem zapoèinju ili u kojem završavaju. Iako ponekad nije specificirano, autori \cite{Bera:2011.} \cite{Filic:2016.} \cite{Gundlegard:2016.} sva putovanja dodjeljuju intervalu u kojem je putovanje zapoèeto. Teralytics u praksi generira obje vrste matrica \cite{Teralytics:2017.}.
-\cite{Gundlegard:2016.} kako bi uvrstio što više putovanja, ne zanemaruje one zapise iz kojih nije jasno vidljiv poèetak putovanja veæ takva putovanja dodjeljuje na osnovu vjerojatnosti da su zapoèela u odreðenom periodu.
+\cite{Gundlegard:2016.} kako bi uvrstio što više putovanja, ne zanemaruje one zapise iz kojih nije jasno vidljiv poèetak putovanja veæ takva putovanja dodjeljuje na osnovu vjerojatnosti da su zapoèela u odreðenom periodu. Slièan postupak spominje se i u \cite{Toole:2015.} gdje za izraèun vjerojatnosti posežu za nacionalnim anketama ili frekvencijom poziva.
 
 Usporedba matrica iz razlièitih izvora (ankete i \gls{cdr}) s 2 razlièite definicije putovanja (samo putovanja \gls{hw} i \gls{wh} te sva putovanja) pokazala se kao loš pristup, razumljivo su matrice imale mali stupanj sliènosti no neoèekivano je i strukturalna sliènost bila vrlo mala. \cite{Bonnel:2015.}
 
@@ -52,7 +52,7 @@ Usporedba matrica iz razlièitih izvora (ankete i \gls{cdr}) s 2 razlièite defini
 Prema hrvatskoj enciklopediji definicija razluèivosti (rezolucije) glasi: mjera za razaznavanje sitnih pojedinosti na nekom prikazu (npr. televizijskoj slici). U raèunalstvu se odnosi na finoæu rasterske slike iskazanu ukupnim brojem slikovnih elemenata (relativna razluèivost) ili brojem slikovnih elemenata po inèu (stvarna razluèivost).
 (...)\\
 Kod \gls{pom} ...\\
-Rezolucija æe ovisiti o toènosti položaja ...
+Rezolucija æe ovisiti o toènosti položaja! ...\\
 
 Voronoi æelije takoðer je moguæe ugnijezditi (što se èesto radi kod usporedbe s matricama dobivenim drugim postupkom),a pritom se može u matricu zabilježiti i aproksimacija internog toka, odnosno broja putovanja unutar nove æelije (popuniti dijagonalu). Postotak eksternih putovanja koji se gubi u procesu agregacije Voronoi æelija analiziran je  za matrice iz regije Picardie u Francuskoj.
 Agregacijom na razinu \textit{Urban Areas} (podruèja oko gradova) 85\% svih putovanja postaje internim putovanjima, a na razini \textit{Urban Cores} (podruèja oko veæih gradova) èak 97\% poèetno zabilježenih putovanja je interno, te ostaje samo 3\% eksternih putovanja. \cite{Bahoken:2013.}. Sliènu situaciju opisuje i \cite{Graells-Garrido:2016.} (Vidi sliku \ref{fig:diagonal})
@@ -81,7 +81,7 @@ Na temelju usporedbi matrica kretanja u 4 razlièita grada, dobivenih iz \gls{cdr
 
 \subsection{Vremenska razlièivost}
 
-Neki autori predlažu da kraj odnosno poèetak jednog dana bude u 3:00 kako bi putovanja zapoèeta prethodnog dana, a koja prelaze u novi dan, u analizi spadala u raniji dan, odnosno kako dobar dio putovanja ne bi bio izostavljen samo zato jer se proteže kroz 2 dana \cite{Toole:2015.}. 
+Neki autori predlažu da kraj odnosno poèetak jednog dana bude u 3:00 kako bi putovanja zapoèeta prethodnog dana, a koja prelaze u novi dan, u analizi spadala u raniji dan, odnosno kako dobar dio putovanja ne bi bio izostavljen samo zato jer se proteže kroz 2 dana \cite{Schneider:2013.}\cite{Toole:2015.} . 
 
 %Daily trips are estimated from filtered users by analyzing consecutive observations at different stay points during a given time window. They begin by defining an effective day as a period between 3 am one morning and 3 am on the next consecutive morning. This definition is used to minimize the number of trips that are prematurely ended due to the assumption that users start and end each day at hom
 
@@ -118,7 +118,7 @@ Rezultati nacionalne ankete u Sjedinjenim Amerièkim Državama pokazuju da je pros
 %grafika str 61.
 \cite{Kuhlm:2015.}
 
-%Compared with traditional census data, our methodology to detect OD matrices from mobile phone traces has several advantages: It can capture the weekday and weekend patterns as well as seasonal variations. It can capture work trips and non-work trips, which is essential for trip chaining and activity based modeling.Zakljuèak 
+%Compared with traditional census data, our methodology to detect OD matrices from mobile phone traces has several advantages: It can capture the weekday and weekend patterns as well as seasonal variations. It can capture work trips and non-work trips, which is essential for trip chaining and activity based modeling. Zakljuèak 
 
 \cite{Calabrese:2011.}
 
@@ -126,12 +126,19 @@ Rezultati nacionalne ankete u Sjedinjenim Amerièkim Državama pokazuju da je pros
 
 Ukupan broj odlazaka/dolazaka po vremenskom okviru za cijelu matricu.\\
 - Obuhvaæa pješaèki promet\\
-- velièina uzorka (postotak stanovništva)
-- k-anonimizacija
+- velièina uzorka (postotak stanovništva)\\
+- k-anonimizacija\\
+- dakako za pojedinu matricu ovisi o prostornoj i vremenskoj rezoluciji \\
+- o tome æe ovisiti i Zero-cells (Nul-æelije)\\
+- samo najaktivniji korisnici \cite{Schneider:2013.} \cite{Toole:2015.} (pristranost?)\\
+za razliku od izvlaèenja najaktivnijih korisnika 
+-\cite{Calabrese:2011.} uzima samo sluèajno odabranih 25\% korisnika (njih 1 milijun) da pojednostavi analizu. ...Dobro šta, da može pješke na prste raèunati?!\\
+- broj aktivnih korisnika unutar jednog tjedna jako varira iz dana u dan.  \cite{Bonnel:2015.}\\
+-faktor skaliranja spominje se u najmanje 2 istraživanja, u jednom se radi o x 10
+
 %\subsection{Geometrija prostorne podjele}
 %(ne)uniformna podjela ...
 %Interpolacija - ima li smisla 2 razlièite podjele?!
-- dakako za pojedinu matricu ovisi o prostornoj i vremenskoj rezoluciji 
 
 \subsubsection{Infrastruktura}
 Obuhvaæa pješaèki promet
@@ -144,7 +151,9 @@ Obuhvaæa pješaèki promet
 - Ukoliko je rezlucija mala (velike æelije) nema potrebe za preciznim definiranjem kraja putovanja \\
 - o definiciji putovanja ovisit æe i zero-cells ?
 - \cite{Gundlegard:2016.} str. 9 definicija putovanja i prostorna i vremenska rezolucija, DEFINICIJA PUOVANJA JE KLJUÈNA\\
--Za analizu Peak houre - intervali od 5 minuta! \cite{Gundlegard:2016.} str. 10
+-Za analizu Peak houre - intervali od 5 minuta! \cite{Gundlegard:2016.} str. 10\\
+
+- 30 min vremenski okvir\cite{Schneider:2013.} str. 6\\
 
 
 \begin{comment}

@@ -30,10 +30,11 @@
    * (ne)uniformna podjela
 **DEFINICIJA PUTOVANJA**
    *  početak/kraj putovanja u dodjeljenom periodu
+   *  NAJVAŽNIJE
 **SREDSTVO KRETANJA I INFRASTRUKTURA**   eng. mode
    * infrastruktura (npr. samo ceste)
    * sredstvo (npr. samo Taxi)
-**DAJE LI MATRICA KONTEKST ILI SAMO POMAK**
+**JE LI MATRICA KONTEKST ILI SAMO POMAK**
    * gustoća informacija
 **ROBUSNOST** 
    * u dodatku šuma - ostaje li matrica vjerna? 
@@ -54,17 +55,19 @@
 * grand-truth
 
 * simulacija cdr?
+* simulacija na osnovu non-cdr! --> DA
 * zbrojene matrice?! usporedba zbrojenih
+
 #### Matrix
 * DONE: Voronoi tessellations (base stations)
 * R clipping Lovelence
 
-* IN PROGRESS: generirati POM iz CDR (prema algoritmu iz objevljanog rada- teško)(validirati)
-* NEXT: twickati PERIOD 15min-30min-1h-3h (over under fitting)
-* IN PROGRESS: twickati definiciju KRAJA PUTOVANJA ?!
+* IN PROGRESS: generirati POM iz CDR (prema algoritmu iz objevljanog rada- teško)(validirati) --> NE
+* NEXT: twickati PERIOD 15min-30min-1h-3h (over under fitting) --> NE
+* IN PROGRESS: twickati definiciju KRAJA PUTOVANJA ?! --> NE
 
-* generirati POM iz TAXI (pomoć Petra)
-* generirati CPOM iz CDR i TAXI (pomoć Petra, TehRep)
+* generirati POM iz TAXI (pomoć Petra) --> NE
+* generirati CPOM iz CDR i TAXI (pomoć Petra, TehRep) -->NE
 
 #### R
 * DONE: instalirati noviju verziju! # upgraded to R version 3.5.1 (2018-07-02) -- "Feather Spray"

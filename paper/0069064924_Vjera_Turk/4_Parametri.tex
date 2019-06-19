@@ -27,25 +27,26 @@ Parametar - varijabla o kojoj ovisi odreðeni logièki izraz, matematièka formula 
 Kod generiranja matrica treba definirati hoæe li se putovanja koja se protežu kroz više perioda dodijeliti vremenskom okviru u kojem zapoèinju ili u kojem završavaju. Iako ponekad nije specificirano, autori \cite{Bera:2011.} \cite{Filic:2016.} \cite{Gundlegard:2016.} sva putovanja dodjeljuju intervalu u kojem je putovanje zapoèeto. Teralytics u praksi generira obje vrste matrica \cite{Teralytics:2017.}.
 \cite{Gundlegard:2016.} kako bi uvrstio što više putovanja, ne zanemaruje one zapise iz kojih nije jasno vidljiv poèetak putovanja veæ takva putovanja dodjeljuje na osnovu vjerojatnosti da su zapoèela u odreðenom periodu. Slièan postupak spominje se i u \cite{Toole:2015.} gdje za izraèun vjerojatnosti posežu za nacionalnim anketama ili frekvencijom poziva.
 
-Usporedba matrica iz razlièitih izvora (ankete i \gls{cdr}) s 2 razlièite definicije putovanja (samo putovanja \gls{hw} i \gls{wh} te sva putovanja) pokazala se kao loš pristup, razumljivo su matrice imale mali stupanj sliènosti no neoèekivano je i strukturalna sliènost bila vrlo mala. \cite{Bonnel:2015.}
-
-
+Usporedba matrica iz razlièitih izvora (ankete i \gls{cdr}) s 2 razlièite definicije putovanja (samo putovanja \gls{hw} i \gls{wh} te sva putovanja) pokazala se kao loš pristup, razumljivo su matrice imale mali stupanj sliènosti ne sasvim oèekivano je i strukturalna sliènost bila vrlo mala. \cite{Bonnel:2015.} Isti zakljuèak kasnije iznosi i \cite{Gundlegard:2016.} èije grafièke prikaze matrica (toplinske matrice engl. (\textit{heatmap} \cite{Filic:2016.}) možemo vidjeti na slici \ref{fig:journeys}.
 
 %The comparison between the matrices obtained from commuting and mobile phone data provide quite limited results. It is reasonable for the estimated number of trips to differ, as commuting data only relates to trips from the individual’s home to their place of work or study, while mobile phone data cover all trip purposes. But the analysis we have performed also show that the structures of the matrices have little in common. There is thus a high degree of dispersion in the rates of variation between the two sources of origin-destination data. This preliminary work was conducted on the basis of fairly strong hypotheses. It is therefore quite possible that more detailed analysis would make it possible to moderate some of the strongest hypotheses and improve comparability. Nevertheless, the only trip purposes covered by commuting data are work and study. It would therefore be necessary to be able to estimate the location of the home and place of work or study of the individuals from mobile phone data in order to significantly improve the matrices produced from this source. Even if a number of algorithms have been described in the literature (Chen et al., 2014; Calabrese et al., 2013; Phithakkitnukoon et al., 2012), our identification of these locations is bound to be uncertain unless we have a large number of events for each mobile phone, which is not the case with the data that we have used. It seems certain that the analysis of the mobile phone data from smartphones which are frequently connected to web-based applications would make it possible to attempt this type of analysis.
 
+- prosjeèan broj putovanja po stanovniku/ispitaniku Netko:nekad nešto tipa 3 i 4.5, ugl. nešto veæi broj za CDR \\
 
-- prosjeèan broj putovanja po stanovniku/ispitaniku Netko:nekad nešto tipa 3 i 4.5, ugl nešto veæi broj za CDR \\
 
 
-\begin{figure}[!htbp]
+\begin{figure}[!htpb]
 	\begin{center}
-		\includegraphics[width=15cm,keepaspectratio=true]{short_n_long_journeys}
-		\caption{** dodati caption **\cite{Gundlegard:2016.}}
+		\subfloat[Matrica u kojoj je putovanje definirano kao zabilježeni pomak izmeðu 2  antene - \textit{kratka putovanja} ]{\label{fig:short_journeys}
+			\includegraphics[height=7cm,width=10cm,keepaspectratio=true]{short_journeys}}\\ 
+		%\hspace{10pt}
+		\subfloat[Matrica u kojoj je putovanje definirano kao promjena pozicije izmeðu 2 prethodno definirana perioda, odnosno izmeðu položaja na kojima korisnik pretežito boravi u ta 2 perioda - definiranjem tih perioda pokušavaju se opisati putovanja od prebivališta na posao i s posla nazad na prebivalište engl. \textit{commuting trips} ]
+		{\label{fig:long_journeys}
+			\includegraphics[height=7cm,keepaspectratio=true]{long_journeys}}
+		\caption{ Dvije matrice - produkti razlièitih definicija putovanja. Dobivene su iz potpuno istog izvora \gls{cdr} zapisa. \cite{Gundlegard:2016.}}
 		\label{fig:journeys}
 	\end{center}
 \end{figure}
-
-
 
 \subsection{Prostorna razluèivost (Rezolucija)}
 

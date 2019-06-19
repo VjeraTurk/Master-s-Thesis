@@ -240,13 +240,12 @@ U jednom od svojih radova grupa autora kvantizira vezu izmeðu ukupno 23 namjensk
 
  \subsection{OpenStreetMap}
 \gls{osm} je svjetski raširen projekt koji kreira i pruža slobodne zemljopisne podatke (zemljovide gradova i naselja) temeljen na volonterskom doprinosu zajednice. Pruža detaljne i ažurne digitalne zemljovide kompatibilne s \gls{gis} aplikacijama. 
-Zapoèet je prije 15 godina, u Ujedinjenom Kraljevstvu, kao odgovor na tehnièka ili pravna ogranièenja postojeæih "slobodnih" baza prostornih podataka kao što je Google Maps. Zajednièki doprinos i meðusobna kontrola unosa održavaju kartu na visokoj razini kvalitete i toènosti.
+Zapoèet je prije 15 godina, u Ujedinjenom Kraljevstvu, kao odgovor na tehnièka ili pravna ogranièenja postojeæih "slobodnih" baza prostornih podataka kao što je GoogleMaps. Zajednièki doprinos i meðusobna kontrola unosa održavaju kartu na visokoj razini kvalitete i toènosti.
 
 \subsubsection{Izvor infrastrukture} 
 Jedan od naèina na koji \gls{osm} doprinosi istraživanjima u ovom podruèju je kao izvor prometne infrastrukture i pripadajuæih meta podataka (kolnik, mostovi, ogranièenja brzine...). Raspodjela toka po prometnoj infrastrukturi nadilazi podruèje ovog rada no jest dio problematike modeliranja prometa. \cite{Toole:2015.} 
 %(jedan od radova koristi za broj traka na auto cesti jedan za provjeru naseljenosti podruèja/broj katova zgrada)
-
-
+Još jedna moguæa uloga spominje u potpoglavlju koje opisuje interpolaciju Voronoi æelija.
 
  \subsubsection{Model raspodjele toka}
 Inovativni pristup kontekstualizaciji toka korištenjem OpenStreetMap baze predstavljen je u radu \cite{Stupar:2018.}. Na osnovu pripadajuæih opisnih podataka, prostorni objekti na podruèju interesa kategorizirani su prema tipu socio-ekonomske aktivnosti u koju su ukljuèeni. Definirano je ukupno 6 kategorija:
@@ -340,15 +339,16 @@ Prikaz šesterokuta za grad Shenzhen možemo vidjeti an slici \ref{fig:Hexagons}
 
 
 \subsubsection{Interpolacija i usporedba}
-\cite{Toole:2015.}
-\cite{Bahoken:2013.}
+(...)\cite{Toole:2015.}
+\cite{Bahoken:2013.}\\
 
-\cite{Goulding:2016.} Voronoi $->$ pravokutna uniformna podjela
+Postupak konverzije broja putovanja iz prostorne podjele na Voronoi æelije u drugu prostornu podjelu, npr. uniformnu kvadratnu mrežu (æelije $1 km^2$), opisan u \cite{Goulding:2016.}. U postupku odreðivanja postotka ukupnog toka Voronoi æelije koji æe se dodijeliti novoj kvadratnoj æeliji predlaže se uzeti u obzir: površinu preklapanja tih æelija, broj zgrada ili ukupnu površinu zgrada (ukljuèujuæi katove) na podruèju preklapanja tih æelija.
+Na slici \ref{fig:interpolation} je prikazan 3 oblik interpolacije gdje su korišteni podaci o ukupnoj kvadratnoj površini zgrada. 
 
 \begin{figure}[!htbp]
 	\begin{center}
-		\includegraphics[width=6cm,keepaspectratio=true]{interpolation}
-		\caption{  ** dodati caption ** \cite{Goulding:2016.}}
+		\includegraphics[width=7cm,keepaspectratio=true]{interpolation}
+		\caption{Primjer mozaika \textit{krhotina} koje dozvoljavaju interpolaciju izmeðu Voronoi æelija i kvadratne mreže. Nijansa odražava postotak površine zgrada u \textit{krhotini} u odnosu na cijelu Voronoi æeliju kojoj pripada. Rezultat se dobiva na osnovu tih \textit{težinskih faktora} polazišne i odredišne \textit{krhotine} i pripadajuæih Vornoi æelija, sumom svih rezultata krhotina jedne kvadratne æelije izraèuna se konaèni tok. \cite{Goulding:2016.}}
 		\label{fig:interpolation}
 	\end{center}
 \end{figure}

@@ -55,21 +55,28 @@ Prema hrvatskoj enciklopediji definicija razluèivosti (rezolucije) glasi: mjera 
 Kod \gls{pom} ...\\
 Rezolucija æe ovisiti o toènosti položaja! ...\\
 
-Voronoi æelije takoðer je moguæe ugnijezditi (što se èesto radi kod usporedbe s matricama dobivenim drugim postupkom),a pritom se može u matricu zabilježiti i aproksimacija internog toka, odnosno broja putovanja unutar nove æelije (popuniti dijagonalu). Postotak eksternih putovanja koji se gubi u procesu agregacije Voronoi æelija analiziran je  za matrice iz regije Picardie u Francuskoj.
+Voronoi æelije takoðer je moguæe ugnijezditi (što se èesto radi kod usporedbe s matricama dobivenim drugim postupkom), a pritom se može u matricu zabilježiti i aproksimacija internog toka, odnosno broja putovanja unutar nove æelije (popuniti dijagonalu). Postotak eksternih putovanja koji se gubi u procesu agregacije Voronoi æelija analiziran je  za matrice iz regije Picardie u Francuskoj.
 Agregacijom na razinu \textit{Urban Areas} (podruèja oko gradova) 85\% svih putovanja postaje internim putovanjima, a na razini \textit{Urban Cores} (podruèja oko veæih gradova) èak 97\% poèetno zabilježenih putovanja je interno, te ostaje samo 3\% eksternih putovanja. \cite{Bahoken:2013.}. Sliènu situaciju opisuje i \cite{Graells-Garrido:2016.} (Vidi sliku \ref{fig:diagonal})
 
-\begin{figure}[!htbp]
+
+\begin{figure}[!htpb]
 	\begin{center}
-		\includegraphics[width=10cm,keepaspectratio=true]{diagonal_CDR}
-		\caption{** dodati caption ** \cite{Graells-Garrido:2016.}}
+		\subfloat[izvor podataka anketa ]{\label{fig:survey}
+			\includegraphics[height=9cm,keepaspectratio=true]{survey}}\\ 
+		%\hspace{10pt}
+		\subfloat[Izvor podataka \gls{cdr}]
+		{\label{fig:cdr}
+			\includegraphics[height=9cm,keepaspectratio=true]{cdr}}
+		\caption{Distribucija \gls{cdr} putovanja na podruèju Santiaga, Èile. Matrica je normalizirana prema redovima (polazištima) (*) \cite{Graells-Garrido:2016.}}
 		\label{fig:diagonal}
 	\end{center}
 \end{figure}
 
+
 %Ruralna podruèja rjeðe zahtijevaju agregiranje æelija.
 
 
-Na temelju usporedbi matrica kretanja u 4 razlièita grada, dobivenih iz \gls{cdr} i iz anketa, gdje je svaki grad u anketnim matricama imao svoju prostornu podjelu odnosno rezoluciju, Toole u svom radu \cite{Toole:2015.} (oèekivano) zakljuèuje da sa \textbf{smanjenjem rezolucije (visokim stupnjem agregacije Voronoi æelija) stupanj korelacije s matricama iz ankete raste}. 
+Na temelju usporedbi matrica kretanja u 4 razlièita grada, dobivenih iz \gls{cdr} i iz anketa, gdje je svaki grad u anketnim matricama imao svoju prostornu podjelu odnosno rezoluciju, Toole u svom radu \cite{Toole:2015.} (oèekivano) zakljuèuje da sa \textbf{smanjenjem rezolucije (visokim stupnjem agregacije Voronoi æelija) stupanj korelacije s matricama iz ankete (za isti grad) raste}. 
 
 
 \begin{figure}[!htbp]
@@ -135,7 +142,8 @@ Ukupan broj odlazaka/dolazaka po vremenskom okviru za cijelu matricu.\\
 za razliku od izvlaèenja najaktivnijih korisnika 
 -\cite{Calabrese:2011.} uzima samo sluèajno odabranih 25\% korisnika (njih 1 milijun) da pojednostavi analizu. ...Dobro šta, da može pješke na prste raèunati?!\\
 - broj aktivnih korisnika unutar jednog tjedna jako varira iz dana u dan.  \cite{Bonnel:2015.}\\
--faktor skaliranja spominje se u najmanje 2 istraživanja, u jednom se radi o x 10
+-faktor skaliranja spominje se u najmanje 2 istraživanja, u jednom se radi o x 10 \\
+- noramlizacija -? koja je praksa ? \cite{Graells-Garrido:2016.}
 
 %\subsection{Geometrija prostorne podjele}
 %(ne)uniformna podjela ...

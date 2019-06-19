@@ -189,16 +189,13 @@ Skupovi svih putovanja u pripadajuæem vremenskom okviru saèinjavaju matricu za t
 Kada su dostupni zapisi prikupljani dulje vremensko razdoblje, tjednima ili mjesecima èesto se putovanja odnosno matrice mogu definirati na drugaèiji naèin. Pojednostavljeno, analizom zapisa može se utvrdi na kojem položaju (u kojoj æeliji) neki pojedinci pretežito borave u tipiènom radnom vremenu te u kojoj tokom noæi. Prva æelija za njihova putovanja postaje \textit{Work} destinacija, druga \textit{Home}, a sve preostale destinacije svrstaju se u zasebnu kategoriju \textit{Other}. Potom se generiraju matrice koje ukljuèuju samo putovanja iz jednog tipa destinacije u drugi npr. \gls{hw} i \gls{wh}. \cite{Goulding:2016.} \cite{Calabrese:2011.}\cite{Graells-Garrido:2016.} \cite{Toole:2015.} \cite{Bahoken:2013.}. %\cite{Frias-Martinez:2012.} - oni su kao nešto protiv toga
 Jedan od razloga je da su takve matrice usporedive s onima dobivenim iz anketa stanovništva s istom podjelom putovanja.
 
-\gls{cdr} zapisi u trajanju od 6 mjeseci bili su dovoljni za konaènu toènu procjenu položaja èak 98\% kuæanstava nešto više od 39 tisuæa najaktivnijih korisnika na podruèju Pariza i Chicaga, izdvojenih iz ukupnog skupa korisnika (milijuni korisnika). U podacima se ispitivalo gdje svaki od korisnika provodi najviše vremena izmeðu 0:00 i 6:00 sati. \cite{Schneider:2013.} 2 godine kasnije bitno drugaèiju definiciju daje \cite{Toole:2015.} gdje definira kuæanstvo kao mjesto gdje korisnik provodi najviše vremena izmeðu 20:00 i 7:00 na radne dane, a radno mjesto kao mjesto gdje korisnik provodi najviše vremena, barem 3 puta tjedno, izmeðu 7:00 i 20:00. Ostale lokacije svrstava u kategoriju \textit{Ostalo eng. Other}. 
-
-22:00 do 7:00 i 9:00 do 16:00 \cite{Gundlegard:2016.}
-
+\gls{cdr} zapisi u trajanju od 6 mjeseci bili su dovoljni za konaènu toènu procjenu položaja èak 98\% kuæanstava nešto više od 39 tisuæa najaktivnijih korisnika na podruèju Pariza i Chicaga, izdvojenih iz ukupnog skupa korisnika (milijuni korisnika). U podacima se ispitivalo gdje svaki od korisnika provodi najviše vremena izmeðu 0:00 i 6:00 sati. \cite{Schneider:2013.} 2 godine kasnije bitno drugaèiju definiciju daje \cite{Toole:2015.} gdje definira kuæanstvo kao mjesto gdje korisnik provodi najviše vremena izmeðu 20:00 i 7:00 na radne dane, a radno mjesto kao mjesto gdje korisnik provodi najviše vremena, barem 3 puta tjedno, izmeðu 7:00 i 20:00. Ostale lokacije svrstava u kategoriju \textit{Ostalo eng. Other} dok \cite{Gundlegard:2016.} koristi intervale od 22:00 do 7:00 te od 9:00 do 16:00.
 
 Bitno je naglasiti da kod ovih vrsta matrica najèešæe naglasak nije stavljen na dobru vremensku rezoluciju.(*)\cite{Gundlegard:2016.}
 
 %to overcome the small number of night calls, the location which is visited most frequently during all nights between 24.00 and 06.00 of a single user is assigned as the user’s home location; in our survey this assumption correctly identifies over 98 per cent of the home locations for a single day. 
 
-
+(...)\\
 - Duža razdoblja prikupljanja podataka omoguæuju uoèavanje uzoraka kretanja i motiva (teorija mreža). 
 \cite{Schneider:2013.} 
 
@@ -284,7 +281,7 @@ Prema podatcima korištenim u istraživanju iz 2018. \cite{Zheng:2018.} Shenzhen j
 
 \subsubsection{Jedinice samouprave  i anketne jedinice}
 \cite{Mellegard:2011.} ne definira unaprijed broj grupa veæ za grupaciju koristi \textit{mean-shift} algoritam koji sam odreðuje broj grupa na podruèju Švedske, potom koristeæi \gls{osm} grupe veže uz imena gradova i mjesta.
-U istraživanju \cite{Coscia:2015.} bazne stanice na podruèju Kolumbije grupiraju po jedinicama samouprave (eng. \textit{municipalities}). Isti postupak je korišten i u istraživanju na podruèju Madrida, kako bi matrice u konaènici bile usporedive s onima dobivenim iz anketa. \cite{Frias-Martinez:2012.}.
+U istraživanju \cite{Coscia:2015.} bazne stanice na podruèju Kolumbije grupiraju po jedinicama samouprave (eng. \textit{municipalities}). Isti postupak je korišten i u istraživanju na podruèju Madrida, kako bi matrice u konaènici bile usporedive s onima dobivenim iz anketa \cite{Frias-Martinez:2012.}.
 Prikaz jedinica samouprave za grad Shenzhen možemo vidjeti an slici \ref{fig:Municipality}
 
 % a potom grupirane koristeæi \textit{Infomap} algoritam  .
@@ -325,9 +322,7 @@ Gustoæa Voronoi æelija snažno je korelirana s gustoæom stanovništva te stoga bol
 \subsubsection{Pravokutna mreža i mreža šeterokuta}
 Uniformna podjela na pravokutne blokove od 1 kvadratni kilometar spominje se kao dobra praksa \cite{Goulding:2016.} (...)
 
-Podruèje pokrivanja bazne stanice na grafikama se standardno prikazuje kao šesterokut ( heksagon). \cite{Teralytics:2017.} izmeðu ostalih podjela koristi i šesterokute koje po potrebi ugnježðuje i tako mijenja rezoluciju u kojoj promatra gibanja. Tvrde da su se u nekim segmentima pokazali i 13\% bolji od pravokutne mreže. 
-
-Prikaz šesterokuta za grad Shenzhen možemo vidjeti an slici \ref{fig:Hexagons}
+Podruèje pokrivanja bazne stanice na grafikama se standardno prikazuje kao šesterokut (heksagon). \cite{Teralytics:2017.} izmeðu ostalih podjela koristi i šesterokute koje po potrebi ugnježðuje i tako mijenja rezoluciju u kojoj promatra gibanja. Tvrde da su se u nekim segmentima pokazali i 13\% bolji od pravokutne mreže. Prikaz šesterokuta za grad Shenzhen možemo vidjeti an slici \ref{fig:Hexagons}
 
 \begin{figure}[!htbp]
 	\begin{center}
@@ -368,9 +363,9 @@ U sklopu projekta \gls{d4d} francuski operater \textit{Orange} ustupio je na kor
 \end{figure}
 
 \section{Vremenska domena}
-
--tranzitna matrica?,matrica bez vremenske dimenzije (odnosno ima samo jedan vremenski okvir)
--radni dan, vikend, petak drugaèiji -> sposobnost CDR da uhvate razlike
+(...)\\
+-tranzitna matrica vs. matrica bez vremenske dimenzije (odnosno ima samo jedan vremenski okvir)\\
+-radni dan, vikend, petak drugaèiji -> sposobnost CDR da uhvate razlike\\
 -sposobnost da uhvati sezonske promjene
 
 
@@ -390,16 +385,20 @@ U sklopu projekta \gls{d4d} francuski operater \textit{Orange} ustupio je na kor
         
 \newpage
 \section{Drugi primjeri automatskog prikupljanja}
-\subsection{Dodatni telekomunikacijski podatci ? }
+\subsection{Dodatni telekomunikacijski podatci (?) }
 \subsection{Združena oèitanja prijamnika za satelitsku navigaciju}
+(...)\\
 komercijalna vozila, Taxi
 
 Jedno istraživanje matrica iz cdr je eliminiralo zapise onih korisnika koju su radili dulja "neprekidna putovanja" pod napomenom da se radi o taksistima i sl. te da ih neæe uzeti u obzir.
 
 \subsection{Javni prijevoz i \textit{pametne kartice }(\textit{Smart Card }sustavi)}
-82\% putovanja javnim prijevozom naprave korisnici javnog prijevoza sa pametnim karticama.  \cite{Travassoli:2016.}
+(..)\\
+82\% putovanja javnim prijevozom naprave korisnici javnog prijevoza sa pametnim karticama.  \cite{Travassoli:2016.}\\
+- \cite{Kuhlm:2015.}
 
 \subsection{WiFi}
-%I track
+(...)\\
+- ITrack.CTrack,VTrack
 
 \vspace{10pt}

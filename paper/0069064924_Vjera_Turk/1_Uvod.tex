@@ -109,7 +109,7 @@ Tranzitna, t-POM
 Koncentracija u radu na CDR (?)
 \end{comment}
 
-Matematièko modeliranje prometa zahtjeva veliku kolièinu podataka - informacija o prometnoj mreži i prometnoj potražnji. Toènost modelirane (planirane) prometne situacije ovisi o kvaliteti dostupnih informacija te kako su podaci kombinirani, koji težinski faktori su primijenjeni za razlièite izvore. Prometna potražnja kljuèna je komponenta te stoga gotovo svaki prometni model zahtjeva POM-u koja specificira prometnu potražnju izmeðu zona u prometnoj mreži. Toèna \gls{pom}-a osnova je za odluke u mnogim Inteligentnim Transportnim Sustavima engl. Intelligent Transportation Systems (ITS) koji su zauzvrat kljuèni za izbor ruta u razlièitim sustavima navigacijskog navoðenja. Neke od pretpostavki kojima se vode u modeliranju su primjerice da je ukupna dnevna potražnja  podjednaka u oba smjera kod svakog para zona na podruèju grada \cite{Peterson:2007.}, da svi korisnici imaju saznanja o situaciji na cesti \cite{Goulding:2016.} te da je mobilnost opæenito manja tijekom zime nego tijekom ljeta \cite{Bonnel:2015.}. %383 
+Matematièko modeliranje prometa zahtjeva veliku kolièinu podataka - informacija o prometnoj mreži i prometnoj potražnji. Toènost modelirane (planirane) prometne situacije ovisi o kvaliteti dostupnih informacija te kako su podaci kombinirani, koji težinski faktori su primijenjeni za razlièite izvore. Prometna potražnja kljuèna je komponenta te stoga gotovo svaki prometni model zahtjeva POM-u koja specificira prometnu potražnju izmeðu zona u prometnoj mreži. Toèna \gls{pom}-a osnova je za odluke u mnogim \gls{its} koji su zauzvrat kljuèni za izbor ruta u razlièitim sustavima navigacijskog navoðenja. Neke od pretpostavki kojima se vode u modeliranju su primjerice da je ukupna dnevna potražnja  podjednaka u oba smjera kod svakog para zona na podruèju grada \cite{Peterson:2007.}, da svi korisnici imaju saznanja o situaciji na cesti \cite{Goulding:2016.} te da je mobilnost opæenito manja tijekom zime nego tijekom ljeta \cite{Bonnel:2015.}. %383 
 
 Klasièan bazni model za procjenu prometne potražnje je Gravitacijski model (eng. \textit{Gravity model})  koji kod proraèuna "privlaènosti" 2 zone uzima u obzir gustoæu populacije, udaljenost i troškove putovanja. Izvedene verzije integriraju i neke druge (socio-ekonomske) faktore. \cite{Gundlegard:2016.}
 
@@ -133,7 +133,8 @@ Urban sprawl and population growth have resulted in increasingly severe traffic 
 
 \subsection{Pokretna osjetila}
 %rad iz 1972
-Osnovna ideja pokretnih osjetila je da vozila koja se kreæu po prometnoj mreži i sastavni su dio prometnog toka prikupljaju i šalju podatke. Nužan zahtjev koji treba biti ispunjen kod pokretnih osjetila je poznavanje pozicije vozila u odreðenim vremenskim trenucima. Za to se koristi \gls{gnss} ili se vozila identificiraju na odreðenim toèkama. Engleski naziv za ovu metodu je \gls{fcd}. Danas je \gls{fcd} komplementarni izvor vrijednih podataka i postaje najvažnija tehnologija prikupljanja podataka inteligentnih transportnih sustava. U prikupljanju podataka sudjeluju “namjenska” vozila (taksi, distribucija roba, javni prijevoz, službena vozila i dr.), a mora biti uspostavljen naèin uèestalog slanja podataka o položaju a najèešæe se odvija preko \gls{gsm}, Wi-fi pa i Bluetooth tehnologije. \cite{Jelusic:2016.} 
+Osnovna ideja pokretnih osjetila je da vozila koja se kreæu po prometnoj mreži i sastavni su dio prometnog toka prikupljaju i šalju podatke. Nužan zahtjev koji treba biti ispunjen kod pokretnih osjetila je poznavanje pozicije vozila u odreðenim vremenskim trenucima. Za to se koristi \gls{gnss} ili se vozila identificiraju na odreðenim toèkama. Engleski naziv za ovu metodu je \gls{fcd}. Danas je \gls{fcd} %komplementarni 
+izvor vrijednih podataka i postaje najvažnija tehnologija prikupljanja podataka u \gls{its}. U prikupljanju podataka sudjeluju “namjenska” vozila (taksi, distribucija robe, javni prijevoz, službena vozila i dr.) i mora biti uspostavljen naèin uèestalog slanja podataka o položaju, a najèešæe se odvija preko \gls{gsm}, Wi-fi pa i Bluetooth tehnologije. \cite{Jelusic:2016.} 
 
 Ukoliko pokretno osjetilo nije vozilo veæ pametni telefon tada se èesto koristi naziv \gls{fpd}. \gls{fpd} se odnosi na prikupljanje podataka pomoæu mobilnih (pametnih) telefona neovisno o naèinu odreðivanja položaja - korištenjem \gls{gnss} ili pomoæu javne pokretne mreže. %Odreðivanje korištenjem \gls{gnss} prijemnika ponovno zahtjeva slanje podataka kao i kod FCD. 
 
@@ -143,16 +144,16 @@ Zaseban pristup unutar \gls{fpd} je odreðivanje položaja unutar javne pokretne m
 
 %\subsubsection{\gls{cdr}}
 
-Kako bi pružali i naplaæivali usluge, mobilni operateri moraju prikupljati podatke o pokretnim stanicama korisnika. Pojednostavljeno, da bi se usmjerio poziv do odgovarajuæeg ureðaja, mora se biti poznato s koje bazne stanice odaslati signal. Naziv za podatke koje operateri prikupljaju kako bi naplaæivali usluge glasi \gls{cdr}. Radi se o zapisima aktivnosti u mobilnoj mreži - pozivima, porukama (engl. Short Messaging Service - SMS) te zapoèetom prijenosu mobilnih podataka.
-Tipièan zapis izmeðu ostalog sastoji se od identifikacijske oznake pristupne toèke radijske mreže (bazne stanice), vremenskog žiga poèetka telekomunikacijske aktivnosti i trajanja aktivnosti. Istraživanje veza izmeðu kretanja i društvenih veza (poznanstava) \cite{Coscia:2015.} od operatera je dobilo podatke i na koju baznu stanicu je poziv usmjeren.
+Kako bi pružali i naplaæivali usluge, mobilni operateri moraju prikupljati podatke o pokretnim stanicama korisnika. Pojednostavljeno, da bi se uspostavio poziv od/do odgovarajuæeg ureðaja, mora se biti poznato s koje bazne stanice odaslati signal. Naziv za podatke koje operateri prikupljaju kako bi naplaæivali usluge glasi \gls{cdr}. Radi se o zapisima aktivnosti u mobilnoj mreži - pozivima, porukama (engl. Short Messaging Service - SMS) te zapoèetom prijenosu mobilnih podataka.
+Tipièan zapis izmeðu ostalog sastoji se od: identifikacijske oznake pristupne toèke radijske mreže (bazne stanice), vremenskog žiga poèetka telekomunikacijske aktivnosti i trajanja telekomunikacijske aktivnosti. Istraživanje veza izmeðu kretanja i društvenih veza (poznanstava) \cite{Coscia:2015.} od operatera je dobilo podatke i na koju baznu stanicu je poziv usmjeren.
 
 %\subsubsection{\textit{Signaling data}}
-Dodatni podatci koje operateri prate (\textit{Signaling data}) prikupljani su pomoæu sustava za ispitivanje kvalitete mreže. Ukljuèuju \textit{handover} podatke - podatke o transferu na drugu baznu stanicu tijekom trajanja aktivnosti (poziva),  \textit{Location Area updates} - podatke prokupljane svakih 20 min do 2 sata o tome na koju skupinu baznih stanica je pokretna stanica spojena, te informacije o tome kada je pokretna stanica ukljuèena u mrežu i iskljuèena iz mreže. Pri izradi matrica, ako su dostupni, svi ovi podatci mogu se uzeti u obzir i poboljšati model.
+Dodatni podatci koje operateri prate prikupljani su pomoæu sustava za ispitivanje kvalitete mreže (\textit{Signaling data}). Ukljuèuju \textit{handover} podatke - podatke o transferu na drugu baznu stanicu tijekom trajanja telekomunikacijske aktivnosti, \textit{Location Area Updates} - podatke prikupljane svakih 20 min do 2 sata o tome na koju skupinu baznih stanica je pokretna stanica spojena, te informacije o tome kada je pokretna stanica ukljuèena u mrežu i iskljuèena iz mreže. Pri izradi matrica, ako su dostupni, svi ovi podatci mogu se uzeti u obzir i znatno poboljšati model.
 	
 U novije vrijeme znanstvenici predlažu metode u kojima koriste upravo anonimizirane \gls{cdr} kao izvor podataka za generiranje \gls{pom}-a. 
-\cite{Frias-Martinez:2012.} \cite{Alhazzani:2016.} \cite{Gundlegard:2016.} iako se sama ideja spominje u istraživanjima još iz 1994., gotovo od kad je javna pokretna mreža postala široko dostupna. \cite{Gundlegard:2016.} Ako u daljnjem tekstu nije spomenut izvor, radi se o matricama generiranim iz \gls{cdr}.
+ \cite{Gundlegard:2016.} \cite{Alhazzani:2016.} \cite{Frias-Martinez:2012.}  iako se sama ideja spominje u istraživanjima još iz 1994., gotovo od kad je javna pokretna mreža postala široko dostupna.\cite{Gundlegard:2016.} \textbf{U ostatku rada, na mjestima gdje nije naveden izvor, radi se o postupku ili matricama generiranim iz \gls{cdr}}.
 
-Zanimljivo je ovdje spomenuti europsku inicijativu \textit{eCall} \cite{eCall:2018.} za brzu pomoæ stradalima u prometnim nesreæama bilo gdje u Europskoj Uniji. \textit{eCall} zahtjeva da u svakom novom motornom vozilu bude ugraðen ureðaj koji u sluèaju prometne nesreæe automatski obavijesti centar 112 te mu šalje informacije o aktivaciji zraènih jastuka, prikupljene podatke osjetila za procjenu jaèine sudara i u dakako položaj vozila u trenutku prometne nesreæe. Takoðer treba omoguæiti uspostavu poziva (\gls{gsm}). Prognoza je da æe se korištenjem tog sustava vrijeme odziva (dolaska službi na mjesto prometne nesreæe) smanjiti za izmeðu 40\% i 50\%. Od travnja 2018. svi novi automobili u prodaji u Europskoj Uniji imaju ugraðen ovaj ureðaj. Nakon uspješnog uspostavljanja sustava oèekuje se da bi se ureðaj mogao poèeti koristiti i u druge svrhe.
+Zanimljivo je ovdje spomenuti europsku inicijativu \textit{eCall} za brzu pomoæ stradalima u prometnim nesreæama bilo gdje u Europskoj Uniji. \textit{eCall} zahtjeva da u svakom novom motornom vozilu bude ugraðen ureðaj koji u sluèaju prometne nesreæe automatski obavijesti centar 112 te mu šalje informacije o aktivaciji zraènih jastuka, prikupljene podatke osjetila za procjenu jaèine sudara i u dakako položaj vozila u trenutku prometne nesreæe. Takoðer treba omoguæiti uspostavu poziva (\gls{gsm}). Prognoza je da æe se korištenjem tog sustava vrijeme odziva (dolaska službi na mjesto prometne nesreæe) smanjiti za izmeðu 40\% i 50\%. Od travnja 2018. svi novi automobili u prodaji u Europskoj Uniji imaju ugraðen ovaj ureðaj. Nakon uspješnog uspostavljanja sustava oèekuje se da bi se ureðaj mogao poèeti koristiti i u druge svrhe. \cite{eCall:2018.}
 
 
 \begin{comment}
@@ -168,15 +169,16 @@ Unlike traditional analyses, the nature of this data mining approach forces us t
 This notion is parameterized to ensure we have sufficient confidence that any stop we have detected is not a transient location, but actually a location that the individual has actually settled in.
 \end{comment}
 
-Danas uz sveprisutnost i prodornost tehnologije, podatci koje generiraju pametni telefoni omoguæuju podatkovnim analitièarima razumjeti ponašanje u brojnim domenama pojedinaca, ukljuèujuæi i njihov obrazac kretanja. Kao što je veæ spomenuto matrice je moguæe generirati iz \gls{cdr} koje operateri prikupljaju u svrhu pružanja i naplaæivanja usluge. Za ovu metodu stoga ne postoji potreba za dodatnim ureðajima, sustavima ili protokolima centralnog prikupljanja položaja kao što je to u sluèaju kada se položaj odreðuje pomoæu \gls{gnss} prijamnika. 
+Danas uz sveprisutnost i prodornost tehnologije, podatci koje generiraju pametni telefoni omoguæuju podatkovnim analitièarima razumjeti ponašanje pojedinaca u brojnim domenama, ukljuèujuæi i njihov obrazac kretanja. Kao što je veæ spomenuto matrice je moguæe generirati iz \gls{cdr} koje operateri prikupljaju u svrhu pružanja i naplaæivanja usluge. Za ovu metodu stoga ne postoji potreba za dodatnim ureðajima, sustavima ili protokolima centralnog prikupljanja položaja kao što je to u sluèaju kada se položaj odreðuje pomoæu \gls{gnss} prijamnika. 
 
-Pokriva pješaèki promet, 
-%Penetracija od 82\%, 9x\% -> pronaæi radove, Dobra pokrivenost i zemljama u razvoju (u Africi gdje nedostaje landline) Nemaju ni porometnu infrastrukturu pa se može planirati razvoj
-(...anonimizacija i k-anonimizacija...).
+%Pokriva pješaèki promet, 
+%%Penetracija od 82\%, 9x\% -> pronaæi radove, Dobra pokrivenost i zemljama u razvoju (u Africi gdje nedostaje landline) Nemaju ni porometnu infrastrukturu pa se može planirati razvoj
+%(...anonimizacija i k-anonimizacija...).
 
 \subsection{Putovanje}
-Priroda ovog pristupa rudarenju podataka za estimaciju POM-a zahtjeva da prvo definiramo što toèno smatramo putovanjem, odnosno polazištem i odredištem putovanja. Zaustavljanje se definira kao skup minimalno \textit{n} dogaðaja (aktivnosti) koji su zabilježeni na istoj poziciji unutar definiranog minimalnog vremenskog perioda. Time se osigurava da se ne radi o tranzitnoj veæ o namjerenoj poziciji zaustavljanja (i suzbija se bilježenje lažnog kretanje kod privremenog spajanja na susjednu bazni stanicu). Algoritam u nizu aktivnosti svakog pojedinca traži takva zaustavljanja. Dobiveni niz kontinuiranog zaustavljanja na razlièitim položajima otkriva kretanje. Algoritam izvlaèi uzastopne parove zaustavljanja te, prema dodatno definiranim kriterijima dozvoljenog minimalnog i maksimalnog vremenskog razmaka izmeðu polaska i dolaska na odredište, ranija æelija zaustavljanja postaje polazište, a kasnija odredište putovanja.
-Skupovi svih putovanja u pripadajuæem vremenskom okviru saèinjavaju matricu za taj vremenski okvir.
+Priroda ovog pristupa rudarenju podataka za estimaciju POM-a zahtjeva da prvo definiramo što toèno smatramo putovanjem, odnosno polazištem i odredištem putovanja. Zaustavljanje se definira kao skup minimalno \textit{n} dogaðaja (aktivnosti) koji su zabilježeni na istoj poziciji unutar definiranog minimalnog vremenskog perioda. Time se osigurava da se ne radi o tranzitnoj veæ o namjerenoj poziciji zaustavljanja (i suzbija se bilježenje lažnog kretanje kod privremenog spajanja na susjednu baznu stanicu). Algoritam u nizu aktivnosti svakog pojedinca traži takva zaustavljanja. Dobiveni niz kontinuiranog zaustavljanja na razlièitim položajima otkriva putanju kretanja. Algoritam izvlaèi uzastopne parove zaustavljanja te, prema dodatno definiranim kriterijima dozvoljenog minimalnog i maksimalnog vremenskog razmaka izmeðu polaska i dolaska na odredište, ranija æelija zaustavljanja postaje polazište, a kasnija odredište putovanja.
+
+Kod izrade tzv. tranzitnih matrica, u kojima je naglasak osim na broj putovanja stavljen i na vremensku domenu, skupovi svih putovanja u pripadajuæem vremenskom okviru saèinjavaju matricu za taj vremenski okvir, te je rezultat generiranja skup matrica.
 	
 
 \begin{comment}
@@ -186,19 +188,13 @@ Skupovi svih putovanja u pripadajuæem vremenskom okviru saèinjavaju matricu za t
 
 \subsection{Kontekst iz samog izvora podataka o kretanju}    
 
-Kada su dostupni zapisi prikupljani dulje vremensko razdoblje, tjednima ili mjesecima èesto se putovanja odnosno matrice mogu definirati na drugaèiji naèin. Pojednostavljeno, analizom zapisa može se utvrdi na kojem položaju (u kojoj æeliji) neki pojedinci pretežito borave u tipiènom radnom vremenu te u kojoj tokom noæi. Prva æelija za njihova putovanja postaje \textit{Work} destinacija, druga \textit{Home}, a sve preostale destinacije svrstaju se u zasebnu kategoriju \textit{Other}. Potom se generiraju matrice koje ukljuèuju samo putovanja iz jednog tipa destinacije u drugi npr. \gls{hw} i \gls{wh}. \cite{Goulding:2016.} \cite{Calabrese:2011.}\cite{Graells-Garrido:2016.} \cite{Toole:2015.} \cite{Bahoken:2013.}. %\cite{Frias-Martinez:2012.} - oni su kao nešto protiv toga
+Kada su dostupni zapisi prikupljani dulje vremensko razdoblje, tjednima ili mjesecima èesto se putovanja odnosno matrice mogu definirati na drugaèiji naèin. Pojednostavljeno, analizom zapisa može se utvrdi na kojem položaju (u kojoj æeliji) neki pojedinci pretežito borave u tipiènom radnom vremenu te u kojoj tokom noæi. Prva æelija za njihova putovanja postaje \textit{Work} destinacija, druga \textit{Home}, a sve preostale destinacije svrstaju se u zasebnu kategoriju \textit{Other}. Potom se generiraju matrice koje ukljuèuju samo putovanja iz jednog tipa destinacije u drugi npr. \gls{hw} i \gls{wh}.\cite{Goulding:2016.}\cite{Graells-Garrido:2016.}\cite{Bahoken:2013.}\cite{Calabrese:2011.}\cite{Toole:2015.}. %\cite{Frias-Martinez:2012.} - oni su kao nešto protiv toga
 Jedan od razloga je da su takve matrice usporedive s onima dobivenim iz anketa stanovništva s istom podjelom putovanja.
 
-\gls{cdr} zapisi u trajanju od 6 mjeseci bili su dovoljni za konaènu toènu procjenu položaja èak 98\% kuæanstava nešto više od 39 tisuæa najaktivnijih korisnika na podruèju Pariza i Chicaga, izdvojenih iz ukupnog skupa korisnika (milijuni korisnika). U podacima se ispitivalo gdje svaki od korisnika provodi najviše vremena izmeðu 0:00 i 6:00 sati. \cite{Schneider:2013.} 2 godine kasnije bitno drugaèiju definiciju daje \cite{Toole:2015.} gdje definira kuæanstvo kao mjesto gdje korisnik provodi najviše vremena izmeðu 20:00 i 7:00 na radne dane, a radno mjesto kao mjesto gdje korisnik provodi najviše vremena, barem 3 puta tjedno, izmeðu 7:00 i 20:00. Ostale lokacije svrstava u kategoriju \textit{Ostalo eng. Other} dok \cite{Gundlegard:2016.} koristi intervale od 22:00 do 7:00 te od 9:00 do 16:00.
-
-Bitno je naglasiti da kod ovih vrsta matrica najèešæe naglasak nije stavljen na dobru vremensku rezoluciju.(*)\cite{Gundlegard:2016.}
-
-%to overcome the small number of night calls, the location which is visited most frequently during all nights between 24.00 and 06.00 of a single user is assigned as the user’s home location; in our survey this assumption correctly identifies over 98 per cent of the home locations for a single day. 
-
+\gls{cdr} zapisi u trajanju od 6 mjeseci bili su dovoljni za konaènu toènu procjenu položaja èak 98\% kuæanstava nešto više od 39 tisuæa najaktivnijih korisnika na podruèju Pariza i Chicaga, izdvojenih iz ukupnog skupa korisnika (milijuni korisnika). U podacima se ispitivalo gdje svaki od korisnika provodi najviše vremena izmeðu 0:00 i 6:00 sati.\cite{Schneider:2013.} Dvije godine kasnije bitno drugaèiju definiciju daje \cite{Toole:2015.} gdje definira kuæanstvo kao mjesto gdje korisnik provodi najviše vremena izmeðu 20:00 i 7:00 na radne dane, a radno mjesto kao mjesto gdje korisnik provodi najviše vremena, barem 3 puta tjedno, izmeðu 7:00 i 20:00  dok \cite{Gundlegard:2016.} koristi intervale od 22:00 do 7:00 te od 9:00 do 16:00. Ostale lokacije svrstava u kategoriju \textit{Ostalo eng. Other}. Bitno je naglasiti da kod ovih vrsta matrica najèešæe naglasak nije stavljen na dobru vremensku rezoluciju kao što je to sluèaj kod tranzitnih. \cite{Gundlegard:2016.} %to overcome the small number of night calls, the location which is visited most frequently during all nights between 24.00 and 06.00 of a single user is assigned as the user’s home location; in our survey this assumption correctly identifies over 98 per cent of the home locations for a single day. 
+Duža razdoblja prikupljanja podataka omoguæuju uoèavanje uzoraka kretanja i motiva (teorija mreža). 
+\cite{Schneider:2013.} \\
 (...)\\
-- Duža razdoblja prikupljanja podataka omoguæuju uoèavanje uzoraka kretanja i motiva (teorija mreža). 
-\cite{Schneider:2013.} 
-
 - \cite{Bahoken:2013.} str. 4 podjela trip-based, activity-based i another approach
 
 
@@ -218,9 +214,9 @@ Iskljuèivo \gls{cdr} zapisi ne osiguravaju rezoluciju pogodnu za odreðivanje mod
  
 %Osim \gls{cdr} operateri prikupljaju dodatne podatke o preusmjeravanju poziva (engl. handover) na druge bazne stanice, (...)  
 
-Teralytics je jedna od mladih kompanija koja nudi uslugu modeliranja prometa iz telekomunikacijskih podataka. Izmeðu ostalog prema brzini kojom se pokretna stanica (ili skupina njih istovremeno) mijenja položaj donose zakljuèak o dominantnom modulu kretanja (pješak, automobil, javni prijevoz, avion). Tajna njihovog uspjeha je da osim \gls{cdr} koriste i ranije spomenute dodatne podatke koji se prikupljaju. \cite{Teralytics:2017.} 
+Teralytics je jedna od mladih kompanija koja nudi uslugu modeliranja prometa iz telekomunikacijskih podataka. Izmeðu ostalog prema brzini kojom pokretna stanica (ili skupina njih istovremeno) mijenja položaj donose zakljuèak o dominantnom modulu kretanja (pješak, automobil, javni prijevoz, avion). Tajna njihovog uspjeha je da osim \gls{cdr} koriste i ranije spomenute dodatne podatke koji se prikupljaju. \cite{Teralytics:2017.} 
 
-Za razliku od tradicionalnih modela prebrojavanja vozila, telekomunikacijski zapisi obuhvaæaju sve module kretanja kao is svu prometnu infrastrukturu, ne samo onu gdje se provode intervjui ili gdje su postavljena osjetila za prebrojavanje prometa. Uklanja potrebu za razlièiti pristup prebrojavanja za pojedini modul kretanja. 
+Za razliku od tradicionalnih modela prebrojavanja vozila, telekomunikacijski zapisi obuhvaæaju sve module kretanja kao i svu prometnu infrastrukturu (kao i podruèja bez razvijene prometne infrastrukture), ne samo onu gdje se provode intervjui ili gdje su postavljena osjetila za prebrojavanje prometa. Uklanja potrebu za razlièitim pristup prebrojavanja za pojedine module kretanja. 
  
 
 %Poznavanjem modula kretanja može se analizirati "carbon footprint grada" jedan rad!!
@@ -232,7 +228,7 @@ Neka istraživanja spojila su ljudsku mobilnost s namjenom zemljišta (land use) i
 % Some studies combined human mobility with land use or POIs data to segment districts in urban areas according to their functions or use. The type of data used to capture human mobility behavior varies between individual GPS traces [10, 11], taxi pick up/drop off locations as in [7, 12] , Call Detail Records (CDRs) as in [2, 8], social media check ins as in [13–15], and bus smart card data as in [16]. 
 \end{comment}
   \subsection{\textit{Points of Interest}}
-U jednom od svojih radova grupa autora kvantizira vezu izmeðu ukupno 23 namjenske kategorije \gls{pois} i onim što nazivaju 3 tipa privlaèenja (...nabrojiti neke kategorije). Svaki tip privlaèenja ima karakteristièan tok (gustoæu ukupnog toka, udaljenost i disperziju polazišta tokova usmjerenih prema objektu tog tipa privlaèenja). \cite{Alhazzani:2016.}  U radu koriste podatke iz službene baze s 12,000 \gls{pois} grada u pitanju i \gls{cdr} zapisima iz razdoblja od mjesec dana. 
+U jednom od svojih radova grupa autora kvantizira vezu izmeðu ukupno 23 namjenske kategorije \gls{pois} ( npr. tvornice, bolnice, javne škole, religijski objekti, hoteli, knjižnice, sportski objekti...) i onime što nazivaju 3 tipa privlaèenja . Svaki tip privlaèenja ima karakteristièan tok (gustoæu ukupnog toka, udaljenost i disperziju polazišta tokova usmjerenih prema objektu tog tipa privlaèenja). Svaku od kategorija karakterizira jedan od ta 3 tipa privlaèenja. \cite{Alhazzani:2016.}  U radu koriste podatke iz službene baze s 12,000 \gls{pois} i \gls{cdr} zapisima iz razdoblja od mjesec dana. 
 % We used a statistical significance testing approach to rigorously quantify the relationship between Points of Interests (POIs) types (services) and the 3 patterns of Urban Attractors we detected. \gls{pois} Points of Interes (Urban Attractors ima 22 kategorije koristi bazu s POI)
 
  \subsection{OpenStreetMap}
@@ -247,7 +243,7 @@ Još jedna moguæa uloga spominje u potpoglavlju koje opisuje interpolaciju Vorono
  \subsubsection{Model raspodjele toka}
 Inovativni pristup kontekstualizaciji toka korištenjem OpenStreetMap baze predstavljen je u radu \cite{Stupar:2018.}. Na osnovu pripadajuæih opisnih podataka, prostorni objekti na podruèju interesa kategorizirani su prema tipu socio-ekonomske aktivnosti u koju su ukljuèeni. Definirano je ukupno 6 kategorija:
 Dom (Home), Posao (Work), Zdravlje (Health), Edukacija (Education), Zabava (Leisure) i Ostalo (Other). Razvijen je vjerojatnosni model koji, na osnovu broja objekata pojedine kategorije u odredišnoj æeliji i promatranog vremenskog okvira, ukupni ulazni tok u odredišnu æeliju dijeli na 6 tokova usmjerenih prema objektima tih kategorija. Iz jedne matrice tako  se dobije 6 matrica, po jedna za svaku od kategorija. Korištene su matrice dobivene iz javno dostupnih, anonimiziranih telekomunikacijskih zapisa na podruèju kineskog grada Shenzhena. \cite{Filic:2016.}\cite{data:2019.}
-Na ovaj naèin definicijom putovanja saèuvana je moguænost dobre rezolucije u vremenu a istovremeno je dan kontekst koju ukljuèuje \textit{home} i \textit{work} kategorije.
+Definicijom putovanja na taj naèin saèuvana je moguænost postizanja dobre rezolucije u vremenu a istovremeno je dan kontekst koji ukljuèuje tipiène \textit{Home} i \textit{Work} kategorije.
 
 \begin{comment}
 Spatial objects within the area of interest were categorized by type of socio-economic activity they are involved  with. This new information about context of each origin and  destination cell allowed development of probability model which separates initial migration flows into contextualized streams. 
@@ -258,26 +254,26 @@ Konaèna geometrija prostorne podjele alternativnih izvora uglavnom ovisi o prost
 
 %\subsubsection{\glsfirst{taz}}
 \subsubsection{\glsfirst{taz}}
-\gls{taz} je strani naziv za jedinicu prostorne podjele (æeliju) kod analize prometa. Kod programskih podrška za analizu prometa velièina jedinica varira i nije uniformna. Podjela se može temeljiti na populaciji ili broju zaposlenih na nekom prostoru, primjerice svaka æelija pokriva prostor na kojem obitava otprilike tri tisuæe ljudi (propisanih preporuèenih vrijednosti nema), ili podjela u kojoj æelije generiraju podjednak broj izlaznih putovanja (jednaka širina izlaznih tokova) \cite{Goulding:2016.}*. U hijerarhijskoj podjeli kod ankete stanovništva opæenito postoje manje i veæe jedinice podjele, a nema podjele koja bi precizno odgovarala \gls{taz}. %grad, država
+\gls{taz} je strani naziv za jedinicu prostorne podjele (æeliju) kod analize prometa. Kod programskih podrška za analizu prometa velièina jedinica varira i nije uniformna. Podjela se može temeljiti na populaciji ili broju zaposlenih na nekom prostoru, primjerice svaka æelija pokriva prostor na kojem obitava otprilike tri tisuæe ljudi (propisanih preporuèenih vrijednosti nema), ili podjela u kojoj æelije generiraju podjednak broj izlaznih putovanja (jednaka širina izlaznih tokova) \cite{Goulding:2016.}. U hijerarhijskoj podjeli kod ankete stanovništva opæenito postoje manje i veæe jedinice podjele, a nema podjele koja bi precizno odgovarala \gls{taz}. %grad, država
 %*meðuovisnost		
 Do 2000. godine zastupljen je bio jedan model predviðanja prometa, a velièina \gls{taz}  bila je uvijek približno jednaka anketnom bloku od 600 do 3000 ljudi. Pojavom kompleksnijih modela predviðanja prometa (i modela upotrebe zemljišta) %land use
 poèinju se koristiti sve manje prostorne jedinice jer se poveæava i razina detalja koju noviji modeli mogu ostvariti. Jedinica veæa od \gls{taz} uvedena 2010. naziva se Traffic Analisys Disrict (TAD) koji obuhvaæa oko 20,000 stanovnika.\cite{Zhao:2017.}  
-
-Kod analize na podruèju cijele države \cite{Goulding:2016.} koristi \textit{k-sredina} algoritam za grupiranje baznih stanica u broj grupa jednak broju \gls{taz} na podruèju Senegala.
 
 %Shenzhen Transportation Planning Network consists of 21,114 road segments and 3,199 traffic analysis zones (TAZ). 
 
 \begin{figure}[!htbp]
 \begin{center}
 \includegraphics[width=15cm,keepaspectratio=true]{TAZ-Shenzhen}
-\caption{Mreža za analizu prometa sastoji se od 221,14  cesta - plave linije i 3,199 \gls{taz} zona - granice oznaèene iscrtanom crnom linijom  \cite{Xie:2017.}}
+\caption{Mreža za analizu prometa sastoji se od 221,14  cesta - plave linije i 3,199 \acrshort{taz} zona - granice oznaèene iscrtanom crnom linijom  \cite{Xie:2017.}}
 \label{fig:taz}
 \end{center}
 \end{figure}
 
-Prema podatcima korištenim u istraživanju iz 2018. \cite{Zheng:2018.} Shenzhen je podijeljen na 996 \gls{taz} od kojih 844 zone imaju barem jednu autobusnu ili stanicu podzemne željeznice. Godinu dana ranije istraživanje spominje više zona (Vidi sliku \ref{fig:taz}).
+Prema podatcima korištenim u istraživanju iz 2018. \cite{Zheng:2018.} Shenzhen je podijeljen na 996 \gls{taz} od kojih 844 zone imaju barem jednu autobusnu ili stanicu podzemne željeznice. Godinu dana ranije objavljeno istraživanje spominje više zona (Vidi sliku \ref{fig:taz}).
 
 %The GIS data of traffic zones in Shenzhen were provided by Shenzhen Transportation Authority. In this dataset, the geographic area of Shenzhen is partitioned into 996 traffic zones,
+
+Kod analize na podruèju cijele države \cite{Goulding:2016.} koristi \textit{k-sredina} algoritam za grupiranje baznih stanica u broj grupa jednak broju \gls{taz} na podruèju Senegala.
 
 \subsubsection{Jedinice samouprave  i anketne jedinice}
 \cite{Mellegard:2011.} ne definira unaprijed broj grupa veæ za grupaciju koristi \textit{mean-shift} algoritam koji sam odreðuje broj grupa na podruèju Švedske, potom koristeæi \gls{osm} grupe veže uz imena gradova i mjesta.
@@ -304,10 +300,10 @@ Dijelovi Voronoiova dijagrama su sve toèke u ravnini koje su ekvidistantne prema
 
 Toèke skupa su položaji baznih stanice, a æelije oko njih aproksimacija površine koju ta bazna stanica pokriva. U stvarnosti se te površine prekrivanja preklapaju. (Vidi sliku \ref{fig:Voronoi})
 
-Ponekad operateri u \gls{cdr} zapisima ne otkrivaju položaje baznih stanica veæ samo njihov ID. Postoji više javno dostupnih baza nastalih volonterskim doprinosom koje pohranjuju podatke o procjenama položaja baznih stanica, snazi signala i sl.
+Ponekad operateri u \gls{cdr} zapisima ne otkrivaju položaje baznih stanica veæ samo njihov ID. Postoji nekoliko javno dostupnih baza kao što je OpenCellID \cite{OpenCellID:2019.} nastalih volonterskim doprinosom koje pohranjuju podatke o procjenama položaja baznih stanica, snazi signala i sl.
 Položaji se prikupljaju pomoæu aplikacije instalirane na mobilnom ureðaju, registriranjem \gls{gps} pozicije i identifikacijske oznake bazne stanice na koju je ureðaj trenutno spojen. Dakle, ove baze ne sadrže "najtoèniji" položaje baznih stanica veæ usrednjene položaje mobilnih ureðaja koji su u nekom trenutku bili spojeni na tu baznu stanicu. Može se reæi da taj procijenjeni položaj za potrebe izrada matrica èak i više odgovara od stvarnog položaja. \cite{Mellegard:2011.}
 
-Gustoæa Voronoi æelija snažno je korelirana s gustoæom stanovništva te stoga bolju prostornu rezoluciju ima na podruèjima veæe gustoæe populacije. No Gundlegard \cite{Gundlegard:2016.} smatra da neuniformnost æelija nije problem, veæ preklapanje podruèja pokrivanja. Posljedica toga su stalne oscilacije - ureðaj mijenja baznu stanicu na koju je spojen iako svo vrijeme zadržava isti položaj. Jedan od naèina na koji se može ublažiti efekt koji oscilacija ima na definiranje putovanja je odrediti minimalnu udaljenost putovanja ili potpuno zanemariti putovanja u susjedne æelije.
+Gustoæa Voronoi æelija snažno je korelirana s gustoæom stanovništva te stoga bolju prostornu rezoluciju ima na podruèjima veæe gustoæe populacije. No Gundlegard \cite{Gundlegard:2016.} smatra da neuniformnost æelija nije problem, veæ preklapanje podruèja pokrivanja posljedica èega su stalne oscilacije - ureðaj mijenja baznu stanicu na koju je spojen iako svo vrijeme zadržava isti položaj. Jedan od naèina na koji se može ublažiti efekt koji oscilacija ima na definiranje putovanja je odrediti minimalnu udaljenost putovanja ili èak potpuno zanemariti putovanja u susjedne æelije. Važno je kod definiranja putovanja uzeti u obzir postojanje oscilacija.
 
 
 \begin{figure}[!htbp]
@@ -319,11 +315,10 @@ Gustoæa Voronoi æelija snažno je korelirana s gustoæom stanovništva te stoga bol
 \end{figure}
 
 
-\subsubsection{Pravokutna mreža i mreža šeterokuta}
-Uniformna podjela na pravokutne blokove od 1 kvadratni kilometar spominje se kao dobra praksa \cite{Goulding:2016.} (...)
+\subsubsection{Kvadratna mreža i mreža šeterokuta}
+Uniformna podjela na kvadratne blokove od 1 kvadratni kilometar spominje se kao dobra praksa u jednom britanskom priruèniku za izradu matrica iz \gls{cdr} \cite{Goulding:2016.}. 
 
-Podruèje pokrivanja bazne stanice na grafikama se standardno prikazuje kao šesterokut (heksagon). \cite{Teralytics:2017.} izmeðu ostalih podjela koristi i šesterokute koje po potrebi ugnježðuje i tako mijenja rezoluciju u kojoj promatra gibanja. Tvrde da su se u nekim segmentima pokazali i 13\% bolji od pravokutne mreže. Prikaz šesterokuta za grad Shenzhen možemo vidjeti an slici \ref{fig:Hexagons}
-
+Podruèje pokrivanja bazne stanice na grafikama se standardno prikazuje kao šesterokut (heksagon). \cite{Teralytics:2017.} izmeðu ostalih podjela koristi i šesterokute koje po potrebi ugnježðuje i tako mijenja rezoluciju u kojoj promatra gibanja. Tvrde da su se u nekim segmentima pokazali i 13\% bolji od kvadratne mreže. Prikaz šesterokuta za grad Shenzhen možemo vidjeti na slici \ref{fig:Hexagons}
 \begin{figure}[!htbp]
 	\begin{center}
 		\includegraphics[width=12cm,keepaspectratio=true]{Hexagons-Shenzhen}
@@ -332,24 +327,20 @@ Podruèje pokrivanja bazne stanice na grafikama se standardno prikazuje kao šeste
 	\end{center}
 \end{figure}
 
-
 \subsubsection{Interpolacija i usporedba}
-(...)\cite{Toole:2015.}
-\cite{Bahoken:2013.}\\
-
 Postupak konverzije broja putovanja iz prostorne podjele na Voronoi æelije u drugu prostornu podjelu, npr. uniformnu kvadratnu mrežu (æelije $1 km^2$), opisan u \cite{Goulding:2016.}. U postupku odreðivanja postotka ukupnog toka Voronoi æelije koji æe se dodijeliti novoj kvadratnoj æeliji predlaže se uzeti u obzir: površinu preklapanja tih æelija, broj zgrada ili ukupnu površinu zgrada (ukljuèujuæi katove) na podruèju preklapanja tih æelija.
 Na slici \ref{fig:interpolation} je prikazan 3 oblik interpolacije gdje su korišteni podaci o ukupnoj kvadratnoj površini zgrada. 
 
 \begin{figure}[!htbp]
 	\begin{center}
 		\includegraphics[width=7cm,keepaspectratio=true]{interpolation}
-		\caption{Primjer mozaika \textit{krhotina} koje dozvoljavaju interpolaciju izmeðu Voronoi æelija i kvadratne mreže. Nijansa odražava postotak površine zgrada u \textit{krhotini} u odnosu na cijelu Voronoi æeliju kojoj pripada. Rezultat se dobiva na osnovu tih \textit{težinskih faktora} polazišne i odredišne \textit{krhotine} i pripadajuæih Vornoi æelija, sumom svih rezultata krhotina jedne kvadratne æelije izraèuna se konaèni tok. \cite{Goulding:2016.}}
+		\caption{Primjer mozaika \textit{krhotina} koje dozvoljavaju interpolaciju izmeðu Voronoi æelija i kvadratne mreže. Nijansa odražava postotak površine zgrada u \textit{krhotini} u odnosu na cijelu Voronoi æeliju kojoj pripada. Rezultat se dobiva na osnovu tih \textit{težinskih faktora} polazišne i odredišne \textit{krhotine} te pripadajuæih ("roditeljskih") Vornoi æelija. Sumom svih rezultata krhotina jedne kvadratne æelije izraèuna se konaèni tok. \cite{Goulding:2016.}}
 		\label{fig:interpolation}
 	\end{center}
 \end{figure}
-
+(...)\cite{Toole:2015.}
+\cite{Bahoken:2013.}\\
 \subsubsection{Redefiniranje prostorne podjele na temelju matrica}
-
 U sklopu projekta \gls{d4d} francuski operater \textit{Orange} ustupio je na korištenje \gls{cdr} višemjeseène zapise s podruèja Obale Bjelokosti. Razlièita istraživanja u ovom podruèju raðena su upravo na tim podacima. Jedno od njih \cite{Coscia:2015.} istièe da je dobar broj istraživanja dokazao da administrativne regije u zemlji faktor koji definira ljudsku mobilnost i interakcije na podruèju države. Da bi testirali tu tvrdnju oni, nakon što generiraju matricu kretanja, æelije prostorne podjele grupiraju prema  \textit{comunity detection} algoritmu. Iako se dio grupa vrlo lijepo preklapa sa postojeæim administrativnim jedinicama, one administrativne jedinice u kojima se nalaze veliki gradovi, grupacije nastale na temelju mobilnosti bitno su drugaèije. Zakljuèak je da potencijalno postoji potreba da se granice administrativnih jedinica izmjene (Slika \ref{fig:revisiting})
 
 %Revisiting the broders -clustering based on derived mobility graph
@@ -357,7 +348,7 @@ U sklopu projekta \gls{d4d} francuski operater \textit{Orange} ustupio je na kor
 \begin{figure}[!htbp]
 	\begin{center}
 		\includegraphics[width=8cm,keepaspectratio=true]{Revisiting_the_border}
-		\caption{Prijedlog izmjene (prilagodbe) administrativnih jedinica mreži kretanja - bojom su oznaèene grupacije nastale na temelju matrice kretanja, crnom su oznaèene postojeæe granice administrativnih jedinica \cite{Scepanovic:2015.}}
+		\caption{Prijedlog prilagodbe administrativnih jedinica mreži kretanja - bojom su oznaèene grupacije nastale na temelju matrice kretanja, crnom su oznaèene postojeæe granice administrativnih jedinica \cite{Scepanovic:2015.}}
 		\label{fig:revisiting}
 	\end{center}
 \end{figure}

@@ -628,3 +628,33 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{its}{}%
+{%
+\gls@defglossaryentry{its}%
+{%
+name={\acronymfont {\glsentryshort {its}}},%
+sort={ITS},%
+type={main},%
+first={ITS},%
+firstplural={ITSs},%
+text={ITS},%
+plural={ITSs},%
+description={Inteligentnim Transportnim Sustavima (engl. \textit {Intelligent Transportation Systems})},%
+descriptionplural={Inteligentnim Transportnim Sustavima (engl. \textit {Intelligent Transportation Systems})},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Inteligentnim Transportnim Sustavima (engl. \protect \textit {Intelligent Transportation Systems})},%
+longplural={Inteligentnim Transportnim Sustavima (engl. \protect \textit {Intelligent Transportation Systems})s},%
+short={ITS},%
+shortplural={ITSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%

@@ -11,7 +11,7 @@ Parametar - varijabla o kojoj ovisi odreðeni logièki izraz, matematièka formula 
 -Isto doba godine\\
 -Isto vremensko razdoblje \\
 -Week day, work day\\
--Ista ili slièna definicija putovanja \\
+-Ista ili slièna definicija putovanja (tranzitna ili commuting matrica)\\
 -Isto pridodijeljena putovanja periodu \\
 -Ima li matrica diagonalu? \\
 (...)
@@ -24,15 +24,12 @@ Parametar - varijabla o kojoj ovisi odreðeni logièki izraz, matematièka formula 
 \subsection{Definicija putovanja}
 
 Kod generiranja matrica treba definirati hoæe li se putovanja koja se protežu kroz više perioda dodijeliti vremenskom okviru u kojem zapoèinju ili u kojem završavaju. Iako ponekad nije specificirano, autori \cite{Bera:2011.} \cite{Filic:2016.} \cite{Gundlegard:2016.} sva putovanja dodjeljuju intervalu u kojem je putovanje zapoèeto. Teralytics u praksi generira obje vrste matrica \cite{Teralytics:2017.}.
-\cite{Gundlegard:2016.} kako bi uvrstio što više putovanja, ne zanemaruje one zapise iz kojih nije jasno vidljiv poèetak putovanja veæ takva putovanja dodjeljuje na osnovu vjerojatnosti da su zapoèela u odreðenom periodu. Slièan postupak spominje se i u \cite{Toole:2015.} gdje za izraèun vjerojatnosti posežu za nacionalnim anketama ili frekvencijom poziva.
+Autori \cite{Gundlegard:2016.} kako bi uvrstili što više putovanja, ne zanemaruju one zapise iz kojih nije jasno vidljiv poèetak putovanja veæ takva putovanja dodjeljuje na osnovu vjerojatnosti da su zapoèela u odreðenom periodu. Slièan postupak spominje se i u \cite{Toole:2015.} gdje za izraèun vjerojatnosti posežu za nacionalnim anketama ili frekvencijom poziva.
 
 Usporedba matrica iz razlièitih izvora (ankete i \gls{cdr}) s 2 razlièite definicije putovanja (samo putovanja \gls{hw} i \gls{wh} te sva putovanja) pokazala se kao loš pristup, razumljivo su matrice imale mali stupanj sliènosti ne sasvim oèekivano je i strukturalna sliènost bila vrlo mala. \cite{Bonnel:2015.} Isti zakljuèak kasnije iznosi i \cite{Gundlegard:2016.} èije grafièke prikaze matrica (toplinske matrice engl. (\textit{heatmap} \cite{Filic:2016.}) možemo vidjeti na slici \ref{fig:journeys}.
-
+O definiciji putovanja dakako ovisit æe njihov konaèan broj, odnosno širina toka.\\
+(...)
 %The comparison between the matrices obtained from commuting and mobile phone data provide quite limited results. It is reasonable for the estimated number of trips to differ, as commuting data only relates to trips from the individual’s home to their place of work or study, while mobile phone data cover all trip purposes. But the analysis we have performed also show that the structures of the matrices have little in common. There is thus a high degree of dispersion in the rates of variation between the two sources of origin-destination data. This preliminary work was conducted on the basis of fairly strong hypotheses. It is therefore quite possible that more detailed analysis would make it possible to moderate some of the strongest hypotheses and improve comparability. Nevertheless, the only trip purposes covered by commuting data are work and study. It would therefore be necessary to be able to estimate the location of the home and place of work or study of the individuals from mobile phone data in order to significantly improve the matrices produced from this source. Even if a number of algorithms have been described in the literature (Chen et al., 2014; Calabrese et al., 2013; Phithakkitnukoon et al., 2012), our identification of these locations is bound to be uncertain unless we have a large number of events for each mobile phone, which is not the case with the data that we have used. It seems certain that the analysis of the mobile phone data from smartphones which are frequently connected to web-based applications would make it possible to attempt this type of analysis.
-(...)\\
-- prosjeèan broj putovanja po stanovniku/ispitaniku Netko:nekad nešto tipa 3 i 4.5, ugl. nešto veæi broj za CDR \\
-
-
 
 \begin{figure}[!htpb]
 	\begin{center}
@@ -42,12 +39,13 @@ Usporedba matrica iz razlièitih izvora (ankete i \gls{cdr}) s 2 razlièite defini
 		\subfloat[Matrica u kojoj je putovanje definirano kao promjena pozicije izmeðu 2 prethodno definirana perioda, odnosno izmeðu položaja na kojima korisnik pretežito boravi u ta 2 perioda - definiranjem tih perioda pokušavaju se opisati putovanja od prebivališta na posao i s posla nazad na prebivalište engl. \textit{commuting trips} ]
 		{\label{fig:long_journeys}
 			\includegraphics[height=7cm,keepaspectratio=true]{long_journeys}}
-		\caption{ Dvije matrice - produkti razlièitih definicija putovanja. Dobivene su iz potpuno istog izvora \gls{cdr} zapisa. \cite{Gundlegard:2016.}}
+		\caption{ Dvije matrice - produkti razlièitih definicija putovanja. Dobivene su iz potpuno istog izvora %\gls{cdr} 
+			\acrshort{cdr} zapisa. \cite{Gundlegard:2016.}}
 		\label{fig:journeys}
 	\end{center}
 \end{figure}
 
-\subsection{Prostorna razluèivost (Rezolucija)}
+\subsection{Prostorna razluèivost (rezolucija)}
 
 Prema hrvatskoj enciklopediji definicija razluèivosti (rezolucije) glasi: mjera za razaznavanje sitnih pojedinosti na nekom prikazu (npr. televizijskoj slici). U raèunalstvu se odnosi na finoæu rasterske slike iskazanu ukupnim brojem slikovnih elemenata (relativna razluèivost) ili brojem slikovnih elemenata po inèu (stvarna razluèivost).
 (...)\\
@@ -66,7 +64,7 @@ Agregacijom na razinu \textit{Urban Areas} (podruèja oko gradova) 85\% svih puto
 		\subfloat[Izvor podataka \gls{cdr}]
 		{\label{fig:cdr}
 			\includegraphics[height=9cm,keepaspectratio=true]{cdr}}
-		\caption{Distribucija \gls{cdr} putovanja na podruèju Santiaga, Èile. Matrica je normalizirana prema redovima (polazištima) (*) \cite{Graells-Garrido:2016.}}
+		\caption{Distribucija \acrshort{cdr} putovanja na podruèju Santiaga, Èile. Matrica je normalizirana prema redovima (polazištima) (*) \cite{Graells-Garrido:2016.}}
 		\label{fig:diagonal}
 	\end{center}
 \end{figure}
@@ -107,8 +105,9 @@ Istraživanja modernih pristupa generiranju matrica ukazuju na smanjenu mobilnost
 % We obtain an average of 5 trips per day during the weekday, and 4.5 during the weekend. This number is reasonable when compared to the US National Household Travel Survey2 which evaluated this number to be between 4.18 during weekdays and 3.86 during weekends3 .
 
 Osim oèekivane bitne razlike u radnim i neradnim danima, uoèeno je da je petak, kao zadnji radni dan u tjednu, bitno drugaèiji od ostalih radnih dana. \cite{Travassoli:2016.} \cite{Calabrese:2011.}  \cite{Scepanovic:2015.} Uoèena je pojaèana mobilnost petkom na razini regije (Boston Metropolitan Area) \cite{Calabrese:2011.} i na razini cijele države (Obale Bjelokosti) s poveæanjem od 35\% u odnosu na nedjelju \cite{Scepanovic:2015.} na temelju matrica izraðenih iz \gls{cdr}, no zanimljivo uèena je smanjena mobilnost vezana za javni prijevoz (izvor za generiranje matrica \textit{Pametne kartice za javni prijevoz}) na razini regije (Southeast Queensland, Australija). Osim prosjeènog broja dnevnih putovanja, petak ima i nešto drugaèiji dnevni uzorak po satima (rast prometa prema kraju radnog vremena zapoèinje ranije). Ponovno, petkom je takoðer uoèena i najviša razina telekomunikacijske aktivnosti \cite{Bahoken:2013.} \cite{Bonnel:2015.} što ukazuje na moguæu pristranost kada su u pitanju matrice generirane iz \gls{cdr}.
-Rezultati nacionalne ankete u Sjedinjenim Amerièkim Državama pokazuju da je prosjeèan broj dnevnih putovanja po stanovniku 4.18 tijekom radnog dana te 3.86 tijekom neradnih dana u tjednu, što jest u skladu sa zakljuècima modernih metoda.
-
+Rezultati nacionalne ankete u Sjedinjenim Amerièkim Državama pokazuju da je prosjeèan broj dnevnih putovanja po stanovniku 4.18 tijekom radnog dana te 3.86 tijekom neradnih dana u tjednu, što jest u skladu sa zakljuècima modernih metoda.\\
+(...)\\
+- praznici i izvanredni dogaðaji
 
 \begin{comment}
 \begin{figure}[!htbp]
@@ -137,13 +136,16 @@ Ukupan broj odlazaka/dolazaka po vremenskom okviru za cijelu matricu.Suma svih n
 - velièina uzorka (postotak stanovništva)\\
 - k-anonimizacija\\
 - dakako za pojedinu matricu ovisi o prostornoj i vremenskoj rezoluciji \\
+- najviše ipak vjerojatno ovisi o definiciji putovanja\\
+- prosjeèan broj putovanja po stanovniku/ispitaniku Netko:nekad nešto tipa 3 i 4.5, ugl. nešto veæi broj za CDR \\
 - o tome æe ovisiti i Zero-cells (Nul-æelije)\\
 - samo najaktivniji korisnici \cite{Schneider:2013.} \cite{Toole:2015.} (pristranost?)\\
 za razliku od izvlaèenja najaktivnijih korisnika 
 -\cite{Calabrese:2011.} uzima samo sluèajno odabranih 25\% korisnika (njih 1 milijun) da pojednostavi analizu. ...Dobro šta, da može pješke na prste raèunati?!\\
 - broj aktivnih korisnika unutar jednog tjedna jako varira iz dana u dan.  \cite{Bonnel:2015.}\\
 -faktor skaliranja spominje se u najmanje 2 istraživanja, u jednom se radi o x 10 \\
-- noramlizacija matrica? koja je praksa ? \cite{Graells-Garrido:2016.}
+- noramlizacija matrica? koja je praksa ? \cite{Graells-Garrido:2016.}\\
+
 
 %\subsection{Geometrija prostorne podjele}
 %(ne)uniformna podjela ...

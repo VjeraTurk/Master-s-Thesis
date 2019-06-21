@@ -215,7 +215,7 @@
   Title                    = {Unraveling daily human motifs},
   Author                   = {Christian M. Schneider and Vitaly Beik and Thomas Courone\'e and Zbigniew Smoreda and Marta C. Gonz\'alez},
   Journal                  = {J. R. Soc. Interface},
-  Year                     = {2013.`},
+  Year                     = {2013.},
 
   Month                    = {May},
   Number                   = {10},
@@ -318,6 +318,13 @@ Maozeng Xu and Yinhai Wang},
   Url                      = {https://www-users.cs.umn.edu/~tianhe/BIGDATA/},
 
   Timestamp                = {03.06.2019}
+}
+
+@Electronic{OpenCellID:2019.,
+  Title                    = {OpenCellID},
+  Url                      = {https://www.opencellid.org/},
+
+  Timestamp                = {21.06.2019}
 }
 
 @Electronic{eCall:2018.,

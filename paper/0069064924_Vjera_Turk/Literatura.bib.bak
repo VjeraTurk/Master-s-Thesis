@@ -1,5 +1,5 @@
 % This file was created with JabRef 2.10.
-% Encoding: ASCII
+% Encoding: UTF8
 
 
 @Article{Alhazzani:2016.,
@@ -202,6 +202,15 @@
   Timestamp                = {01.06.2019}
 }
 
+@Article{Renieblas:2017.,
+  Title                    = {Structural similarity index family for image quality assessment in radiological images},
+  Author                   = {Gabriel Prieto Renieblas and Agustín Turrero Nogués and Alberto Muñoz González and Nieves Gómez-Leon and Eduardo Guibelalde del Castillo},
+  Journal                  = {{Journal of Medical Imaging}},
+  Year                     = {2017.},
+
+  Timestamp                = {22.06.2019}
+}
+
 @Article{Scepanovic:2015.,
   Title                    = {{Mobile Phone Call Data as Regional Socio-Economic Proxy Indicator}},
   Author                   = {Sanja Scepanovic and Igor Mishovski and Pan Hui and Jukka K. Nurminen and Anitti Yla-Jaaski},
@@ -313,16 +322,10 @@ Maozeng Xu and Yinhai Wang},
   Timestamp                = {15.06.2019}
 }
 
-@Electronic{data:2019.,
-  Title                    = {Data Description for UrbanCPS},
-  Url                      = {https://www-users.cs.umn.edu/~tianhe/BIGDATA/},
-
-  Timestamp                = {03.06.2019}
-}
-
 @Electronic{OpenCellID:2019.,
   Title                    = {OpenCellID},
   Url                      = {https://www.opencellid.org/},
+  Year                     = {21.06.2019},
 
   Timestamp                = {21.06.2019}
 }
@@ -333,6 +336,14 @@ Maozeng Xu and Yinhai Wang},
   Year                     = {06.05.2019},
 
   Timestamp                = {06.05.2019}
+}
+
+@Electronic{data:2019.,
+  Title                    = {Data Description for UrbanCPS},
+  Url                      = {https://www-users.cs.umn.edu/~tianhe/BIGDATA/},
+  Year                     = {03.06.2019},
+
+  Timestamp                = {21.06.2019}
 }
 
 @Electronic{Teralytics:2017.,

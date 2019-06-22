@@ -51,15 +51,56 @@ The root mean squared error (RMSE) and accordingly the percent root mean squared
     
 \section{Strukturalna sliènost}
  
-Dosada spomenute mjere neæe uhvatiti strukturalnu sliènost matrica. Nekolicina autora istièe važnost strukturalne sliènosti s referentnom matricom kao važnu mjeru kvalitete matrice jer visoka razina strukturalne sliènosti može biti prisutna i kod matrica s manjom razinom sliènosti prema statistièkim mjerama. Takoðer, strukturalna sliènost je (vizualno) vidljiva u grafièkom obliku matrice. 
+Dosada spomenute mjere neæe uhvatiti strukturalnu sliènost matrica. Nekolicina autora istièe važnost strukturalne sliènosti s referentnom matricom kao važnu mjeru kvalitete matrice jer visoka razina strukturalne sliènosti može biti prisutna i kod matrica s manjom razinom sliènosti prema statistièkim mjerama. Takoðer, strukturalna sliènost je (vizualno) vidljiva u grafièkom obliku matrice. Dobro odgovara ljudskoj vizualnoj percepciji sliènosti slike. 
  
 \subsection{MSSI} 
 
 \gls{mssim} dolazi iz podruèja raèunalne obrade slike i koristi se kao mjera usporedbe digitalnih slika (\textit{eng. measure of comparison)}. U prometu ideja o korištenju  \gls{mssim} za mjerenje sliènosti matrica se prvi puta spominje i demonstrira na simuliranim matricama dobivenim iz referentne matrice dodavanjem šuma. \cite{Djukic:2013.}
 
+Informaciju o strukturi slike definiramo kao atribute slike koji predstavljaju strukturu objekata na sceni, i neovisni su o prosjeènom osvjetljenju i kontrastu. Jer osvjetljenje i kontrast mogu znatno varirati na sceni, moraju se u obzir uzeti samo njihove lokalne vrijednosti.
      %TODO: Ovdje si daj formulu za SSIM i MSSIM
 \gls{ssim} bazira se na degradaciji strukturalnih informacija na jednoj slici u usporedbi s drugom (referentnom) slikom. \gls{ssim} se raèuna za svaki blok velièine $N x N$ na naèin da se jezgra (da bi obuhvatila novi blok) pomièe æeliju po æeliju dok ne proðe preko cijele slike. \gls{mssim} je srednja vrijednost svih \gls{ssim}.
+
+
+%We define the structural information in an image as those attributes that represent the structure of objects in the scene, independent of the average luminance and contrast. Since luminance and contrast can vary across a scene, we use the local luminance and contrast for our definition
  
-\subsubsection{osnovni}\cite{Djukic:2013.}
-\subsubsection{poboljšani} \cite{Pollard:2013.}\cite{Vuren:2015.}
+\subsubsection{Osnovni}
+
+\begin{comment}
+Neka reci matrice predstavljaju polazišta $i, i=1,2,...I$ a stupci odredišta $j, j=1,2,...J$ putovanja. Da bi se odredila strukturalna sliènost izmeðu dvije matrice, neka su $d = \{d_n| n = 1,2,...,N\} $ i $\hat{d} = \{\hat{d}_n| n = 1,2,...,N\}$ dva vektora izvuèena s iste pozicije iz referentne matrice $D=\{d_i,j\}$ i procijenjene matrice $D=\{\hat{d}_i,j\}$.
+
+\begin{equation}
+SSIM(d,\hat{d}) =[l(d,\hat{d})^\alpha][c(d,\hat{d})^\beta][s(d,\hat{d})^\gamma]\label{eq:ssim}
+\end{equation}
+\cite{Djukic:2013.}
+\end{comment}
+
+
+%X and Y are the images to be compared (computed as matrices of pixels), and x ? fxiji ? 1; 2;:::;Ng and y ? fyiji ? 1; 2;:::;Ng are pairs of local square windows (computed as submatrices of pixels) of X and Y, respectively; x and y are located at the same spatial position in both images. SSIM is defined in terms of the average pixel values, ?x and ?y, with pixel value standard deviations (SD) ?x and ?y at patches x and y and covariance (cross-correlation) ?xy of x and y through the following indexes
+
+Neka su $X$ i $Y$ matrice koje usporeðujemo a  $x = \{x_n| x = 1,2,...,N\} $ i $y = \{y_n| y = 1,2,...,N\}$ parovi vrijednosti kvadratnih prozora na istim pozicijama u  $X$ i $Y$; $SSIM$ odreðen je prosjeènim vrijednostima $\mu_x$ i $\mu_y$ sa standardnim devijacijama $\sigma_x$ i $\sigma_y$ i kovarijancom $\sigma_xy$
+
+
+\begin{equation}
+l(x,y) = (2\mu_x\mu_y +C1)/(\mu_x^2+\mu_y^2 +C1)\label{eq:l}
+\end{equation}
+\begin{equation}
+c(x,y) = (2\sigma_x\sigma_y +C2)/(\sigma_x^2+\sigma_y^2 +C2)\label{eq:c}
+\end{equation}
+\begin{equation}
+s(x,y) = (\sigma_xy+C3)/(\sigma_x\sigma_y+ +C3)\label{eq:s}
+\end{equation}
+
+\begin{equation}
+SSIM(x,y) =[l(x,y)^\alpha][c(x,y)^\beta][s(x,y)^\gamma]\label{eq:ssim}
+\end{equation}
+
+
+
+\begin{equation}
+MSSIM(X,Y)=  \label{eq:mssim}
+\end{equation}
+
+
+\subsubsection{Poboljšani} \cite{Pollard:2013.}\cite{Vuren:2015.}
     

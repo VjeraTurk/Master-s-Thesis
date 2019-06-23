@@ -41,7 +41,7 @@ Izvorišno-odredišna matrica prikazuje broj putovanja iz izvorišne u ciljnu zonu 
 
 Polazišno-odredišna matrica sadrži broj putovanja izmeðu svakog para zona unutar nekog podruèja za odreðeni vremenski okvir (u svakom smjeru zasebno). Redovi u matrici predstavljaju polazišta (izvore prometnog toka), a stupci odredišta. Svaki element u matrici predstavlja broj putovanja iz pripadajuæe polazišne u pripadajuæu ciljnu zonu. Može se smatrati matriènim zapisom težinskog usmjerenog grafa, gdje su težinski faktori usmjerenih veza širine prometnih tokova izmeðu èvorova mreže koji predstavljaju zone na koje je promatrano podruèje podijeljeno.  
 
-U prometnoj znanosti postoje brojne metode estimacije matrica. I dok se još uvijek ulaže u razvoj matematièkih modela koji imaju za cilj poveæati kvalitetu matrica generiranih tradicionalnim metodama, u novije vrijeme razvijaju se nove, moderne metode, koje imaju veliki potencijal, zbog svoje jednostavnosti u izvedbi, ažurnosti podataka i velikog uzorka stanovništva koji obuhvate (...)
+U prometnoj znanosti postoje brojne metode estimacije matrica. I dok se još uvijek ulaže u razvoj matematièkih modela koji imaju za cilj poveæati kvalitetu matrica generiranih tradicionalnim metodama, u novije vrijeme razvijaju se nove, moderne metode, koje imaju veliki potencijal, zbog svoje jednostavnosti u izvedbi, ažurnosti podataka i velikog uzorka stanovništva koji obuhvate. Kod pojedinih operatera radi se o oko èak 40-50\% svih državljana neke države \cite{Bonnel:2015.}.  (...)
 %zamijeniti tradicionalne metode i postati standard u analizi prometa pa tako i generiranju \gls{pom}-a.
 
 Matrica može biti generirana za sadašnje ili planirano prometno optereæenje. Može biti prikazana ukupno ili po pojedinim modulima prometnog sustava (osobna vozila, vozila javnog prijevoza, teretna vozila, pješaka itd) i/ili razlièitim svrhama putovanja (putovanja na posao, putovanja kuæi...).   
@@ -92,7 +92,7 @@ For such methods, observed traffic flows at key points throughout the network sh
 ruèno, video
 \end{comment}
 
-Metode koje ukljuèuju prebrojavanje vozila na kljuènim èvorištima prometne infrastrukture manje su zahtjevne u odnosu na ankete i znaèajno smanjuju vrijeme i troškove prikupljanja podataka. Radi se o analizi nadzornih snimaka prometa, automatskom sustav za prepoznavanje i oèitovanje registarskih ploèica eng. \gls{anpr}, osjetilima prometnog toka (radarski, magnetni, video-senzori, zvuèni...)  i  ruènom prebrojavanju. 
+Metode koje ukljuèuju prebrojavanje vozila na kljuènim èvorištima prometne infrastrukture manje su zahtjevne u odnosu na ankete i znaèajno smanjuju vrijeme i troškove prikupljanja podataka. Radi se o analizi nadzornih snimaka prometa, automatskom sustav za prepoznavanje i oèitovanje registarskih ploèica eng. \gls{anpr}, osjetilima prometnog toka (radarski, magnetni, video-senzori, zvuèni...)  i  ruènom prebrojavanju. Ove metode direktno ne govore o stvarnim polazištima i odredištima putovanja \cite{Bonnel:2015.}.
 
 \subsection{Modeliranje prometa}
 \begin{comment}  
@@ -148,7 +148,7 @@ Kako bi pružali i naplaæivali usluge, mobilni operateri moraju prikupljati podat
 Tipièan zapis izmeðu ostalog sastoji se od: identifikacijske oznake pristupne toèke radijske mreže (bazne stanice), vremenskog žiga poèetka telekomunikacijske aktivnosti i trajanja telekomunikacijske aktivnosti. Istraživanje veza izmeðu kretanja i društvenih veza (poznanstava) \cite{Coscia:2015.} od operatera je dobilo podatke i na koju baznu stanicu je poziv usmjeren.
 
 %\subsubsection{\textit{Signaling data}}
-Dodatni podatci koje operateri prate prikupljani su pomoæu sustava za ispitivanje kvalitete mreže (\textit{Signaling data}). Ukljuèuju \textit{handover} podatke - podatke o transferu na drugu baznu stanicu tijekom trajanja telekomunikacijske aktivnosti, \textit{Location Area Updates} - podatke prikupljane svakih 20 min do 2 sata o tome na koju skupinu baznih stanica je pokretna stanica spojena, te informacije o tome kada je pokretna stanica ukljuèena u mrežu i iskljuèena iz mreže. Pri izradi matrica, ako su dostupni, svi ovi podatci mogu se uzeti u obzir i znatno poboljšati model.
+Dodatni podatci koje operateri prate prikupljani su pomoæu sustava za ispitivanje kvalitete mreže (\textit{Signaling data}). Ukljuèuju \textit{handover} podatke - podatke o transferu na drugu baznu stanicu tijekom trajanja telekomunikacijske aktivnosti, \textit{Location Area Updates} - podatke prikupljane svakih 20 min do 2 sata o tome na koju skupinu baznih stanica je pokretna stanica spojena (primmjerice na podruèju Ile-de-France svaka LA skupina ima od oko 150 - 500 stanica), te informacije o tome kada je pokretna stanica ukljuèena u mrežu i iskljuèena iz mreže. Pri izradi matrica, ako su dostupni, svi ovi podatci mogu se uzeti u obzir i znatno poboljšati model.
 	
 U novije vrijeme znanstvenici predlažu metode u kojima koriste upravo anonimizirane \gls{cdr} kao izvor podataka za generiranje \gls{pom}-a. 
  \cite{Gundlegard:2016.} \cite{Alhazzani:2016.} \cite{Frias-Martinez:2012.}  iako se sama ideja spominje u istraživanjima još iz 1994., gotovo od kad je javna pokretna mreža postala široko dostupna.\cite{Gundlegard:2016.} \textbf{U ostatku rada, na mjestima gdje nije naveden izvor, radi se o postupku ili matricama generiranim iz \gls{cdr}}.
@@ -228,7 +228,7 @@ Neka istraživanja spojila su ljudsku mobilnost s namjenom zemljišta (land use) i
 % Some studies combined human mobility with land use or POIs data to segment districts in urban areas according to their functions or use. The type of data used to capture human mobility behavior varies between individual GPS traces [10, 11], taxi pick up/drop off locations as in [7, 12] , Call Detail Records (CDRs) as in [2, 8], social media check ins as in [13–15], and bus smart card data as in [16]. 
 \end{comment}
   \subsection{\textit{Points of Interest}}
-U jednom od svojih radova grupa autora kvantizira vezu izmeðu ukupno 23 namjenske kategorije \gls{pois} ( npr. tvornice, bolnice, javne škole, religijski objekti, hoteli, knjižnice, sportski objekti...) i onime što nazivaju 3 tipa privlaèenja . Svaki tip privlaèenja ima karakteristièan tok (gustoæu ukupnog toka, udaljenost i disperziju polazišta tokova usmjerenih prema objektu tog tipa privlaèenja). Svaku od kategorija karakterizira jedan od ta 3 tipa privlaèenja. \cite{Alhazzani:2016.}  U radu koriste podatke iz službene baze s 12,000 \gls{pois} i \gls{cdr} zapisima iz razdoblja od mjesec dana. 
+U jednom od svojih radova grupa autora kvantizira vezu izmeðu ukupno 23 namjenske kategorije \gls{pois} ( npr. tvornice, bolnice, javne škole, religijski objekti, hoteli, knjižnice, sportski objekti...) i onime što nazivaju 3 tipa privlaèenja. Svaki tip privlaèenja ima karakteristièan tok (gustoæu ukupnog toka, udaljenost i disperziju polazišta tokova usmjerenih prema objektu tog tipa privlaèenja). Svaku od kategorija karakterizira jedan od ta 3 tipa privlaèenja. \cite{Alhazzani:2016.}  U radu koriste podatke iz službene baze s 12,000 \gls{pois} i \gls{cdr} zapisima iz razdoblja od mjesec dana. Cilj projekta bio je ispitati mobilnost na podruèju grada Riyadha, u Saudijskoj Arabiji za planiranje izgradnje podzemne željeznice. Takoðer njihovi rezultati mogu se primijeniti u planiranju pozicioniranja novih objekata u gradu.   
 % We used a statistical significance testing approach to rigorously quantify the relationship between Points of Interests (POIs) types (services) and the 3 patterns of Urban Attractors we detected. \gls{pois} Points of Interes (Urban Attractors ima 22 kategorije koristi bazu s POI)
 
  \subsection{OpenStreetMap}
@@ -273,12 +273,12 @@ Prema podatcima korištenim u istraživanju iz 2018. \cite{Zheng:2018.} Shenzhen j
 
 %The GIS data of traffic zones in Shenzhen were provided by Shenzhen Transportation Authority. In this dataset, the geographic area of Shenzhen is partitioned into 996 traffic zones,
 
-Kod analize na podruèju cijele države \cite{Goulding:2016.} koristi \textit{k-sredina} algoritam za grupiranje baznih stanica u broj grupa jednak broju \gls{taz} na podruèju Senegala.
+Kod analize na podruèju cijele države \cite{Goulding:2016.} koristi \textit{k-sredina} algoritam za grupiranje baznih stanica u broj grupa jednak broju \gls{taz} na podruèju Senegala. \cite{Alhazzani:2016.} na podruèju grada Riaydha agregira bazne stanice u 1492 \gls{taz}-e.
 
-\subsubsection{Jedinice samouprave  i anketne jedinice}
+\subsubsection{Jedinice samouprave i anketne jedinice}
 \cite{Mellegard:2011.} ne definira unaprijed broj grupa veæ za grupaciju koristi \textit{mean-shift} algoritam koji sam odreðuje broj grupa na podruèju Švedske, potom koristeæi \gls{osm} grupe veže uz imena gradova i mjesta.
 U istraživanju \cite{Coscia:2015.} bazne stanice na podruèju Kolumbije grupiraju po jedinicama samouprave (eng. \textit{municipalities}). Isti postupak je korišten i u istraživanju na podruèju Madrida, kako bi matrice u konaènici bile usporedive s onima dobivenim iz anketa \cite{Frias-Martinez:2012.}.
-Prikaz jedinica samouprave za grad Shenzhen možemo vidjeti an slici \ref{fig:Municipality}
+Prikaz jedinica samouprave za grad Shenzhen možemo vidjeti an slici \ref{fig:Municipality}. Kvartovi takoðer obièno daju relativno uniformnu podjelu \cite{Alhazzani:2016.}.
 
 % a potom grupirane koristeæi \textit{Infomap} algoritam  .
 
@@ -298,12 +298,12 @@ Dijelovi Voronoiova dijagrama su sve toèke u ravnini koje su ekvidistantne prema
 
 %The base stations are grouped together to form Location Areas (LA) for reasons to do with management of the mobile phone network as this makes it possible to identify mobile phones more rapidly in the case of a call or an SMS. The LA in which a mobile phone is located is known all the time, while at base station level its position is only known in the event of a call
 
-Toèke skupa su položaji baznih stanice, a æelije oko njih aproksimacija površine koju ta bazna stanica pokriva. U stvarnosti se te površine prekrivanja preklapaju. (Vidi sliku \ref{fig:Voronoi})
+Toèke skupa su položaji baznih stanice, a æelije oko njih aproksimacija površine koju ta bazna stanica pokriva. U stvarnosti se te površine prekrivanja preklapaju jer podruèje prekrivanja nije sasvim fiksno i ovisi o trenutnoj aktivnosti svake bazne stanice \cite{Bonnel:2015.}. (Vidi sliku \ref{fig:Voronoi})
 
 Ponekad operateri u \gls{cdr} zapisima ne otkrivaju položaje baznih stanica veæ samo njihov ID. Postoji nekoliko javno dostupnih baza kao što je OpenCellID \cite{OpenCellID:2019.} nastalih volonterskim doprinosom koje pohranjuju podatke o procjenama položaja baznih stanica, snazi signala i sl.
 Položaji se prikupljaju pomoæu aplikacije instalirane na mobilnom ureðaju, registriranjem \gls{gps} pozicije i identifikacijske oznake bazne stanice na koju je ureðaj trenutno spojen. Dakle, ove baze ne sadrže "najtoèniji" položaje baznih stanica veæ usrednjene položaje mobilnih ureðaja koji su u nekom trenutku bili spojeni na tu baznu stanicu. Može se reæi da taj procijenjeni položaj za potrebe izrada matrica èak i više odgovara od stvarnog položaja. \cite{Mellegard:2011.}
 
-Gustoæa Voronoi æelija snažno je korelirana s gustoæom stanovništva te stoga bolju prostornu rezoluciju ima na podruèjima veæe gustoæe populacije. No Gundlegard \cite{Gundlegard:2016.} smatra da neuniformnost æelija nije problem, veæ preklapanje podruèja pokrivanja u stvarnosti, posljedica èega su stalne oscilacije - ureðaj mijenja baznu stanicu na koju je spojen iako svo vrijeme zadržava isti položaj. Jedan od naèina na koji se može ublažiti efekt koji oscilacija ima na definiranje putovanja je odrediti minimalnu udaljenost putovanja ili èak potpuno zanemariti putovanja u susjedne æelije. Važno je kod definiranja putovanja uzeti u obzir postojanje oscilacija.
+Gustoæa Voronoi æelija snažno je korelirana s gustoæom stanovništva te stoga bolju prostornu rezoluciju ima na podruèjima veæe gustoæe populacije. Mjerna nesigurnost odreðivanja položaja tako iznosi od približno stotinu metara u gusto naseljenom, do nekoliko kilometara u ruralnom podruèju.\cite{Calabrese:2011.}  No Gundlegard \cite{Gundlegard:2016.} smatra da neuniformnost æelija nije problem, veæ preklapanje podruèja pokrivanja u stvarnosti, posljedica èega su stalne oscilacije - ureðaj mijenja baznu stanicu na koju je spojen iako svo vrijeme zadržava isti položaj. Jedan od naèina na koji se može ublažiti efekt koji oscilacija ima na definiranje putovanja je odrediti minimalnu udaljenost putovanja ili èak potpuno zanemariti putovanja u susjedne æelije. Važno je kod definiranja putovanja uzeti u obzir postojanje oscilacija.
 
 
 \begin{figure}[!htbp]

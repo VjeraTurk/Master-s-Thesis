@@ -53,7 +53,7 @@ Kod \gls{pom} (...)\\
 Rezolucija æe ovisiti o toènosti položaja! ...\\
 
 Voronoi æelije takoðer je moguæe ugnijezditi (što se èesto radi kod usporedbe s matricama dobivenim drugim postupkom), a pritom se može u matricu zabilježiti i aproksimacija internog toka, odnosno broja putovanja unutar nove æelije (popuniti dijagonalu). Postotak eksternih putovanja koji se gubi u procesu agregacije Voronoi æelija analiziran je  za matrice iz regije Picardie u Francuskoj.
-Agregacijom na razinu \textit{Urban Areas} (podruèja oko gradova) 85\% svih putovanja postaje internim putovanjima, a na razini \textit{Urban Cores} (podruèja oko veæih gradova) èak 97\% poèetno zabilježenih putovanja je interno, te ostaje samo 3\% eksternih putovanja. \cite{Bahoken:2013.}. Sliènu situaciju opisuje i \cite{Graells-Garrido:2016.} (Vidi sliku \ref{fig:diagonal})
+\textbf{Agregacijom Voronoi æelija na razinu \textit{Urban Areas} (podruèja oko gradova) 85\% svih putovanja postaje internim putovanjima, a na razini \textit{Urban Cores} (podruèja oko veæih gradova) èak 97\% poèetno zabilježenih putovanja je interno, te ostaje samo 3\% eksternih putovanja}. \cite{Bahoken:2013.}. Sliènu situaciju opisuje i \cite{Graells-Garrido:2016.} (Vidi sliku \ref{fig:diagonal})
 
 
 \begin{figure}[!htpb]
@@ -76,13 +76,6 @@ Agregacijom na razinu \textit{Urban Areas} (podruèja oko gradova) 85\% svih puto
 Na temelju usporedbi matrica kretanja u 4 razlièita grada, dobivenih iz \gls{cdr} i iz anketa, gdje je svaki grad u anketnim matricama imao svoju prostornu podjelu odnosno rezoluciju, Toole u svom radu \cite{Toole:2015.} (oèekivano) zakljuèuje da sa \textbf{smanjenjem rezolucije (visokim stupnjem agregacije Voronoi æelija) stupanj korelacije s matricama iz ankete (za isti grad) raste}. 
 
 
-\begin{figure}[!htbp]
-	\begin{center}
-		\includegraphics[width=10cm,keepaspectratio=true]{spaghetti_effect}
-		\caption{\textit{Spaghetti-effect} - problem koji se može javiti kod grafièkog prikaza tokova matrice visoke prostorne i niske vremenske rezolucije. Na slici su prikazani su jednodnevni tokovi.  \cite{Bahoken:2013.}}
-		\label{fig:spaghetti}
-	\end{center}
-\end{figure}
 
 \subsection{Vremenska razlièivost}
 
@@ -108,7 +101,7 @@ Osim oèekivane bitne razlike u radnim i neradnim danima, uoèeno je da je petak, 
 Rezultati nacionalne ankete u Sjedinjenim Amerièkim Državama pokazuju da je prosjeèan broj dnevnih putovanja po stanovniku 4.18 tijekom radnog dana te 3.86 tijekom neradnih dana u tjednu, što jest u skladu sa zakljuècima modernih metoda.\\
 (...)\\
 - praznici i izvanredni dogaðaji\\
-Privremene turistièke atrakcije i sportski dogaðaji mogu bitno utjecati na izmjenu uobièajenog uzorka kretanja. \cite{Bonnel:2015.}
+Privremene turistièke atrakcije i sportski dogaðaji mogu bitno utjecati na izmjenu uobièajenog uzorka kretanja. \cite{Bonnel:2015.}\\
 - Odbrojavanje na novu godinu na New Yourk times square,  
 
 \begin{comment}
@@ -163,7 +156,7 @@ Obuhvaæa pješaèki promet
 (...)\\
 - Ukoliko je rezlucija mala (velike æelije) nema potrebe za preciznim definiranjem kraja putovanja \\
 - O definiciji putovanja ovisit æe i zero-cells ?
-- \cite{Gundlegard:2016.} str. 9 definicija putovanja i prostorna i vremenska rezolucija, DEFINICIJA PUOVANJA JE KLJUÈNA\\
+- \cite{Gundlegard:2016.} str. 9 definicija putovanja i prostorna i vremenska rezolucija, DEFINICIJA PUTOVANJA JE KLJUÈNA\\
 -Za analizu Peak hour - intervali od 5 minuta! \cite{Gundlegard:2016.} str. 10\\
 - 30 min vremenski okvir\cite{Schneider:2013.} str. 6\\
 -short trips are less likely to use public transport\cite{Graells-Garrido:2016.}

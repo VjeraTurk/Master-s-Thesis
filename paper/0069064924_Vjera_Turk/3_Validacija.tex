@@ -1,7 +1,6 @@
 % !TeX encoding = windows-1250
 \chapter{Postojeæe metrike za validaciju POM-a}
 
-
 \section{Toènost POM-e}
 
 Toènost procijenjenih matrica gotovo uvijek se definira u odnosu na referentnu matricu (eng. \textit{grand truth matrix}) koja je dobivena  tradicionalnim postupcima (anketiranje i/ili prebrojavanje vozila). Statistièke mjere kvantiziraju razliku procijenjenih i “istinitih“ vrijednosti, ako su nam one poznate. 
@@ -49,11 +48,29 @@ The root mean squared error (RMSE) and accordingly the percent root mean squared
 
 \end{comment}
     
+\section{Grafièki prikaz (oblik) matrice}
+Na slici \ref{fig:spaghetti} može se vidjeti jedan oblik grafièkog prikaza matrice, odnosno njenih tokova. Svaki par centara æelija spojen je ravnom linijom èija debljina odgovara širini toka izmeðu te dvije linije. Meðutim, rijeè je o primjeru kada ovaj oblik prikaza nikako nije primjeren, zbog visoke rezolucije (velikog broja æelija) kao i velikog broja zabilježenih tokova. 
+Da bi se u ovom obliku prikazali svi podaci iz matrice, potrebno je prikazati jednu sliku za ulazne te jednu za sve izlazne tokove.
+
+Postoji i  prikladniji grafièki oblik matrice (...)\\
+-"heatmap"\\
+-problematika "normalizacija" na vrijednosti 0-255?\\
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=10cm,keepaspectratio=true]{spaghetti_effect}
+		\caption{\textit{Spaghetti-effect} - problem koji se može javiti kod grafièkog prikaza tokova matrice visoke prostorne i niske vremenske rezolucije. Na slici su prikazani su jednodnevni tokovi.  \cite{Bahoken:2013.}}
+		\label{fig:spaghetti}
+	\end{center}
+\end{figure}
+
+
 \section{Strukturalna sliènost}
  
 Dosada spomenute mjere neæe uhvatiti strukturalnu sliènost matrica. Nekolicina autora istièe važnost strukturalne sliènosti s referentnom matricom kao važnu mjeru kvalitete matrice jer visoka razina strukturalne sliènosti može biti prisutna i kod matrica s manjom razinom sliènosti prema statistièkim mjerama. Takoðer, strukturalna sliènost je (vizualno) vidljiva u grafièkom obliku matrice. Dobro odgovara ljudskoj vizualnoj percepciji sliènosti slike. 
  
 \subsection{MSSIM} 
+
 
 \gls{mssim} dolazi iz podruèja raèunalne obrade slike i koristi se kao mjera usporedbe digitalnih slika (\textit{eng. measure of comparison)}. U prometu ideja o korištenju  \gls{mssim} za mjerenje sliènosti matrica se prvi puta spominje i demonstrira na simuliranim matricama dobivenim iz referentne matrice dodavanjem šuma. \cite{Djukic:2013.}
 
@@ -64,22 +81,20 @@ $N$ elemenata na naèin da se jezgra (da bi obuhvatila novi blok) pomièe æeliju p
 
 
 %We define the structural information in an image as those attributes that represent the structure of objects in the scene, independent of the average luminance and contrast. Since luminance and contrast can vary across a scene, we use the local luminance and contrast for our definition
- 
+
 \subsubsection{Osnovni}
 
 \begin{comment}
 Neka reci matrice predstavljaju polazišta $i, i=1,2,...I$ a stupci odredišta $j, j=1,2,...J$ putovanja. Da bi se odredila strukturalna sliènost izmeðu dvije matrice, neka su $d = \{d_n| n = 1,2,...,N\} $ i $\hat{d} = \{\hat{d}_n| n = 1,2,...,N\}$ dva vektora izvuèena s iste pozicije iz referentne matrice $D=\{d_i,j\}$ i procijenjene matrice $D=\{\hat{d}_i,j\}$.
 
-\begin{equation}
 SSIM(d,\hat{d}) =[l(d,\hat{d})^\alpha][c(d,\hat{d})^\beta][s(d,\hat{d})^\gamma]\label{eq:ssim}
-\end{equation}
 \cite{Djukic:2013.}
 \end{comment}
 
 
 %X and Y are the images to be compared (computed as matrices of pixels), and x ? fxiji ? 1; 2;:::;Ng and y ? fyiji ? 1; 2;:::;Ng are pairs of local square windows (computed as submatrices of pixels) of X and Y, respectively; x and y are located at the same spatial position in both images. SSIM is defined in terms of the average pixel values, ?x and ?y, with pixel value standard deviations (SD) ?x and ?y at patches x and y and covariance (cross-correlation) ?xy of x and y through the following indexes
 
-Neka su $X$ i $Y$ matrice koje usporeðujemo a  $x = \{x_n| x = 1,2,...,N\} $ i $y = \{y_n| y = 1,2,...,N\}$ parovi vrijednosti kvadratnih prozora na istim pozicijama u  $X$ i $Y$; $SSIM$ je odreðen prosjeènim vrijednostima $\mu_x$ i $\mu_y$ sa standardnim devijacijama $\sigma_x$ i $\sigma_y$ i kovarijancom $\sigma_xy$ 
+Neka su $X$ i $Y$ matrice koje usporeðujemo a  $x = \{x_n| x = 1,2,...,N\} $ i $y = \{y_n| y = 1,2,...,N\}$ parovi vrijednosti kvadratnih prozora velièine jezgre na istim pozicijama u  $X$ i $Y$; $SSIM$ je odreðen prosjeènim vrijednostima $\mu_x$ i $\mu_y$ sa standardnim devijacijama $\sigma_x$ i $\sigma_y$ i kovarijancom $\sigma_xy$ 
 
 
 \begin{equation}
@@ -108,12 +123,12 @@ gdje su $\alpha$, $\beta$ i $\gamma$ parametri relativne važnosti svake komponen
 		SSIM(x,y) = 1 \iff x = y \label{subeq:unique_maximum} 
 	\end{align}
 	\label{subeq:obje}
-\end{subequations}
+	\end{subequations}
 
 \begin{equation}
 MSSIM(X,Y) =  \frac{1}{M} \sum_{m=1}^{M} SSIM(x_m,y_m) \label{eq:mssim}
 \end{equation}
-\cite{Renieblas:2017.}
+%\cite{Renieblas:2017.}
 
 \subsubsection{Poboljšani} 
 Nekoliko godina nakon prvog spominjanja $MSSIM$ kao metrike usporedbe \gls{pom}-a \cite{Vuren:2015.}  se dotièe 3 problema postavljajuæi pitanja : Koliko treba biti veliki blok? Kako usporediti "guste" i "rijetke" matrice? Koja je prihvatljiva vrijednost $MSSIM$? Autori definiraju poboljšani model koji nazivaju $4D$-$MSSIM$ gdje u izraèun dodaju stvarne euklidske udaljenosti prostornih æelija matrice. 

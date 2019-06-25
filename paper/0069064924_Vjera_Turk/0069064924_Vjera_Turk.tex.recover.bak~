@@ -11,14 +11,14 @@
 \frontmatter   % - ne dirati
 
 % upisati naziv studija
-\degreesubject{Diplomski studij raèunarstva} % upisati odgovarajuci naziv studija
+\degreesubject{Diplomski studij raÄunarstva} % upisati odgovarajuci naziv studija
 
 % upisati vrstu rada
 \documenttype{Diplomski rad}  % Zavrsni rad ili Diplomski rad
 
-\title{Metodologija za usporedbu kontekstualiziranih \\ polazišno-odredišnih matrica}   % upisati specificni naslov rada
+\title{Metodologija za usporedbu kontekstualiziranih \\ polaziÅ¡no-odrediÅ¡nih matrica}   % upisati specificni naslov rada
 
-\date{\MONTH~\the\year.}   % ne dirati - mjesec i godina æe se upisati sami
+\date{\MONTH~\the\year.}   % ne dirati - mjesec i godina Ä‡e se upisati sami
 
 \author{Vjera Turk}  % upisati svoje ime i prezime
 \jmbag{0069064924}  % upisati vlastiti JMBAG
@@ -26,7 +26,7 @@
 
 %\makecopyright
 
-% Okruzenje za pisanje posvete. Maknuti komentare ukoliko se eli napisati posvetu.
+% Okruzenje za pisanje posvete. Maknuti komentare ukoliko se Å¾eli napisati posvetu.
 %\begin{dedication}
 %	Ovo je posveta nekome
 %\end{dedication}
@@ -48,15 +48,15 @@
 	\input{Zahvala}  
 \end{acknowledgments}
 
-% kreiranje popisa sadrzaja, slika i tabela - ništa ne dirati
+% kreiranje popisa sadrzaja, slika i tabela - niÅ¡ta ne dirati
 \tableofcontents
 \listoffigures
 \listoftables
 
 \mainmatter		% ne dirati
 
-% Ovdje pomoæu include funkcije ucitavati kreirana poglavlja. Poglavljima dajte logicna imena s obzirom na sadrzaj prikazan u njima (bez razmaka u imenu).
-%\include{Intro}   % ovo poslije staviti pod komentar kada se nauèi koristiti
+% Ovdje pomoÄ‡u include funkcije ucitavati kreirana poglavlja. Poglavljima dajte logicna imena s obzirom na sadrzaj prikazan u njima (bez razmaka u imenu).
+%\include{Intro}   % ovo poslije staviti pod komentar kada se nauÄi koristiti
 \include{1_Uvod}
 %\include{2_Kontekst}  % dati neko logicno ime umjesto ``Poglavlje_1''
 \include{3_Validacija} 

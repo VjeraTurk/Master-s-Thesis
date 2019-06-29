@@ -56,4 +56,44 @@ Apparently this is a ["Feature"](https://tex.stackexchange.com/questions/86820/i
 Other solution is to use [{ }](https://tex.stackexchange.com/questions/10772/bibtex-loses-capitals-when-creating-bbl-file  
 ) around parts of title (or entire title) we wish to keep capitalised  
 
+6. Force long version of accronyms (for example in chapter or (sub)section title) or other forms of word (e.g. genitive form)
+: edit .glsdef file by changing value of keys *first* or *text* and use `\glsfirst{}` and `\glstext{}`where you wish to add such forms.  
+
+[reference](https://tex.stackexchange.com/questions/178725/how-to-use-glossaries-for-different-grammatical-acronym-forms/182725#182725)  
+[reference](https://tex.stackexchange.com/questions/124538/why-does-first-use-of-gls-look-different-than-glsfirst)  
+  
+```
+\ifglsentryexists{pom}{}%
+{%
+\gls@defglossaryentry{pom}%
+{%
+name={\acronymfont {\glsentryshort {pom}}},%
+sort={POM},%
+type={main},%
+first={Polazi\v sno-Odredi\v sna Matrica},%
+firstplural={Polazi\v sno-Odredi\v sne Matrice},%
+text={Polazi\v sno-Odredi\v snih Matrica},% 
+plural={POM-a},%
+description={Polazino-Odredina Matrica},%
+descriptionplural={Polazino-Odredine Matrice},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Polazi\v sno-Odredi\v sna Matrica},%
+longplural={Polazi\v sno-Odredi\v sne Matrice},%
+short={POM},%
+shortplural={POMs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+```
+
+
 

@@ -35,16 +35,16 @@ Metodologija je izvedena u programskom okruženju za statistièko raèunarstvo R te
 
 \begin{comment}  
 The Origin-Destination matrices (ODs) provides the number of trips between each pair of locations in the area for a specified time window ...which specify the travel demands between the origin and destination nodes in the network. 
-
 Izvorišno-odredišna matrica prikazuje broj putovanja iz izvorišne u ciljnu zonu u promatranom vremenu. Može biti prikazana ukupno ili po pojedinim modulima prometnog sustava (osobna vozila, vozila javnog prijevoza, teretna vozila, pješaka itd). Može biti generirana za sadašnje ili planirano prometno optereæenje.
 \end{comment}
 
+\section{Definicija}
 Polazišno-odredišna matrica sadrži broj putovanja izmeðu svakog para zona unutar nekog podruèja za odreðeni vremenski okvir (u svakom smjeru zasebno). Redovi u matrici predstavljaju polazišta (izvore prometnog toka), a stupci odredišta. Svaki element u matrici predstavlja broj putovanja iz pripadajuæe polazišne u pripadajuæu ciljnu zonu. Može se smatrati matriènim zapisom težinskog usmjerenog grafa, gdje su težinski faktori usmjerenih veza širine prometnih tokova izmeðu èvorova mreže koji predstavljaju zone na koje je promatrano podruèje podijeljeno.  
 
 U prometnoj znanosti postoje brojne metode estimacije matrica. I dok se još uvijek ulaže u razvoj matematièkih modela koji imaju za cilj poveæati kvalitetu matrica generiranih tradicionalnim metodama, u novije vrijeme razvijaju se nove, moderne metode, koje imaju veliki potencijal, zbog svoje jednostavnosti u izvedbi, ažurnosti podataka i velikog uzorka stanovništva koji obuhvate. Kod pojedinih operatera radi se o oko èak 40-50\% svih državljana neke države \cite{Bonnel:2015.}.  (...)
 %zamijeniti tradicionalne metode i postati standard u analizi prometa pa tako i generiranju \gls{pom}-a.
 
-Matrica može biti generirana za sadašnje ili planirano prometno optereæenje. Može biti prikazana ukupno ili po pojedinim modulima prometnog sustava (osobna vozila, vozila javnog prijevoza, teretna vozila, pješaka itd) i/ili razlièitim svrhama putovanja (putovanja na posao, putovanja kuæi...).   
+Matrica može biti generirana za sadašnje ili planirano prometno optereæenje. Može biti prikazana ukupno ili po pojedinim sredstvima kretanja (modulima prometnog sustava - osobna vozila, vozila javnog prijevoza, teretna vozila, pješaka itd) i/ili razlièitim svrhama putovanja (putovanja na posao, putovanja kuæi...).   
 
 Odreðivanje konteksta putovanja dodatno obogaæuje matrice jer specificira socio-ekonomske aktivnosti koje su pokretaèi putovanja odnosno razlozi kretanja stanovništva. %in the first place. 
 Moguænost preciznog odreðivanja konteksta zavisi o metodi estimacije matrica.
@@ -68,10 +68,8 @@ Odreðivanje konteksta putovanja može se promatrati kao zasebna problematika, jer
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Iako intuitivno možemo zakljuèiti da se radi o kvadratnoj matrici, ove matrice su ponekad, zbog ogranièenja metoda (ili prirode kretanja na nekom podruèju)  "rijetko popunjene", odnosno sadrže veliki broj nul-æelija, pa su u nekim sluèajevima prazni redovi ili stupci izbaèeni, a posljedica toga je memorijski (i raèunski) manje zahtjevna, ne-kvadratna matrica. Ova problematika istaknuta je u radu iz 2010. koji analizira kvalitetu matrica dobivenih iz anketa stanovništva\cite{Cools:2010.}.
-
-\section{Tradicionalni pristupi generiranju POM-a}
+\section{Generiranje \glstext{pom} }
 \subsection{Ankete}
-
 \begin{comment}  
 Traditional methods include running surveys within cities and estimating the flows between locations of the city from the feedback of those surveys. Such methods consume longer s of time and are inaccurate at times. They usually span smaller population sample sizes and thus are more prone to biases.
 
@@ -154,7 +152,8 @@ U novije vrijeme znanstvenici predlažu metode u kojima koriste upravo anonimizir
  \cite{Gundlegard:2016.} \cite{Alhazzani:2016.} \cite{Frias-Martinez:2012.}  iako se sama ideja spominje u istraživanjima još iz 1994., gotovo od kad je javna pokretna mreža postala široko dostupna.\cite{Gundlegard:2016.} \textbf{U ostatku rada, na mjestima gdje nije naveden izvor matrica, radi se o postupku ili matricama generiranim iz \gls{cdr}}.
 
 Zanimljivo je ovdje spomenuti europsku inicijativu \textit{eCall} za brzu pomoæ stradalima u prometnim nesreæama bilo gdje u Europskoj Uniji. \textit{eCall} zahtjeva da u svakom novom motornom vozilu bude ugraðen ureðaj koji u sluèaju prometne nesreæe automatski obavijesti centar 112 te mu šalje informacije o aktivaciji zraènih jastuka, prikupljene podatke osjetila za procjenu jaèine sudara i u dakako položaj vozila u trenutku prometne nesreæe. Takoðer treba omoguæiti uspostavu poziva (\gls{gsm}). Prognoza je da æe se korištenjem tog sustava vrijeme odziva (dolaska službi na mjesto prometne nesreæe) smanjiti za izmeðu 40\% i 50\%. Od travnja 2018. svi novi automobili u prodaji u Europskoj Uniji imaju ugraðen ovaj ureðaj. Nakon uspješnog uspostavljanja sustava oèekuje se da bi se ureðaj mogao poèeti koristiti i u druge svrhe. \cite{eCall:2018.}
-
+ ***GDPR***
+%\subsection{gdpr}
 
 \begin{comment}
 %eCall is a European initiative intended to bring rapid assistance to motorists involved in a collision anywhere in the European Union. eCall was made mandatory in all new cars sold within the EU from April 2018.[1]
@@ -186,7 +185,7 @@ Kod izrade tzv. tranzitnih matrica, u kojima je naglasak osim na broj putovanja 
 %coordination with traditional tehniques is key to providing optimal solution in future.\cite{Goulding:2016.}
 \end{comment}
 
-\subsection{Kontekst iz samog izvora podataka o kretanju}    
+\subsection{Kontekst iz izvora podataka o kretanju}    
 
 Kada su dostupni zapisi prikupljani dulje vremensko razdoblje, tjednima ili mjesecima èesto se putovanja odnosno matrice mogu definirati na drugaèiji naèin. Pojednostavljeno, analizom zapisa može se utvrdi na kojem položaju (u kojoj æeliji) neki pojedinci pretežito borave u tipiènom radnom vremenu te u kojoj tokom noæi. Prva æelija za njihova putovanja postaje \textit{Work} destinacija, druga \textit{Home}, a sve preostale destinacije svrstaju se u zasebnu kategoriju \textit{Other}. Potom se generiraju matrice koje ukljuèuju samo putovanja iz jednog tipa destinacije u drugi npr. \gls{hw} i \gls{wh}.\cite{Goulding:2016.}\cite{Graells-Garrido:2016.}\cite{Bahoken:2013.}\cite{Calabrese:2011.}\cite{Toole:2015.}. %\cite{Frias-Martinez:2012.} - oni su kao nešto protiv toga
 Jedan od razloga je da su takve matrice usporedive s onima dobivenim iz anketa stanovništva s istom podjelom putovanja.
@@ -209,21 +208,33 @@ Kada su dostupni zapisi prikupljani dulje vremensko razdoblje, tjednima ili mjes
 		\cite{Bera:2011.}
 \end{comment}
 
-\subsection{Moduli kretanja}
-Iskljuèivo \gls{cdr} zapisi ne osiguravaju rezoluciju pogodnu za odreðivanje modula kretanja iako su razvijene metodologije \cite{Toole:2015.}. Iznimno se mogu izdvojiti bazen stanice dedicirane pružanju usluge iskljuèivo u podzemnoj željeznici.
+\subsection{Sredstva kretanja}
+Iskljuèivo \gls{cdr} zapisi ne osiguravaju rezoluciju pogodnu za odreðivanje sredstva kretanja iako su razvijene metodologije \cite{Toole:2015.}. Iznimno se mogu izdvojiti bazen stanice dedicirane pružanju usluge iskljuèivo u podzemnoj željeznici.
  
 %Osim \gls{cdr} operateri prikupljaju dodatne podatke o preusmjeravanju poziva (engl. handover) na druge bazne stanice, (...)  
 
-Teralytics je jedna od mladih kompanija koja nudi uslugu modeliranja prometa iz telekomunikacijskih podataka. Izmeðu ostalog prema brzini kojom pokretna stanica (ili skupina njih istovremeno) mijenja položaj donose zakljuèak o dominantnom modulu kretanja (pješak, automobil, javni prijevoz, avion). Tajna njihovog uspjeha je da osim \gls{cdr} koriste i ranije spomenute dodatne podatke koji se prikupljaju. \cite{Teralytics:2017.} 
+Teralytics je jedna od mladih kompanija koja nudi uslugu modeliranja prometa iz telekomunikacijskih podataka. Izmeðu ostalog prema brzini kojom pokretna stanica (ili skupina njih istovremeno) mijenja položaj donose zakljuèak o dominantnom sredstvu kretanja (pješak, automobil, javni prijevoz, avion). Tajna njihovog uspjeha je da osim \gls{cdr} koriste i ranije spomenute dodatne podatke koji se prikupljaju. \cite{Teralytics:2017.} 
 
-Za razliku od tradicionalnih modela prebrojavanja vozila, telekomunikacijski zapisi obuhvaæaju sve module kretanja kao i svu prometnu infrastrukturu (kao i podruèja bez razvijene prometne infrastrukture), ne samo onu gdje se provode intervjui ili gdje su postavljena osjetila za prebrojavanje prometa. Uklanja potrebu za razlièitim pristup prebrojavanja za pojedine module kretanja. 
+Za razliku od tradicionalnih modela prebrojavanja vozila, telekomunikacijski zapisi obuhvaæaju sva sredstva kretanja kao i svu prometnu infrastrukturu (kao i podruèja bez razvijene prometne infrastrukture), ne samo onu gdje se provode intervjui ili gdje su postavljena osjetila za prebrojavanje prometa. Uklanja potrebu za razlièitim pristup prebrojavanja za pojedina sredstva kretanja. 
  
 
-%Poznavanjem modula kretanja može se analizirati "carbon footprint grada" jedan rad!!
+%Poznavanjem sredstva kretanja može se analizirati "carbon footprint grada" jedan rad!!
 
 %proksimacija s BS ili signal strenght (RSSI) + neka ona drugo baza LTO(?)
- \section{Kontekst iz vanjskih izvora}
+ \section{Kontekst izveden iz vanjskih izvora}
 Neka istraživanja spojila su ljudsku mobilnost s namjenom zemljišta (engl. \textit{land use}) ili toèkama interesa \textit{engl. \gls{pois}} kako bi grupirala urbane predjele prema njihovoj funkciji ili upotrebi. Izvori podataka o mobilnosti variraju od \gls{gps} putanja, položaja ukrcaja i iskrcaja taxi vozila, zapisi koje generiraju pametne kartice u javnom prijevozu, podatci o dijeljenim lokacijama na društvenim mrežama \textit{(engl. check-in)} i zapisi o telekomunikacijskim aktivnostima (\gls{cdr}). \cite{Alhazzani:2016.}
+
+**opæenito koristiti se mogu\\
+-opisi relacija, \\
+-opisi objekata\\
+
+kasnije navedeni konkretni primjeri:
+**
+
+**
+Daje podatak i o internim putovanjima (Petra)
+**
+
 \begin{comment}
 % Some studies combined human mobility with land use or POIs data to segment districts in urban areas according to their functions or use. The type of data used to capture human mobility behavior varies between individual GPS traces [10, 11], taxi pick up/drop off locations as in [7, 12] , Call Detail Records (CDRs) as in [2, 8], social media check ins as in [13–15], and bus smart card data as in [16]. 
 \end{comment}
@@ -250,7 +261,7 @@ Spatial objects within the area of interest were categorized by type of socio-ec
 \end{comment}
 
 \section{Geometrija prostorne podjele}
-Konaèna geometrija prostorne podjele alternativnih izvora uglavnom ovisi o prostornoj podjeli \textit{grand truth} matrice, matrice koja se uzima kao najvjerniji prikaz stvarnog kretanja te u odnosu na koju se procjenjuje toènost procijenjene matrice. Obièno se radi o jedinici prostorne podjele naziva \glsfirst{taz} kod analize prometa, o anketnim jedinicama ili jedinicama samouprave. Neprihvaæenija prostorna podjela kod matrica izvedenih iz CDR je ona na Voronoi æelije.
+Konaèna geometrija prostorne podjele alternativnih izvora uglavnom ovisi o prostornoj podjeli \textit{grand truth} matrice, matrice koja se uzima kao najvjerniji prikaz stvarnog kretanja te u odnosu na koju se procjenjuje toènost procijenjene matrice. Obièno se radi o jedinici prostorne podjele naziva \glsfirst{taz} kod analize prometa, o anketnim jedinicama ili jedinicama samouprave. Neprihvaæenija prostorna podjela kod matrica izvedenih iz \gls{cdr} je ona na Voronoi æelije.
 
 %\subsubsection{\glsfirst{taz}}
 \subsubsection{\glsfirst{taz}}
@@ -354,30 +365,36 @@ U sklopu projekta \gls{d4d} francuski operater \textit{Orange} ustupio je na kor
 	\end{center}
 \end{figure}
 
-\section{Vremenska domena}
+**Ideja: Dinamièka prostorna podjela, drugaèija prostorna podjela za doba dana/godine**
+
+\section{Vremenska interpretacija}
+\subsection{Vremenska rezolucija}
 (...)\\
 -tranzitna matrica vs. matrica bez vremenske dimenzije (odnosno ima samo jedan vremenski okvir)\\
 -radni dan, vikend, petak drugaèiji -> sposobnost CDR da uhvate razlike\\
 -sposobnost da uhvati sezonske promjene
 
-
-
-\section {Dobre prakse u generiranju POM iz CDR}
+\section{}
+former section \textbf{Dobre prakse u generiranju \glstext{pom} iz \glsfirst{cdr}}\\
 %Skaliranje CDR POM (primjerak $->$ pouplacija)
 %(linking to transport infrastructure?)
-	-k-anonymization 5 - 10 \cite{Teralytics:2017.}   i in rural area \cite{Goulding:2016.}
-	\\
-	-Grad, Država\\ 
+	-anonimizacija i GDPR\\
+	- onemoguèiti reingeneering:
+	k-anonymization 5 - 10 \cite{Teralytics:2017.} i in rural area \cite{Goulding:2016.}
+	\\	-Grad, Država\\ 
 		A potential is also recognized for a planet-scale mobilitiy measurement through opening to researchers and combining the different big dataset carrying location information. \cite{Scepanovic:2015.}  \cite{Hui:2010.}
 		
-	-CDR- POM u zemljama u razvoju  \\
- 	-Penetracija od 82\%, 9x\% -> pronaæi radove\\
+	-CDR- POM u zemljama u razvoju  (NE)\\
+ 	-Penetracija od 82\%, 9X\% $\rightarrow$ pronaæi radove\\
  	2008.  Francuska 80\% starijih od 12 godina \cite{Bonnel:2015.}\\ 
+
  	-Mobilni ureðaji iz godine u godinu zastupljeni su kod sve veæeg postotka stanovništvu, ne samo u razvijenim zemljama veæ i u zemljama u razvoju. 
-        
+
+** slobodno spomenem da se negdje ne smiju koristiti mobiteli u autima **   netko:negdje je rekao da bi imalo smisla pome iz \gls{cdr} da se smiju koristiti mobiteli prilikom vožnje
+
 \newpage
-\section{Drugi primjeri automatskog prikupljanja}
-\subsection{Dodatni telekomunikacijski podatci (?) }
+\section{Alternative izvora prostornih podataka za kreiranje \glstext{pom}}
+%\subsection{Dodatni telekomunikacijski podatci (?) }
 \subsection{Združena oèitanja prijamnika za satelitsku navigaciju}
 (...)\\
 komercijalna vozila, Taxi

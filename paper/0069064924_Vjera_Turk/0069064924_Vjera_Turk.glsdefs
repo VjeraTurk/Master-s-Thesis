@@ -1,3 +1,33 @@
+\ifglsentryexists{pom}{}%
+{%
+\gls@defglossaryentry{pom}%
+{%
+name={\acronymfont {\glsentryshort {pom}}},%
+sort={POM},%
+type={main},%
+first={Polazi\v sno-Odredi\v sna Matrica},%
+firstplural={Polazi\v sno-Odredi\v sne Matrice},%
+text={Polazi\v sno-Odredi\v snih Matrica},%
+plural={POM-a},%
+description={Polazišno-Odredišna Matrica},%
+descriptionplural={Polazišno-Odredišne Matrice},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Polazi\v sno-Odredi\v sna Matrica},%
+longplural={Polazi\v sno-Odredi\v sne Matrice},%
+short={POM},%
+shortplural={POMs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{taz}{}%
 {%
 \gls@defglossaryentry{taz}%
@@ -23,36 +53,6 @@ long={Traffic Analisys Zone},%
 longplural={Traffic Analisys Zones},%
 short={TAZ},%
 shortplural={TAZs},%
-counter={page},%
-parent={},%
-%
-}%
-}%
-\ifglsentryexists{pom}{}%
-{%
-\gls@defglossaryentry{pom}%
-{%
-name={\acronymfont {\glsentryshort {pom}}},%
-sort={POM},%
-type={main},%
-first={POM},%
-firstplural={POMs},%
-text={POM},%
-plural={POMs},%
-description={Polazišno-Odredišna Matrica},%
-descriptionplural={Polazišno-Odredišna Matrica},%
-symbol={\relax },%
-symbolplural={\relax },%
-user1={},%
-user2={},%
-user3={},%
-user4={},%
-user5={},%
-user6={},%
-long={Polazi\v sno-Odredi\v sna Matrica},%
-longplural={Polazi\v sno-Odredi\v sna Matricas},%
-short={POM},%
-shortplural={POMs},%
 counter={page},%
 parent={},%
 %
@@ -125,7 +125,7 @@ parent={},%
 name={\acronymfont {\glsentryshort {cdr}}},%
 sort={CDR},%
 type={main},%
-first={CDR},%
+first={Charging Data Records},%
 firstplural={CDRs},%
 text={CDR},%
 plural={CDRs},%

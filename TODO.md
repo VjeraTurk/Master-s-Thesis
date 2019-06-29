@@ -1,6 +1,6 @@
 ### TODO's
 * Što je POM, što je 1 ćelija
-   * opisati matricu, n x n ?!
+   * opisati matricu, n x n
 * POM -> Telekomunikacijska POM -> Kontekstualizirana POM
 
 #### **PARAMETRI USPOREDBE**
@@ -10,7 +10,7 @@
    * isto doba godine: da
    * isto vremensko razdoblje: da (dani, mjeseci godine?)
 
-* statističko učenje - problem klasifikacije za SVAKI PARAMETAR ZASEBNO (parametat!=značajka)
+* statističko učenje - problem klasifikacije za SVAKI PARAMETAR ZASEBNO (parametar!=značajka)
   - odrediti "Granice vrijednosti parametara OD - DO" pronaći optimum
 
 * Međusobna ovisnost parametara
@@ -59,7 +59,6 @@
 * zbrojene matrice?! usporedba zbrojenih
 
 #### Matrix
-* DONE: Voronoi tessellations (base stations)
 * R clipping Lovelence
 
 * IN PROGRESS: generirati POM iz CDR (prema algoritmu iz objevljanog rada- teško)(validirati) --> NE
@@ -69,14 +68,18 @@
 * generirati POM iz TAXI (pomoć Petra) --> NE
 * generirati CPOM iz CDR i TAXI (pomoć Petra, TehRep) -->NE
 
+* simulirati matrice 
+   * agreagacija voronoi?
+
 #### R
 * DONE: instalirati noviju verziju! # upgraded to R version 3.5.1 (2018-07-02) -- "Feather Spray"
 * DONE: instaliran gdal, rgdal, stplanr
 
 #### Paper
 
-* IN PROGRESS: Sadržaj
-* IN PROGRESS: RELATED WORK-> pozvati se na radove, spomenuti ključne ljude
+*  Sadržaj
+*  RELATED WORK-> pozvati se na radove, 
+*  spomenuti ključne ljude
 
 * Prometna vs Napredna
 * Fizička mobilnost vs socio-ekonomska aktivnost

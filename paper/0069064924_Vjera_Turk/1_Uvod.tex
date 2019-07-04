@@ -256,7 +256,7 @@ Put je ureðena lista 2 do 2,000 èvorova, koja takoðer može biti opisana žigovima
  \subsubsection{Model raspodjele toka}
 Inovativni pristup kontekstualizaciji toka korištenjem OpenStreetMap baze predstavljen je u radu \cite{Stupar:2018.}. Na osnovu pripadajuæih opisnih podataka, prostorni objekti na podruèju interesa kategorizirani su prema tipu socio-ekonomske aktivnosti u koju su ukljuèeni. Definirano je ukupno 6 kategorija:
 Dom (Home), Posao (Work), Zdravlje (Health), Edukacija (Education), Zabava (Leisure) i Ostalo (Other). Razvijen je vjerojatnosni model koji, na osnovu broja objekata pojedine kategorije u odredišnoj æeliji i promatranog vremenskog okvira, ukupni ulazni tok u odredišnu æeliju dijeli na 6 tokova usmjerenih prema objektima tih kategorija. Iz jedne matrice tako  se dobije 6 matrica, po jedna za svaku od kategorija. Korištene su matrice dobivene iz javno dostupnih, anonimiziranih telekomunikacijskih zapisa na podruèju kineskog grada Shenzhena.\cite{Filic:2016.}\cite{data:2019.}
-\textbf{Definiranjem konteksta putovanja na ovaj naèin saèuvana je moguænost postizanja dobre rezolucije u vremenu, a istovremeno je dan kontekst koji ukljuèuje tipiène \textit{Home} i \textit{Work} kategorije, te umjesto opæenite kategorije \textit{Other} precizira 4 kategorije}.
+\textbf{Definiranjem konteksta putovanja na ovaj naèin saèuvana je moguænost postizanja dobre rezolucije u vremenu, a istovremeno je dan kontekst koji ukljuèuje tipiène \textit{Home} i \textit{Work} kategorije, te umjesto opæenite kategorije \textit{Other} precizira 4 kategorije}. 
 
 **
 Daje podatak i o internim putovanjima (Petra)
@@ -383,11 +383,26 @@ U sklopu projekta \gls{d4d} francuski operater \textit{Orange} ustupio je na kor
 
 **Ideja: Dinamièka prostorna podjela, drugaèija prostorna podjela za doba dana/godine**
 
+\cite{Schneider:2013.}
+-to remove towers which are only used during travel, all
+towers which are less frequently visited than a certain
+threshold are ignored; in this study, less than 0.5 per cent
+during the entire observational period;
+
+— the day, starting at 03.00, is divided into 48, 30-min slots for each of the 154 days;
+
+to eliminate signal transitions between neighbouring towers,
+these towers are merged \textbf{for one day}, if more than three back and forward transitions between them are recorded during a single day;
+
+ to identify an activity location, only the most frequently
+observed location during each time slot is assigned as an
+activity location for this time slot;
+
 \section{Vremenska interpretacija \glstext{pom}}
 \subsection{Vremenska rezolucija}
 (...)\\
 -tranzitna matrica vs. matrica bez vremenske dimenzije (odnosno ima samo jedan vremenski okvir)\\
--radni dan, vikend, petak drugaèiji -> sposobnost CDR da uhvate razlike\\
+-radni dan, vikend, petak drugaèiji $\rightarrow$ sposobnost CDR da uhvate razlike\\
 -sposobnost da uhvati sezonske promjene
 
 \section{}
@@ -395,7 +410,7 @@ former section \textbf{Dobre prakse u generiranju \glstext{pom} iz \glsfirst{cdr
 %Skaliranje CDR POM (primjerak $->$ pouplacija)
 %(linking to transport infrastructure?)
 	-anonimizacija i GDPR\\
-	- onemoguèiti reingeneering:
+	- onemoguæiti reingeneering:
 	k-anonymization 5 - 10 \cite{Teralytics:2017.} i in rural area \cite{Goulding:2016.}
 	\\	-Grad, Država\\ 
 		A potential is also recognized for a planet-scale mobilitiy measurement through opening to researchers and combining the different big dataset carrying location information. \cite{Scepanovic:2015.}  \cite{Hui:2010.}

@@ -18,6 +18,8 @@
 \section{Kriteriji usporedbe} % umjesto komparacijsi indikatori
 %Parametar - varijabla o kojoj ovisi odreðeni logièki izraz, matematièka formula ili funkcija, a koju promatramo kao dodatnu ovisnost u izrazu koji se definira kao da je ta vrijednost èvrsta.\\(...)
 
+\textit{Iz teksta zadatka: ...U ovom radu potrebno je definirati \textbf{odnosne parametre kvalitete} POM-e ... }
+
 \subsection{Definicija putovanja}
 
 Kod generiranja matrica treba definirati hoæe li se putovanja koja se protežu kroz više perioda dodijeliti vremenskom okviru u kojem zapoèinju ili u kojem završavaju. Iako ponekad nije specificirano, autori \cite{Bera:2011.} \cite{Filic:2016.} \cite{Gundlegard:2016.} sva putovanja dodjeljuju intervalu u kojem je putovanje zapoèeto. Teralytics u praksi generira obje vrste matrica \cite{Teralytics:2017.}.
@@ -33,10 +35,15 @@ O definiciji putovanja dakako ovisit æe njihov konaèan broj, odnosno širina toka
 - bez internih putovanja (unutar iste æelije)\\
 **
 
+\cite{Gundlegard:2016.}
+The home and work location are identified as locations with a minimum distance of three kilometers, and not belong to
+neighboring antennas in the Voronoi graph. 
+
+
 \begin{figure}[!htpb]
 	\begin{center}
 		\subfloat[Matrica u kojoj je putovanje definirano kao zabilježeni pomak izmeðu 2  antene - \textit{kratka putovanja} ]{\label{fig:short_journeys}
-			\includegraphics[height=7cm,width=10cm,keepaspectratio=true]{short_journeys}}\\ 
+			\includegraphics[height=7cm,keepaspectratio=true]{short_journeys}}\\ 
 		%\hspace{10pt}
 		\subfloat[Matrica u kojoj je putovanje definirano kao promjena pozicije izmeðu 2 prethodno definirana perioda, odnosno izmeðu položaja na kojima korisnik pretežito boravi u ta 2 perioda - definiranjem tih perioda pokušavaju se opisati putovanja od prebivališta na posao i s posla nazad na prebivalište engl. \textit{commuting trips} ]
 		{\label{fig:long_journeys}
@@ -49,10 +56,22 @@ O definiciji putovanja dakako ovisit æe njihov konaèan broj, odnosno širina toka
 
 \subsection{Prostorna razluèivost (rezolucija)}
 
-Prema hrvatskoj enciklopediji definicija razluèivosti (rezolucije) glasi: mjera za razaznavanje sitnih pojedinosti na nekom prikazu (npr. televizijskoj slici). U raèunalstvu se odnosi na finoæu rasterske slike iskazanu ukupnim brojem slikovnih elemenata (relativna razluèivost) ili brojem slikovnih elemenata po inèu (stvarna razluèivost).
+Prema hrvatskoj enciklopediji definicija razluèivosti (rezolucije) glasi: mjera za razaznavanje sitnih pojedinosti na nekom prikazu (npr. televizijskoj slici). U raèunalstvu se odnosi na finoæu rasterske slike iskazanu ukupnim brojem slikovnih elemenata (relativna razluèivost) ili brojem slikovnih elemenata po inèu (stvarna razluèivost).\\
 (...)\\
-Kod \gls{pom} (...)\\
+Kod \gls{pom}-a razvijenih iz \gls{cdr} rezolucija æe ovisit o gustoæi tornjeva bazni stanica. Gustoæa tornjeva snažno je korelirana s gustoæom populacije. \cite{Gundlegard:2016.}
+%The antenna density is strongly correlated to population density and hence we get a better spatial resolution of trips in areas with denser population. 
+Distribucija tornjeva nije homogena, niti na podruèju grada, niti na bilo kojem drugom podruèju. Kod izrazito visoke gustoæe \cite{Goulding:2016.} predlaže grupiranje aktivnosti tornjeva koji se nalaze na udaljenosti manjoj od 75 m (dodjeljivanje aktivnosti najaktivnijem od tornjeva) kako bi se izbjegla lažna kretanja (*). 
+ (...)\\
 Rezolucija æe ovisiti o toènosti položaja! ...\\
+
+Takoðer dobro spomenuti kod poglavlja dinamièka podjela $\rightarrow$
+From a telecom operator perspective, the knowledge
+about the call density and specifically the correlation of the call density to the geography is an important call pattern. This call pattern helps the telecom operator to tune the cellular network \cite{Varun:2013.}
+
+From Figure 3 observe that the antenna density is more
+towards the south east of Ivory Coast. Correlating this data
+with Figure 5 and Figure6 one would expect a higher call
+density, but a combination of light and dark shades indicates that this is not the case. Our experiments with the CDRs show a consistent low call density in the region. It cannot be conclusively said whether this observation is true all year long since the CDRs are only for five months. However, based on the available data, it can be inferred that some amount of network planning to optimise antenna density to match call density is advisable. \cite{Varun:2013.}
 
 Voronoi æelije takoðer je moguæe ugnijezditi (što se èesto radi kod usporedbe s matricama dobivenim drugim postupkom), a pritom se može u matricu zabilježiti i aproksimacija internog toka, odnosno broja putovanja unutar nove æelije (popuniti dijagonalu). Postotak eksternih putovanja koji se gubi u procesu agregacije Voronoi æelija analiziran je  za matrice iz regije Picardie u Francuskoj.
 \textbf{Agregacijom Voronoi æelija na razinu \textit{Urban Areas} (podruèja oko gradova) 85\% svih putovanja postaje internim putovanjima, a na razini \textit{Urban Cores} (podruèja oko veæih gradova) èak 97\% poèetno zabilježenih putovanja je interno, te ostaje samo 3\% eksternih putovanja}. \cite{Bahoken:2013.}. Sliènu situaciju opisuje i \cite{Graells-Garrido:2016.} (Vidi sliku \ref{fig:diagonal})
@@ -74,13 +93,39 @@ Voronoi æelije takoðer je moguæe ugnijezditi (što se èesto radi kod usporedbe s 
 
 %Ruralna podruèja rjeðe zahtijevaju agregiranje æelija.
 
-
 Na temelju usporedbi matrica kretanja u 4 razlièita grada, dobivenih iz \gls{cdr} i iz anketa, gdje je svaki grad u anketnim matricama imao svoju prostornu podjelu odnosno rezoluciju, Toole u svom radu \cite{Toole:2015.} (oèekivano) zakljuèuje da sa \textbf{smanjenjem rezolucije (visokim stupnjem agregacije Voronoi æelija) stupanj korelacije s matricama iz ankete (za isti grad) raste}. 
 
 **\\
-- prosjeèna udaljenost 2 bazne stanice 75m netko:nekad, \\
+Finally, we also recommend as best practice the merging of BTS activity in high density areas (in Annex 1 we use a 75m cordon, below which any adjacent BTS are merged). This is due to a deleterious reduction in confidence in high density areas, which are subject to greater load balancing, that the BTS’s associated voronoi region accurately reflects a user’s true position. \cite{Goulding:2016.}
+
+ all towers within 75m of each other was merged with
+that of the most active tower in the set. 
+
+
+\cite{Bahoken:2013.}
+na razini pokraine, regije : The median value of the Vorono? links’ length is 75 km, the minimum is 0.6 km and the maximum is 208 km.
+%- prosjeèna udaljenost 2 bazne stanice 75m netko:nekad, \\
+
 - gustoæa baznih stanica, cca 150m $\rightarrow$ ako ignoriramo sva putovanja u susjedne æelije \\
 **
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=15cm,keepaspectratio=true]{Santiago_antenna_density}
+		\caption{Prostorna podjela na anketne jedinice u gradu Santiagu. Gustoæa tornjeva baznih stanica po anketnim jedinicama. Gustoæa varira od 1 do 250 tornjeva po anketnoj jedinici.
+		\cite{Graells-Garrido:2016.}}
+		\label{fig:density}
+	\end{center}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=8cm,keepaspectratio=true]{BS_density}
+		\caption{Gustoæa tornjeva baznih stanica po kvadratnom kilometru za pojedine države i grad-državu Singapur.
+			\cite{Chen:2018.}}
+		\label{fig:density}
+	\end{center}
+\end{figure}
 
 \subsection{Vremenska razlièivost}
 
@@ -108,7 +153,7 @@ Rezultati nacionalne ankete u Sjedinjenim Amerièkim Državama pokazuju da je pros
 - praznici i izvanredni dogaðaji\\
 Privremene turistièke atrakcije i sportski dogaðaji mogu bitno utjecati na izmjenu uobièajenog uzorka kretanja. \cite{Bonnel:2015.}\\
 - Odbrojavanje na novu godinu na New Yourk times square,  
-
+-  On an average the call density on festival days is about 10-15\% higher than normal. \cite{Varun:2013.}
 \begin{comment}
 \begin{figure}[!htbp]
 \begin{center}
@@ -127,6 +172,10 @@ Privremene turistièke atrakcije i sportski dogaðaji mogu bitno utjecati na izmje
 - \cite{Kuhlm:2015.}\\ 
 %Compared with traditional census data, our methodology to detect OD matrices from mobile phone traces has several advantages: It can capture the weekday and weekend patterns as well as seasonal variations. It can capture work trips and non-work trips, which is essential for trip chaining and activity based modeling. Zakljuèak 
 - \cite{Calabrese:2011.}
+
+From Figure 8 if we compare the call density across different months, and days of the month, it is interesting to note that the call density towards the middle of the month is lower in January than in other months. On the same lines note that call density in the second week of December is higher than other months, but reduces in the following weeks. Based on 2These are not recommendations, but only observations based on visual inspection this observation, we are attempting to find the mobility pattern of mobile phone users and to determine whether the mobility pattern influences this call density pattern.
+\cite{Varun:2013.}
+
 
 \subsection{Širina toka}
 

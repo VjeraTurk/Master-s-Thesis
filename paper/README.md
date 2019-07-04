@@ -43,25 +43,22 @@ Official Faculty template is available at http://nastavno.mjoler.info/dipl and [
         sudo texhash
 
 
-4. File `tracklang.sty' not found. \@gls@usetranslator  
+5. File `tracklang.sty' not found. \@gls@usetranslator  
     [solution](https://tex.stackexchange.com/questions/254052/new-error-using-glossaries-package-tracklang-sty):
 
         sudo apt-get install texlive-generic-extra
         sudo texhash
 
-5. All Titles from .bib file have forced *lowercase* on all words accept first word in Title. Unable to use Capital letters (are ignored) for example: Boston -> boston
-
+6. 
+All Titles from .bib file have forced *lowercase* on all words accept first word in Title. Unable to use Capital letters (are ignored) for example: Boston -> boston
 Apparently this is a ["Feature"](https://tex.stackexchange.com/questions/86820/incorrect-case-in-bibtex  
 ), and can in some cases you can  apparently [overide it in .bst file](https://tex.stackexchange.com/a/10775/113519).  
 Other solution is to use [{ }](https://tex.stackexchange.com/questions/10772/bibtex-loses-capitals-when-creating-bbl-file  
-) around parts of title (or entire title) we wish to keep capitalised  
-
-6. Force long version of accronyms (for example in chapter or (sub)section title) or other forms of word (e.g. genitive form)
-: edit .glsdef file by changing value of keys *first* or *text* and use `\glsfirst{}` and `\glstext{}`where you wish to add such forms.  
-
+) around parts of title (or entire title) we wish to keep capitalised.
+7.  Force long version of accronyms (for example in chapter or (sub)section title) or other forms of word (e.g. genitive form)
+: edit `.glsdef` file by changing value of keys *first* or *text* and use `\glsfirst{}` and `\glstext{}`where you wish to add such forms.  
 [reference](https://tex.stackexchange.com/questions/178725/how-to-use-glossaries-for-different-grammatical-acronym-forms/182725#182725)  
 [reference](https://tex.stackexchange.com/questions/124538/why-does-first-use-of-gls-look-different-than-glsfirst)  
-  
 ```
 \ifglsentryexists{pom}{}%
 {%
@@ -94,6 +91,3 @@ parent={},%
 }%
 }%
 ```
-
-
-

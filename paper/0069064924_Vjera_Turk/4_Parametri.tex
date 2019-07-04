@@ -1,12 +1,8 @@
 % !TeX encoding = windows-1250
-\chapter{Usporedba dviju \glstext{pom}-a}
+%\chapter{Usporedba dviju \glstext{pom}}
+\chapter{Usporedba dviju \glstext{pom}} %KVALITETE
 
-%Parametar se definira tako i tako
-
-Parametar - varijabla o kojoj ovisi odreðeni logièki izraz, matematièka formula ili funkcija, a koju promatramo kao dodatnu ovisnost u izrazu koji se definira kao da je ta vrijednost èvrsta.\\
-(...)
 \section{Uvjeti usporedbe}
-
 -Isti grad\\
 -Isto doba godine\\
 -Isto vremensko razdoblje \\
@@ -14,13 +10,13 @@ Parametar - varijabla o kojoj ovisi odreðeni logièki izraz, matematièka formula 
 -Ista ili slièna definicija putovanja (tranzitna ili commuting matrica)\\
 -Isto pridodijeljena putovanja periodu \\
 -Ima li matrica diagonalu? \\
+-obje \gls{pom}-e napravljene objektivno na cijeloj populaciji 45:38
 (...)
-- normalizirana
-
+\\- normalizirana
 %kada se preslikava bs æelije na drugi oblik, nastaju putovanja unutar novih æelija (koje su veæe od bs æelija) \cite{Graells-Garrido:2016.}  
 
-\section{Kriteriji usporedbe}
-
+\section{Kriteriji usporedbe} % umjesto komparacijsi indikatori
+%Parametar - varijabla o kojoj ovisi odreðeni logièki izraz, matematièka formula ili funkcija, a koju promatramo kao dodatnu ovisnost u izrazu koji se definira kao da je ta vrijednost èvrsta.\\(...)
 
 \subsection{Definicija putovanja}
 
@@ -32,7 +28,11 @@ O definiciji putovanja dakako ovisit æe njihov konaèan broj, odnosno širina toka
 (...)
 %The comparison between the matrices obtained from commuting and mobile phone data provide quite limited results. It is reasonable for the estimated number of trips to differ, as commuting data only relates to trips from the individual’s home to their place of work or study, while mobile phone data cover all trip purposes. But the analysis we have performed also show that the structures of the matrices have little in common. There is thus a high degree of dispersion in the rates of variation between the two sources of origin-destination data. This preliminary work was conducted on the basis of fairly strong hypotheses. It is therefore quite possible that more detailed analysis would make it possible to moderate some of the strongest hypotheses and improve comparability. Nevertheless, the only trip purposes covered by commuting data are work and study. It would therefore be necessary to be able to estimate the location of the home and place of work or study of the individuals from mobile phone data in order to significantly improve the matrices produced from this source. Even if a number of algorithms have been described in the literature (Chen et al., 2014; Calabrese et al., 2013; Phithakkitnukoon et al., 2012), our identification of these locations is bound to be uncertain unless we have a large number of events for each mobile phone, which is not the case with the data that we have used. It seems certain that the analysis of the mobile phone data from smartphones which are frequently connected to web-based applications would make it possible to attempt this type of analysis.
 
-*** Kategoriène vrijednosti definicija putovanja npr bez susjednih æelija, bez internih putovanja **
+** Kategoriène vrijednosti definicija putovanja npr. \\
+- bez putovanja u susjedne æelije\\
+- bez internih putovanja (unutar iste æelije)\\
+**
+
 \begin{figure}[!htpb]
 	\begin{center}
 		\subfloat[Matrica u kojoj je putovanje definirano kao zabilježeni pomak izmeðu 2  antene - \textit{kratka putovanja} ]{\label{fig:short_journeys}
@@ -77,7 +77,10 @@ Voronoi æelije takoðer je moguæe ugnijezditi (što se èesto radi kod usporedbe s 
 
 Na temelju usporedbi matrica kretanja u 4 razlièita grada, dobivenih iz \gls{cdr} i iz anketa, gdje je svaki grad u anketnim matricama imao svoju prostornu podjelu odnosno rezoluciju, Toole u svom radu \cite{Toole:2015.} (oèekivano) zakljuèuje da sa \textbf{smanjenjem rezolucije (visokim stupnjem agregacije Voronoi æelija) stupanj korelacije s matricama iz ankete (za isti grad) raste}. 
 
-** prosjeèna udaljenost 2 bazne stanice 75m netko:nekad, gustoæa baznih stanica, znaèi cca 150m ako ignoriramo sva putovanja u susjedne æelije **
+**\\
+- prosjeèna udaljenost 2 bazne stanice 75m netko:nekad, \\
+- gustoæa baznih stanica, cca 150m $\rightarrow$ ako ignoriramo sva putovanja u susjedne æelije \\
+**
 
 \subsection{Vremenska razlièivost}
 
@@ -87,7 +90,7 @@ Neki autori predlažu da kraj odnosno poèetak jednog dana bude u 3:00 kako bi put
 
 %\cite{Gundlegard:2016.} 5 min
 %U praksi Teralytics generira matrice od 15 min, 1h i 1 dan
-** brzina kretanja, primjer, matrice prozora od 5 min, ferrari ** 
+** brzina kretanja, primjer, matrice prozora od 5 min, ferrari vs renault ** 
 \subsubsection{Doba dana}
 (...)\\
 - morning peak
@@ -121,7 +124,7 @@ Privremene turistièke atrakcije i sportski dogaðaji mogu bitno utjecati na izmje
 \subsubsection{Sezonske razlike}
 
 %grafika str 61.
-- \cite{Kuhlm:2015.}\\
+- \cite{Kuhlm:2015.}\\ 
 %Compared with traditional census data, our methodology to detect OD matrices from mobile phone traces has several advantages: It can capture the weekday and weekend patterns as well as seasonal variations. It can capture work trips and non-work trips, which is essential for trip chaining and activity based modeling. Zakljuèak 
 - \cite{Calabrese:2011.}
 
@@ -146,7 +149,8 @@ za razliku od izvlaèenja najaktivnijih korisnika
 %(ne)uniformna podjela ...
 %Interpolacija - ima li smisla 2 razlièite podjele?!
 
-**zasebni kriterij***
+**zasebni kriterij - dodatak***\\
+- takve matirice su subjektivne, "nisu objektivne"\\
 -faktor skaliranja spominje se u najmanje 2 istraživanja, u jednom se radi o x 10 \\
 - noramlizacija matrica? koja je praksa ? 
 
@@ -166,6 +170,7 @@ Obuhvaæa pješaèki promet
 - 30 min vremenski okvir\cite{Schneider:2013.} str. 6\\
 -short trips are less likely to use public transport\cite{Graells-Garrido:2016.}
 
+\textit{stvar koje stvaraju neodreðenost jer ne mogu biti objektivno definirane. Sve navedite tu što nije jednoznaèno odreðeno, ima nekakvih preklapanja, što onda izaziva neodreðenost.}
 \begin{comment}
 2 modela
 PoV (Predicted vs Observed)

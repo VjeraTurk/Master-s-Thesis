@@ -658,3 +658,33 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{gdpr}{}%
+{%
+\gls@defglossaryentry{gdpr}%
+{%
+name={\acronymfont {\glsentryshort {gdpr}}},%
+sort={GDPR},%
+type={main},%
+first={GDPR},%
+firstplural={GDPRs},%
+text={GDPR},%
+plural={GDPRs},%
+description={General Data Protection Regulation},%
+descriptionplural={General Data Protection Regulation},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={General Data Protection Regulation},%
+longplural={General Data Protection Regulations},%
+short={GDPR},%
+shortplural={GDPRs},%
+counter={page},%
+parent={},%
+%
+}%
+}%

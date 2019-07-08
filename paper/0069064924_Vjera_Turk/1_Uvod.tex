@@ -176,14 +176,15 @@ Danas uz sveprisutnost i prodornost tehnologije, podatci koje generiraju pametni
 %Pokriva pješaèki promet, 
 %%Penetracija od 82\%, 9x\% -> pronaæi radove, Dobra pokrivenost i zemljama u razvoju (u Africi gdje nedostaje landline) Nemaju ni porometnu infrastrukturu pa se može planirati razvoj
 %(...anonimizacija i k-anonimizacija...).
+%\textit{}
+Situacija je takva da telekomunikacije kompanije, ali i ostali tehnološki subjekti, moraju voditi raèuna o privatnosti pojedinaca i ukoliko neki podaci jesu korišteni za razvoj \glsplural{pom}, takvi podaci najprije moraju biti striktno anonimizirani te ne smije postojati moguænost \textit{reingineeringa} i povratka na izvorni identitet. U pravilu to znaèi povezivanje sa treæim stranama u poslovnom procesu, koje iz nekog razloga dozvoljavaju pristup podacima. Podaci prije pristupa moraju biti anonimizirani tako da oni mogu biti korišteni za druge svrhe bez razotkrivanja pojedinaca, u skladu s postavkama \gls{gdpr}.
 
-\textit{Situacija je takva da telekomunikacije kompanije, ali i ostali tehnološki subjekti, moraju voditi raèuna o privatnosti pojedinaca i ukoliko neki podaci jesu korišteni za razvoj \glsplural{pom}, takvi podaci najprije moraju biti striktno anonimizirani te ne smije postojati moguænost \textit{reingineeringa} i povratka na izvorni identitet. U pravilu to znaèi povezivanje sa treæim stranama u poslovnom procesu, koje iz nekog razloga dozvoljavaju pristup podacima. Podaci prije pristupa moraju biti anonimizirani tako da oni mogu biti korišteni za druge svrhe bez razotkrivanja pojedinaca, u skladu s postavkama \gls{gdpr}
-}
 \subsection{Putovanje}
-Priroda ovog pristupa rudarenju podataka za estimaciju POM-a zahtjeva da prvo definiramo što toèno smatramo putovanjem, odnosno polazištem i odredištem putovanja. Zaustavljanje se definira kao skup minimalno \textit{n} dogaðaja (aktivnosti) koji su zabilježeni na istoj poziciji unutar definiranog minimalnog vremenskog perioda. Time se osigurava da se ne radi o tranzitnoj veæ o namjerenoj poziciji zaustavljanja (i suzbija se bilježenje lažnog kretanje kod privremenog spajanja na susjednu baznu stanicu). Algoritam u nizu aktivnosti svakog pojedinca traži takva zaustavljanja. Dobiveni niz kontinuiranog zaustavljanja na razlièitim položajima otkriva putanju kretanja. Algoritam izvlaèi uzastopne parove zaustavljanja te, prema dodatno definiranim kriterijima dozvoljenog minimalnog i maksimalnog vremenskog razmaka izmeðu polaska i dolaska na odredište, ranija æelija zaustavljanja postaje polazište, a kasnija odredište putovanja.
+Priroda ovog pristupa rudarenju podataka za estimaciju POM-a zahtjeva da prvo definiramo što toèno smatramo putovanjem, odnosno polazištem i odredištem putovanja. Zaustavljanje se definira kao skup minimalno \textit{n} dogaðaja (aktivnosti) koji su zabilježeni na istoj poziciji unutar definiranog minimalnog vremenskog perioda. Time se osigurava da se ne radi o tranzitnoj veæ o namjerenoj poziciji zaustavljanja (i suzbija se bilježenje lažnog kretanje kod privremenog spajanja na susjednu baznu stanicu). Algoritam u nizu aktivnosti svakog pojedinca traži takva zaustavljanja. Dobiveni niz kontinuiranog zaustavljanja na razlièitim položajima otkriva putanju kretanja. Algoritam izvlaèi uzastopne parove zaustavljanja te, prema dodatno definiranim kriterijima dozvoljenog minimalnog i maksimalnog vremenskog razmaka izmeðu polaska i dolaska na odredište, ranija æelija zaustavljanja postaje polazište, a kasnija odredište putovanja. 
 
 Kod izrade tzv. tranzitnih matrica, u kojima je naglasak osim na broj putovanja stavljen i na vremensku domenu, skupovi svih putovanja u pripadajuæem vremenskom okviru saèinjavaju matricu za taj vremenski okvir, te je rezultat generiranja skup matrica.
-	
+
+Dodatna ogranièenja mogu primjerice izbaciti sva putovanja u susjedne æelije, zbog nesigurnosti koju unosi stalno prespajanje na susjedne bazne stanice uzrokovano preklapanjem podruèja prekrivanja i pojaèanom mrežnom aktivnosti. O kategorizaciji na osnovu ogranièenja rijeè je u odlomku \ref{trip_def}.
 
 \begin{comment}
 %An algorithm must consequently be developed to exhaustively mine each person’s event series for such stops. Once achieved, the algorithm must next detect pairs of contiguous stops which occur at different locations and hence reveal movement. This pair can then be designated as a journey - the initiating stop becoming the journey’s origin, and the concluding stop as the journey’s destination. 
@@ -192,8 +193,8 @@ Kod izrade tzv. tranzitnih matrica, u kojima je naglasak osim na broj putovanja 
 
 \subsection{Kontekst iz izvora podataka o kretanju}    
 
-Kada su dostupni zapisi prikupljani dulje vremensko razdoblje, tjednima ili mjesecima èesto se putovanja odnosno matrice mogu definirati na drugaèiji naèin. Pojednostavljeno, analizom zapisa može se utvrdi na kojem položaju (u kojoj æeliji) neki pojedinci pretežito borave u tipiènom radnom vremenu te u kojoj tokom noæi. Prva æelija za njihova putovanja postaje \textit{Work} destinacija, druga \textit{Home}, a sve preostale destinacije svrstaju se u zasebnu kategoriju \textit{Other}. Potom se generiraju matrice koje ukljuèuju samo putovanja iz jednog tipa destinacije u drugi npr. \gls{hw} i \gls{wh}.\cite{Goulding:2016.}\cite{Graells-Garrido:2016.}\cite{Bahoken:2013.}\cite{Calabrese:2011.}\cite{Toole:2015.}. %\cite{Frias-Martinez:2012.} - oni su kao nešto protiv toga
-Jedan od razloga je da su takve matrice usporedive s onima dobivenim iz anketa stanovništva s istom podjelom putovanja.
+Kada su dostupni zapisi prikupljani dulje vremensko razdoblje, tjednima ili mjesecima èesto se putovanja odnosno matrice mogu definirati na drugaèiji naèin. Pojednostavljeno, analizom zapisa može se utvrdi na kojem položaju (u kojoj æeliji) neki pojedinci pretežito borave u tipiènom radnom vremenu te u kojoj tokom noæi. Prva æelija za njihova putovanja postaje \textit{Work} destinacija, druga \textit{Home}, a sve preostale destinacije svrstaju se u zasebnu kategoriju \textit{Other}. Potom se generiraju matrice koje ukljuèuju samo putovanja iz jednog tipa destinacije u drugi npr. \gls{hw} i \gls{wh}, odnosno svrha putovanja je \textit{odlazak na posao} i \textit{odlazak kuæi (s posla)}. \cite{Goulding:2016.}\cite{Graells-Garrido:2016.}\cite{Bahoken:2013.}\cite{Calabrese:2011.}\cite{Toole:2015.}. %\cite{Frias-Martinez:2012.} - oni su kao nešto protiv toga
+Jedan od razloga je da su takve matrice usporedive s onima dobivenim iz anketa stanovništva s istom podjelom putovanja prema svrsi.
 
 \gls{cdr} zapisi u trajanju od 6 mjeseci bili su dovoljni za konaènu toènu procjenu položaja èak 98\% kuæanstava nešto više od 39 tisuæa najaktivnijih korisnika na podruèju Pariza i Chicaga, izdvojenih iz ukupnog skupa korisnika (milijuni korisnika). U podacima se ispitivalo gdje svaki od korisnika provodi najviše vremena izmeðu 0:00 i 6:00 sati.\cite{Schneider:2013.} Dvije godine kasnije bitno drugaèiju definiciju daje \cite{Toole:2015.} gdje definira kuæanstvo kao mjesto gdje korisnik provodi najviše vremena izmeðu 20:00 i 7:00 na radne dane, a radno mjesto kao mjesto gdje korisnik provodi najviše vremena, barem 3 puta tjedno, izmeðu 7:00 i 20:00  dok \cite{Gundlegard:2016.} koristi intervale od 22:00 do 7:00 te od 9:00 do 16:00. Ostale lokacije svrstava u kategoriju \textit{Ostalo eng. Other}. Bitno je naglasiti da kod ovih vrsta matrica najèešæe naglasak nije stavljen na dobru vremensku rezoluciju kao što je to sluèaj kod tranzitnih. \cite{Gundlegard:2016.} %to overcome the small number of night calls, the location which is visited most frequently during all nights between 24.00 and 06.00 of a single user is assigned as the user’s home location; in our survey this assumption correctly identifies over 98 per cent of the home locations for a single day. 
 Duža razdoblja prikupljanja podataka omoguæuju uoèavanje uzoraka kretanja i motiva (teorija mreža). 
@@ -204,9 +205,7 @@ Duža razdoblja prikupljanja podataka omoguæuju uoèavanje uzoraka kretanja i moti
 
 \begin{comment}
 Kada su dostupni zapisi prikupljani dulje vremensko razdoblje, tjednima ili mjesecima èesto se putovanja odnosno matrice definiraju na drugaèiji naèin. Analizom zapisa može se utvrdi na kojem položaju (u kojoj æeliji) neki pojedinci pretežito borave u tipiènom radnom vremenu te u kojoj tokom noæi. Prva æelija za njihova putovanja postaje \textit{Work} destinacija, druga \textit{Home}, a sve preostale destinacije \textit{Other}. potom se generiraju matrice \cite{Goulding:2016.} \cite{Calabrese:2011.} \cite{Frias-Martinez:2012.} \cite{Graells-Garrido:2016.} \cite{Toole:2015.}
-\end{comment}
 
-\begin{comment}
 		Definiranje putovanja
 		Period - Departure/Arrival time
 		"Flow between O-D pair w that departed its origin during time interval k"
@@ -231,6 +230,14 @@ Neka istraživanja spojila su ljudsku mobilnost s namjenom zemljišta (engl. \text
 
 Izvori podataka o kontekstu takoðer variraju od istraživanja do istraživanja, a radi o opisima objekata u prostoru i relacija meðu tim objektima. Korišteni podaci su primjerice broj objekata, površina koju oni zauzimaju te, za kontekst najbitnija, socio-ekonomska svrha (funkcija) pojedinog objekta.
 
+ \subsection{OpenStreetMap}
+\gls{osm} je svjetski raširen projekt koji kreira i pruža slobodne zemljopisne podatke (zemljovide gradova i naselja) temeljen na volonterskom doprinosu zajednice. Pruža detaljne i ažurne digitalne zemljovide kompatibilne s \gls{gis} aplikacijama. 
+Zapoèet je prije 15 godina, u Ujedinjenom Kraljevstvu, kao odgovor na tehnièka ili pravna ogranièenja postojeæih "slobodnih" baza prostornih podataka kao što je GoogleMaps. Zajednièki doprinos i meðusobna kontrola unosa održavaju kartu na visokoj razini kvalitete i toènosti.
+
+Struktura osnovnih elemenata na toj rasterskoj karti je hijerarhijska. Element u hijerarhiji može biti: èvor (engl. \textit{node}), put (engl. \textit{way}) ili relacija (engl. \textit{relation}). Èvor je jedinstvena toèka u prostoru (sa identifikacijskom oznakom, zemljopisnom širinom i dužinom) koja najèešæe predstavlja fizièki objekt (zgrada, dio ceste...) te sadrži jedan ili više \textit{kljuè=vrijednost} žigova (engl. \textit{key=value tag}) koji definiraju razne znaèajke objekta.
+Put je ureðena lista 2 do 2,000 èvorova, koja takoðer može biti opisana žigovima. Relacija je ureðena lista èvorova, puteva i/ili relacija. Definira logièku ili geografsku povezanost èlanova. Opisni element nazivamo žigom (engl. \textit{tag}), a njegova funkcija je opisati znaèajke elementa uz koji je vezan. Primjeri žigova vezanih za èvorove:  \textit{office=company}, \textit{building=residential}, \textit{building=hotel}, \textit{building=church}, \textit{leisure=sports\_centre} , \textit{amenity=school}. Primjer žiga vezanog uz put \textit{highway=residential}.
+
+
 \begin{comment}
 **opæenito koristiti se mogu\\
 -opisi relacija, \\
@@ -245,12 +252,6 @@ kasnije navedeni konkretni primjeri:
 % Some studies combined human mobility with land use or POIs data to segment districts in urban areas according to their functions or use. The type of data used to capture human mobility behavior varies between individual GPS traces [10, 11], taxi pick up/drop off locations as in [7, 12] , Call Detail Records (CDRs) as in [2, 8], social media check ins as in [13–15], and bus smart card data as in [16]. 
 \end{comment}
  \section{Primjeri iskorištavanja konteksta izvedenog iz vanjskih izvora}
- \subsection{OpenStreetMap}
-\gls{osm} je svjetski raširen projekt koji kreira i pruža slobodne zemljopisne podatke (zemljovide gradova i naselja) temeljen na volonterskom doprinosu zajednice. Pruža detaljne i ažurne digitalne zemljovide kompatibilne s \gls{gis} aplikacijama. 
-Zapoèet je prije 15 godina, u Ujedinjenom Kraljevstvu, kao odgovor na tehnièka ili pravna ogranièenja postojeæih "slobodnih" baza prostornih podataka kao što je GoogleMaps. Zajednièki doprinos i meðusobna kontrola unosa održavaju kartu na visokoj razini kvalitete i toènosti.
-
-Struktura osnovnih elemenata na toj rasterskoj karti je hijerarhijska. Element u hijerarhiji može biti: èvor (engl. \textit{node}), put (engl. \textit{way}) ili relacija (engl. \textit{relation}). Èvor je jedinstvena toèka u prostoru (sa identifikacijskom oznakom, zemljopisnom širinom i dužinom) koja najèešæe predstavlja fizièki objekt (zgrada, dio ceste...) te sadrži jedan ili više \textit{kljuè=vrijednost} žigova (engl. \textit{key=value tag}) koji definiraju razne znaèajke objekta.
-Put je ureðena lista 2 do 2,000 èvorova, koja takoðer može biti opisana žigovima. Relacija je ureðena lista èvorova, puteva i/ili relacija. Definira logièku ili geografsku povezanost èlanova. Opisni element nazivamo žigom (engl. \textit{tag}), a njegova funkcija je opisati znaèajke elementa uz koji je vezan. Primjeri žigova vezanih za èvorove:  \textit{office=company}, \textit{building=residential}, \textit{building=hotel}, \textit{building=church}, \textit{leisure=sports\_centre} , \textit{amenity=school}. Primjer žiga vezanog uz put \textit{highway=residential}.
 
 
  \subsubsection{Model raspodjele toka}
@@ -258,21 +259,23 @@ Inovativni pristup kontekstualizaciji toka korištenjem OpenStreetMap baze predst
 Dom (Home), Posao (Work), Zdravlje (Health), Edukacija (Education), Zabava (Leisure) i Ostalo (Other). Razvijen je vjerojatnosni model koji, na osnovu broja objekata pojedine kategorije u odredišnoj æeliji i promatranog vremenskog okvira, ukupni ulazni tok u odredišnu æeliju dijeli na 6 tokova usmjerenih prema objektima tih kategorija. Iz jedne matrice tako  se dobije 6 matrica, po jedna za svaku od kategorija. Korištene su matrice dobivene iz javno dostupnih, anonimiziranih telekomunikacijskih zapisa na podruèju kineskog grada Shenzhena.\cite{Filic:2016.}\cite{data:2019.}
 \textbf{Definiranjem konteksta putovanja na ovaj naèin saèuvana je moguænost postizanja dobre rezolucije u vremenu, a istovremeno je dan kontekst koji ukljuèuje tipiène \textit{Home} i \textit{Work} kategorije, te umjesto opæenite kategorije \textit{Other} precizira 4 kategorije}. 
 
-**
-Daje podatak i o internim putovanjima (Petra)
-**
+Definiranjem konteksta na taj naèin, dobivamo nove informacije o kretanju unutar æelije, odnosno o konaènoj destinaciji nakon ulaska u æeliju. U tom smislu imamo informaciju o internom kretanju.
+
+%bilo bi zanimljivo zakljuèiti koji postotak se kreæe unutar æelije a koji se ne kreæe uopæe
+
+%** Daje podatak i o internim putovanjima (Petra)**
 
 \begin{comment}
 Spatial objects within the area of interest were categorized by type of socio-economic activity they are involved  with. This new information about context of each origin and  destination cell allowed development of probability model which separates initial migration flows into contextualized streams. 
 \end{comment}
 
 \subsubsection{Izvor infrastrukture} 
-Jedan od naèina na koji \gls{osm} doprinosi istraživanjima u ovom podruèju je kao izvor prometne infrastrukture i pripadajuæih meta podataka (kolnik, mostovi, ogranièenja brzine...). Raspodjela toka po prometnoj infrastrukturi nadilazi podruèje ovog rada no jest dio problematike modeliranja prometa. \cite{Toole:2015.} 
+Jedan od naèina na koji \gls{osm} doprinosi istraživanjima u ovom podruèju je kao izvor prometne infrastrukture i pripadajuæih meta podataka (kolnik, mostovi, ogranièenja brzine i dr.). Raspodjela toka po prometnoj infrastrukturi nadilazi podruèje ovog rada no jest dio problematike modeliranja prometa. \cite{Toole:2015.} 
 %(jedan od radova koristi za broj traka na auto cesti jedan za provjeru naseljenosti podruèja/broj katova zgrada)
-Još jedna moguæa uloga spominje u potpoglavlju \ref{osm_use_3} koje opisuje interpolaciju Voronoi æelija.
+Još jedna moguæa primjena spominje u potpoglavlju \ref{osm_use_3} koje opisuje interpolaciju Voronoi æelija.
 
   \subsection{\textit{Points of Interest}}
-U jednom od svojih radova grupa autora kvantizira vezu izmeðu ukupno 23 namjenske kategorije \gls{pois} (npr. tvornice, bolnice, javne škole, religijski objekti, hoteli, knjižnice, sportski objekti...) i onime što nazivaju 3 tipa privlaèenja. Dolaze do zakljuèka da postoje 3 tipa privlaèenja te da svaki ima karakteristièan tok (gustoæu ukupnog toka, udaljenost i disperziju polazišta tokova usmjerenih prema objektu tog tipa privlaèenja). Svaku od kategorija karakterizira jedan od ta 3 tipa privlaèenja. \cite{Alhazzani:2016.}  U radu koriste podatke iz službene baze s 12,000 \gls{pois} i \gls{cdr} zapisima iz razdoblja od mjesec dana. Cilj projekta bio je ispitati mobilnost na podruèju grada Riyadha, u Saudijskoj Arabiji za planiranje izgradnje podzemne željeznice. Takoðer njihovi rezultati mogu se primijeniti u planiranju pozicioniranja novih objekata u gradu.   
+U jednom od svojih radova grupa autora kvantizira vezu izmeðu ukupno 23 namjenske kategorije \gls{pois} iz službene gradske baze (npr. tvornice, bolnice, javne škole, religijski objekti, hoteli, knjižnice, sportski objekti) i onime što nazivaju 3 tipa privlaèenja. Dolaze do zakljuèka da postoje 3 tipa privlaèenja te da svaki ima karakteristièan tok (gustoæu ukupnog toka, udaljenost i disperziju polazišta tokova usmjerenih prema objektu tog tipa privlaèenja). Svaku od kategorija karakterizira jedan od ta 3 tipa privlaèenja. \cite{Alhazzani:2016.}  U radu koriste podatke iz službene baze s 12,000 \gls{pois} i \gls{cdr} zapisima iz razdoblja od mjesec dana. Cilj projekta bio je ispitati mobilnost na podruèju grada Riyadha, u Saudijskoj Arabiji za planiranje izgradnje podzemne željeznice. Takoðer njihovi rezultati mogu se primijeniti u planiranju pozicioniranja novih objekata u gradu.   
 % We used a statistical significance testing approach to rigorously quantify the relationship between Points of Interests (POIs) types (services) and the 3 patterns of Urban Attractors we detected. \gls{pois} Points of Interes (Urban Attractors ima 22 kategorije koristi bazu s POI)
 
 
@@ -366,8 +369,8 @@ Na slici \ref{fig:interpolation} je prikazan treæi oblik interpolacije gdje su k
 		\label{fig:interpolation}
 	\end{center}
 \end{figure}
-(...)\cite{Toole:2015.}
-\cite{Bahoken:2013.}\\
+% (*) (...)\cite{Toole:2015.}
+%(*) \cite{Bahoken:2013.}\\
 \subsubsection{Redefiniranje prostorne podjele na temelju matrica}
 U sklopu projekta \gls{d4d} francuski operater \textit{Orange} ustupio je na korištenje \gls{cdr} višemjeseène zapise s podruèja Obale Bjelokosti. Razlièita istraživanja u ovom podruèju raðena su upravo na tim podacima. Jedno od njih \cite{Coscia:2015.} istièe da je dobar broj istraživanja dokazao da administrativne regije u zemlji faktor koji definira ljudsku mobilnost i interakcije na podruèju države. Da bi testirali tu tvrdnju oni, nakon što generiraju matricu kretanja, æelije prostorne podjele grupiraju prema  \textit{comunity detection} algoritmu. Iako se dio grupa vrlo lijepo preklapa sa postojeæim administrativnim jedinicama, one administrativne jedinice u kojima se nalaze veliki gradovi, grupacije nastale na temelju mobilnosti bitno su drugaèije. Zakljuèak je da potencijalno postoji potreba da se granice administrativnih jedinica izmjene (Slika \ref{fig:revisiting})
 
@@ -381,47 +384,63 @@ U sklopu projekta \gls{d4d} francuski operater \textit{Orange} ustupio je na kor
 	\end{center}
 \end{figure}
 
-**Ideja: Dinamièka prostorna podjela, drugaèija prostorna podjela za doba dana/godine**
+Ovo otvara moguænost analize prometa s dinamièkom prostornom podjelom. Primjerice sezonske izmjene jedinica u razdobljima kada su neka podruèja zemlje manje aktivnija.
 
-\cite{Schneider:2013.}
--to remove towers which are only used during travel, all
-towers which are less frequently visited than a certain
-threshold are ignored; in this study, less than 0.5 per cent
-during the entire observational period;
 
+Izmjene na dnevnoj bazi spominju se u \cite{Schneider:2013.}
+gdje su dva tornja spojena u jedan ako je tokom èitavo dana zabilježeno više od 3 prespajanja izmeðu njih. (Takoðer tamo se uklanjaju tornjevi za koje su zabilježena sam tranzitna zaustavljanja, a takvih je manje od 0.5 posto tijekom ukupnog vremena promatranja od 154 dana).
+
+%to eliminate signal transitions between neighbouring towers,these towers are merged \textbf{for one day}, if more than three back and forward transitions between them are recorded during a single day;
+%-to remove towers which are only used during travel, all towers which are less frequently visited than a certain threshold are ignored; in this study, less than 0.5 per cent during the entire observational period;
+%**Ideja: Dinamièka prostorna podjela, drugaèija prostorna podjela za doba dana/godine**
+
+\begin{comment}
+(*)
 — the day, starting at 03.00, is divided into 48, 30-min slots for each of the 154 days;
 
-to eliminate signal transitions between neighbouring towers,
-these towers are merged \textbf{for one day}, if more than three back and forward transitions between them are recorded during a single day;
-
- to identify an activity location, only the most frequently
+- to identify an activity location, only the most frequently
 observed location during each time slot is assigned as an
 activity location for this time slot;
 
-\section{Vremenska interpretacija \glstext{pom}}
-\subsection{Vremenska rezolucija}
-(...)\\
--tranzitna matrica vs. matrica bez vremenske dimenzije (odnosno ima samo jedan vremenski okvir)\\
--radni dan, vikend, petak drugaèiji $\rightarrow$ sposobnost CDR da uhvate razlike\\
--sposobnost da uhvati sezonske promjene
+\end{comment}
 
-\section{}
-former section \textbf{Dobre prakse u generiranju \glstext{pom} iz \glsfirst{cdr}}\\
+\section{Vremenska interpretacija \glstext{pom}}
+\subsection{Vremenski zavisne matirce}
+%-tranzitna matrica vs. matrica bez vremenske dimenzije (odnosno ima samo jedan vremenski okvir)\\
+
+Jedna od podjela \gls{pom}-a je vremenski nezavisne matrice i vremenski zavisne, dinamièke matrice u koje se svrstavaju i matrice procijenjene u stvarnom vremenu. \cite{Peterson:2007.}
+Vremenski zavisne (dinamièke) matrice podrazumijevaju odreðivanje broja putovanja po pojedinim periodima u ukupno promatranom vremenu. Sposobnost takvih modela kreiranja (i matrica kao rezultat) da uhvate razlike u dnevnim, tjednim, mjeseènim, sezonskim kretanjima je od izuzetne vrijednosti za planiranje prometa, \gls{its}... Tradicionalne metode nisu pogodne za generiranje dinamièkih matrica visoke rezolucije i dugog vremena promatranja. Baze \gls{cdr} na kojima su do sad provoðena istraživanja kad-kad podrazumijevaju periode promatranja od nekoliko mjeseci, te ukljuèuju razlièite nacionalne praznike, meteorološke uvjete, znaèajne sportske dogaðaje i sliène faktore koji mogu utjecati na iznimke u dnevnim uzorcima kretanja.
+
+%(...)\\
+%-radni dan, vikend, petak drugaèiji $\rightarrow$ sposobnost CDR da uhvate razlike\\
+%-sposobnost da uhvati sezonske promjene
+
+\section{Diskusija}
+
+%former section \textbf{Dobre prakse u generiranju \glstext{pom} iz \glsfirst{cdr}}\\
 %Skaliranje CDR POM (primjerak $->$ pouplacija)
 %(linking to transport infrastructure?)
-	-anonimizacija i GDPR\\
-	- onemoguæiti reingeneering:
-	k-anonymization 5 - 10 \cite{Teralytics:2017.} i in rural area \cite{Goulding:2016.}
-	\\	-Grad, Država\\ 
-		A potential is also recognized for a planet-scale mobilitiy measurement through opening to researchers and combining the different big dataset carrying location information. \cite{Scepanovic:2015.}  \cite{Hui:2010.}
-		
-	-CDR- POM u zemljama u razvoju  (NE)\\
- 	-Penetracija od 82\%, 9X\% $\rightarrow$ pronaæi radove\\
- 	2008.  Francuska 80\% starijih od 12 godina \cite{Bonnel:2015.}\\ 
+%	-još jednom anonimizacija i GDPR\\
+%	- onemoguæiti reingeneering:
+%	k-anonymization 5 - 10 \cite{Teralytics:2017.} i in rural area \cite{Goulding:2016.}
+%		-Grad, Država\\ 
+%		A potential is also recognized for a planet-scale mobilitiy measurement through opening to researchers and combining the different big dataset carrying location information. \cite{Scepanovic:2015.}  \cite{Hui:2010.}		
+%	-CDR- POM u zemljama u razvoju  (NE)\\
+% 	-Penetracija od 82\%, 9X\% $\rightarrow$ pronaæi radove\\
+% 	2008.  Francuska 80\% starijih od 12 godina \cite{Bonnel:2015.}\\ 
 
- 	-Mobilni ureðaji iz godine u godinu zastupljeni su kod sve veæeg postotka stanovništvu, ne samo u razvijenim zemljama veæ i u zemljama u razvoju. 
+% 	-Mobilni ureðaji iz godine u godinu zastupljeni su kod sve veæeg postotka stanovništvu, ne samo u razvijenim zemljama veæ i u zemljama u razvoju. 
 
-** slobodno spomenem da se negdje ne smiju koristiti mobiteli u autima **   netko:negdje je rekao da bi imalo smisla pome iz \gls{cdr} da se smiju koristiti mobiteli prilikom vožnje
+Nove moderne metode kreiranja postaju sve više razmatrana opcija s obzirom na fleksibilnost, cijenu i ažurnosti matrica koju nude u odnosu na tradicionalne metode. 
+Prepoznat je potencijal ne samo za analizu urbanih i državnih razmjera veæ i za analizu mobilnosti planetarnog razmjera dijeljenjem i kombiniranjem razlièitih izvora podataka koji nose podatak o položaju \cite{Scepanovic:2015.}\cite{Hui:2010.}, gdje se \gls{cdr} istièe kao izvor gotovo jednako zastupljen u zemljama u razvoju i razvijenim zemljama, s penetracijom oko 40\%-50\% stanovništva za pojedine operatere \cite{Bonnel:2015.}. U Francuskoj 2008. 80\% stanovništva starijeg od 12 godina posjedovalo je mobilni ureðaj\cite{Bonnel:2015.}. Istraživanje iz 2016. provedeno na podacima u Èileu  iznosi podatak da Èile kao zemlja u razvoju ima èak 132 mobilne pretplate na 100 stanovnika \cite{Graells-Garrido:2016.}. 
+
+Važno je osigurati anonimnost pojedinaca èiji se "tragovi" analiziraju i/ili osigurati pristanak pojedinaca da se podaci koriste u jasno definirane svrhe. Idealno je da operater ustupi veæ anonimizirane podatke stranci koja iz njih kreira matrice. Kako bi dodatno zaštitili identitet pojedinaca, dobra praksa je osigurati i k-anonimnost (engl. \textit{k-annonimity}). $K$ predstavlja najmanju dozvoljenu širinu toka koja se dozvoljava, u suprotnom se tok u potpunosti zanemaruje. Razlog je zaštita eventualne moguænosti identificiranja kretanja pojedinaca u vrlo rijetko naseljenim podruèjima. \cite{Goulding:2016.} 
+Teralytics predlaže odabrati $k$ u rasponu od 5 - 10 \cite{Teralytics:2017.}. 
+
+Jedna od malobrojnih kritika koju istièu zagovaratelji oèuvanja statusa tradicionalnih metoda u modeliranju prometa je da je u pojedinim zemljama zabranjeno ili nije preporuèeno služiti se mobitelima tijekom upravaljanja vozilom.
+
+
+%** slobodno spomenem da se negdje ne smiju koristiti mobiteli u autima **   netko:negdje je rekao da bi imalo smisla pome iz \gls{cdr} da se smiju koristiti mobiteli prilikom vožnje
 
 %\section{Alternative izvora podataka za razvoj \glstext{pom}}
 \section{Alternative izvora prostornih podataka za razvoj \glsfirstplural{pom}}

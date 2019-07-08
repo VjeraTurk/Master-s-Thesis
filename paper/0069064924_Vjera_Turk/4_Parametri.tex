@@ -21,7 +21,7 @@
 \textit{Iz teksta zadatka: ...U ovom radu potrebno je definirati \textbf{odnosne parametre kvalitete} POM-e ... }
 
 \subsection{Definicija putovanja}
-
+\label{trip_def}
 Kod generiranja matrica treba definirati hoæe li se putovanja koja se protežu kroz više perioda dodijeliti vremenskom okviru u kojem zapoèinju ili u kojem završavaju. Iako ponekad nije specificirano, autori \cite{Bera:2011.} \cite{Filic:2016.} \cite{Gundlegard:2016.} sva putovanja dodjeljuju intervalu u kojem je putovanje zapoèeto. Teralytics u praksi generira obje vrste matrica \cite{Teralytics:2017.}.
 Autori \cite{Gundlegard:2016.} kako bi uvrstili što više putovanja, ne zanemaruju one zapise iz kojih nije jasno vidljiv poèetak putovanja veæ takva putovanja dodjeljuje na osnovu vjerojatnosti da su zapoèela u odreðenom periodu. Slièan postupak spominje se i u \cite{Toole:2015.} gdje za izraèun vjerojatnosti posežu za nacionalnim anketama ili frekvencijom poziva.
 
@@ -32,7 +32,9 @@ O definiciji putovanja dakako ovisit æe njihov konaèan broj, odnosno širina toka
 
 ** Kategoriène vrijednosti definicija putovanja npr. \\
 - bez putovanja u susjedne æelije\\
-- bez internih putovanja (unutar iste æelije)\\
+- bez unutar iste æelije\\
+Što mogu biti ulazne velièine, koje mogu biti vrijednosti takvih parametara. 
+Uzmite kategorièke i numerièke gdje je moguæe. Numerièke æe imati raspon
 **
 
 \cite{Gundlegard:2016.}
@@ -98,8 +100,12 @@ Na temelju usporedbi matrica kretanja u 4 razlièita grada, dobivenih iz \gls{cdr
 **\\
 Finally, we also recommend as best practice the merging of BTS activity in high density areas (in Annex 1 we use a 75m cordon, below which any adjacent BTS are merged). This is due to a deleterious reduction in confidence in high density areas, which are subject to greater load balancing, that the BTS’s associated voronoi region accurately reflects a user’s true position. \cite{Goulding:2016.}
 
+\textit{Koja je najmanja jedinica koju smatrate putovanjem? Koja je najmanja udaljenost izmeðu središta dviju stanica?
+}
  all towers within 75m of each other was merged with
 that of the most active tower in the set. 
+
+
 
 
 \cite{Bahoken:2013.}

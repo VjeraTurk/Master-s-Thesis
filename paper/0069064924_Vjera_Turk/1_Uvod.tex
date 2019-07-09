@@ -213,8 +213,7 @@ Kada su dostupni zapisi prikupljani dulje vremensko razdoblje, tjednima ili mjes
 \end{comment}
 
 \subsection{Sredstva kretanja}
-Iskljuèivo \gls{cdr} zapisi ne osiguravaju rezoluciju pogodnu za odreðivanje sredstva kretanja iako su razvijene metodologije \cite{Toole:2015.}. Iznimno se mogu izdvojiti bazen stanice dedicirane pružanju usluge iskljuèivo u podzemnoj željeznici.
- 
+Iskljuèivo \gls{cdr} zapisi ne osiguravaju rezoluciju pogodnu za odreðivanje sredstva kretanja iako su razvijene metodologije \cite{Toole:2015.}. Iznimno se mogu izdvojiti bazen stanice dedicirane pružanju usluge iskljuèivo u podzemnoj željeznici. U istraživanju iz 2016. \cite{Graells-Garrido:2016.}  izdvajaju taksiste/dostavljaèe uz pretpostavku da su to oni korisnici koji prijeðu preko 100 km dnevno unutar grada. 
 %Osim \gls{cdr} operateri prikupljaju dodatne podatke o preusmjeravanju poziva (engl. handover) na druge bazne stanice, (...)  
 
 Teralytics je jedna od mladih kompanija koja nudi uslugu modeliranja prometa iz telekomunikacijskih podataka. Izmeðu ostalog prema brzini kojom pokretna stanica (ili skupina njih istovremeno) mijenja položaj donose zakljuèak o dominantnom sredstvu kretanja (pješak, automobil, javni prijevoz, avion). Tajna njihovog uspjeha je da osim \gls{cdr} koriste i ranije spomenute dodatne podatke koji se prikupljaju. \cite{Teralytics:2017.} 
@@ -415,6 +414,49 @@ Vremenski zavisne (dinamièke) matrice podrazumijevaju odreðivanje broja putovanj
 %-radni dan, vikend, petak drugaèiji $\rightarrow$ sposobnost CDR da uhvate razlike\\
 %-sposobnost da uhvati sezonske promjene
 
+\subsubsection{Dani u tjednu i praznici}
+%utorak- najviše prometa \cite{Travassoli:2016.}
+
+Istraživanja modernih pristupa generiranju matrica ukazuju na smanjenu mobilnost za neradnih dana u tjednu, najviše u nedjelju.\cite{Calabrese:2011.} Bitno je napomenuti da dio istraživanja istièe da je vikendima takoðer zabilježen i manji broj telekomunikacijske aktivnosti. \cite{Bahoken:2013.}
+% We obtain an average of 5 trips per day during the weekday, and 4.5 during the weekend. This number is reasonable when compared to the US National Household Travel Survey2 which evaluated this number to be between 4.18 during weekdays and 3.86 during weekends3 .
+Osim oèekivane bitne razlike u radnim i neradnim danima, uoèeno je da je petak, kao zadnji radni dan u tjednu, bitno drugaèiji od ostalih radnih dana. \cite{Travassoli:2016.} \cite{Calabrese:2011.}  \cite{Scepanovic:2015.} Uoèena je pojaèana mobilnost petkom na razini regije (Boston Metropolitan Area) \cite{Calabrese:2011.} i na razini cijele države (Obale Bjelokosti) s poveæanjem od 35\% u odnosu na nedjelju \cite{Scepanovic:2015.} na temelju matrica izraðenih iz \gls{cdr}, no zanimljivo uèena je smanjena mobilnost vezana za javni prijevoz (izvor za generiranje matrica \textit{Pametne kartice za javni prijevoz}) na razini regije (Southeast Queensland, Australija). Osim prosjeènog broja dnevnih putovanja, petak ima i nešto drugaèiji dnevni uzorak po satima (rast prometa prema kraju radnog vremena zapoèinje ranije). Ponovno, petkom je takoðer uoèena i najviša razina telekomunikacijske aktivnosti \cite{Bahoken:2013.} \cite{Bonnel:2015.} što ukazuje na moguæu pristranost kada su u pitanju matrice generirane iz \gls{cdr}.
+Rezultati nacionalne ankete u Sjedinjenim Amerièkim Državama pokazuju da je prosjeèan broj dnevnih putovanja po stanovniku 4.18 tijekom radnog dana te 3.86 tijekom neradnih dana u tjednu, što jest u skladu sa zakljuècima modernih metoda.\\
+%(...)\\
+Državni praznici i izvanredni dogaðaji kao što su vremenske nepogode unose odstupanja od ustaljenih uzorka kretanja.
+Privremene turistièke atrakcije i sportski dogaðaji mogu takoðer bitno utjecati na izmjenu uobièajenog uzorka kretanja. \cite{Bonnel:2015.} Primjerice odbrojavanje uoèi Nove godine na New Yourk Times Square. U prosjeku je na festivalske dane gustoæa poziva 10-15\% veæa od uobièajene. \cite{Varun:2013.}
+%-  On an average the call density on festival days is about 10-15\% higher than normal. \cite{Varun:2013.}
+\begin{comment}
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[width=10cm,keepaspectratio=true]{weekday}
+\caption{  \cite{Bahoken:2013.}}
+\label{fig:weekday}
+\end{center}
+\end{figure}
+\end{comment}
+
+%While the census gives only a static information about origin-destination flows, the OD matrices derived from mobile phone data allows us to appreciate the differences in travel demand over time. Figure 5(a) shows the total daily travel demand for 3 different weeks in October 2009. A weekly pattern clearly appears in the travel demand, with the minimum over weekends (especially sundays) and a maximum over fridays. Moreover, Figure 5(a) shows a particular change in travel demand in the second monday (day number 9 in figure), corresponding to Columbus Day. For a better look at this pattern, we plot the hourly travel demand for Columbus Day compared to the other mondays (see Figure 5(b)). We clearly see a higher travel demand in the first 2 hours of the day, followed by lower demand from 4 to 9, and from 12 to 20, due to the holiday.  \cite{Calabrese:2011.}
+
+
+\subsubsection{Sezonske razlike}
+
+%grafika str 61.
+
+Velika prednost novih metodologija u odnosu na tradicionalne
+je da metode, prvenstveno koje koriste \gls{cdr}, mogu uhvatiti tjedne i sezonske uzorke \cite{Calabrese:2011.}
+%Compared with traditional census data, our methodology to detect OD matrices from mobile phone traces has several advantages: It can capture the weekday and weekend patterns as well as seasonal variations. It can capture work trips and non-work trips, which is essential for trip chaining and activity based modeling. Zakljuèak 
+Istraživanje iz 2013. \cite{Varun:2013.} pokazalo je da su u Obali Bjelokosti najveæa odstupanja u gustoæi poziva u prvom i posljednjem mjesecu godine, gdje je 2. tjedan u prosincu bila najveæa, a sredinom sijeènja najniža zabilježena gustoæa (u periodu promatranja od prosinca do travnja). Zabilježenu varijaciju po tjednima u godini iz jednog istraživanja kreiranja matrica iz podataka o javnom prijevozu na podruèju nizozemske možemo vidjeti na slici \ref{fig:per_week}.
+
+%From Figure 8 if we compare the call density across different months, and days of the month, it is interesting to note that the call density towards the middle of the month is lower in January than in other months. On the same lines note that call density in the second week of December is higher than other months, but reduces in the following weeks. Based on 2These are not recommendations, but only observations based on visual inspection this observation, we are attempting to find the mobility pattern of mobile phone users and to determine whether the mobility pattern influences this call density pattern. \cite{Varun:2013.}
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=15cm,keepaspectratio=true]{per_week}
+		\caption{Broj putovanja javnim prijevozom zabilježenih \textit{OV-chipcaart} pametnim karticama u Nizozemskoj izražen u u milijunima po tjednima u godini. Zelena linija oznaèava prosjeènu vrijednost radnog tjedna \cite{Kuhlm:2015.}}
+		\label{fig:per_week}
+	\end{center}
+\end{figure}
+
 \section{Diskusija}
 
 %former section \textbf{Dobre prakse u generiranju \glstext{pom} iz \glsfirst{cdr}}\\
@@ -449,7 +491,7 @@ Jedna od malobrojnih kritika koju istièu zagovaratelji oèuvanja statusa tradicio
 (...)\\
 komercijalna vozila, Taxi
 
-Jedno istraživanje matrica iz \gls{cdr} je eliminiralo zapise onih korisnika koju su radili dulja "neprekidna putovanja" pod napomenom da se radi o taksistima i sl. te da ih neæe uzeti u obzir.
+
 
 \subsection{Javni prijevoz i \textit{pametne kartice }(\textit{Smart Card }sustavi)}
 (..)\\

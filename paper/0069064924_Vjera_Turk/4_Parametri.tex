@@ -39,11 +39,15 @@ Putovanja kod vremenski zavisnih matrica kreiranih iz \gls{cdr} moguæe je svrsta
 2. putovanja u sve æelije osim u susjedne, bez internih putovanja (bez dijagonale)\\
 3. agregacija susjednih æelija - matrice s internim putovanjima\\\\
 4. putovanja ogranièena minimalnom i/ili maksimalnom udaljenosti\\
-5. putovanja ogranièena na minimalnom duljinom trajanja\\
-6. putovanja ogranièena bojem dogaðaja koji potvrðuju zaustavljanje
+7. putovanja ogranièena minimalnom duljinom trajanja zaustavljanja (*)
+5. putovanja ogranièena minimalnom duljinom trajanja\\
+6. putovanja ogranièena bojem dogaðaja koji potvrðuju zaustavljanje\\
 
 Istraživanje iz 2016. kod definiranja putovanja iz \gls{cdr} je eliminiralo zapise onih korisnika koju su radili dulja "neprekidna putovanja" (preko 100 km dnevno) pod napomenom da se radi o taksistima i sl. te da ih neæe uzeti u obzir \cite{Graells-Garrido:2016.}. \textit{Commuting} putovanja takoðer mogu biti pod nekim ogranièenjima, osim što su najèešæe veæ ogranièena vremenskim periodom u kojem se odvijaju. 
 Primjerice \cite{Gundlegard:2016.} definira minimalnu udaljenost od 3 km izmeðu prebivališta i mjesta rada i izvan susjednih æelija. \textbf{Glavni razlog svih ogranièenja kod definicije putovanja je izbjeæi bilježenje lažnog kretanja uzrokovanog \textit{load balancing}-om i lažnog zaustavljanja uzrokovanog neuniformnom gustoæom zapisa pojedinca u vremenu}
+Za 2 razlièite definicije putovanja, za matrice iz identiènih podataka na podruèju Snegala generirano je 0.7 putovanja dnevno po korisniku u jednom a 0.06 u drugom. U potonijem istraživanju ogranièenja su bila: vremensko na 1 sat minimalnog trajanja i prostorno na udaljenost od barem 5 udaljenosti baznih stanica. Pokazuje da je najveæa zastupljenost upravo kratkih putovanja. \cite{Gundlegard:2016.} Distribuciju možemo vidjeti na slici \ref{fig:trip_distance_distribution}
+
+
 \begin{comment}
 ** Kategoriène vrijednosti definicija putovanja npr. \\
 - bez putovanja u susjedne æelije\\
@@ -57,6 +61,7 @@ The home and work location are identified as locations with a minimum distance o
 neighboring antennas in the Voronoi graph. 
 \end{comment}
 
+
 \begin{figure}[!htpb]
 	\begin{center}
 		\subfloat[Matrica u kojoj je putovanje definirano kao zabilježeni pomak izmeðu 2  antene - \textit{kratka putovanja} ]{\label{fig:short_journeys}
@@ -68,6 +73,15 @@ neighboring antennas in the Voronoi graph.
 		\caption{ Dvije matrice - produkti razlièitih definicija putovanja. Dobivene su iz potpuno istog izvora %\gls{cdr} 
 			\acrshort{cdr} zapisa. \cite{Gundlegard:2016.}}
 		\label{fig:journeys}
+	\end{center}
+\end{figure}
+
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=11cm,keepaspectratio=true]{trip_distance_distribution}
+		\caption{Distribucija udaljenosti putovanja u kilometrima \cite{Gundlegard:2016.}}
+		\label{fig:trip_distance_distribution}
 	\end{center}
 \end{figure}
 
@@ -142,6 +156,8 @@ Najmanji spominjani interval je 15 min \cite{Bera:2011.}, drugi najmanji 30 min 
 
 ** brzina kretanja, primjer, matrice prozora od 5 min, ferrari vs renault ** 
 
+**Periodi od 15 min i putovanje od sat vremena, kako hendlati?**
+
 
 %e: 7–10 am (AM), 10 am–4 pm (MD), 4–7 pm (PM), and the rest of the day (RD).
 %5 am to 7 am, 7 am to 8 am, 8 am to 9 am, 9 am to 3 pm, 3 pm to 6 pm, 6 pm to 9 pm and 9 pm to 5 am; in total seven time periods
@@ -160,30 +176,34 @@ Najmanji spominjani interval je 15 min \cite{Bera:2011.}, drugi najmanji 30 min 
 
 
 \subsection{Širina toka}
+%- dakako za pojedinu matricu ovisi o prostornoj i vremenskoj rezoluciji \\
+%- najviše ipak vjerojatno ovisi o definiciji putovanja\\
 
-Ukupan broj odlazaka/dolazaka po vremenskom okviru za cijelu matricu. Suma svih njenih elemenata.\\
-(...)\\
-- Obuhvaæa pješaèki promet\\
-- velièina uzorka (postotak stanovništva)\\
-- k-anonimizacija\\
-- dakako za pojedinu matricu ovisi o prostornoj i vremenskoj rezoluciji \\
-- najviše ipak vjerojatno ovisi o definiciji putovanja\\
-- prosjeèan broj putovanja po stanovniku/ispitaniku Netko:nekad nešto tipa 3 i 4.5, ugl. nešto veæi broj za CDR \\
-- o tome æe ovisiti i Zero-cells (Nul-æelije)\\
-- samo najaktivniji korisnici \cite{Schneider:2013.} \cite{Toole:2015.} (pristranost?) $\rightarrow$ jedno istraživanje podijelilo je korisnike u 3 skupine po kolièini podataka koju generiraju te su dokazali da frekvencija korištenja nije uvela pristranost. \cite{Bonnel:2015.}  \\
-- za razliku od izvlaèenja najaktivnijih korisnika 
--\cite{Calabrese:2011.} uzima samo sluèajno odabranih 25\% korisnika (njih 1 milijun) da pojednostavi analizu. ...Dobro šta, da može pješke na prste raèunati?!\\
-- broj aktivnih korisnika unutar jednog tjedna jako varira iz dana u dan.  \cite{Bonnel:2015.}\\
-\cite{Graells-Garrido:2016.}\\
-- Pristranost kolièine generiranih podataka s dobi \cite{Bonnel:2015.}$\rightarrow$ još uvijek su mobiteli slabije zastupljeni kod djece i starijih ali to su takoðer i skupine sa smanjenom mobilnosti.
+Ukupna širina toka podrazumijeva ukupan broj odlazaka/dolazaka po vremenskom okviru za cijelu matricu. Suma svih njenih elemenata. Na širinu toka utjecat æe svi prethodno spomenuti kriteriji usporedbe/parametri kvalitete.
+Osim njih, utjecat æe velièina i reprezentativnost uzorka stanovništva te k-anonimizacija.
+
+Neka istraživanja izdvajaju samo najaktivnije korisnike (generalno one s najviše generiranih dogaðaja) za kreiranje matrica \cite{Schneider:2013.} \cite{Toole:2015.}.
+%dok \cite{Gundlegard:2016.} filtrira samo "najljepša putovanja".
+
+2015., istraživanje kreiranja matrica iz \gls{cdr} na podruèju jedne francuske regije je podijelilo korisnike u 3 skupine po kolièini podataka koju generiraju te se pokazalo da frekvencija korištenja nije uvela pristranost \cite{Bonnel:2015.}. Podsjetimo se ovdje da je u poglavlju \ref{days_of_the_week} reèeno da broj aktivnih korisnika, a posljedièno i širina toka, znaèajno varira iz dana u dan unutar tjedna.
+Za razliku od izvlaèenja najaktivnijih korisnika \cite{Calabrese:2011.} uzima samo sluèajno odabranih 25\% korisnika (njih 1 milijun) da pojednostavi analizu, a \cite{Graells-Garrido:2016.} samo 100,000, kako bi u konaènici matrica bila usporediva s onom dobivenom iz anketa dobivenih iz uzorka iste velièine, što je pomalo apsurdno ogranièenje. Slabo obuhvaæanje krajnjih dobnih skupina zbog slabe zastupljenosti mobilnih ureðaja kod najstarije i najmlaðe dobne skupine ne tumaèi se kao pristranost, uz napomenu da su to ujedno skupine sa generalno slabom mobilnosti u odnosu na ostale opæenito. \cite{Bonnel:2015.}. \cite{Goulding:2016.} istièe da se operateri mogu svoje usluge tržiti razlièitim demografskim skupinama,a a najèešæe su izuzetak skupine slabijeg socio-ekonomskog stanja. Kod tržišta gdje veliki postotak stanovništva posjeduje mobilni ureðaj (npr. 92\% za urbana podruèja Tanzanije) eventualno postojanje pristranosti može se smatrati zanemarivim.
+
+Nije rijetkost da su matrice dobivene iz anketa rijetko popunjene, %pogotovo kod visoke vremenske i prostorne rezolucije,
+odnosno da se veæinski radi o Nul-æelijama (eng. \textit{Null-cells, Zero-cells}). U istraživanju kreiranja matrica iz ankete, 2010. \cite{Cools:2010.} zasebno je analizirana matrica sa i bez takvih æelija jer je od 589 $\times$ 589 æelija, èak 77.8\% njih bilo Nul-æelija. Ista situacija je s matricama kreiranim iz \gls{rsi}, dok æe matrice kreirane iz GPS ili \gls{cdr} zapisa umjesto rijetko biti gusto ispunjene, najèešæe vrlo malim vrijednostima umjesto nula. \cite{Vuren:2015.}.
+
+%- o tome æe ovisiti i Zero-cells (Nul-æelije)\\
+%- velièina uzorka (postotak stanovništva)\\
+%- k-anonimizacija\\
+%- prosjeèan broj putovanja po stanovniku/ispitaniku Netko:nekad nešto tipa 3 i 4.5, ugl. nešto veæi broj za CDR \\
+%- samo najaktivniji korisnici \cite{Schneider:2013.} \cite{Toole:2015.} (pristranost?) $\rightarrow$ jedno istraživanje podijelilo je korisnike u 3 skupine po kolièini podataka koju generiraju te su dokazali da frekvencija korištenja nije uvela pristranost. \cite{Bonnel:2015.}  \\
+%- za razliku od izvlaèenja najaktivnijih korisnika -\cite{Calabrese:2011.} uzima samo sluèajno odabranih 25\% korisnika (njih 1 milijun) da pojednostavi analizu. ...Dobro šta, da može pješke na prste raèunati?!\\
+%- broj aktivnih korisnika unutar jednog tjedna jako varira iz dana u dan.  \cite{Bonnel:2015.}\\ \cite{Graells-Garrido:2016.}\\
+%- Pristranost kolièine generiranih podataka s dobi \cite{Bonnel:2015.}$\rightarrow$ još uvijek su mobiteli slabije zastupljeni kod djece i starijih ali to su takoðer i skupine sa smanjenom mobilnosti.
 %\subsection{Geometrija prostorne podjele}
 %(ne)uniformna podjela ...
 %Interpolacija - ima li smisla 2 razlièite podjele?!
 
-**zasebni kriterij - dodatak***\\
-- takve matirice su subjektivne, "nisu objektivne"\\
--faktor skaliranja spominje se u najmanje 2 istraživanja, u jednom se radi o x 10 
-%- noramlizacija matrica? koja je praksa ? 
+
 \subsubsection{Infrastruktura i sredstva kretanja}
 - cdr obuhvaæa sav, èak i pješaèki promet\\
 %\subsubsection{Sredstvo kretanja}
@@ -204,6 +224,13 @@ Ukupan broj odlazaka/dolazaka po vremenskom okviru za cijelu matricu. Suma svih 
 -short trips are less likely to use public transport\cite{Graells-Garrido:2016.}
 
 \textit{stvar koje stvaraju neodreðenost jer ne mogu biti objektivno definirane. Sve navedite tu što nije jednoznaèno odreðeno, ima nekakvih preklapanja, što onda izaziva neodreðenost.}
+
+**zasebni kriterij - dodatak***\\
+- takve matirice su subjektivne, "nisu objektivne"\\
+-faktor skaliranja spominje se u najmanje 2 istraživanja, u jednom se radi o x 10\\
+Predlaže skaliranje na osnovu prebrojavanja prometa na kljuènim mjestima izvuèenim iz postupka kreiranja matrica prije skaliranja i interpolacije na kvadratnu mrežu - zadnjeg koraka \cite{Goulding:2016.}. 
+%- noramlizacija matrica? koja je praksa ? 
+
 \begin{comment}
 2 modela
 PoV (Predicted vs Observed)

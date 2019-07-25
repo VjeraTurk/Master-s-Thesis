@@ -39,7 +39,13 @@ Izvorišno-odredišna matrica prikazuje broj putovanja iz izvorišne u ciljnu zonu 
 \end{comment}
 
 \section{Definicija}
-Polazišno-odredišna matrica sadrži broj putovanja izmeðu svakog para zona unutar nekog podruèja za odreðeni vremenski okvir (u svakom smjeru zasebno). Redovi u \gls{pom}-i predstavljaju polazišta (izvore prometnog toka), a stupci odredišta. Svaki element u \gls{pom}-i predstavlja broj putovanja iz pripadajuæe polazišne u pripadajuæu ciljnu zonu. Može se smatrati matriènim zapisom težinskog usmjerenog grafa, gdje su težinski faktori usmjerenih veza širine prometnih tokova izmeðu èvorova mreže koji predstavljaju zone na koje je promatrano podruèje podijeljeno.  
+
+\theoremstyle{definition}
+\begin{definition}{Polazišno-odredišna matrica} je matrica koja sadrži broj putovanja izmeðu svakog para zona unutar nekog podruèja za odreðeni vremenski okvir $T$ (u svakom smjeru zasebno). Redovi u \gls{pom}-i $i = 1,2,3...m$ predstavljaju polazišta (izvore prometnog toka), a stupci $j = 1,2,3...n$ odredišta. Element na poziciji $i, j$ u \gls{pom}-i predstavlja broj putovanja iz pripadajuæe polazišne zone $i$ u pripadajuæu ciljnu zonu $j$. Može se smatrati matriènim zapisom težinskog usmjerenog grafa, gdje su težinski faktori usmjerenih veza širine prometnih tokova izmeðu èvorova mreže koji predstavljaju zone na koje je promatrano podruèje podijeljeno. 
+\end{definition}
+ 
+
+
 
 U prometnoj znanosti postoje brojne metode estimacije \gls{pom}-a. I dok se još uvijek ulaže u razvoj matematièkih modela koji imaju za cilj poveæati kvalitetu \gls{pom}-a generiranih tradicionalnim metodama, u novije vrijeme razvijaju se nove, moderne metode, koje imaju veliki potencijal, zbog svoje jednostavnosti u izvedbi, ažurnosti podataka i velikog uzorka stanovništva koji obuhvate. Kod pojedinih operatera radi se o oko èak 40-50\% svih stanovnika neke države \cite{Bonnel:2015.}.  (...)
 %zamijeniti tradicionalne metode i postati standard u analizi prometa pa tako i generiranju \gls{pom}-a.
@@ -180,7 +186,12 @@ Danas uz sveprisutnost i prodornost tehnologije, podatci koje generiraju pametni
 Situacija je takva da telekomunikacije kompanije, ali i ostali tehnološki subjekti, moraju voditi raèuna o privatnosti pojedinaca i ukoliko neki podaci jesu korišteni za razvoj \glsplural{pom}, takvi podaci najprije moraju biti striktno anonimizirani te ne smije postojati moguænost \textit{reingineeringa} i povratka na izvorni identitet. U pravilu to znaèi povezivanje sa treæim stranama u poslovnom procesu, koje iz nekog razloga dozvoljavaju pristup podacima. Podaci prije pristupa moraju biti anonimizirani tako da oni mogu biti korišteni za druge svrhe bez razotkrivanja pojedinaca, u skladu s postavkama \gls{gdpr}. Dodatnu sigurnost garantira dobra praksa provoðenja k-anonimizacije opisane u potpoglavlju \ref{k-an}.
 
 \subsection{Putovanje}
-Priroda ovog pristupa rudarenju podataka za estimaciju POM-a zahtjeva da prvo definiramo što toèno smatramo putovanjem, odnosno polazištem i odredištem putovanja. Zaustavljanje se definira kao skup minimalno \textit{n} dogaðaja (aktivnosti) koji su zabilježeni na istoj poziciji unutar definiranog minimalnog vremenskog perioda. Time se osigurava da se ne radi o tranzitnoj veæ o namjerenoj poziciji zaustavljanja (i suzbija se bilježenje lažnog kretanje kod privremenog spajanja na susjednu baznu stanicu). Algoritam u nizu aktivnosti svakog pojedinca traži takva zaustavljanja. Dobiveni niz kontinuiranog zaustavljanja na razlièitim položajima otkriva putanju kretanja. Algoritam izvlaèi uzastopne parove zaustavljanja te, prema dodatno definiranim kriterijima dozvoljenog minimalnog i maksimalnog vremenskog razmaka izmeðu polaska i dolaska na odredište, ranija æelija zaustavljanja postaje polazište, a kasnija odredište putovanja. 
+Priroda ovog pristupa rudarenju podataka za estimaciju POM-a zahtjeva da prvo definiramo što toèno smatramo putovanjem, odnosno polazištem i odredištem putovanja. 
+
+ \begin{definition}{Zaustavljanje} se definira kao skup minimalno \textit{n} dogaðaja (aktivnosti) u nizu koji su zabilježeni na istoj poziciji unutar definiranog minimalnog vremenskog perioda. Time se osigurava da se ne radi o tranzitnoj veæ o namjerenoj poziciji zaustavljanja (i suzbija se bilježenje lažnog kretanje kod privremenog spajanja na susjednu baznu stanicu).
+ \end{definition}
+
+ Algoritam u nizu aktivnosti svakog pojedinca traži takva zaustavljanja. Dobiveni niz kontinuiranog zaustavljanja na razlièitim položajima otkriva putanju kretanja. Algoritam izvlaèi uzastopne parove zaustavljanja te, prema dodatno definiranim kriterijima dozvoljenog minimalnog i maksimalnog vremenskog razmaka izmeðu polaska i dolaska na odredište, ranija æelija zaustavljanja postaje polazište, a kasnija odredište putovanja. 
 
 Kod izrade tzv. tranzitnih matrica, u kojima je naglasak osim na broj putovanja stavljen i na vremensku domenu, skupovi svih putovanja u pripadajuæem vremenskom okviru saèinjavaju matricu za taj vremenski okvir, te je rezultat generiranja skup matrica.
 
@@ -281,7 +292,12 @@ U jednom od svojih radova grupa autora kvantizira vezu izmeðu ukupno 23 namjensk
 
 
 \section{Geometrija prostorne podjele}
-Konaèna geometrija prostorne podjele alternativnih izvora uglavnom ovisi o prostornoj podjeli \textit{grand truth} matrice, matrice koja se uzima kao najvjerniji prikaz stvarnog kretanja te u odnosu na koju se procjenjuje toènost procijenjene matrice. Obièno se radi o jedinici prostorne podjele naziva \glsfirst{taz} kod analize prometa, o anketnim jedinicama ili jedinicama samouprave. Neprihvaæenija prostorna podjela kod matrica izvedenih iz \gls{cdr} je ona na Voronoi æelije.
+\begin{definition}{Geometrija prostorne podjele} je naèin na koji je podruèje od interesa podijeljeno u manje površine koje predstavljaju zone (polazišta/odredišta). Razlièite podjele razlikuje ponajprije njihov broj i (ne)uniformnost površine.
+\end{definition}
+Razlièiti izvori podataka za generiranje matrica rezultirali su i razlièitim prostornim podjelama promatranih podruèja. Prostorna podjela uvjetovana je postupkom prikupljanja podataka i/ili infrastrukturom. Nije moguæe u startu osigurati primjerice uniformnu pravokutnu podjelu. 
+
+
+Konaèna geometrija prostorne podjele alternativnih izvora uglavnom ovisi o prostornoj podjeli \textit{grand truth} matrice, matrice koja se uzima kao najvjerniji prikaz stvarnog kretanja te u odnosu na koju se procjenjuje toènost procijenjene matrice. Obièno se radi o jedinici prostorne podjele naziva \glsfirst{taz} kod analize prometa, o anketnim jedinicama ili jedinicama samouprave. Najprihvaæenija prostorna podjela kod matrica izvedenih iz \gls{cdr} je ona na Voronoi æelije.
 
 %\subsubsection{\glsfirst{taz}}
 \subsubsection{\glsfirst{taz}}
@@ -324,8 +340,10 @@ Podjela na gradske èetvrti obièno je relativno uniformna \cite{Alhazzani:2016.}.
 
 \subsubsection{Voronoi teselacija}
 \textit{Najfinija} rezolucija koju je moguæe postiæi kada je rijeè o matricama dobivenim iz \gls{cdr} postiže se podjelom prema Voronoievoj teselaciji. 
-
-Opæenito, u ravnini, za svaku toèku iz skupa toèaka postoji odgovarajuæa regija koju èine sve toèke ravnine bliže toj toèki negoli ikojoj drugoj iz skupa. Te regije se nazivaju Voronoievim æelijama. Svaka takva æelija dobiva se presjecištem pola prostora izmeðu susjednih toèaka skupa, pa stoga èini konveksni poligon. 
+\begin{definition}{Voronoi tesalacija}
+(Prevesti iduæi odlomak)
+\end{definition}
+U ravnini, za svaku toèku iz skupa toèaka postoji odgovarajuæa regija koju èine sve toèke ravnine bliže toj toèki negoli ikojoj drugoj iz skupa. Te regije se nazivaju Voronoievim æelijama. Svaka takva æelija dobiva se presjecištem pola prostora izmeðu susjednih toèaka skupa, pa stoga èini konveksni poligon. 
 Dijelovi Voronoiova dijagrama su sve toèke u ravnini koje su ekvidistantne prema dva najbliža položaja (granice poligona). Voronoiovi vrhovi su toèke ekvidistantne tri (ili više) položaja.
 
 %The base stations are grouped together to form Location Areas (LA) for reasons to do with management of the mobile phone network as this makes it possible to identify mobile phones more rapidly in the case of a call or an SMS. The LA in which a mobile phone is located is known all the time, while at base station level its position is only known in the event of a call

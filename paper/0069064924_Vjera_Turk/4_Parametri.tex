@@ -4,6 +4,16 @@
 
 \section{Uvjeti usporedbe}
 
+\begin{itemize}
+	\item  isto podruèje/grad/država
+	\item  isto doba godine
+	\item vremensko razdoblje iste duljine
+	\item  ako se radi o jednom danu - idealno isti dan u tjednu
+	\item ista kategorija putovanja - tranzitna ili \textit{commuting} matrica
+	\item obje \gls{pom}-e napravljene objektivno na cijeloj populaciji
+	
+\end{itemize}
+\begin{comment}
 - Isti grad/država/podruèje\\
 - Isto doba godine\\
 - Isto vremensko razdoblje\\
@@ -12,8 +22,8 @@
 --- Isto pridodijeljena putovanja periodu \\
 %--- (ne)obuhvaæena interna putovanja (diagonalu) \\
 - obje \gls{pom}-e napravljene objektivno na cijeloj populaciji 45:38
-
 (...)
+\end{comment}
 %\\- normalizirana
 %kada se preslikava bs æelije na drugi oblik, nastaju putovanja unutar novih æelija (koje su veæe od bs æelija) \cite{Graells-Garrido:2016.}  
 
@@ -32,17 +42,20 @@ Usporedba matrica iz razlièitih izvora (ankete i \gls{cdr}) s 2 razlièite defini
 %The comparison between the matrices obtained from commuting and mobile phone data provide quite limited results. It is reasonable for the estimated number of trips to differ, as commuting data only relates to trips from the individual’s home to their place of work or study, while mobile phone data cover all trip purposes. But the analysis we have performed also show that the structures of the matrices have little in common. There is thus a high degree of dispersion in the rates of variation between the two sources of origin-destination data. This preliminary work was conducted on the basis of fairly strong hypotheses. It is therefore quite possible that more detailed analysis would make it possible to moderate some of the strongest hypotheses and improve comparability. Nevertheless, the only trip purposes covered by commuting data are work and study. It would therefore be necessary to be able to estimate the location of the home and place of work or study of the individuals from mobile phone data in order to significantly improve the matrices produced from this source. Even if a number of algorithms have been described in the literature (Chen et al., 2014; Calabrese et al., 2013; Phithakkitnukoon et al., 2012), our identification of these locations is bound to be uncertain unless we have a large number of events for each mobile phone, which is not the case with the data that we have used. It seems certain that the analysis of the mobile phone data from smartphones which are frequently connected to web-based applications would make it possible to attempt this type of analysis.
 
 Veæ je spomenuta podjela na matrice koje sadrže iskljuèivo \gls{hw} i \gls{wh} putovanja i one koje u obzir uzimaju i ostala putovanja, bilo pod kategorijom \textit{Ostalo} (engl. \textit{Other}), preciznijom podjelom ili bez posebne podjele po svrsi. Prva vrsta obièno je povezana s tradicionalnim metodama (osobito ankete) dok su ostale obièno prisutne u vremenski zavisnim matricama, najèešæe generiranim modernim metodama.\\
-1. \textit{commuting trips} - iskljuèivo Home-Work i Work-Home putovanja\\
-2. \textit{general trips} -bilo koje kretanje koje zadovoljava uvjete putovanja\\
-
+\begin{enumerate}
+ \item \textit{commuting trips} - iskljuèivo Home-Work i Work-Home putovanja
+ \item \textit{general trips} -bilo koje kretanje koje zadovoljava uvjete putovanja\\
+\end{enumerate}
 Putovanja kod vremenski zavisnih matrica kreiranih iz \gls{cdr} moguæe je svrstati u nekoliko kategorija na osnovu prihvaæanja ili odbacivanja odreðenih kretanja kao putovanja.\\\\
-1. putovanja u sve æelije, bez internih putovanja (bez dijagonale)\\
-2. putovanja u sve æelije osim u susjedne, bez internih putovanja (bez dijagonale)\\
-3. agregacija susjednih æelija - matrice s internim putovanjima\\\\
-4. putovanja ogranièena minimalnom i/ili maksimalnom udaljenosti\\
-5. putovanja ogranièena minimalnom duljinom trajanja zaustavljanja (*)\\
-6. putovanja ogranièena minimalnom i/ili maksimalnom duljinom trajanja\\
-7. putovanja ogranièena bojem dogaðaja koji potvrðuju zaustavljanje i maksimalnim vremenskim razmakom izmeðu dva uzastopna dogaðaja\\
+\begin{enumerate}
+\item putovanja u sve æelije, bez internih putovanja (bez dijagonale)
+\item putovanja u sve æelije osim u susjedne, bez internih putovanja (bez dijagonale)
+\item agregacija susjednih æelija - matrice s internim putovanjima\\\\
+\item putovanja ogranièena minimalnom i/ili maksimalnom udaljenosti
+\item  putovanja ogranièena minimalnom duljinom trajanja zaustavljanja (*)
+\item  putovanja ogranièena minimalnom i/ili maksimalnom duljinom trajanja
+\item  putovanja ogranièena bojem dogaðaja koji potvrðuju zaustavljanje i maksimalnim vremenskim razmakom izmeðu dva uzastopna dogaðaja\\
+\end{enumerate}
 
 \textbf{Glavni razlog svih ogranièenja kod definicije putovanja je izbjeæi bilježenje lažnog kretanja uzrokovanog \textit{load balancing}-om i lažnog zaustavljanja uzrokovanog neuniformnom gustoæom zapisa pojedinca u vremenu}.
 
@@ -117,7 +130,7 @@ From Figure 3 observe that the antenna density is more towards the south east of
 \end{comment}
 
 Voronoi æelije takoðer je moguæe ugnijezditi (što se èesto radi kod usporedbe s matricama dobivenim drugim postupkom), a pritom se može u matricu zabilježiti i aproksimacija internog toka, odnosno broja putovanja unutar nove æelije (popuniti dijagonalu). Takva putovanja nazivamo internim putovanjima. 
-\begin{definition}{Interno putovanje} je ono putovanje èije se polazište i odredište nalaze unutar iste prostorne zone. Kao dodatno ogranièenje može se navesti da ni putanja putovanja ne izlazi iz prostora te zone - odnosno da se putovanje u cijelosti odvija unutar prostora jedne prostorne zone. Suprotno internom je eksterno putovanje.
+\begin{definition}{Interno putovanje}\label{inter} je ono putovanje èije se polazište i odredište nalaze unutar iste prostorne zone. Kao dodatno ogranièenje može se postaviti da ni putanja putovanja ne izlazi iz prostora te zone - odnosno da se putovanje u cijelosti odvija unutar prostora jedne prostorne zone. Suprotno internom je eksterno putovanje.
 % jel to ok?!
 \end{definition}
 Postotak eksternih putovanja koji se gubi u procesu agregacije Voronoi æelija analiziran je  za matrice iz regije Picardie u Francuskoj.
@@ -189,8 +202,10 @@ Najmanji spominjani interval je 15 min \cite{Bera:2011.}, drugi najmanji 30 min 
 \subsection{Širina toka}
 %- dakako za pojedinu matricu ovisi o prostornoj i vremenskoj rezoluciji \\
 %- najviše ipak vjerojatno ovisi o definiciji putovanja\\
-
-Ukupna širina toka podrazumijeva ukupan broj odlazaka/dolazaka po vremenskom okviru za cijelu matricu. Suma svih njenih elemenata. Na širinu toka utjecat æe svi prethodno spomenuti kriteriji usporedbe/parametri kvalitete.
+\begin{definition}
+Ukupna širina toka podrazumijeva ukupan broj odlazaka/dolazaka po vremenskom okviru za cijelu matricu. Suma svih njenih elemenata.
+\end{definition}
+Na širinu toka utjecat æe svi prethodno spomenuti kriteriji usporedbe/parametri kvalitete.
 Osim njih, utjecat æe velièina i reprezentativnost uzorka stanovništva te k-anonimizacija.
 
 Neka istraživanja izdvajaju samo najaktivnije korisnike (generalno one s najviše generiranih dogaðaja) za kreiranje matrica \cite{Schneider:2013.} \cite{Toole:2015.}.

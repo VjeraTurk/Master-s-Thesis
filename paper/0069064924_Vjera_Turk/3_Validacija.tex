@@ -2,7 +2,7 @@
 %\chapter{Postojeæe metrike za validaciju POM-a}
 \chapter{Validacija \glsfirstplural{pom}}
 Postupak validacije %(modela, matrice, neèega)
-je objektivna procjena	kvalitete, vrijednosti objekta koji se validira. Validacija \gls{pom}-e je proces koji ima za cilj procjenu obilježja kvalitete te \gls{pom}-e i znaèi identifikaciju obilježja kvalitete \gls{pom}-e, njenog sadržaja, njene smislenosti a izražava se slijedeæim/ indikatorima kao što su: toènost, \textit{prostorno obuhvaæanje, zrnatost}, definicija putovanja, prostorna rezolucija, vremenska rezolucija i širina toka.
+je objektivna procjena	kvalitete, vrijednosti objekta koji se validira. Validacija \gls{pom}-e je proces koji ima za cilj procjenu obilježja kvalitete te \gls{pom}-e i znaèi identifikaciju obilježja kvalitete \gls{pom}-e, njenog sadržaja, njene smislenosti a izražava se slijedeæim  indikatorima kao što su: toènost, \textit{prostorno obuhvaæanje, zrnatost}, definicija putovanja, prostorna rezolucija, vremenska rezolucija i širina toka.
 
 ** Pojedinaèno navesti \textit{metrike za odreðivanje vrijednosti svakog od tih indikatora} ***
 %** što je validacija POM-e?**
@@ -25,13 +25,13 @@ Za procjenu kvalitete matrica dobivenih iskljuèivo anketranjem u radu \cite{Cool
 
 U radu \cite{Bera:2011.} navedene su statistièke mjere Relative Error (RE), Total Demand Deviation (TDD), Mean Absolute Error (MAE), Root Mean Square Error (RMSE) te Maximum Possible Relative Error (MPRE) i Travel Demand Scale (TDS)  koji procjenjuju kvalitetu neovisno o referentnoj matrici (no MPRE ne dopušta pogreške u prebrojavanju prometa, dok TDS ovisi o topologiji mreže i odabiru ruta). \cite{Djukic:2013.}
 
-U \cite{Frias-Martinez:2012.} korišten je \textit{Pearsonov koeficijent korelacije} -  $r$ da bi se utvrdila sliènost svakog retka matrice dobivene iz CDR s retkom referentne (izlazni tok iz svake polazišne æelije). Isti postupak korišten je za kontekstualizirane \gls{hw} i \gls{wh} matrice  dobivene iz \gls{cdr} u usporedbi s referentnim matricama dobivenim anketiranjem.
+U \cite{Frias-Martinez:2012.} korišten je \textit{Pearsonov koeficijent korelacije} -  $r$ da bi se utvrdila \textbf{sliènost svakog retka matrice} dobivene iz CDR \textbf{s retkom referentne} (ukupni izlazni tok iz svake polazišne æelije). Isti postupak korišten je za kontekstualizirane \gls{hw} i \gls{wh} matrice  dobivene iz \gls{cdr} u usporedbi s referentnim matricama dobivenim anketiranjem.
 
 Travassoli u svome radu \cite{Travassoli:2016.} navodi nekoliko uobièajeno korištenih mjera - {$R^{2}$, Geoffrey E. Havers statistics (GEH),   Root Mean Squared Error percentage \%RMSE te uvodi novu mjeru  Eigenvalue-based measure (EBM) (temeljenu na svojstvenim vrijednostima matrica) i procjenjuje pouzdanost matrice dobivene iz sustava automatskog prikupljanja podataka u javnom prijevozu (autobus, vlak i trajekt). Spominje i Wasserstein metric, mjeru koja se razlikuje po tome da ne usporeðuje samo vrijednosti parova istih æelija (elementwise). 
 
 Spearmanov koeficijent korelacije ranga korišten je u \cite{Graells-Garrido:2016.} za procjenu sliènosti matrica dobivenih iz \gls{cdr} sa tada aktualnim matricama dobivenim anketiranjem.
 
-(...)
+%(...)
 %Dynamic Travel Demand \cite{Gundlegard:2016.}
 
 \begin{comment}
@@ -60,7 +60,7 @@ The root mean squared error (RMSE) and accordingly the percent root mean squared
 \end{comment}
     
 \section{Grafièki prikaz (oblik) \glsfirstplural{pom}}
-Na slici \ref{fig:spaghetti} može se vidjeti jedan oblik grafièkog prikaza matrice, odnosno njenih tokova. Svaki par centara æelija spojen je ravnom linijom èija debljina odgovara širini toka izmeðu te dvije linije. Meðutim, rijeè je o primjeru kada ovaj oblik prikaza nikako nije primjeren, zbog visoke rezolucije (velikog broja æelija) kao i velikog broja zabilježenih tokova. 
+Na slici \ref{fig:spaghetti} može se vidjeti jedan oblik grafièkog prikaza matrice, odnosno njenih tokova. Svaki par centara æelija spojen je ravnom linijom èija debljina odgovara širini toka izmeðu te dvije linije. Meðutim, rijeè je o primjeru kada ovaj oblik prikaza nikako nije primjeren, zbog visoke prostorne rezolucije (velikog broja zona) kao i velikog broja zabilježenih tokova. 
 Dodatno, da bi se u ovom obliku prikazali svi podaci iz matrice, potrebno je prikazati jednu sliku za ulazne te jednu za sve izlazne tokove.
 
 Postoji i još jedan èesto korišten grafièki oblik matrice. Vrijednosti u matrici mogu se normalizirati na opseg vrijednosti koji je moguæe prikazati u obliku slike tako da svaka vrijednost predstavlja vrijednost piksela. Koriste se razlièite palete, od raspona 0-100  koji predlažu \cite{Filic:2016.}, prikazom nijansama jedne boje 0-255 engl. \textit{grayscale} \cite{Vuren:2015.}, paletom nijansa 2 boje, ili kojom drugom proizvoljnom paletom s više boja (vidi paletu boja matrica na slici \ref{fig:journeys}).
@@ -82,9 +82,9 @@ Dosada spomenute mjere neæe uhvatiti strukturalnu sliènost matrica. Nekolicina a
  
 \subsection{MSSIM} 
 
-\gls{mssim} dolazi iz podruèja raèunalne obrade slike i koristi se kao mjera usporedbe digitalnih slika (\textit{eng. measure of comparison)}. U prometu ideja o korištenju  \gls{mssim} za mjerenje sliènosti matrica se prvi puta spominje i demonstrira na simuliranim matricama dobivenim iz referentne matrice dodavanjem šuma. \cite{Djukic:2013.}
+\gls{mssim} dolazi iz podruèja raèunalne obrade slike i koristi se kao mjera usporedbe digitalnih slika (\textit{eng. measure of comparison)}. U prometu ideja o korištenju  \gls{mssim} za mjerenje sliènosti matrica prvi se puta spominje i demonstrira na simuliranim matricama dobivenim iz referentne matrice dodavanjem šuma. \cite{Djukic:2013.}
 
-Informaciju o strukturi slike definiramo kao atribute slike koji predstavljaju strukturu objekata na sceni, i neovisni su o prosjeènom osvjetljenju i kontrastu. Jer osvjetljenje i kontrast mogu znatno varirati na sceni, moraju se u obzir uzeti samo njihove lokalne vrijednosti.
+Informacija o strukturi slike definira se kao atributi slike koji predstavljaju strukturu objekata na sceni, i neovisni su o prosjeènom osvjetljenju i kontrastu. Jer osvjetljenje i kontrast mogu znatno varirati na sceni, moraju se u obzir uzeti samo njihove lokalne vrijednosti.
 
 \gls{ssim} bazira se na degradaciji strukturalnih informacija na jednoj slici u usporedbi s drugom (referentnom) slikom. \gls{ssim} se raèuna za svaki kvadratni blok velièine %$N \times N$ (???) 
 $N$ elemenata na naèin da se jezgra (da bi obuhvatila novi blok) pomièe æeliju po æeliju dok ne proðe preko cijele slike. \gls{mssim} je srednja vrijednost svih \gls{ssim}.
@@ -143,18 +143,18 @@ MSSIM(X,Y) =  \frac{1}{M} \sum_{m=1}^{M} SSIM(x_m,y_m) \label{eq:mssim}
 
 \begin{figure}[!htpb]
 	\begin{center}
-		\subfloat[U odnosu na referentnu \textit{grand truth} \gls{pom}-u a), vrijednost metrike toènosti MSE jednak je za obje matrice b) i c), dok se indeks strukturalne sliènosti znatno razlikuje, gdje \gls{pom}-a b) ima veæu strukturalnu sliènost s a) nego što ima c) (\ref{subeq:boundry}). Lako je na matrici c) uoèiti narušenost strukturalne sliènosti. ]{\label{fig:mssim_1}
+		\subfloat[U odnosu na referentnu \textit{grand truth} \gls{pom}-u a), vrijednost metrike toènosti MSE jednak je za obje matrice b) i c), dok se indeks strukturalne sliènosti znatno razlikuje, gdje \gls{pom}-a b) ima veæu strukturalnu sliènost s a) nego što ima c). Podsjetimo se da za \gls{ssim} vrijedi (\ref{subeq:obje}). Lako je na matrici c) \textit{golim okom } uoèiti narušenost strukturalne sliènosti. ]{\label{fig:mssim_1}
 			\includegraphics[width=14cm,keepaspectratio=true]{mssim_1}}\\ 
 		%\hspace{10pt}
 		\subfloat[U odnosu na referentnu \gls{pom}-u a), vrijednost metrike strukturalne sliènosti iznosi 0.904 za obje matrice b) i c), dok se MSE razlikuje (veæi MSE znaèi veæu razliku). Obje matrice dobivene su dodavanjem Gaussianovog šuma na referentnu matricu.]
 		{\label{fig:mssim_2}
 			\includegraphics[width=14cm,keepaspectratio=true]{mssim_2}}
-		\caption{Narušenu strukturalnu sliènost lakše je uoèiti nego narušen MSE.  \gls{mssim}  u odnosu na referentnu POM-u može biti korišten kao dodatna informacija (\textit{goodness of fit} mjera)  prilikom validacije POM-e \cite{Djukic:2013.}} 
+		\caption{Narušenu strukturalnu sliènost lakše je uoèiti nego narušen MSE. \gls{ssim} (i \gls{mssim})  u odnosu na referentnu POM-u može biti korišten kao dodatna informacija (\textit{goodness of fit} mjera)  prilikom validacije POM-e \cite{Djukic:2013.}} 
 		\label{fig:mssim}
 	\end{center}
 \end{figure}
 
 
 \subsubsection{Poboljšani} 
-Nekoliko godina nakon prvog spominjanja $MSSIM$ kao metrike usporedbe \gls{pom}-a \cite{Vuren:2015.}  se dotièe 3 problema postavljajuæi pitanja : Koliko treba biti veliki blok? Kako usporediti "guste" i "rijetke" matrice? Koja je prihvatljiva vrijednost $MSSIM$? Autori definiraju poboljšani model koji nazivaju $4D$-$MSSIM$ gdje u izraèun dodaju stvarne euklidske udaljenosti prostornih æelija matrice. 
+Nekoliko godina nakon prvog spominjanja $MSSIM$ kao metrike usporedbe \gls{pom}-a \cite{Vuren:2015.}  se dotièe 3 problema postavljajuæi pitanja : Koliko treba biti veliki blok? Kako usporediti "guste" i "rijetke" matrice? Koja je prihvatljiva vrijednost $MSSIM$? Autori definiraju poboljšani model koji nazivaju $4D$-$MSSIM$ gdje u izraèun dodaju stvarne euklidske udaljenosti prostornih zona. 
     

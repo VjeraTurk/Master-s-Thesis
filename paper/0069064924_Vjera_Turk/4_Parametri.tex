@@ -3,13 +3,13 @@
 \chapter{Usporedba dviju \glstext{pom}} %KVALITETE
 
 \section{Uvjeti usporedbe}
-
+\gls{pom}-e koje se usporeðuju trebaju zadovoljavati uvjete usporedbe. Rijeè je o slijedeæim zajednièkim obilježjima:
 \begin{itemize}
 	\item  isto podruèje/grad/država
 	\item  isto doba godine
 	\item vremensko razdoblje iste duljine
 	\item  ako se radi o jednom danu - idealno isti dan u tjednu
-	\item ista kategorija putovanja - tranzitna ili \textit{commuting} matrica
+	\item ista kategorija putovanja - tranzitna ili \textit{commuting}
 	\item obje \gls{pom}-e napravljene objektivno na cijeloj populaciji (reprezentativnom uzorku)
 	
 \end{itemize}
@@ -34,37 +34,37 @@
 
 \subsection{Definicija putovanja}
 \label{trip_def}
-Kod generiranja matrica treba definirati hoæe li se putovanja koja se protežu kroz više perioda dodijeliti vremenskom okviru u kojem zapoèinju ili u kojem završavaju. Iako ponekad nije specificirano, autori \cite{Bera:2011.} \cite{Filic:2016.} \cite{Gundlegard:2016.} sva putovanja dodjeljuju intervalu u kojem je putovanje zapoèeto. Teralytics u praksi generira obje vrste matrica \cite{Teralytics:2017.}.
+Kod procjene matrica treba definirati hoæe li se putovanja koja se protežu kroz više perioda dodijeliti vremenskom okviru u kojem zapoèinju ili u kojem završavaju. Iako ponekad nije specificirano, autori \cite{Bera:2011.} \cite{Filic:2016.} \cite{Gundlegard:2016.} sva putovanja dodjeljuju intervalu u kojem je putovanje zapoèeto. Teralytics u praksi procjenjuje obje vrste matrica \cite{Teralytics:2017.}.
 Autori \cite{Gundlegard:2016.} kako bi uvrstili što više putovanja, ne zanemaruju one zapise iz kojih nije jasno vidljiv poèetak putovanja veæ takva putovanja dodjeljuje na osnovu vjerojatnosti da su zapoèela u odreðenom periodu. Slièan postupak spominje se i u \cite{Toole:2015.} gdje za izraèun vjerojatnosti posežu za nacionalnim anketama ili frekvencijom poziva.
 
-Usporedba matrica iz razlièitih izvora (ankete i \gls{cdr}) s 2 razlièite definicije putovanja (samo putovanja \gls{hw} i \gls{wh} te sva putovanja) pokazala se kao loš pristup, razumljivo su matrice imale mali stupanj sliènosti ne sasvim oèekivano je i strukturalna sliènost bila vrlo mala. \cite{Bonnel:2015.} Isti zakljuèak kasnije iznosi i \cite{Gundlegard:2016.} èije grafièke prikaze matrica možemo vidjeti na slici \ref{fig:journeys}. \textbf{O definiciji putovanja dakako ovisit æe njihov konaèan broj, odnosno širina toka.}\\
+Usporedba matrica iz razlièitih izvora (ankete i \gls{cdr}) s 2 razlièite definicije putovanja (samo putovanja \gls{hw} i \gls{wh} te sva putovanja) pokazala se kao loš pristup, matrice su imale mali stupanj sliènosti i strukturalna sliènost bila je vrlo mala. \cite{Bonnel:2015.} Isti zakljuèak kasnije iznosi i \cite{Gundlegard:2016.} èije grafièke prikaze matrica možemo vidjeti na slici \ref{fig:journeys}. \textbf{O definiciji putovanja dakako ovisit æe njihov konaèan broj, odnosno širina toka.}\\
 %(...)
 %The comparison between the matrices obtained from commuting and mobile phone data provide quite limited results. It is reasonable for the estimated number of trips to differ, as commuting data only relates to trips from the individual’s home to their place of work or study, while mobile phone data cover all trip purposes. But the analysis we have performed also show that the structures of the matrices have little in common. There is thus a high degree of dispersion in the rates of variation between the two sources of origin-destination data. This preliminary work was conducted on the basis of fairly strong hypotheses. It is therefore quite possible that more detailed analysis would make it possible to moderate some of the strongest hypotheses and improve comparability. Nevertheless, the only trip purposes covered by commuting data are work and study. It would therefore be necessary to be able to estimate the location of the home and place of work or study of the individuals from mobile phone data in order to significantly improve the matrices produced from this source. Even if a number of algorithms have been described in the literature (Chen et al., 2014; Calabrese et al., 2013; Phithakkitnukoon et al., 2012), our identification of these locations is bound to be uncertain unless we have a large number of events for each mobile phone, which is not the case with the data that we have used. It seems certain that the analysis of the mobile phone data from smartphones which are frequently connected to web-based applications would make it possible to attempt this type of analysis.
 
-Veæ je spomenuta podjela na matrice koje sadrže iskljuèivo \gls{hw} i \gls{wh} putovanja i one koje u obzir uzimaju i ostala putovanja, bilo pod kategorijom \textit{Ostalo} (engl. \textit{Other}), preciznijom podjelom ili bez posebne podjele po svrsi. Prva vrsta obièno je povezana s tradicionalnim metodama (osobito ankete) dok su ostale obièno prisutne u vremenski zavisnim matricama, najèešæe generiranim modernim metodama.\\
+Veæ je spomenuta podjela na matrice koje sadrže iskljuèivo \gls{hw} i \gls{wh} putovanja i one koje u obzir uzimaju i ostala putovanja, bilo pod kategorijom \textit{Ostalo} (engl. \textit{Other}), preciznijom podjelom ili bez posebne podjele po svrsi. Prva vrsta obièno je povezana s tradicionalnim postupcima procjene (osobito ankete) dok su ostale obièno prisutne u vremenski zavisnim matricama, najèešæe procijenjenim modernim postupcima.\\
 \begin{enumerate}
  \item \textit{commuting trips} - iskljuèivo Home-Work i Work-Home putovanja
  \item \textit{general trips} -bilo koje kretanje koje zadovoljava uvjete putovanja\\
 \end{enumerate}
 Putovanja kod vremenski zavisnih matrica kreiranih iz \gls{cdr} moguæe je svrstati u nekoliko kategorija na osnovu prihvaæanja ili odbacivanja odreðenih kretanja kao putovanja.\\\\
 \begin{enumerate}
-\item putovanja u sve æelije, bez internih putovanja (bez dijagonale)
-\item putovanja u sve æelije osim u susjedne, bez internih putovanja (bez dijagonale)
-\item agregacija susjednih æelija - matrice s internim putovanjima\\\\
-\item putovanja ogranièena minimalnom i/ili maksimalnom udaljenosti
-\item  putovanja ogranièena minimalnom duljinom trajanja zaustavljanja (*)
-\item  putovanja ogranièena minimalnom i/ili maksimalnom duljinom trajanja
-\item  putovanja ogranièena bojem dogaðaja koji potvrðuju zaustavljanje i maksimalnim vremenskim razmakom izmeðu dva uzastopna dogaðaja\\
+\item \label{itm:cat_1}putovanja u sve æelije, bez internih putovanja (bez dijagonale)
+\item \label{itm:cat_2}putovanja u sve æelije osim u susjedne
+\item \label{itm:cat_3}agregacija susjednih æelija - matrice s internim putovanjima\\
+\item \label{itm:cat_4}putovanja ogranièena minimalnom i/ili maksimalnom udaljenosti
+\item \label{itm:cat_5} putovanja ogranièena minimalnom duljinom trajanja zaustavljanja (*)
+\item \label{itm:cat_6} putovanja ogranièena minimalnom i/ili maksimalnom duljinom trajanja
+\item \label{itm:cat_7} putovanja ogranièena bojem dogaðaja koji potvrðuju zaustavljanje i maksimalnim vremenskim razmakom izmeðu dva uzastopna dogaðaja\\
 \end{enumerate}
 
 \textbf{Glavni razlog svih ogranièenja kod definicije putovanja je izbjeæi bilježenje lažnog kretanja uzrokovanog \textit{load balancing}-om i lažnog zaustavljanja uzrokovanog neuniformnom gustoæom zapisa pojedinca u vremenu}.
 
-Istraživanje iz 2016. kod definiranja putovanja iz \gls{cdr} je eliminiralo zapise onih korisnika koju su radili dulja "neprekidna putovanja" (preko 100 km dnevno) pod napomenom da se radi o taksistima i sl. te da ih neæe uzeti u obzir \cite{Graells-Garrido:2016.}.  
+U istraživanju iz 2016. kod definiranja putovanja iz \gls{cdr} eliminirani su zapisi onih korisnika koju su radili dulja "neprekidna putovanja" od preko 100 km dnevno (kategorija 4) pod napomenom da se radi o taksistima i sl. te da ih neæe uzeti u obzir \cite{Graells-Garrido:2016.}.  
 
-Za 2 razlièite definicije putovanja, za matrice iz identiènih podataka na podruèju Snegala generirano je 0.7 putovanja dnevno po korisniku u jednom a 0.06 u drugom. U potonijij definiciji ogranièenja su bila: vremensko na 1 sat minimalnog trajanja i prostorno na udaljenost od barem 5 udaljenosti baznih stanica. Pokazuje da je najveæa zastupljenost upravo kratkih putovanja. \cite{Gundlegard:2016.} Distribuciju možemo vidjeti na slici \ref{fig:trip_distance_distribution}
+Za 2 razlièite definicije putovanja, za matrice iz identiènih podataka na podruèju Snegala generirano je 0.7 putovanja dnevno po korisniku u jednom, a 0.06 u drugom. U potonijoj definiciji ogranièenja su bila: vremensko na 1 sat minimalnog trajanja (kategorija \ref{itm:cat_6}) i prostorno na udaljenost od barem 5 udaljenosti baznih stanica (kategorija \ref{itm:cat_4}). Pokazuje da je najveæa zastupljenost upravo kratkih putovanja. \cite{Gundlegard:2016.} Distribuciju možemo vidjeti na slici \ref{fig:trip_distance_distribution}
 
 \textit{Commuting} putovanja takoðer mogu biti pod nekim ogranièenjima, osim što su najèešæe veæ ogranièena vremenskim periodom u kojem se odvijaju. 
-Primjerice \cite{Gundlegard:2016.} definira minimalnu udaljenost od 3 km izmeðu prebivališta i mjesta rada i izvan susjednih æelija.
+Primjerice \cite{Gundlegard:2016.} definira minimalnu udaljenost od 3 km izmeðu prebivališta i mjesta rada (kategorija 4) i izvan susjednih æelija (kategorija 2).
 
 
 
@@ -109,7 +109,7 @@ neighboring antennas in the Voronoi graph.
 
 Prema hrvatskoj enciklopediji definicija razluèivosti (rezolucije) glasi: mjera za razaznavanje sitnih pojedinosti na nekom prikazu (npr. televizijskoj slici). U raèunalstvu se odnosi na finoæu rasterske slike iskazanu ukupnim brojem slikovnih elemenata (relativna razluèivost) ili brojem slikovnih elemenata po inèu (stvarna razluèivost).\\
 %(...)\\
-Kod \gls{pom}-a razvijenih iz \gls{cdr} rezolucija æe ovisit o gustoæi tornjeva bazni stanica. Gustoæa tornjeva snažno je korelirana s gustoæom populacije. \cite{Gundlegard:2016.}
+Kod \gls{pom}-a razvijenih iz \gls{cdr} rezolucija æe ovisit o gustoæi tornjeva bazni stanica. Gustoæa tornjeva snažno je korelirana s gustoæom populacije \cite{Gundlegard:2016.}.
 %The antenna density is strongly correlated to population density and hence we get a better spatial resolution of trips in areas with denser population. 
 Distribucija tornjeva nije homogena, niti na podruèju grada, niti na bilo kojem drugom podruèju. Kod izrazito visoke gustoæe \cite{Goulding:2016.} predlaže grupiranje aktivnosti tornjeva koji se nalaze na udaljenosti manjoj od 75 m (dodjeljivanje aktivnosti najaktivnijem od tornjeva) kako bi se izbjegla prividna kretanja koja uzrokuje preusmjeravanje na bližnje bazne stanice (engl. \textit{load balancing}). 
 %Finally, we also recommend as best practice the merging of BTS activity in high density areas (in Annex 1 we use a 75m cordon, below which any adjacent BTS are merged). This is due to a deleterious reduction in confidence in high density areas, which are subject to greater load balancing, that the BTS’s associated voronoi region accurately reflects a user’s true position. \cite{Goulding:2016.}
@@ -176,7 +176,7 @@ Na temelju usporedbi matrica kretanja u 4 razlièita grada, dobivenih iz \gls{cdr
 
 %Daily trips are estimated from filtered users by analyzing consecutive observations at different stay points during a given time window. They begin by defining an effective day as a period between 3 am one morning and 3 am on the next consecutive morning. This definition is used to minimize the number of trips that are prematurely ended due to the assumption that users start and end each day at home
 Neki autori predlažu da kraj odnosno poèetak jednog dana bude u 3:00 kako bi putovanja zapoèeta prethodnog dana, a koja prelaze u novi dan, u analizi spadala u raniji dan, odnosno kako dobar dio putovanja ne bi bio izostavljen samo zato jer se proteže kroz 2 dana \cite{Schneider:2013.}\cite{Toole:2015.}. 
-Najmanji spominjani interval je 15 min \cite{Bera:2011.}, drugi najmanji 30 min \cite{Schneider:2013.}, kod matrica kreiranih iz podataka generiranih pametnim karticama u javnom prijevozu takoðer 15 min \cite{Travassoli:2016.}, a zastupljena je i dinamièkoj podjela na kratke intervale za najprometnija razdoblja u danu: jutarnji vrhunac (engl. \textit{morning peak}), poslijepodnevni vrhunac (engl. \textit{afternoon peak}) i duže intervale za ostala razdoblja. U praksi Teralytics generira matrice od 15 min, 1h i 1 dan.
+Najmanji spominjani interval je 15 min \cite{Bera:2011.}, drugi najmanji 30 min \cite{Schneider:2013.}, kod matrica kreiranih iz podataka generiranih pametnim karticama u javnom prijevozu takoðer 15 min \cite{Travassoli:2016.}, a zastupljena je i dinamièkoj podjela na kratke intervale za najprometnija razdoblja u danu: jutarnji vrhunac (engl. \textit{morning peak}), poslijepodnevni vrhunac (engl. \textit{afternoon peak}) i duže intervale za ostala razdoblja. U praksi Teralytics procjenjuje matrice od 15 min, 1h i 1 dan.
 
 %** brzina kretanja, primjer, matrice prozora od 5 min, ferrari vs renault ** 
 

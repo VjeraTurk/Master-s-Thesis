@@ -11,7 +11,7 @@ An origin-destination matrix is an important tool for describing group mobility 
 \gls{pom} %Izvorišno-Odredišna ili 
  \textit{eng. \gls{odm}} ili \textit{Trip Table} alat je koji omoguæuje opis i sustavnu statistièku procjenu migracija stanovništva na nekom podruèju u zadanom prostorno-vremenskom okviru. Služi za opis grupne mobilnosti i mjerenje socio-ekonomske aktivnosti u nekoj regiji, a najèešæe se koristi u prometnoj znanosti za analizu i strateško planiranje prometnog optereæenja i prometne infrastrukture. 
 
-Za razliku od tradicionalnog pristupa prebrojavanja putovanja i putnika na licu mjesta, anketiranjem ili pomoæu razlièitih strateški postavljenih osjetila, za procjenu \gls{pom}-a danas se sve više koristi statistièka analiza podataka iz suvremenih informacijskih i komunikacijskih sustava (zapisi o aktivnostima u javnoj pokretnoj mreži, združena oèitanja prijamnika za satelitsku navigaciju i sl.), èime je omoguæeno poboljšanje kvalitete procjene preslikavanjem \gls{pom}-e na kontekst. Kada daju informaciju o kontekstu- svrsi kretanja- \gls{pom}-e su dodatno obogaæene i postaju izvor informacija za primjenu i van konteksta prometa. 
+Za razliku od tradicionalnog pristupa prebrojavanja putovanja i putnika na licu mjesta, anketiranjem ili pomoæu razlièitih strateški postavljenih osjetila, za procjenu \gls{pom}-a danas se sve više koristi statistièka analiza podataka iz suvremenih informacijskih i komunikacijskih sustava (zapisi o aktivnostima u javnoj pokretnoj mreži, združena oèitanja prijamnika za satelitsku navigaciju i sl.), èime je omoguæeno poboljšanje kvalitete procjene preslikavanjem \gls{pom}-e na kontekst. Kada daju informaciju o kontekstu - svrsi kretanja- \gls{pom}-e su dodatno obogaæene i postaju izvor informacija za primjenu i van konteksta prometa. 
 
 (...)
 
@@ -40,21 +40,22 @@ The Origin-Destination matrices (ODs) provides the number of trips between each 
 Izvorišno-odredišna matrica prikazuje broj putovanja iz izvorišne u ciljnu zonu u promatranom vremenu. Može biti prikazana ukupno ili po pojedinim modulima prometnog sustava (osobna vozila, vozila javnog prijevoza, teretna vozila, pješaka itd). Može biti procjenjena za sadašnje ili planirano prometno optereæenje.
 \end{comment}
 
-\section{Definicija}
+\section{Definicija Polazišno odredišne matrice}
 
 \theoremstyle{definition}
-\begin{definition}{Polazišno-odredišna matrica} je matrica koja sadrži broj putovanja izmeðu odgovarajuæeg para zona unutar promatranog podruèja u promatranom vremenskom razdoblju $T$, u svakom smjeru zasebno. Redovi u \gls{pom}-i $i = 1,2,3...m$ predstavljaju polazišta (izvore) prometnog toka, a stupci $j = 1,2,3...n$ njihova odredišta. Element na poziciji $i, j$ u \gls{pom}-i predstavlja broj putovanja iz pripadajuæe polazišne zone $i$ u pripadajuæu ciljnu zonu $j$. \gls{pom}-a se može smatrati matriènim zapisom težinskog usmjerenog grafa, gdje su težinski faktori usmjerenih veza širine prometnih tokova izmeðu èvorova mreže koji predstavljaju zone na koje je promatrano podruèje podijeljeno. 
+\begin{definition}{Polazišno-odredišna matrica} definirana je tako da svaki njen element predstavlja broj putovanja izmeðu odgovarajuæeg para zona unutar promatranog podruèja u promatranom vremenskom razdoblju $T$, u svakom smjeru zasebno. Redovi u \gls{pom}-i $i = 1,2,3...m$ predstavljaju polazišta (izvore) prometnog toka, a stupci $j = 1,2,3...n$ njihova odredišta (ušæa). Element na poziciji $i, j$ u \gls{pom}-i predstavlja broj putovanja iz pripadajuæe polazišne zone $i$ u pripadajuæu ciljnu zonu $j$. 
 \end{definition}
+\gls{pom}-a se može smatrati matriènim zapisom težinskog, usmjerenog grafa, gdje su težinski faktori usmjerenih veza širine prometnih tokova izmeðu èvorova mreže koji predstavljaju zone na koje je promatrano podruèje podijeljeno. 
 %R: Kad se subjekt razmatra iz opæe perspektive, o njemu se govori u jednini!
 %Izbjegavati zavisne reèenice, PRIDJEVE i PRILOGE
-Postoje brojne metode procjene \gls{pom}. Dok se još uvijek ulaže u razvoj matematièkih modela koji imaju za cilj poveæati kvalitetu \gls{pom}-a procijenjenih tradicionalnim metodama, u novije vrijeme razvijaju se metode koje imaju veliki potencijal. Te metode osiguravaju veæu jednostavnost u izvedbi, ažurnost podataka i moguænost obuhvaæanja mnogo veæeg uzorka stanovništva.
+
+Postoje brojni postupci procjene \gls{pom} o kojima je rijeè u narednom odjeljku. %Dok se još uvijek ulaže u razvoj matematièkih modela koji imaju za cilj poveæati kvalitetu \gls{pom}-a procijenjenih tradicionalnim postupcima, u novije vrijeme razvijaju se postupci koji imaju veliki potencijal. Ažurnost podataka o kretanju i moguænost obuhvaæanja mnogo veæeg uzorka stanovništva od tradicionalnih postupaka.
 % Kod pojedinih operatera radi se o oko èak 40-50\% svih stanovnika neke države \cite{Bonnel:2015.}.  (...)
 %zamijeniti tradicionalne metode i postati standard u analizi prometa pa tako i procjeni \gls{pom}-a.
-
 \gls{pom}-a može biti procijenjena za sadašnje ili planirano prometno optereæenje. Može biti prikazana ukupno ili po pojedinim naèinima prijevoza (modalitetima prometnog sustava - osobna vozila, vozila javnog prijevoza, teretna vozila, pješaci itd.) i/ili razlièitim svrhama putovanja (putovanja na posao, putovanja kuæi...).   
 
 Odreðivanje konteksta putovanja proširuje podruèje pokrivanja u fizièkom i informacijskom smislu te poveæava toènost \gls{pom}-e putem unosa relevantnih atributa vezanih za naèin i svrhu putovanja, èime je putovanje toènije opisano. Specificira socio-ekonomske aktivnosti koje su pokretaèi putovanja odnosno motivatori individualne i grupne mobilnosti. %razlozi kretanja stanovništva. %in the first place. 
-Preciznost odreðivanja konteksta definira izbor metode estimacije \gls{pom}-e.
+Preciznost odreðivanja konteksta definira izbor metode procjene \gls{pom}-e.
 %Moguænost preciznog odreðivanja konteksta zavisi o metodi procjene \gls{pom}-e.
 
 
@@ -78,7 +79,16 @@ Odreðivanje konteksta putovanja može se promatrati kao zasebna problematika, jer
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Iako intuitivno možemo zakljuèiti da se radi o kvadratnoj matrici, ove matrice su ponekad, zbog ogranièenja metoda (ili prirode kretanja na nekom podruèju)  "rijetko popunjene", odnosno sadrže veliki broj nul-æelija, pa su u nekim sluèajevima prazni redovi ili stupci izbaèeni, a posljedica toga je memorijski (i raèunski) manje zahtjevna, ne-kvadratna matrica. Ova problematika istaknuta je u radu iz 2010. koji analizira kvalitetu matrica dobivenih iz anketa stanovništva\cite{Cools:2010.}.
-\section{Procjena \glsfirstplural{pom} }
+\section{Procjena \glsfirstplural{pom}}
+\todo[inline]{Treba li ovo poglavlje nositi naslov:
+	
+	Tradicionalni pristupi procjene POM?
+	
+	
+	
+	Ali tu se navode samo neki izvori ulaznih podataka.
+	
+	Nema govora o metodologiji kojom se obavlja procjena.}
 \subsection{Ankete}
 \begin{comment}  
 Traditional methods include running surveys within cities and estimating the flows between locations of the city from the feedback of those surveys. Such methods consume longer s of time and are inaccurate at times. They usually span smaller population sample sizes and thus are more prone to biases.
@@ -86,11 +96,17 @@ Traditional methods include running surveys within cities and estimating the flo
 Recent research in the domain of ubiquitous computing provided alternative methodologies for estimating more accurate ODs from user generated datasets like cell phone data. 
 \end{comment}
 
-Tradicionalni pristupi ukljuèuju metode provoðenja anketiranja. Postoji nekoliko vrsta anketa: u kuæanstvima, presretanje vozila, anketiranje  prijevoznih kompanija i tvrtki, tranzit na granici, turisti u hotelima i parking \cite{Cools:2010.}. Ovakve metode su zahtjevne iz perspektive utrošenog vremena, uloženog truda i radne snage stoga se ne provode èesto. Anketiranje putovanja u kuæanstvima provodi se na podruèjima brojnih svjetskih metropola tek jednom u deset godina. U veæini svjetskih metropola na provoðenje anketa odlazi najveæi postotak budžeta planiranja, u procjeni oko 7.4 milijuna dolara godišnje izdvaja se za ankete po kuæanstvima. \cite{Cools:2010.}
+Tradicionalni pristupi ukljuèuju metode provoðenja anketiranja. Postoji nekoliko vrsta anketa: u kuæanstvima, presretanje vozila, anketiranje  prijevoznih kompanija i tvrtki, tranzit na granici, turisti u hotelima i parking \cite{Cools:2010.}. 
+\todo[inline]{Podjela po subjektima anketa. Predlažem detaljniju razradu u metodološkom smislu, uz korištenje liteature poput:
+	
+Hyndman, R J, and Athanasopoulos, G. (2018). Forecasting: Principles and Practice (2nd ed). (Chapter 4: Judgemental Forecast)). Preuzeto s: https://otexts.com/fpp2/}
+Ovakve metode su zahtjevne iz perspektive utrošenog vremena, uloženog truda i radne snage stoga se ne provode èesto. Anketiranje putovanja u kuæanstvima provodi se na podruèjima brojnih svjetskih metropola tek jednom u deset godina. U veæini svjetskih metropola na provoðenje anketa odlazi najveæi postotak budžeta planiranja, u procjeni oko 7.4 milijuna dolara godišnje izdvaja se za ankete po kuæanstvima. \cite{Cools:2010.}
 
 Anketiranje vozaèa presretanjem vozila eng. \gls{rsi} u prosjeku košta èak 10 eura po jednom zabilježenom putovanju i ukupno obuhvati 10\% prometa. Ova vrsta najèešæe se provodi na autocestama. \cite{Pollard:2013.}  
 
-Provoðenje ovih metoda zahtjeva mnogo vremena i ponekad su netoène. Pokrivaju malen dio populacije te  je na taj naèin dobivena \gls{pom}-a optereæena neizbježnom pristranošæu.\cite{Alhazzani:2016.}
+Provoðenje ovih postupaka zahtjeva mnogo vremena. Pokrivaju malen dio populacije te  je na taj naèin dobivena \gls{pom}-a optereæena neizbježnom pristranošæu.\cite{Alhazzani:2016.}
+\todo[inline]{Volio bih vidjeti konkretniji prikaz koji æe ukazati na suštinske prednosti i nedostatke, ne investicijske. Naime, cilj ovog poglavlja jest ukazati kako suvremeni tehnološki sustavi nedostatke tradicionalnih pristupa uspješno prevladavaju.
+}
 
 \subsection{Prebrojavanje vozila}
 \begin{comment}  
@@ -100,7 +116,7 @@ For such methods, observed traffic flows at key points throughout the network sh
 ruèno, video
 \end{comment}
 
-Metode koje ukljuèuju prebrojavanje vozila na kljuènim èvorištima prometne infrastrukture manje su zahtjevne za izvoðenje u odnosu na ankete i znaèajno smanjuju vrijeme i troškove prikupljanja podataka. Postupci ukljuèuju: analizu nadzornih snimaka prometa, automatski sustav za prepoznavanje i oèitovanje registarskih ploèica engl. \gls{anpr}, osjetila prometnog toka (radarska, magnetna, video-senzori, zvuèna..)  i  ruèno prebrojavanje. Primjenom ovih metoda nije moguæe pouzdano odrediti stvarna polazišta i odredišta putovanja \cite{Bonnel:2015.}.
+Metode koje ukljuèuju prebrojavanje vozila na kljuènim èvorištima prometne infrastrukture manje su zahtjevne za izvoðenje u odnosu na ankete i znaèajno smanjuju vrijeme i troškove prikupljanja podataka. Postupci ukljuèuju: analizu nadzornih snimaka prometa, automatski sustav za prepoznavanje i oèitovanje registarskih ploèica engl. \gls{anpr}, osjetila prometnog toka (radarska, magnetna, video-senzori, zvuèna..)  i  ruèno prebrojavanje. Primjenom ovih postupaka nije moguæe pouzdano odrediti stvarna polazišta i odredišta putovanja \cite{Bonnel:2015.}.
 
 \subsection{Matematièko modeliranje prometa}
 \begin{comment}  
@@ -128,12 +144,20 @@ Urban sprawl and population growth have resulted in increasingly severe traffic 
 \end{comment}
 
 Širenje gradova i rast stanovništva rezultirali su rastuæim brojem sve ozbiljnijih prometnih zastoja u velikim gradovima diljem svijeta. Prepoznata je potreba za strategijama upravljanja prometom koje æe uvažiti dinamiku razvoja stanovništva i njegove migracije u kontekstu suvremenih društvenih i gospodarskih kretanja. %kako bi se suoèili s izazovima koje donosi brzo razvijajuæa okolina i demografija populacije. 
-Djelotvorno upravljanje i kontrola prometa mogu poveæati sigurnost, kvalitetu prometne i kvalitetu transportno-logistièke usluge, poticati ekonomski rast i smanjiti zagaðenje okoliša. %Zbog dinamike kojom se gradovi mijenjaju razumno je pitati se ima li smisla koristiti \gls{pom}-e stare više godina za modeliranje današnjeg prometa.
+Djelotvorno upravljanje i kontrola prometa doprinose poveæanju sigurnosti, kvalitete prometne i kvalitete transportno-logistièke usluge, poticati ekonomski rast i smanjiti zagaðenje okoliša. %Zbog dinamike kojom se gradovi mijenjaju razumno je pitati se ima li smisla koristiti \gls{pom}-e stare više godina za modeliranje današnjeg prometa.
 Suvremeni odnosi promijenili su prirodu kretanja ljudi i dobara zbog èega tradicionalni pristup postaje zastario i neprimjeren. 
 
 %Dobivanje što toènijih POM-a 
-Redefiniranje metodologije koja æe pružiti poveæanu kvalitetu i transparentnost uz ispunjavanje suvremenih zahtjeva na tehnologije (cijena, zaštita privatnosti i podataka) privlaèi pažnju istraživaèa i van podruèja prometne znanosti. Oni predlažu alternativne izvore podataka o kretanju za promatranje obrazaca putovanja i pristupe procjeni \gls{pom}-a, no nailaze na problem da struka zahtijeva da se njihova vrijednost dokazuje usporedbom s dobro poznatim tradicionalnim pristupima. \cite{Pollard:2013.} Problem ostaje otvoren za raspravu, koliki je udio populacije stvarno pokriven tradicionalnim pristupom i je li model razvijen na takvom podskupu populacije relevantan.
-
+Redefiniranje metodologije koja æe pružiti poveæanu kvalitetu i transparentnost uz ispunjavanje suvremenih zahtjeva na tehnologije (cijena, zaštita privatnosti i podataka itd.) privlaèi pažnju istraživaèa i van podruèja prometne znanosti. Oni predlažu alternativne izvore podataka o kretanju za promatranje obrazaca putovanja i pristupe procjeni \gls{pom}-a, no prema \cite{Pollard:2013.} nailaze na problem da struka zahtijeva da se njihova vrijednost dokazuje usporedbom s tradicionalnim pristupima, dobro poznatim u praksi.  %Problem ostaje otvoren za raspravu, koliki je udio populacije stvarno pokriven tradicionalnim pristupom i je li model razvijen na takvom podskupu populacije relevantan.
+\todo[inline]{Nije baš tako.
+	
+	Brkaju se znanost, istraživanje, tehnologija i korištenje.
+	
+	Naruèitelj hoæe usporediti s onim što je njemu poznati, ali to je usporedba krušaka i jabuka.
+	
+	Gledano iz perspektive validacije istraživaèkog modela, usporedba se može raditi s drugom, neovisnom metodom koja daje približno jednako kvalitetne rezultate.
+	
+	A problem ostaje otvoren za raspravu, koliki je udio populacije stvarno pokriven i je li model razvije na takvom podskupu populacije relevantan.}
 \begin{comment}
 %Obtaining origin-destination (OD) traffic demand matrix in low-cost and high-accuracy manner not only becomes a problem transportation science, but also draws attentions from many scholars in various scientific fields.
 
@@ -157,13 +181,19 @@ komplementarni izvor vrijednih podataka i postaje najvažnija tehnologija prikupl
 \subsection{Pokretna osjetila}
 %rad iz 1972
 %Osnovna ideja pokretnih osjetila je da Vozila koja se kreæu po prometnoj mreži i sastavni su dio prometnog toka prikupljaju i šalju podatke.
-Pokretno osjetilo je ureðaj koji je postavljen na vozilo koje se potom kreæe prometnom infrastrukturom, postajuæi tako dijelom prometnog toka, te koji je sposoban opažati vrijednosti definiranih parametara gibanja vozila na koje je postavljeno te ih pohranjivati i prenositi radi naknadnog procesiranja. Podatke koje osjetilo prikuplja su položaj, brzina i smjer kretanja.
+Pokretno osjetilo je ureðaj koji je postavljen na vozilo koje se potom kreæe prometnom infrastrukturom, postajuæi tako dijelom prometnog toka, te koji je sposoban opažati vrijednosti definiranih parametara gibanja vozila na koje je postavljeno te ih pohranjivati i prenositi radi naknadnog procesiranja. Podatke koje osjetilo prikuplja su položaj, brzina i smjer kretanja vozila.
 %localization data, speed, direction of travel, and time information
 
-Zahtjev koji nužno mora biti ispunjen je poznavanje položaja vozila u odreðenim vremenskim trenucima. Osjetilo odreðuje položaj pomoæu \gls{gnss} prijemnika ili se vozilo identificira na odreðenim toèkama u prometnoj mreži, na kojima može ujedno i prenijeti podatke prikupljene od posljednje toèke. Anglosaksonski naziv za ovu metodu prikupljanja podataka o stanju u prometu je \gls{fcd}. Danas je \gls{fcd} metod zastupljena u \gls{its}. U prikupljanju podataka sudjeluju ureðajima opremljena taksi vozila, službena vozila, vozila za distribuciju robe, i vozila javnog prijevoza. Kod \gls{its} koji zahtijevaju podatke u realnom vremenu mora biti uspostavljen naèin uèestalog prijenosa podataka o položaju, a najèešæe se odvija preko \gls{gsm}, Wi-fi i Bluetooth komunikacijskih sustava. \cite{Jelusic:2016.} 
+Zahtjev koji nužno mora biti ispunjen je poznavanje položaja vozila%u odreðenim vremenskim trenucima
+. Ureðaj odreðuje položaj pomoæu \gls{gnss} prijemnika ili se vozilo identificira na odreðenim toèkama u prometnoj mreži, na kojima može ujedno i prenijeti podatke prikupljene od posljednje toèke. Anglosaksonski naziv za ovu metodu prikupljanja podataka o stanju u prometu je \gls{fcd}. Danas je \gls{fcd} metoda zastupljena u \gls{its}. U prikupljanju podataka sudjeluju ureðajima opremljena taksi vozila, službena vozila, vozila za distribuciju robe, i vozila javnog prijevoza. Kod \gls{its} koji zahtijevaju podatke u realnom vremenu mora biti uspostavljen naèin uèestalog prijenosa podataka o položaju, a najèešæe se odvija preko \gls{gsm}, Wi-fi i Bluetooth komunikacijskih sustava. \cite{Jelusic:2016.} 
 
-Ukoliko pokretno osjetilo nije specijalizirani ureðaj veæ pametni telefon koristi se naziv \gls{fpd}. \gls{fpd} se odnosi na prikupljanje podataka  pomoæu mobilnih (pametnih) telefona neovisno o naèinu odreðivanja položaja - korištenjem \gls{gnss} ili pomoæu javne pokretne mreže. %Odreðivanje korištenjem \gls{gnss} prijemnika ponovno zahtjeva slanje podataka kao i kod FCD.
-Zaseban pristup unutar \gls{fpd} je odreðivanje položaja unutar javne pokretne mreže (mreže baznih stanica). Položaj pokretne stanice unutar javne pokretne mreže može se odrediti triangulacijom signala koje pokretna stanica hvata iz više baznih stanica ili približno odrediti izjednaèavanjem položaja pokretne stanice s položajem (podruèjem pokrivanja) bazne stanice s kojom je pokretna stanica povezana u promatranom trenutku.
+Ukoliko pokretno osjetilo nije specijalizirani ureðaj veæ pametni telefon koristi se naziv \gls{fpd}. \gls{fpd} se odnosi na prikupljanje podataka  pomoæu mobilnih (pametnih) telefona neovisno o naèinu odreðivanja položaja - korištenjem \gls{gnss} ili pomoæu javne pokretne mreže. \todo[inline]{U èemu je razlika (kako tehnološka, tako i pravna)?
+	
+	
+	
+	Je li vozilo s eCall-om (pa tako i sa SIM karticom) vozilo ili pametni telefon? }
+%Odreðivanje korištenjem \gls{gnss} prijemnika ponovno zahtjeva slanje podataka kao i kod FCD.
+Položaj pokretne stanice unutar javne pokretne mreže može se odrediti triangulacijom signala koje pokretna stanica hvata iz više baznih stanica ili približno odrediti izjednaèavanjem položaja pokretne stanice s položajem (podruèjem pokrivanja) bazne stanice s kojom je pokretna stanica povezana u promatranom trenutku.
 
 \section{\glsfirst{pom} iz zapisa o telekomunikacijskim aktivnostima u javnoj pokretnoj mreži}
 
@@ -185,12 +215,15 @@ CDR obuhvaæa transakcijske podatke o pozivima, razmjeni kratkih poruka (SMS) i p
 
 %Kako mreža upravlja kvalitetom pružanja usluga zasnovano je na analizi signalizacije izmeðu svojih elementa (èvorova). \textit{Signalling data} naziv je za operativne podatke potrebne za rad mreže prenošene izmeðu odgovarajuæih èvorova.
 %Ukljuèuju \textit{handover} podatke -
-Takoðer operateru su dodatno poznati podatci o prekapèanju pokretnog ureðaja na drugu baznu stanicu (engl. \textit{handover data}) tijekom trajanja telekomunikacijske aktivnosti radi postizanja i održavanja potrebne kvalitete telekomunikacijske usluge, \textit{Location Area Updates} - podatke prikupljane svakih 20 min do 2 sata o tome na koju skupinu baznih stanica je pokretna stanica spojena (svaka LA skupina ima od 150 do 500 baznih stanica \cite{Bonnel:2015.}), te podatke o tome kada je pokretna stanica ukljuèena u mrežu i iskljuèena iz mreže. 
+Operateru su dodatno poznati podatci o prekapèanju pokretnog ureðaja na drugu baznu stanicu (engl. \textit{handover data}) tijekom trajanja telekomunikacijske aktivnosti radi postizanja i održavanja potrebne kvalitete telekomunikacijske usluge, \textit{Location Area Updates} - podatci prikupljani svakih 20 min do 2 sata o tome na koju skupinu baznih stanica je pokretna stanica spojena (prema \cite{Bonnel:2015.} svaka LA skupina ima od 150 do 500 baznih stanica), te podatke o tome kada je pokretna stanica ukljuèena u mrežu i iskljuèena iz mreže. 
 	
-U novije vrijeme su predloženi postupci u kojima koriste upravo anonimizirane \gls{cdr} kao izvor podataka za procjenu \glsplural{pom}. 
-\cite{Gundlegard:2016.} \cite{Alhazzani:2016.} \cite{Frias-Martinez:2012.} Metodologija korištenja odnosnih elemenata CDR-a za procjenu POM predložena je još 1994. godine. \cite{Gundlegard:2016.} \textbf{U ostatku rada, na mjestima gdje nije izrièito naveden izvor podataka o kretanju, radi se o postupku ili \gls{pom}-i procijenoj iz \gls{cdr}}. Pri procjeni \gls{pom}-e, ako su dostupni, i ranije navedeni dodatni podatci mogu se uzeti u obzir. 
+U novije vrijeme su predloženi postupci u kojima se koriste upravo anonimizirane \gls{cdr} kao izvor podataka za procjenu \glsplural{pom}. 
+\cite{Gundlegard:2016.} \cite{Alhazzani:2016.} \cite{Frias-Martinez:2012.} Metodologija korištenja odnosnih elemenata CDR-a za procjenu POM predložena je još 1994. godine.\cite{Gundlegard:2016.} \textbf{U ostatku rada, na mjestima gdje nije izrièito naveden izvor podataka o kretanju, rijeè je o postupku ili \gls{pom}-i procijenoj iz \gls{cdr}}. Pri procjeni \gls{pom}-e, ako su dostupni, i ranije navedeni dodatni podatci mogu se uzeti u obzir. 
 
-Zanimljivo je ovdje spomenuti europsku inicijativu \textit{eCall} za brzu pomoæ stradalima u prometnim nesreæama bilo gdje u Europskoj Uniji. \textit{eCall} zahtjeva da u svakom novom motornom vozilu bude ugraðen ureðaj koji u sluèaju prometne nesreæe automatski obavijesti centar 112 te mu šalje informacije o aktivaciji zraènih jastuka, prikupljene podatke osjetila za procjenu jaèine sudara i u dakako položaj vozila u trenutku prometne nesreæe. Takoðer treba omoguæiti uspostavu poziva (\gls{gsm}). Prognoza je da æe se korištenjem tog sustava vrijeme odziva (dolaska službi na mjesto prometne nesreæe) smanjiti za izmeðu 40\% i 50\%. Od travnja 2018. svi novi automobili u prodaji u Europskoj Uniji imaju ugraðen ovaj ureðaj. Nakon uspješnog uspostavljanja sustava oèekuje se da bi se ureðaj (uz pristanak vlasnika vozila) mogao poèeti koristiti i u druge svrhe. \cite{eCall:2018.}
+%(!!!) Usluge zansovane na lokaciji poput GoogleMaps, Facebook \textit{check-in}, Uber postavljaju temelje za otvaranje novih ili same postaju moguæi izvori podataka o pokretljivosti, s moguænošæu korištenja u procjeni POM.  Upitno je tko i pod kojim uvjetima može pristupiti arhivama takvih podataka. 
+
+
+%Jedan primjer je EU hitna usluga \textit{eCall} izvorno namijenjena automatskom obavještavanju o prometnoj nesreæi u kojoj je sudjelovalo vozilo. \textit{eCall} zahtjeva da u svakom novom motornom vozilu bude ugraðen ureðaj koji u sluèaju prometne nesreæe (koja ukljuèuje aktivaciju zraènih jastuka) automatski obavijesti centar 112 te mu šalje prikupljene podatke za procjenu jaèine sudara i u dakako položaj vozila u trenutku prometne nesreæe. Takoðer treba omoguæiti uspostavu poziva- spaja se na . Prognoza je da æe se korištenjem tog sustava vrijeme odziva (dolaska službi na mjesto prometne nesreæe) smanjiti za izmeðu 40\% i 50\%. Od 1. travnja 2018. svi novi automobili u prodaji u Europskoj Uniji imaju ugraðen ovaj ureðaj. Nakon uspješnog uspostavljanja sustava oèekuje se da bi se ureðaj (uz pristanak vlasnika vozila) mogao poèeti koristiti i u druge svrhe. \cite{eCall:2018.}
 
 
 \begin{comment}
@@ -209,48 +242,63 @@ This notion is parameterized to ensure we have sufficient confidence that any st
 
 
 \subsection{Anonimizacija podataka}
+Sve brojnije informacijske i telekomunikacijske usluge generiraju masivne skupove podataka vezanih za gibanje u prostoru (mobilnost). Podatci koje generiraju pametni telefoni omoguæuju podatkovnim analitièarima razumjeti ponašanje pojedinaca u brojnim domenama, ukljuèujuæi i njihov obrazac kretanja.
 
-Danas uz sveprisutnost i prodornost tehnologije, podatci koje generiraju pametni telefoni omoguæuju podatkovnim analitièarima razumjeti ponašanje pojedinaca u brojnim domenama, ukljuèujuæi i njihov obrazac kretanja. Kao što je veæ spomenuto \gls{pom}-e je moguæe procijeniti iz \gls{cdr} koje operateri prikupljaju u svrhu pružanja i naplaæivanja usluge. Za ovu metodu stoga ne postoji potreba za dodatnim ureðajima, sustavima ili protokolima centralnog prikupljanja položaja kao što je to u sluèaju kada se položaj odreðuje pomoæu \gls{gnss} prijamnika. 
+%Kao što je veæ spomenuto \gls{pom}-e je moguæe procijeniti iz \gls{cdr} koje operateri prikupljaju u svrhu pružanja i naplaæivanja usluge. Za ovaj postupak stoga ne postoji potreba za dodatnim ureðajima, sustavima ili protokolima središnjeg prikupljanja položaja kao što je to u sluèaju kada se položaj odreðuje pomoæu \gls{gnss} prijamnika. 
 
 %Pokriva pješaèki promet, 
 %%Penetracija od 82\%, 9x\% -> pronaæi radove, Dobra pokrivenost i zemljama u razvoju (u Africi gdje nedostaje landline) Nemaju ni porometnu infrastrukturu pa se može planirati razvoj
 %(...anonimizacija i k-anonimizacija...).
 %\textit{}
-Situacija je takva da telekomunikacije kompanije, ali i ostali tehnološki subjekti, moraju voditi raèuna o privatnosti pojedinaca i ukoliko neki podaci jesu korišteni za razvoj \glsplural{pom}, takvi podaci najprije moraju biti striktno anonimizirani te ne smije postojati moguænost \textit{reingineeringa} i povratka na izvorni identitet. U pravilu to znaèi povezivanje sa treæim stranama u poslovnom procesu, koje iz nekog razloga dozvoljavaju pristup podacima. Podaci prije pristupa moraju biti anonimizirani tako da oni mogu biti korišteni za druge svrhe bez razotkrivanja pojedinaca, u skladu s postavkama \gls{gdpr}. Dodatnu sigurnost garantira dobra praksa provoðenja k-anonimizacije opisane u potpoglavlju \ref{k-an}.
+Operateri javne pokretne mreže moraju voditi raèuna o privatnosti pojedinaca kada je rijeè o podatcima koje oni prikupljaju. Ukoliko ustupe podatke za razvoj \glsplural{pom}, takvi podaci moraju biti anonimizirani te ne smije postojati moguænost povratnog inženjerstva kojim bi se povratio izvorni identitet. %U pravilu to znaèi povezivanje sa treæim stranama u poslovnom procesu, koje iz nekog razloga dozvoljavaju pristup podacima. 
+Podaci moraju biti anonimizirani prije pristupa da mogu biti korišteni bez razotkrivanja pojedinaca u skladu s postavkama \gls{gdpr}. Nakon procjene \gls{pom} provodi se postupak k-anonimizacije opisan u odjeljku \ref{k-an}. 
 
-\subsection{Putovanje}
-Priroda ovog pristupa rudarenju podataka za procjenu POM-a zahtjeva da prvo definiramo što toèno smatramo putovanjem, odnosno polazištem i odredištem putovanja. 
+\subsection{Putovanje iz perspektive telekomunikacijskih usluga}
+Priroda ovog pristupa dubinskoj analizi podataka za procjenu POM-a traži definiciju pojma putovanja, polazišta i odredišta. 
 
- \begin{definition}{Zaustavljanje (engl.\textit{ Stop}}) se definira kao skup minimalno \textit{n} dogaðaja (telekomunikacijskih aktivnosti) u nizu koji su zabilježeni na istom položaju unutar definiranog minimalnog vremenskog perioda. Time se osigurava da se ne radi o tranzitnoj veæ o namjerenom položaju zaustavljanja i suzbija se bilježenje lažnog kretanje kod privremenog spajanja na susjednu baznu stanicu. 
- Zaustavljanje ima 2 vremenske oznake, trenutak kada je zabilježen poèetak i trenutak kada je zabilježen kraj zaustavljanja.
+ \begin{definition}{Zaustavljanje (engl.\textit{ Stop}}) %u postupku putovanja promatranog iz perspektive telekomunikacijskih usluga 
+ 	je skup minimalno \textit{n} dogaðaja (telekomunikacijskih aktivnosti) u nizu koji su zabilježeni na istom položaju unutar definiranog minimalnog vremenskog perioda. 
+ 
+ Zahtjevom da se radi o više ($n > 1$), a ne jednom ($n = 1$) zabilježenom dogaðaju pokušava se osigurati da se ne radi o tranzitnom veæ o svrsishodnom zaustavljanju i suzbija se bilježenje lažnog kretanje kod privremenog spajanja na susjednu baznu stanicu. 
+ U sluèaju kada je $n > 1$ zaustavljanje ima 2 vremenske oznake, trenutak kada je zabilježen poèetak i trenutak kada je zabilježen kraj zaustavljanja.
  \end{definition}
 
- Algoritam u nizu \gls{cdr} aktivnosti svakog pojedinca traži takva zaustavljanja. Dobiveni niz kontinuiranog zaustavljanja na razlièitim položajima otkriva putanju kretanja. Kretanje pojedinca tokom dana najèešæe je rascjepkano, odnosno u nizu postoje "rupe" gdje je informacija o kretanju nepoznata zbog nepostojanja aktivnosti u tom vremenu. Algoritam izvlaèi uzastopne parove zaustavljanja te, prema dodatno definiranim kriterijima dozvoljenog minimalnog i maksimalnog vremenskog razmaka izmeðu polaska i dolaska na odredište, ranija æelija zaustavljanja postaje polazište, a kasnija odredište putovanja. Kraj polazišnog zaustavljanja postaje poèetak putovanja, a poèetak odredišnog zaustavljanja kraj putovanja.
 
-\begin{definition}{Putovanje} je par zaustavljanja koja zadovoljavaju predefinirana ogranièenja meðusobne vremenske i prostorne udaljenosti. Èini ga polazišna æelija iz koje je putovanje krenulo, odredišna æelija u kojoj se putovanje završava te informacija kada je poèelo i kada je završilo.
+\begin{definition}{Putovanje} je skup dva zaustavljanja koja zadovoljavaju unaprijed definirana \textbf{minimalna i maksimalna ogranièenja meðusobne vremenske i prostorne udaljenosti}. Putovanje kao informacijski objekt èine: polazišni položaj iz kojeg je putovanje krenulo, odredišni položaj u kojem se putovanje završava, vremenska oznaka kada je poèelo i kada je završilo.
 \end{definition}
 
-Poèetak i kraj putovanja zamjenjuju se (dodjeljuju) vremenskim okvirima kojima pripadaju. Uz putovanje se ne veže identifikacijska oznaka pojedinca jer konaèna informacija koju tražimo je ukupan broj putovanja.
+ %Algoritam 
+ %U nizu \gls{cdr} aktivnosti svakog pojedinca traže se takva zaustavljanja. 
+ Niz kontinuiranog zaustavljanja na razlièitim položajima otkriva putanju kretanja. Kretanje pojedinca tokom dana najèešæe je rascjepkano, odnosno u nizu postoje "rupe" gdje je informacija o kretanju nepoznata zbog nepostojanja aktivnosti u tom vremenu. %Uzastopni parovi zaustavljanja raniji položaj zaustavljanja postaje polazište, a kasniji odredište putovanja- prema definiranim ogranièenjima dozvoljenog \textbf{ minimalnog i maksimalnog vremenskog razmaka izmeðu polaska i dolaska na odredište}. 
+ Kraj polazišnog zaustavljanja postaje poèetak putovanja, a poèetak odredišnog zaustavljanja kraj putovanja.
+
+Poèetak i kraj putovanja dodjeljuju se vremenskim okvirima kojima pripadaju. Uz putovanje se ne veže identifikacijska oznaka pojedinca jer konaèna informacija koju tražimo je ukupan broj putovanja.
 % Kod tranzitnih matrica naglasak je osim na broj putovanja stavljen na vremensku domenu.
 Skupovi svih putovanja u pripadajuæem vremenskom okviru saèinjavaju \gls{pom}-u za taj vremenski okvir. Dakle rezultat procjene je skup \gls{pom}-a, po jedna za svaki vremenski okvir dnevno. 
 
-Dodatna ogranièenja mogu primjerice izbaciti sva putovanja u susjedne æelije, zbog nesigurnosti koju unosi stalno prespajanje na susjedne bazne stanice uzrokovano preklapanjem podruèja prekrivanja i pojaèanom mrežnom aktivnosti. O kategorizaciji na osnovu ogranièenja rijeè je u odlomku \ref{trip_def}.
+Dodatna ogranièenja mogu primjerice izbaciti sva putovanja u susjedne æelije, zbog nesigurnosti koju unosi stalno prespajanje na susjedne bazne stanice uzrokovano preklapanjem podruèja prekrivanja i pojaèanom mrežnom aktivnosti. O kategorizaciji na osnovu navedenih ogranièenja rijeè je u odlomku \ref{trip_def}. 
 
+\todo[inline]{Posve neprikladno, ovdje se razmatra algoritam razvrstavanja putovanja, umjesto da se precizno i egzaktno definira putovanje kao informacijski objekt. }
+
+\todo[inline]{* Razlièitim izborom vrijednostima ogranièenja prilikom definicije putovanja iz istih CDR dobiju se razlièite POM-e. S time na umu spomenuta su ogranièenja $\rightarrow$ kategorije kod definicije putovanja}
+\todo[inline]{ * U definiciju 2.3.2 dodano je:  Putovanje kao informacijski objekt: \textit{Putovanje kao informacijski objekt èine: polazišni položaj iz kojeg je putovanje krenulo, odredišni položaj u kojem se putovanje završava, vremenska oznaka kada je poèelo i kada je završilo.}}
 \begin{comment}
 %An algorithm must consequently be developed to exhaustively mine each person’s event series for such stops. Once achieved, the algorithm must next detect pairs of contiguous stops which occur at different locations and hence reveal movement. This pair can then be designated as a journey - the initiating stop becoming the journey’s origin, and the concluding stop as the journey’s destination. 
 %coordination with traditional tehniques is key to providing optimal solution in future.\cite{Goulding:2016.}
 \end{comment}
 
-\subsection{Kontekst iz izvora podataka o kretanju}    
+\subsection{Svrha kao kontekst  putovanja dobivena iz izvora podataka o kretanju}    
+\todo[inline]{Definirajte kontekst iz elemenata putovanja na egzaktan i jedinstven naèin, bez povezivanja na algoritme i procese koje još niste definirali!}
 
-Kada su dostupni zapisi prikupljani dulje vremensko razdoblje, tjednima ili mjesecima putovanje se može definirati na drugaèiji naèin- kao iskljuèivo komutacijska. Pojednostavljeno, analizom zapisa može se utvrdi na kojem položaju (u kojoj æeliji) neki pojedinci pretežito borave u tipiènom radnom vremenu te u kojoj tokom noæi. Prva æelija za njihova putovanja postaje \textit{Work} destinacija, druga \textit{Home}, a sve preostale destinacije svrstaju se u zasebnu kategoriju \textit{Other}. Potom se procjenjuju matrice koje ukljuèuju samo putovanja iz jednog tipa destinacije u drugi npr. \gls{hw} i \gls{wh}.  Svrha putovanja koja se prebrojavaju je \textit{odlazak na posao} i \textit{odlazak kuæi (s posla)}. \cite{Goulding:2016.}\cite{Graells-Garrido:2016.}\cite{Bahoken:2013.}\cite{Calabrese:2011.}\cite{Toole:2015.}. %\cite{Frias-Martinez:2012.} - oni su kao nešto protiv toga
-Jedan od razloga je da su takve \gls{pom}-e usporedive s onima dobivenim iz anketa stanovništva s istom podjelom putovanja prema svrsi. Komutacijska putovanja su ponavljajuæa i u tom smislu najviše predvidiva.
+\todo[inline]{* opæenito: karakteristike polazišta i odredišta $\rightarrow$ otkrivaju svrhu putovanja, namjeru s kojom pojedinac mijenja položaj...}
+Kada su dostupni zapisi prikupljani dulje vremensko razdoblje, tjednima ili mjesecima putovanje se može definirati na drugaèije - kao iskljuèivo komutacijsko. Pojednostavljeno, analizom zapisa može se utvrdi na kojem položaju neki pojedinci pretežito borave u tipiènom radnom vremenu te u kojoj tokom noæi. Prvi položaj za njihova putovanja postaje \textit{Work} destinacija, drugi \textit{Home}, a sve preostale destinacije svrstaju se u zasebnu kategoriju \textit{Other}. \gls{pom}-e ukljuèuju samo putovanja iz jednog tipa destinacije u drugi npr. \gls{hw} i \gls{wh}. Kontekst, odnosno svrha svakog od putovanja koja èine \gls{pom}-u je ili \textit{odlazak na posao} ili \textit{odlazak kuæi (s posla)}. \cite{Goulding:2016.}\cite{Graells-Garrido:2016.}\cite{Bahoken:2013.}\cite{Calabrese:2011.}\cite{Toole:2015.}. %\cite{Frias-Martinez:2012.} - oni su kao nešto protiv toga
+Takve su \gls{pom}-e usporedive s onima dobivenim iz anketa stanovništva s istom podjelom putovanja prema svrsi. Komutacijska putovanja su ponavljajuæa i u tom smislu predvidiva.
  
-\gls{cdr} zapisi u trajanju od 6 mjeseci bili su dovoljni za konaènu toènu procjenu položaja èak 98\% kuæanstava nešto više od 39 tisuæa najaktivnijih korisnika na podruèju Pariza i Chicaga, izdvojenih iz ukupnog skupa korisnika (milijuni korisnika). U podacima se ispitivalo gdje svaki od korisnika provodi najviše vremena izmeðu 0:00 i 6:00 sati. \cite{Schneider:2013.} Dvije godine kasnije bitno drugaèiju definiciju daje \cite{Toole:2015.} gdje definira kuæanstvo kao mjesto gdje korisnik provodi najviše vremena izmeðu 20:00 i 7:00 na radne dane, a radno mjesto kao mjesto gdje korisnik provodi najviše vremena, barem 3 puta tjedno, izmeðu 7:00 i 20:00  dok \cite{Gundlegard:2016.} koristi intervale od 22:00 do 7:00 te od 9:00 do 16:00. Ostale lokacije svrstava u kategoriju \textit{Ostalo eng. Other}. Bitno je naglasiti da kod ovih vrsta \gls{pom}-a najèešæe naglasak nije stavljen na dobru vremensku rezoluciju kao što je to sluèaj kod tranzitnih.\cite{Gundlegard:2016.} %to overcome the small number of night calls, the location which is visited most frequently during all nights between 24.00 and 06.00 of a single user is assigned as the user’s home location; in our survey this assumption correctly identifies over 98 per cent of the home locations for a single day.
+Studija A iz 2013. \cite{Schneider:2013.} pokazala je da su \gls{cdr} zapisi u trajanju od 6 mjeseci bili su dovoljni za konaènu toènu procjenu položaja èak 98\% kuæanstava nešto više od 39 tisuæa najaktivnijih korisnika na podruèju Pariza i Chicaga, izdvojenih iz ukupnog skupa korisnika (milijuni korisnika). U podacima se ispitivalo gdje svaki od korisnika provodi najviše vremena izmeðu 0:00 i 6:00 sati. Dvije godine kasnije studija B \cite{Toole:2015.} definira kuæanstvo kao mjesto gdje korisnik provodi najviše vremena izmeðu 20:00 i 7:00 na radne dane, a radno mjesto kao mjesto gdje korisnik provodi najviše vremena, barem 3 puta tjedno, izmeðu 7:00 i 20:00. Godinu dana kasnije studija C \cite{Gundlegard:2016.} koristi intervale od 22:00 do 7:00 te od 9:00 do 16:00. Ostale lokacije svrstava u kategoriju \textit{Ostalo eng. Other}. Kod ovih vrsta \gls{pom}-a najèešæe naglasak nije stavljen na dobru vremensku rezoluciju kao što je to sluèaj kod tranzitnih.\cite{Gundlegard:2016.} %to overcome the small number of night calls, the location which is visited most frequently during all nights between 24.00 and 06.00 of a single user is assigned as the user’s home location; in our survey this assumption correctly identifies over 98 per cent of the home locations for a single day.
 %IZBACILA 
 %\cite{Frias-Martinez:2012.} predlaže tehniku kako za odreðeni urbani predio odrediti idealne \gls{hw} i \gls{wh} periode.  
-Duža razdoblja prikupljanja podataka omoguæuju uoèavanje uzoraka kretanja i motiva (teorija mreža). 
-\cite{Schneider:2013.} \\
+%(!!!) Duža razdoblja prikupljanja podataka omoguæuju uoèavanje uzoraka kretanja i motiva (teorija mreža). \cite{Schneider:2013.} \\
+
 %(...)\\ mislim da ne cu to spominjati
 %- \cite{Bahoken:2013.} str. 4 podjela trip-based, activity-based i another approach
 
@@ -264,32 +312,37 @@ Kada su dostupni zapisi prikupljani dulje vremensko razdoblje, tjednima ili mjes
 		\cite{Bera:2011.}
 \end{comment}
 
-\subsection{Sredstva kretanja}
+\subsection{Sredstva kretanja kao kontekst putovanja}
 \label{sredstva}
 Tradicionalni postupci ogranièeni su samo na onaj dio infrastrukture gdje se provode intervjui ili gdje su postavljena osjetila za prebrojavanje prometa.
-Telekomunikacijski zapisi neovisni us o prometnoj infrastrukturi. Oni obuhvaæaju sve vrste vozila, pješaèki promet kao i svu prometnu infrastrukturu te podruèja bez razvijene prometne infrastrukture. 
-Uklanjaju potrebu za razlièitim postupkom prebrojavanja za pojedine naèine kretanja. 
+Telekomunikacijski zapisi neovisni su o prometnoj infrastrukturi. Oni obuhvaæaju sve vrste vozila, pješaèki promet kao i svu prometnu infrastrukturu te podruèja bez razvijene prometne infrastrukture. Uklanjaju potrebu za razlièitim postupkom prebrojavanja za pojedine naèine kretanja. 
 %Poznavanjem sredstva kretanja može se analizirati "carbon footprint grada" jedan rad!!
 
 %proksimacija s BS ili signal strenght (RSSI) + neka ona drugo baza LTO(?)
-Iskljuèivo \gls{cdr} zapisi ne osiguravaju rezoluciju pogodnu za odreðivanje sredstva kretanja iako su razvijene metodologije \cite{Toole:2015.}. Iznimno se mogu izdvojiti bazen stanice dedicirane pružanju usluge iskljuèivo u podzemnoj željeznici. U istraživanju iz 2016. Moguæe je izdvojiti taksiste/dostavljaèe uz pretpostavku da su to oni korisnici koji prijeðu preko 100 km dnevno unutar grada. \cite{Graells-Garrido:2016.}  
+Autori studije \cite{Toole:2015.} tvrde da iskljuèivo \gls{cdr} zapisi ne osiguravaju rezoluciju pogodnu za odreðivanje sredstva kretanja iako su razvijene metodologije iako u praksi \cite{Teralytics:2017.} prema brzini kretanja pokretne stanice ili skupa njih istovremeno donosi zakljuèke o dominantnom sredstvu kretanja (pješak, automobil, javni prijevoz, avion). Iznimno se mogu izdvojiti bazen stanice dedicirane pružanju usluge iskljuèivo u podzemnoj željeznici. Studija iz 2016. \cite{Graells-Garrido:2016.} pokazala je da je moguæe izdvojiti taksiste/dostavljaèe uz pretpostavku da su to oni korisnici koji prijeðu preko 100 km dnevno unutar grada.  
 %Osim \gls{cdr} operateri prikupljaju dodatne podatke o preusmjeravanju poziva (engl. handover) na druge bazne stanice, (...)  
 
-Teralytics je jedna od mladih kompanija koja nudi uslugu modeliranja prometa iz telekomunikacijskih podataka. Izmeðu ostalog prema brzini kojom pokretna stanica (ili skupina njih istovremeno) mijenja položaj donose zakljuèak o dominantnom sredstvu kretanja (pješak, automobil, javni prijevoz, avion). Osim \gls{cdr} koriste i ranije spomenute dodatne podatke koji se prikupljaju (engl. signaling data). \cite{Teralytics:2017.} 
+%Teralytics je jedna od mladih kompanija koja nudi uslugu modeliranja prometa iz telekomunikacijskih podataka. Izmeðu ostalog prema brzini kojom pokretna stanica (ili skupina njih istovremeno) mijenja položaj donose zakljuèak o dominantnom sredstvu kretanja (pješak, automobil, javni prijevoz, avion). Osim \gls{cdr} koriste i ranije spomenute dodatne podatke koji se prikupljaju (engl. signaling data). \cite{Teralytics:2017.} 
 
 
  \section{Kontekst izveden iz vanjskih izvora}
 
-Neka istraživanja spojila su ljudsku mobilnost s namjenom zemljišta (engl. \textit{land use}) ili toèkama interesa engl. \textit{\gls{pois}} kako bi grupirala urbane predjele prema njihovoj funkciji ili upotrebi. Izvori podataka o kretanju u tim istraživanjima variraju od \gls{gps} putanja, položaja ukrcaja i iskrcaja taxi vozila, zapisa koje generiraju pametne kartice u javnom prijevozu, podatci o dijeljenim lokacijama na društvenim mrežama (engl. \textit{check-in}) i zapisi o telekomunikacijskim aktivnostima (\gls{cdr}) \cite{Alhazzani:2016.}. 
+Neka istraživanja spojila su ljudsku mobilnost s namjenom zemljišta (engl. \textit{land use}) ili toèkama interesa engl. \textit{\gls{pois}} kako bi grupirala urbana podruèja prema njihovoj funkciji ili upotrebi. Izvori podataka o kretanju u tim istraživanjima variraju od \gls{gps} putanja, položaja ukrcaja i iskrcaja taxi vozila, zapisa koje generiraju pametne kartice u javnom prijevozu, podatci o dijeljenim lokacijama na društvenim mrežama (engl. \textit{check-in}) i zapisi o telekomunikacijskim aktivnostima (\gls{cdr}) \cite{Alhazzani:2016.}. 
 
-Izvori podataka o kontekstu takoðer variraju od istraživanja do istraživanja, a radi o opisima objekata u prostoru i relacija meðu tim objektima. Korišteni podaci su primjerice broj objekata, površina koju oni zauzimaju te, za kontekst najbitnija, socio-ekonomska svrha (funkcija) pojedinog objekta.
+Izvori podataka o kontekstu takoðer variraju od istraživanja do istraživanja, a ukljuèuju opise objekata u prostoru i relacija meðu tim objektima. Korišteni podaci su primjerice broj objekata, površina koju oni zauzimaju te, za kontekst najbitnija, socio-ekonomska svrha (funkcija) pojedinog objekta.
 
  \subsection{OpenStreetMap}
 \gls{osm} je svjetski raširen projekt koji kreira i pruža slobodne zemljopisne podatke (zemljovide gradova i naselja) temeljen na volonterskom doprinosu zajednice. Pruža detaljne i ažurne digitalne zemljovide kompatibilne s \gls{gis} aplikacijama. 
 Zapoèet je prije 15 godina, u Ujedinjenom Kraljevstvu, kao odgovor na tehnièka ili pravna ogranièenja postojeæih "slobodnih" baza prostornih podataka kao što je GoogleMaps. Zajednièki doprinos i meðusobna kontrola unosa održavaju kartu na visokoj razini kvalitete i toènosti.
 
-Struktura osnovnih elemenata na toj rasterskoj karti je hijerarhijska. Element u hijerarhiji može biti: èvor (engl. \textit{node}), put (engl. \textit{way}) ili relacija (engl. \textit{relation}). Èvor je jedinstvena toèka u prostoru (sa identifikacijskom oznakom, zemljopisnom širinom i dužinom) koja najèešæe predstavlja fizièki objekt (zgrada, dio ceste...) te sadrži jedan ili više \textit{kljuè=vrijednost} žigova (engl. \textit{key=value tag}) koji definiraju razne znaèajke objekta.
-Put je ureðena lista 2 do 2,000 èvorova, koja takoðer može biti opisana žigovima. Relacija je ureðena lista èvorova, puteva i/ili relacija. Definira logièku ili geografsku povezanost èlanova. Opisni element nazivamo žigom (engl. \textit{tag}), a njegova funkcija je opisati znaèajke elementa uz koji je vezan. Primjeri žigova vezanih za èvorove:  \textit{office=company}, \textit{building=residential}, \textit{building=hotel}, \textit{building=church}, \textit{leisure=sports\_centre} , \textit{amenity=school}. Primjer žiga vezanog uz put \textit{highway=residential}.
+Struktura osnovnih elemenata na toj rasterskoj karti je hijerarhijska. Element u hijerarhiji može biti: èvor (engl. \textit{node}), put (engl. \textit{way}) ili relacija (engl. \textit{relation}). Uz hijerarhijske postoji i opisni element kojeg nazivamo oznakom (engl. \textit{tag}), a njegova funkcija je opisati znaèajke hijerarhijskog elementa uz koji je vezan. 
+
+Èvor je jedinstvena toèka u prostoru (sa identifikacijskom oznakom, zemljopisnom širinom i dužinom) koja najèešæe predstavlja fizièki objekt (zgrada, dio ceste...) te sadrži jedan ili više \textit{kljuè=vrijednost} oznaka (engl. \textit{key=value tag}) koji definiraju razne znaèajke objekta.
+
+Put je ureðena lista 2 do 2,000 èvorova, koja takoðer može biti opisana \textit{kljuè=vrijednost} oznakama. 
+
+Relacija je ureðena lista èvorova, puteva i/ili relacija. Definira logièku ili geografsku povezanost èlanova. 
+Primjeri oznaka vezanih za èvorove:  \textit{office=company}, \textit{building=residential}, \textit{building=hotel}, \textit{building=church}, \textit{leisure=sports\_centre} , \textit{amenity=school}. Primjer žiga vezanog uz put \textit{highway=residential}.
 
 
 \begin{comment}
@@ -310,7 +363,7 @@ kasnije navedeni konkretni primjeri:
 
  \subsubsection{Model raspodjele toka}
 Inovativni pristup kontekstualizaciji toka korištenjem OpenStreetMap baze predstavljen je u radu \cite{Stupar:2018.}. Na osnovu pripadajuæih opisnih podataka, prostorni objekti na podruèju interesa kategorizirani su prema tipu socio-ekonomske aktivnosti u koju su ukljuèeni. Definirano je ukupno 6 kategorija:
-Dom (Home), Posao (Work), Zdravlje (Health), Edukacija (Education), Zabava (Leisure) i Ostalo (Other). Razvijen je vjerojatnosni model koji, na osnovu broja objekata pojedine kategorije u odredišnoj æeliji i promatranog vremenskog okvira, ukupni ulazni tok u odredišnu æeliju dijeli na 6 tokova usmjerenih prema objektima tih kategorija. Iz jedne matrice tako  se dobije 6 matrica, po jedna za svaku od kategorija. U demonstraciji modela korištene su matrice dobivene iz javno dostupnih, anonimiziranih telekomunikacijskih zapisa na podruèju kineskog grada Shenzhena.\cite{Filic:2016.}\cite{data:2019.}
+Dom (Home), Posao (Work), Zdravlje (Health), Edukacija (Education), Zabava (Leisure) i Ostalo (Other). Razvijen je vjerojatnosni model koji, na osnovu broja objekata pojedine kategorije u odredišnoj æeliji i promatranog vremenskog okvira, ukupni ulazni tok u odredišnu æeliju dijeli na 6 tokova usmjerenih prema objektima tih kategorija. Iz jedne matrice tako  se dobije 6 \gls{pom}-a, po jedna za svaku od kategorija. U demonstraciji modela korištene su matrice dobivene iz javno dostupnih, anonimiziranih telekomunikacijskih zapisa na podruèju kineskog grada Shenzhena.\cite{Filic:2016.}\cite{data:2019.}
 \textbf{Definiranjem konteksta putovanja na ovaj naèin saèuvana je moguænost postizanja dobre rezolucije u vremenu, a istovremeno je dan kontekst koji ukljuèuje tipiène komutacijske \textit{Home} i \textit{Work} kategorije, te umjesto opæenite kategorije \textit{Other} precizira 4 kategorije}. 
 
 Definiranjem konteksta na taj naèin, dobivamo nove informacije o kretanju unutar æelije, odnosno o konaènoj destinaciji nakon ulaska u æeliju. U tom smislu imamo informaciju o internom kretanju.
@@ -480,7 +533,7 @@ Istraživanja modernih pristupa procjeni \gls{pom}-a ukazuju na smanjenu mobilnos
 % We obtain an average of 5 trips per day during the weekday, and 4.5 during the weekend. This number is reasonable when compared to the US National Household Travel Survey2 which evaluated this number to be between 4.18 during weekdays and 3.86 during weekends3 .
 \label{days_of_the_week}
 Osim oèekivane razlike izmeðu radnih i neradnih dana, uoèeno je da je petak, kao zadnji radni dan u tjednu, drugaèiji od ostalih radnih dana. \cite{Travassoli:2016.} \cite{Calabrese:2011.}  \cite{Scepanovic:2015.}. Na temelju \gls{pom}-a izraðenih iz \gls{cdr} uoèena je pojaèana mobilnost petkom na razini regije (Boston Metropolitan Area) \cite{Calabrese:2011.} i na razini cijele države (Obale Bjelokosti) s poveæanjem od 35\% u odnosu na nedjelju \cite{Scepanovic:2015.}. U drugom istraživanju uèena je smanjena mobilnost vezana za javni prijevoz (izvor za procjenu \gls{pom}-a \textit{Pametne kartice za javni prijevoz}) na razini regije (Southeast Queensland, Australija). Osim prosjeènog broja dnevnih putovanja, petak ima i nešto drugaèiji dnevni uzorak po satima (pojaèanje prometa prema kraju radnog vremena zapoèinje ranije). Ponovno, petkom je takoðer uoèena i najviša razina telekomunikacijske aktivnosti \cite{Bahoken:2013.} \cite{Bonnel:2015.} što ukazuje na moguæu pristranost kada su u pitanju \gls{pom}-e procijenjene iz \gls{cdr}.
-Rezultati nacionalne ankete u Sjedinjenim Amerièkim Državama pokazuju da je prosjeèan broj dnevnih putovanja po stanovniku 4.18 tijekom radnog dana te 3.86 tijekom neradnih dana u tjednu, što jest u skladu sa zakljuècima modernih metoda.\cite{Calabrese:2011.}\\
+Rezultati nacionalne ankete u Sjedinjenim Amerièkim Državama pokazuju da je prosjeèan broj dnevnih putovanja po stanovniku 4.18 tijekom radnog dana te 3.86 tijekom neradnih dana u tjednu, što jest u skladu sa zakljuècima modernih postupaka.\cite{Calabrese:2011.}\\
 %(...)\\
 Državni praznici i izvanredni dogaðaji kao što su vremenske nepogode unose odstupanja od ustaljenih uzorka kretanja.
 Privremene turistièke atrakcije i sportski dogaðaji mogu takoðer bitno utjecati na izmjenu uobièajenog uzorka kretanja. \cite{Bonnel:2015.} Primjerice odbrojavanje uoèi Nove godine na New Yourk Times Square. U prosjeku je na festivalske dane gustoæa poziva 10-15\% veæa od uobièajene. \cite{Varun:2013.}
@@ -552,6 +605,10 @@ Jedna od malobrojnih kritika koju istièu zagovaratelji oèuvanja statusa tradicio
 %\section{Alternative izvora podataka za razvoj \glstext{pom}}
 \section{Alternative izvora prostornih podataka za razvoj \glsfirstplural{pom}}
 %\subsection{Dodatni telekomunikacijski podatci (?) }
+
+\todo[inline]{Ako su to tradicionalne vs telekom POM, onda bi i za jedne i za druge, u posebnim poglavljima, trebalo opisati postupke prikupljanja i vrste ulaznih podataka.
+
+POstoje li i treæe vrste POM, izvedene iz taxi i lorry GPS podataka? Ili su one integrirane u telecom, uvažavajuæi korištenje eCall-a, telecom usluga koje prikupljaju LBS podatke, 5G i IoT?}
 \subsection{Združena oèitanja prijamnika za satelitsku navigaciju}
 (...)\\
 komercijalna vozila, Taxi

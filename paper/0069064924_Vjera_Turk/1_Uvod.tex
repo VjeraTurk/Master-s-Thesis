@@ -121,13 +121,18 @@ Matematièko modeliranje prometa zahtjeva veliku kolièinu podataka - informacija 
 
 Klasièan bazni model za procjenu prometne potražnje je Gravitacijski model (eng. \textit{Gravity model})  koji kod proraèuna "privlaènosti" 2 zone uzima u obzir gustoæu populacije, udaljenost i troškove putovanja. Izvedene verzije integriraju i neke druge (socio-ekonomske) faktore. \cite{Gundlegard:2016.}
 
-\subsection{Problematika i ogranièenja tradicionalnih naèina}
+\subsection{Problematika i ogranièenja tradicionalnih pristupa procjene \gls{pom}-e}
 
 \begin{comment}
 Urban sprawl and population growth have resulted in increasingly severe traffic congestion in major cities around the world. City planners and decision makers have recognized the need for comprehensive traffic management strategies to meet the challenges of rapidly evolving built environments and population demographics. Effective transportation polices and control
 \end{comment}
 
-Širenje gradova i rast stanovništva rezultirali su rastuæim brojem sve ozbiljnijih prometnih zastoja u velikim gradovima diljem svijeta. Prepoznata je potreba za opsežnim strategijama upravljanja prometom kako bi se suoèili s izazovima koje donosi brzo razvijajuæa okolina i demografija populacije. Efektivno upravljanje i kontrola prometa mogu poveæati sigurnost, kvalitetu usluge, poticati ekonomski rast i smanjiti zagaðenje zraka. Zbog dinamike kojom se gradovi mijenjaju razumno je pitati se ima li smisla koristiti \gls{pom}-e stare više godina za modeliranje današnjeg prometa. Dobivanje što toènijih, i jeftinijih POM-a privlaèi pažnju znanstvenika i van podruèja prometne znanosti. Alternativni izvori koje oni predlažu za promatranje obrazaca putovanja su znaèajno jeftiniji, ali nailaze na problem da profesija zahtijeva da se njihova vrijednost dokazuje usporedbom s tradicionalnim metodama. \cite{Pollard:2013.}
+Širenje gradova i rast stanovništva rezultirali su rastuæim brojem sve ozbiljnijih prometnih zastoja u velikim gradovima diljem svijeta. Prepoznata je potreba za strategijama upravljanja prometom koje æe uvažiti dinamiku razvoja stanovništva i njegove migracije u kontekstu suvremenih društvenih i gospodarskih kretanja. %kako bi se suoèili s izazovima koje donosi brzo razvijajuæa okolina i demografija populacije. 
+Djelotvorno upravljanje i kontrola prometa mogu poveæati sigurnost, kvalitetu prometne i kvalitetu transportno-logistièke usluge, poticati ekonomski rast i smanjiti zagaðenje okoliša. %Zbog dinamike kojom se gradovi mijenjaju razumno je pitati se ima li smisla koristiti \gls{pom}-e stare više godina za modeliranje današnjeg prometa.
+Suvremeni odnosi promijenili su prirodu kretanja ljudi i dobara zbog èega tradicionalni pristup postaje zastario i neprimjeren. 
+
+%Dobivanje što toènijih POM-a 
+Redefiniranje metodologije koja æe pružiti poveæanu kvalitetu i transparentnost uz ispunjavanje suvremenih zahtjeva na tehnologije (cijena, zaštita privatnosti i podataka) privlaèi pažnju istraživaèa i van podruèja prometne znanosti. Oni predlažu alternativne izvore podataka o kretanju za promatranje obrazaca putovanja i pristupe procjeni \gls{pom}-a, no nailaze na problem da struka zahtijeva da se njihova vrijednost dokazuje usporedbom s dobro poznatim tradicionalnim pristupima. \cite{Pollard:2013.} Problem ostaje otvoren za raspravu, koliki je udio populacije stvarno pokriven tradicionalnim pristupom i je li model razvijen na takvom podskupu populacije relevantan.
 
 \begin{comment}
 %Obtaining origin-destination (OD) traffic demand matrix in low-cost and high-accuracy manner not only becomes a problem transportation science, but also draws attentions from many scholars in various scientific fields.
@@ -139,27 +144,51 @@ Urban sprawl and population growth have resulted in increasingly severe traffic 
 
 %\newpage
 
+\begin{comment}
+Osnovna ideja pokretnih osjetila je da vozila koje se kreæu po prometnoj mreži i sastavni su dio prometnog toka prikupljaju i šalju podatke. Vrlo èesto korišten termin za pokretno osjetilo je vozilo (eng. Probe Vehicle). Nužan zahtjev koji treba biti ispunjen kod pokretnih osjetila je poznavanje pozicije vozila u odreðenim vremenskim trenucima. Glede toga naèelno se sustav
+sa pokretnim osjetilima može ostvariti na tri naèina:
+- Identifikacijom vozila u odreðenim toèkama mreže
+- Lociranjem vozila resursima æelijskih mreža
+- Lociranjem vozila GNSS modulom u vozilu
+Prvi naèin je poznat pod kraticom AVI (eng. Automatic Vehicle Identification), dok su druga dva poznata pod kraticom AVL (eng. Automatic Vehicle Location). AVI u stvari identificira vozilo u fiksnim toèkama mreže, a izvor podataka je vozilo koje se kreæe i koje može biti identificirano na razlièitim toèkama mreže te predati podatke o tome što se desilo izmeðu tih fiksnih toèka. Najuèestaliji termin u anglosaksonskoj znanstvenoj i struènoj literaturi pod kojim se podrazumijeva prikupljanje podataka i AVL (tj. lociranje vozila resursima æelijskih mreža ili GNSS modulom jest FCD (eng. Floating Car Data). Najperspektivnija tehnologija glede prikupljanja podataka o stanju prometne mreže je ona gdje se pozicija vozila odreðuje pomoæu GNSS sustava. Stoga se danas pod pojmom FCD-a uglavnom podrazumijeva upravo korištenje GNSS-a tj. pokretno osjetilo opremljeno modulom za satelitsku navigaciju i lociranje te modulom za komunikaciju. Danas je FCD
+komplementarni izvor vrijednih podataka i postaje najvažnija tehnologija prikupljanja podataka inteligentnih transportnih sustava. Ukoliko pokretno osjetilo nije vozilo veæ “pametni” telefon tada je vrlo èesti naziv FPD (eng. Floating Phone Data). FPD takoðer za lociranje koristi GNSS modul koji se nalazi u “pametnom” telefonu. U biti FPD se odnosi na pojam gdje se podaci prikupljaju putem “pametnih” telefona neovisno o tome kako se ustanovljava pozicija telefona (GNSS lociranjem ili lociranjem uz pomoæ celularnih mreža. Zbog nekih nedostataka lociranja putem celularnih mreža razvoj takvog naèina je stagnirao, što ne znaèi da nema i perspektivu. Kako danas gotovo svaki “pametni” telefon sadrži modul za lociranje termin FPD uglavnom se odnosi na naèin gdje “pametni” telefoni šalju GNSS podatke. Ako se za lociranje vozila koriste resursi æelijskih mreža uobièajena kratica je CFCD (eng. Cellular Floating Car Data). Za razliku od FCD-a gdje u prikupljanju podataka sudjeluju “namjenska” vozila (taksi, distribucija roba, javni prijevoz, službena vozila i dr.) kod FPD-a u prikupljanju podataka sudjeluju “sluèajni” korisnici usluge celularne mreže koji uz svoju suglasnost (ili bez suglasnosti) dijele podatke o svojoj poziciji i kretanju. Pri tome se algoritmima obrade podataka ustanovljava kojim modom transporta se korisnik koristi.
+\end{comment}
+
 \subsection{Pokretna osjetila}
 %rad iz 1972
-Osnovna ideja pokretnih osjetila je da vozila koja se kreæu po prometnoj mreži i sastavni su dio prometnog toka prikupljaju i šalju podatke. Nužan zahtjev koji treba biti ispunjen kod pokretnih osjetila je poznavanje pozicije vozila u odreðenim vremenskim trenucima. Za to se koristi \gls{gnss} ili se vozila identificiraju na odreðenim toèkama. Engleski naziv za ovu metodu je \gls{fcd}. Danas je \gls{fcd} %komplementarni 
-izvor vrijednih podataka i postaje najvažnija tehnologija prikupljanja podataka u \gls{its}. U prikupljanju podataka sudjeluju “namjenska” vozila - taksi, distribucija robe, javni prijevoz, službena vozila. Mora biti uspostavljen naèin uèestalog slanja podataka o položaju, a najèešæe se slanje odvija preko \gls{gsm}, Wi-fi pa i Bluetooth tehnologije. \cite{Jelusic:2016.} 
+%Osnovna ideja pokretnih osjetila je da Vozila koja se kreæu po prometnoj mreži i sastavni su dio prometnog toka prikupljaju i šalju podatke.
+Pokretno osjetilo je ureðaj koji je postavljen na vozilo koje se potom kreæe prometnom infrastrukturom, postajuæi tako dijelom prometnog toka, te koji je sposoban opažati vrijednosti definiranih parametara gibanja vozila na koje je postavljeno te ih pohranjivati i prenositi radi naknadnog procesiranja. Podatke koje osjetilo prikuplja su položaj, brzina i smjer kretanja.
+%localization data, speed, direction of travel, and time information
 
-Ukoliko pokretno osjetilo nije vozilo veæ pametni telefon koristi se naziv \gls{fpd}. \gls{fpd} se odnosi na prikupljanje podataka pomoæu mobilnih (pametnih) telefona neovisno o naèinu odreðivanja položaja - korištenjem \gls{gnss} ili pomoæu javne pokretne mreže. %Odreðivanje korištenjem \gls{gnss} prijemnika ponovno zahtjeva slanje podataka kao i kod FCD. 
-%Hut najnji
-Zaseban pristup unutar \gls{fpd} je odreðivanje položaja unutar javne pokretne mreže (mreže baznih stanica). Položaj pokretne stanice unutar javne pokretne mreže može se odrediti triangulacijom signala koje pokretna stanica hvata iz više baznih stanica ili  aproksimirati podruèjem pokrivanja bazne stanice na koju je u trenutku oèitavanja položaja pokretna stanica spojena.
+Zahtjev koji nužno mora biti ispunjen je poznavanje položaja vozila u odreðenim vremenskim trenucima. Osjetilo odreðuje položaj pomoæu \gls{gnss} prijemnika ili se vozilo identificira na odreðenim toèkama u prometnoj mreži, na kojima može ujedno i prenijeti podatke prikupljene od posljednje toèke. Anglosaksonski naziv za ovu metodu prikupljanja podataka o stanju u prometu je \gls{fcd}. Danas je \gls{fcd} metod zastupljena u \gls{its}. U prikupljanju podataka sudjeluju ureðajima opremljena taksi vozila, službena vozila, vozila za distribuciju robe, i vozila javnog prijevoza. Kod \gls{its} koji zahtijevaju podatke u realnom vremenu mora biti uspostavljen naèin uèestalog prijenosa podataka o položaju, a najèešæe se odvija preko \gls{gsm}, Wi-fi i Bluetooth komunikacijskih sustava. \cite{Jelusic:2016.} 
+
+Ukoliko pokretno osjetilo nije specijalizirani ureðaj veæ pametni telefon koristi se naziv \gls{fpd}. \gls{fpd} se odnosi na prikupljanje podataka  pomoæu mobilnih (pametnih) telefona neovisno o naèinu odreðivanja položaja - korištenjem \gls{gnss} ili pomoæu javne pokretne mreže. %Odreðivanje korištenjem \gls{gnss} prijemnika ponovno zahtjeva slanje podataka kao i kod FCD.
+Zaseban pristup unutar \gls{fpd} je odreðivanje položaja unutar javne pokretne mreže (mreže baznih stanica). Položaj pokretne stanice unutar javne pokretne mreže može se odrediti triangulacijom signala koje pokretna stanica hvata iz više baznih stanica ili približno odrediti izjednaèavanjem položaja pokretne stanice s položajem (podruèjem pokrivanja) bazne stanice s kojom je pokretna stanica povezana u promatranom trenutku.
 
 \section{\glsfirst{pom} iz zapisa o telekomunikacijskim aktivnostima u javnoj pokretnoj mreži}
 
 %\subsubsection{\gls{cdr}}
+%Kako bi pružali i naplaæivali usluge, mobilni operateri moraju prikupljati podatke o telekomunikacijskim aktivnostima korisnika.
+Operatori javnih pokretnih mreža prikupljaju podatke o aktivnostima u javnoj pokretnoj mreži za potrebe pružanja i naplate usluga te za održavanje operativnosti same mreže. %Prije uspostave poziva od/do odgovarajuæeg ureðaja, mora biti poznato s koje bazne stanice odaslati signal.  
+Pokretni ureðaj (npr. pametni telefon) u javnoj pokretnoj mreži kontinuirano je povezan s mrežom putem odgovarajuæe bazne stanice, neovisno o telekomunikacijskoj aktivnosti ureðaja. U postupku uspostave poziva, signalizacija ukljuèuje i identifikacijsku oznaku bazne stanice s koje je poziv uspostavljen. Navedena oznaka bilježi se u zapisu o telekomunikacijskoj aktivnosti. 
+%Naziv za podatke koje operateri prikupljaju kako bi naplaæivali usluge glasi . 
+Zapisi o telekomunikacijskoj aktivnosti i detaljima telekomunikacijskih transakcija vode se u odgovarajuæim komponentama javne pokretne mreže pod imenima: \gls{cdr}. 
+%Radi se o zapisima aktivnosti u mobilnoj mreži - pozivima, porukama (engl. Short Messaging Service - SMS) te zapoèetom prijenosu mobilnih podataka.
+CDR obuhvaæa transakcijske podatke o pozivima, razmjeni kratkih poruka (SMS) i prijenosu podataka pokretnim internetom. Transakcijski podatci ukljuèuju, izmeðu ostalog: vremenske trenutke poèetka i završetka telekomunikacijske transakcije (korištenja komunikacijske usluge), vrstu komunikacije, identifikacijske oznake pošiljatelja i primatelja, te identifikacijske oznake baznih stanica na koje su u trenutku zapoèinjanja i završetka transakcije bili spojeni pošiljatelj i primatelj.
 
-Kako bi pružali i naplaæivali usluge, mobilni operateri moraju prikupljati podatke o telekomunikacijskim aktivnostima korisnika. Prije uspostave poziva od/do odgovarajuæeg ureðaja, mora biti poznato s koje bazne stanice odaslati signal. Naziv za podatke koje operateri prikupljaju kako bi naplaæivali usluge glasi \gls{cdr}. Radi se o zapisima aktivnosti u mobilnoj mreži - pozivima, porukama (engl. Short Messaging Service - SMS) te zapoèetom prijenosu mobilnih podataka.
-Tipièan zapis sastoji se od: identifikacijske oznake pristupne toèke radijske mreže (bazne stanice), vremenskog žiga poèetka telekomunikacijske aktivnosti i vremena trajanja telekomunikacijske aktivnosti. Istraživanje veza izmeðu kretanja i društvenih veza (poznanstava) \cite{Coscia:2015.} od operatera je od operatera dobilo i podatak na koju baznu stanicu je poziv bio usmjeren.
+%Tipièan zapis sastoji se od: identifikacijske oznake pristupne toèke radijske mreže (bazne stanice), vremenskog žiga poèetka telekomunikacijske aktivnosti i vremena trajanja telekomunikacijske aktivnosti. 
+
+%Istraživanje veza izmeðu kretanja i društvenih veza (poznanstava) \cite{Coscia:2015.} od operatera je od operatera dobilo i podatak na koju baznu stanicu je poziv bio usmjeren.
 
 %\subsubsection{\textit{Signaling data}}
-Dodatni podatci koje operateri prate prikupljani su pomoæu sustava za ispitivanje kvalitete mreže (\textit{Signaling data}). Ukljuèuju \textit{handover} podatke - podatke o transferu na drugu baznu stanicu tijekom trajanja telekomunikacijske aktivnosti, \textit{Location Area Updates} - podatke prikupljane svakih 20 min do 2 sata o tome na koju skupinu baznih stanica je pokretna stanica spojena (primjerice na podruèju Ile-de-France svaka LA skupina ima od oko 150 - 500 stanica), te informacije o tome kada je pokretna stanica ukljuèena u mrežu i iskljuèena iz mreže.
+%%Dodatni podatci koje operateri prate prikupljani su pomoæu sustava za ispitivanje kvalitete mreže (\textit{Signaling data}). 
+
+%Kako mreža upravlja kvalitetom pružanja usluga zasnovano je na analizi signalizacije izmeðu svojih elementa (èvorova). \textit{Signalling data} naziv je za operativne podatke potrebne za rad mreže prenošene izmeðu odgovarajuæih èvorova.
+%Ukljuèuju \textit{handover} podatke -
+Takoðer operateru su dodatno poznati podatci o prekapèanju pokretnog ureðaja na drugu baznu stanicu (engl. \textit{handover data}) tijekom trajanja telekomunikacijske aktivnosti radi postizanja i održavanja potrebne kvalitete telekomunikacijske usluge, \textit{Location Area Updates} - podatke prikupljane svakih 20 min do 2 sata o tome na koju skupinu baznih stanica je pokretna stanica spojena (svaka LA skupina ima od 150 do 500 baznih stanica \cite{Bonnel:2015.}), te podatke o tome kada je pokretna stanica ukljuèena u mrežu i iskljuèena iz mreže. 
 	
-U novije vrijeme znanstvenici predlažu metode u kojima koriste upravo anonimizirane \gls{cdr} kao izvor podataka za procjenu \glsplural{pom}. 
-\cite{Gundlegard:2016.} \cite{Alhazzani:2016.} \cite{Frias-Martinez:2012.} Sama ideja spominje u istraživanjima još iz 1994., gotovo od kad je javna pokretna mreža postala široko dostupna. \cite{Gundlegard:2016.} \textbf{U ostatku rada, na mjestima gdje nije izrièito naveden izvor podataka o kretanju, radi se o postupku ili \gls{pom}-i procijenoj iz \gls{cdr}}. Pri procjeni \gls{pom}-e, ako su dostupni, i navedeni dodatni podatci mogu se uzeti u obzir. 
+U novije vrijeme su predloženi postupci u kojima koriste upravo anonimizirane \gls{cdr} kao izvor podataka za procjenu \glsplural{pom}. 
+\cite{Gundlegard:2016.} \cite{Alhazzani:2016.} \cite{Frias-Martinez:2012.} Metodologija korištenja odnosnih elemenata CDR-a za procjenu POM predložena je još 1994. godine. \cite{Gundlegard:2016.} \textbf{U ostatku rada, na mjestima gdje nije izrièito naveden izvor podataka o kretanju, radi se o postupku ili \gls{pom}-i procijenoj iz \gls{cdr}}. Pri procjeni \gls{pom}-e, ako su dostupni, i ranije navedeni dodatni podatci mogu se uzeti u obzir. 
 
 Zanimljivo je ovdje spomenuti europsku inicijativu \textit{eCall} za brzu pomoæ stradalima u prometnim nesreæama bilo gdje u Europskoj Uniji. \textit{eCall} zahtjeva da u svakom novom motornom vozilu bude ugraðen ureðaj koji u sluèaju prometne nesreæe automatski obavijesti centar 112 te mu šalje informacije o aktivaciji zraènih jastuka, prikupljene podatke osjetila za procjenu jaèine sudara i u dakako položaj vozila u trenutku prometne nesreæe. Takoðer treba omoguæiti uspostavu poziva (\gls{gsm}). Prognoza je da æe se korištenjem tog sustava vrijeme odziva (dolaska službi na mjesto prometne nesreæe) smanjiti za izmeðu 40\% i 50\%. Od travnja 2018. svi novi automobili u prodaji u Europskoj Uniji imaju ugraðen ovaj ureðaj. Nakon uspješnog uspostavljanja sustava oèekuje se da bi se ureðaj (uz pristanak vlasnika vozila) mogao poèeti koristiti i u druge svrhe. \cite{eCall:2018.}
 
@@ -167,7 +196,7 @@ Zanimljivo je ovdje spomenuti europsku inicijativu \textit{eCall} za brzu pomoæ 
 \begin{comment}
 %eCall is a European initiative intended to bring rapid assistance to motorists involved in a collision anywhere in the European Union. eCall was made mandatory in all new cars sold within the EU from April 2018.[1]
 
-%sudjeluju “sluèajni” korisnici usluge celularne mreže koji uz svoju suglasnost (ili bez suglasnosti) dijele podatke o svojoj poziciji i kretanju. Pri tome se algoritmima obrade podataka ustanovljava kojim modom transporta se korisnik koristi.
+%sudjeluju “sluèajni” korisnici usluge celularne mreže koji uz svoju suglasnost (ili bez suglasnosti) dijele podatke o svojem položaju i kretanju. Pri tome se algoritmima obrade podataka ustanovljava kojim modom transporta se korisnik koristi.
 \end{comment}
 
 \begin{comment}
@@ -192,7 +221,7 @@ Situacija je takva da telekomunikacije kompanije, ali i ostali tehnološki subjek
 \subsection{Putovanje}
 Priroda ovog pristupa rudarenju podataka za procjenu POM-a zahtjeva da prvo definiramo što toèno smatramo putovanjem, odnosno polazištem i odredištem putovanja. 
 
- \begin{definition}{Zaustavljanje (engl.\textit{ Stop}}) se definira kao skup minimalno \textit{n} dogaðaja (telekomunikacijskih aktivnosti) u nizu koji su zabilježeni na istoj poziciji unutar definiranog minimalnog vremenskog perioda. Time se osigurava da se ne radi o tranzitnoj veæ o namjerenoj poziciji zaustavljanja i suzbija se bilježenje lažnog kretanje kod privremenog spajanja na susjednu baznu stanicu. 
+ \begin{definition}{Zaustavljanje (engl.\textit{ Stop}}) se definira kao skup minimalno \textit{n} dogaðaja (telekomunikacijskih aktivnosti) u nizu koji su zabilježeni na istom položaju unutar definiranog minimalnog vremenskog perioda. Time se osigurava da se ne radi o tranzitnoj veæ o namjerenom položaju zaustavljanja i suzbija se bilježenje lažnog kretanje kod privremenog spajanja na susjednu baznu stanicu. 
  Zaustavljanje ima 2 vremenske oznake, trenutak kada je zabilježen poèetak i trenutak kada je zabilježen kraj zaustavljanja.
  \end{definition}
 
@@ -362,7 +391,7 @@ Podjela na gradske èetvrti obièno je relativno uniformna \cite{Alhazzani:2016.}.
 Toèke skupa su položaji baznih stanice, a æelije oko njih aproksimacija površine koju ta bazna stanica pokriva. U stvarnosti se te površine prekrivanja preklapaju jer podruèje prekrivanja nije sasvim fiksno i ovisi o trenutnoj aktivnosti svake bazne stanice \cite{Bonnel:2015.}. (Vidi sliku \ref{fig:Voronoi})
 
 Ponekad operateri u \gls{cdr} zapisima ne otkrivaju položaje baznih stanica veæ samo njihov ID. Postoji nekoliko javno dostupnih baza kao što je OpenCellID \cite{OpenCellID:2019.} nastalih volonterskim doprinosom koje pohranjuju podatke o procjenama položaja baznih stanica, snazi signala i sl.
-Položaji se prikupljaju pomoæu aplikacije instalirane na mobilnom ureðaju, registriranjem \gls{gps} pozicije i identifikacijske oznake bazne stanice na koju je ureðaj trenutno spojen. Dakle, ove baze ne sadrže "najtoènije" položaje baznih stanica veæ usrednjene položaje mobilnih ureðaja koji su u nekom trenutku bili spojeni na tu baznu stanicu. Tako procijenjeni položaj za potrebe izrada \gls{pom}-a èak i više odgovara od stvarnog položaja. \cite{Mellegard:2011.}
+Položaji se prikupljaju pomoæu aplikacije instalirane na mobilnom ureðaju, registriranjem \gls{gps} položaja i identifikacijske oznake bazne stanice na koju je ureðaj trenutno spojen. Dakle, ove baze ne sadrže "najtoènije" položaje baznih stanica veæ usrednjene položaje mobilnih ureðaja koji su u nekom trenutku bili spojeni na tu baznu stanicu. Tako procijenjeni položaj za potrebe izrada \gls{pom}-a èak i više odgovara od stvarnog položaja. \cite{Mellegard:2011.}
 
 Gustoæa Voronoi æelija snažno je korelirana s gustoæom stanovništva te stoga bolju prostornu rezoluciju ima na podruèjima veæe gustoæe populacije. Mjerna nesigurnost odreðivanja položaja iznosi od približno stotinu metara u gusto naseljenom, do nekoliko kilometara u ruralnom podruèju \cite{Calabrese:2011.}. Gundlegard \cite{Gundlegard:2016.} smatra da neuniformnost æelija nije problem, veæ preklapanje podruèja pokrivanja u stvarnosti, posljedica èega su stalne oscilacije. Ureðaj mijenja baznu stanicu na koju je spojen iako svo vrijeme zadržava isti položaj. Jedan od naèina na koji se može ublažiti efekt koji oscilacija ima na definiranje putovanja je odrediti minimalnu udaljenost putovanja ili potpuno zanemariti putovanja u susjedne æelije. Važno je kod definiranja putovanja uzeti u obzir postojanje oscilacija.
 

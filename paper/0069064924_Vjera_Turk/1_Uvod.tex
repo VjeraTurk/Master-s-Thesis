@@ -99,7 +99,7 @@ Recent research in the domain of ubiquitous computing provided alternative metho
 Tradicionalni pristupi ukljuèuju metode provoðenja anketiranja. Postoji nekoliko vrsta anketa: u kuæanstvima, presretanje vozila, anketiranje  prijevoznih kompanija i tvrtki, tranzit na granici, turisti u hotelima i parking \cite{Cools:2010.}. 
 \todo[inline]{Podjela po subjektima anketa. Predlažem detaljniju razradu u metodološkom smislu, uz korištenje liteature poput:
 	
-Hyndman, R J, and Athanasopoulos, G. (2018). Forecasting: Principles and Practice (2nd ed). (Chapter 4: Judgemental Forecast)). Preuzeto s: https://otexts.com/fpp2/}
+Hyndman, R J, and Athanasopoulos, G. (2018). Forecasting: Principles and Practice (2nd ed). (Chapter 4: Judgemental Forecast)). Preuzeto s: https://otexts.com/fpp2/judgmental.html}
 Ovakve metode su zahtjevne iz perspektive utrošenog vremena, uloženog truda i radne snage stoga se ne provode èesto. Anketiranje putovanja u kuæanstvima provodi se na podruèjima brojnih svjetskih metropola tek jednom u deset godina. U veæini svjetskih metropola na provoðenje anketa odlazi najveæi postotak budžeta planiranja, u procjeni oko 7.4 milijuna dolara godišnje izdvaja se za ankete po kuæanstvima. \cite{Cools:2010.}
 
 Anketiranje vozaèa presretanjem vozila eng. \gls{rsi} u prosjeku košta èak 10 eura po jednom zabilježenom putovanju i ukupno obuhvati 10\% prometa. Ova vrsta najèešæe se provodi na autocestama. \cite{Pollard:2013.}  
@@ -290,7 +290,7 @@ Dodatna ogranièenja mogu primjerice izbaciti sva putovanja u susjedne æelije, zb
 \subsection{Svrha kao kontekst  putovanja dobivena iz izvora podataka o kretanju}    
 \todo[inline]{Definirajte kontekst iz elemenata putovanja na egzaktan i jedinstven naèin, bez povezivanja na algoritme i procese koje još niste definirali!}
 
-\todo[inline]{* opæenito: karakteristike polazišta i odredišta $\rightarrow$ otkrivaju svrhu putovanja, namjeru s kojom pojedinac mijenja položaj...}
+\todo[inline]{* dodati da karakteristike polazišta i odredišta $\rightarrow$ otkrivaju svrhu putovanja, namjeru s kojom pojedinac mijenja položaj...}
 Kada su dostupni zapisi prikupljani dulje vremensko razdoblje, tjednima ili mjesecima putovanje se može definirati na drugaèije - kao iskljuèivo komutacijsko. Pojednostavljeno, analizom zapisa može se utvrdi na kojem položaju neki pojedinci pretežito borave u tipiènom radnom vremenu te u kojoj tokom noæi. Prvi položaj za njihova putovanja postaje \textit{Work} destinacija, drugi \textit{Home}, a sve preostale destinacije svrstaju se u zasebnu kategoriju \textit{Other}. \gls{pom}-e ukljuèuju samo putovanja iz jednog tipa destinacije u drugi npr. \gls{hw} i \gls{wh}. Kontekst, odnosno svrha svakog od putovanja koja èine \gls{pom}-u je ili \textit{odlazak na posao} ili \textit{odlazak kuæi (s posla)}. \cite{Goulding:2016.}\cite{Graells-Garrido:2016.}\cite{Bahoken:2013.}\cite{Calabrese:2011.}\cite{Toole:2015.}. %\cite{Frias-Martinez:2012.} - oni su kao nešto protiv toga
 Takve su \gls{pom}-e usporedive s onima dobivenim iz anketa stanovništva s istom podjelom putovanja prema svrsi. Komutacijska putovanja su ponavljajuæa i u tom smislu predvidiva.
  
@@ -325,9 +325,10 @@ Autori studije \cite{Toole:2015.} tvrde da iskljuèivo \gls{cdr} zapisi ne osigur
 %Teralytics je jedna od mladih kompanija koja nudi uslugu modeliranja prometa iz telekomunikacijskih podataka. Izmeðu ostalog prema brzini kojom pokretna stanica (ili skupina njih istovremeno) mijenja položaj donose zakljuèak o dominantnom sredstvu kretanja (pješak, automobil, javni prijevoz, avion). Osim \gls{cdr} koriste i ranije spomenute dodatne podatke koji se prikupljaju (engl. signaling data). \cite{Teralytics:2017.} 
 
 
- \section{Kontekst izveden iz vanjskih izvora}
+\section{Kontekst izveden iz vanjskih izvora}\todo[inline]{Opis metodologije?}
 
-Neka istraživanja spojila su ljudsku mobilnost s namjenom zemljišta (engl. \textit{land use}) ili toèkama interesa engl. \textit{\gls{pois}} kako bi grupirala urbana podruèja prema njihovoj funkciji ili upotrebi. Izvori podataka o kretanju u tim istraživanjima variraju od \gls{gps} putanja, položaja ukrcaja i iskrcaja taxi vozila, zapisa koje generiraju pametne kartice u javnom prijevozu, podatci o dijeljenim lokacijama na društvenim mrežama (engl. \textit{check-in}) i zapisi o telekomunikacijskim aktivnostima (\gls{cdr}) \cite{Alhazzani:2016.}. 
+Neka istraživanja spojila su ljudsku mobilnost s namjenom zemljišta (engl. \textit{land use}) ili toèkama interesa engl. \textit{\gls{pois}} kako bi grupirala urbana podruèja prema njihovoj funkciji ili upotrebi. Izvori podataka o kretanju u tim istraživanjima obuhvaæaju zapise %variraju od 
+\gls{gps} putanja, položaja ukrcaja i iskrcaja taxi vozila, zapisa koje generiraju pametne kartice u javnom prijevozu, podatke o dijeljenim lokacijama na društvenim mrežama (engl. \textit{check-in}) i zapise o telekomunikacijskim aktivnostima (\gls{cdr}) \cite{Alhazzani:2016.}. 
 
 Izvori podataka o kontekstu takoðer variraju od istraživanja do istraživanja, a ukljuèuju opise objekata u prostoru i relacija meðu tim objektima. Korišteni podaci su primjerice broj objekata, površina koju oni zauzimaju te, za kontekst najbitnija, socio-ekonomska svrha (funkcija) pojedinog objekta.
 

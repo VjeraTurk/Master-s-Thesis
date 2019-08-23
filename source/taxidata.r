@@ -92,7 +92,12 @@ df_9<-df[32001640:36001471]
 df_10<-df[36001472:39065311]
 
 system.time(df_1<-df_1 %>% group_by(ID))# traje nevjerojatno dugo
+#  user  system elapsed 
+# 0.100   0.000   0.155 
 
+df_t<-head(df_2,6099)
+system.time(df_t<-df_t %>% group_by(ID))
+"
 stop_indentification<-function(dataframe){
 
   start_confirmed <-FALSE
@@ -156,7 +161,10 @@ dimnames(TOD_18_21)<-list(Lon_Lat,Lon_Lat)
 TOD_21_24<<-zeros(length(Lon_Lat),length(Lon_Lat))
 dimnames(TOD_21_24)<-list(Lon_Lat,Lon_Lat)
 
+matrices<-list(TOD_0_3,TOD_3_6,TOD_6_9,TOD_9_12,TOD_12_15,TOD_15_18,TOD_18_21,TOD_21_24)
 
+require(sp)
+sometime<<-as.POSIXct(Sys.time())
 stop_indentification<-function(dataframe){
 
   i=1
@@ -243,17 +251,30 @@ stop_indentification_by_period<-function(dataframe){
       
       #if(orig!=dest)# cel 79 has 1757 internal trips
 
-      try(OD_0_24_SH[orig,dest]<<- OD_0_24_SH[orig,dest] + 1)
+      print(findInterval(first$Time,seq(as.POSIXct("00:00:00", format="%T"), as.POSIXct("23:59:59", format = "%T"), by = "3 hours")))
+          print(first$Time)
+          sometime<<-first$Time
+          print(class(first$Time))
+#      t<-as.integer(cut(first$Time, breaks = seq(as.POSIXct("00:00:00", format="%T"), as.POSIXct("23:59:59", format = "%T"), by = "3 hours")))
+          t<-as.integer(cut(first$Time, breaks = seq(as.POSIXct("00:00:00", format="%T"), as.POSIXct("23:59:59", format = "%T"), by = "3 hours")))
+          print(t)
+      #try(OD_0_24_SH[orig,dest]<<- OD_0_24_SH[orig,dest] + 1)
       
+      try(matrices[t][orig,dest]<<- matrices[t][orig,dest] + 1)
       start_confirmed=FALSE
-    }
+      print(matrices[t])
+      
+      }
     i=i+1
   }  
 }
 valid_trip_df<<-data.frame()
 #11512 obs.
 
-system.time(sapply(unique(df$ID), function (value) stop_indentification(df[df$ID == value, ]),simplify = TRUE))
+system.time(sapply(unique(df_t$ID), function (value) stop_indentification_by_period(df_t[df_t$ID == value, ]),simplify = TRUE))
+
+  system.time(sapply(unique(df$ID), function (value) stop_indentification(df[df$ID == value, ]),simplify = TRUE))
+
 
 require(superheat)
 superheat(OD_0_24_SH, heat.pal= heat.colors(256))

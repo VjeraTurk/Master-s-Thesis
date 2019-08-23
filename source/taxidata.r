@@ -42,15 +42,57 @@ system.time(load(file = file))
   "
 df = TaxiData
 k = 2
-system.time(df_2k<-df %>% group_by(ID) %>% filter(length(Status)>=2*k & sum(Status)>0 & sum(Status)<length(Status)))
-#38360243 obs.
-#37156321 obs.
-#39151964 obs.
 
-df1m = head(df_2k, 1000000)
-df = df1m
+# 0->1 + 1->0 at least 4
+# sum(status)>0 >> sum(status) >= 2
+# sum(Status)<lenght(Status)-1 -> nisu sve jedinice,  najmanje 2 nule
 
-"
+  #system.time(df_2k<-df %>% group_by(ID) %>% filter(length(Status)>=2*k & sum(Status)>0 & sum(Status)<length(Status)))
+  #   user  system elapsed 
+  #3.048   0.912   3.968 
+  
+  #38360243 obs.
+  #37156321 obs.
+  #39151964 obs.
+
+system.time(df_2k<-df %>% group_by(ID) %>% filter(length(Status)>=2*k & sum(Status)>=2 & sum(Status)<(length(Status)-1)))
+#39065311 obs.
+
+
+  df1m = head(df_2k, 1000000)
+  df = df1m
+
+df<-as.data.table(df_2k)
+save(df, file = paste(getwd(),"/taxi_df_from_df_2k.RData", sep=""))#took longer than minute
+
+file = paste(getwd(),"/taxi_df_from_df_2k.RData", sep="")
+load(file=file)
+
+#podjela na 10 grupa po 4 milijuna zapisa
+
+# 1-4002181
+df_1<-df[1:4002181]
+# 4002182-8006254
+df_2<-df[4002182:8006254]
+# 8006255-12000823
+df_3<-df[8006255:12000823]
+# 12000824-16001357
+df_4<-df[12000824:16001357]
+# 16001358-2002755
+df_5<-df[16001358:20002755]
+# 2002756-24003967
+df_6<-df[20002756:24003967]
+# 24003968-28001782
+df_7<-df[24003968:28001782]
+# 28001783-32001639
+df_8<-df[28001783:32001639]
+# 32001640-36001471
+df_9<-df[32001640:36001471]
+# 36001472-39065311
+df_10<-df[36001472:39065311]
+
+system.time(df_1<-df_1 %>% group_by(ID))# traje nevjerojatno dugo
+
 stop_indentification<-function(dataframe){
 
   start_confirmed <-FALSE
@@ -83,29 +125,49 @@ stop_indentification<-function(dataframe){
 # Longitude min->max (CDR su samo po longitude!!!!)
 # latitude min->max
 #TODO: ORDER LON_LAT!!
-setorder(LonLat,Longitude)
+file = paste(getwd(),"/LonLat_from_CDR_1090_pairs.RData", sep="")
+system.time(load(file = file))
+
+setorder(LonLat,Longitude,Latitude)
 system.time(Lon_Lat <- paste(LonLat$Longitude,LonLat$Latitude, sep= "_"))
 
 require("optimbase")
 OD_0_24_SH<<-zeros(length(Lon_Lat),length(Lon_Lat))
+
 #names(OD_0_24_SH)<- Lon_Lat# names je krivo, treba dimnames()
 #http://www.r-tutor.com/r-introduction/matrix
 
 dimnames(OD_0_24_SH)<-list(Lon_Lat,Lon_Lat)
 
+TOD_0_3<<-zeros(length(Lon_Lat),length(Lon_Lat))
+dimnames(TOD_0_3)<-list(Lon_Lat,Lon_Lat)
+TOD_3_6<<-zeros(length(Lon_Lat),length(Lon_Lat))
+dimnames(TOD_3_6)<-list(Lon_Lat,Lon_Lat)
+TOD_6_9<<-zeros(length(Lon_Lat),length(Lon_Lat))
+dimnames(TOD_6_9)<-list(Lon_Lat,Lon_Lat)
+TOD_9_12<<-zeros(length(Lon_Lat),length(Lon_Lat))
+dimnames(TOD_9_12)<-list(Lon_Lat,Lon_Lat)
+TOD_12_15<<-zeros(length(Lon_Lat),length(Lon_Lat))
+dimnames(TOD_12_15)<-list(Lon_Lat,Lon_Lat)
+TOD_15_18<<-zeros(length(Lon_Lat),length(Lon_Lat))
+dimnames(TOD_15_18)<-list(Lon_Lat,Lon_Lat)
+TOD_18_21<<-zeros(length(Lon_Lat),length(Lon_Lat))
+dimnames(TOD_18_21)<-list(Lon_Lat,Lon_Lat)
+TOD_21_24<<-zeros(length(Lon_Lat),length(Lon_Lat))
+dimnames(TOD_21_24)<-list(Lon_Lat,Lon_Lat)
+
+
 stop_indentification<-function(dataframe){
 
   i=1
   start_confirmed=FALSE
-  
+
   while(i < nrow(dataframe))
   {
-
     status = dataframe[i,]$Status
   
     while(dataframe[i,]$Status == status & i < nrow(dataframe)-1 ){
       i=i+1
-
       } 
 
     i=i+1
@@ -141,10 +203,58 @@ stop_indentification<-function(dataframe){
   }  
 }
 
+# package ‘dict’ is not available (for R version 3.6.0)
+stop_indentification_by_period<-function(dataframe){
+  
+  i=1
+  start_confirmed=FALSE
+  
+  while(i < nrow(dataframe))
+  {
+    status = dataframe[i,]$Status
+    
+    while(dataframe[i,]$Status == status & i < nrow(dataframe)-1 ){
+      i=i+1
+    } 
+    
+    i=i+1
+    
+    if(dataframe[i,]$Status == 1 & start_confirmed == FALSE) #Ukrcaj
+    {
+      first = dataframe[i,]
+      start_confirmed=TRUE
+      
+    }else if(start_confirmed) #iskrcaj
+    {
+      last = dataframe[i,]
+      trip<-data.frame(first$Time,last$Time,first$Longitude,first$Latitude,last$Longitude,last$Latitude)
+      #print(trip)
+      valid_trip_df<<-rbind(valid_trip_df, cbind(trip))
+      
+      o<-SpatialPoints(cbind(c(trip$first.Longitude),c(trip$first.Latitude),c(trip$ID)),proj4string = slot(vor,'proj4string'))
+      d<-SpatialPoints(cbind(c(trip$last.Longitude),c(trip$last.Latitude),c(trip$ID)),proj4string = slot(vor,'proj4string')) #id as third coord
+      
+      spoints<-rbind(o,d)
+      
+      x<-spoints %over% vor #ne baca error ako točka nije ni u jednom
+      
+      orig = paste(x[1,]$Longitude,x[1,]$Latitude,sep = "_")
+      dest = paste(x[2,]$Longitude,x[2,]$Latitude,sep = "_")
+      
+      #if(orig!=dest)# cel 79 has 1757 internal trips
+
+      try(OD_0_24_SH[orig,dest]<<- OD_0_24_SH[orig,dest] + 1)
+      
+      start_confirmed=FALSE
+    }
+    i=i+1
+  }  
+}
 valid_trip_df<<-data.frame()
 #11512 obs.
 
 system.time(sapply(unique(df$ID), function (value) stop_indentification(df[df$ID == value, ]),simplify = TRUE))
+
 require(superheat)
 superheat(OD_0_24_SH, heat.pal= heat.colors(256))
 superheat(OD_0_24_SH,scale=TRUE,  heat.col.scheme = "red")
@@ -203,7 +313,6 @@ for(i in 1:length(vor)){
   pom_list[[2]]<-nodes_s
   
   list[[i]]<-pom_list
-  
 }
 
 

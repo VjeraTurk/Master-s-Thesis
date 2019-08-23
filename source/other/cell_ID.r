@@ -1,3 +1,6 @@
+"
+Provjera podudarnosti položaja baznih stanica s bazom OpenCellID 2018., 2019.
+"
 require("data.table")
 require("readr") #fread
 require("ggplot2")
@@ -34,8 +37,8 @@ Latitude   22.48821    22.82753
     file = paste(getwd(),"/460.csv",sep="")
     cells_460 = fread(file=file, sep="auto", header=T)
   
-  file = "~/CODM/masters-thesis/data/cell/cells_454_455_460.RData"
-  load(file = file)
+  #file = "~/CODM/masters-thesis/data/cell/cells_454_455_460.RData"
+  #load(file = file)
 
   subset_454 = cells_454[lat >= 22.48819 & lat <= 22.828 & lon >= 113.7876 & lon <= 114.5192]
   subset_455 = cells_455[lat >= 22.48819 & lat <= 22.828 & lon >= 113.7876 & lon <= 114.5192]
@@ -93,16 +96,16 @@ openCell ID column names are: lon and lat
 Longitude  
 Latitude   
 "
-setwd("~/CODM/masters-thesis/data/cell")
-file = paste(getwd(),"/cell_towers_2019-03-16-T000000.csv",sep="")
-system.time(cells <- fread(file=file, sep="auto", header=T))
-subset = cells[lat >= 22.48819 & lat <= 22.828 & lon >= 113.7876 & lon <= 114.5192]
-nrow(subset)
-LonLat<-data.frame(subset$lon, subset$lat)
-names(LonLat) <- c("Longitude", "Latitude")
-LonLat<-distinct(LonLat)
-nrow(LonLat) #25922
-save(LonLat, file = paste(getwd(),"/LonLat_from_OpenCellID_2019_25922_pairs.RData",sep=""))
+  setwd("~/CODM/masters-thesis/data/cell")
+  file = paste(getwd(),"/cell_towers_2019-03-16-T000000.csv",sep="")
+  system.time(cells <- fread(file=file, sep="auto", header=T))
+  subset = cells[lat >= 22.48819 & lat <= 22.828 & lon >= 113.7876 & lon <= 114.5192]
+  nrow(subset)
+  LonLat<-data.frame(subset$lon, subset$lat)
+  names(LonLat) <- c("Longitude", "Latitude")
+  LonLat<-distinct(LonLat)
+  nrow(LonLat) #25922
+  save(LonLat, file = paste(getwd(),"/LonLat_from_OpenCellID_2019_25922_pairs.RData",sep=""))
 
 setwd("~/CODM/masters-thesis/data/cell")
 file = paste(getwd(),"/",sep="")

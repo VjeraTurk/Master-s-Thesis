@@ -1,4 +1,11 @@
-  #241462
+ "
+Matrice nisu kvadratne.
+
+1) Smanjene isključivo na zajedničke ćelije
+2) Proširene, popunjene nulama
+ "
+
+ #241462
   x<-ODout_SH_3_6[rowSums(ODout_SH_3_6)==0]
   x<-ODout_SH_3_6[colSums(ODout_SH_3_6)==0]
   #x ne postoje takvi reci i stupci ->pobriši iz taxi

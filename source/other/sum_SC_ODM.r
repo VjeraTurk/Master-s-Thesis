@@ -1,3 +1,4 @@
+"Matrice zbrojene u jednu 0-24 matricu"
 library(reshape2)
 SCcdrODM<-acast(rbind(melt(ODout_SH_0_3), melt(ODout_SH_3_6), melt(ODout_SH_6_9), melt(ODout_SH_9_12), 
                       melt(ODout_SH_12_15), melt(ODout_SH_15_18),melt(ODout_SH_18_21),melt(ODout_SH_21_24)), Var1~Var2, sum) 

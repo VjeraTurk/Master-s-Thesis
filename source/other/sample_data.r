@@ -1,3 +1,7 @@
+"
+Generiranje (random) uzoraka iz PhoneData zapisa
+"
+
 require("data.table")
 require("readr")
 

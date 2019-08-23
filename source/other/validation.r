@@ -1,4 +1,8 @@
-  #sudo apt-get install libgdal1-dev libgdal-dev libgeos-c1v5 libproj-dev
+"Od 1090 antena, ukupno je 675 onih ne-nul (barem u jednom od perioda
+
+udaljenost između svakog para antena
+"
+#sudo apt-get install libgdal1-dev libgdal-dev libgeos-c1v5 libproj-dev
   install.packages("rgdal", type = "source")
   install.packages("rgeos", type = "source")
   #sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable

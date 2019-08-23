@@ -43,15 +43,13 @@ save(PhoneData, file = paste(getwd(),"/PhoneData_ID_Time_POSIXct.RData", sep="")
   #user  system elapsed 
   # 5.272   0.436   5.713 
   
-######## 4. Get Base Stations locaton from CDR #########
+######## 4. Get Base Stations locatons from CDR #########
 require("data.table")
 require(dplyr)
   
 LonLat<-data.frame(PhoneData$Longitude,PhoneData$Latitude)
 names(LonLat) <- c("Longitude", "Latitude")
 #system.time(LonLat<-select(PhoneData, Longitude,Latitude))
-
-
 #system.time(setorder(PhoneData,Longitude,Latitude))
 
 system.time(LonLat<-distinct(LonLat)) 
@@ -62,7 +60,7 @@ save(LonLat, file = paste(getwd(),"/LonLat_from_CDR_1090_pairs.RData", sep=""))
 file = paste(getwd(),"/LonLat_from_CDR_1090_pairs.RData", sep="")
 system.time(load(file = file))
 
-##### 5. Remove suers with one event
+##### 5. Remove uers with one event
 # remove users with less than k events! (won't confirm a single stop)
 # I guess k * 2 events is needed to confirm 2 stops (confirm movement) #TODO test this
 # rijesi se svih usera s < k evenata ili < 2k ?! 

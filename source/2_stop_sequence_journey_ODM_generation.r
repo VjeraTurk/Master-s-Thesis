@@ -51,6 +51,8 @@ names(LonLat)<- c("Longitude","Latitude")
 file = paste(getwd(),"/LonLat_from_CDR_1027_pairs.RData", sep="")
 load(file=file)
 
+#in no particular order!
+
 Lon_Lat <- paste(LonLat$Longitude,LonLat$Latitude, sep= "_") # ..O,P, Red, Stupac
 
 require("magrittr")

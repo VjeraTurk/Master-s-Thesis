@@ -8,17 +8,22 @@ Matrice nisu kvadratne.
  #241462
   x<-ODout_SH_3_6[rowSums(ODout_SH_3_6)==0]
   x<-ODout_SH_3_6[colSums(ODout_SH_3_6)==0]
-  #x ne postoje takvi reci i stupci ->pobriši iz taxi
+  #x ne postoje reci i stupci gdje je suma 0-> bili su maknuti iz matrica
 
 setwd("/home/adminuser/CODM/masters-thesis/data")
 file = paste(getwd(),"/OD_0_24_SH.RData",sep="")
 load(file = file)
 cdrODM<-OD_0_24_SH
 
+
 file = paste(getwd(),"/OD_0_24_SH_1m_taxi.RData",sep="")
 load(file = file)
 taxiODM<-OD_0_24_SH
 remove(OD_0_24_SH)  
+
+
+taxiODM<-TAXI_SH_0_3
+cdrODM<-ODout_SH_0_3
 
 #ONE WAY
   x<-subset(taxiODM, rowSums(taxiODM)!=0 & colSums(taxiODM)!=0)
@@ -36,7 +41,7 @@ d_y_1<-data.frame(dimnames(y)[1]) #601      #1090 ->many are empty
 names(d_x_1)<-c("Lon_Lat")
 names(d_y_1)<-c("Lon_Lat")
 
-#COLUNS - DESTINATIONS of both matrices -> shoud be reordered to match 
+#COLUMNS - DESTINATIONS of both matrices -> shoud be reordered to match 
 d_x_2<-data.frame(dimnames(x)[2]) #675      #675
 d_y_2<-data.frame(dimnames(y)[2]) #1090     #1090
 names(d_x_2)<-c("Lon_Lat")
@@ -58,18 +63,29 @@ library(dplyr)
 
     #OR ANOTHER
     #UNION, leave the empty zero cells, fill cells with zeros
-    d_1<-union(d_x_1,d_y_1)  #1090 ofc
+    "d_1<-union(d_x_1,d_y_1)  #1090 ofc
     d_1<-list(d_1)
     
     d_2<-union(d_x_2,d_y_2) #1090 ofc
     d_2<-list(d_2) 
-
-    require("optimbase")
+    
+    require(optimbase)
     z<-zeros(nrow(d_1),nrow(d_2))
     dimnames(z)<-list(unlist(d_1),unlist(d_2))
-    
+    " #NE RADI?
+  
+    z<-zeros(1090,1090)
     library(reshape2)
     n<-acast(rbind(melt(y), melt(z)), Var1~Var2, sum) 
+    "> summary(as.vector(n))
+        Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+     0.00000  0.00000  0.00000  0.01569  0.00000 22.00000 
+    > summary(as.vector(y))
+        Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+     0.00000  0.00000  0.00000  0.01575  0.00000 22.00000 
+    prosječna vrijednost manja je u n jer su dodani redovi i stupci sa sumom 0
+    "
+    
     m<-acast(rbind(melt(x), melt(z)), Var1~Var2, sum) 
     
     superheat(n)

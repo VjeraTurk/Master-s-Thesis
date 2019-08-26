@@ -1,6 +1,5 @@
 #pkgs <- c("sp","rgdal","deldir","dplyr","ggplot2","ggthemes", "rgdal")
 #install.packages(pkgs)
-
 require(sp)
 require(rgdal)
 require(deldir)
@@ -40,6 +39,9 @@ SPointsDF_to_voronoi_SPolysDF <- function(sp) {
   
 }
 
+setwd("~/CODM/masters-thesis/data")
+file = paste(getwd(),"/LonLat_from_CDR_1090_pairs.RData", sep="")
+system.time(load(file = file))
 
 vor_pts <- SpatialPointsDataFrame(cbind(LonLat$Longitude, LonLat$Latitude), LonLat, match.ID=TRUE)
 vor <- SPointsDF_to_voronoi_SPolysDF(vor_pts)

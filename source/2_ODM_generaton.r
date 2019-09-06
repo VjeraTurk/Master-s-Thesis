@@ -108,10 +108,25 @@ single_user_journey_counter<-function(user_activity){
     
     i=i+1
     
-    if(user_activity[i,]$Status == 1 & start_confirmed == FALSE) #Ukrcaj
+    #TODO: ispravi ovo
+    if(user_activity[i,]$Status == 1 & start_confirmed == FALSE) #Ukrcaj #2 provjere-> priznaj samo ako su tocke dovoljno blizu, vremenski i prostorno!!(u istj ćeliji?!)
     {
-      first = user_activity[i,]
-      start_confirmed=TRUE
+
+      #off<-SpatialPoints(cbind(c(user_activity[i,]$Longitude),c(tuser_activity[i,]$Latitude),c(user_activity[i,]$ID)),proj4string = slot(vor,'proj4string'))
+      #on<-SpatialPoints(cbind(c(user_activity[i,]$Longitude),c(trip$last.Latitude),c(trip$ID)),proj4string = slot(vor,'proj4string')) #id as third coord
+      
+      #spoints<-rbind(off,on)
+      
+      #x<-spoints %over% vor #ne baca error ako točka nije ni u jednom
+      
+      
+        #if(x[1,]$Longitude == x[2,]$Longitude & x[1,]$Latitude == x[2,]$Latitude)
+      #{
+        first = user_activity[i,]
+        start_confirmed=TRUE
+      #}
+      
+      
       
     }else if(start_confirmed) #iskrcaj
     {
@@ -132,11 +147,39 @@ single_user_journey_counter<-function(user_activity){
 
       try(matrices[[t]][orig,dest]<<- matrices[[t]][orig,dest] + 1) ##<<- gobalna varijabla
       
+      #valid_trip_df<<-rbind(valid_trip_df, cbind(trip))
       start_confirmed=FALSE
       }
     i=i+1
   }  
 }
+"
+stop_indentification<-function(dataframe){
+
+  start_confirmed <-FALSE
+  first = dataframe[1,]
+  
+  for(i in 2:(nrow(dataframe))){
+    curr = dataframe[i,]
+    prev = dataframe[i-1 ,]
+    #print(curr)
+#    if(prev$Status == 0 & curr$Status == 1 & curr$Speed == 0){ -> zahtjeva joÅ¡ uvjeta
+     
+    if(prev$Status == 0 & curr$Status == 1){#ukrcaj
+      start_confirmed <-TRUE
+#    }else if(prev$Status == 1 & curr$Status == 0 & prev$Speed == 0 & start_confirmed == TRUE){
+    }else if(prev$Status == 1 & curr$Status == 0 & start_confirmed == TRUE){#iskrcaj
+
+      trip<-data.frame(first$Time,prev$Time,first$Longitude,first$Latitude,prev$Longitude,prev$Latitude)
+#      trip<-cbind(first$Time,prev$Time,first$Longitude,first$Latitude,prev$Longitude,prev$Latitude)
+      valid_trip_df<<-rbind(valid_trip_df, cbind(trip))
+      start_confirmed <-FALSE
+      first = curr
+      #print(trip)
+    }
+  }
+}
+"
 
     
     #Testing on d_1 approximate duration of execution 2 hours 37 minutes

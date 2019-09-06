@@ -42,12 +42,13 @@ SPointsDF_to_voronoi_SPolysDF <- function(sp) {
 setwd("~/CODM/masters-thesis/data")
 file = paste(getwd(),"/LonLat_from_CDR_1090_pairs.RData", sep="")
 system.time(load(file = file))
-
+LonLat<-as.data.frame(LonLat)
 vor_pts <- SpatialPointsDataFrame(cbind(LonLat$Longitude, LonLat$Latitude), LonLat, match.ID=TRUE)
 vor <- SPointsDF_to_voronoi_SPolysDF(vor_pts)
 system.time(vor_df <- fortify(vor))
 
 save(vor_df, file = paste(getwd(),"/vor_df.RData", sep=""))
+save(vor, file = paste(getwd(),"/vor.RData", sep=""))
 
 "
 

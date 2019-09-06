@@ -47,6 +47,7 @@ hist(ODout_SH_15_18[ ODout_SH_15_18>2], breaks=25)
 
 ####TAXI####
 heatmap(TAXI_SH_15_18, breaks = col_breaks, col = colPal, Colv = NA, Rowv = NA, main = "TAXI 15_18")
+
 #DIMENZIJA MATRICE 1090 x 1090
 nrow(TAXI_SH_15_18)#1090
 ncol(TAXI_SH_15_18)#1090

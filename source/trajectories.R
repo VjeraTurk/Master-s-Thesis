@@ -1,9 +1,26 @@
-install.packages("trackeR")
-install.packages("taxidata", repos = "http://pebesma.staff.ifgi.de",type = "source")
-install.packages("spatstat")
-install.packages("spacetime")
-install.packages("trajectories")
+"install.packages('trackeR')
+install.packages('taxidata', repos = 'http://pebesma.staff.ifgi.de',type = 'source')
+install.packages('spatstat')
+install.packages('spacetime')
+install.packages('trajectories')
+"
 
+library("taxidata")
+Beijing <- taxidata
+Beijing <- Beijing[1:2000]
+
+Z <- lapply(X=1:length(Beijing), function(i){
+q <- cut(Beijing[[i]], "day", touch = F)
+return(q@tracks[[3]])
+})
+
+system.time(plot(Z[[21]],xlim=c(420000,470000),ylim=c(4390000,4455000),lwd=2))
+
+plot(Z[[26]],add=T,col="orange",lwd=2)
+plot(Z[[20]],add=T,col=2,lwd=2)
+plot(Z[[12]],add=T,col=3,lwd=2)
+plot(Z[[15]],add=T,col=4,lwd=2)
+  
 library("trajectories")
 
 "The class ‘Track’ represents a single track followed by a person, animal or an object. In-

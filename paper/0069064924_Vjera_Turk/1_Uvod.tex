@@ -102,7 +102,7 @@ Ovakve metode su zahtjevne iz perspektive utrošenog vremena, uloženog truda i ra
 Anketiranje vozaèa presretanjem vozila eng. \gls{rsi} u prosjeku košta èak 10 eura po jednom zabilježenom putovanju i ukupno obuhvati 10\% prometa. Ova vrsta najèešæe se provodi na autocestama. \cite{Pollard:2013.}  
 
 Provoðenje ovih postupaka zahtjeva mnogo vremena. Pokrivaju malen dio populacije te je na taj naèin dobivena \gls{pom}-a optereæena neizbježnom pristranošæu.\cite{Alhazzani:2016.}
-\todo[inline]{Volio bih vidjeti konkretniji prikaz koji æe ukazati na suštinske prednosti i nedostatke, ne investicijske. Naime, cilj ovog poglavlja jest ukazati kako suvremeni tehnološki sustavi nedostatke tradicionalnih pristupa uspješno prevladavaju.
+\todo[inline]{Volio bih vidjeti konkretniji prikaz koji æe ukazati na suštinske prednosti i nedostatke, ne investicijske. Naime, cilj ovog poglavlja jest ukazati kako \textbf{suvremeni tehnološki sustavi nedostatke tradicionalnih pristupa uspješno prevladavaju.}
 }
 Studija iz 2010. \cite{Cools:2010.} pokazala je da se zadovoljavajuæa razina kvalitete \gls{pom}-a procjenjenih iskljuèivo iz anketa u kuæanstvima postiže tek ako uzorak obuhvaæa 50\% populacije.
 
@@ -186,8 +186,21 @@ Je li vozilo s eCall-om (pa tako i sa SIM karticom) vozilo ili pametni telefon? 
 %Odreðivanje korištenjem \gls{gnss} prijemnika ponovno zahtjeva slanje podataka kao i kod FCD.
 Položaj pokretne stanice unutar javne pokretne mreže može se odrediti triangulacijom signala koje pokretna stanica hvata iz više baznih stanica ili približno odrediti izjednaèavanjem položaja pokretne stanice s položajem (podruèjem pokrivanja) bazne stanice s kojom je pokretna stanica povezana u promatranom trenutku.
 
-\section{\glsfirst{pom} iz zapisa o telekomunikacijskim aktivnostima u javnoj pokretnoj mreži}
+\section{Suvremeni pristupi procjeni \glsfirstplural{pom}}
+(...)
+\subsection{Anonimizacija podataka}
+Sve brojnije informacijske i telekomunikacijske usluge generiraju masivne skupove podataka vezanih za gibanje u prostoru (mobilnost). Podatci koje generiraju pametni telefoni omoguæuju podatkovnim analitièarima razumjeti ponašanje pojedinaca u brojnim domenama, ukljuèujuæi i njihov obrazac kretanja.
 
+%Kao što je veæ spomenuto \gls{pom}-e je moguæe procijeniti iz \gls{cdr} koje operatori prikupljaju u svrhu pružanja i naplaæivanja usluge. Za ovaj postupak stoga ne postoji potreba za dodatnim ureðajima, sustavima ili protokolima središnjeg prikupljanja položaja kao što je to u sluèaju kada se položaj odreðuje pomoæu \gls{gnss} prijamnika. 
+
+%Pokriva pješaèki promet, 
+%%Penetracija od 82\%, 9x\% -> pronaæi radove, Dobra pokrivenost i zemljama u razvoju (u Africi gdje nedostaje landline) Nemaju ni porometnu infrastrukturu pa se može planirati razvoj
+%(...anonimizacija i k-anonimizacija...).
+%\textit{}
+Operatori javne pokretne mreže moraju voditi raèuna o privatnosti pojedinaca kada je rijeè o podatcima koje oni prikupljaju. Ukoliko ustupe podatke za razvoj \glsplural{pom}, takvi podaci moraju biti anonimizirani te ne smije postojati moguænost povratnog inženjerstva kojim bi se povratio izvorni identitet. %U pravilu to znaèi povezivanje sa treæim stranama u poslovnom procesu, koje iz nekog razloga dozvoljavaju pristup podacima. 
+Podaci moraju biti anonimizirani prije pristupa da mogu biti korišteni bez razotkrivanja pojedinaca u skladu s postavkama \gls{gdpr}. %Nakon procjene \gls{pom} provodi se postupak k-anonimizacije opisan u odjeljku \ref{k-an}. 
+
+\subsection{\glsfirst{pom} iz zapisa o telekomunikacijskim aktivnostima u javnoj pokretnoj mreži}
 %\subsubsection{\gls{cdr}}
 %Kako bi pružali i naplaæivali usluge, mobilni operatori moraju prikupljati podatke o telekomunikacijskim aktivnostima korisnika.
 Operatori javnih pokretnih mreža prikupljaju podatke o aktivnostima u javnoj pokretnoj mreži za potrebe pružanja i naplate usluga te za održavanje operativnosti same mreže. %Prije uspostave poziva od/do odgovarajuæeg ureðaja, mora biti poznato s koje bazne stanice odaslati signal.  
@@ -232,25 +245,19 @@ This notion is parameterized to ensure we have sufficient confidence that any st
 %\newpage
 
 
-\subsection{Anonimizacija podataka}
-Sve brojnije informacijske i telekomunikacijske usluge generiraju masivne skupove podataka vezanih za gibanje u prostoru (mobilnost). Podatci koje generiraju pametni telefoni omoguæuju podatkovnim analitièarima razumjeti ponašanje pojedinaca u brojnim domenama, ukljuèujuæi i njihov obrazac kretanja.
 
-%Kao što je veæ spomenuto \gls{pom}-e je moguæe procijeniti iz \gls{cdr} koje operatori prikupljaju u svrhu pružanja i naplaæivanja usluge. Za ovaj postupak stoga ne postoji potreba za dodatnim ureðajima, sustavima ili protokolima središnjeg prikupljanja položaja kao što je to u sluèaju kada se položaj odreðuje pomoæu \gls{gnss} prijamnika. 
 
-%Pokriva pješaèki promet, 
-%%Penetracija od 82\%, 9x\% -> pronaæi radove, Dobra pokrivenost i zemljama u razvoju (u Africi gdje nedostaje landline) Nemaju ni porometnu infrastrukturu pa se može planirati razvoj
-%(...anonimizacija i k-anonimizacija...).
-%\textit{}
-Operatori javne pokretne mreže moraju voditi raèuna o privatnosti pojedinaca kada je rijeè o podatcima koje oni prikupljaju. Ukoliko ustupe podatke za razvoj \glsplural{pom}, takvi podaci moraju biti anonimizirani te ne smije postojati moguænost povratnog inženjerstva kojim bi se povratio izvorni identitet. %U pravilu to znaèi povezivanje sa treæim stranama u poslovnom procesu, koje iz nekog razloga dozvoljavaju pristup podacima. 
-Podaci moraju biti anonimizirani prije pristupa da mogu biti korišteni bez razotkrivanja pojedinaca u skladu s postavkama \gls{gdpr}. Nakon procjene \gls{pom} provodi se postupak k-anonimizacije opisan u odjeljku \ref{k-an}. 
-
-\subsection{Putovanje iz perspektive telekomunikacijskih usluga}
-Priroda ovog pristupa dubinskoj analizi podataka za procjenu POM-a traži definiciju pojma putovanja, polazišta i odredišta. 
+\subsubsection{Putovanje u kontekstu izrade polazišno-odredišne matrice 
+	%iz suvremenih izvora
+	iz zapisa o telekomunikacijskim uslugama
+}
+Priroda ovog pristupa dubinskoj analizi podataka za procjenu POM-a traži definiciju pojma zaustavljanja putovanja, polazišta i odredišta. 
 
  \begin{definition}{Zaustavljanje (engl.\textit{ Stop}}) %u postupku putovanja promatranog iz perspektive telekomunikacijskih usluga 
+ 	\label{stop}
  	je skup minimalno \textit{n} dogaðaja (telekomunikacijskih aktivnosti) u nizu koji su zabilježeni na istom položaju unutar definiranog minimalnog vremenskog perioda. 
  
- Zahtjevom da se radi o više ($n > 1$), a ne jednom ($n = 1$) zabilježenom dogaðaju pokušava se osigurati da se ne radi o tranzitnom veæ o svrsishodnom zaustavljanju i suzbija se bilježenje lažnog kretanje kod privremenog spajanja na susjednu baznu stanicu. 
+ Zahtjevom da se radi o više ($n > 1$), a ne jednom ($n = 1$) zabilježenom dogaðaju pokušava se osigurati da se ne radi o tranzitnom veæ o stvarnom zaustavljanju i suzbija se bilježenje lažnog kretanje kod privremenog spajanja na susjednu baznu stanicu. 
  U sluèaju kada je $n > 1$ zaustavljanje ima 2 vremenske oznake, trenutak kada je zabilježen poèetak i trenutak kada je zabilježen kraj zaustavljanja.
  \end{definition}
 
@@ -305,7 +312,17 @@ Putovanja svake kontekstne kategorije èine po jednu kontekstualiziranu POM-u.
 \todo[inline]{Poglavlje se treba baviti kontekstom i \textbf{ulozi konteksta u postuku procjene POM}, ne POM kao takvom.}
 \subsection{Uloga konteksta u postupku procjene \glstext{pom}}
 
+Svako zaustavljnje (\ref{stop}) ne mora nužno biti (postati) poèetak ili kraj putovanja. Postavljanjem uvjeta da zaustavljanje jest polazište ili odredište putovanja samo ako mu se dokaže kontekst od interesa, eliminiraju se usputna zaustavljanja. Primjerice, ako je kontekst od interesa ogranièen na iskljuèivo "posao" i "prebivalište" s ciljem promatranja samo komutacijskih putovanja, zaustavljanje na benzinskoj crpki neæe se gledati kao kraj putovanja. Komutacijska putovanja se ponavljaju na dnevnoj bazi te su stoga èesto upravo ona koje se nastoji obuhvatiti POM-ma.
 
+Ogranièavanjem na iskljuèivo komutacijska putovanja, velik æe dio putovanja *koja su predvidiva na razini toka* biti odbaèen. Stoga uvoðenjem nekoliko generalnih kontekstnih kategorija ...
+
+%Kontekst zaustavljanja može definirati oznaèava li zaustavljanje konaèno odredište putovanja. Ovisno o primjeni 
+
+
+%Poznavajuæi kontekst zaustavljanja, 
+%Kada poznajemo kontekst zaustavljanja možemo 
+
+Kontekst putvanja 
 (...)
 \cite{Barbour:2019.}
 

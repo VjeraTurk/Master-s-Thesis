@@ -68,7 +68,13 @@
         $R CMD javareconf
 
     after that require `rJava` and `OpenstreetMap` without Error
+
+5.  
+
+    ulem.sty missing
+
+    ulem.sty can be found in a much smaller package (3 MiB instead of 1 000 MiB), namely texlive-generic-recommended:
+    sudo apt-get install texlive-generic-recommended
     
-
-
+    https://askubuntu.com/a/936359/591187
 

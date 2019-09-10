@@ -28,7 +28,7 @@ sum, frechetDist, etc.
 ## create Tracks objects
 tracks1 <- Tracks(list(Beijing[[1]], Beijing[[2]]))
 tracks2 <- Tracks(list(Beijing[[2]], Beijing[[1]]))
-dists(tracks1, tracks2,mean)
+system.time(dists(tracks1, tracks2,mean)) #umjereno dugo
 #Found more than one class "xts" in cache; using the first, from namespace 'spacetime'
 #Also defined by ‘quantmod’
 
@@ -77,7 +77,9 @@ is an increase in the length of movements. In the afternoon, there can be seen a
 the average length of movements which might be caused by traffic.
 "
 library("spatstat")
-system.time(d <- density(Beijing,timestamp = "20 mins",bw.ppl))#WARNING!!! jako dugo se izvršava
+system.time(d <- density(Beijing,timestamp = "20 mins",bw.ppl))#WARNING!!! jako dugo se izvršava -možda i satima?
+#    user   system  elapsed 
+#1780.284    2.368 1799.711 
 par(mfrow=c(1,2),mar=rep(1,4))
 plot(d,main="",ribwid=0.04,ribsep=0.02,cex.axis=1.7)
 #focus on the center

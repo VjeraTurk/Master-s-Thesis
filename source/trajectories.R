@@ -6,7 +6,7 @@ install.packages('trajectories')
 "
 
 library("taxidata")
-Beijing <- taxidata
+system.time(Beijing <- taxidata)
 Beijing <- Beijing[1:2000]
 
 Z <- lapply(X=1:length(Beijing), function(i){

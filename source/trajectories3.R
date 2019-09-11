@@ -17,6 +17,11 @@ the length of the generated time sequence based on the given timestamp, and with
 one.
 
 "
+library("taxidata")
+system.time(Beijing <- taxidata)
+Beijing <- Beijing[1:2000]
+
+
 system.time(ch <- chimaps(Beijing,timestamp = "20 mins",rank = 1))
 
 chall <- attr(ch,"ims")
@@ -53,4 +58,18 @@ is moving to the city in the morning and goes away in the evening. This behaviou
 explained by the movements to the city in the morning and moving back to the countryside
 in the evening.
 "
-  
+
+"The left plot displays the variation of K-function, showing that for small distances
+taxis tend to have a clustering behaviour while for larger distances they favour inhibition. The
+right plot of the variation of the pair correlation function also confirms the same behaviour.
+Due to the preference of moving within particular zones, K-function and pair correlation
+function might result as what is displayed in Figure 12. In other words, taxis might prefer to
+take passengers to close destinations within particular zones rather than further destinations.
+"
+
+system.time(K <- Kinhom.Track(Beijing, timestamp = "20 mins", correction = "translate", q=0))#prilično dugo
+
+par(mfrow=c(1,2),mar=rep(5,4))
+plot(K,cex.axis=1.7,cex.lab=1.5,cex=2)
+g <- pcfinhom.Track(Beijing,timestamp = "20 mins",q=0)
+system.time(plot(g,cex.axis=1.7,cex.lab=1.5,cex=2))#traje jako dugo, mozda i dulje od pola sata# prekinuto

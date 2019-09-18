@@ -1,0 +1,43 @@
+% !TeX encoding = windows-1250
+
+\chapter{Prilagodba prostorne podjele}
+Ako je toènost matrice definirana iskljuèivo kao sliènost svakog njenog elementa s ekvivalentnim u elementom u \textit{grand truth} matrici nužno je osigurati da prostorna podjela matrice odgovara prostornoj podjeli referentne ili je potrebno obje matrice svesti na zajednièku prostornu podjelu. 
+
+\section{Grupacija baznih stanica}
+Kod analize na podruèju cijele države \cite{Goulding:2016.} koristi \textit{k-sredina} algoritam za grupiranje baznih stanica u broj grupa jednak broju \gls{taz} na podruèju Senegala. \cite{Alhazzani:2016.} na podruèju grada Riaydha agregira bazne stanice u 1492 \gls{taz}-e.
+\cite{Mellegard:2011.} ne definira unaprijed broj grupa veæ za grupaciju koristi \textit{mean-shift} algoritam koji sam odreðuje broj grupa na podruèju Švedske, potom koristeæi \gls{osm} grupe veže uz imena gradova i mjesta. U istraživanju \cite{Coscia:2015.} bazne stanice na podruèju Kolumbije grupiraju po jedinicama samouprave (eng. \textit{municipalities}). Isti postupak je korišten i u istraživanju na podruèju Madrida, kako bi  \gls{pom}-e u konaènici bile usporedive s onima dobivenim iz anketa \cite{Frias-Martinez:2012.}.
+
+\section{Interpolacija}
+Postupak konverzije \gls{pom}-a iz prostorne podjele na Voronoi æelije u drugu prostornu podjelu, npr. uniformnu kvadratnu mrežu (æelije $1 km^2$), opisan u priruèniku \cite{Goulding:2016.}. U postupku odreðivanja postotka ukupnog toka Voronoi æelije koji æe se dodijeliti novoj kvadratnoj æeliji predlaže se uzeti u obzir: površinu preklapanja tih æelija, broj zgrada ili ukupnu površinu zgrada (ukljuèujuæi katove) na podruèju preklapanja tih æelija. 
+Na slici \ref{fig:interpolation} je prikazan treæi oblik interpolacije gdje su korišteni podaci o ukupnoj kvadratnoj površini zgrada. 
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=7cm,keepaspectratio=true]{interpolation}
+		\caption{Primjer mozaika \textit{krhotina} koje dozvoljavaju interpolaciju izmeðu Voronoi æelija i kvadratne mreže. Nijansa odražava postotak površine zgrada u \textit{krhotini} u odnosu na cijelu Voronoi æeliju kojoj pripada. Rezultat se dobiva na osnovu tih \textit{težinskih faktora} polazišne i odredišne \textit{krhotine} te pripadajuæih ("roditeljskih") Vornoi æelija. Sumom svih rezultata krhotina jedne kvadratne æelije izraèuna se konaèni tok. \cite{Goulding:2016.}}
+		\label{fig:interpolation}
+	\end{center}
+\end{figure}
+
+\section{Posljedice agregacije prostornih æelija}
+
+Voronoi æelije takoðer je moguæe ugnijezditi (što se èesto radi kod usporedbe s \gls{pom}-ma dobivenim drugim postupkom), a pritom se može u matricu bilježiti i aproksimacija internog toka, odnosno broja putovanja unutar nove æelije (dijagonala matrice). Takva putovanja nazivaju se internim putovanjima.  
+
+Postotak eksternih putovanja koji se gubi u procesu agregacije Voronoi æelija analiziran je  za \gls{pom}-e iz regije Picardie u Francuskoj.
+\textbf{Agregacijom Voronoi æelija na razinu \textit{Urban Areas} (podruèja oko gradova) 85\% svih putovanja postaje internim putovanjima, a na razini \textit{Urban Cores} (podruèja oko veæih gradova) èak 97\% poèetno zabilježenih putovanja je interno, te ostaje samo 3\% eksternih putovanja}. \cite{Bahoken:2013.}. Sliènu situaciju opisuje i \cite{Graells-Garrido:2016.} (Vidi sliku \ref{fig:diagonal})
+
+\begin{figure}[!htpb]
+	\begin{center}
+		\subfloat[Izvor podataka anketa ]{\label{fig:survey}
+			\includegraphics[height=9cm,keepaspectratio=true]{survey}}\\ 
+		%\hspace{10pt}
+		\subfloat[Izvor podataka \gls{cdr}]
+		{\label{fig:cdr}
+			\includegraphics[height=9cm,keepaspectratio=true]{cdr}}
+		\caption{Distribucija \acrshort{cdr} putovanja na podruèju Santiaga, Èile. \gls{pom} je normalizirana prema redovima (polazištima) (*) \cite{Graells-Garrido:2016.}}
+		\label{fig:diagonal}
+	\end{center}
+\end{figure}
+%Ruralna podruèja rjeðe zahtijevaju agregiranje æelija.
+
+Na temelju usporedbi \gls{pom}-a kretanja u 4 razlièita grada, dobivenih iz \gls{cdr} i iz anketa, gdje je svaki grad u anketnim \gls{pom}-ma imao svoju prostornu podjelu odnosno rezoluciju, Studija \cite{Toole:2015.} je pokazala da sa \textbf{smanjenjem rezolucije (visokim stupnjem agregacije Voronoi æelija) stupanj korelacije s \gls{pom}-ma iz ankete (za isti grad) raste}. 

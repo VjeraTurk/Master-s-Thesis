@@ -1,0 +1,278 @@
+% !TeX encoding = windows-1250
+%\chapter{Usporedba dviju \glstext{pom}}
+\chapter{Usporedba dviju \glstext{pom}} %KVALITETE
+\todo{stari naslov Odnosno parametri kavalitete}
+\section{Uvjeti usporedbe}
+\gls{pom}-e koje se usporeðuju trebaju zadovoljavati uvjete usporedbe. Rijeè je o slijedeæim zajednièkim obilježjima:
+\begin{itemize}
+	\item  isto podruèje/grad/država
+	\item  isto doba godine
+	\item vremensko razdoblje iste duljine
+	\item  ako se radi o jednom danu - idealno isti dan u tjednu
+	\item ista kategorija putovanja - tranzitna ili \textit{commuting}
+	\item obje \gls{pom}-e napravljene objektivno na cijeloj populaciji (reprezentativnom uzorku)
+	
+\end{itemize}
+\begin{comment}
+- Isti grad/država/podruèje\\
+- Isto doba godine\\
+- Isto vremensko razdoblje\\
+- Ako se radi o jednom danu, najbolje isti dan u tjednu, ili barem vikend/radni dan\\
+- Ista kategorija putovanja - tranzitna ili \textit{commuting} \gls{pom}-a\\
+--- Isto pridodijeljena putovanja periodu \\
+%--- (ne)obuhvaæena interna putovanja (diagonalu) \\
+- obje \gls{pom}-e napravljene objektivno na cijeloj populaciji 45:38
+(...)
+\end{comment}
+%\\- normalizirana
+%kada se preslikava bs æelije na drugi oblik, nastaju putovanja unutar novih æelija (koje su veæe od bs æelija) \cite{Graells-Garrido:2016.}  
+
+\section{Kriteriji usporedbe} % umjesto komparacijsi indikatori
+\todo[inline, color=yellow]{stari naslov Komparacijski Indikatori, stariji naslov Odnosni parametri kvalitete}
+%Parametar - varijabla o kojoj ovisi odreðeni logièki izraz, matematièka formula ili funkcija, a koju promatramo kao dodatnu ovisnost u izrazu koji se definira kao da je ta vrijednost èvrsta.\\(...)
+\textit{Iz teksta zadatka: ...U ovom radu potrebno je definirati \textbf{odnosne parametre kvalitete} POM-e ... }
+
+\subsection{Definicija putovanja}
+\label{trip_def}
+Kod procjene \gls{pom}-a treba definirati hoæe li se putovanja koja se protežu kroz više perioda dodijeliti vremenskom okviru u kojem zapoèinju ili u kojem završavaju. Iako ponekad nije specificirano, autori \cite{Bera:2011.} \cite{Filic:2016.} \cite{Gundlegard:2016.} sva putovanja dodjeljuju intervalu u kojem je putovanje zapoèeto. Teralytics u praksi procjenjuje obje vrste \gls{pom}-a \cite{Teralytics:2017.}.
+Autori \cite{Gundlegard:2016.} kako bi uvrstili što više putovanja, ne zanemaruju one zapise iz kojih nije jasno vidljiv poèetak putovanja veæ takva putovanja dodjeljuje na osnovu vjerojatnosti da su zapoèela u odreðenom periodu. Slièan postupak spominje se i u \cite{Toole:2015.} gdje za izraèun vjerojatnosti posežu za nacionalnim anketama ili frekvencijom poziva.
+
+Usporedba \gls{pom}-a iz razlièitih izvora (ankete i \gls{cdr}) s 2 razlièite definicije putovanja (samo putovanja \gls{hw} i \gls{wh} te sva putovanja) pokazala se kao loš pristup, \gls{pom}-e su imale mali stupanj sliènosti i strukturalna sliènost bila je vrlo mala. \cite{Bonnel:2015.} Isti zakljuèak kasnije iznosi i \cite{Gundlegard:2016.} èije grafièke prikaze \gls{pom}-a možemo vidjeti na slici \ref{fig:journeys} . \textbf{O definiciji putovanja ovisit æe njihov konaèan broj, odnosno širina toka.}\\
+%(...)
+%The comparison between the ODMs obtained from commuting and mobile phone data provide quite limited results. It is reasonable for the estimated number of trips to differ, as commuting data only relates to trips from the individual’s home to their place of work or study, while mobile phone data cover all trip purposes. But the analysis we have performed also show that the structures of the ODMs have little in common. There is thus a high degree of dispersion in the rates of variation between the two sources of origin-destination data. This preliminary work was conducted on the basis of fairly strong hypotheses. It is therefore quite possible that more detailed analysis would make it possible to moderate some of the strongest hypotheses and improve comparability. Nevertheless, the only trip purposes covered by commuting data are work and study. It would therefore be necessary to be able to estimate the location of the home and place of work or study of the individuals from mobile phone data in order to significantly improve the ODMs produced from this source. Even if a number of algorithms have been described in the literature (Chen et al., 2014; Calabrese et al., 2013; Phithakkitnukoon et al., 2012), our identification of these locations is bound to be uncertain unless we have a large number of events for each mobile phone, which is not the case with the data that we have used. It seems certain that the analysis of the mobile phone data from smartphones which are frequently connected to web-based applications would make it possible to attempt this type of analysis.
+
+Veæ je spomenuta podjela na \gls{pom}-e koje sadrže iskljuèivo \gls{hw} i \gls{wh} putovanja i one koje u obzir uzimaju i ostala putovanja, bilo pod kategorijom \textit{Ostalo} (engl. \textit{Other}), preciznijom podjelom ili bez posebne podjele po svrsi. Prva vrsta obièno je povezana s tradicionalnim postupcima procjene (osobito ankete) dok su ostale obièno prisutne u vremenski zavisnim \gls{pom}-ma, najèešæe procijenjenim modernim postupcima.\\
+\begin{enumerate}
+ \item \textit{commuting trips} - iskljuèivo Home-Work i Work-Home putovanja
+ \item \textit{general trips} -bilo koje kretanje koje zadovoljava uvjete putovanja\\
+\end{enumerate}
+Putovanja kod vremenski zavisnih \gls{pom}-a kreiranih iz \gls{cdr} moguæe je svrstati u nekoliko kategorija na osnovu prihvaæanja ili odbacivanja odreðenih kretanja kao putovanja.\\\\
+\begin{enumerate}
+\item \label{itm:cat_1}putovanja u sve æelije, bez internih putovanja (bez dijagonale)
+\item \label{itm:cat_2}putovanja u sve æelije osim u susjedne
+\item \label{itm:cat_3}agregacija susjednih æelija - \gls{pom}-e s internim putovanjima\\
+\item \label{itm:cat_4}putovanja ogranièena minimalnom i/ili maksimalnom udaljenosti
+\item \label{itm:cat_5} putovanja ogranièena minimalnom duljinom trajanja zaustavljanja (*)
+\item \label{itm:cat_6} putovanja ogranièena minimalnom i/ili maksimalnom duljinom trajanja
+\item \label{itm:cat_7} putovanja ogranièena bojem dogaðaja koji potvrðuju zaustavljanje i maksimalnim vremenskim razmakom izmeðu dva uzastopna dogaðaja\\
+\end{enumerate}
+
+\textbf{Glavni razlog svih ogranièenja kod definicije putovanja je izbjeæi bilježenje lažnog kretanja uzrokovanog \textit{load balancing}-om i lažnog zaustavljanja uzrokovanog neuniformnom gustoæom zapisa pojedinca u vremenu}.
+
+U istraživanju iz 2016. kod definiranja putovanja iz \gls{cdr} eliminirani su zapisi onih korisnika koju su radili dulja "neprekidna putovanja" od preko 100 km dnevno (kategorija 4) pod napomenom da se radi o taksistima i sl. te da ih neæe uzeti u obzir \cite{Graells-Garrido:2016.}.  
+
+Za 2 razlièite definicije putovanja, za \gls{pom}-e iz identiènih podataka na podruèju Snegala generirano je 0.7 putovanja dnevno po korisniku u jednom, a 0.06 u drugom. U potonijoj definiciji ogranièenja su bila: vremensko na 1 sat minimalnog trajanja (kategorija \ref{itm:cat_6}) i prostorno na udaljenost od barem 5 udaljenosti baznih stanica (kategorija \ref{itm:cat_4}). Pokazuje da je najveæa zastupljenost upravo kratkih putovanja. \cite{Gundlegard:2016.} Distribuciju možemo vidjeti na slici \ref{fig:trip_distance_distribution}
+
+\textit{Commuting} putovanja takoðer mogu biti pod nekim ogranièenjima, osim što su najèešæe veæ ogranièena vremenskim periodom u kojem se odvijaju. 
+Primjerice \cite{Gundlegard:2016.} definira minimalnu udaljenost od 3 km izmeðu prebivališta i mjesta rada (kategorija 4) i izvan susjednih æelija (kategorija 2).
+
+
+
+\begin{comment}
+** Kategoriène vrijednosti definicija putovanja npr. \\
+- bez putovanja u susjedne æelije\\
+- bez unutar iste æelije\\
+
+Što mogu biti ulazne velièine, koje mogu biti vrijednosti takvih parametara. 
+Uzmite kategorièke i numerièke gdje je moguæe. Numerièke æe imati raspon
+**
+\cite{Gundlegard:2016.}
+The home and work location are identified as locations with a minimum distance of three kilometers, and not belong to
+neighboring antennas in the Voronoi graph. 
+\end{comment}
+
+
+\begin{figure}[!htpb]
+	\begin{center}
+		\subfloat[POM-a u kojoj je putovanje definirano kao zabilježeni pomak izmeðu 2  antene - \textit{kratka putovanja} ]{\label{fig:short_journeys}
+			\includegraphics[height=7cm,keepaspectratio=true]{short_journeys}}\\ 
+		%\hspace{10pt}
+		\subfloat[POM-a u kojoj je putovanje definirano kao promjena položaja izmeðu 2 prethodno definirana perioda, odnosno izmeðu položaja na kojima korisnik pretežito boravi u ta 2 perioda - definiranjem tih perioda pokušavaju se opisati putovanja od prebivališta na posao i s posla nazad na prebivalište engl. \textit{commuting trips} ]
+		{\label{fig:long_journeys}
+			\includegraphics[height=7cm,keepaspectratio=true]{long_journeys}}
+		\caption{ Dvije POM-e - produkti razlièitih definicija putovanja. Dobivene su iz potpuno istog izvora %\gls{cdr} 
+			\acrshort{cdr} zapisa. \cite{Gundlegard:2016.}}
+		\label{fig:journeys}
+	\end{center}
+\end{figure}
+
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=11cm,keepaspectratio=true]{trip_distance_distribution}
+		\caption{Distribucija udaljenosti putovanja u kilometrima \cite{Gundlegard:2016.}}
+		\label{fig:trip_distance_distribution}
+	\end{center}
+\end{figure}
+
+\subsection{Prostorna razluèivost (rezolucija)}
+
+%Prema hrvatskoj enciklopediji definicija razluèivosti (rezolucije) glasi: mjera za razaznavanje sitnih pojedinosti na nekom prikazu (npr. televizijskoj slici). U raèunalstvu se odnosi na finoæu rasterske slike iskazanu ukupnim brojem slikovnih elemenata (relativna razluèivost) ili brojem slikovnih elemenata po inèu (stvarna razluèivost).\\
+(...)\\
+Kod \gls{pom}-a razvijenih iz \gls{cdr} rezolucija æe ovisit o gustoæi tornjeva bazni stanica. Gustoæa tornjeva snažno je korelirana s gustoæom populacije \cite{Gundlegard:2016.}.
+%The antenna density is strongly correlated to population density and hence we get a better spatial resolution of trips in areas with denser population. 
+Distribucija tornjeva nije homogena, niti na podruèju grada, niti na bilo kojem drugom podruèju. Kod izrazito visoke gustoæe \cite{Goulding:2016.} predlaže grupiranje aktivnosti tornjeva koji se nalaze na udaljenosti manjoj od 75 m (dodjeljivanje aktivnosti najaktivnijem od tornjeva) kako bi se izbjegla prividna kretanja koja uzrokuje preusmjeravanje na bližnje bazne stanice (engl. \textit{load balancing}). 
+%Finally, we also recommend as best practice the merging of BTS activity in high density areas (in Annex 1 we use a 75m cordon, below which any adjacent BTS are merged). This is due to a deleterious reduction in confidence in high density areas, which are subject to greater load balancing, that the BTS’s associated voronoi region accurately reflects a user’s true position. \cite{Goulding:2016.}
+%\cite{Bahoken:2013.} na razini pokraine, regije : The median value of the Vorono? links’ length is 75 km, the minimum is 0.6 km and the maximum is 208 km.
+Median udaljenost baznih stanica 2013. na razini francuske pokrajine je 75 km, minimum 600 m i maksimum 208 km \cite{Bahoken:2013.}. U gradu Santiagu 2016. srednja vrijednost svih udaljenosti polazišta i odredišta svih putovanja je 732 m, minimalna 45 m, maksimalna 14.1 km. Postignuta je zadržavanjem 0.8 kvartil udaljenosti svih zabilježenih kretanja \cite{Graells-Garrido:2016.}
+
+
+%- gustoæa baznih stanica, cca 150m $\rightarrow$ ako ignoriramo sva putovanja u susjedne æelije \\
+
+%\textit{Koja je najmanja jedinica koju smatrate putovanjem? Koja je najmanja udaljenost izmeðu središta dviju stanica?}
+% (...)\\
+%Rezolucija æe ovisiti o toènosti položaja! ...\\
+\begin{comment}
+Takoðer dobro spomenuti kod poglavlja dinamièka podjela $\rightarrow$
+From a telecom operator perspective, the knowledge about the call density and specifically the correlation of the call density to the geography is an important call pattern. This call pattern helps the telecom operator to tune the cellular network \cite{Varun:2013.}
+
+From Figure 3 observe that the antenna density is more towards the south east of Ivory Coast. Correlating this data with Figure 5 and Figure6 one would expect a higher call density, but a combination of light and dark shades indicates that this is not the case. Our experiments with the CDRs show a consistent low call density in the region. It cannot be conclusively said whether this observation is true all year long since the CDRs are only for five months. However, based on the available data, it can be inferred that some amount of network planning to optimise antenna density to match call density is advisable. \cite{Varun:2013.}
+\end{comment}
+
+Voronoi æelije takoðer je moguæe ugnijezditi (što se èesto radi kod usporedbe s \gls{pom}-ma dobivenim drugim postupkom), a pritom se može u matricu zabilježiti i aproksimacija internog toka, odnosno broja putovanja unutar nove æelije (popuniti dijagonalu). Takva putovanja nazivaju se internim putovanjima. 
+\begin{definition}{Interno putovanje}\label{inter} je ono putovanje èije se polazište i odredište nalaze unutar iste prostorne zone. \sout{Kao dodatno ogranièenje može se postaviti da ni putanja putovanja ne izlazi iz prostora te zone - odnosno da se putovanje u cijelosti odvija unutar prostora jedne prostorne zone. Suprotno internom je eksterno putovanje.}
+% jel to ok?!
+\end{definition}
+Postotak eksternih putovanja koji se gubi u procesu agregacije Voronoi æelija analiziran je  za \gls{pom}-e iz regije Picardie u Francuskoj.
+\textbf{Agregacijom Voronoi æelija na razinu \textit{Urban Areas} (podruèja oko gradova) 85\% svih putovanja postaje internim putovanjima, a na razini \textit{Urban Cores} (podruèja oko veæih gradova) èak 97\% poèetno zabilježenih putovanja je interno, te ostaje samo 3\% eksternih putovanja}. \cite{Bahoken:2013.}. Sliènu situaciju opisuje i \cite{Graells-Garrido:2016.} (Vidi sliku \ref{fig:diagonal})
+
+\begin{figure}[!htpb]
+	\begin{center}
+		\subfloat[Izvor podataka anketa ]{\label{fig:survey}
+			\includegraphics[height=9cm,keepaspectratio=true]{survey}}\\ 
+		%\hspace{10pt}
+		\subfloat[Izvor podataka \gls{cdr}]
+		{\label{fig:cdr}
+			\includegraphics[height=9cm,keepaspectratio=true]{cdr}}
+		\caption{Distribucija \acrshort{cdr} putovanja na podruèju Santiaga, Èile. \gls{pom} je normalizirana prema redovima (polazištima) (*) \cite{Graells-Garrido:2016.}}
+		\label{fig:diagonal}
+	\end{center}
+\end{figure}
+%Ruralna podruèja rjeðe zahtijevaju agregiranje æelija.
+
+Na temelju usporedbi \gls{pom}-a kretanja u 4 razlièita grada, dobivenih iz \gls{cdr} i iz anketa, gdje je svaki grad u anketnim \gls{pom}-ma imao svoju prostornu podjelu odnosno rezoluciju, Toole u svom radu \cite{Toole:2015.} (oèekivano) zakljuèuje da sa \textbf{smanjenjem rezolucije (visokim stupnjem agregacije Voronoi æelija) stupanj korelacije s \gls{pom}-ma iz ankete (za isti grad) raste}. 
+
+(*) macro - meso - micro level ? César A. Segovia
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=15cm,keepaspectratio=true]{Santiago_antenna_density}
+		\caption{Prostorna podjela na anketne jedinice u gradu Santiagu. Gustoæa tornjeva baznih stanica po anketnim jedinicama. Gustoæa varira od 1 do 250 tornjeva po anketnoj jedinici.
+		\cite{Graells-Garrido:2016.}}
+		\label{fig:density}
+	\end{center}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=8cm,keepaspectratio=true]{BS_density}
+		\caption{Gustoæa tornjeva baznih stanica po kvadratnom kilometru za pojedine države i grad-državu Singapur.
+			\cite{Chen:2018.}}
+		\label{fig:BS_density}
+	\end{center}
+\end{figure}
+
+\subsection{Vremenska razluèivost}
+
+%Daily trips are estimated from filtered users by analyzing consecutive observations at different stay points during a given time window. They begin by defining an effective day as a period between 3 am one morning and 3 am on the next consecutive morning. This definition is used to minimize the number of trips that are prematurely ended due to the assumption that users start and end each day at home
+Neki autori predlažu da kraj odnosno poèetak jednog dana bude u 3:00 kako bi putovanja zapoèeta prethodnog dana, a koja prelaze u novi dan, u analizi spadala u raniji dan, odnosno kako dobar dio putovanja ne bi bio izostavljen samo zato jer se proteže kroz 2 dana \cite{Schneider:2013.}\cite{Toole:2015.}. 
+Najmanji spominjani interval je 15 min \cite{Bera:2011.}, drugi najmanji 30 min \cite{Schneider:2013.}, kod \gls{pom}-a kreiranih iz podataka generiranih pametnim karticama u javnom prijevozu takoðer 15 min \cite{Travassoli:2016.}, a zastupljena je i dinamièkoj podjela na kratke intervale za najprometnija razdoblja u danu: jutarnji vrhunac (engl. \textit{morning peak}), poslijepodnevni vrhunac (engl. \textit{afternoon peak}) i duže intervale za ostala razdoblja. %U praksi Teralytics procjenjuje \gls{pom}-e od 15 min, 1h i 1 dan.
+
+%** brzina kretanja, primjer, \gls{pom}-e prozora od 5 min, ferrari vs renault ** 
+
+%**Periodi od 15 min i putovanje od sat vremena, kako hendlati?**
+
+
+%e: 7–10 am (AM), 10 am–4 pm (MD), 4–7 pm (PM), and the rest of the day (RD).
+%5 am to 7 am, 7 am to 8 am, 8 am to 9 am, 9 am to 3 pm, 3 pm to 6 pm, 6 pm to 9 pm and 9 pm to 5 am; in total seven time periods
+%\cite{Gundlegard:2016.} 5 min
+
+%U praksi Teralytics generira \gls{pom}-e od 15 min, 1h i 1 dan
+
+%For an individual that makes a trip as defined by the trip definition, corresponding to a CDR at location A at 7:00 and a CDR at location B at 10:45, the contribution to the demand ODMs will be computed as follows. First, we estimate a travel time based on the Euclidean distance from A to B and a travel 10 speed based on prior knowledge the road network (here a fixed value of 50km/h). Let us, as an example, assume that the distance between A and B is 50 kilometers, then we deduce that the trip has started sometime between 7:00 and 9:45. By assigning equal probability to all start times during this time interval, the contribution from this specific trip will be 1/2.75 to the demand matrix holding the demand from 7:00-8:00, 1/2.75 to the demand matrix holding the demand from 8:00-9:00 and 0.75/2.75 to the matrix holding the demand from 9:00-10.00, for the element representing the travel relation A-B. \cite{Gundlegard:2016.}
+
+%\subsubsection{Doba dana}
+%(...)\\
+%- morning peak
+
+
+
+
+
+\subsection{Širina toka}
+%- dakako za pojedinu matricu ovisi o prostornoj i vremenskoj rezoluciji \\
+%- najviše ipak vjerojatno ovisi o definiciji putovanja\\
+\begin{definition}
+Ukupna širina toka podrazumijeva ukupan broj odlazaka/dolazaka po vremenskom okviru za cijelu matricu. Suma svih njenih elemenata.
+\end{definition}
+Na širinu toka utjecat æe svi prethodno spomenuti kriteriji usporedbe/parametri kvalitete.
+Osim njih, utjecat æe velièina i reprezentativnost uzorka stanovništva te k-anonimizacija.
+
+Neka istraživanja izdvajaju samo najaktivnije korisnike (generalno one s najviše generiranih dogaðaja) za kreiranje \gls{pom}-a \cite{Schneider:2013.} \cite{Toole:2015.}.
+%dok \cite{Gundlegard:2016.} filtrira samo "najljepša putovanja".
+
+2015., istraživanje kreiranja \gls{pom} iz \gls{cdr} na podruèju jedne francuske regije je podijelilo korisnike u 3 skupine po kolièini podataka koju generiraju te se pokazalo da frekvencija korištenja nije uvela pristranost \cite{Bonnel:2015.}. Podsjetimo se ovdje da je u poglavlju \ref{days_of_the_week} reèeno da broj aktivnih korisnika, a posljedièno i širina toka, znaèajno varira iz dana u dan unutar tjedna.
+Za razliku od izvlaèenja najaktivnijih korisnika \cite{Calabrese:2011.} uzima samo sluèajno odabranih 25\% korisnika (njih 1 milijun) da pojednostavi analizu, a \cite{Graells-Garrido:2016.} samo 100,000, kako bi u konaènici \gls{pom} bila usporediva s onom dobivenom iz ankete provedene na uzorku iste velièine.
+
+Slabo obuhvaæanje krajnjih dobnih skupina zbog slabe zastupljenosti mobilnih ureðaja kod najstarije i najmlaðe dobne skupine ne tumaèi se kao pristranost, uz napomenu da su to ujedno skupine sa generalno slabom mobilnosti u odnosu na ostale opæenito. \cite{Bonnel:2015.}. Studija \cite{Goulding:2016.} istièe da operatori mogu svoje usluge tržiti razlièitim demografskim skupinama, a najèešæe su izuzetak skupine slabijeg socio-ekonomskog stanja. Kod tržišta gdje veliki postotak stanovništva posjeduje mobilni ureðaj (npr. 92\% za urbana podruèja Tanzanije) eventualno postojanje pristranosti može se smatrati zanemarivim.
+
+Nije rijetkost da su \gls{pom}-e dobivene iz anketa rijetko popunjene, %pogotovo kod visoke vremenske i prostorne rezolucije,
+odnosno da se veæinski radi o Nul-æelijama (eng. \textit{Null-cells, Zero-cells}). U istraživanju kreiranja \gls{pom}-a iz ankete, 2010. \cite{Cools:2010.} zasebno je analizirana \gls{pom}-a sa i bez takvih æelija jer je od 589 $\times$ 589 æelija, èak 77.8\% njih bilo Nul-æelija. Ista situacija je s \gls{pom}-ma kreiranim iz \gls{rsi}, dok æe \gls{pom}-e kreirane iz GPS ili \gls{cdr} zapisa umjesto rijetko biti gusto ispunjene, najèešæe vrlo malim vrijednostima umjesto nula. \cite{Vuren:2015.}.
+
+%- o tome æe ovisiti i Zero-cells (Nul-æelije)\\
+%- velièina uzorka (postotak stanovništva)\\
+%- k-anonimizacija\\
+%- prosjeèan broj putovanja po stanovniku/ispitaniku Netko:nekad nešto tipa 3 i 4.5, ugl. nešto veæi broj za CDR \\
+%- samo najaktivniji korisnici \cite{Schneider:2013.} \cite{Toole:2015.} (pristranost?) $\rightarrow$ jedno istraživanje podijelilo je korisnike u 3 skupine po kolièini podataka koju generiraju te su dokazali da frekvencija korištenja nije uvela pristranost. \cite{Bonnel:2015.}  \\
+%- za razliku od izvlaèenja najaktivnijih korisnika -\cite{Calabrese:2011.} uzima samo sluèajno odabranih 25\% korisnika (njih 1 milijun) da pojednostavi analizu. ...Dobro šta, da može pješke na prste raèunati?!\\
+%- broj aktivnih korisnika unutar jednog tjedna jako varira iz dana u dan.  \cite{Bonnel:2015.}\\ \cite{Graells-Garrido:2016.}\\
+%- Pristranost kolièine generiranih podataka s dobi \cite{Bonnel:2015.}$\rightarrow$ još uvijek su mobiteli slabije zastupljeni kod djece i starijih ali to su takoðer i skupine sa smanjenom mobilnosti.
+%\subsection{Geometrija prostorne podjele}
+%(ne)uniformna podjela ...
+%Interpolacija - ima li smisla 2 razlièite podjele?!
+
+\begin{comment}
+\subsubsection{Infrastruktura i sredstva kretanja}
+Kao što je veæ spomenuto u potpoglavlju \ref{sredstva}, \gls{pom}-e kreirane iz \gls{cdr} obuhvaæaju sva sredstva kretanja, pješaèki promet i podruèja bez prometne infrastrukture.
+
+%- cdr obuhvaæa sav, èak i pješaèki promet\\
+%\subsubsection{Sredstvo kretanja}
+- GPS najcesce komercijalna vozila\\
+- pametne kartice -javni prijevoz\\
+-prebrojavanje vozila- samo motorna vozila ?!
+\end{comment}
+
+\subsection{Gustoæa informacija - kontekst}
+Informacija na razini putovanja - izrazito detaljno\\
+Informacija na razini toka (postotka toka) - zlatna sredina\\
+Informacija na razini cijele matrice - "nedovoljno" detaljno\\
+(...)
+
+
+
+\section{Diskusija}
+(...)\\
+- Ukoliko je rezlucija mala (velike æelije) nema potrebe za preciznim definiranjem kraja putovanja \\
+- O definiciji putovanja ovisit æe i zero-cells ?
+- \cite{Gundlegard:2016.} str. 9 definicija putovanja i prostorna i vremenska rezolucija, DEFINICIJA PUTOVANJA JE KLJUÈNA\\
+-Za analizu Peak hour - intervali od 5 minuta! \cite{Gundlegard:2016.} str. 10\\
+- 30 min vremenski okvir\cite{Schneider:2013.} str. 6\\
+-short trips are less likely to use public transport\cite{Graells-Garrido:2016.}
+
+\textit{stvari koje stvaraju neodreðenost jer ne mogu biti objektivno definirane. Sve navedite tu što nije jednoznaèno odreðeno, ima nekakvih preklapanja, što onda izaziva neodreðenost.}
+
+**zasebni kriterij - dodatak***\\
+- takve matirice su subjektivne, "nisu objektivne"\\
+-faktor skaliranja spominje se u najmanje 2 istraživanja, u jednom se radi o x 10\\
+Predlaže skaliranje na osnovu prebrojavanja prometa na kljuènim mjestima izvuèenim iz postupka kreiranja \gls{pom}-a prije skaliranja i interpolacije na kvadratnu mrežu - zadnjeg koraka \cite{Goulding:2016.}. 
+%- noramlizacija POM? koja je praksa ? 
+
+\begin{comment}
+2 modela
+PoV (Predicted vs Observed)
+
+Robusnost  ->unašanje šuma
+
+\cite{Zhao:2017.} kad spominje TAD
+\end{comment}
+

@@ -4,17 +4,27 @@
 \section{Definicija Polazišno odredišne matrice}
 
 \theoremstyle{definition}
-\begin{definition}{Polazišno-odredišna matrica} definirana je tako da svaki njen element predstavlja broj putovanja izmeðu odgovarajuæeg para zona unutar promatranog podruèja u promatranom vremenskom razdoblju $T$, u svakom smjeru zasebno. Redovi u \gls{pom}-i $i = 1,2,3...m$ predstavljaju polazišta (izvore) prometnog toka, a stupci $j = 1,2,3...n$ njihova odredišta (ušæa). Element na poziciji $i, j$ u \gls{pom}-i predstavlja broj putovanja iz pripadajuæe polazišne zone $i$ u pripadajuæu ciljnu zonu $j$. 
+\begin{definition}{Polazišno-odredišna matrica} definirana je tako da svaki njen element predstavlja broj putovanja izmeðu odgovarajuæeg para zona unutar promatranog podruèja u promatranom vremenskom razdoblju $T$, u svakom smjeru zasebno. Redovi u \gls{pom}-i $i = 1,2,3...m$ predstavljaju polazišta (izvore) prometnog toka, a stupci $j = 1,2,3...n$ njihova odredišta (ušæa). Element na poziciji $i, j$ u \gls{pom}-i $f_{ij}$ predstavlja broj putovanja iz pripadajuæe polazišne zone $i$ u pripadajuæu ciljnu zonu $j$. Broj putovanja naziva se širina prometnog toka (eng. \textit{flow}). 
 \end{definition}
 \gls{pom}-a se može smatrati matriènim zapisom težinskog, usmjerenog grafa, gdje su težinski faktori usmjerenih veza širine prometnih tokova izmeðu èvorova mreže koji predstavljaju zone na koje je promatrano podruèje podijeljeno. 
-%R: Kad se subjekt razmatra iz opæe perspektive, o njemu se govori u jednini!
-%Izbjegavati zavisne reèenice, PRIDJEVE i PRILOGE
+
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=15cm,keepaspectratio=true]{matrix_graph}
+		\caption{Polazišno-Odredišna Matrica i pripadajuæi usmjereni graf *zamjeniti novom kojaima i i j* }
+		\label{fig:matrix}
+	\end{center}
+\end{figure}
+
 
 Postoje brojni postupci procjene \gls{pom} o kojima je rijeè u narednom odjeljku. %Dok se još uvijek ulaže u razvoj matematièkih modela koji imaju za cilj poveæati kvalitetu \glsplural{pom} procijenjenih tradicionalnim postupcima, u novije vrijeme razvijaju se postupci koji imaju veliki potencijal. Ažurnost podataka o kretanju i moguænost obuhvaæanja mnogo veæeg uzorka stanovništva od tradicionalnih postupaka.
 % Kod pojedinih operatora radi se o oko èak 40-50\% svih stanovnika neke države \cite{Bonnel:2015.}.  (...)
 %zamijeniti tradicionalne metode i postati standard u analizi prometa pa tako i procjeni \gls{pom}-a.
-\gls{pom}-a može biti procijenjena za sadašnje ili planirano prometno optereæenje. Može biti prikazana ukupno ili po pojedinim naèinima prijevoza (modalitetima prometnog sustava - osobna vozila, vozila javnog prijevoza, teretna vozila, pješaci itd.) i/ili razlièitim svrhama putovanja (putovanja na posao, putovanja kuæi...).  \cite{Jelusic:2016.}
+\gls{pom}-a može biti procijenjena za sadašnje ili planirano prometno optereæenje. Može biti prikazana ukupno ili po pojedinim naèinima prijevoza (modalitetima prometnog sustava - osobna vozila, vozila javnog prijevoza, teretna vozila, pješaci itd.) i/ili razlièitim svrhama putovanja (putovanja na posao, putovanja kuæi...)
+. \cite{Jelusic:2016.}
 
+\begin{comment}
 Odreðivanje konteksta putovanja proširuje podruèje pokrivanja u fizièkom i informacijskom smislu te poveæava toènost \gls{pom}-e putem unosa relevantnih atributa vezanih za naèin i svrhu putovanja, èime je putovanje toènije opisano. Specificira socio-ekonomske aktivnosti koje su pokretaèi putovanja odnosno motivatori individualne i grupne mobilnosti. %razlozi kretanja stanovništva. %in the first place. 
 Preciznost odreðivanja konteksta definira izbor metode procjene \gls{pom}-e.
 %Moguænost preciznog odreðivanja konteksta zavisi o metodi procjene \gls{pom}-e.
@@ -24,15 +34,16 @@ Kada kontekst (svrha) putovanja nije izvorno navedena kao opisna velièina (predi
 %%IZBACITI: razvijene su metode koje pomoæu vanjskih izvora o sadržaju procjenjuju kontekst putovanja.
 moguæe je o kontekstu putovanja zakljuèiti iz baza neizravnih kontekstualiziranih podataka treæih strana (npr. zapisi o korištenju telekomunikacijske mreže dopunjeni prostornim podatcima \glstext{gis}) uz korištenje odgovarajuæih postupaka prostorne statistike i analitike.
 %kada je rijeè o novijim metodama procjene POM-a, autori razlièito pristupaju kontekstualizaciji. (...)
+\end{comment}
+
 \section{Tradicionalni pristupi procjeni \glstext{pom}}
 
 \subsection{Izvori ulaznih podataka}
-Tradicionalni pristupi ukljuèuju metode provoðenja anketiranja. Postoji nekoliko vrsta anketa: u kuæanstvima, presretanje vozila, anketiranje  prijevoznih kompanija i tvrtki, tranzit na granici, turisti u hotelima i parking \cite{Cools:2010.}. 
-%\todo[inline]{Podjela po subjektima anketa. Predlažem detaljniju razradu u metodološkom smislu, uz korištenje liteature poput:		Hyndman, R J, and Athanasopoulos, G. (2018). Forecasting: Principles and Practice (2nd ed). (Chapter 4: Judgemental Forecast)). Preuzeto s: https://otexts.com/fpp2/judgmental.html}
-
-Metode koje ukljuèuju prebrojavanje vozila na kljuènim èvorištima prometne infrastrukture manje su zahtjevne za izvoðenje u odnosu na ankete i znaèajno smanjuju vrijeme i troškove prikupljanja podataka. Postupci ukljuèuju: analizu nadzornih snimaka prometa, automatski sustav za prepoznavanje i oèitovanje registarskih ploèica engl. \gls{anpr}, osjetila prometnog toka (radarska, magnetna, video-senzori, zvuèna..)  i  ruèno prebrojavanje. Primjenom ovih postupaka nije moguæe pouzdano odrediti stvarna polazišta i odredišta putovanja \cite{Bonnel:2015.}.
-
-Ovakve metode su zahtjevne iz perspektive utrošenog vremena, uloženog truda i radne snage stoga se ne provode èesto. Anketiranje putovanja u kuæanstvima provodi se na podruèjima brojnih svjetskih metropola tek jednom u deset godina. U veæini svjetskih metropola na provoðenje anketa odlazi najveæi postotak budžeta planiranja, u procjeni oko 7.4 milijuna dolara godišnje izdvaja se za ankete po kuæanstvima. \cite{Cools:2010.}
+\subsubsection{Ankete}
+Tradicionalni pristupi ukljuèuju metode provoðenja anketiranja. Postoji nekoliko vrsta anketa: u kuæanstvima, presretanje vozila, anketiranje  prijevoznih kompanija i tvrtki, tranzit na granici, turisti u hotelima i parking \cite{Cools:2010.}. Ankete su zahtjevne iz perspektive utrošenog vremena, uloženog truda i radne snage stoga se ne provode èesto. Anketiranje putovanja u kuæanstvima provodi se na podruèjima brojnih svjetskih metropola tek jednom u deset godina. U veæini svjetskih metropola na provoðenje anketa odlazi najveæi postotak budžeta planiranja, u procjeni oko 7.4 milijuna dolara godišnje izdvaja se za ankete po kuæanstvima. \cite{Cools:2010.} %\todo[inline]{Podjela po subjektima anketa. Predlažem detaljniju razradu u metodološkom smislu, uz korištenje liteature poput:		Hyndman, R J, and Athanasopoulos, G. (2018). Forecasting: Principles and Practice (2nd ed). (Chapter 4: Judgemental Forecast)). Preuzeto s: https://otexts.com/fpp2/judgmental.html}
+\subsubsection{Prebrojavanje vozila}
+Metode koje ukljuèuju prebrojavanje vozila na kljuènim èvorištima prometne infrastrukture manje su zahtjevne za izvoðenje u odnosu na ankete i znaèajno smanjuju vrijeme i troškove prikupljanja podataka. Postupci ukljuèuju: analizu nadzornih snimaka prometa, automatski sustav za prepoznavanje i oèitovanje registarskih ploèica engl. \gls{anpr}, osjetila prometnog toka (radarska, magnetna, video-senzori, zvuèna..)  i  ruèno prebrojavanje.
+\textbf{Primjenom ovih postupaka nije moguæe pouzdano odrediti stvarna polazišta i odredišta putovanja \cite{Bonnel:2015.}, veæ se ona odreðuju matematièki modeliranjem uz uvažavanje pretpostavki}*. Pozicioniranje opreme ili osoba koje rade obzervaciju prometa treba biti plansko, a broj dostupnih ureðaja/ljudi ogranièavajuæi je faktor za velièinu podruèja koje je moguæe nadzirati. \cite{Bera:2011.}
 
 \subsection{Matematièko modeliranje prometa}
 Klasièan bazni model za procjenu prometne potražnje je Gravitacijski model (eng. \textit{Gravity model})  koji kod proraèuna "privlaènosti" 2 zone uzima u obzir gustoæu populacije, udaljenost i troškove putovanja. Izvedene verzije integriraju i neke druge (socio-ekonomske) faktore. \cite{Gundlegard:2016.}
@@ -102,10 +113,11 @@ komercijalna vozila, Taxi
 - ITrack.CTrack,VTrack
 %VoWifi
 
+\begin{comment}
 \section{Kontekst putovanja}
 Putovanje kao informacijski objekt èine: polazišni položaj iz kojeg je putovanje krenulo, odredišni položaj u kojem se putovanje završava, vremenska oznaka kada je poèelo i kada je završilo. *Kada je poznat ili odreðen, u navedeno se ubraja i kontekst putovanja.*
 
- \definition{Kontekst} putovanja je informacija vezana uz putovanje, njegovo polazište ili odredište koja procjenjuje ili upuæuje na motiv (svrhu) kretanja, naèin prijevoza ili željeni faktor po kojem se putovanja mogu kategorizirati i time ih preciznije definirati (...u informacijskom smislu).
+\definition{Kontekst} putovanja je informacija vezana uz putovanje, njegovo polazište ili odredište koja procjenjuje ili upuæuje na motiv (svrhu) kretanja, naèin prijevoza ili željeni faktor po kojem se putovanja mogu kategorizirati i time ih preciznije definirati (...u informacijskom smislu).
 % konkretizirati
 % karakterizirati
 
@@ -157,6 +169,8 @@ Primjeri oznaka vezanih za èvorove:  \textit{office=company}, \textit{building=r
 \subsection{Uloga konteksta u postupku procjene \glstext{pom}}
 \textbf{Odreðivanje konteksta putovanja proširuje podruèje pokrivanja u fizièkom i informacijskom smislu te poveæava toènost \gls{pom}-e putem unosa relevantnih atributa vezanih za naèin i svrhu putovanja, èime je putovanje toènije opisano.}[M]
 (...)
+\end{comment}
+
 
 \chapter{Motivacija}
 

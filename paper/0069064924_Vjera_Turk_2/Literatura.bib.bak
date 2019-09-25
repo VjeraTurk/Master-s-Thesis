@@ -290,6 +290,14 @@ mobilnih telefona},
   Timestamp                = {05.06.2019}
 }
 
+@Conference{Segovi:2015.,
+  Title                    = {{Origin-Destination Trips and Skims Matrices}},
+  Author                   = {C\'esar A. Segovia},
+  Year                     = {2015.},
+
+  Timestamp                = {25.09.2019}
+}
+
 @Article{Stupar:2018.,
   Title                    = {{Socio-Economic Origin-Destination Matrix Derivation Through Contextualization of Material World}},
   Author                   = {Ivana Stupar and Petra Martinjak and Vjera Turk and Renato Filjar},

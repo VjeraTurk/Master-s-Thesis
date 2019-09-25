@@ -49,12 +49,13 @@ Metode koje ukljuèuju prebrojavanje vozila na kljuènim èvorištima prometne infra
 Toènost matrice poveæava se s brojem stanica. Stanice na razlièitim položajima u prometnoj mreži imaju razlièit stupanj utjecaja na procjenu \gls{pom}. Važno je odrediti optimalan broj stanica prebrojavanja i njihovih lokacija u prometnoj mreži. \cite{Bera:2011.} Optimalni uvjeti dobit æe se poštujuæi slijedeæa èetiri pravila: \\
 \begin{enumerate}
 \item Barem jedna stanica prebrojavanja po paru zona
-\item toèke prebrojavanja trebaju biti na onim prometnim vezama (cestama) izmeðu para zona gdje protjeèe najveæi moguæi prometni tok izmeðu te 2 zone 
-\item Odabrana prometna veza treba presijecati što više moguæe tokova
+\item Toèke prebrojavanja trebaju biti na onim prometnim vezama (cestama) izmeðu para zona gdje protjeèe najveæi moguæi prometni tok izmeðu te 2 zone 
+\item Odabrana prometna veza treba presijecati što je više moguæe tokova
 \item Rezultati prebrojavanja prometa na svim vezama trebaju biti linearno nezavisni 
 \end{enumerate}
 
-Prošireni modeli za pozicioniranje stanica u današnjim programskim podrškama imaju moguænost ogranièavanja budžeta za postavljanje ili moguænost nadogradnje novih stanica na postojeæu infrastrukturu- Zbog ogranièenog budžeta najèešæe nije moguæe ispošovati prvo pravilo.\cite{Bera:2011.}
+Prošireni modeli za pozicioniranje stanica u današnjim programskim podrškama imaju moguænost ogranièavanja budžeta za postavljanje ili moguænost nadogradnje novih stanica na postojeæu infrastrukturu. \textbf {Zbog ogranièenog budžeta najèešæe nije moguæe ispošovati prvo pravilo. \cite{Bera:2011.} U praksi, model prometne potražnje može imati 2,000 \gls{taz} što znaèi da pripadajuæa \gls{pom}-a ima 4 milijuna æelija dok je na prometnoj mreži postavljeno svega 1,000 stanica za prebrojavanje.
+\cite{Segovi:2015.}}
 
 \subsection{\textit{\glsfirst{taz}}}
 \gls{taz} je strani naziv za jedinicu prostorne podjele (zonu) kod analize prometa. Kod programskih podrška za analizu prometa površina tih jedinica varira i nije uniformna. Podjela se može temeljiti na populaciji ili broju zaposlenih na nekom prostoru, primjerice svaka zona pokriva prostor na kojem obitava otprilike tri tisuæe ljudi, ili zone generiraju podjednak broj izlaznih putovanja (jednaka širina izlaznih tokova) \cite{Goulding:2016.}. 
@@ -84,10 +85,50 @@ Klasièan bazni model za procjenu prometne potražnje je Gravitacijski model (eng.
 
 Matematièko modeliranje prometa zahtjeva veliku kolièinu podataka - informacija o prometnoj mreži i prometnoj potražnji. Toènost modelirane (planirane) prometne situacije ovisi o kvaliteti dostupnih informacija te kako su podaci kombinirani, koji težinski faktori su primijenjeni za razlièite izvore. Prometna potražnja kljuèna je komponenta te stoga gotovo svaki prometni model zahtjeva \gls{pom}-u koja specificira prometnu potražnju izmeðu zona u prometnoj mreži.  Toèna \gls{pom}-a osnova je za odluke u mnogim \gls{its} koji su zauzvrat kljuèni za izbor ruta u razlièitim sustavima navigacijskog navoðenja. 
 
-Neke od pretpostavki kojima se vode u modeliranju su primjerice da je ukupna dnevna potražnja  podjednaka u oba smjera kod svakog para zona na podruèju grada \cite{Peterson:2007.}, da svi korisnici imaju saznanja o situaciji na cesti \cite{Goulding:2016.} te da je mobilnost opæenito manja tijekom zime nego tijekom ljeta \cite{Bonnel:2015.} i da je broj putovanja po kuæanstvu proporcionalan dohotku \cite{Espad:2013.}. 
+Neke od pretpostavki kojima se vode u modeliranju prometne potražnje su primjerice da je ukupna dnevna potražnja  podjednaka u oba smjera kod svakog para zona na podruèju grada \cite{Peterson:2007.}, da svi korisnici imaju saznanja o situaciji na cesti \cite{Goulding:2016.} te da je mobilnost opæenito manja tijekom zime nego tijekom ljeta \cite{Bonnel:2015.} i da je broj putovanja po kuæanstvu proporcionalan dohotku \cite{Espad:2013.}. 
 
 
-\subsection{Vremenski nezavsno i vremenski zavisno modeliranju}
+\textbf{Ankete se provode na limitiranom broju stanovnika, a limitiran je i broj stanica za prebrojavanje. Estimacija \gls{pom} iz prebrojanih vozila je matematièki pododreðena (više je nepoznanica nego poznatih informacija).} To znaèi da bi velik broj matrica odgovarao prebrojanim vozilima. 
+
+%As stated previously, the ODME is mathematically under-determined (more unknowns than knowns), which means that it could have many solutions; i.e., it could be that many OD matrices could perfectly match the counts observed on the links.
+
+
+\textbf{Moguæe je kombinirati oba izvora u procjeni POM-a.} Temeljna ideja kod modeliranja je: 
+\begin{enumerate}
+
+\begin{comment}
+The idea is simple: find a reasonable OD table that will reproduce known traffic counts. On large networks, there are many different OD tables that will reproduce traffic counts with equal quality, so there is a need for
+additional information to help choose an OD table. Most algorithms available today supplement the traffic counts with a “seed” OD table that is a best-guess approximation of the desired result. A seed OD table may be one that has been observed in the past, one that has been observed recently but imprecisely, or one developed from principles of driver behavior. 
+\end{comment}
+
+\item 	Pronaæi \textit{razumnu} postojeæu POM-u i raspodjelom njenih tokova na prometnu infrastrukturu stimulirati rezultate prebrojavanja na odabranim toèkama u prometnoj mreži. 
+
+U postupku se za velike prometne mreže može ukomponirati i veæi broj postojeæih \gls{pom}-a. (Ponekad postoji više POM-a za isto podruèje i tada je potrebno prikupiti informacije i odabrati one koje najviše odgovaraju.) Veæina algoritama danas koristi takozvanu engl. \textit{seed} POM-u koja je \textit{najbolja procjena} dosadašnje potražnje, a koja procjenjuje prometnu potražnju u prošlosti- npr. iz anketiranja po kuæanstvima, nedavnu prometnu potražnju neprecizno ili je potražnja razvijena iz \textit{principa tipiènog ponašanja vozaèa}. \cite{Segovi:2015.}
+
+\begin{comment}
+The OD matrix estimation (ODME) reads an initial, or seeded, trip matrix
+from which to modify based upon an iterative process of evaluating the
+ratios of assigned trips to counts on links with counts, the modification of the OD trips, and the reassignment of the modified trip matrix until the user- specified number of passes is reached. 
+\end{comment}
+
+
+\item Poèetnu \textit{(engl. \textit{seed})} \gls{pom}-u  modificirati iterativnim procesom evaluacije omjera tokova dodijeljenih prometnim vezama iz postojeæe matrice i predbrojenim tokovima na vezama gdje se promet prebrojavao. \cite{Segovi:2015.}
+
+U tom iterativnom procesu prometni tokovi iz modificirane \gls{pom}-e ponovno se dodjeljuju prometnoj infrastrukturi sve dok se ne postigne zadani broj iteracija. Ulaz u svaku iteraciju je i zapis najjeftinijih puteva, izraèunat tijekom uravnotežene raspodjele po prometnoj infrastrukturi. \cite{Segovi:2015.}
+
+
+\begin{comment}
+\item Also required as input are the minimum path files, one per iteration, which are generated during the equilibrium highway loading; and thi sprocess is continued until a statistically acceptable trip table and assignment is generated. 
+
+When a time-variant OD matrix estimation is needed, as in a dynamic traffic assignment (DTA) modeling framework, then the ODME can also be made dynamic. In this case, a dynamic OD table gives the number of tripsbetween each origin zone and each destination zone that start at a
+particular time. Dynamic OD tables require dynamic traffic counts and a
+dynamic seed OD table.
+\end{comment}
+
+\end{enumerate}
+
+
+\subsection{Vremenski nezavisno i vremenski zavisno modeliranju}
 
 Modeliranje prometa dijeli se na dvije grane, vremenski nezavisnu (statièku, analitièku) i vremenski zavisnu (simulacijsku)%, od kojih svaka ima \textit{makro} i \textit{mikro} razinu
 . U statièkom modeliranju cilj je analiza prometa za strateška, investicijska planiranja izgradnje nove infrastrukture. Modeli procjenjuju prosjeènu dnevnu prometnu potražnju (period od 16 ili 24 sata). Radi se o vremenski nezavisnoj analizi.
@@ -101,10 +142,6 @@ Neki \textit{Peak-hour} vremenski modeli koji opisuju potražnju za vrijeme dnevn
 
 Veæina razvijenih algoritama za vremenski zavisno
 modeliranje iz postupka prebrojavanja (engl. \textit{link count}) primjenjuju se na malim, zatvorenim prometnim mrežama kao što su raskrižja, petlje i manje autoceste. \cite{Bera:2011.}
-
-
- (...)
-
 
 \subsection{Pokretna osjetila}
  %rad iz 1972
@@ -230,12 +267,12 @@ Primjeri oznaka vezanih za èvorove:  \textit{office=company}, \textit{building=r
 
 \chapter{Motivacija}
 
-\todo[inline]{- pojava novih izvora podataka i postupak procjene migracija\\
+\todo[inline]{- pojava novih izvora podataka i postupaka procjene migracija\\
 - veæa preciznost odreðivanja položaja. polazišta i odredišta\\
 - kontekstualizacija\\
 - toènost opisa putovanja raste\\
 - podruèje primjene raste\\
-- potencijalno vrlo velik rrezentativni uzorak (CDR)\\
+- potencijalno vrlo velik reprezentativni uzorak (CDR)\\
 - jako dobra rezolucija u vremenu\\
 
 - osigurati anonimnost

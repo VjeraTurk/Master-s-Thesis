@@ -41,12 +41,23 @@ moguæe je o kontekstu putovanja zakljuèiti iz baza neizravnih kontekstualizirani
 \subsubsection{Ankete}
 Tradicionalni pristupi ukljuèuju metode provoðenja anketiranja. Postoji nekoliko vrsta anketa: u kuæanstvima, presretanje vozila, anketiranje  prijevoznih kompanija i tvrtki, tranzit na granici, turisti u hotelima i parking \cite{Cools:2010.}. Ankete su zahtjevne iz perspektive utrošenog vremena, uloženog truda i radne snage stoga se ne provode èesto. Anketiranje putovanja u kuæanstvima provodi se na podruèjima brojnih svjetskih metropola tek \textbf{jednom u deset godina}. U veæini svjetskih metropola na provoðenje anketa odlazi najveæi postotak budžeta planiranja, u procjeni oko 7.4 milijuna dolara godišnje izdvaja se za ankete po kuæanstvima. \cite{Cools:2010.} Podaci koje æe ankete stanovništva bilježiti osim broja stanovnika su broj vozila, broj zaposlenih, broj putovanja odreðenim naèinom prijevoza (automobil, javni prijevoz...) po kuæanstvu \cite{Espad:2013.}.
 %\todo[inline]{Podjela po subjektima anketa. Predlažem detaljniju razradu u metodološkom smislu, uz korištenje liteature poput:		Hyndman, R J, and Athanasopoulos, G. (2018). Forecasting: Principles and Practice (2nd ed). (Chapter 4: Judgemental Forecast)). Preuzeto s: https://otexts.com/fpp2/judgmental.html}
-\subsubsection{Prebrojavanje vozila}
+\subsubsection{Prebrojavanje vozila (engl. \textit{Traffic Counting})}
 Metode koje ukljuèuju prebrojavanje vozila na kljuènim èvorištima prometne infrastrukture manje su zahtjevne za izvoðenje u odnosu na ankete i znaèajno smanjuju vrijeme i troškove prikupljanja podataka. Postupci ukljuèuju: analizu nadzornih snimaka prometa, automatski sustav za prepoznavanje i oèitovanje registarskih ploèica engl. \gls{anpr}, osjetila prometnog toka (radarska, magnetna, video-senzori, zvuèna..)  i  ruèno prebrojavanje.
-\textbf{Primjenom ovih postupaka nije moguæe pouzdano odrediti stvarna polazišta i odredišta putovanja \cite{Bonnel:2015.}, veæ se ona odreðuju matematièki modeliranjem uz uvažavanje pretpostavki}. Pozicioniranje opreme ili osoba koje rade obzervaciju prometa treba biti plansko, a broj dostupnih ureðaja/ljudi ogranièavajuæi je faktor za velièinu podruèja koje je moguæe nadzirati. \cite{Bera:2011.}
+\textbf{Primjenom ovih postupaka nije moguæe pouzdano odrediti stvarna polazišta i odredišta putovanja \cite{Bonnel:2015.}, veæ se ona odreðuju matematièki modeliranjem uz uvažavanje pretpostavki}. Pozicioniranje opreme ili osoba koje rade obzervaciju prometa treba biti plansko, a broj dostupnih ureðaja/ljudi ogranièavajuæi je faktor za velièinu podruèja transportnog sustava koje je moguæe nadzirati. \cite{Bera:2011.} Toènost procijenjenih matrica ovisi o: korištenom modelu procjene, grešci ulaznih podataka i infrastrukturi detektora koju je skupo izmijeniti ili proširiti zbog troškova održavanja i instalacije. \cite{Bera:2011.} \cite{Kuharic:2016.} 
+
+\subsubsection{Pozicioniranje stanica za prebrojavanje}
+Toènost matrice poveæava se s brojem stanica. Stanice na razlièitim položajima u prometnoj mreži imaju razlièit stupanj utjecaja na procjenu \gls{pom}. Važno je odrediti optimalan broj stanica prebrojavanja i njihovih lokacija u prometnoj mreži. \cite{Bera:2011.} Optimalni uvjeti dobit æe se poštujuæi slijedeæa èetiri pravila: \\
+\begin{enumerate}
+\item Barem jedna stanica prebrojavanja po paru zona
+\item toèke prebrojavanja trebaju biti na onim prometnim vezama (cestama) izmeðu para zona gdje protjeèe najveæi moguæi prometni tok izmeðu te 2 zone 
+\item Odabrana prometna veza treba presijecati što više moguæe tokova
+\item Rezultati prebrojavanja prometa na svim vezama trebaju biti linearno nezavisni 
+\end{enumerate}
+
+Prošireni modeli za pozicioniranje stanica u današnjim programskim podrškama imaju moguænost ogranièavanja budžeta za postavljanje ili moguænost nadogradnje novih stanica na postojeæu infrastrukturu- Zbog ogranièenog budžeta najèešæe nije moguæe ispošovati prvo pravilo.\cite{Bera:2011.}
 
 \subsection{\textit{\glsfirst{taz}}}
-\gls{taz} je strani naziv za jedinicu prostorne podjele (zonu) kod analize prometa. Kod programskih podrška za analizu prometa velièina jedinica varira i nije uniformna. Podjela se može temeljiti na populaciji ili broju zaposlenih na nekom prostoru, primjerice svaka zona pokriva prostor na kojem obitava otprilike tri tisuæe ljudi, ili podjela u kojoj zone generiraju podjednak broj izlaznih putovanja (jednaka širina izlaznih tokova) \cite{Goulding:2016.}. 
+\gls{taz} je strani naziv za jedinicu prostorne podjele (zonu) kod analize prometa. Kod programskih podrška za analizu prometa površina tih jedinica varira i nije uniformna. Podjela se može temeljiti na populaciji ili broju zaposlenih na nekom prostoru, primjerice svaka zona pokriva prostor na kojem obitava otprilike tri tisuæe ljudi, ili zone generiraju podjednak broj izlaznih putovanja (jednaka širina izlaznih tokova) \cite{Goulding:2016.}. 
 
 \textbf{U hijerarhijskoj podjeli kod ankete stanovništva opæenito postoje manje i veæe jedinice podjele, a nema podjele koja bi precizno odgovarala \gls{taz}}. %grad, država
 %*meðuovisnost		
@@ -71,17 +82,30 @@ Kineski grad Shenzhen ima preko 10 milijuna stanovnika i proteže se na 1,991 $km
 \subsection{Matematièko modeliranje prometa}
 Klasièan bazni model za procjenu prometne potražnje je Gravitacijski model (eng. \textit{Gravity model})  koji kod proraèuna "privlaènosti" 2 zone uzima u obzir \textbf{gustoæu populacije, udaljenost i troškove putovanja}. Izvedene verzije integriraju i neke druge (socio-ekonomske) faktore. \cite{Gundlegard:2016.}
 
-Matematièko modeliranje prometa zahtjeva veliku kolièinu podataka - informacija o prometnoj mreži i prometnoj potražnji. Toènost modelirane (planirane) prometne situacije ovisi o kvaliteti dostupnih informacija te kako su podaci kombinirani, koji težinski faktori su primijenjeni za razlièite izvore. Prometna potražnja kljuèna je komponenta te stoga gotovo svaki prometni model zahtjeva \gls{pom}-u koja specificira prometnu potražnju izmeðu zona u prometnoj mreži.  Toèna \gls{pom}-a osnova je za odluke u mnogim \gls{its} koji su zauzvrat kljuèni za izbor ruta u razlièitim sustavima navigacijskog navoðenja. Neke od pretpostavki kojima se vode u modeliranju su primjerice da je ukupna dnevna potražnja  podjednaka u oba smjera kod svakog para zona na podruèju grada \cite{Peterson:2007.}, da svi korisnici imaju saznanja o situaciji na cesti \cite{Goulding:2016.} te da je mobilnost opæenito manja tijekom zime nego tijekom ljeta \cite{Bonnel:2015.} i da je broj putovanja po kuæanstvu proporcionalan dohotku \cite{Espad:2013.}.  
+Matematièko modeliranje prometa zahtjeva veliku kolièinu podataka - informacija o prometnoj mreži i prometnoj potražnji. Toènost modelirane (planirane) prometne situacije ovisi o kvaliteti dostupnih informacija te kako su podaci kombinirani, koji težinski faktori su primijenjeni za razlièite izvore. Prometna potražnja kljuèna je komponenta te stoga gotovo svaki prometni model zahtjeva \gls{pom}-u koja specificira prometnu potražnju izmeðu zona u prometnoj mreži.  Toèna \gls{pom}-a osnova je za odluke u mnogim \gls{its} koji su zauzvrat kljuèni za izbor ruta u razlièitim sustavima navigacijskog navoðenja. 
 
-\subsection{Vremenski periodi u analitièkom i simulacijskom modeliranju}
-Modeliranje prometa dijeli se na dvije grane, analitièku i simulacijsku%, od kojih svaka ima \textit{makro} i \textit{mikro} razinu
-. U analitièkom modeliranju cilj je analiza prometa za strateška, investicijska planiranja izgradnje nove infrastrukture. Modeli procjenjuju prosjeènu dnevnu prometnu potražnju (period od 24 sata). Radi se o vremenski nezavisnoj analizi.
+Neke od pretpostavki kojima se vode u modeliranju su primjerice da je ukupna dnevna potražnja  podjednaka u oba smjera kod svakog para zona na podruèju grada \cite{Peterson:2007.}, da svi korisnici imaju saznanja o situaciji na cesti \cite{Goulding:2016.} te da je mobilnost opæenito manja tijekom zime nego tijekom ljeta \cite{Bonnel:2015.} i da je broj putovanja po kuæanstvu proporcionalan dohotku \cite{Espad:2013.}. 
 
-Simulacijsko modeliranje koristi se npr. kod upravljanja prometnom signalizacijom i definiranja rasporeda vožnje javnog prijevoza. Rijeè je o vremenski zavisnoj analizi. Period u kojem se promatra prometna potražnja manji je od jednog dana. \cite{Espad:2013.}
-Neki \textit{Peak-hour} vremenski modeli koji opisuju potražnju za vrijeme dnevnog vrhunca prometne potražnje, procjenjuje potražnju za svaku minutu. \cite{Thakur:2018.}. 
-(...)
 
- %The traditional, trip-based models assume that the shape of the peak in future years is the same as the shape of the peak today.
+\subsection{Vremenski nezavsno i vremenski zavisno modeliranju}
+
+Modeliranje prometa dijeli se na dvije grane, vremenski nezavisnu (statièku, analitièku) i vremenski zavisnu (simulacijsku)%, od kojih svaka ima \textit{makro} i \textit{mikro} razinu
+. U statièkom modeliranju cilj je analiza prometa za strateška, investicijska planiranja izgradnje nove infrastrukture. Modeli procjenjuju prosjeènu dnevnu prometnu potražnju (period od 16 ili 24 sata). Radi se o vremenski nezavisnoj analizi.
+
+ %***** The traditional, trip-based models assume that the shape of the peak in future years is the same as the shape of the peak today.
+
+
+\subsubsection{Vremenski zavisno modeliranje}
+Vremenski zavisno modeliranje koristi se npr. kod upravljanja prometnom signalizacijom i definiranja rasporeda vožnje javnog prijevoza. Rijeè je o vremenski zavisnoj analizi. Period u kojem se procjenjuje prometna potražnja manji je od jednog dana, primjerice period od 15 minuta. \cite{Espad:2013.} \cite{Bera:2011.}
+Neki \textit{Peak-hour} vremenski modeli koji opisuju potražnju za vrijeme dnevnog vrhunca prometne potražnje, procjenjuje potražnju za svaku minutu. \cite{Thakur:2018.}. U vremenski zavisno modeliranje spada i modeliranje u stvarnom vremenu.
+
+Veæina razvijenih algoritama za vremenski zavisno
+modeliranje iz postupka prebrojavanja (engl. \textit{link count}) primjenjuju se na malim, zatvorenim prometnim mrežama kao što su raskrižja, petlje i manje autoceste. \cite{Bera:2011.}
+
+
+ (...)
+
+
 \subsection{Pokretna osjetila}
  %rad iz 1972
  %Osnovna ideja pokretnih osjetila je da Vozila koja se kreæu po prometnoj mreži i sastavni su dio prometnog toka prikupljaju i šalju podatke.
@@ -112,9 +136,10 @@ Pokretni ureðaj (npr. pametni telefon) u javnoj pokretnoj mreži kontinuirano je 
 Zapisi o telekomunikacijskoj aktivnosti i detaljima telekomunikacijskih transakcija vode se u odgovarajuæim komponentama javne pokretne mreže pod imenima: \gls{cdr}. 
 %Radi se o zapisima aktivnosti u mobilnoj mreži - pozivima, porukama (engl. Short Messaging Service - SMS) te zapoèetom prijenosu mobilnih podataka.
 CDR obuhvaæa transakcijske podatke o pozivima, razmjeni kratkih poruka (SMS) i prijenosu podataka pokretnim internetom. Transakcijski podatci ukljuèuju, izmeðu ostalog: vremenske trenutke poèetka i završetka telekomunikacijske transakcije (korištenja komunikacijske usluge), vrstu komunikacije, identifikacijske oznake pošiljatelja i primatelja, te identifikacijske oznake baznih stanica na koje su u trenutku zapoèinjanja i završetka transakcije bili spojeni pošiljatelj i primatelj.
-Operatoru su dodatno poznati podatci o prekapèanju pokretnog ureðaja na drugu baznu stanicu (engl. \textit{handover data}) tijekom trajanja telekomunikacijske aktivnosti radi postizanja i održavanja potrebne kvalitete telekomunikacijske usluge, \textit{Location Area Updates} - podatci prikupljani svakih 20 min do 2 sata o tome na koju skupinu baznih stanica je pokretna stanica spojena (prema \cite{Bonnel:2015.} svaka LA skupina ima od 150 do 500 baznih stanica), te podatke o tome kada je pokretna stanica ukljuèena u mrežu i iskljuèena iz mreže. 
+Operatoru su dodatno poznati podatci o prekapèanju pokretnog ureðaja na drugu baznu stanicu (engl. \textit{handover data}) tijekom trajanja telekomunikacijske aktivnosti radi postizanja i održavanja potrebne kvalitete telekomunikacijske usluge, \textit{Location Area Updates} - podatci prikupljani svakih 20 min do 2 sata o tome na koju skupinu baznih stanica je pokretna stanica spojena (svaka LA skupina ima od 150 do 500 baznih stanica, \cite{Bonnel:2015.}), te podatke o tome kada je pokretna stanica ukljuèena u mrežu i iskljuèena iz mreže. 
 
-U novije vrijeme su predloženi postupci u kojima se koriste upravo anonimizirane \gls{cdr} kao izvor podataka za procjenu \glsplural{pom}.\cite{Gundlegard:2016.} \cite{Alhazzani:2016.} \cite{Frias-Martinez:2012.} Metodologija korištenja odnosnih elemenata CDR-a za procjenu POM predložena je još 1994. godine.\cite{Gundlegard:2016.} \textbf{U ostatku rada, na mjestima gdje nije izrièito naveden izvor podataka o kretanju, rijeè je o postupku ili \gls{pom}-i procijenoj iz \gls{cdr}}. %Pri procjeni \gls{pom}-e, ako su dostupni, i ranije navedeni dodatni podatci mogu se uzeti u obzir. 
+U novije vrijeme su predloženi postupci u kojima se koriste upravo anonimizirane \gls{cdr} kao izvor podataka za procjenu \glsplural{pom}.\cite{Gundlegard:2016.} \cite{Alhazzani:2016.} \cite{Frias-Martinez:2012.} Metodologija korištenja odnosnih elemenata CDR-a za procjenu POM predložena je još 1994. godine.\cite{Gundlegard:2016.} 
+%\textbf{U ostatku rada, na mjestima gdje nije izrièito naveden izvor podataka o kretanju, rijeè je o postupku ili \gls{pom}-i procijenoj iz \gls{cdr}}. %Pri procjeni \gls{pom}-e, ako su dostupni, i ranije navedeni dodatni podatci mogu se uzeti u obzir. 
  \begin{definition}{Zaustavljanje (engl.\textit{ Stop}}) %u postupku putovanja promatranog iz perspektive telekomunikacijskih usluga 
 	\label{stop}
 	je skup minimalno \textit{n} dogaðaja (telekomunikacijskih aktivnosti) u nizu koji su zabilježeni na istom položaju unutar definiranog minimalnog vremenskog perioda. 
@@ -127,7 +152,7 @@ U novije vrijeme su predloženi postupci u kojima se koriste upravo anonimizirane
 \end{definition}
 Kretanje pojedinca tokom dana najèešæe je rascjepkano, odnosno u nizu postoje "rupe" gdje je informacija o kretanju nepoznata zbog nepostojanja aktivnosti u tom vremenu. 
 
-Svako zaustavljnje (\ref{stop}) ne mora nužno biti (postati) poèetak ili kraj putovanja. \textbf{Postavljanjem uvjeta da zaustavljanje jest polazište ili odredište putovanja samo ako mu se dokaže kontekst od interesa, eliminiraju se usputna zaustavljanja.} Primjerice, ako je kontekst od interesa ogranièen na iskljuèivo "posao" i "prebivalište" s ciljem promatranja samo komutacijskih putovanja, zaustavljanje na benzinskoj crpki neæe se gledati kao kraj putovanja. Komutacijska putovanja se ponavljaju na dnevnoj bazi te su stoga èesto upravo ona koje se nastoji obuhvatiti POM-ma.
+Svako zaustavljnje (\ref{stop}) ne mora nužno biti (postati) poèetak ili kraj putovanja. \textbf{Postavljanjem uvjeta da zaustavljanje jest polazište ili odredište putovanja samo ako mu se dokaže kontekst od interesa, eliminiraju se usputna zaustavljanja.} Primjerice, ako je kontekst od interesa ogranièen na iskljuèivo "posao" i "prebivalište" s ciljem promatranja samo komutacijskih putovanja, usputno zaustavljanje na benzinskoj crpki neæe se gledati kao kraj putovanja. Komutacijska putovanja se ponavljaju na dnevnoj bazi te su stoga èesto upravo ona koje se nastoji obuhvatiti POM-ma.
 
 Ogranièavanjem na iskljuèivo komutacijska putovanja, velik æe dio putovanja *koja su predvidiva na razini toka* biti odbaèen. Stoga uvoðenjem nekoliko generalnih kontekstnih kategorija ...
 \subsection{Združena oèitanja prijamnika za satelitsku navigaciju}

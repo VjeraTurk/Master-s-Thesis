@@ -100,10 +100,10 @@ Neke od pretpostavki kojima se vode u modeliranju prometne potražnje su primjeri
 The idea is simple: find a reasonable OD table that will reproduce known traffic counts. On large networks, there are many different OD tables that will reproduce traffic counts with equal quality, so there is a need for
 additional information to help choose an OD table. Most algorithms available today supplement the traffic counts with a “seed” OD table that is a best-guess approximation of the desired result. A seed OD table may be one that has been observed in the past, one that has been observed recently but imprecisely, or one developed from principles of driver behavior. 
 \end{comment}
-
+\label{seed}
 \item 	Pronaæi \textit{razumnu} postojeæu POM-u i raspodjelom njenih tokova na prometnu infrastrukturu stimulirati rezultate prebrojavanja na odabranim toèkama u prometnoj mreži. 
 
-U postupku se za velike prometne mreže može ukomponirati i veæi broj postojeæih \gls{pom}-a. (Ponekad postoji više POM-a za isto podruèje i tada je potrebno prikupiti informacije i odabrati one koje najviše odgovaraju.) Veæina algoritama danas koristi takozvanu engl. \textit{seed} POM-u koja je \textit{najbolja procjena} dosadašnje potražnje, a koja procjenjuje prometnu potražnju u prošlosti- npr. iz anketiranja po kuæanstvima, nedavnu prometnu potražnju neprecizno ili je potražnja razvijena iz \textit{principa tipiènog ponašanja vozaèa}. \cite{Segovi:2015.}
+(Ponekad postoji više POM-a za isto podruèje i tada je potrebno prikupiti informacije i odabrati one koje najviše odgovaraju.) Veæina algoritama danas koristi takozvanu engl. \textit{seed} POM-u koja je \textit{najbolja procjena} dosadašnje potražnje, a koja procjenjuje prometnu potražnju u prošlosti- npr. iz anketiranja po kuæanstvima, nedavnu prometnu potražnju neprecizno ili je potražnja razvijena iz \textit{principa tipiènog ponašanja vozaèa}. \cite{Segovi:2015.}
 
 \begin{comment}
 The OD matrix estimation (ODME) reads an initial, or seeded, trip matrix
@@ -112,9 +112,9 @@ ratios of assigned trips to counts on links with counts, the modification of the
 \end{comment}
 
 
-\item Poèetnu \textit{(engl. \textit{seed})} \gls{pom}-u  modificirati iterativnim procesom evaluacije omjera tokova dodijeljenih prometnim vezama iz postojeæe matrice i predbrojenim tokovima na vezama gdje se promet prebrojavao. \cite{Segovi:2015.}
+\item Poèetnu \textit{(engl. \textit{seed})} \gls{pom}-u  modificirati iterativnim procesom evaluacije omjera tokova dodijeljenih prometnim vezama iz POM-e i predbrojenih tokova na vezama gdje se promet prebrojavao. \cite{Segovi:2015.}
 
-U tom iterativnom procesu prometni tokovi iz modificirane \gls{pom}-e ponovno se dodjeljuju prometnoj infrastrukturi sve dok se ne postigne zadani broj iteracija. Ulaz u svaku iteraciju je i zapis najjeftinijih puteva, izraèunat tijekom uravnotežene raspodjele po prometnoj infrastrukturi. \cite{Segovi:2015.}
+U tom iterativnom procesu prometni tokovi iz modificirane \gls{pom}-e ponovno se dodjeljuju prometnoj infrastrukturi sve dok se ne postigne zadani broj iteracija. Ulaz u svaku iteraciju je i zapis \textit{najmanjih} puteva, izraèunat tijekom uravnotežene raspodjele po prometnoj infrastrukturi. \cite{Segovi:2015.}
 
 
 \begin{comment}
@@ -128,7 +128,7 @@ dynamic seed OD table.
 \end{enumerate}
 
 
-\subsection{Vremenski nezavisno i vremenski zavisno modeliranju}
+\subsection{Vremenski nezavisno i vremenski zavisno modeliranje}
 
 Modeliranje prometa dijeli se na dvije grane, vremenski nezavisnu (statièku, analitièku) i vremenski zavisnu (simulacijsku)%, od kojih svaka ima \textit{makro} i \textit{mikro} razinu
 . U statièkom modeliranju cilj je analiza prometa za strateška, investicijska planiranja izgradnje nove infrastrukture. Modeli procjenjuju prosjeènu dnevnu prometnu potražnju (period od 16 ili 24 sata). Radi se o vremenski nezavisnoj analizi.
@@ -279,18 +279,24 @@ Primjeri oznaka vezanih za èvorove:  \textit{office=company}, \textit{building=r
 }
 
 \section{Problematika i ogranièenja tradicionalnih pristupa procjene \gls{pom}-e}
+
+\subsection{Validacija}
+
+Kada je rijeè o validaciji \gls{pom}, pregledom literature utvrðeno je da se jednoznaèno koriste pojmovi toènost, pouzdanost i kvaliteta \gls{pom}-a. Za njihovu procjenu koriste se mjere koje opisuju razinu sliènosti odnosno razlike (greške) s referentnom matricom - a temelj je razlika na razni svakog elementa.  \textbf{Tradicionalni postupak validacije \gls{pom}-e svodi se na odreðivanje njene sliènosti s \textit{grand truth} matricom}. \cite{Travassoli:2016.} Grand truth \gls{pom}-a je \gls{pom}-a koja je uzeta kao ona koja najtoènije opisuje stvarno stanje. U analizi prometa, dobivena je tradicionalnim postupcima (anketiranje i/ili prebrojavanje vozila). Statistièke mjere kvantiziraju razliku procijenjenih i “istinitih“ vrijednosti. (Vidi Dodatak A - Postojeæe metrik za validaciju \glstext{pom}). 
+
+\textbf{Kao što je spomenuto u odlomku \ref{seed}, upravo ta \textit{grand truth} POM-a ujedno je i ulaz - \textit{seed} \gls{pom}-a - u procjeni nove \gls{pom}-e iz rezultata prebrojavanja vozila èija æe se toènost/pouzdanost/kvaliteta ocjenjivati usporedbom s tom isto m\gls{pom}-om. Postupak validacije stoga je pristran i ovisan o kvaliteti izvorne \gls{pom}-e, koja je procijenjena u odnosu njenu \textit{seed} matricu i tako rekurzivno.}
+
+\
 Širenje gradova i rast stanovništva rezultirali su rastuæim brojem sve ozbiljnijih prometnih zastoja u gradovima diljem svijeta. Prepoznata je potreba za strategijama upravljanja prometom i gradom opæenito koje æe uvažiti dinamiku razvoja stanovništva i njegove migracije u kontekstu suvremenih društvenih i gospodarskih kretanja. %kako bi se suoèili s izazovima koje donosi brzo razvijajuæa okolina i demografija populacije. 
 Djelotvorno upravljanje i kontrola prometa doprinose poveæanju sigurnosti, kvalitete prometne i kvalitete transportno-logistièke usluge, potièe ekonomski rast i smanjuje zagaðenje okoliša. %Zbog dinamike kojom se gradovi mijenjaju razumno je pitati se ima li smisla koristiti \gls{pom}-e stare više godina za modeliranje današnjeg prometa.
 Suvremeni odnosi promijenili su prirodu kretanja ljudi i dobara zbog èega tradicionalni pristup postaje zastario i neprimjeren. 
 
 Redefiniranje metodologije koja æe pružiti poveæanu kvalitetu i transparentnost uz ispunjavanje suvremenih zahtjeva na tehnologije (cijena, zaštita privatnosti i podataka itd.) privlaèi pažnju istraživaèa i van podruèja prometne znanosti. Oni predlažu alternativne izvore podataka o kretanju za promatranje obrazaca putovanja i pristupe procjeni \gls{pom}-a, no prema \cite{Pollard:2013.} nailaze na problem da prometna struka zahtijeva da se njihova vrijednost dokazuje usporedbom s tradicionalnim pristupima, dobro poznatim u praksi. \textbf{Istraživaèi proširuju podruèje primjene zakljuèaka analize kretanja stanovništva uzimajuæi u obzir njihov kontekst \cite{Barbour:2019.}}. (...)
 
-Kada je rijeè o validaciji \gls{pom}, pregledom literature utvrðeno je da se jednoznaèno koriste pojmovi toènost, pouzdanost i kvaliteta \gls{pom}-a. Za njihovu procjenu koriste se mjere koje opisuju razinu sliènosti odnosno razlike (greške) s referentnom matricom - a temelj je razlika na razni svakog elementa.  \textbf{Tradicionalni postupak validacije \gls{pom}-e svodi se na odreðivanje njene sliènosti s \textit{grand truth} matricom}. \cite{Travassoli:2016.} Grand truth matrix je \gls{pom}-a je koja je uzeta kao ona koja najtoènije opisuje stvarno stanje. U analizi prometa, dobivena je tradicionalnim postupcima (anketiranje i/ili prebrojavanje vozila). Statistièke mjere kvantiziraju razliku procijenjenih i “istinitih“ vrijednosti. (Vidi Dodatak A - Postojeæe metrik za validaciju \glstext{pom}). Ankete pokrivaju malen dio populacije te je na taj naèin dobivena \gls{pom}-a optereæena neizbježnom pristranošæu \cite{Alhazzani:2016.}. Studija iz 2010. \cite{Cools:2010.} pokazala je da se zadovoljavajuæa razina kvalitete \gls{pom}-a procjenjenih iskljuèivo iz anketa u kuæanstvima postiže tek ako uzorak obuhvaæa 50\% populacije. 
+Ankete pokrivaju malen dio populacije te je na taj naèin dobivena \gls{pom}-a optereæena neizbježnom pristranošæu \cite{Alhazzani:2016.}. Studija iz 2010. \cite{Cools:2010.} pokazala je da se zadovoljavajuæa razina kvalitete \gls{pom}-a procjenjenih iskljuèivo iz anketa u kuæanstvima postiže tek ako uzorak obuhvaæa 50\% populacije. 
 
 Novi moderni postupci procjene \gls{pom}-a postaju sve više razmatrana opcija s obzirom na fleksibilnost, cijenu i ažurnosti koju nude u odnosu na tradicionalne.  Prepoznat je potencijal, ne samo za analizu urbanih i državnih razmjera, veæ i za analizu mobilnosti planetarnog razmjera dijeljenjem i kombiniranjem razlièitih izvora podataka koji nose podatak o položaju \cite{Scepanovic:2015.}\cite{Hui:2010.}. 
 \gls{cdr} se istièe kao izvor gotovo jednako zastupljen u zemljama u razvoju i razvijenim zemljama, s penetracijom oko 40\%-50\% stanovništva za pojedine operatore \cite{Bonnel:2015.}. U Francuskoj 2008. 80\% stanovništva starijeg od 12 godina posjedovalo je mobilni ureðaj \cite{Bonnel:2015.}. Istraživanje iz 2016. provedeno na podacima u Èileu  iznosi podatak da Èile ima èak 132 mobilne pretplate na 100 stanovnika \cite{Graells-Garrido:2016.}. 
-
-
 (...)
 \begin{comment}
 \todo[inline]{Nije baš tako. Brkaju se znanost, istraživanje, tehnologija i korištenje. Naruèitelj hoæe usporediti s onim što je njemu poznati, ali to je usporedba krušaka i jabuka.

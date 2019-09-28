@@ -1,5 +1,4 @@
 % !TeX encoding = windows-1250
-
 \chapter{Prilagodba prostorne podjele}
 \label{dodatak_ppp}
 
@@ -44,3 +43,9 @@ Postotak eksternih putovanja koji se gubi u procesu agregacije Voronoi æelija an
 %Ruralna podruèja rjeðe zahtijevaju agregiranje æelija.
 
 Na temelju usporedbi \gls{pom}-a kretanja u 4 razlièita grada, dobivenih iz \gls{cdr} i iz anketa, gdje je svaki grad u anketnim \gls{pom}-ma imao svoju prostornu podjelu odnosno rezoluciju, Studija \cite{Toole:2015.} je pokazala da sa \textbf{smanjenjem rezolucije (visokim stupnjem agregacije Voronoi æelija) stupanj korelacije s \gls{pom}-ma iz ankete (za isti grad) raste}. 
+
+
+\chapter{OpenCellID}
+\label{dodatak_OpenCellID}
+Operatori u \gls{cdr} zapisima ne otkrivaju položaje baznih stanica veæ samo njihov ID. Postoji nekoliko javno dostupnih baza kao što je OpenCellID \cite{OpenCellID:2019.} nastalih volonterskim doprinosom koje pohranjuju podatke o procjenama položaja baznih stanica, snazi signala i sl.
+Položaji se prikupljaju pomoæu aplikacije instalirane na mobilnom ureðaju, registriranjem \gls{gps} položaja i identifikacijske oznake bazne stanice na koju je ureðaj trenutno spojen. Dakle, ove baze ne sadrže "najtoènije" položaje baznih stanica veæ usrednjene položaje mobilnih ureðaja koji su u nekom trenutku bili spojeni na tu baznu stanicu. Tako procijenjeni položaj za potrebe izrada \gls{pom}-a èak i više odgovara od stvarnog položaja. \cite{Mellegard:2011.}

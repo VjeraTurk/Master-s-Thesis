@@ -183,7 +183,7 @@ CDR obuhvaæa transakcijske podatke o pozivima, razmjeni kratkih poruka (SMS) i p
 \begin{table}[!htbp]
 
 	\renewcommand{\arraystretch}{1.2}
-	\caption{Primjeri zapisa o telekomunikacijskim aktivnostima \cite{Chen:2019.}}
+	\caption{Primjeri zapisa o telekomunikacijskim aktivnostima (pozivi) \cite{Chen:2019.}}
 	\centering
 	\begin{tabular}{|c|c|c|c|c|c|c|}
 		\hline
@@ -196,14 +196,15 @@ CDR obuhvaæa transakcijske podatke o pozivima, razmjeni kratkih poruka (SMS) i p
 	\end{tabular}
 	\\ [5ex]
 	\renewcommand{\arraystretch}{1.2}
-	\caption{Primjeri zapisa o telekomunikacijskim aktivnostima \cite{Stupar:2018.}. Iz zapisa je uklonjen datum, a identifikacijska oznaka bazne stanice (pozivatelja) zamijenjena je njenim položajem. Podatke o tornjevima bazne stanice sadrže baze poput OpenCellID (vidi Dodatak \ref{dodatak_OpenCellID})
+	\caption{Primjeri zapisa o telekomunikacijskim aktivnostima \cite{Stupar:2018.}. Iz zapisa je uklonjen datum, a identifikacijska oznaka bazne stanice (pozivatelja) zamijenjena je njenim položajem. Podatci o baznim stanicama dostupni su u bazama poput OpenCellID (vidi Dodatak \ref{dodatak_OpenCellID})
 	}
 	\begin{tabular}{|c|c|c|c|}
 		\hline
 		SIM Card ID&Time&Latitude&Longitude
 		\\ [0.5ex]
 		\hline \hline
-		0055555556&13:10:09&114.0397917&22.5740278\\ [0.5ex]
+		0055555556&13:10:09&114.0397917&22.5740278
+\\ [0.5ex]
 		0055555556&16:08:30&113.8056944&22.7613889
 		\\ [0.5ex]
 		0055555556&20:50:17&113.8465972&22.7725
@@ -223,7 +224,7 @@ CDR obuhvaæa transakcijske podatke o pozivima, razmjeni kratkih poruka (SMS) i p
 
 Operatoru su dodatno poznati podatci o prekapèanju pokretnog ureðaja na drugu baznu stanicu (engl. \textit{handover data}) tijekom trajanja telekomunikacijske aktivnosti radi postizanja i održavanja potrebne kvalitete telekomunikacijske usluge, \textit{Location Area Updates} - podatci prikupljani svakih 20 min do 2 sata o tome na koju skupinu baznih stanica je pokretna stanica spojena (svaka LA skupina ima od 150 do 500 baznih stanica, \cite{Bonnel:2015.}), te podaci kada je pokretna stanica ukljuèena u mrežu i iskljuèena iz mreže i optereæenje pojedinog tornja \cite{Chen:2019.}. 
 
-U novije vrijeme su predloženi postupci u kojima se koriste upravo anonimizirane, èesto višemjeseène \gls{cdr} kao izvor podataka za procjenu \glsplural{pom}.\cite{Gundlegard:2016.} \cite{Alhazzani:2016.} \cite{Frias-Martinez:2012.} Metodologija korištenja odnosnih elemenata CDR-a za procjenu POM predložena je još 1994. godine. \cite{Gundlegard:2016.} 
+U novije vrijeme su predloženi postupci u kojima se koriste upravo anonimizirane, èesto višemjeseène \gls{cdr}, kao izvor podataka za procjenu \glsplural{pom}.\cite{Gundlegard:2016.} \cite{Alhazzani:2016.} \cite{Frias-Martinez:2012.} Metodologija korištenja odnosnih elemenata CDR-a za procjenu POM predložena je još 1994. godine. \cite{Gundlegard:2016.} 
 %\textbf{U ostatku rada, na mjestima gdje nije izrièito naveden izvor podataka o kretanju, rijeè je o postupku ili \gls{pom}-i procijenoj iz \gls{cdr}}. %Pri procjeni \gls{pom}-e, ako su dostupni, i ranije navedeni dodatni podatci mogu se uzeti u obzir. 
 
  \begin{definition}{%u postupku putovanja promatranog iz perspektive telekomunikacijskih usluga 
@@ -247,14 +248,13 @@ Još jedna od zastupljenih podjela je na specifiène periode \textit{radni sati}, 
 
 \subsubsection{Rekonstrukcija putanja}
 
-Kretanje pojedinca tokom dana najèešæe je rascjepkano, odnosno u nizu postoje "rupe" gdje je informacija o kretanju nepoznata zbog nepostojanja aktivnosti 
-u tom vremenu. 
+Kretanje pojedinca tokom dana najèešæe je rascjepkano, odnosno u nizu postoje "rupe" gdje je informacija o kretanju nepoznata zbog nepostojanja aktivnosti u tom vremenu. 
 
 \begin{definition}{Potpunost} putanje \cite{Chen:2019.} definira kao 
 
 $ potpunost = \frac{n_L}{\tau \times \mathcal{T}} $
 
-Gdje je $n_L$ broj zabilježenih položaja (zaustavljanja) $\tau$ vremenski period, a $ \mathcal{T} $ duljina vremenskog razdoblja koje pokrivaju zapisi.
+Gdje je $n_L$ broj zabilježenih položaja (zaustavljanja), $\tau$ vremenski period, a $ \mathcal{T} $ duljina vremenskog razdoblja koje pokrivaju zapisi.
 
 \end{definition}
 U istraživanjima je zastupljeno odbacivanje korisnika s niskim stupnjem \textit{potpunosti}. Rekonstrukcija putanja nameæe se kao novi postupak koji poveæava toènost rekonstruiranih putanja i smanjuje moguænost povratnog inženjeringa identiteta. \cite{Chen:2019.}
@@ -267,21 +267,27 @@ U istraživanjima je zastupljeno odbacivanje korisnika s niskim stupnjem \textit{
 
 Toèke skupa su položaji baznih stanice, a æelije oko njih aproksimacija površine koju ta bazna stanica pokriva. U stvarnosti se te površine prekrivanja preklapaju jer podruèje prekrivanja nije sasvim fiksno i ovisi o trenutnoj aktivnosti svake bazne stanice \cite{Bonnel:2015.}. (Vidi sliku \ref{fig:Voronoi})
 
-Gustoæa Voronoi æelija snažno je korelirana s gustoæom stanovništva te stoga bolju prostornu rezoluciju ima na podruèjima veæe gustoæe populacije. Mjerna nesigurnost odreðivanja položaja iznosi od približno stotinu metara u gusto naseljenom, do nekoliko kilometara u ruralnom podruèju \cite{Calabrese:2011.}.  Neuniformnost æelija nije problem, veæ preklapanje podruèja pokrivanja u stvarnosti, posljedica èega su stalne oscilacije \cite{Gundlegard:2016.} . Ureðaj mijenja baznu stanicu na koju je spojen iako svo vrijeme zadržava isti položaj. Uèinak koji oscilacija ima na definiranje putovanja može ublažiti je odreðivanjem minimalne udaljenost putovanja ili potpunim zanemarivanjem putovanja u susjedne æelije. Važno je uzeti u obzir postojanje oscilacija.
-***TODO: vrati se na ovaj odlomak**
 \begin{figure}[!htbp]
 	\begin{center}
 		\includegraphics[width=15cm,keepaspectratio=true]{Voronoi-Shenzhen}
-		\caption{Voronoi dijagram 1090 æelija baznih stanica - Shenzhen}
+		\caption{Voronoi dijagram 1090 æelija baznih stanica - kineski grad Shenzhen}
 		\label{fig:Voronoi}
 	\end{center}
 \end{figure}
 
+Gustoæa Voronoi æelija snažno je korelirana s gustoæom stanovništva te stoga bolju prostornu rezoluciju ima na podruèjima veæe gustoæe populacije. Mjerna nesigurnost odreðivanja položaja iznosi od približno stotinu metara u gusto naseljenom, do nekoliko kilometara u ruralnom podruèju \cite{Calabrese:2011.}.  Neuniformnost æelija nije problem, veæ preklapanje podruèja pokrivanja u stvarnosti, posljedica èega su oscilacije \cite{Gundlegard:2016.}. Ureðaj mijenja baznu stanicu na koju je spojen iako svo vrijeme zadržava isti položaj. Uèinak koji oscilacija ima na definiranje putovanja može se ublažiti odreðivanjem minimalne udaljenost putovanja ili potpunim zanemarivanjem putovanja u susjedne æelije. Važno je uzeti u obzir postojanje oscilacija.
+***TODO: vrati se na ovaj odlomak**
+
+
 
 %Svako zaustavljnje (\ref{stop}) ne mora nužno biti (postati) poèetak ili kraj putovanja. \textbf{Postavljanjem uvjeta da zaustavljanje jest polazište ili odredište putovanja samo ako mu se dokaže kontekst od interesa, eliminiraju se usputna zaustavljanja.} Primjerice, ako je kontekst od interesa ogranièen na iskljuèivo "posao" i "prebivalište" s ciljem promatranja samo komutacijskih putovanja, usputno zaustavljanje na benzinskoj crpki neæe se gledati kao kraj putovanja. Komutacijska putovanja se ponavljaju na dnevnoj bazi te su stoga èesto upravo ona koje se nastoji obuhvatiti POM-ma. Ogranièavanjem na iskljuèivo komutacijska putovanja, velik æe dio putovanja *koja su predvidiva na razini toka* biti odbaèen. Stoga uvoðenjem nekoliko generalnih kontekstnih kategorija ...
 \subsection{Združena oèitanja prijamnika za satelitsku navigaciju}
-(...)\\
+U velikim svjetskim gradovima veæina taxi vozila je opremljena GNSS prijamnikom iz uslužnih i sigurnosnih razloga. Ta vozila redovito odreðenom frekvencijom prijavljuju svoj položaj podatkovnom centru generirajuæi na dnevnoj bazi veliku kolièinu trajektorija. Na razini države prikupljaju se podaci za kamione. 
+
+%The recent proliferation of ubiquitous sensing technologies, intelligent transportation systems, and location based services increases the availability of human trajectories. For example, in big cities like New York, Munich and Beijing, most taxis are equipped with GPS devices for dispatching and security management. These taxis regularly report their locations to the data center at a certain frequency. Hence, a large number of taxi trajectories are cumulated every day. Another good example is smart cards and integrated ticketing, which are provided by public transit operators in many cities. Customers can swipe the purchased cards to checkin and check-out when using public transport like subways or buses. Examples include London’s Oyster Card, Dublin’s Leap Card, Hong Kong’s Octopus Card, and Beijing’s BMAC Card 
+
 komercijalna vozila, Taxi
+(...)
 \cite{Krause:2018.}
 
 \subsection{Javni prijevoz i \textit{pametne kartice}}
@@ -375,7 +381,7 @@ Suvremeni odnosi promijenili su prirodu kretanja ljudi i dobara zbog èega tradic
 
 Kada je rijeè o validaciji \gls{pom}, pregledom literature utvrðeno je da se jednoznaèno koriste pojmovi toènost, pouzdanost i kvaliteta \gls{pom}-a. Za njihovu procjenu koriste se mjere koje opisuju razinu sliènosti odnosno razlike (greške) s referentnom matricom - a temelj je razlika na razni svakog elementa.  \textbf{Tradicionalni postupak validacije \gls{pom}-e svodi se na odreðivanje njene sliènosti s \textit{grand truth} matricom}. \cite{Travassoli:2016.} Grand truth \gls{pom}-a je \gls{pom}-a koja je uzeta kao ona koja najtoènije opisuje stvarno stanje. U analizi prometa, dobivena je tradicionalnim postupcima (anketiranje i/ili prebrojavanje vozila). Statistièke mjere kvantiziraju razliku procijenjenih i “istinitih“ vrijednosti. (Vidi Dodatak \ref{dodatak_metrics} - Postojeæe metrik za validaciju \glstext{pom}). 
 
-\textbf{Kao što je spomenuto u odlomku \ref{seed}, upravo ta \textit{grand truth} POM-a ujedno je i ulaz - \textit{seed} \gls{pom}-a - u procjeni nove \gls{pom}-e iz rezultata prebrojavanja vozila èija æe se toènost/pouzdanost/kvaliteta ocjenjivati usporedbom s tom isto m\gls{pom}-om. Postupak validacije stoga je pristran i ovisan o kvaliteti izvorne \gls{pom}-e, koja je procijenjena u odnosu njenu \textit{seed} matricu i tako rekurzivno.}
+\textbf{Kao što je spomenuto u odlomku \ref{seed}, upravo ta \textit{grand truth} POM-a ujedno je i ulaz - \textit{seed} \gls{pom}-a - u procjeni nove \gls{pom}-e iz rezultata prebrojavanja vozila èija æe se toènost/pouzdanost/kvaliteta ocjenjivati usporedbom s tom istom \gls{pom}-om. Postupak validacije stoga je pristran i ovisan o kvaliteti izvorne \gls{pom}-e, koja je procijenjena u odnosu njenu \textit{seed} matricu i tako rekurzivno.}
 
 \subsubsection{Validacija suvremenih \glstext{pom}}
 

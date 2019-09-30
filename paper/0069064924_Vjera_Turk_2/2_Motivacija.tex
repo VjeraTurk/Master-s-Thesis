@@ -373,6 +373,18 @@ Primjeri oznaka vezanih za èvorove:  \textit{office=company}, \textit{building=r
 (...)
 \end{comment}
 
+\chapter{Validacija \glstext{pom}}
+\label{valid}
+Kada je rijeè o validaciji \gls{pom}, pregledom literature utvrðeno je da se jednoznaèno koriste pojmovi toènost, pouzdanost i kvaliteta \gls{pom}-a. Za njihovu procjenu koriste se mjere koje opisuju razinu sliènosti odnosno razlike (greške) s referentnom matricom - a temelj je razlika na razni svakog elementa.  \textbf{Tradicionalni postupak validacije \gls{pom}-e svodi se na odreðivanje njene sliènosti s \textit{grand truth} matricom}. \cite{Travassoli:2016.} Grand truth \gls{pom}-a je \gls{pom}-a koja je uzeta kao ona koja najtoènije opisuje stvarno stanje. U analizi prometa, dobivena je tradicionalnim postupcima (anketiranje i/ili prebrojavanje vozila). Statistièke mjere kvantiziraju razliku procijenjenih i “istinitih“ vrijednosti. Vidi Dodatak \ref{dodatak_metrics} - Postojeæe metrik za validaciju \glstext{pom}. 
+
+\textbf{Upravo ta \textit{grand truth} POM-a ujedno je i \textit{seed} \gls{pom}-a (odlomak \ref{seed}) u postupku procjene nove \gls{pom}-e iz rezultata prebrojavanja vozila. Toènost nove POM-e ocjenjivati usporedbom s tom istom \textit{grand truth - seed} \gls{pom}-om. Postupak validacije stoga je ovisan o kvaliteti \textit{seed} \gls{pom}-e, koja je procijenjena u odnosu njenu \textit{seed} matricu i tako rekurzivno.}
+
+\subsubsection{Validacija suvremenih \glstext{pom}}
+
+Redefiniranje metodologije koja æe pružiti poveæanu kvalitetu i transparentnost uz ispunjavanje suvremenih zahtjeva na tehnologije (cijena, zaštita privatnosti i podataka itd.) privlaèi pažnju istraživaèa i van podruèja prometne znanosti. Oni predlažu alternativne izvore podataka o kretanju za promatranje obrazaca putovanja i pristupe procjeni \gls{pom}-a, no prema \cite{Pollard:2013.} nailaze na problem da prometna struka zahtijeva da se njihova vrijednost dokazuje usporedbom s tradicionalnim pristupima, dobro poznatim u praksi. 
+
+Za usporedbu suvremene \gls{pom} s prostornom podjelom koja nije podjela na \gls{taz} s \gls{pom} èija je prostorna podjela na \gls{taz} na tradicionalan naèin zahtjeva da se prostorna podjela prilagodi novoj ili prostornoj podjeli jedne od matrica. To se u praksi èini agregacijom i/ili interpolacijom tokova. Detaljnije u Dodatku \ref{dodatak_ppp}.
+
 
 \chapter{Motivacija}
 
@@ -384,19 +396,7 @@ Primjeri oznaka vezanih za èvorove:  \textit{office=company}, \textit{building=r
 Djelotvorno upravljanje i kontrola prometa doprinose poveæanju sigurnosti, kvalitete prometne i kvalitete transportno-logistièke usluge, potièe ekonomski rast i smanjuje zagaðenje okoliša. %Zbog dinamike kojom se gradovi mijenjaju razumno je pitati se ima li smisla koristiti \gls{pom}-e stare više godina za modeliranje današnjeg prometa.
 Suvremeni odnosi promijenili su prirodu kretanja ljudi i dobara zbog èega tradicionalni pristup postaje zastario i neprimjeren.  ***strateško planiranje izgradnje prometne infrastrukture i urbanizacija moraju uzeti u obzir dinamiku promjena - èlanak gdje se objašnjava da je pretpostavka kod strateškog planiranja da æe peak-hour ostati isti, to su projektiranja koja moraju razmišljati unaprijed desetcima godina (a to znaci uzeti u obzir mnog faktora ) https://home.kpmg/au/en/home/insights/2018/07/avoid-peak-hour-new-transport-models.html ***
 
-\section{Validacija \glstext{pom}}
-\label{valid}
-Kada je rijeè o validaciji \gls{pom}, pregledom literature utvrðeno je da se jednoznaèno koriste pojmovi toènost, pouzdanost i kvaliteta \gls{pom}-a. Za njihovu procjenu koriste se mjere koje opisuju razinu sliènosti odnosno razlike (greške) s referentnom matricom - a temelj je razlika na razni svakog elementa.  \textbf{Tradicionalni postupak validacije \gls{pom}-e svodi se na odreðivanje njene sliènosti s \textit{grand truth} matricom}. \cite{Travassoli:2016.} Grand truth \gls{pom}-a je \gls{pom}-a koja je uzeta kao ona koja najtoènije opisuje stvarno stanje. U analizi prometa, dobivena je tradicionalnim postupcima (anketiranje i/ili prebrojavanje vozila). Statistièke mjere kvantiziraju razliku procijenjenih i “istinitih“ vrijednosti. Vidi Dodatak \ref{dodatak_metrics} - Postojeæe metrik za validaciju \glstext{pom}. 
 
-\textbf{Upravo ta \textit{grand truth} POM-a ujedno je i \textit{seed} \gls{pom}-a (odlomak \ref{seed}) u postupku procjene nove \gls{pom}-e iz rezultata prebrojavanja vozila. Toènost nove POM-e ocjenjivati usporedbom s tom istom \textit{grand truth - seed} \gls{pom}-om. Postupak validacije stoga je pristran i ovisan o kvaliteti \textit{seed} \gls{pom}-e, koja je procijenjena u odnosu njenu \textit{seed} matricu i tako rekurzivno.}
-
-\subsubsection{Validacija suvremenih \glstext{pom}}
-
-Redefiniranje metodologije koja æe pružiti poveæanu kvalitetu i transparentnost uz ispunjavanje suvremenih zahtjeva na tehnologije (cijena, zaštita privatnosti i podataka itd.) privlaèi pažnju istraživaèa i van podruèja prometne znanosti. Oni predlažu alternativne izvore podataka o kretanju za promatranje obrazaca putovanja i pristupe procjeni \gls{pom}-a, no prema \cite{Pollard:2013.} nailaze na problem da prometna struka zahtijeva da se njihova vrijednost dokazuje usporedbom s tradicionalnim pristupima, dobro poznatim u praksi. 
-
-Za usporedbu suvremene \gls{pom} s prostornom podjelom koja nije podjela na \gls{taz} s \gls{pom} èija je prostorna podjela na \gls{taz} na tradicionalan naèin zahtjeva da se prostorna podjela prilagodi novoj ili prostornoj podjeli jedne od matrica. To se u praksi èini agregacijom i/ili interpolacijom tokova. Detaljnije u Dodatku \ref{dodatak_ppp}.
-
-(...)
 
 \textbf{Istraživaèi proširuju podruèje primjene zakljuèaka analize kretanja stanovništva uzimajuæi u obzir njihov kontekst \cite{Barbour:2019.}}. (...)
 
@@ -417,11 +417,7 @@ A problem ostaje otvoren za raspravu, \textbf{koliki je udio populacije stvarno 
 }
 \end{comment}
 %\newpage
-\section{Formulacija problema}
-\todo[inline]{Analiza problema i osnovne zaonitosti vezane uz njegovo rješavanje}
-Postoji potreba za objektivnom procjenom kvalitete \gls{pom}-a definiranjem odnosnih parametara kvalitete.
 
-(...)
 \section{Pregled prethodnih istraživanja}
 \subsection{Primjeri korištenja vanjskih izvora konteksta u analizi kretanja}
 
@@ -521,6 +517,11 @@ MSSIM(X,Y) =  \frac{1}{M} \sum_{m=1}^{M} SSIM(x_m,y_m) \label{eq:mssim}
 \subsubsection{Poboljšani} 
 Nekoliko godina nakon prvog spominjanja $MSSIM$ kao metrike usporedbe \gls{pom}-a \cite{Vuren:2015.}  se dotièe 3 problema postavljajuæi pitanja : Koliko treba biti veliki blok? Kako usporediti "guste" i "rijetke" \gls{pom}-e? Koja je prihvatljiva vrijednost $MSSIM$? Autori definiraju poboljšani model koji nazivaju $4D$-$MSSIM$ gdje u izraèun dodaju stvarne euklidske udaljenosti prostornih zona. 
 
+\section{Formulacija problema}
+\todo[inline]{Analiza problema i osnovne zaonitosti vezane uz njegovo rješavanje}
+Postoji potreba za objektivnom procjenom kvalitete \gls{pom}-a definiranjem odnosnih parametara kvalitete.
+
+(...)
 \section{Teza}
 \todo[inline]{
 	- Statistièka analiza podataka iz suvremenih informacijskih i kounikacijskih sustava sve više se koristi za procjenu \gls{pom}-a èime je omoguæeno poboljšanje kvalitete procjene preslikavanjem na kontekst.\\

@@ -91,3 +91,7 @@ parent={},%
 }%
 }%
 ```
+8.    
+
+[error](https://tex.stackexchange.com/questions/328232/what-is-this-mysterious-ecrm1000-missing-file) after adding pdfcomment to riteh_preamble.tex
+`sudo apt-get install texlive-fonts-recommended` resolves it

@@ -67,13 +67,14 @@
   Title                    = {Estimating {Origin-Destination} flows using opportunistically collected mobile phone location data from one million users in {Boston Metropolitan Area}},
   Author                   = {Francessco Calabrese and Gisy Di Lorenzo and Liang Liu and Carlo Ratti},
   Journal                  = {IEEE Pervasive Computing 10},
+  Year                     = {2011.},
 
   Month                    = {April},
   Note                     = {2011},
   Number                   = {4},
   Pages                    = {36-44.},
 
-  Timestamp                = {01.06.2019}
+  Timestamp                = {28.09.2019}
 }
 
 @TechReport{Chen:2019.,
@@ -228,6 +229,16 @@ mobilnih telefona},
 
   School                   = {Delft University of Technology},
   Timestamp                = {17.06.2019}
+}
+
+@Electronic{Orlando:2005.,
+  Author                   = {OOCEA System’s Traffic Data \& Statistical Manual},
+  Note                     = {(1.9.2019.)},
+  Organization             = {Central Florida Expressway Authority},
+  Url                      = {http://files.meetup.com/515268/orlando%20Highway%20traffic.pdf},
+  Year                     = {2005.},
+
+  Timestamp                = {30.09.2019}
 }
 
 @MastersThesis{Mellegard:2011.,
@@ -417,6 +428,11 @@ Maozeng Xu and Yinhai Wang},
   Volume                   = {48},
 
   Timestamp                = {15.06.2019}
+}
+
+@Other{LBS:2018.,
+  Comment                  = {Materijali kolegija Usluge zasnovane na lokaciji},
+  Timestamp                = {30.09.2019}
 }
 
 @Electronic{OpenCellID:2019.,

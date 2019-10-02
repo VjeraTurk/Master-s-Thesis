@@ -4,7 +4,7 @@
 \section{Definicija Polazišno odredišne matrice}
 
 \theoremstyle{definition}
-\begin{definition}{Polazišno-odredišna matrica} definirana je tako da svaki njen element predstavlja broj putovanja izmeðu odgovarajuæeg para zona unutar promatranog podruèja u promatranom vremenskom razdoblju $T$, u svakom smjeru zasebno. Redovi u \gls{pom}-i $i = 1,2,3...m$ predstavljaju polazišta (izvore) prometnog toka, a stupci $j = 1,2,3...n$ njihova odredišta (ušæa). Element $f_{ij}$ predstavlja broj putovanja iz pripadajuæe polazišne zone $i$ u pripadajuæu ciljnu zonu $j$. Broj putovanja naziva se i širina prometnog toka (eng. \textit{flow}). 
+\begin{definition}{Polazišno-odredišna matrica} definirana je tako da svaki njen element predstavlja broj putovanja izmeðu odgovarajuæeg para zona unutar promatranog podruèja u promatranom vremenskom razdoblju $\tau$ , u svakom smjeru zasebno. Redovi u \gls{pom}-i $i = 1,2,3...m$ predstavljaju polazišta (izvore) prometnog toka, a stupci $j = 1,2,3...n$ njihova odredišta (ušæa). Element $f_{ij}$ predstavlja broj putovanja iz pripadajuæe polazišne zone $i$ u pripadajuæu ciljnu zonu $j$. Broj putovanja naziva se i širina prometnog toka (eng. \textit{flow}). 
 \end{definition}
 \gls{pom}-a se može smatrati matriènim zapisom težinskog, usmjerenog grafa, gdje su težinski faktori usmjerenih veza širine prometnih tokova izmeðu èvorova mreže koji predstavljaju zone na koje je promatrano podruèje podijeljeno (slika \ref{fig:matrix}).
 
@@ -18,7 +18,8 @@
 \end{figure}
 
 
-Postoje brojni postupci procjene \gls{pom} o kojima je rijeè u narednom odjeljku. %Dok se još uvijek ulaže u razvoj matematièkih modela koji imaju za cilj poveæati kvalitetu \glsplural{pom} procijenjenih tradicionalnim postupcima, u novije vrijeme razvijaju se postupci koji imaju veliki potencijal. Ažurnost podataka o kretanju i moguænost obuhvaæanja mnogo veæeg uzorka stanovništva od tradicionalnih postupaka.
+%Postoje brojni postupci procjene \gls{pom} o kojima je rijeè u narednim odlomcima.
+ %Dok se još uvijek ulaže u razvoj matematièkih modela koji imaju za cilj poveæati kvalitetu \glsplural{pom} procijenjenih tradicionalnim postupcima, u novije vrijeme razvijaju se postupci koji imaju veliki potencijal. Ažurnost podataka o kretanju i moguænost obuhvaæanja mnogo veæeg uzorka stanovništva od tradicionalnih postupaka.
 % Kod pojedinih operatora radi se o oko èak 40-50\% svih stanovnika neke države \cite{Bonnel:2015.}.  (...)
 %zamijeniti tradicionalne metode i postati standard u analizi prometa pa tako i procjeni \gls{pom}-a.
 \gls{pom}-a može biti procijenjena za sadašnje ili planirano prometno optereæenje. Može biti prikazana ukupno ili po pojedinim naèinima prijevoza (modalitetima prometnog sustava - osobna vozila, vozila javnog prijevoza, teretna vozila, pješaci itd.) i/ili razlièitim svrhama putovanja (putovanja na posao, putovanja kuæi...). \cite{Jelusic:2016.}
@@ -46,7 +47,7 @@ Metode koje ukljuèuju prebrojavanje vozila na kljuènim èvorištima prometne infra
 \textbf{Primjenom ovih postupaka nije moguæe pouzdano odrediti stvarna polazišta i odredišta putovanja \cite{Bonnel:2015.}, veæ se ona odreðuju matematièki modeliranjem uz uvažavanje pretpostavki}. Pozicioniranje opreme ili osoba koje rade obzervaciju prometa treba biti plansko, a broj dostupnih ureðaja/ljudi ogranièavajuæi je faktor za velièinu podruèja transportnog sustava koje je moguæe nadzirati. \cite{Bera:2011.} Toènost procijenjenih matrica ovisi o: korištenom modelu procjene, grešci ulaznih podataka i infrastrukturi detektora koju je skupo izmijeniti ili proširiti zbog troškova održavanja i instalacije. \cite{Bera:2011.} \cite{Kuharic:2016.} 
 
 \subsubsection{Pozicioniranje stanica za prebrojavanje}
-Toènost matrice poveæava se s brojem stanica. Stanice na razlièitim položajima u prometnoj mreži imaju razlièit stupanj utjecaja na procjenu \gls{pom}. Važno je odrediti optimalan broj stanica prebrojavanja i njihovih lokacija u prometnoj mreži. \cite{Bera:2011.} Optimalni uvjeti dobit æe se poštujuæi slijedeæa èetiri pravila: \\
+Toènost matrice poveæava se s brojem stanica. Stanice na razlièitim položajima u prometnoj mreži imaju razlièit stupanj utjecaja na procjenu \gls{pom}-e. Važno je odrediti optimalan broj stanica prebrojavanja i njihovih lokacija u prometnoj mreži. \cite{Bera:2011.} Optimalni uvjeti dobit æe se poštujuæi slijedeæa èetiri pravila: \\
 \begin{enumerate}
 \item Barem jedna stanica prebrojavanja po paru zona
 \item Toèke prebrojavanja trebaju biti na onim prometnim vezama (cestama) izmeðu para zona gdje protjeèe najveæi moguæi prometni tok izmeðu te dvije zone 
@@ -54,7 +55,7 @@ Toènost matrice poveæava se s brojem stanica. Stanice na razlièitim položajima u
 \item Rezultati prebrojavanja prometa na svim vezama trebaju biti linearno nezavisni 
 \end{enumerate}
 
-Prošireni modeli za pozicioniranje stanica u današnjim programskim podrškama imaju moguænost ogranièavanja budžeta za postavljanje ili moguænost nadogradnje novih stanica na postojeæu infrastrukturu. \textbf {Zbog ogranièenog budžeta najèešæe nije moguæe ispošovati prvo pravilo. \cite{Bera:2011.} U praksi, model prometne potražnje može imati 2,000 \gls{taz} što znaèi da pripadajuæa \gls{pom}-a ima 4 milijuna æelija dok je na prometnoj mreži postavljeno svega 1,000 stanica za prebrojavanje. 
+Prošireni modeli za pozicioniranje stanica u današnjim programskim podrškama imaju moguænost ogranièavanja budžeta za postavljanje ili moguænost nadogradnje novih stanica na postojeæu infrastrukturu. \textbf {Zbog ogranièenog budžeta najèešæe nije moguæe ispošovati prvo pravilo. \cite{Bera:2011.} U praksi, model prometne potražnje može imati 2,000 \gls{taz} što znaèi da pripadajuæa \gls{pom}-a ima 4 milijuna æelija, dok je na prometnoj mreži postavljeno svega 1,000 stanica za prebrojavanje. 
 \cite{Segovi:2015.}} Na slici \ref{fig:tco} prikazana je karta grada Orlanda s istaknutim važnim prometnicama (sivom) i s prosjeènim prometnim tokovima zabilježenim ureðajima za prebrojavanje vozila. \cite{Orlando:2005.} 
 
 \begin{figure}[!htbp]
@@ -97,11 +98,8 @@ Neke od pretpostavki kojima se vode u modeliranju prometne potražnje su primjeri
 
 
 \textbf{Ankete se provode na limitiranom broju stanovnika, a limitiran je i broj stanica za prebrojavanje. Estimacija \gls{pom} iz prebrojanih vozila je matematièki pododreðena (više je nepoznanica nego poznatih informacija).} To znaèi da bi velik broj matrica odgovarao tako prebrojanim tokovima vozilima. \cite{Segovi:2015.}
-
 %As stated previously, the ODME is mathematically under-determined (more unknowns than knowns), which means that it could have many solutions; i.e., it could be that many OD matrices could perfectly match the counts observed on the links.
-
-
-\textbf{Moguæe je kombinirati oba izvora u procjeni POM-a.} Temeljna ideja kod modeliranja je: 
+\textbf{U praksi se zato koristi kombinirati oba izvora u procjeni POM-a.} Temeljna ideja kod modeliranja je: 
 \begin{enumerate}
 
 \begin{comment}
@@ -122,7 +120,7 @@ ratios of assigned trips to counts on links with counts, the modification of the
 
 \item Poèetnu \textit{(engl. \textit{seed})} \gls{pom}-u  modificirati iterativnim procesom evaluacije omjera tokova dodijeljenih prometnim vezama iz POM-e i predbrojenih tokova na vezama gdje se promet prebrojavao. \cite{Segovi:2015.}
 
-U tom iterativnom procesu prometni tokovi iz modificirane \gls{pom}-e ponovno se dodjeljuju prometnoj infrastrukturi (sve dok se ne postigne zadani broj iteracija ili zadovoljavajuæi stupanj kvalitete - detaljnije u odlomku \ref{valid}). 
+U tom iterativnom procesu prometni tokovi iz modificirane \gls{pom}-e ponovno se dodjeljuju prometnoj infrastrukturi (sve dok se ne postigne zadani broj iteracija ili zadovoljavajuæi stupanj kvalitete - detaljnije u poglavlju \ref{valid}). 
 %Ulaz u svaku iteraciju je i zapis \textit{najmanjih} puteva, izraèunat tijekom uravnotežene raspodjele po prometnoj infrastrukturi. \cite{Segovi:2015.} 
 
 
@@ -167,7 +165,7 @@ Važno je osigurati anonimnost i dozvolu pojedinca da se podaci koriste u jasno d
 \subsection{Pokretna osjetila}
 %rad iz 1972
 %Osnovna ideja pokretnih osjetila je da Vozila koja se kreæu po prometnoj mreži i sastavni su dio prometnog toka prikupljaju i šalju podatke.
-Pokretno osjetilo je ureðaj koji je postavljen na vozilo koje se potom kreæe prometnom infrastrukturom, postajuæi tako dijelom prometnog toka, te koji je sposoban opažati vrijednosti definiranih parametara gibanja vozila na koje je postavljeno te ih pohranjivati i prenositi radi naknadnog procesiranja. Osnovne podatke koje osjetilo prikuplja su položaj, brzina i smjer kretanja vozila.
+Pokretno osjetilo je ureðaj koji je postavljen na vozilo koje se potom kreæe prometnom infrastrukturom, postajuæi tako dijelom prometnog toka, te koji je sposoban opažati vrijednosti definiranih parametara gibanja vozila na koje je postavljeno te ih pohranjivati i prenositi radi naknadnog procesiranja. Osnovne podatke koje osjetilo prikuplja su položaj, brzina i smjer kretanja vozila. \cite{Jelusic:2016.} 
 
 %localization data, speed, direction of travel, and time information
 
@@ -263,7 +261,7 @@ U novije vrijeme su predloženi postupci u kojima se koriste upravo anonimizirane
 Zbog limitirajuæe granularnosti \gls{cdr}, diskretizacija vremena je praktièki neizbježna \cite{Chen:2019.}. 
 U literaturi je korištena razlièita vremenska rezolucija (razluèivost) - podjela na vremenske periode $\tau$ od 15 min, 30 min \cite{Schneider:2013.}, 1 sat, 2 sata, 3 sata \cite{Filic:2016.}.\cite{Chen:2019.}
 Putovanja ili zaustavljanja bivaju dodijeljena periodima u kojima se odvijaju. 
-Još jedna od zastupljenih podjela je na specifiène periode \textit{radni sati}, \textit{noæni sati}, \textit{komutacijski sati} \cite{Schneider:2013.} \cite{Toole:2015.} \cite{Gundlegard:2016.} gdje se promatra gdje pojedinci pretežito borave u tipiènom radnom vremenu te tokom noæi. 
+Još jedna od zastupljenih podjela je na specifiène periode - \textit{radni sati}, \textit{noæni sati}, \textit{komutacijski sati} \cite{Schneider:2013.} \cite{Toole:2015.} \cite{Gundlegard:2016.} gdje se promatra gdje pojedinci pretežito borave u tipiènom radnom vremenu te tokom noæi. 
 
 
 \subsubsection{Rekonstrukcija putanja}
@@ -274,7 +272,7 @@ Kretanje pojedinca tokom dana najèešæe je rascjepkano, odnosno u nizu postoje "r
 
 $ potpunost = \frac{n_L}{\tau \times \mathcal{T}} $
 
-Gdje je $n_L$ broj zabilježenih položaja (zaustavljanja), $\tau$ vremenski period, a $ \mathcal{T} $ duljina vremenskog razdoblja koje pokrivaju zapisi.
+Gdje je $n_L$ broj zabilježenih položaja (zaustavljanja), $\tau$ vremenski period, a $ \mathcal{T} $ duljina ukupnog vremenskog razdoblja za koje su dostupni zapisi.
 
 \end{definition}
 
@@ -283,7 +281,7 @@ U istraživanjima je zastupljeno odbacivanje korisnika s niskim stupnjem \textit{
 
 \subsubsection{Prostorna razluèivost - Voronoi teselacija}
 \textit{Najfinija} prostorna rezolucija koju je moguæe postiæi kada je rijeè o \gls{pom}-i dobivenoj iz \gls{cdr} postiže se podjelom prema Voronoievoj teselaciji. 
-\begin{definition}{Voronoi tesalacija} definirana je skupom toèaka $P$ u ravnini, gdje za svaku toèku $p_i$ Voronoi æeliju $K_i$ èine sve toèke ravnine bliže toj toèki negoli ikojoj drugoj toèki iz skupa. Svaka takva æelija dobiva se presjecištem pola prostora izmeðu susjednih toèaka skupa, pa stoga èini konveksni poligon. Dijelovi Voronoiova dijagrama su sve toèke u ravnini koje su ekvidistantne prema dva najbliža položaja (granice poligona). Voronoiovi vrhovi su toèke ekvidistantne tri (ili više) položaja. [izvor]
+\begin{definition}{Voronoi tesalacija} definirana je skupom toèaka $P$ u ravnini, gdje za svaku toèku $p_i$ Voronoi æeliju $K_i$ èine sve toèke ravnine bliže toj toèki negoli ikojoj drugoj toèki iz skupa. Svaka takva æelija dobiva se presjecištem pola prostora izmeðu susjednih toèaka skupa, pa stoga èini konveksni poligon. Dijelovi Voronoiova dijagrama su sve toèke u ravnini koje su ekvidistantne prema dva najbliža položaja (granice poligona). Voronoiovi vrhovi su toèke ekvidistantne tri (ili više) položaja. \cite{Voronoi:2019.}
 \end{definition}
 
 Toèke skupa su položaji baznih stanice, a æelije oko njih aproksimacija površine koju ta bazna stanica pokriva. U stvarnosti se te površine prekrivanja preklapaju jer podruèje prekrivanja nije sasvim fiksno i ovisi o trenutnoj aktivnosti svake bazne stanice \cite{Bonnel:2015.}. (Vidi sliku \ref{fig:Voronoi})
@@ -296,7 +294,7 @@ Toèke skupa su položaji baznih stanice, a æelije oko njih aproksimacija površine
 	\end{center}
 \end{figure}
 
-Gustoæa Voronoi æelija snažno je korelirana s gustoæom stanovništva te stoga bolju prostornu rezoluciju ima na podruèjima veæe gustoæe populacije. \cite{Gundlegard:2016.} Mjerna nesigurnost odreðivanja položaja iznosi od približno stotinu metara u gusto naseljenom, do nekoliko kilometara u ruralnom podruèju \cite{Calabrese:2011.}.  Neuniformnost æelija nije problem, veæ preklapanje podruèja pokrivanja u stvarnosti, posljedica èega su oscilacije \cite{Gundlegard:2016.}. Ureðaj mijenja baznu stanicu na koju je spojen iako svo vrijeme zadržava isti položaj.
+Gustoæa Voronoi æelija snažno je korelirana s gustoæom stanovništva te stoga bolju prostornu rezoluciju ima na podruèjima veæe gustoæe populacije \cite{Gundlegard:2016.}. Mjerna nesigurnost odreðivanja položaja iznosi od približno stotinu metara u gusto naseljenom, do nekoliko kilometara u ruralnom podruèju \cite{Calabrese:2011.}.  Problem predstavlja preklapanje podruèja pokrivanja u stvarnosti, posljedica èega su oscilacije \cite{Gundlegard:2016.}. Ureðaj mijenja baznu stanicu na koju je spojen iako svo vrijeme zadržava isti položaj.
 Uèinak koji oscilacija ima na definiranje putovanja može se ublažiti odreðivanjem minimalne udaljenost putovanja, zanemarivanjem putovanja u susjedne æelije. \cite{Gundlegard:2016.} Analiza snage signala i trenutnih optereæenja okolnih baznih stanica mogu dati jasniji uvid u optereæenje mreže u vremenu poèetka (i trajanja) telekomunikacijske aktivnosti. \cite{Chen:2019.}
 
 %Važno je uzeti u obzir postojanje oscilacija.***TODO: vrati se na ovaj odlomak**
@@ -375,15 +373,29 @@ Primjeri oznaka vezanih za èvorove:  \textit{office=company}, \textit{building=r
 
 \chapter{Validacija \glstext{pom}}
 \label{valid}
-Kada je rijeè o validaciji \gls{pom}, pregledom literature utvrðeno je da se jednoznaèno koriste pojmovi toènost, pouzdanost i kvaliteta \gls{pom}-a. Za njihovu procjenu koriste se mjere koje opisuju razinu sliènosti odnosno razlike (greške) s referentnom matricom - a temelj je razlika na razni svakog elementa.  \textbf{Tradicionalni postupak validacije \gls{pom}-e svodi se na odreðivanje njene sliènosti s \textit{grand truth} matricom}. \cite{Travassoli:2016.} Grand truth \gls{pom}-a je \gls{pom}-a koja je uzeta kao ona koja najtoènije opisuje stvarno stanje. U analizi prometa, dobivena je tradicionalnim postupcima (anketiranje i/ili prebrojavanje vozila). Statistièke mjere kvantiziraju razliku procijenjenih i “istinitih“ vrijednosti. Vidi Dodatak \ref{dodatak_metrics} - Postojeæe metrik za validaciju \glstext{pom}. 
 
-\textbf{Upravo ta \textit{grand truth} POM-a ujedno je i \textit{seed} \gls{pom}-a (odlomak \ref{seed}) u postupku procjene nove \gls{pom}-e iz rezultata prebrojavanja vozila. Toènost nove POM-e ocjenjivati usporedbom s tom istom \textit{grand truth - seed} \gls{pom}-om. Postupak validacije stoga je ovisan o kvaliteti \textit{seed} \gls{pom}-e, koja je procijenjena u odnosu njenu \textit{seed} matricu i tako rekurzivno.}
+Postupak validacije %(modela, \gls{pom}-e, neèega)
+je objektivna procjena	kvalitete, vrijednosti objekta koji se validira. 
 
-\subsubsection{Validacija suvremenih \glstext{pom}}
+
+Kada je rijeè o validaciji \gls{pom}, pregledom literature utvrðeno je da se jednoznaèno koriste pojmovi toènost, pouzdanost i kvaliteta \gls{pom}-a. Za njihovu procjenu koriste se mjere koje opisuju razinu sliènosti odnosno razlike (greške) s referentnom matricom - a temelj je razlika na razni svakog elementa \gls{pom}.  
+
+\textbf{Tradicionalni postupak validacije \gls{pom}-e svodi se na odreðivanje njene sliènosti s \textit{grand truth} matricom}. \cite{Travassoli:2016.} Grand truth \gls{pom}-a je \gls{pom}-a koja je uzeta kao ona koja najtoènije opisuje stvarno stanje. U analizi prometa, dobivena je tradicionalnim postupcima (anketiranje i/ili prebrojavanje vozila). Statistièke mjere kvantiziraju razliku procijenjenih i “istinitih“ vrijednosti. Vidi Dodatak \ref{dodatak_metrics} - Postojeæe metrike za validaciju \glstext{pom}. 
+
+\textbf{Upravo ta \textit{grand truth} POM-a je ujedno bila i \textit{seed} \gls{pom}-a (odlomak \ref{seed}) u postupku procjene nove \gls{pom}-e iz rezultata prebrojavanja vozila \cite{Segovi:2015.}. Kvaliteta \gls{pom}-e ocjenjivati æe se usporedbom s \gls{pom}-om koja se koristi u postupku estimacije te iste \gls{pom}-e. Postupak validacije nove \gls{pom}-e stoga je ovisan o kvaliteti \textit{seed} \gls{pom}-e, koja je procijenjena u odnosu njenu \textit{seed} matricu i tako rekurzivno.}
+
+\subsection{Validacija suvremenih \glstext{pom}}
 
 Redefiniranje metodologije koja æe pružiti poveæanu kvalitetu i transparentnost uz ispunjavanje suvremenih zahtjeva na tehnologije (cijena, zaštita privatnosti i podataka itd.) privlaèi pažnju istraživaèa i van podruèja prometne znanosti. Oni predlažu alternativne izvore podataka o kretanju za promatranje obrazaca putovanja i pristupe procjeni \gls{pom}-a, no prema \cite{Pollard:2013.} nailaze na problem da prometna struka zahtijeva da se njihova vrijednost dokazuje usporedbom s tradicionalnim pristupima, dobro poznatim u praksi. 
 
-Za usporedbu suvremene \gls{pom} s prostornom podjelom koja nije podjela na \gls{taz} s \gls{pom} èija je prostorna podjela na \gls{taz} na tradicionalan naèin zahtjeva da se prostorna podjela prilagodi novoj ili prostornoj podjeli jedne od matrica. To se u praksi èini agregacijom i/ili interpolacijom tokova. Detaljnije u Dodatku \ref{dodatak_ppp}.
+Za usporedbu suvremene \gls{pom} s prostornom podjelom koja nije podjela na \gls{taz} s \gls{pom} èija je prostorna podjela na \gls{taz} na tradicionalan naèin zahtjeva da se prostorna podjela prilagodi novoj ili prostornoj podjeli jedne od matrica. To se u praksi èini agregacijom i/ili interpolacijom tokova. Detaljnije u Dodatku \ref{dodatak_ppp} - Prilagodba prostorne podjele.
+
+
+\subsection{Redefiniranje validacije \glstext{pom}}
+%moj pogled na validaciju pom
+...
+Validacija \gls{pom}-e je proces koji ima za cilj procjenu obilježja kvalitete te \gls{pom}-e i znaèi identifikaciju obilježja kvalitete \gls{pom}-e, njenog sadržaja, njene smislenosti, a izražava se slijedeæim  indikatorima kao što su: toènost, \cancel{\textit{prostorno obuhvaæanje, zrnatost}}, definicija putovanja, prostorna rezolucija, vremenska rezolucija i širina toka.
+
 
 
 \chapter{Motivacija}

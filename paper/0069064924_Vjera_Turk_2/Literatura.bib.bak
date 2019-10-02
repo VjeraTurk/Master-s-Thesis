@@ -192,6 +192,15 @@
   Timestamp                = {16.06.2019}
 }
 
+@Article{Jagadeesh:2004.,
+  Title                    = {{A Map Matching Method for GPS Based Real-Time Vehicle Location}},
+  Author                   = {G. R. Jagadeesh and T. Srikanthan and X. D. Zhang},
+  Year                     = {2004.},
+
+  Timestamp                = {30.09.2019},
+  Url                      = {https://www3.ntu.edu.sg/home/asgeorge/pdf/J04.pdf}
+}
+
 @Booklet{Jelusic:2016.,
   Title                    = {TELEMATICKA SUCELJA (nastavni tekst)},
   Author                   = {Niko Jelusic},
@@ -428,6 +437,15 @@ Maozeng Xu and Yinhai Wang},
   Volume                   = {48},
 
   Timestamp                = {15.06.2019}
+}
+
+@Electronic{:,
+  Title                    = {Geomatematički rječnik},
+  Note                     = {(20.1.2019.)},
+  Organization             = {Struna- Hrvatsko Strukovno Nazivlje},
+  Url                      = {http://struna.ihjj.hr/naziv/voronoiov-dijagram/33840/},
+
+  Timestamp                = {01.10.2019}
 }
 
 @Other{LBS:2018.,

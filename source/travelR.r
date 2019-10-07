@@ -27,3 +27,5 @@ aset <- hwy.update.demand(aset,"All",trip.table)
 # Trip Assignment
 assignment.results <- highway.assign(aset,method="Frank.Wolfe")
 loaded.links <- assignment.results$volumes
+
+heatmap(trip.table, Colv = NA, Rowv = NA)

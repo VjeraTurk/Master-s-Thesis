@@ -46,14 +46,40 @@ Note that the number of points in each pattern might be different.
 
 par(mfrow=c(1,2))
 #gdje je tko bio u trenutku svakih 20 minuta, interpolira i diskretizira putanje, određuje udaljenosti objekata pairwise i vraća prosjek udaljenosti za svaki trenutak:
-system.time(meandist <- avedistTrack(Beijing,timestamp = "20 mins") ) #Warning: traje jako dugo
-#user  system elapsed 
-#440.296   0.916 441.775 
 
-plot(meandist,type="l",lwd=2,cex.axis=1.7,cex.lab=1.7)
-distinframe <- data.frame(tsq=attr(meandist,"tsq"),dist=meandist)
+  system.time(meandist <- avedistTrack(Beijing,timestamp = "20 mins") ) #Warning: traje jako dugo
+  #user  system elapsed 
+  #440.296   0.916 441.775 
+
+system.time(meandist_15mins <- avedistTrack(Beijing,timestamp = "15 mins") ) 
+system.time(meandist_1h <- avedistTrack(Beijing,timestamp = "60 mins") ) 
+system.time(meandist_2h <- avedistTrack(Beijing,timestamp = "120 mins") ) 
+system.time(meandist_3h <- avedistTrack(Beijing,timestamp = "180 mins") ) 
+
+plot(meandist_15mins,type="l",lwd=2,cex.axis=1.7,cex.lab=1.7)
+distinframe <- data.frame(tsq=attr(meandist_15mins,"tsq"),dist=meandist_15mins)
 dist3rd <- distinframe[substr(distinframe$tsq,start = 1,stop=10)=="2008-02-03",]
-plot(dist3rd$tsq,dist3rd$dist,type="l",xlab="time", ylab="average distance",lwd=2,cex.axis=1.7,cex.lab=1.7)
+plot(dist3rd$tsq,dist3rd$dist,type="l",xlab="time", ylab="average distance",lwd=2,cex.axis=1.7,cex.lab=1.7, title("15 min"))
+
+plot(meandist_1h,type="l",lwd=2,cex.axis=1.7,cex.lab=1.7)
+distinframe <- data.frame(tsq=attr(meandist_1h,"tsq"),dist=meandist_1h)
+dist3rd <- distinframe[substr(distinframe$tsq,start = 1,stop=10)=="2008-02-03",]
+plot(dist3rd$tsq,dist3rd$dist,type="l",xlab="time", ylab="average distance",lwd=2,cex.axis=1.7,cex.lab=1.7, title("1 h"))
+
+plot(meandist_2h,type="l",lwd=2,cex.axis=1.7,cex.lab=1.7)
+distinframe <- data.frame(tsq=attr(meandist_2h,"tsq"),dist=meandist_2h)
+dist3rd <- distinframe[substr(distinframe$tsq,start = 1,stop=10)=="2008-02-03",]
+plot(dist3rd$tsq,dist3rd$dist,type="l",xlab="time", ylab="average distance",lwd=2,cex.axis=1.7,cex.lab=1.7, title("2 h"))
+
+plot(meandist_3h,type="l",lwd=2,cex.axis=1.7,cex.lab=1.7, title("3 h"))
+distinframe <- data.frame(tsq=attr(meandist_3h,"tsq"),dist=meandist_3h)
+dist3rd <- distinframe[substr(distinframe$tsq,start = 1,stop=10)=="2008-02-03",]
+plot(dist3rd$tsq,dist3rd$dist,type="l",xlab="time", ylab="average distance",lwd=2,cex.axis=1.7,cex.lab=1.7, title("3 h"))
+
+  plot(meandist,type="l",lwd=2,cex.axis=1.7,cex.lab=1.7)
+  distinframe <- data.frame(tsq=attr(meandist,"tsq"),dist=meandist)
+  dist3rd <- distinframe[substr(distinframe$tsq,start = 1,stop=10)=="2008-02-03",]
+  plot(dist3rd$tsq,dist3rd$dist,type="l",xlab="time", ylab="average distance",lwd=2,cex.axis=1.7,cex.lab=1.7)
 
 system.time(b <- Track.idw(Beijing,timestamp = "20 mins",epsilon=1000)) #epsilon u metrima, duljinu kraću od 1000 metara u 20 minuta gleda kao stajanje
 

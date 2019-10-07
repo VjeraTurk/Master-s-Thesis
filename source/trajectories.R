@@ -5,9 +5,14 @@ install.packages('spacetime')
 install.packages('trajectories')
 "
 
+library("trajectories")
 library("taxidata")
+library("spacetime")
+
 system.time(Beijing <- taxidata)
 Beijing <- Beijing[1:2000]
+
+Beijing <- Beijing[1:50] #50 tracks only
 
 Z <- lapply(X=1:length(Beijing), function(i){
 q <- cut(Beijing[[i]], "day", touch = F)
@@ -137,3 +142,18 @@ w <- rTrack(bbox = m,transform = T);w
 
 z <- rTrack(bbox = m,transform = T,nrandom = T)
 z
+
+
+#rtc<-rTracksCollection(p=5,n=10) random
+
+Z=Z[1:50]#50 iz Beijinga
+
+for(i in 1:50){
+  Z[[i]]@sp<-spTransform(Z[[i]]@sp, CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"))
+} 
+#plot(Z[[1]],xlim=c(420000,470000),ylim=c(4390000,4455000),lwd=2)
+plot(Z[[1]],xlim=c(116.20000,116.70000),ylim=c(39.70000,40.20000),lwd=2)
+for(i in 2:50){
+  plot(Z[[i]],add=T,col=i,lwd=2)
+}
+save(Z, file="Z.RData")

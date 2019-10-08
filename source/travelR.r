@@ -11,6 +11,7 @@ data(SiouxFalls)
 # Trip Generation
 productions<-rowSums(SiouxFalls.od)
 attractions<-colSums(SiouxFalls.od)
+heatmap(SiouxFalls.od, Colv = NA, Rowv = NA)
 
 # Highway Skims
 cost.function<-with(SiouxFalls.net$Links,function(...)FFTime)

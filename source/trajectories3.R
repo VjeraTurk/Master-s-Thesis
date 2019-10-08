@@ -37,12 +37,17 @@ par(mar=c(0,0,1,1))
 par(mfrow=c(1,3))
 plot(chall[[51]],zlim=c(-max(abs(unlist(minmax))),max(abs(unlist(minmax)))),main="",ribwid=0.04,ribsep=0.02,col=col5(n=color_levels),cex.axis=1.7)
 title(attr(ch,"timevec")[51],line = -10,cex.main=2)
-plot(chall[[75]],zlim=c(-max(abs(unlist(minmax))),max(abs(unlist(minmax)))),main="",ribwid=0.04,ribsep=0.02,col=col5(n=color_levels),cex.axis=1.7)
+#plot(chall[[75]],zlim=c(-max(abs(unlist(minmax))),max(abs(unlist(minmax)))),main="",ribwid=0.04,ribsep=0.02,col=col5(n=color_levels),cex.axis=1.7)
 
-title(attr(ch,"timevec")[75],line = -10,cex.main=2)
-plot(chall[[104]],zlim=c(-max(abs(unlist(minmax))),max(abs(unlist(minmax)))),main="",ribwid=0.04,ribsep=0.02,
+plot(chall[[15]],zlim=c(-max(abs(unlist(minmax))),max(abs(unlist(minmax)))),main="",ribwid=0.04,ribsep=0.02,col=col5(n=color_levels),cex.axis=1.7)
+#title(attr(ch,"timevec")[75],line = -10,cex.main=2)
+title(attr(ch,"timevec")[15],line = -10,cex.main=2)
+
+#plot(chall[[104]],zlim=c(-max(abs(unlist(minmax))),max(abs(unlist(minmax)))),main="",ribwid=0.04,ribsep=0.02,
+plot(chall[[40]],zlim=c(-max(abs(unlist(minmax))),max(abs(unlist(minmax)))),main="",ribwid=0.04,ribsep=0.02,
 col=col5(n=color_levels),cex.axis=1.7)
-title(attr(ch,"timevec")[104],line = -10,cex.main=2)
+#title(attr(ch,"timevec")[104],line = -10,cex.main=2)
+title(attr(ch,"timevec")[40],line = -10,cex.main=2)
 
 " We show the chi maps for three different
 times during the day in which changes over time can be seen. The left plot of Figure 11 shows

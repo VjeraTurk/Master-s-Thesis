@@ -81,7 +81,7 @@ MSE(AA,BB) # 0.03811065
 MSE(BB,AA) #  0.03811065
 
 # R2_Score not the same!!
-R2_Score(AA,BB) #  0.2650466
+R2_Score(as.nummeric(AA),BB) #  0.2650466
 R2_Score(BB,AA) #  0.2727839
 
 rAA<-raster(AA)
@@ -169,3 +169,54 @@ Lon_Lat <- paste(LonLat$Longitude,LonLat$Latitude, sep= "_")
 dimnames(distances)<-list(Lon_Lat,Lon_Lat)
 
 SSIM(AA,BB,256)
+
+
+plot(cor(AA,BB))
+cor.test(AA,BB)
+
+heatmap(AA,Rowv=NA,Colv=NA)
+heatmap(BB,Rowv=NA,Colv=NA)
+
+####### linear model ########
+
+AA<-as.numeric(AA)
+BB<-as.numeric(BB)
+mod1 <- lm(BB ~ AA)
+plot(AA, BB)
+abline(mod1, lwd=2, col="red")
+
+# calculate residuals and predicted values
+res <- signif(residuals(mod1), 5)
+pre <- predict(mod1) # plot distances between points and the regression line
+segments(AA, BB, AA, pre, col="gray")
+
+# add labels (res values) to points
+library(calibrate)
+textxy(AA, BB, res, cx=0.7)
+coef(mod1)
+#(Intercept)          AA 
+#0.007127301 0.631128157 
+summary(mod1)
+
+"Call:
+  lm(formula = BB ~ AA)
+
+Residuals:
+  Min      1Q  Median      3Q     Max 
+-7.9986 -0.0071 -0.0071 -0.0071 13.4193 
+
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 0.0071273  0.0004042   17.63   <2e-16 ***
+  AA          0.6311282  0.0017595  358.69   <2e-16 ***
+  ---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.176 on 190942 degrees of freedom
+Multiple R-squared:  0.4026,	Adjusted R-squared:  0.4026 
+F-statistic: 1.287e+05 on 1 and 190942 DF,  p-value: < 2.2e-16"
+
+#Residuals vs Fitted
+plot(mod1,1)
+#Normal Q-Q
+plot(mod1,2)

@@ -74,11 +74,14 @@ plot(meandist_3h,type="l",lwd=2,cex.axis=1.7,cex.lab=1.7, title("3 h"))
 "
 system.time(b <- Track.idw(Beijing,timestamp = "20 mins",epsilon=1000)) #epsilon u metrima, duljinu kraću od 1000 metara u 20 minuta gleda kao stajanje
 
+#(optional) movements with length less than epsilon are not considered in the calculation!!
+
 plot(b,main="",ribwid=0.04,ribsep=0.02,cex.axis=1.5)
   
 "The function avemove measures the average
 length of movements passed by a collection of tracks based on a desirable timestamps."
 system.time(q <- avemove(Beijing,timestamp = "20 mins",epsilon=1000))# WARNING: traje dugo
+#This returns the average movements of a lits of objects of class "Track" over time.
 
 par(mfrow=c(1,2))
 plot(q,type="l",lwd=2,cex.axis=1.7,cex.lab=1.7)
@@ -93,6 +96,7 @@ morning, the average length of movements is decreasing while from morning till n
 is an increase in the length of movements. In the afternoon, there can be seen a decrease in
 the average length of movements which might be caused by traffic.
 "
+
 library("spatstat")
 system.time(d <- density(Beijing,timestamp = "20 mins",bw.ppl))#WARNING!!! jako dugo se izvršava -možda i satima?
 #    user   system  elapsed 

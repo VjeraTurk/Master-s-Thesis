@@ -81,9 +81,10 @@ Tradicionalni pristupi ukljuèuju metode provoðenja anketiranja. Postoji nekoliko
 \subsubsection{Prebrojavanje vozila (engl. \textit{Traffic Counts})}
 Metode koje ukljuèuju prebrojavanje vozila na kljuènim èvorištima prometne infrastrukture manje su zahtjevne za izvoðenje u odnosu na ankete i znaèajno smanjuju vrijeme i troškove prikupljanja podataka. Postupci ukljuèuju: analizu nadzornih snimaka prometa, automatski sustav za prepoznavanje i oèitovanje registarskih ploèica engl. \gls{anpr}, osjetila prometnog toka (radarska, magnetna, video-senzori, zvuèna..)  i  ruèno prebrojavanje.
 \textbf{Primjenom ovih postupaka nije moguæe pouzdano odrediti stvarna polazišta i odredišta putovanja \cite{Bonnel:2015.}, veæ se ona odreðuju matematièki modeliranjem uz uvažavanje pretpostavki} (odlomak \ref{modeling}). Pozicioniranje opreme ili osoba koje rade obzervaciju prometa treba biti plansko, a broj dostupnih ureðaja/ljudi ogranièavajuæi je faktor za velièinu podruèja transportnog sustava koje je moguæe nadzirati. \cite{Bera:2011.} Toènost procijenjenih matrica ovisi o: korištenom modelu procjene, grešci ulaznih podataka i infrastrukturi detektora koju je skupo izmijeniti ili proširiti zbog troškova održavanja i instalacije. \cite{Bera:2011.} \cite{Kuharic:2016.} 
+U vrijeme trajanja loših vremenskih uvjeta, podaci koje generira oprema koja radi na temelju vizualne percepcije mogu postati neiskoristivi, a kao nadomjestak se koristi ruèno prebrojavanje \cite{Iqbal:2014.}.
 
 \subsubsection{Pozicioniranje stanica za prebrojavanje}
-Toènost matrice poveæava se s brojem stanica. Stanice na razlièitim položajima u prometnoj mreži imaju razlièit stupanj utjecaja na procjenu \gls{pom}-e. Važno je odrediti optimalan broj stanica prebrojavanja i njihovih lokacija u prometnoj mreži. \cite{Bera:2011.} Optimalni uvjeti dobit æe se poštujuæi slijedeæa èetiri pravila: \\
+Toènost matrice poveæava se s brojem stanica, pozicija u infrastrukturi s kojih æe se vršiti prebrojavanje. Stanice na razlièitim položajima u prometnoj mreži imaju razlièit stupanj utjecaja na procjenu \gls{pom}-e. Važno je odrediti optimalan broj stanica prebrojavanja i njihovih lokacija u prometnoj mreži. \cite{Bera:2011.} Optimalni uvjeti dobit æe se poštujuæi slijedeæa èetiri pravila: \\
 \begin{enumerate}
 	\item Barem jedna stanica prebrojavanja po paru zona
 	\item Toèke prebrojavanja trebaju biti na onim prometnim vezama (cestama) izmeðu para zona gdje protjeèe najveæi moguæi prometni tok izmeðu te dvije zone 
@@ -423,22 +424,55 @@ Primjeri oznaka vezanih za èvorove:  \textit{office=company}, \textit{building=r
 Postupak validacije %(modela, \gls{pom}-e, neèega)
 je objektivna procjena	kvalitete, vrijednosti objekta koji se validira. Kada je rijeè o validaciji \gls{pom}, pregledom literature utvrðeno je da se jednoznaèno koriste pojmovi toènost, pouzdanost i kvaliteta \gls{pom}-a. Za njihovu procjenu koriste se mjere koje opisuju razinu sliènosti odnosno razlike (greške) s referentnom matricom - a temelj je razlika na razni svakog elementa \gls{pom}.  
 
-\textbf{Tradicionalni postupak validacije \gls{pom}-e svodi se na odreðivanje njene sliènosti s \textit{grand truth} matricom}. \cite{Travassoli:2016.} Grand truth \gls{pom}-a je \gls{pom}-a koja je uzeta kao ona koja najtoènije opisuje stvarno stanje. U analizi prometa, dobivena je tradicionalnim postupcima (anketiranje i/ili prebrojavanje vozila). Statistièke mjere kvantiziraju razliku procijenjenih i “istinitih“ vrijednosti. Vidi Dodatak \ref{dodatak_metrics} - Postojeæe metrike za validaciju \glstext{pom}. 
+\textbf{Tradicionalni postupak validacije \gls{pom}-e svodi se na odreðivanje njene sliènosti s \textit{grand truth} matricom}. \cite{Travassoli:2016.} Grand truth \gls{pom}-a je \gls{pom}-a koja je uzeta kao ona koja najtoènije opisuje stvarno stanje. U analizi prometa, dobivena je tradicionalnim postupcima (anketiranje i/ili prebrojavanje vozila). Statistièke mjere kvantiziraju razliku procijenjenih i “istinitih“ vrijednosti. Vidi Dodatak \ref{dodatak_metrics} - Postojeæe metrike za validaciju \glstext{pom}. Iz statistièkih mjera izdvojen je parametar $r^2$ koji je opisan u narednom potpoglavlju.
 
 \textbf{Upravo ta \textit{grand truth} POM-a je ujedno bila i \textit{seed} \gls{pom}-a (iz odlomka \ref{seed}) u postupku procjene nove \gls{pom}-e iz rezultata prebrojavanja vozila \cite{Segovi:2015.}. Kvaliteta \gls{pom}-e ocjenjivati æe se usporedbom s \gls{pom}-om koja se koristi u postupku estimacije te iste \gls{pom}-e. Postupak validacije nove \gls{pom}-e stoga je ovisan o kvaliteti \textit{seed} \gls{pom}-e, koja je procijenjena u odnosu njenu \textit{seed} matricu i tako rekurzivno.}
+
+\subsection{Linearna regresija - mjera $r^2$}
+
+%This technique estimates the cell values of one OD matrix (the dependent variable) based on the cell values of another OD matrix (the one independent variable). This results in three different parameters that can be assessed:
+
+%Opis promatrane pojave ili sustava u praksi nastojimo prikazati u obliku analitièkog izraza koji povezuje izlaznu velièinu, kao obilježje sustava ili pojave, s ulaznim velièinama, kao pobudama sustava ili pojave. Opæi sluèaj mora uvažavati èinjenicu o nepotpunoj adekvatnosti modela putem uvoðenja varijable $?$ koja æe predstavljati pogreške mjerenja i modeliranja sustava ili pojave.
+
+Tehnika evaluacije linearnom regresijom procjenjuje vrijednosti æelija jedne \gls{pom}-e (zavisna varijabla - $y$) na temelju vrijednosti druge - referentne \textit{grand truth} \gls{pom}-e (nezavisna varijabla - $x$). Pretpostavka kod linearne zavisnosti je da postoje koeficijenti $a$ i $b$ takvi da se za svaku vrijednost nezavisne varijable $x_i$ zavisna varijabla $y_i$ može napisati kao:
+\begin{equation}
+	y_i = bx_i + a + \epsilon_i
+\end{equation}
+gdje je pogreška $\epsilon$ sluèajna varijabla s normalnom raspodjelom i oèekivanom vrijednošæu nula, $b$ koeficijent smjera pravca linearne regresije, $a$ slobodni èlan  (predstavlja križište linije regresije s $y$ osi)
+
+ $r^2$  - korelacijski koeficijent odreðenja ili obuhvaæanja varijance mjera je koja %je statistik koji
+pokazuje koliko je slaganje izmeðu vrijednosti izraèunatih modelom procjene i izmjerenih vrijednosti (\textit{grand truth}). Opæenito, to je mjera "dobrote pristajanja" (engl. \textit{goodness of fit}) koja govori koliko uspješno model opisuje zavisnost (korelaciju) izmeðu zavisne i nezavisne varijable. $r^2$ predstavlja omjer modelom opisanih varijacija u odnosu na ukupne varijacije podataka. 
+	 
+	 \begin{equation}
+	 	r^2 = \frac{\sum{(\hat{y}_i -\bar{y}_i)^2}}{\sum{(y_i - \bar{y})^2}} = 1 - \frac{\sum{(y_i -\bar{y}_i)^2}}{\sum{(y_i - \bar{y})^2}}
+	 \end{equation}
+
+Raspon mjere $r^2$ je od 0 do 1, 0 ukazuje na nepostojanje objašnjenja varijance izmeðu izraèunatih i izmjerenih podataka, a 1 ukazuje da je varijanca u potpunosti objašnjena modelom.
+
+%1. The r2 statistic: this statistic is a measure of the model fit, which represents the explained variance in the dependent variable by the independent variables. Its value ranges from 0, indicating no explained variance at all, to 1, indicating fully explained variance;
+%2. The a parameter: this parameter represents the intersection of the regression line with the y axis in the regression formula;
+
+%3. The b parameter: this parameter represents the slope of the regression line, which is the derivative of y in respect to x. y =a+b?x
+
+U sluèaju da su matrice potpuno iste, vrijednost $r^2$ iznosila bi 1, $a$ vrijednosti 0 i $b$ vrijednosti 1. Što su vrijednosti bliže navedenima,matrice su sliènije.
+
+%In case of complete equal matrices, the results would indicate a r2 statistic of 1, an parameter a with value 0 and a parameter b with value 1. The closer the statistics approach these values, the more matrices are alike. In order to assure enough comparability between matrices before and after calibration, the Department For Transport requires r 2 values of 0.99. 
+
+***This value is not considered feasible for comparing OD matrices based on different modelling approaches.***
+\cite{Kuhlm:2015.}
+%(mozda tablica 41)
+%str 42.
+%98. multiplication factor?!
+
 
 \subsection{Validacija suvremenih \glstext{pom}}
 
 Redefiniranje metodologije procjene \gls{pom} koja æe pružiti poveæanu kvalitetu i transparentnost uz ispunjavanje suvremenih zahtjeva na tehnologije (cijena, zaštita privatnosti i podataka itd.) privlaèi pažnju istraživaèa i van podruèja prometne znanosti. Oni predlažu alternativne izvore podataka o kretanju za promatranje obrazaca putovanja i pristupe procjeni \gls{pom}-a, no prema \cite{Pollard:2013.} nailaze na problem da prometna struka zahtijeva da se njihova vrijednost dokazuje usporedbom s tradicionalnim pristupima, dobro poznatim u praksi. 
 
-Za tradicionalnu usporedbu suvremene \gls{pom} èija prostorna podjela nije \gls{taz} s \gls{pom} èija je prostorna podjela na \gls{taz} zahtjeva da se prostorna podjela prilagodi mekoj novoj ili prostornoj podjeli jedne od matrica. To se u praksi èini agregacijom i/ili interpolacijom tokova. Detaljnije u Dodatku \ref{dodatak_ppp} - Prilagodba prostorne podjele.
+Za tradicionalnu usporedbu suvremene \gls{pom} èija prostorna podjela nije \gls{taz} s \gls{pom} èija je prostorna podjela na \gls{taz} zahtjeva da se prostorna podjela prilagodi nekoj novoj ili prostornoj podjeli jedne od matrica. To se u praksi èini agregacijom i/ili interpolacijom tokova. Detaljnije u Dodatku \ref{dodatak_ppp} - Prilagodba prostorne podjele.
 
 %Marta C. Gonzalez validacija sa Traffic counts
-\subsection{Linearna Regresija}
-\cite{Kuhlm:2015.}
-(mozda tablica 41)
-str 42.
-98. multiplication factor?!
+
 \subsection{Grafièki oblik i strukturalna sliènost \glstext{pom}}
 Vrijednosti u matrici mogu se normalizirati na opseg vrijednosti koji je moguæe prikazati u obliku slike tako da svaka vrijednost predstavlja vrijednost piksela. Koriste se razlièite palete, od raspona 0-100  koji predlažu \cite{Filic:2016.}, prikazom nijansama jedne boje 0-255 engl. \textit{grayscale} \cite{Vuren:2015.}, paletom nijansa 2 boje, ili kojom drugom proizvoljnom paletom s više boja %(vidi paletu boja na slici \ref{fig:journeys})
 .
@@ -520,7 +554,7 @@ MSSIM(X,Y) =  \frac{1}{M} \sum_{m=1}^{M} SSIM(x_m,y_m) \label{eq:mssim}
 \end{figure}
 
 \subsubsection{Poboljšani} 
-Nekoliko godina nakon prvog spominjanja $MSSIM$ kao metrike usporedbe \gls{pom}-a \cite{Vuren:2015.}  se dotièe 3 problema postavljajuæi pitanja : Koliko treba biti veliki blok? Kako usporediti "guste" i "rijetke" \gls{pom}-e? Koja je prihvatljiva vrijednost $MSSIM$? Autori definiraju poboljšani model koji nazivaju $4D$-$MSSIM$ gdje u izraèun dodaju stvarne euklidske udaljenosti prostornih zona. 
+Nekoliko godina nakon prvog spominjanja $MSSIM$ kao metrike usporedbe \gls{pom}-a \cite{Vuren:2015.}  se dotièe 3 problema postavljajuæi pitanja: Koliko treba biti veliki blok? Kako usporediti "guste" i "rijetke" \gls{pom}-e? Koja je prihvatljiva vrijednost $MSSIM$? Autori definiraju poboljšani model koji nazivaju $4D$-$MSSIM$ gdje u izraèun dodaju stvarne euklidske udaljenosti prostornih zona. 
 
 
 

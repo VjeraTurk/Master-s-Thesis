@@ -5,7 +5,7 @@
 @Other{LBS:2018.,
   Title                    = {Materijali kolegija Usluge zasnovane na lokaciji},
   Comment                  = {Materijali kolegija Usluge zasnovane na lokaciji},
-  Crossref                 = {Usluge zasnovane na lokaciji},
+  Crossref                 = {{Usluge zasnovane na lokaciji}},
   Keywords                 = {Materijali kolegija},
   Timestamp                = {04.10.2019},
   Year                     = {2018,}
@@ -62,14 +62,15 @@
 }
 
 @Article{Bonnel:2015.,
-  Title                    = {Passive Mobile Phone DatData to Construct Origin-Destination Matrix: Potentials and Limitations},
+  Title                    = {{Passive Mobile Phone DatData to Construct Origin-Destination Matrix: Potentials and Limitations}},
   Author                   = {Patrick Bonnel and Etienne Hombourger and Ana-maria Olteanu-Raimond and Zbigniew Smoreda},
-  Journal                  = {Transportation Research Procedia, Elsevier},
+  Journal                  = {{Transportation Research ProcediaTransportation Research Part C:
+Emerging Technologies 40, Elsevier}},
   Year                     = {2015.},
   Number                   = {11},
   Pages                    = {381.- 398.},
 
-  Timestamp                = {16.06.2019}
+  Timestamp                = {14.10.2019}
 }
 
 @Article{Calabrese:2011.,
@@ -199,6 +200,15 @@
   Year                     = {2010.},
 
   Timestamp                = {16.06.2019}
+}
+
+@Article{Iqbal:2014.,
+  Title                    = {{Development of Origin-Destination Matrices Using Mobile Phone Call Data: A Simulation Based Approach}},
+  Author                   = {Md. Shahadat Iqbal and Charisma F. Choudhury and Pu Wang and Marta C. Gonz\'alez},
+  Journal                  = {{Transportation Research Part C: Emerging Technologies 40, Elsevier}},
+  Year                     = {2014.},
+
+  Timestamp                = {14.10.2019}
 }
 
 @Article{Jagadeesh:2004.,

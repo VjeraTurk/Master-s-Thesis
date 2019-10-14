@@ -216,6 +216,7 @@ Residual standard error: 0.176 on 190942 degrees of freedom
 Multiple R-squared:  0.4026,	Adjusted R-squared:  0.4026 
 F-statistic: 1.287e+05 on 1 and 190942 DF,  p-value: < 2.2e-16"
 
+plot(mod1)
 #Residuals vs Fitted
 plot(mod1,1)
 #Normal Q-Q

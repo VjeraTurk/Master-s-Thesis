@@ -221,3 +221,4 @@ plot(mod1)
 plot(mod1,1)
 #Normal Q-Q
 plot(mod1,2)
+

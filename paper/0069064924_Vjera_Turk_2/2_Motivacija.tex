@@ -10,7 +10,7 @@ Suvremeni odnosi promijenili su prirodu kretanja ljudi i dobara zbog èega tradic
 
 Kako prikazati kvalitetu \gls{pom}-e bez oslanjanja na \textit{grand turth} koja porastom znaèajnijih i bržih promjena poveæava utjecaj pristranosti kretanju u prošlosti? Postoji potreba za objektivnom procjenom kvalitete \gls{pom}-a definiranjem odnosnih parametara kvalitete.
 
-\gls{cdr} se istièe kao izvor gotovo jednako zastupljen u zemljama u razvoju i razvijenim zemljama, s penetracijom oko 40\%-50\% stanovništva za pojedine operatore \cite{Bonnel:2015.}. U Francuskoj je 2008. 80\% stanovništva starijeg od 12 godina posjedovalo mobilni ureðaj\cite{Bonnel:2015.}, a 2016. Èile je imao èak 132 mobilne pretplate na 100 stanovnika\cite{Graells-Garrido:2016.}. \textbf{Praksu odbacivanja ogromnog dijela uzorka zbog niske potpunosti putanja treba zamijeniti rekonstrukcijom putanja uvažavajuæi njihov kontekst.}
+\gls{cdr} se istièe kao izvor gotovo jednako zastupljen u zemljama u razvoju i razvijenim zemljama, s penetracijom oko 40\%-50\% stanovništva za pojedine operatore \cite{Bonnel:2015.}. U Francuskoj je 2008. 80\% stanovništva starijeg od 12 godina posjedovalo mobilni ureðaj\cite{Bonnel:2015.}, a 2016. Èile je imao èak 132 mobilne pretplate na 100 stanovnika \cite{Graells-Garrido:2016.}. \textbf{Praksu odbacivanja ogromnog dijela uzorka zbog niske potpunosti putanja treba zamijeniti rekonstrukcijom putanja uvažavajuæi njihov kontekst.}
 
 %Tradicionalni pristup validaciji procjenjuju sliènost s \gls{pom} koja je nužno nastala u prošlosti, pa se izmjene u odnosu na prethodnu matricu tumaèe kao "greška" iako se lako zapitati je li zapravo nova matrica ona koja opisuje stvarnost bolje od referentne.
 
@@ -29,9 +29,14 @@ Kako prikazati kvalitetu \gls{pom}-e bez oslanjanja na \textit{grand turth} koja
 	\end{center}
 \end{figure}
 
-\textbf{Istraživaèi proširuju podruèje primjene zakljuèaka analize kretanja stanovništva uzimajuæi u obzir njihov kontekst \cite{Barbour:2019.}}. Moguænost preciziranja odredišta s razine zone na razinu zgrade i odreðivanje svrhe (motiva) kretanja trebalo bi obuhvatiti procjenom kvalitete.
+\textbf{Istraživaèi proširuju podruèje primjene zakljuèaka analize kretanja stanovništva uzimajuæi u obzir njihov kontekst \cite{Barbour:2019.}}. Moguænost (naknadnog) preciziranja odredišta s razine zone na razinu zgrade i odreðivanje svrhe (motiva) kretanja trebalo bi obuhvatiti procjenom kvalitete.
 
 \section{Kontekstualizacija \glstext{pom}}
+
+\definition{Kontekst} putovanja je informacija vezana uz putovanje, njegovo polazište ili odredište koja procjenjuje ili upuæuje na motiv (svrhu) kretanja, naèin prijevoza ili željeni faktor po kojem se putovanja mogu kategorizirati i time preciznije definirati u informacijskom smislu.
+
+Ta informacija može biti izvuèena iz samih podataka o kretanju ili iz dodatnih vanjskih izvora podataka. Putovanja svake kontekstne kategorije èine po jednu kontekstualiziranu POM-u.
+
 Odreðivanje konteksta putovanja proširuje podruèje pokrivanja u fizièkom i informacijskom smislu te poveæava toènost \gls{pom}-e putem unosa relevantnih atributa vezanih za naèin i svrhu putovanja, èime je putovanje toènije opisano. Specificira socio-ekonomske aktivnosti koje su pokretaèi putovanja odnosno motivatori individualne i grupne mobilnosti. %razlozi kretanja stanovništva. %in the first place. 
 Preciznost odreðivanja konteksta definira izbor metode procjene \gls{pom}-e.
 %Moguænost preciznog odreðivanja konteksta zavisi o metodi procjene \gls{pom}-e.
@@ -40,7 +45,6 @@ Kada kontekst (svrha) putovanja nije izvorno navedena kao opisna velièina (predi
 %%IZBACITI: razvijene su metode koje pomoæu vanjskih izvora o sadržaju procjenjuju kontekst putovanja.
 moguæe je o kontekstu putovanja zakljuèiti iz baza neizravnih kontekstualiziranih podataka treæih strana (npr. zapisi o korištenju telekomunikacijske mreže dopunjeni prostornim podatcima \glstext{gis}) uz korištenje odgovarajuæih postupaka prostorne statistike i analitike.
 
-***Definicija konteksta***
 
 \begin{comment}
 \todo[inline]{Nije baš tako. Brkaju se znanost, istraživanje, tehnologija i korištenje. Naruèitelj hoæe usporediti s onim što je njemu poznati, ali to je usporedba krušaka i jabuka.
@@ -51,23 +55,25 @@ A problem ostaje otvoren za raspravu, \textbf{koliki je udio populacije stvarno 
 \todo[inline]{Volio bih vidjeti konkretniji prikaz koji æe ukazati na suštinske prednosti i nedostatke, ne investicijske. Naime, cilj ovog poglavlja jest ukazati kako \textbf{suvremeni tehnološki sustavi nedostatke tradicionalnih pristupa uspješno prevladavaju.}
 }
 \end{comment}
-\section{Pregled prethodnih istraživanja}
-\subsection{Primjeri korištenja vanjskih izvora konteksta u analizi kretanja}
+\subsection{Pregled prethodnih istraživanja - primjeri korištenja konteksta u analizi kretanja}
 
-\subsubsection{Studija A}
-U jednom od svojih radova grupa autora kvantizira vezu izmeðu ukupno 23 namjenske kategorije \gls{pois} iz službene gradske baze (npr. tvornice, bolnice, javne škole, religijski objekti, hoteli, knjižnice, sportski objekti) i onime što nazivaju 3 tipa privlaèenja. Dolaze do zakljuèka da postoje 3 tipa privlaèenja te da svaki ima karakteristièan tok (gustoæu ukupnog toka, udaljenost i disperziju polazišta tokova usmjerenih prema objektu tog tipa privlaèenja). Svaku od kategorija karakterizira jedan od ta 3 tipa privlaèenja. \cite{Alhazzani:2016.}  U radu koriste podatke iz službene baze s 12,000 \gls{pois} i \gls{cdr} zapisima iz razdoblja od mjesec dana. Cilj projekta bio je ispitati mobilnost na podruèju grada Riyadha, u Saudijskoj Arabiji za planiranje izgradnje podzemne željeznice.  Njihovi rezultati mogu se primijeniti u planiranju pozicioniranja buduæih objekata u gradu.   
+\subsubsection{Studija A - Urban Attractors}
+U jednom od svojih radova grupa autora kvantizira vezu izmeðu ukupno 23 namjenske kategorije \gls{pois} iz službene gradske baze (npr. tvornice, bolnice, javne škole, religijski objekti, hoteli, knjižnice, sportski objekti) i onime što nazivaju 3 tipa privlaèenja. Dolaze do zakljuèka da \textbf{postoje 3 osnovna tipa privlaèenja te da svaki ima karakteristièan tok (gustoæu ukupnog toka, udaljenost i disperziju polazišta tokova usmjerenih prema objektu tog tipa privlaèenja). Svaku od kategorija karakterizira jedan od ta 3 tipa privlaèenja.} U radu koriste podatke iz službene baze s 12,000 \gls{pois} i \gls{cdr} zapisima iz razdoblja od mjesec dana. Cilj projekta bio je ispitati mobilnost na podruèju grada Riyadha, u Saudijskoj Arabiji za planiranje izgradnje podzemne željeznice.  Njihovi rezultati mogu se primijeniti u planiranju pozicioniranja buduæih objekata u gradu.  \cite{Alhazzani:2016.} 
 % We used a statistical significance testing approach to rigorously quantify the relationship between Points of Interests (POIs) types (services) and the 3 patterns of Urban Attractors we detected. \gls{pois} Points of Interes (Urban Attractors ima 22 kategorije koristi bazu s POI)
 \subsubsection{Studija B - Model Raspodjele Toka}
 Inovativni pristup kontekstualizaciji toka korištenjem OpenStreetMap baze predstavljen je u radu \cite{Stupar:2018.}. Na osnovu pripadajuæih opisnih podataka, prostorni objekti na podruèju interesa kategorizirani su prema tipu socio-ekonomske aktivnosti u koju su ukljuèeni. Definirano je ukupno 6 kategorija:
-Dom (Home), Posao (Work), Zdravlje (Health), Edukacija (Education), Zabava (Leisure) i Ostalo (Other). Razvijen je vjerojatnosni model koji, na osnovu broja objekata pojedine kategorije u odredišnoj æeliji i promatranog vremenskog okvira, ukupni ulazni tok u odredišnu æeliju dijeli na 6 tokova usmjerenih prema objektima tih kategorija. Iz jedne \gls{pom}-e tako  se dobije 6 \gls{pom}-a, po jedna za svaku od kategorija. U demonstraciji modela korištene su  \gls{pom}-e dobivene iz javno dostupnih, anonimiziranih telekomunikacijskih zapisa na podruèju kineskog grada Shenzhena.\cite{Filic:2016.}\cite{data:2019.}
-\textbf{Definiranjem konteksta putovanja na ovaj naèin saèuvana je moguænost postizanja dobre rezolucije u vremenu, a istovremeno je dan kontekst koji ukljuèuje tipiène komutacijske \textit{Home} i \textit{Work} kategorije, te umjesto opæenite kategorije \textit{Other} precizira 4 kategorije}. 
+Dom (Home), Posao (Work), Zdravlje (Health), Edukacija (Education), Zabava (Leisure) i Ostalo (Other). \textbf{Razvijen je vjerojatnosni model koji, na osnovu broja objekata pojedine kategorije u odredišnoj æeliji i promatranog vremenskog okvira, ukupni ulazni tok u odredišnu æeliju dijeli na 6 tokova usmjerenih prema objektima tih kategorija.} Iz jedne \gls{pom}-e tako  se dobije 6 \gls{pom}-a, po jedna za svaku od kategorija. U demonstraciji modela korištene su  \gls{pom}-e dobivene iz javno dostupnih, anonimiziranih telekomunikacijskih zapisa na podruèju kineskog grada Shenzhena.\cite{Filic:2016.}\cite{data:2019.}
+Definiranjem konteksta putovanja na ovaj naèin saèuvana je moguænost postizanja dobre rezolucije u vremenu, a istovremeno je dan kontekst koji ukljuèuje tipiène komutacijske \textit{Home} i \textit{Work} kategorije, te umjesto opæenite kategorije \textit{Other} precizira 4 kategorije. 
 
-Definiranjem konteksta dobivamo nove informacije o kretanju unutar æelije, odnosno o konaènoj destinaciji nakon ulaska u æeliju. U tom smislu poznata je informacija o internom kretanju.
+Definiranjem konteksta dobivamo nove informacije o kretanju unutar æelije, odnosno o konaènoj destinaciji nakon ulaska u æeliju. U tom smislu poznata je informacija o internom kretanju, èak i za metodu procjene koja nema preciznost odreðivanja položaja veæu od æelije (\gls{cdr}).
 
 \subsubsection{Studija C - Planiranje održivih gradova}
-(...)
+Modeli za procjenu potrošnje energije na razini zgrada, a posljedièno i na razini gradova temelje na prostornom kapacitetu zgrada, nedovoljno uvažavajuæi èinjenicu da ispunjenost tog kapaciteta varira u vremenu. \textbf{Analizom kretanja stanovništva moguæe je procijeniti ispunjenost kapaciteta zgrada i odrediti prosjeènu potrošnju energije}. Korištenje \gls{cdr} zapisa prikladno je za ovakvu analizu zbog velikog uzoraka stanovništva i neovisnosti o prometnoj infrastrukturi. U istraživanju je korištena baza zgrada na podruèju od interesa (grad Boston) podijeljenih u 3 tipa - stambene, industrijske i komercijalne, površina te "radno vrijeme" zgrada koje nisu stambene. Zgrade u zonama su u procesu  grupirane u blokove, a vjerojatnosnim modelom putovanja su dodijeljena blokovima, a potom pojedinoj zgradi u bloku.
 \cite{Barbour:2019.}
-\subsubsection{Studija D - \cite{Chen:2019.}}
+
+\subsubsection{Studija D - Rekonstrukcija trajektorija}
+\cite{Chen:2019.} 
+
 \label{Chen}
 
 \section{Teza}

@@ -418,7 +418,7 @@ Primjeri oznaka vezanih za èvorove:  \textit{office=company}, \textit{building=r
 \end{comment}
 
 %\chapter{Validacija \glstext{pom}}
-\chapter{Pregled literature o validaciji \gls{pom}}
+\chapter{Pregled literature o validaciji \glstext{pom}}
 \label{valid}
 
 Postupak validacije %(modela, \gls{pom}-e, neèega)
@@ -442,6 +442,7 @@ gdje je pogreška $\epsilon$ sluèajna varijabla s normalnom raspodjelom i oèekiva
 
  $r^2$  - korelacijski koeficijent odreðenja ili obuhvaæanja varijance mjera je koja %je statistik koji
 pokazuje koliko je slaganje izmeðu vrijednosti izraèunatih modelom procjene i izmjerenih vrijednosti (\textit{grand truth}). Opæenito, to je mjera "dobrote pristajanja" (engl. \textit{goodness of fit}) koja govori koliko uspješno model opisuje zavisnost (korelaciju) izmeðu zavisne i nezavisne varijable. $r^2$ predstavlja omjer modelom opisanih varijacija u odnosu na ukupne varijacije podataka. 
+
 	 
 	 \begin{equation}
 	 	r^2 = \frac{\sum{(\hat{y}_i -\bar{y}_i)^2}}{\sum{(y_i - \bar{y})^2}} = 1 - \frac{\sum{(y_i -\bar{y}_i)^2}}{\sum{(y_i - \bar{y})^2}}
@@ -454,7 +455,7 @@ Raspon mjere $r^2$ je od 0 do 1, 0 ukazuje na nepostojanje objašnjenja varijance
 
 %3. The b parameter: this parameter represents the slope of the regression line, which is the derivative of y in respect to x. y =a+b?x
 
-U sluèaju da su matrice potpuno iste, vrijednost $r^2$ iznosila bi 1, $a$ vrijednosti 0 i $b$ vrijednosti 1. Što su vrijednosti bliže navedenima,matrice su sliènije.
+U sluèaju da su matrice potpuno iste, vrijednost $r^2$ iznosila bi 1, $a$ vrijednosti 0 i $b$ vrijednosti 1. Što su vrijednosti bliže navedenima, matrice su sliènije.
 
 %In case of complete equal matrices, the results would indicate a r2 statistic of 1, an parameter a with value 0 and a parameter b with value 1. The closer the statistics approach these values, the more matrices are alike. In order to assure enough comparability between matrices before and after calibration, the Department For Transport requires r 2 values of 0.99. 
 
@@ -556,5 +557,5 @@ MSSIM(X,Y) =  \frac{1}{M} \sum_{m=1}^{M} SSIM(x_m,y_m) \label{eq:mssim}
 \subsubsection{Poboljšani} 
 Nekoliko godina nakon prvog spominjanja $MSSIM$ kao metrike usporedbe \gls{pom}-a \cite{Vuren:2015.}  se dotièe 3 problema postavljajuæi pitanja: Koliko treba biti veliki blok? Kako usporediti "guste" i "rijetke" \gls{pom}-e? Koja je prihvatljiva vrijednost $MSSIM$? Autori definiraju poboljšani model koji nazivaju $4D$-$MSSIM$ gdje u izraèun dodaju stvarne euklidske udaljenosti prostornih zona. 
 
-
+Tehnike bazirane na strukturalnoj sliènosti i njihov doprinos još su uvijek otvorene za raspravu. \cite{Pollard:2013.}\cite{Varun:2013.}\cite{Vuren:2015.}
 

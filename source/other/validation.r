@@ -95,6 +95,7 @@ udaljenost između svakog para antena
   load(file = file)
   LonLat_ODM = LonLat
   require(tidyr)
+  require(optimbase)
   distances<-zeros(length(LonLat),length(LonLat))
   ##dimnames(distances)<-list(Lon_Lat,Lon_Lat) iz nekog glupog razloga nakon rdist.earth() dimnames atribute vise ne postoji
   require("fields")

@@ -83,4 +83,5 @@ gg <- gg + geom_map(data=vor_df, map=vor_df, aes(x=long, y=lat, map_id=id), colo
 #gg <- gg + geom_point(data=LonLat, aes(x=Longitude, y=Latitude),size=1, shape=21, color="white", fill="red")
 #taxi_points <- data.frame(taxiSP)
 #gg<- gg + geom_point(data=taxi_points, aes(x=coords.x1, y=coords.x2), size=1, shape=21, color="black", fill="yellow")
-gg
+
+#gg <- autoplot(map.latlon) + geom_point(data=LonLat, aes(x=Longitude, y=Latitude),size=1, shape=21, color="white", fill="steelblue")+ geom_map(data=vor_df, map=vor_df, aes(x=long, y=lat, map_id=id), color="#a5a5a5", fill="#FFFFFF00", size=0.25)

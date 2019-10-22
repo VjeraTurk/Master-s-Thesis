@@ -87,6 +87,7 @@ length(x[x==0]) # 1093177
 y<-ztaxi # treba taxi izvrtiti do kraja, nije dovoljno 1m ?!
 length(y[y==0]) # 1182918
 
+#https://stackoverflow.com/questions/16884384/blockwise-sum-of-matrix-elements
 b <- mat(1090,10)
 b
 x_10<-t(b) %*% x %*% b
@@ -102,9 +103,29 @@ x <- as.numeric(x)
 
 plot(y~x)
 mod1<-lm(y~x)
+summary(mod1)
 abline(mod1, lwd=2, col="red")
 
 SSIM(y_10,x_10,5) #[1] 0.861207
+
+"Call:
+lm(formula = y ~ x)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-603.91    0.01    0.01    0.01 1150.24 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -5.452e-03  1.305e-03  -4.178 2.94e-05 ***
+x            4.310e-02  5.889e-05 731.854  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1.422 on 1188098 degrees of freedom
+Multiple R-squared:  0.3107,	Adjusted R-squared:  0.3107 
+F-statistic: 5.356e+05 on 1 and 1188098 DF,  p-value: < 2.2e-16
+"
 
 length(x_10[x_10==0]) # 2860
 length(y_10[y_10==0]) # 9091
@@ -113,5 +134,23 @@ y_10 <- as.numeric(y_10)
 x_10 <- as.numeric(x_10)
 plot(y_10~x_10)
 mod2<-lm(y_10~x_10)
+summary(mod2)
 abline(mod2, lwd=2, col="red")
 
+"Call:
+lm(formula = y_10 ~ x_10)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-544.59   -0.21    0.24    0.35 1114.72 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -0.3531404  0.1299988  -2.716  0.00661 ** 
+x_10         0.0377617  0.0004549  83.015  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 14.06 on 11879 degrees of freedom
+Multiple R-squared:  0.3671,	Adjusted R-squared:  0.3671 
+F-statistic:  6892 on 1 and 11879 DF,  p-value: < 2.2e-16"

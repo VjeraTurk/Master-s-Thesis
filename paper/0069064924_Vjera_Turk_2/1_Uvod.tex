@@ -455,14 +455,36 @@ Raspon mjere $r^2$ je od 0 do 1, 0 ukazuje na nepostojanje objašnjenja varijance
 
 %3. The b parameter: this parameter represents the slope of the regression line, which is the derivative of y in respect to x. y =a+b?x
 
-U sluèaju da su matrice potpuno iste, vrijednost $r^2$ iznosila bi 1, $a$ vrijednosti 0 i $b$ vrijednosti 1. Što su vrijednosti bliže navedenima, matrice su sliènije.
+U sluèaju da su matrice potpuno iste, vrijednost $r^2$ iznosila bi 1, $a$ vrijednosti 0 i $b$ vrijednosti 1. Što su vrijednosti bliže navedenima, matrice su sliènije. Kod usporedbe 2 POM-e u odnosnu na referentnu \textit{grand truth}, ona koja je sliènija referentnoj bolje opisuje kretanje.
+Neki autori ne smatraju ovu vrijednost praktiènom za usporedbu POM-a dobivenih razlièitim pristupima procijeni.\cite{Kuhlm:2015.}  što dolazi kod izražaja i kada je rijeè o suvremenim izvorima.
 
 %In case of complete equal matrices, the results would indicate a r2 statistic of 1, an parameter a with value 0 and a parameter b with value 1. The closer the statistics approach these values, the more matrices are alike. In order to assure enough comparability between matrices before and after calibration, the Department For Transport requires r 2 values of 0.99. 
 
-***dodati sliku linearne regresije***
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=10cm,keepaspectratio=true]{lm_POM_A_POM_B}
+		\caption{ Primjer linearne regresije izmeðu vrijednosti dvije POM. Vrijednosti POM-e A na x i vrijednosti POM-e B na y osi. Pravac linearne regresije oznaèen je crvenom a  reziduali sivim linijama. \\ b = 0.0071273, a = 0.631128, $r^2$ = 0.4026}
+		\label{fig:lm}
+	\end{center}
+\end{figure}
 
-***This value is not considered feasible for comparing OD matrices based on different modelling approaches.***
-\cite{Kuhlm:2015.}
+\begin{comment}
+\begin{figure}[!htpb]
+\begin{center}
+\subfloat[POM-a A]{\label{fig:pom}
+\includegraphics[height=9cm,keepaspectratio=true]{POM_A}}\\ 
+%\hspace{10pt}
+\subfloat[POM-a B]
+{\label{fig:pom_a}
+\includegraphics[height=9cm,keepaspectratio=true]{POM_B}}
+\caption{Grafièki prikaz POM-a A i B. POM-e su dimenzija 1090 x 1090. (Na slici nema oznaka za svaku æeliju)}
+\label{fig:pom_b}
+\end{center}
+\end{figure}
+\end{comment}
+
+
+
 %(mozda tablica 41)
 %str 42.
 %98. multiplication factor?!
@@ -557,7 +579,5 @@ MSSIM(X,Y) =  \frac{1}{M} \sum_{m=1}^{M} SSIM(x_m,y_m) \label{eq:mssim}
 \end{figure}
 
 \subsubsection{Poboljšani} 
-Nekoliko godina nakon prvog spominjanja $MSSIM$ kao metrike usporedbe \gls{pom}-a \cite{Vuren:2015.}  se dotièe 3 problema postavljajuæi pitanja: Koliko treba biti veliki blok? Kako usporediti "guste" i "rijetke" \gls{pom}-e? Koja je prihvatljiva vrijednost $MSSIM$? Autori definiraju poboljšani model koji nazivaju $4D$-$MSSIM$ gdje u izraèun dodaju stvarne euklidske udaljenosti prostornih zona. 
-
-Tehnike bazirane na strukturalnoj sliènosti i njihov doprinos još su uvijek otvorene za raspravu. \cite{Pollard:2013.}\cite{Varun:2013.}\cite{Vuren:2015.}
+Nekoliko godina nakon prvog spominjanja $MSSIM$ kao metrike usporedbe \gls{pom}-a \cite{Vuren:2015.}  se dotièe 3 problema postavljajuæi pitanja: Koliko treba biti veliki blok? Kako usporediti "guste" i "rijetke" \gls{pom}-e? Koja je prihvatljiva vrijednost $MSSIM$? Autori definiraju poboljšani model koji nazivaju $4D$-$MSSIM$ gdje u izraèun dodaju stvarne euklidske udaljenosti prostornih zona. Tehnike bazirane na strukturalnoj sliènosti i njihov doprinos još su uvijek otvorene za raspravu. \cite{Pollard:2013.}\cite{Varun:2013.}\cite{Vuren:2015.}
 

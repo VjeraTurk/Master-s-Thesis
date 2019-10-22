@@ -77,18 +77,21 @@ SSIM(AA,BB,256) # 0.931958
 SSIM(BB,AA,256) # 0.931958
 ssim(AA,BB,256) # 0.931958 funkcija
 
+ssim(AA,BB,4) # 0.9712954
+
 MSE(AA,BB) # 0.03811065
 MSE(BB,AA) #  0.03811065
 
 # R2_Score not the same!!
-R2_Score(as.nummeric(AA),BB) #  0.2650466
-R2_Score(BB,AA) #  0.2727839
+R2_Score(as.numeric(AA),as.numeric(BB)) #  0.2650466
+R2_Score(as.numeric(BB),as.numeric(AA)) #  0.2727839
 
 rAA<-raster(AA)
 rBB<-raster(BB)
 
 SSIM(AA,BB,5) #0.9690147
 ssim(rAA,rBB,5) #0.9466467 /NAN
+
 
 #w is the width of the neighbourhood in number of pixels out from centre cell
 #nrow(AA) [1] 432
@@ -129,12 +132,20 @@ msssim(rAA,rBB,w=5) #0.8342233
 msssim(rBB,rAA,w=5) #0.8342233
 
 msssim(rAA,rBB,w=50) #0.8276595 traje dugo
-msssim(rAA,rBB,w=10) 
+msssim(rAA,rBB,w=10) #0.8328576
+msssim(rAA,rBB,w=c(30,30,30,30)) # 0.8312339
+msssim(rAA,rBB,w=c(20,20,20,20)) # 0.8316527
+msssim(rAA,rBB,w=c(15,15,15,15)) # 0.8325812
+msssim(rAA,rBB,w=c(10,10,10,10)) # 0.8328576
+msssim(rAA,rBB,w=c(9,9,9,9)) #     0.832757
+msssim(rAA,rBB,w=c(8,8,8,8)) #     0.8327988
+msssim(rAA,rBB,w=c(7,7,7,7)) #     0.8330692
+msssim(rAA,rBB,w=c(6,6,6,6)) #     0.8335658 # knee
+msssim(rAA,rBB,w=c(5,5,5,5)) #     0.8342233
+msssim(rAA,rBB,w=c(2,2,2,2)) #     0.8472937
+msssim(rAA,rBB,w=c(1,1,1,1)) #     0.8725775
 
-
-mmsim4D<- function(img1, img2, w, gFIL=TRUE, edge=FALSE, ks=c(0.01, 0.03), level=5, weight=c(0.0448, 0.2856, 0.3001, 0.2363, 0.1333), method='product'){
-  
-}
+#mmsim4D<- function(img1, img2, w, gFIL=TRUE, edge=FALSE, ks=c(0.01, 0.03), level=5, weight=c(0.0448, 0.2856, 0.3001, 0.2363, 0.1333), method='product'){}
 
 
 setwd("~/CODM/Matrice")
@@ -169,26 +180,34 @@ Lon_Lat <- paste(LonLat$Longitude,LonLat$Latitude, sep= "_")
 dimnames(distances)<-list(Lon_Lat,Lon_Lat)
 
 SSIM(AA,BB,256)
+#plot(cor(AA,BB))
+plot(as.numeric(AA)~as.numeric(BB))
 
-
-plot(cor(AA,BB))
-cor.test(AA,BB)
+cor.test(AA,BB)# == cor.test(as.numeric(AA),as.numeric(BB))
 
 heatmap(AA,Rowv=NA,Colv=NA)
 heatmap(BB,Rowv=NA,Colv=NA)
+require("lattice")
+levelplot(AA, col.regions=heat.colors)
+levelplot(BB, col.regions=heat.colors)
+  require("gplots")
+  heatmap.2(AA,Rowv=NA,Colv=NA)
+  heatmap.2(BB,Rowv=NA,Colv=NA)
+  #žas
 
 ####### linear model ########
 
-AA<-as.numeric(AA)
-BB<-as.numeric(BB)
-mod1 <- lm(BB ~ AA)
-plot(AA, BB)
-abline(mod1, lwd=2, col="red")
-
+POM_A<-as.numeric(AA)
+POM_B<-as.numeric(BB)
+mod1 <- lm(POM_B ~ POM_A)
+mod1 #Intercept i slope
+summary(mod1)
+plot(POM_B ~ POM_A,asp=1, xlim=c(0,25), ylim=c(0,25)) #plot će ovisiti o prozoru u kojem se plota
+a<-abline(mod1, lwd=2, col="red")
 # calculate residuals and predicted values
 res <- signif(residuals(mod1), 5)
 pre <- predict(mod1) # plot distances between points and the regression line
-segments(AA, BB, AA, pre, col="gray")
+segments(POM_A, POM_B, POM_A, pre, col="gray")
 
 # add labels (res values) to points
 library(calibrate)

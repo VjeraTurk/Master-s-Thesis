@@ -64,6 +64,54 @@ map.latlon <- openproj(map, projection = "+proj=longlat +ellps=WGS84 +datum=WGS8
 gg <- ggplot()
 gg <- autoplot(map.latlon) + geom_point(data=LonLat, aes(x=Longitude, y=Latitude),size=1, shape=21, color="white", fill="steelblue")+ geom_map(data=vor_df, map=vor_df, aes(x=long, y=lat, map_id=id), color="#a5a5a5", fill="#FFFFFF00", size=0.25)
 
-m<-matrix(sample.int(15, 33*33, TRUE), 33, 33)
-diag(m) <- 0
-heatmap(m,Rowv = NA,Colv = NA)
+require("Matrix.utils")
+#agg<-aggregate.Matrix(m, fun="sum")
+
+x<-matrix(sample.int(15, 33*33, TRUE), 33, 33)
+diag(x) <- 0
+heatmap(x,Rowv = NA,Colv = NA)
+
+y<-matrix(sample.int(15, 33*33, TRUE), 33, 33)
+diag(y) <- 0
+heatmap(y,Rowv = NA,Colv = NA)
+
+mat <- function(n, r) {
+  suppressWarnings(matrix(c(rep(1, r), rep(0, n)), n, n/r))
+}
+
+###Shenzhen
+
+x<-cdr
+length(x[x==0]) # 1093177
+
+y<-ztaxi # treba taxi izvrtiti do kraja, nije dovoljno 1m ?!
+length(y[y==0]) # 1182918
+
+b <- mat(1090,10)
+b
+x_10<-t(b) %*% x %*% b
+heatmap(x_10,Rowv = NA,Colv = NA)
+
+y_10<-t(b) %*% y %*% b
+heatmap(y_10,Rowv = NA,Colv = NA)
+
+SSIM(x,y,5)#[1] 0.9984854
+
+y <- as.numeric(y)
+x <- as.numeric(x)
+
+plot(y~x)
+mod1<-lm(y~x)
+abline(mod1, lwd=2, col="red")
+
+SSIM(y_10,x_10,5) #[1] 0.861207
+
+length(x_10[x_10==0]) # 2860
+length(y_10[y_10==0]) # 9091
+
+y_10 <- as.numeric(y_10)
+x_10 <- as.numeric(x_10)
+plot(y_10~x_10)
+mod2<-lm(y_10~x_10)
+abline(mod2, lwd=2, col="red")
+

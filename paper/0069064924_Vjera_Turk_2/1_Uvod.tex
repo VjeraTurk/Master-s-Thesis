@@ -45,7 +45,6 @@ Metodologija je izvedena u programskom okruženju za statistièko raèunarstvo R te
 \end{definition}
 \gls{pom}-a se može smatrati matriènim zapisom težinskog, usmjerenog grafa, gdje su težinski faktori usmjerenih veza širine prometnih tokova izmeðu èvorova mreže koji predstavljaju zone na koje je promatrano podruèje podijeljeno (slika \ref{fig:matrix}).
 
-
 \begin{figure}[!htbp]
 	\begin{center}
 		\includegraphics[width=15cm,keepaspectratio=true]{matrix_graph}
@@ -59,6 +58,8 @@ Metodologija je izvedena u programskom okruženju za statistièko raèunarstvo R te
 % Kod pojedinih operatora radi se o oko èak 40-50\% svih stanovnika neke države \cite{Bonnel:2015.}.  (...)
 %zamijeniti tradicionalne metode i postati standard u analizi prometa pa tako i procjeni \gls{pom}-a.
 \gls{pom}-a može biti procijenjena za sadašnje ili planirano prometno optereæenje. Može biti prikazana ukupno ili po pojedinim naèinima prijevoza (modalitetima prometnog sustava - osobna vozila, vozila javnog prijevoza, teretna vozila, pješaci itd.) i/ili razlièitim svrhama putovanja (putovanja na posao, putovanja kuæi...). \cite{Jelusic:2016.}
+
+Tranzitna \gls{pom}-a (eng. t-ODM) je vrsta \gls{pom}-e u kojoj su zabilježene poznate tranzicije izmeðu zona. Svaka tranzicija predstavlja onaj dio putovanja koji je poznat, a poèetak i završetak cjelokupnog putovanja kojem pripada su nepoznati.\cite{Peterson:2007.}
 
 \begin{comment}
 Odreðivanje konteksta putovanja proširuje podruèje pokrivanja u fizièkom i informacijskom smislu te poveæava toènost \gls{pom}-e putem unosa relevantnih atributa vezanih za naèin i svrhu putovanja, èime je putovanje toènije opisano. Specificira socio-ekonomske aktivnosti koje su pokretaèi putovanja odnosno motivatori individualne i grupne mobilnosti. %razlozi kretanja stanovništva. %in the first place. 
@@ -456,14 +457,14 @@ Raspon mjere $r^2$ je od 0 do 1, 0 ukazuje na nepostojanje objašnjenja varijance
 %3. The b parameter: this parameter represents the slope of the regression line, which is the derivative of y in respect to x. y =a+b?x
 
 U sluèaju da su matrice potpuno iste, vrijednost $r^2$ iznosila bi 1, $a$ vrijednosti 0 i $b$ vrijednosti 1. Što su vrijednosti bliže navedenima, matrice su sliènije. Kod usporedbe 2 POM-e u odnosnu na referentnu \textit{grand truth}, ona koja je sliènija referentnoj bolje opisuje kretanje.
-Neki autori ne smatraju ovu vrijednost praktiènom za usporedbu POM-a dobivenih razlièitim pristupima procijeni.\cite{Kuhlm:2015.}  što dolazi kod izražaja i kada je rijeè o suvremenim izvorima.
+Neki autori ne smatraju ovu vrijednost praktiènom za usporedbu POM-a dobivenih razlièitim pristupima procijeni \cite{Kuhlm:2015.}  što dolazi kod izražaja i kada je rijeè o suvremenim izvorima.
 
 %In case of complete equal matrices, the results would indicate a r2 statistic of 1, an parameter a with value 0 and a parameter b with value 1. The closer the statistics approach these values, the more matrices are alike. In order to assure enough comparability between matrices before and after calibration, the Department For Transport requires r 2 values of 0.99. 
 
 \begin{figure}[!htbp]
 	\begin{center}
 		\includegraphics[width=10cm,keepaspectratio=true]{lm_POM_A_POM_B}
-		\caption{ Primjer linearne regresije izmeðu vrijednosti dvije POM. Vrijednosti POM-e A na x i vrijednosti POM-e B na y osi. Pravac linearne regresije oznaèen je crvenom a  reziduali sivim linijama. \\ b = 0.0071273, a = 0.631128, $r^2$ = 0.4026}
+		\caption{ Primjer linearne regresije izmeðu vrijednosti dvije POM. Vrijednosti POM-e A na x i vrijednosti POM-e B na y osi. Pravac linearne regresije oznaèen je crvenom a  reziduali sivim linijama. \\ a = 0.0071273, b = 0.631128, $r^2$ = 0.4026}
 		\label{fig:lm}
 	\end{center}
 \end{figure}
@@ -483,8 +484,6 @@ Neki autori ne smatraju ovu vrijednost praktiènom za usporedbu POM-a dobivenih r
 \end{figure}
 \end{comment}
 
-
-
 %(mozda tablica 41)
 %str 42.
 %98. multiplication factor?!
@@ -492,9 +491,7 @@ Neki autori ne smatraju ovu vrijednost praktiènom za usporedbu POM-a dobivenih r
 
 \subsection{Validacija suvremenih \glstext{pom}}
 
-Redefiniranje metodologije procjene \gls{pom} koja æe pružiti poveæanu kvalitetu i transparentnost uz ispunjavanje suvremenih zahtjeva na tehnologije (cijena, zaštita privatnosti i podataka itd.) privlaèi pažnju istraživaèa i van podruèja prometne znanosti. Oni predlažu alternativne izvore podataka o kretanju za promatranje obrazaca putovanja i pristupe procjeni \gls{pom}-a, no prema \cite{Pollard:2013.} nailaze na problem da prometna struka zahtijeva da se njihova vrijednost dokazuje usporedbom s tradicionalnim pristupima, dobro poznatim u praksi. 
-
-Za tradicionalnu usporedbu suvremene \gls{pom} èija prostorna podjela nije \gls{taz} s \gls{pom} èija je prostorna podjela na \gls{taz} zahtjeva da se prostorna podjela prilagodi nekoj novoj ili prostornoj podjeli jedne od matrica. To se u praksi èini agregacijom i/ili interpolacijom tokova. Detaljnije u Dodatku \ref{dodatak_ppp} - Prilagodba prostorne podjele.
+Redefiniranje metodologije procjene \gls{pom} koja æe pružiti poveæanu kvalitetu i transparentnost uz ispunjavanje suvremenih zahtjeva na tehnologije (cijena, zaštita privatnosti i podataka itd.) privlaèi pažnju istraživaèa i van podruèja prometne znanosti. Oni predlažu alternativne izvore podataka o kretanju za promatranje obrazaca putovanja i pristupe procjeni \gls{pom}-a, no prema \cite{Pollard:2013.} nailaze na problem da prometna struka zahtijeva da se njihova vrijednost dokazuje usporedbom s tradicionalnim pristupima, dobro poznatim u praksi. Za tradicionalnu usporedbu suvremene \gls{pom} èija prostorna podjela nije \gls{taz} s \gls{pom} èija je prostorna podjela na \gls{taz} zahtjeva da se prostorna podjela prilagodi nekoj novoj ili prostornoj podjeli jedne od matrica te da se nakon toga matrice usporede \textit{elementwise}. To se u praksi èini agregacijom i/ili interpolacijom tokova. Detaljnije u Dodatku \ref{dodatak_ppp} - Prilagodba prostorne podjele.
 
 %Marta C. Gonzalez validacija sa Traffic counts
 

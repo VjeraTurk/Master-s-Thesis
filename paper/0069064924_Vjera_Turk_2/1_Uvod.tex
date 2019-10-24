@@ -1,6 +1,6 @@
 % !TeX encoding = windows-1250
 \chapter{Uvod}
-\todo[inline]{Temu rada na temelju dostupne literature smjestiti u šire podruèje struke. U pravilu Uvod ne bi trebao biti duži od dvije stranice.}
+%\todo[inline]{Temu rada na temelju dostupne literature smjestiti u šire podruèje struke. U pravilu Uvod ne bi trebao biti duži od dvije stranice.}
 
 % POGLAVLJA
 % - analizira problem i daju osnovne poznate zakonitosti vezane uz njegovo rješavanje, 
@@ -41,17 +41,26 @@ Metodologija je izvedena u programskom okruženju za statistièko raèunarstvo R te
 \section{Definicija Polazišno odredišne matrice}
 
 \theoremstyle{definition}
-\begin{definition}{Polazišno-odredišna matrica} definirana je tako da svaki njen element predstavlja broj putovanja izmeðu odgovarajuæeg para zona unutar promatranog podruèja u promatranom vremenskom razdoblju $\tau$ , u svakom smjeru zasebno. Redovi u \gls{pom}-i $i = 1,2,3...m$ predstavljaju polazišta (izvore) prometnog toka, a stupci $j = 1,2,3...n$ njihova odredišta (ušæa). Element $f_{ij}$ predstavlja broj putovanja iz pripadajuæe polazišne zone $i$ u pripadajuæu ciljnu zonu $j$. Broj putovanja naziva se i širina prometnog toka (eng. \textit{flow}). 
+\begin{definition}{Polazišno-odredišna matrica} definirana je tako da svaki njen element predstavlja broj putovanja izmeðu odgovarajuæeg para zona unutar promatranog podruèja u promatranom vremenskom razdoblju $\tau$ , u svakom smjeru zasebno. Redovi u \gls{pom}-i $i = 1,2,3...m$ predstavljaju polazišta (izvore) prometnog toka, a stupci $j = 1,2,3...n$ njihova odredišta (ušæa). Element $f_{ij}$ predstavlja broj putovanja iz pripadajuæe polazišne zone $i$ u pripadajuæu ciljnu zonu $j$. Broj putovanja naziva se i širina prometnog toka (eng. \textit{flow}). (slika \ref{fig:matrix})
 \end{definition}
-\gls{pom}-a se može smatrati matriènim zapisom težinskog, usmjerenog grafa, gdje su težinski faktori usmjerenih veza širine prometnih tokova izmeðu èvorova mreže koji predstavljaju zone na koje je promatrano podruèje podijeljeno (slika \ref{fig:matrix}).
+\gls{pom}-a se može smatrati matriènim zapisom težinskog, usmjerenog grafa, gdje su težinski faktori usmjerenih veza širine prometnih tokova izmeðu èvorova mreže koji predstavljaju zone na koje je promatrano podruèje podijeljeno (slika \ref{fig:matrix_2}).
 
 \begin{figure}[!htbp]
 	\begin{center}
-		\includegraphics[width=15cm,keepaspectratio=true]{matrix_graph}
-		\caption{Usmjereni graf kretanja i pripadajuæa  Polazišno-Odredišna Matrica. (Zone su oznaèene slovima abecede)}
+		\includegraphics[width=15cm,keepaspectratio=true]{POM}
+		\caption{Polazišno-Odredišna Matrica \cite{njem:2019.}}
 		\label{fig:matrix}
 	\end{center}
 \end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=15cm,keepaspectratio=true]{POM_2}
+\caption{Usmjereni graf kretanja i pripadajuæa  Polazišno-Odredišna Matrica. (Zone su oznaèene slovima abecede) \cite{graf:2019.}}
+\label{fig:matrix_2}
+\end{center}
+\end{figure}
+
 
 %Postoje brojni postupci procjene \gls{pom} o kojima je rijeè u narednim odlomcima.
 %Dok se još uvijek ulaže u razvoj matematièkih modela koji imaju za cilj poveæati kvalitetu \glsplural{pom} procijenjenih tradicionalnim postupcima, u novije vrijeme razvijaju se postupci koji imaju veliki potencijal. Ažurnost podataka o kretanju i moguænost obuhvaæanja mnogo veæeg uzorka stanovništva od tradicionalnih postupaka.
@@ -59,7 +68,7 @@ Metodologija je izvedena u programskom okruženju za statistièko raèunarstvo R te
 %zamijeniti tradicionalne metode i postati standard u analizi prometa pa tako i procjeni \gls{pom}-a.
 \gls{pom}-a može biti procijenjena za sadašnje ili planirano prometno optereæenje. Može biti prikazana ukupno ili po pojedinim naèinima prijevoza (modalitetima prometnog sustava - osobna vozila, vozila javnog prijevoza, teretna vozila, pješaci itd.) i/ili razlièitim svrhama putovanja (putovanja na posao, putovanja kuæi...). \cite{Jelusic:2016.}
 
-Tranzitna \gls{pom}-a (eng. t-ODM) je vrsta \gls{pom}-e u kojoj su zabilježene poznate tranzicije izmeðu zona. Svaka tranzicija predstavlja onaj dio putovanja koji je poznat, a poèetak i završetak cjelokupnog putovanja kojem pripada su nepoznati.\cite{Peterson:2007.}
+Tranzitna \gls{pom}-a (eng. t-ODM) je vrsta \gls{pom}-e u kojoj su zabilježene poznate tranzicije izmeðu zona. Svaka tranzicija predstavlja onaj dio putovanja koji je poznat, a poèetak i završetak cjelokupnog putovanja kojem pripada su nepoznati. \cite{Peterson:2007.}
 
 \begin{comment}
 Odreðivanje konteksta putovanja proširuje podruèje pokrivanja u fizièkom i informacijskom smislu te poveæava toènost \gls{pom}-e putem unosa relevantnih atributa vezanih za naèin i svrhu putovanja, èime je putovanje toènije opisano. Specificira socio-ekonomske aktivnosti koje su pokretaèi putovanja odnosno motivatori individualne i grupne mobilnosti. %razlozi kretanja stanovništva. %in the first place. 
@@ -73,7 +82,7 @@ moguæe je o kontekstu putovanja zakljuèiti iz baza neizravnih kontekstualizirani
 %kada je rijeè o novijim metodama procjene POM-a, autori razlièito pristupaju kontekstualizaciji. (...)
 \end{comment}
 
-\section{Tradicionalni pristupi procjeni \glstext{pom}}
+\section{Tradicionalni pristupi procjeni \\ \glstext{pom}}
 
 \subsection{Izvori ulaznih podataka}
 \subsubsection{Ankete}

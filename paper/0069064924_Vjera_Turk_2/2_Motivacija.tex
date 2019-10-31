@@ -13,7 +13,7 @@ Suvremeni društveno-ekonomski odnosi promijenili su prirodu kretanja ljudi i dob
 Analiza prometne potražnje tijekom dnevnih vrhunaca i pokazatelja kako æe se taj vrhunac mijenjati u bliskoj i dalekoj buduænosti zahtjeva odabir dobre vremenske rezolucije. Tradicionalni modeli procjene pretpostavljaju da se širina vremenskog vrhunca u buduænosti neæe mijenjati iako se ona veæ sad razlikuje od grada do grada (Slike \ref{fig:peak}) \cite{Thakur:2018.}.
 %Strateška planiranja izgradnje prometne infrastrukture, koja se vode vremenski nezavisnim modeliranjem potražnje, trebala bi uzeti u obzir vremenski zavisne modele. 
 
-Kako prikazati kvalitetu \gls{pom}-e bez oslanjanja na \textit{grand turth} koja porastom znaèajnijih i bržih promjena poveæava utjecaj pristranosti kretanju u prošlosti? Postoji potreba za objektivnom procjenom kvalitete \gls{pom}-a definiranjem odnosnih parametara kvalitete.
+\textbf{Pretpostavka da je referentna matrica \textit{a priori} toèna ne omoguæuje da se sagleda je li nova \gls{pom}-a toènija i/ili kvalitetnija od nje.} Kako prikazati kvalitetu \gls{pom}-e bez oslanjanja na \textit{grand turth} koja porastom znaèajnijih i bržih promjena poveæava utjecaj pristranosti kretanju u prošlosti? Postoji potreba za objektivnom procjenom kvalitete \gls{pom}-a definiranjem odnosnih parametara kvalitete.
 
 \gls{cdr} se istièe kao izvor gotovo jednako zastupljen u zemljama u razvoju i razvijenim zemljama, s penetracijom oko 40\%-50\% stanovništva za pojedine operatore \cite{Bonnel:2015.}. U Francuskoj je 2008. 80\% stanovništva starijeg od 12 godina posjedovalo mobilni ureðaj\cite{Bonnel:2015.}, a 2016. Èile je imao èak 132 mobilne pretplate na 100 stanovnika \cite{Graells-Garrido:2016.}. \textbf{Praksa odbacivanja ogromnog dijela uzorka zbog niske potpunosti putanja može se zamijeniti rekonstrukcijom putanja uvažavajuæi njihov kontekst \cite{Chen:2019.}}.
 
@@ -39,14 +39,15 @@ Analiza kretanja stanovništva koja uzima u obzir i kontekst proširuje podruèje p
 \section{Kontekstualizacija \glstext{pom}}
 
 %putovanje kao infromacijski objekt
-\begin{definition}{Putovanje kao informacijski objekt} èine: polazišni položaj iz kojeg je putovanje krenulo, odredišni položaj u kojem se putovanje završava, vremenske oznake kada je poèelo i kada je završilo, a kada je poznat, u navedeno se ubraja i kontekst putovanja.\end{definition}
+%\begin{definition}{Putovanje kao informacijski objekt} èine: polazišni položaj iz kojeg je putovanje krenulo, odredišni položaj u kojem se putovanje završava, vremenske oznake kada je poèelo i kada je završilo, a kada je poznat, u navedeno se ubraja i kontekst putovanja.\end{definition}
 
-\definition{Kontekst} putovanja je informacija vezana uz putovanje, njegovo polazište ili odredište koja procjenjuje ili upuæuje na motiv (svrhu) kretanja, naèin prijevoza ili željeni faktor po kojem se putovanja mogu kategorizirati i time preciznije definirati u informacijskom smislu.
+\definition{Kontekst putovanja}{ je skup podataka koji definiraju polazište, odredište, smisao i trajektoriju.}
+
+%\definition{Kontekst} putovanja je informacija vezana uz putovanje, njegovo polazište ili odredište koja procjenjuje ili upuæuje na motiv (svrhu) kretanja, naèin prijevoza ili željeni faktor po kojem se putovanja mogu kategorizirati i time preciznije definirati u informacijskom smislu.
 
 Kontekst može biti izvuèena iz samih podataka o kretanju ili iz dodatnih vanjskih izvora podataka. Putovanja svake kontekstne kategorije èine po jednu kontekstualiziranu POM-u.
 
-
-Odreðivanje konteksta putovanja proširuje podruèje pokrivanja u fizièkom i informacijskom smislu te poveæava toènost \gls{pom}-e putem unosa relevantnih atributa vezanih za naèin i svrhu putovanja, èime je putovanje, kao informacijski objekt, toènije opisano. Specificira socio-ekonomske aktivnosti koje su pokretaèi putovanja odnosno motivatori individualne i grupne mobilnosti. %razlozi kretanja stanovništva. %in the first place. 
+\textbf{Odreðivanje konteksta putovanja proširuje podruèje pokrivanja u fizièkom i informacijskom smislu te poveæava toènost \gls{pom}-e putem unosa relevantnih atributa vezanih za naèin i svrhu putovanja, èime je putovanje, kao informacijski objekt, toènije opisano}. Specificira socio-ekonomske aktivnosti koje su pokretaèi putovanja odnosno motivatori individualne i grupne mobilnosti. %razlozi kretanja stanovništva. %in the first place. 
 Preciznost odreðivanja konteksta definira izbor metode procjene \gls{pom}-e. %**
 %Moguænost preciznog odreðivanja konteksta zavisi o metodi procjene \gls{pom}-e.
 
@@ -120,7 +121,7 @@ na konzultacijama je reèeno:
 
 \section{Odnosni parametri kvalitete}
 
-\subsection{Definicija putovanja}
+\subsection{Putovanje kao parametar}
 \label{trip_def}
  Putovanja koja se protežu kroz više perioda dodjeljuju se vremenskom okviru u kojem zapoèinju ili u kojem završavaju. Autori \cite{Bera:2011.} \cite{Filic:2016.} \cite{Gundlegard:2016.} sva putovanja dodjeljuju intervalu u kojem je putovanje zapoèeto ili procjenjuje obje vrste \gls{pom}-a \cite{Teralytics:2017.}. U pravilu je moguæe izbaciti putovanja koja ne poènu i završe u istom periodu, te promatrati samo ona èiji su poèetak i kraj u istom periodu.
 
@@ -189,37 +190,34 @@ Najveæa je bila zastupljenost kratkih putovanja. \cite{Gundlegard:2016.} Distrib
 			\acrshort{cdr} zapisa. \cite{Gundlegard:2016.}}
 		\label{fig:journeys}
 	\end{center}
+
 \end{figure}
+
+\begin{definition}{Interno putovanje}\label{inter} je svako putovanje koje se odvija unutar jedne zone, odnosno èije se polazište i odredište nalaze unutar iste prostorne zone.  Suprotno internom je eksterno putovanje.
+\end{definition}
+
+
+\subsection{Kontekstualizacija}
+-interna putovanja izmeðu objekata - možemo ih samo pretpostaviti?!
 
 \subsection{Prostorna razluèivost (rezolucija)}
 
-%Prema hrvatskoj enciklopediji definicija razluèivosti (rezolucije) glasi: mjera za razaznavanje sitnih pojedinosti na nekom prikazu (npr. televizijskoj slici). U raèunalstvu se odnosi na finoæu rasterske slike iskazanu ukupnim brojem slikovnih elemenata (relativna razluèivost) ili brojem slikovnih elemenata po inèu (stvarna razluèivost).\\
-(...)\\
+\begin{definition}{Prostorna razluèivost} je najmanja preðena udaljenost koju mogu identificirati
+
+\end{definition}
+
 Rezolucija \gls{pom}-e procijenjene iz \gls{cdr} ovisit æe o gustoæi tornjeva bazni stanica. Gustoæa tornjeva dobro je korelirana s gustoæom populacije \cite{Gundlegard:2016.}.
 %The antenna density is strongly correlated to population density and hence we get a better spatial resolution of trips in areas with denser population. 
 Distribucija tornjeva nije homogena, niti na podruèju grada, niti na bilo kojem drugom podruèju. \cite{Goulding:2016.} predlaže grupiranje aktivnosti tornjeva koji se nalaze na udaljenosti manjoj od 75 m (dodjeljivanje aktivnosti najaktivnijem od tornjeva) kako bi se izbjegla prividna kretanja koja uzrokuje preusmjeravanje na bližnje bazne stanice prilikom uravnoteženja optereæenja mreže (engl. \textit{load balancing}). 
-%Finally, we also recommend as best practice the merging of BTS activity in high density areas (in Annex 1 we use a 75m cordon, below which any adjacent BTS are merged). This is due to a deleterious reduction in confidence in high density areas, which are subject to greater load balancing, that the BTS’s associated voronoi region accurately reflects a user’s true position. \cite{Goulding:2016.}
-%\cite{Bahoken:2013.} na razini pokraine, regije : The median value of the Vorono? links’ length is 75 km, the minimum is 0.6 km and the maximum is 208 km.
-%Median udaljenost baznih stanica 2013. na razini francuske pokrajine je 75 km, minimum 600 m i maksimum 208 km \cite{Bahoken:2013.}. 
 
-%U istraživanju \cite{Graells-Garrido:2016.} u Santiagu srednja vrijednost svih udaljenosti polazišta i odredišta svih putovanja je 732 m, minimalna 45 m, maksimalna 14.1 km. 
+\subsubsection{Kontekstualizacija}
+Objekt u æeliji je najmanja prostorno razluèiva jedinica
 
-
-%- gustoæa baznih stanica, cca 150m $\rightarrow$ ako ignoriramo sva putovanja u susjedne æelije \\
-
-%\textit{Koja je najmanja jedinica koju smatrate putovanjem? Koja je najmanja udaljenost izmeðu središta dviju stanica?}
-% (...)\\
-%Rezolucija æe ovisiti o toènosti položaja! ...\\
 \begin{comment}
-Takoðer dobro spomenuti kod poglavlja dinamièka podjela $\rightarrow$
-From a telecom operator perspective, the knowledge about the call density and specifically the correlation of the call density to the geography is an important call pattern. This call pattern helps the telecom operator to tune the cellular network \cite{Varun:2013.}
-
-From Figure 3 observe that the antenna density is more towards the south east of Ivory Coast. Correlating this data with Figure 5 and Figure6 one would expect a higher call density, but a combination of light and dark shades indicates that this is not the case. Our experiments with the CDRs show a consistent low call density in the region. It cannot be conclusively said whether this observation is true all year long since the CDRs are only for five months. However, based on the available data, it can be inferred that some amount of network planning to optimise antenna density to match call density is advisable. \cite{Varun:2013.}
-\end{comment}
-
 Voronoi æelije moguæe je ugnijezditi (što se radi kod usporedbe s \gls{pom}-ma dobivenim drugim postupkom), a pritom se može u matricu zabilježiti i aproksimacija internog toka, odnosno broja putovanja unutar nove æelije (popuniti dijagonalu). Takva putovanja nazivaju se internim putovanjima. 
 \begin{definition}{Interno putovanje}\label{inter} je ono putovanje koje se odvija unutar jedne zone, odnosno èije se polazište i odredište nalaze unutar iste prostorne zone.  Suprotno internom je eksterno putovanje.
 \end{definition}
+\end{comment}
 
 \begin{figure}[!htpb]
 	\begin{center}
@@ -296,16 +294,17 @@ Najmanji spominjani interval u literaturi je 15 min \cite{Bera:2011.}, drugi naj
 %(...)\\
 %- morning peak
 
+\subsection{Kontekstualizacija}
+-Kontekst vezan za vrijeme u kojem se odvija putovanje
 
 
-
-
-\subsection{Širina toka}
+\subsection{Širina toka}-samo tok?!
 %- dakako za pojedinu matricu ovisi o prostornoj i vremenskoj rezoluciji \\
 %- najviše ipak vjerojatno ovisi o definiciji putovanja\\
 \begin{definition}
-	Ukupna širina toka podrazumijeva ukupan broj odlazaka/dolazaka po vremenskom okviru za cijelu matricu. Suma svih njenih elemenata.
+	Ukupna širina toka podrazumijeva ukupan broj odlazaka/dolazaka po vremenskom okviru za cijelu matricu. Suma svih elemenata \gls{pom}-e. (vidi sliku \ref{fig:matrix} $F_ij$).
 \end{definition}
+
 Svi dosad spomenuti parametri utjecat æe na širinu toka. Velièina i reprezentativnost uzorka stanovništva te k-anonimizacija takoðer æe utjecati na širinu toka.
 
 Izdvajanje najaktivnijih korisnika (onih s najviše zapisa) zastupljeno je u istraživanjima procjene \gls{pom} iz \gls{cdr} \cite{Schneider:2013.} \cite{Toole:2015.}.
@@ -348,6 +347,10 @@ Kao što je veæ spomenuto u potpoglavlju \ref{sredstva}, \gls{pom}-e kreirane iz 
 - pametne kartice -javni prijevoz\\
 -prebrojavanje vozila- samo motorna vozila ?!
 \end{comment}
+
+\subsubsection{Kontekstualizacija}
+- Razdioba toka prema objektima pojedine kategorije
+
 \todo[inline]{Ispitati:\\
 	- kako sve prethodno utjeèe na širinu toka/konaèan broj putovanja?!\\
 	- kontekstualizacija na osnovu analize više dana ( tjedan - 3 mjeseca)

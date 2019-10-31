@@ -430,14 +430,15 @@ Primjeri oznaka vezanih za èvorove:  \textit{office=company}, \textit{building=r
 \end{comment}
 
 %\chapter{Validacija \glstext{pom}}
-\chapter{Pregled literature o vrednovanju \glstext{pom}}
+%\chapter{Pregled literature o vrednovanju \glstext{pom}}
+\chapter{Pregled postupaka i istraživanja o vrednovanju \glstext{pom}}
 \label{valid}
 
 Postupak vrednovanja %(modela, \gls{pom}-e, neèega)
 je objektivna procjena	kvalitete, vrijednosti objekta koji se vrednuje. Pregledom literature o vrednovanju \gls{pom} utvrðeno je da se jednoznaèno koriste pojmovi toènost, pouzdanost i kvaliteta \gls{pom}-a. Vrednovanje \gls{pom}-a obavlja se postupcima koji koriste mjere
-razine sliènosti odnosno razlike (greške) s referentnom matricom - a temelj je razlika na razni svakog elementa \gls{pom}.  
+razine sliènosti odnosno razlike (greške) s referentnom matricom - a temelj je razlika na razni svakog elementa \gls{pom}. 
 
-\textbf{Tradicionalni postupak vrednovanja \gls{pom}-e svodi se na odreðivanje njene sliènosti s \textit{ground truth} matricom}  \cite{Travassoli:2016.}. Ground truth \gls{pom}-a je \gls{pom}-a koja je uzeta kao ona koja najtoènije opisuje stvarno stanje. U analizi prometa, dobivena je tradicionalnim postupcima (anketiranje i/ili prebrojavanje vozila). Statistièke mjere kvantiziraju razliku procijenjenih i pravih vrijednosti (vidi Dodatak \ref{dodatak_metrics} - Postojeæe metrike za vrednovanje \glstext{pom}). Iz statistièkih mjera izdvojen je parametar $r^2$ koji je opisan u narednom potpoglavlju.
+\textbf{Tradicionalni postupak vrednovanja \gls{pom}-e svodi se na odreðivanje njene sliènosti s \textit{ground truth} matricom}  \cite{Travassoli:2016.}. Ground truth \gls{pom}-a je \gls{pom}-a koja je uzeta kao ona koja najtoènije opisuje stvarno stanje. U analizi prometa, dobivena je tradicionalnim postupcima (anketiranje i/ili prebrojavanje vozila). Statistièke mjere kvantiziraju razliku procijenjenih i pravih vrijednosti (vidi dodatak \ref{dodatak_metrics} - Postojeæe metrike za vrednovanje \glstext{pom}). Iz statistièkih mjera izdvojen je parametar $r^2$ koji je opisan u narednom potpoglavlju.
 
 \textbf{Upravo ta \textit{ground truth} POM-a je ujedno bila i poèetna \gls{pom}-a (iz odlomka \ref{seed}) u postupku procjene nove \gls{pom}-e iz rezultata prebrojavanja vozila \cite{Segovi:2015.}. \gls{pom} æe biti vrednovana usporedbom s \gls{pom}-om koja se koristi u postupku procjene te iste \gls{pom}-e. Postupak vrednovanja nove \gls{pom}-e stoga je ovisan o kvaliteti poèetne \gls{pom}-e, koja je procijenjena u odnosu njenu poèetnu matricu i tako rekurzivno.}
 
@@ -447,13 +448,16 @@ razine sliènosti odnosno razlike (greške) s referentnom matricom - a temelj je r
 
 %Opis promatrane pojave ili sustava u praksi nastojimo prikazati u obliku analitièkog izraza koji povezuje izlaznu velièinu, kao obilježje sustava ili pojave, s ulaznim velièinama, kao pobudama sustava ili pojave. Opæi sluèaj mora uvažavati èinjenicu o nepotpunoj adekvatnosti modela putem uvoðenja varijable $?$ koja æe predstavljati pogreške mjerenja i modeliranja sustava ili pojave.
 
+%Predicted vs. Observed - uvoditi ili ne?
+%Uzimamo da je model apriori toèan
+
 Tehnika vrednovanja linearnom regresijom procjenjuje vrijednosti æelija jedne \gls{pom}-e (zavisna varijabla - $y$) na temelju vrijednosti druge - referentne \textit{ground truth} \gls{pom}-e (nezavisna varijabla - $x$). Pretpostavka kod linearne zavisnosti je da postoje koeficijenti $a$ i $b$ takvi da se za svaku vrijednost nezavisne varijable $x_i$ zavisna varijabla $y_i$ može napisati kao:
 \begin{equation}
 	y_i = bx_i + a + \epsilon_i
 \end{equation}
 gdje je pogreška $\epsilon$ sluèajna varijabla s normalnom raspodjelom i oèekivanom vrijednošæu 0, $b$ koeficijent smjera pravca linearne regresije, $a$ slobodni èlan  (predstavlja križište linije regresije s $y$ osi). \cite{Kuhlm:2015.} \ref{fig:lm}
 
- $r^2$  - korelacijski koeficijent odreðenja ili obuhvaæanja varijance mjera je koja %je statistik koji
+Korelacijski koeficijent odreðenja ili obuhvaæanja varijance $r^2$ je mjera koja %je statistik koji
 pokazuje koliko je slaganje izmeðu vrijednosti izraèunatih modelom procjene i izmjerenih vrijednosti (\textit{ground truth}). Opæenito, to je mjera dobrote pristajanja (engl. \textit{goodness of fit}) koja govori koliko uspješno model opisuje zavisnost (korelaciju) izmeðu zavisne i nezavisne varijable. $r^2$ predstavlja omjer modelom opisanih varijacija u odnosu na ukupne varijacije podataka. 
 
 	 
@@ -503,7 +507,7 @@ Neki autori ne smatraju ovu vrijednost praktiènom za usporedbu POM-a dobivenih r
 
 \subsection{Vrednovanje suvremenih \glstext{pom}}
 
-Unaprjeðenje metodologije procjene \gls{pom} koja æe pružiti poveæanu kvalitetu i transparentnost uz ispunjavanje suvremenih zahtjeva na tehnologije (cijena, zaštita privatnosti i podataka itd.) privlaèi pažnju i van podruèja prometne znanosti. Suvremeni pristupi koriste alternativne izvore podataka o kretanju za promatranje obrazaca putovanja i pristupe procjeni \gls{pom}-a, no prema \cite{Pollard:2013.} nailaze na problem da prometna struka zahtijeva da se njihova vrijednost dokazuje usporedbom s tradicionalnim pristupima, dobro poznatim u praksi. Za tradicionalnu usporedbu suvremene \gls{pom} èija prostorna podjela nije \gls{taz} s \gls{pom} èija je prostorna podjela na \gls{taz} traži da se prostorna podjela prilagodi nekoj novoj ili prostornoj podjeli jedne od matrica te da se nakon toga matrice usporede \textit{elementwise}. Prilagodba se u praksi èini agregacijom i/ili interpolacijom tokova. (Detaljnije u Dodatku \ref{dodatak_ppp} - Prilagodba prostorne podjele.)
+Unaprjeðenje metodologije procjene \gls{pom} koja æe pružiti poveæanu kvalitetu i transparentnost uz ispunjavanje suvremenih zahtjeva na tehnologije (cijena, zaštita privatnosti i podataka itd.) privlaèi pažnju i van podruèja prometne znanosti. Suvremeni pristupi koriste alternativne izvore podataka o kretanju za promatranje obrazaca putovanja i pristupe procjeni \gls{pom}-a, no prema \cite{Pollard:2013.} nailaze na problem da prometna struka zahtijeva da se njihova vrijednost dokazuje usporedbom s tradicionalnim pristupima, dobro poznatim u praksi. Za tradicionalnu usporedbu suvremene \gls{pom} èija prostorna podjela nije \gls{taz} s \gls{pom} èija je prostorna podjela na \gls{taz} traži da se prostorna podjela prilagodi nekoj novoj ili prostornoj podjeli jedne od matrica te da se nakon toga matrice usporede \textit{elementwise}. Prilagodba se u praksi èini agregacijom i/ili interpolacijom tokova. (Detaljnije u Dodatku \ref{dodatak_ppp} - Prilagodba prostorne podjele.) 
 
 %Marta C. Gonzalez validacija sa Traffic counts
 
@@ -516,17 +520,17 @@ Nekolicina autora istièe važnost strukturalne sliènosti s referentnom matricom k
 
 \subsubsection{\glstext{mssim}} 
 
-\glsfirst{mssim}  MSSIM dolazi iz podruèja raèunalne obrade slike i koristi se kao mjera usporedbe digitalnih slika (\textit{eng. measure of comparison)}. U analizi urbanog kretanja stanovništva ideja o korištenju  \gls{mssim} za mjerenje sliènosti \gls{pom}-a prvi se puta spominje i demonstrira na simuliranim \gls{pom}-ma dobivenim iz referentne \gls{pom}-e dodavanjem šuma. \cite{Djukic:2013.}
+\gls{mssim} dolazi iz podruèja raèunalne obrade slike i koristi se kao mjera usporedbe digitalnih slika (\textit{eng. measure of comparison)}. U analizi urbanog kretanja stanovništva ideja o korištenju  \gls{mssim} za mjerenje sliènosti \gls{pom}-a prvi se puta spominje i demonstrira na simuliranim \gls{pom}-ma dobivenim iz referentne \gls{pom}-e dodavanjem šuma. \cite{Djukic:2013.}
 
 Informacija o strukturi slike definira se kao atributi slike koji predstavljaju strukturu objekata na sceni, i neovisni su o prosjeènom osvjetljenju i kontrastu. Jer osvjetljenje i kontrast mogu znatno varirati na sceni, moraju se u obzir uzeti samo njihove lokalne vrijednosti.
 
-\glsfirst{ssim} bazira se na degradaciji strukturalnih informacija na jednoj slici u usporedbi s drugom (referentnom) slikom. \gls{ssim} se raèuna za svaki kvadratni blok velièine %$N \times N$ (???) 
+\gls{ssim} bazira se na degradaciji strukturalnih informacija na jednoj slici u usporedbi s drugom (referentnom) slikom. \gls{ssim} se raèuna za svaki kvadratni blok velièine %$N \times N$ (???) 
 $N$ elemenata na naèin da se jezgra (da bi obuhvatila novi blok) pomièe æeliju po æeliju dok ne proðe preko cijele slike. \gls{mssim} je srednja vrijednost svih \gls{ssim}.
 
 
 %We define the structural information in an image as those attributes that represent the structure of objects in the scene, independent of the average luminance and contrast. Since luminance and contrast can vary across a scene, we use the local luminance and contrast for our definition
 
-\subsubsection{Osnovni}
+\subsubsection{Osnovni višerazinski indeks strukturalne sliènosti}
 
 \begin{comment}
 Neka reci matrice predstavljaju polazišta $i, i=1,2,...I$ a stupci odredišta $j, j=1,2,...J$ putovanja. Da bi se odredila strukturalna sliènost izmeðu dvije matrice, neka su $d = \{d_n| n = 1,2,...,N\} $ i $\hat{d} = \{\hat{d}_n| n = 1,2,...,N\}$ dva vektora izvuèena s iste pozicije iz referentne matrice $D=\{d_i,j\}$ i procijenjene matrice $D=\{\hat{d}_i,j\}$.
@@ -552,7 +556,7 @@ s(x,y) = (\sigma_xy+C3)/(\sigma_x\sigma_y +C3)\label{eq:s}
 \end{equation}
 %The l?x; y? index is related with luminance differences, c?x; y? with contrast differences, and r?x; y? with structure variations between x and y.
 
-$l(x,y)$ opisuje razliku u osvjetljenju, $c(x,y)$ razliku u kontrastu, a s(x,y) razliku u strukturi izmeðu $x$ i $y$. $C1$, $C2$ i $C3$ su konstante uvedene da se izbjegne "nestabilnost" kada su nazivnici bliski 0.
+Izraz $l(x,y)$ opisuje razliku u osvjetljenju, $c(x,y)$ razliku u kontrastu, a s(x,y) razliku u strukturi izmeðu $x$ i $y$. $C1$, $C2$ i $C3$ su konstante uvedene da se izbjegne "nestabilnost" kada su nazivnici bliski 0.
 Opæa forma $SSIM$ definira se kao
 
 \begin{equation}
@@ -583,11 +587,11 @@ MSSIM(X,Y) =  \frac{1}{M} \sum_{m=1}^{M} SSIM(x_m,y_m) \label{eq:mssim}
 		\subfloat[U odnosu na referentnu \gls{pom}-u a), vrijednost metrike strukturalne sliènosti iznosi 0.904 za obje \gls{pom}-e b) i c), dok se MSE razlikuje (veæi MSE znaèi veæu razliku). Obje \gls{pom}-e dobivene su dodavanjem Gaussianovog šuma na referentnu matricu.]
 		{\label{fig:mssim_2}
 			\includegraphics[width=14cm,keepaspectratio=true]{mssim_2}}
-		\caption{Narušenu strukturalnu sliènost lakše je uoèiti nego narušen MSE. \gls{ssim} (i \gls{mssim})  u odnosu na referentnu POM-u može biti korišten kao dodatna informacija (\textit{goodness of fit} mjera)  prilikom vrednovanja POM-e \cite{Djukic:2013.}} 
+		\caption{Narušenu strukturalnu sliènost lakše je uoèiti nego narušen MSE. SSIM (i MSSIM)  u odnosu na referentnu POM-u može biti korišten kao dodatna informacija (\textit{goodness of fit} mjera)  prilikom vrednovanja POM-e \cite{Djukic:2013.}} 
 		\label{fig:mssim}
 	\end{center}
 \end{figure}
 
-\subsubsection{Poboljšani} 
+\subsubsection{Poboljšani višerazinski indeks strukturalne sliènosti} 
 Nekoliko godina nakon prvog spominjanja $MSSIM$ kao metrike usporedbe \gls{pom}-a \cite{Vuren:2015.}  se dotièe 3 problema postavljajuæi pitanja: Koliko treba biti veliki blok? Kako usporediti "guste" i "rijetke" \gls{pom}-e? Koja je prihvatljiva vrijednost $MSSIM$? Autori definiraju poboljšani model koji nazivaju $4D$-$MSSIM$ gdje u izraèun dodaju stvarne euklidske udaljenosti prostornih zona. Tehnike bazirane na strukturalnoj sliènosti i njihov doprinos još su uvijek otvorene za raspravu. \cite{Pollard:2013.}\cite{Varun:2013.}\cite{Vuren:2015.}
 

@@ -688,3 +688,33 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{sms}{}%
+{%
+\gls@defglossaryentry{sms}%
+{%
+name={\acronymfont {\glsentryshort {sms}}},%
+sort={SMS},%
+type={main},%
+first={SMS},%
+firstplural={SMSs},%
+text={SMS},%
+plural={SMSs},%
+description={Short Messaging System},%
+descriptionplural={Short Messaging System},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Short Messaging System},%
+longplural={Short Messaging Systems},%
+short={SMS},%
+shortplural={SMSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%

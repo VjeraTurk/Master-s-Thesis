@@ -15,7 +15,9 @@ Analiza prometne potražnje tijekom dnevnih vrhunaca i pokazatelja kako æe se taj
 
 \textbf{Pretpostavka da je referentna matrica \textit{a priori} toèna ne omoguæuje da se sagleda je li nova \gls{pom}-a toènija i/ili kvalitetnija od nje.} Kako prikazati kvalitetu \gls{pom}-e bez oslanjanja na \textit{grand turth} koja porastom znaèajnijih i bržih promjena poveæava utjecaj pristranosti kretanju u prošlosti? Postoji potreba za objektivnom procjenom kvalitete \gls{pom}-a definiranjem odnosnih parametara kvalitete.
 
-\gls{cdr} se istièe kao izvor gotovo jednako zastupljen u zemljama u razvoju i razvijenim zemljama, s penetracijom oko 40\%-50\% stanovništva za pojedine operatore \cite{Bonnel:2015.}. U Francuskoj je 2008. 80\% stanovništva starijeg od 12 godina posjedovalo mobilni ureðaj\cite{Bonnel:2015.}, a 2016. Èile je imao èak 132 mobilne pretplate na 100 stanovnika \cite{Graells-Garrido:2016.}. \textbf{Praksa odbacivanja ogromnog dijela uzorka zbog niske potpunosti putanja može se zamijeniti rekonstrukcijom putanja uvažavajuæi njihov kontekst \cite{Chen:2019.}}.
+\gls{cdr} se istièe kao izvor gotovo jednako zastupljen u zemljama u razvoju i razvijenim zemljama, s penetracijom oko 40\%-50\% stanovništva za pojedine operatore \cite{Bonnel:2015.}.
+ %U Francuskoj je 2008. 80\% stanovništva starijeg od 12 godina posjedovalo mobilni ureðaj\cite{Bonnel:2015.}, a 2016. Èile je imao èak 132 mobilne pretplate na 100 stanovnika \cite{Graells-Garrido:2016.}. 
+ \textbf{Praksa odbacivanja ogromnog dijela uzorka zbog niske potpunosti putanja može se zamijeniti rekonstrukcijom putanja uvažavajuæi njihov kontekst \cite{Chen:2019.}}.
 
 %Tradicionalni pristup validaciji procjenjuju sliènost s \gls{pom} koja je nužno nastala u prošlosti, pa se izmjene u odnosu na prethodnu matricu tumaèe kao "greška" iako se lako zapitati je li zapravo nova matrica ona koja opisuje stvarnost bolje od referentne.
 
@@ -34,14 +36,15 @@ Analiza prometne potražnje tijekom dnevnih vrhunaca i pokazatelja kako æe se taj
 	\end{center}
 \end{figure}
 
-Analiza kretanja stanovništva koja uzima u obzir i kontekst proširuje podruèje primjene zakljuèaka analize kretanja stanovništva van prometa. \cite{Barbour:2019.}. Moguænost (naknadnog) preciziranja odredišta s razine zone na razinu zgrade i odreðivanje svrhe (motiva) kretanja nije obuhvaæeno procjenom kvalitete \gls{pom}.
+Analiza kretanja stanovništva koja uzima u obzir i kontekst proširuje podruèje primjene zakljuèaka analize kretanja stanovništva van prometa \cite{Barbour:2019.}. Moguænost (naknadnog) preciziranja odredišta s razine zone na razinu zgrade i odreðivanje svrhe (motiva) kretanja nije obuhvaæeno procjenom kvalitete \gls{pom}.
 
 \section{Kontekstualizacija \glstext{pom}}
 
 %putovanje kao infromacijski objekt
 %\begin{definition}{Putovanje kao informacijski objekt} èine: polazišni položaj iz kojeg je putovanje krenulo, odredišni položaj u kojem se putovanje završava, vremenske oznake kada je poèelo i kada je završilo, a kada je poznat, u navedeno se ubraja i kontekst putovanja.\end{definition}
+\definition{Putovanje kao informacijski objekt ---}
 
-\definition{Kontekst putovanja}{ je skup podataka koji definiraju polazište, odredište, smisao i trajektoriju.}
+\definition{Kontekst putovanja}{ je skup podataka koji definiraju polazište, odredište, naèin prijevoza, smisao i trajektoriju putovanja.}
 
 %\definition{Kontekst} putovanja je informacija vezana uz putovanje, njegovo polazište ili odredište koja procjenjuje ili upuæuje na motiv (svrhu) kretanja, naèin prijevoza ili željeni faktor po kojem se putovanja mogu kategorizirati i time preciznije definirati u informacijskom smislu.
 
@@ -51,7 +54,7 @@ Kontekst može biti izvuèena iz samih podataka o kretanju ili iz dodatnih vanjski
 Preciznost odreðivanja konteksta definira izbor metode procjene \gls{pom}-e. %**
 %Moguænost preciznog odreðivanja konteksta zavisi o metodi procjene \gls{pom}-e.
 
-Kada kontekst (svrha) putovanja nije izvorno navedena kao opisna velièina (prediktor) u ulaznim podatcima za razvoj \gls{pom}-e, 
+Ako kontekst (svrha) putovanja nije izvorno navedena kao opisna velièina (prediktor) u ulaznim podatcima za razvoj \gls{pom}-e, 
 %%IZBACITI: razvijene su metode koje pomoæu vanjskih izvora o sadržaju procjenjuju kontekst putovanja.
 moguæe je o kontekstu putovanja zakljuèiti iz baza neizravnih kontekstualiziranih podataka treæih strana (npr. zapisi o korištenju telekomunikacijske mreže dopunjeni prostornim podatcima \glstext{gis}) uz korištenje odgovarajuæih postupaka prostorne statistike i analitike.
 
@@ -68,7 +71,7 @@ A problem ostaje otvoren za raspravu, \textbf{koliki je udio populacije stvarno 
 \subsection{ Primjeri korištenja konteksta u analizi kretanja}
 
 \subsubsection{Studija A}
-Alhazzani i ostatak autora 2016. kvantizirali su vezu izmeðu ukupno 23 namjenske kategorije \gls{pois} iz službene gradske baze (npr. tvornice, bolnice, javne škole, religijski objekti, hoteli, knjižnice, sportski objekti) i onime što nazivaju 3 tipa privlaèenja. Dolaze do zakljuèka da \textbf{postoje 3 osnovna tipa privlaèenja te da svaki ima karakteristièan tok (gustoæu ukupnog toka, udaljenost i disperziju polazišta tokova usmjerenih prema objektu tog tipa privlaèenja). Svaku od kategorija karakterizira jedan od ta 3 tipa privlaèenja.} U radu koriste podatke iz službene baze s 12,000 \gls{pois} i \gls{cdr} zapisima iz razdoblja od mjesec dana. %Cilj projekta bio je ispitati mobilnost na podruèju grada Riyadha, u Saudijskoj Arabiji za planiranje izgradnje podzemne željeznice.  Njihovi rezultati mogu se primijeniti u planiranju izgradnje buduæih objekata u gradu. 
+Alhazzani i ostatak autora 2016. kvantizirali su vezu izmeðu ukupno 23 namjenske kategorije Toèaka interesa (engl. Points of Interest, \glstext{pois}) iz službene gradske baze (npr. tvornice, bolnice, javne škole, religijski objekti, hoteli, knjižnice, sportski objekti) i onime što nazivaju 3 tipa privlaèenja. Dolaze do zakljuèka da \textbf{postoje 3 osnovna tipa privlaèenja te da svaki ima karakteristièan tok (gustoæu ukupnog toka, udaljenost i disperziju polazišta tokova usmjerenih prema objektu tog tipa privlaèenja). Svaku od kategorija karakterizira jedan od ta 3 tipa privlaèenja.} U radu koriste podatke iz službene baze s 12,000 \glstext{pois} i \gls{cdr} zapisima iz razdoblja od mjesec dana. %Cilj projekta bio je ispitati mobilnost na podruèju grada Riyadha, u Saudijskoj Arabiji za planiranje izgradnje podzemne željeznice.  Njihovi rezultati mogu se primijeniti u planiranju izgradnje buduæih objekata u gradu. 
  \cite{Alhazzani:2016.} 
 % We used a statistical significance testing approach to rigorously quantify the relationship between Points of Interests (POIs) types (services) and the 3 patterns of Urban Attractors we detected. \gls{pois} Points of Interes (Urban Attractors ima 22 kategorije koristi bazu s POI)
 \subsubsection{Studija B - Model Raspodjele Toka}
@@ -90,20 +93,17 @@ Modeli za procjenu potrošnje energije na razini zgrada, a posljedièno i na razin
 \label{Chen}
 
 \section{Teza}
-\todo[inline]{ 
-	Koja je moja teza/koje su moje teze?\\
 
-Teze vezane uz \textbf{kontekst}? Teze vezane uz \textbf{vrednovanje (kvalitetu)}?
+%	Koja je moja teza/koje su moje teze?\\
 
-npr. u tekstu zadatka stoji:
+%Teze vezane uz \textbf{kontekst}? Teze vezane uz \textbf{vrednovanje (kvalitetu)}?
 
-\textit{Statistièka analiza podataka iz suvremenih informacijskih i komunikacijskih sustava sve više se koristi za procjenu \gls{pom}-a èime je omoguæeno poboljšanje kvalitete procjene preslikavanjem na kontekst.\\}
+%npr. u tekstu zadatka stoji:
 
-na konzultacijama je reèeno: 
-\textit{Odreðivanje konteksta proširuje podruèje pokrivanja u fizièkom i informacijskom smislu te poveæava toènost POM-e unosom relevantnih atributa vezanih za naèin i svrhu putovanja - èime je putovanje toènije opisano.\\
-}
-... Kvaliteta se poveæava s poznavanjem konteksta? 
-}
+%\textit{Statistièka analiza podataka iz suvremenih informacijskih i komunikacijskih sustava sve više se koristi za procjenu \gls{pom}-a èime je omoguæeno poboljšanje kvalitete procjene preslikavanjem POM-e na kontekst.\\}
+
+Poboljšanje kvalitete procjene omoguæeno je preslikavanjem POM-e na kontekst. Odreðivanje konteksta proširuje podruèje pokrivanja u fizièkom i informacijskom smislu te poveæava toènost POM-e unosom relevantnih atributa vezanih za naèin i svrhu putovanja - èime je putovanje toènije opisano.
+
 
 
 
@@ -151,7 +151,9 @@ Putovanja kod vremenski zavisnih \gls{pom}-a kreiranih iz \gls{cdr} moguæe je sv
 	\item \label{itm:cat_7} putovanja ogranièena bojem dogaðaja koji potvrðuju zaustavljanje i maksimalnim vremenskim razmakom izmeðu dva uzastopna dogaðaja\\
 \end{enumerate}
 
-\textbf{Glavni razlog svih ogranièenja kod definicije putovanja je izbjeæi bilježenje lažnog kretanja uzrokovanog uravnoteženjem optereæenja mreže i lažnog zaustavljanja uzrokovanog neuniformnom gustoæom zapisa pojedinca u vremenu}.
+%\textbf{Glavni razlog svih ogranièenja kod definicije putovanja je izbjeæi bilježenje lažnog kretanja uzrokovanog uravnoteženjem optereæenja mreže i lažnog zaustavljanja uzrokovanog neuniformnom gustoæom zapisa pojedinca u vremenu}.
+
+\textbf{Iskazivanje putovanja kao parametra ne smije obuhvatiti lažno kretanje uzrokovano uravnoteženjem optereæenja i lažnog zaustavljanja uzrokovanog neuniformnom gustoæom zapisa pojedinaca u vremenu, što se postiže postavljanjem navedenih ogranièenja.}
 
 %U istraživanju iz 2016. kod definiranja putovanja iz \gls{cdr} eliminirani su zapisi onih korisnika koju su radili dulja "neprekidna putovanja" od preko 100 km dnevno (kategorija 4) pod napomenom da se radi o taksistima i sl. te da ih neæe uzeti u obzir \cite{Graells-Garrido:2016.}.  
 Za 2 razlièite definicije putovanja, za \gls{pom}-e iz identiènih podataka na podruèju Senegala generirano je 0.7 putovanja dnevno po korisniku u jednom, a 0.06 u drugom. Ogranièenja su bila: vremensko na 1 sat minimalnog trajanja (kategorija \ref{itm:cat_6}) i prostorno na udaljenost od barem 5 udaljenosti baznih stanica (kategorija \ref{itm:cat_4}). 
@@ -363,6 +365,7 @@ Kao što je veæ spomenuto u potpoglavlju \ref{sredstva}, \gls{pom}-e kreirane iz 
 -Informacija na razini toka (postotka toka) - metoda koja se oslanja na vanjske izvore konteksta može se primijeniti na matrice iz razlièitih izvora podataka.\\
 - nemam implementaciju funkcija s kampa za kontekstualizaciju objekata i tokova, imam za izvlaèenje objekata iz voronoi æelija
 %Informacija na razini cijele matrice \\(...)
+Što je gušæe opisan prostor u æeliji to je moguæe ostvariti bolju rezoluciju
 
 \todo[inline]{
 Ispitati:\\

@@ -9,12 +9,40 @@
 \begin{itemize}
 	\item  isto podruèje/grad/država
 	\item  isto doba godine
-	\item vremensko razdoblje iste duljine
+	\item vremensko razdoblje iste duljine\\ 
+Prednost novih postupaka procjene \gls{pom} iz \gls{cdr} u odnosu na ankete stanovništva je da mogu uhvatiti tjedne i sezonske uzorke \cite{Calabrese:2011.}
+%Compared with traditional census data, our methodology to detect ODMs from mobile phone traces has several advantages: It can capture the weekday and weekend patterns as well as seasonal variations. It can capture work trips and non-work trips, which is essential for trip chaining and activity based modeling. Zakljuèak 
+%Istraživanje iz 2013. \cite{Varun:2013.} pokazalo je da su u Obali Bjelokosti najveæa odstupanja u gustoæi poziva u prvom i posljednjem mjesecu godine, gdje je 2. tjedan u prosincu bila najveæa, a sredinom sijeènja najniža zabilježena gustoæa (u periodu promatranja od prosinca do travnja). 
+Zabilježenu varijaciju po tjednima u godini iz istraživanja procjene  \gls{pom}-a iz podataka o javnom prijevozu na podruèju nizozemske možemo vidjeti na slici \ref{fig:per_week}.
+
+%From Figure 8 if we compare the call density across different months, and days of the month, it is interesting to note that the call density towards the middle of the month is lower in January than in other months. On the same lines note that call density in the second week of December is higher than other months, but reduces in the following weeks. Based on 2These are not recommendations, but only observations based on visual inspection this observation, we are attempting to find the mobility pattern of mobile phone users and to determine whether the mobility pattern influences this call density pattern. \cite{Varun:2013.}
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=15cm,keepaspectratio=true]{per_week}
+		\caption{Broj putovanja javnim prijevozom zabilježenih \textit{OV-chipcaart} pametnim karticama u Nizozemskoj izražen u u milijunima po tjednima u godini. Zelena linija oznaèava prosjeènu vrijednost radnog tjedna \cite{Kuhlm:2015.}}
+		\label{fig:per_week}
+	\end{center}
+\end{figure}
 	\item  ako se radi o jednom danu - idealno isti dan u tjednu
+
+Rezultati nacionalne ankete u Sjedinjenim Amerièkim Državama pokazuju da je prosjeèan broj dnevnih putovanja po stanovniku 4.18 tijekom radnog dana te 3.86 tijekom neradnih dana u tjednu, što je u skladu s zakljuècima modernih postupaka procjene.\cite{Calabrese:2011.}\cite{Bahoken:2013.}\\
+
+Osim oèekivane razlike izmeðu radnih i neradnih dana, uoèeno je da je petak, kao zadnji radni dan u tjednu, drugaèiji od ostalih radnih dana \cite{Calabrese:2011.} \cite{Scepanovic:2015.}\cite{Travassoli:2016.}. 
+Uoèena je pojaèana mobilnost petkom na razini regije (Boston Metropolitan Area) \cite{Calabrese:2011.} i na razini cijele države (Obale Bjelokosti) s poveæanjem od 35\% u odnosu na nedjelju \cite{Scepanovic:2015.} na temelju \gls{pom}-a izraðenih iz \gls{cdr}. Uèena je smanjena mobilnost vezana za javni prijevoz (izvor za procjenu \gls{pom}-a \textit{Pametne kartice za javni prijevoz}) na razini regije (Southeast Queensland, Australija). Osim prosjeènog broja dnevnih putovanja, petak ima i nešto drugaèiji dnevni uzorak po satima (pojaèanje prometa prema kraju radnog vremena zapoèinje ranije). %Petkom je takoðer uoèena i najviša razina telekomunikacijske aktivnosti \cite{Bahoken:2013.} \cite{Bonnel:2015.} što ukazuje na moguæu pristranost kada su u pitanju \gls{pom}-e procijenjene iz \gls{cdr}.
+
+	%(...)\\
+Državni praznici i izvanredni dogaðaji kao što su vremenske nepogode unose odstupanja od ustaljenih uzorka kretanja. Privremene turistièke atrakcije i sportski dogaðaji takoðer mogu bitno utjecati na izmjenu uobièajenog uzorka kretanja. \cite{Varun:2013.}
+
+%\cite{Bonnel:2015.} Primjerice odbrojavanje uoèi Nove godine na New Yourk Times Square. 
+%Gustoæa poziva na festivalske dane  u prosjeku je 10-15\% veæa od uobièajene. \cite{Varun:2013.}
+	
 	\item ista kategorija putovanja (tranzitna, \textit{komutacijska}, kontekstualizirana)
 	\item obje \gls{pom}-e napravljene objektivno na cijeloj populaciji (reprezentativnom uzorku)
 	
 \end{itemize}
+
+Dio putovanja zapoèinje u jednom a završava u drugom danu. Autori \cite{Schneider:2013.}\cite{Toole:2015.} zastupaju definiranje završetka dana u 3:00 iduæeg dana, umjesto u 0:00, kako dio putovanja ne bi bio izostavljen zato jer se proteže kroz 2 dana.
 
 \section{Brzina kretanja}
 \todo[inline]{

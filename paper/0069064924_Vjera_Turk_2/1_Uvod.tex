@@ -65,33 +65,6 @@ Metodologija je izvedena u programskom okruženju za statistièko raèunarstvo R te
 \end{center}
 \end{figure}
 
-
-%Postoje brojni postupci procjene \gls{pom} o kojima je rijeè u narednim odlomcima.
-%Dok se još uvijek ulaže u razvoj matematièkih modela koji imaju za cilj poveæati kvalitetu \glsplural{pom} procijenjenih tradicionalnim postupcima, u novije vrijeme razvijaju se postupci koji imaju veliki potencijal. Ažurnost podataka o kretanju i moguænost obuhvaæanja mnogo veæeg uzorka stanovništva od tradicionalnih postupaka.
-% Kod pojedinih operatora radi se o oko èak 40-50\% svih stanovnika neke države \cite{Bonnel:2015.}.  (...)
-%zamijeniti tradicionalne metode i postati standard u analizi prometa pa tako i procjeni \gls{pom}-a.
-\gls{pom}-a može biti procijenjena za sadašnje ili planirano prometno optereæenje. Može biti prikazana ukupno ili po pojedinim naèinima prijevoza (modalitetima prometnog sustava - osobna vozila, vozila javnog prijevoza, teretna vozila, pješaci itd.) i/ili razlièitim svrhama putovanja (putovanja na posao, putovanja kuæi...). \cite{Jelusic:2016.}
-
-Tranzitna \gls{pom}-a (eng. t-ODM) je vrsta \gls{pom}-e u kojoj su zabilježene poznate tranzicije izmeðu zona. Svaka tranzicija predstavlja onaj dio putovanja koji je poznat, a poèetak i završetak cjelokupnog putovanja kojem pripada su nepoznati \cite{Peterson:2007.}. 
-
-\begin{comment}
-Odreðivanje konteksta putovanja proširuje podruèje pokrivanja u fizièkom i informacijskom smislu te poveæava toènost \gls{pom}-e putem unosa relevantnih atributa vezanih za naèin i svrhu putovanja, èime je putovanje toènije opisano. Specificira socio-ekonomske aktivnosti koje su pokretaèi putovanja odnosno motivatori individualne i grupne mobilnosti. %razlozi kretanja stanovništva. %in the first place. 
-Preciznost odreðivanja konteksta definira izbor metode procjene \gls{pom}-e.
-%Moguænost preciznog odreðivanja konteksta zavisi o metodi procjene \gls{pom}-e.
-
-
-Kada kontekst (svrha) putovanja nije izvorno navedena kao opisna velièina (prediktor) u ulaznim podatcima za razvoj \gls{pom}-e, 
-%%IZBACITI: razvijene su metode koje pomoæu vanjskih izvora o sadržaju procjenjuju kontekst putovanja.
-moguæe je o kontekstu putovanja zakljuèiti iz baza neizravnih kontekstualiziranih podataka treæih strana (npr. zapisi o korištenju telekomunikacijske mreže dopunjeni prostornim podatcima \glstext{gis}) uz korištenje odgovarajuæih postupaka prostorne statistike i analitike.
-%kada je rijeè o novijim metodama procjene POM-a, autori razlièito pristupaju kontekstualizaciji. (...)
-\end{comment}
-
-\section{Tradicionalni pristupi procjeni \\ \glstext{pom}}
-
-\subsection{Izvori ulaznih podataka}
-\subsubsection{Ankete}
-Tradicionalni pristupi procjeni \gls{pom}-a ukljuèuju metode provoðenja anketiranja. Vrste anketa su: ankete u kuæanstvima, presretanje vozila, anketiranje  prijevoznih kompanija i tvrtki, tranzit na granici, turisti u hotelima i parking \cite{Cools:2010.}. Ankete su zahtjevne iz perspektive utrošenog vremena, uloženog truda i radne snage stoga se ne provode èesto. Anketiranje putovanja u kuæanstvima provodi se na podruèjima veæine razvijenih svjetskih metropola tek \textbf{svakih 5 do 10 godina} \cite{Toole:2015.}. U veæini na provoðenje anketa odlazi najveæi postotak investicija u planiranje prometa, u prosjeku oko 7.4 milijuna dolara godišnje \cite{Cools:2010.}. Podaci koje ankete stanovništva bilježe osim broja stanovnika su broj vozila, broj zaposlenih, broj putovanja odreðenim naèinom prijevoza (automobil, javni prijevoz...) po kuæanstvu \cite{Espad:2013.}. Ostale ankete opæenito pokrivaju malen dio populacije te su POM-e dobivene iz anketa optereæene neizbježnom pristranošæu \cite{Alhazzani:2016.}. Studija provedena na podruèju Belgije pokazala je da se zadovoljavajuæa razina kvalitete \gls{pom}-a procijenjenih iskljuèivo iz anketa u kuæanstvima postiže tek ako uzorak obuhvaæa 50\% populacije \cite{Cools:2010.}. 
-%\todo[inline]{Podjela po subjektima anketa. Predlažem detaljniju razradu u metodološkom smislu, uz korištenje liteature poput:		Hyndman, R J, and Athanasopoulos, G. (2018). Forecasting: Principles and Practice (2nd ed). (Chapter 4: Judgemental Forecast)). Preuzeto s: https://otexts.com/fpp2/judgmental.html}
 \subsubsection{Prebrojavanje vozila (engl. \textit{Traffic Counts})}
 Metode koje ukljuèuju prebrojavanje vozila na kljuènim èvorištima prometne infrastrukture manje su zahtjevne za izvoðenje u odnosu na ankete i znaèajno smanjuju vrijeme i troškove prikupljanja podataka. Postupci ukljuèuju: analizu nadzornih snimaka prometa, automatski sustav za prepoznavanje i oèitovanje registarskih ploèica engl. \gls{anpr}, osjetila prometnog toka (radarska, magnetna, video-senzori, zvuèna..)  i  ruèno prebrojavanje.
 \textbf{Primjenom ovih postupaka nije moguæe pouzdano odrediti stvarna polazišta i odredišta putovanja \cite{Bonnel:2015.}, veæ se ona odreðuju matematièki modeliranjem uz uvažavanje pretpostavki} (odlomak \ref{modeling}). Raspodjela stanica ili osoba koje rade obzervaciju prometa treba biti plansko, a broj dostupnih ureðaja/ljudi ogranièavajuæi je faktor za velièinu podruèja koje je moguæe nadzirati. \cite{Bera:2011.} Toènost procijenjenih matrica ovisi o: korištenom modelu procjene, grešci ulaznih podataka i infrastrukturi detektora koju je skupo izmijeniti ili proširiti zbog troškova održavanja i instalacije \cite{Bera:2011.} \cite{Kuharic:2016.}. 
@@ -146,7 +119,8 @@ Kineski grad Shenzhen ima preko 10 milijuna stanovnika i proteže se na 1,991 $km
 \label{modeling}
 Modeliranje prometa zahtjeva veliku kolièinu podataka - informacija o prometnoj mreži i prometnoj potražnji. Toènost modelirane (planirane) prometne situacije ovisi o kvaliteti dostupnih informacija te kako su podaci kombinirani, koji težinski faktori su primijenjeni za razlièite izvore. Prometna potražnja kljuèna je komponenta te stoga gotovo svaki prometni model zahtjeva \gls{pom}-u koja specificira prometnu potražnju izmeðu zona u prometnoj mreži.  Toèna \gls{pom}-a osnova je za odluke kod strateških planiranja prometne infrastrukture i u \gls{its} koji su zauzvrat kljuèni za izbor ruta u razlièitim sustavima navigacijskog navoðenja. 
 
-Neke od pretpostavki kojima se vode u modeliranju prometne potražnje su da je ukupna dnevna potražnja  podjednaka u oba smjera kod svakog para zona na podruèju grada \cite{Peterson:2007.}, da svi korisnici imaju saznanja o situaciji na cesti \cite{Goulding:2016.} te da je mobilnost opæenito manja tijekom zime nego tijekom ljeta \cite{Bonnel:2015.} i da je broj putovanja po kuæanstvu proporcionalan dohotku \cite{Espad:2013.}.  Klasièan bazni model za procjenu prometne potražnje je Gravitacijski model (eng. \textit{Gravity model})  koji kod proraèuna "privlaènosti" 2 zone uzima u obzir \textbf{gustoæu populacije, udaljenost i troškove putovanja}. Izvedene verzije integriraju i neke druge (socio-ekonomske) faktore. \cite{Gundlegard:2016.}
+Neke od pretpostavki kojima se vode u modeliranju prometne potražnje su da je ukupna dnevna potražnja  podjednaka u oba smjera kod svakog para zona na podruèju grada \cite{Peterson:2007.}, da svi korisnici imaju saznanja o situaciji na cesti \cite{Goulding:2016.} te da je mobilnost opæenito manja tijekom zime nego tijekom ljeta \cite{Bonnel:2015.} i da je broj putovanja po kuæanstvu proporcionalan dohotku \cite{Espad:2013.}.  Klasièan bazni model za procjenu prometne potražnje je Gravitacijski model (eng. \textit{Gravity model})  koji kod proraèuna "privlaènosti" 2 zone uzima u obzir \textbf{gustoæu populacije, udaljenost i troškove putovanja}. \textit{Broj putovanja izmeðu dvije zone srazmjeran je velièini aktivnosti odnosno nastajanju i privlaèenju putovanja u tim zonama, a obrnuto proporcionalan prostornoj udaljenosti izmeðu zona ili nekoj drugoj vrsti otpora (vrijeme putovanja, pješaèenja, èekanja, parkiranje, vozarina,.. ili kombinacija svih tih faktora) }\cite{Simunovic:2019.}.
+Izvedene verzije integriraju i neke druge (socio-ekonomske) faktore \cite{Gundlegard:2016.}. 
 
 \textbf{Ankete se provode na ogranièenom podskupu populacije, a ogranièen je i broj stanica za prebrojavanje. Procjena \gls{pom} iz prebrojanih vozila je matematièki pododreðena (više je nepoznanica nego poznatih informacija).} To znaèi da bi velik broj matrica odgovarao tako prebrojanim tokovima vozilima. 
 %As stated previously, the ODME is mathematically under-determined (more unknowns than knowns), which means that it could have many solutions; i.e., it could be that many OD matrices could perfectly match the counts observed on the links.
@@ -324,8 +298,10 @@ Toèke skupa su položaji baznih stanice, a æelije oko njih aproksimacija površine
 	\end{center}
 \end{figure}
 
-\textbf{Gustoæa Voronoi æelija dobro je korelirana s gustoæom stanovništva te stoga bolju prostornu rezoluciju ima na podruèjima veæe gustoæe populacije \cite{Gundlegard:2016.}}. Ako poistovjetimo položaj korisnika s položajem tornja bazne stanice, mjerna nesigurnost odreðivanja položaja iznosi od približno stotinu metara u gusto naseljenom, do nekoliko kilometara u ruralnom podruèju \cite{Calabrese:2011.}.  Problem predstavlja preklapanje podruèja pokrivanja u stvarnosti \cite{Gundlegard:2016.}. Zbog uravnoteženja optereæenja u mreži (eng. \textit{load balancing}) ureðaj mijenja baznu stanicu na koju je spojen iako svo vrijeme zadržava isti položaj.
-Uèinak koji uravnoteženje optereæenja ima na definiranje putovanja može se ublažiti odreðivanjem minimalne udaljenost putovanja ili zanemarivanjem putovanja u susjedne æelije \cite{Gundlegard:2016.}. Analiza snage signala i trenutnih optereæenja okolnih baznih stanica mogu dati jasniji uvid u optereæenje mreže u vremenu poèetka (i trajanja) telekomunikacijske aktivnosti. \cite{Chen:2019.}
+\textbf{Gustoæa Voronoi æelija dobro je korelirana s gustoæom stanovništva te stoga bolju prostornu rezoluciju ima na podruèjima veæe gustoæe populacije \cite{Gundlegard:2016.}}. Ako poistovjetimo položaj korisnika s položajem tornja bazne stanice, \textbf{mjerna nesigurnost odreðivanja položaja iznosi od približno stotinu metara u gusto naseljenom, do nekoliko kilometara u ruralnom podruèju \cite{Calabrese:2011.}}.  Problem predstavlja preklapanje podruèja pokrivanja u stvarnosti \cite{Gundlegard:2016.}. Zbog uravnoteženja optereæenja u mreži (eng. \textit{load balancing}) ureðaj mijenja baznu stanicu na koju je spojen iako svo vrijeme zadržava isti položaj.
+\label{load_balancing} \textbf{Uèinak koji uravnoteženje optereæenja ima na definiranje putovanja može se ublažiti odreðivanjem minimalne udaljenost putovanja, zanemarivanjem putovanja u susjedne æelije \cite{Gundlegard:2016.} ili agregacijom podruèja pokrivanja baznih stanica èija je udaljenost manja od 75 m (s dodjelom dogaðaja najaktivnijem tornju). \cite{Goulding:2016.}}
+
+Analiza snage signala i trenutnih optereæenja okolnih baznih stanica mogu dati jasniji uvid u optereæenje mreže u vremenu poèetka (i trajanja) telekomunikacijske aktivnosti. \cite{Chen:2019.}
 
 %Važno je uzeti u obzir postojanje oscilacija.***TODO: vrati se na ovaj odlomak**
 
@@ -360,74 +336,6 @@ Rekonstrukcija putanja na osnovu aktivnosti u cijelom vremenskom razdoblju proma
 
 \begin{comment}
 %Svako zaustavljnje (\ref{stop}) ne mora nužno biti (postati) poèetak ili kraj putovanja. \textbf{Postavljanjem uvjeta da zaustavljanje jest polazište ili odredište putovanja samo ako mu se dokaže kontekst od interesa, eliminiraju se usputna zaustavljanja.} Primjerice, ako je kontekst od interesa ogranièen na iskljuèivo "posao" i "prebivalište" s ciljem promatranja samo komutacijskih putovanja, usputno zaustavljanje na benzinskoj crpki neæe se gledati kao kraj putovanja. Komutacijska putovanja se ponavljaju na dnevnoj bazi te su stoga èesto upravo ona koje se nastoji obuhvatiti POM-ma. Ogranièavanjem na iskljuèivo komutacijska putovanja, velik æe dio putovanja *koja su predvidiva na razini toka* biti odbaèen. Stoga uvoðenjem nekoliko generalnih kontekstnih kategorija ...
-\end{comment}
-
-%\subsection{Združena oèitanja prijamnika za satelitsku navigaciju}U velikim svjetskim gradovima veæina taxi vozila je opremljena GNSS prijamnikom iz uslužnih i sigurnosnih razloga. Ta vozila redovito odreðenom frekvencijom prijavljuju svoj položaj podatkovnom centru generirajuæi na dnevnoj bazi veliku kolièinu trajektorija. Na razini države prikupljaju se podaci za kamione....to spada zapravo spada u ranije spomenuta pokretna osjetila... komercijalna vozila, Taxi (...) \cite{Krause:2018.} 
-
-%The recent proliferation of ubiquitous sensing technologies, intelligent transportation systems, and location based services increases the availability of human trajectories. For example, in big cities like New York, Munich and Beijing, most taxis are equipped with GPS devices for dispatching and security management. These taxis regularly report their locations to the data center at a certain frequency. Hence, a large number of taxi trajectories are cumulated every day. Another good example is smart cards and integrated ticketing, which are provided by public transit operators in many cities. Customers can swipe the purchased cards to checkin and check-out when using public transport like subways or buses. Examples include London’s Oyster Card, Dublin’s Leap Card, Hong Kong’s Octopus Card, and Beijing’s BMAC Card 
-
-
-%\subsection{Javni prijevoz i \textit{pametne kartice}}(...)\\82\% putovanja javnim prijevozom naprave korisnici javnog prijevoza sa pametnim karticama \cite{Travassoli:2016.}- \cite{Kuhlm:2015.}\cite{Aslam:2018.}
-%\subsection{WiFi} (...)\\
-%- ITrack.CTrack,VTrack
-%VoWifi
-
-\begin{comment}
-\section{Kontekst putovanja}
-Putovanje kao informacijski objekt èine: polazišni položaj iz kojeg je putovanje krenulo, odredišni položaj u kojem se putovanje završava, vremenska oznaka kada je poèelo i kada je završilo. *Kada je poznat ili odreðen, u navedeno se ubraja i kontekst putovanja.*
-
-\definition{Kontekst} putovanja je informacija vezana uz putovanje, njegovo polazište ili odredište koja procjenjuje ili upuæuje na motiv (svrhu) kretanja, naèin prijevoza ili željeni faktor po kojem se putovanja mogu kategorizirati i time ih preciznije definirati (...u informacijskom smislu).
-% konkretizirati
-% karakterizirati
-
-Ta informacija može biti izvuèena iz samih podataka o kretanju ili iz dodatnih vanjskih izvora podataka.
-Putovanja svake kontekstne kategorije èine po jednu kontekstualiziranu POM-u.
-
-\subsection{Naèin prijevoza kao kontekst putovanja dobiven iz izvora podataka o kretanju}
-\label{sredstva}
-Tradicionalni postupci ogranièeni su samo na onaj dio infrastrukture gdje se provode intervjui ili gdje su postavljena osjetila za prebrojavanje prometa.
-\textbf{Telekomunikacijski zapisi neovisni su o prometnoj infrastrukturi. Oni obuhvaæaju sve vrste vozila, pješaèki promet kao i svu prometnu infrastrukturu te podruèja bez razvijene prometne infrastrukture. Uklanjaju potrebu za razlièitim postupkom prebrojavanja za pojedine naèine kretanja.} 
-%Poznavanjem sredstva kretanja može se analizirati "carbon footprint grada" jedan rad!!
-
-%proksimacija s BS ili signal strenght (RSSI) + neka ona drugo baza LTO(?)
-Autori studije \cite{Toole:2015.} tvrde da iskljuèivo \gls{cdr} zapisi ne osiguravaju rezoluciju pogodnu za odreðivanje sredstva kretanja iako se u praksi \cite{Teralytics:2017.} prema brzini kretanja pokretne stanice ili skupa njih istovremeno donosi zakljuèke o dominantnom sredstvu kretanja (pješak, automobil, javni prijevoz, avion). Iznimno se mogu izdvojiti bazen stanice dedicirane pružanju usluge iskljuèivo u podzemnoj željeznici. Studija iz 2016. \cite{Graells-Garrido:2016.} pokazala je da je moguæe izdvojiti taksiste/dostavljaèe uz pretpostavku da su to oni korisnici koji prijeðu preko 100 km dnevno unutar grada.
-
-\subsection{Svrha putovanja kao kontekst putovanja dobivena iz izvora podataka o kretanju}    
-
-Kada su dostupni zapisi prikupljani dulje vremensko razdoblje, tjednima ili mjesecima putovanje se može definirati na drugaèije - kao iskljuèivo komutacijsko. Pojednostavljeno, analizom zapisa može se utvrdi na kojem položaju neki pojedinci pretežito borave u tipiènom radnom vremenu te u kojoj tokom noæi. Prvi položaj za njihova putovanja postaje \textit{Work} destinacija, drugi \textit{Home}, a sve preostale destinacije svrstaju se u zasebnu kategoriju \textit{Other}. \gls{pom}-e ukljuèuju samo putovanja iz jednog tipa destinacije u drugi npr. \gls{hw} i \gls{wh}. Kontekst, odnosno svrha svakog od putovanja koja èine \gls{pom}-u je ili \textit{odlazak na posao} ili \textit{odlazak kuæi (s posla)}. \cite{Goulding:2016.}\cite{Graells-Garrido:2016.}\cite{Bahoken:2013.}\cite{Calabrese:2011.}\cite{Toole:2015.}. %\cite{Frias-Martinez:2012.} - oni su kao nešto protiv toga
-\gls{pom}-e koje sadrže ta putovanja usporedive su s onima dobivenim iz anketa stanovništva s istom podjelom putovanja prema svrsi. Komutacijska putovanja su ponavljajuæa i u tom smislu predvidiva i zanimljiva u strateškom planiranju.
-
-Studija A iz 2013. \cite{Schneider:2013.} pokazala je da su \gls{cdr} zapisi u trajanju od 6 mjeseci bili su dovoljni za konaènu toènu procjenu položaja èak 98\% kuæanstava nešto više od 39 tisuæa najaktivnijih korisnika na podruèju Pariza i Chicaga, izdvojenih iz ukupnog skupa korisnika (milijuni korisnika). U podacima se ispitivalo gdje svaki od korisnika provodi najviše vremena izmeðu 0:00 i 6:00 sati. Dvije godine kasnije studija B \cite{Toole:2015.} definira kuæanstvo kao mjesto gdje korisnik provodi najviše vremena izmeðu 20:00 i 7:00 na radne dane, a radno mjesto kao mjesto gdje korisnik provodi najviše vremena, barem 3 puta tjedno, izmeðu 7:00 i 20:00. Godinu dana kasnije studija C \cite{Gundlegard:2016.} koristi intervale od 22:00 do 7:00 te od 9:00 do 16:00. Ostale lokacije svrstava u kategoriju \textit{Ostalo eng. Other}. Kod ovih vrsta \gls{pom}-a najèešæe naglasak nije stavljen na dobru vremensku rezoluciju kao što je to sluèaj kod tranzitnih.\cite{Gundlegard:2016.}
-
-\section{Kontekst izveden iz vanjskih izvora}
-
-Neka istraživanja spojila su ljudsku mobilnost s namjenom zemljišta (engl. \textit{land use}) ili toèkama interesa engl. \textit{\gls{pois}} kako bi grupirala urbana podruèja prema njihovoj funkciji ili upotrebi. \textbf{Izvori podataka o kretanju u tim istraživanjima obuhvaæaju zapise %variraju od 
-\gls{gps} putanja, položaja ukrcaja i iskrcaja taxi vozila, zapisa koje generiraju pametne kartice u javnom prijevozu, podatke o dijeljenim lokacijama na društvenim mrežama (engl. \textit{check-in}) i zapise o telekomunikacijskim aktivnostima (\gls{cdr})} \cite{Alhazzani:2016.}. 
-
-Razlièiti izvori podataka o kontekstu korišteni su u istraživanjima, a ukljuèuju opise objekata u prostoru i relacija meðu tim objektima. Korišteni podaci su primjerice broj objekata, površina koju oni zauzimaju te, za kontekst kao svrhu putovanja najbitnija, socio-ekonomska svrha (funkcija) pojedinog objekta.
-
-\subsection{OpenStreetMap baza - primjer izvora konteksta}
-\gls{osm} je svjetski raširen projekt koji kreira i pruža slobodne zemljopisne podatke (zemljovide gradova i naselja) temeljen na volonterskom doprinosu zajednice. Pruža detaljne i ažurne digitalne zemljovide kompatibilne s \gls{gis} aplikacijama. 
-Zapoèet je prije 15 godina, u Ujedinjenom Kraljevstvu, kao odgovor na tehnièka ili pravna ogranièenja postojeæih "slobodnih" baza prostornih podataka kao što je GoogleMaps. Zajednièki doprinos i meðusobna kontrola unosa održavaju kartu na visokoj razini kvalitete i toènosti.
-
-Struktura osnovnih elemenata na toj rasterskoj karti je hijerarhijska. Element u hijerarhiji može biti: èvor (engl. \textit{node}), put (engl. \textit{way}) ili relacija (engl. \textit{relation}). Uz hijerarhijske postoji i opisni element kojeg nazivamo oznakom (engl. \textit{tag}), a njegova funkcija je opisati znaèajke hijerarhijskog elementa uz koji je vezan. 
-
-Èvor je jedinstvena toèka u prostoru (sa identifikacijskom oznakom, zemljopisnom širinom i dužinom) koja najèešæe predstavlja fizièki objekt (zgrada, dio ceste...) te sadrži jedan ili više \textit{kljuè=vrijednost} oznaka (engl. \textit{key=value tag}) koji definiraju razne znaèajke objekta.
-
-Put je ureðena lista 2 do 2,000 èvorova, koja takoðer može biti opisana \textit{kljuè=vrijednost} oznakama. 
-
-Relacija je ureðena lista èvorova, puteva i/ili relacija. Definira logièku ili geografsku povezanost èlanova. 
-Primjeri oznaka vezanih za èvorove:  \textit{office=company}, \textit{building=residential}, \textit{building=hotel}, \textit{building=church}, \textit{leisure=sports\_centre} , \textit{amenity=school}. Primjer žiga vezanog uz put \textit{highway=residential}.
-
-\subsubsection{Izvor infrastrukture} 
-\gls{osm} doprinosi istraživanjima u ovom podruèju i kao izvor prometne infrastrukture i pripadajuæih meta podataka (kolnik, mostovi, ogranièenja brzine i dr.). Raspodjela toka po prometnoj infrastrukturi nadilazi podruèje ovog rada no jest dio problematike modeliranja prometa. \cite{Toole:2015.} Još jedna moguæa primjena odnosi se na interpolaciju jedinica prostorne podjele (*Dodatak*).
-
-%(jedan od radova koristi za broj traka na auto cesti jedan za provjeru naseljenosti podruèja/broj katova zgrada)
-
-
-\subsection{Uloga konteksta u postupku procjene \glstext{pom}}
-\textbf{Odreðivanje konteksta putovanja proširuje podruèje pokrivanja u fizièkom i informacijskom smislu te poveæava toènost \gls{pom}-e putem unosa relevantnih atributa vezanih za naèin i svrhu putovanja, èime je putovanje toènije opisano.}[M]
-(...)
 \end{comment}
 
 %\chapter{Validacija \glstext{pom}}
@@ -598,6 +506,7 @@ MSSIM(X,Y) =  \frac{1}{M} \sum_{m=1}^{M} SSIM(x_m,y_m) \label{eq:mssim}
 \subsubsection{Poboljšani višerazinski indeks strukturalne sliènosti} 
 Nekoliko godina nakon prvog spominjanja $MSSIM$ kao metrike usporedbe \gls{pom}-a \cite{Vuren:2015.}  se dotièe 3 problema postavljajuæi pitanja: Koliko treba biti veliki blok? Kako usporediti "guste" i "rijetke" \gls{pom}-e? Koja je prihvatljiva vrijednost $MSSIM$? Autori definiraju poboljšani model koji nazivaju $4D$-$MSSIM$ u izraèun kojeg dodaju stvarne euklidske udaljenosti prostornih zona. Tehnike bazirane na strukturalnoj sliènosti i njihov doprinos još su uvijek otvorene za raspravu. \cite{Pollard:2013.}\cite{Varun:2013.}\cite{Vuren:2015.}
 
-%%\subsubsection{Redoslijed zona u Polazišno Odredišnoj Matrici*}
+%\subsubsection{Redoslijed zona u Polazišno Odredišnoj Matrici}
+%Mjera \gls{mssim} ne usporeðuje matrice element po element, veæ blokove elemenata. Raspored zona u matrici uvjetovat æe rezultat, a kao jedinu napomenu autori mjere istièu važnost jednakog rasporeda u obje æelije. Ako je raspored æelija u \gls{pom}-i prema geografskoj širini, zatim geografskoj dužini središta zone, blok ne garantira da se 2 susjedna elementa u bloku odnose na 2 susjedne zone u podruèju.
 
 %%Also, the order of origins in rows and destinations in columns in reference and estimated OD matrix must be the same. 

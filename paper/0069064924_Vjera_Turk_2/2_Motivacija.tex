@@ -11,6 +11,9 @@ Djelotvorno upravljanje i kontrola prometa doprinose poveæanju sigurnosti, kvali
 Suvremeni društveno-ekonomski odnosi promijenili su prirodu kretanja ljudi i dobara zbog èega tradicionalni pristup postaje zastario i neprimjeren.
 
 Analiza prometne potražnje tijekom dnevnih vrhunaca i pokazatelja kako æe se taj vrhunac mijenjati u bliskoj i dalekoj buduænosti zahtjeva odabir dobre vremenske rezolucije. Tradicionalni modeli procjene pretpostavljaju da se širina vremenskog vrhunca u buduænosti neæe mijenjati iako se ona veæ sad razlikuje od grada do grada (Slike \ref{fig:peak}) \cite{Thakur:2018.}.
+
+%Investicija od 74 milijuna dolara u Seattleu 2016. skratila je tadašnje prosjeèno vrijeme putovanja na dionici tijekom prometnog vrhunca za 2 sekunde u odnosu na 2014. a prosjeèan broj automobila koji dnevno proðe dionicom poveæao se za 30,000 \cite{bull:2019.} .
+
 %Strateška planiranja izgradnje prometne infrastrukture, koja se vode vremenski nezavisnim modeliranjem potražnje, trebala bi uzeti u obzir vremenski zavisne modele. 
 
 \textbf{Pretpostavka da je referentna matrica \textit{a priori} toèna ne omoguæuje da se sagleda je li nova \gls{pom}-a toènija i/ili kvalitetnija od nje.} Kako prikazati kvalitetu \gls{pom}-e bez oslanjanja na \textit{grand turth} koja porastom znaèajnijih i bržih promjena poveæava utjecaj pristranosti kretanju u prošlosti? Postoji potreba za objektivnom procjenom kvalitete \gls{pom}-a definiranjem odnosnih parametara kvalitete.
@@ -18,6 +21,8 @@ Analiza prometne potražnje tijekom dnevnih vrhunaca i pokazatelja kako æe se taj
 \gls{cdr} se istièe kao izvor gotovo jednako zastupljen u zemljama u razvoju i razvijenim zemljama, s penetracijom oko 40\%-50\% stanovništva za pojedine operatore javene pokretne mreže \cite{Bonnel:2015.}.
  %U Francuskoj je 2008. 80\% stanovništva starijeg od 12 godina posjedovalo mobilni ureðaj\cite{Bonnel:2015.}, a 2016. Èile je imao èak 132 mobilne pretplate na 100 stanovnika \cite{Graells-Garrido:2016.}. 
  \textbf{Praksa odbacivanja ogromnog dijela uzorka zbog niske potpunosti putanja može se zamijeniti rekonstrukcijom putanja uvažavajuæi njihov kontekst \cite{Chen:2019.}}.
+
+
 
 %Tradicionalni pristup validaciji procjenjuju sliènost s \gls{pom} koja je nužno nastala u prošlosti, pa se izmjene u odnosu na prethodnu matricu tumaèe kao "greška" iako se lako zapitati je li zapravo nova matrica ona koja opisuje stvarnost bolje od referentne.
 
@@ -54,7 +59,7 @@ Kontekst može biti izvuèena iz samih podataka o kretanju ili iz dodatnih vanjski
 Preciznost odreðivanja konteksta definira izbor metode procjene \gls{pom}-e. %**
 %Moguænost preciznog odreðivanja konteksta zavisi o metodi procjene \gls{pom}-e.
 
-Ako kontekst (svrha) putovanja nije izvorno navedena kao opisna velièina (prediktor) u ulaznim podatcima za razvoj \gls{pom}-e, 
+Ako svrha putovanja nije izvorno navedena kao opisna velièina (prediktor) u ulaznim podatcima za razvoj \gls{pom}-e, 
 %%IZBACITI: razvijene su metode koje pomoæu vanjskih izvora o sadržaju procjenjuju kontekst putovanja.
 moguæe je o kontekstu putovanja zakljuèiti iz baza neizravnih kontekstualiziranih podataka treæih strana (npr. zapisi o korištenju telekomunikacijske mreže dopunjeni prostornim podatcima \glstext{gis}) uz korištenje odgovarajuæih postupaka prostorne statistike i analitike.
 
@@ -116,34 +121,73 @@ Poboljšanje kvalitete procjene omoguæeno je preslikavanjem POM-e na kontekst. Od
 %moj pogled na validaciju pom
 Vrednovanje \gls{pom}-e je proces koji ima za cilj procjenu obilježja kvalitete te \gls{pom}-e i znaèi identifikaciju obilježja kvalitete \gls{pom}-e, njenog sadržaja, njene smislenosti, a izražava se slijedeæim  indikatorima: ... %\textit{prostorno obuhvaæanje (?), zrnatosti (?), definicija putovanja, prostorna rezolucija, vremenska rezolucija, širina toka i gustoæa informacija.}
 
+Toènost, rezolucija i obujam podataka su kritièni parametri geografske informacije i znanje o èemu oni zavise je nužna baza za veæe pothvate procjene vrijednosti geografskih informacija kao društvenog dobra. \cite{Degbelo:2014.}
+
+ažurnost?!
+
+%Accuracy, resolution and data volume are critical parameters of geographic information, and knowledge about their dependencies is a necessary basis for the bigger undertaking of assessing the valuation of geographic information as a good in society.
+
+
 %\todo[inline]{- pojava novih izvora podataka i postupaka procjene migracija\\- veæa preciznost odreðivanja položaja. polazišta i odredišta\\- kontekstualizacija\\- toènost opisa putovanja raste\\ - podruèje primjene raste\\- potencijalno vrlo velik reprezentativni uzorak (CDR)\\- jako dobra rezolucija u vremenu\\- osigurati anonimnost}
+
+
+%- kontekst na osnovu vremena - radno vrijeme objekata, vrijeme putovanja, ponavljanje putovanja u istom vremenu\\
+%- kontekst na osnovu prostornih podataka
 
 
 \section{Odnosni parametri kvalitete}
 
-- kontekst na osnovu vremena - radno vrijeme objekata, vrijeme putovanja, ponavljanje putovanja u istom vremenu
-\\
-- kontekst na osnovu prostornih podataka
+\subsection{Prostorno obuhvaæanje}
+%Spatial coverage refers to a geographical area where data was collected, a place which is the subject of a collection, or a location which is the focus of an activity. This may be described using geospatial coordinates for a point or an area (for example, latitude and longitude), or through the use of place or regional names (for example, Barrow Island; Gippsland). Regional names may be based on legal jurisdiction (for example, South Australia).
+\definition{Prostorno obuhvaæanje} je geografsko podruèje gdje su prikupljani podatci, mjesto  koje je predmet opažanja ili lokacija u fokusu aktivnosti. \cite{prob:2019.}
+
+\begin{enumerate}
+\item prometna infrastruktura (ceste, željeznica, javni prijevoz)
+\item neovisno o prometnoj infrastrukturi (\gls{cdr}, \gls{gnss})
+\end{enumerate}
+
+%Coverage: sampling intensity in space or time
+%discrimination: smallest change in a quantity being measured that causes a perceptible change in the corresponding observation value
+
+
 
 \subsection{Prostorna razluèivost (rezolucija)}
 
-\begin{definition}{Prostorna razluèivost} je najmanja preðena udaljenost koju je moguæe identificirati
+Degbelo u radu "Pet opæih svojstava rezolucije" \cite{Degbelo:2014.} kao jedno od (uvijek toènih) svojstava navodi da je \textbf{rezolucija  (geografskih podataka) pozitivno korelirana s toènošæu}. Razmatra suprotnu tvrdnju - da je \textit{za oèekivati} da se toènost poveæava sa smanjenjem rezolucije. Njegova interpretacija te tvrdnje je da je toènost veæa, ako je zahtjev za specifiènosti manji \cite{Degbelo:2014.}.
 
+Taj drugi pristup toènosti zastupljen je u evaluaciji \gls{pom} \cite{Kuhlm:2015.}. 
+
+Toènost matrica u odnosu na referentnu provjerava se na 3 razlièite razine granularnosti (broja zona). Rezultat je veæa toènost/sliènost iskazana mjerom $r^2$ kod usporedba nižeg stupnja granularnosti (niže rezolucije u smislu broja zona). Odabirom nižeg stupnja granularnosti zapravo se smanjuje zahtjev za specifiènosti. 
+
+Zakljuèak: Poveæanje toènosti/sliènosti matrica iskazane mjerom $r^2$ koje je postignuto uzimanjem nižeg stupnja granularnosti posljedica je smanjenja zahtjeva za specifiènosti. 
+
+%Resolution is positively correlated with accuracy and data volume
+
+\begin{definition}{Prostorna razluèivost} je najmanja preðena udaljenost koju je moguæe identificirati.
 \end{definition}
 
 Rezolucija \gls{pom}-e procijenjene iz \gls{cdr} ovisit æe o gustoæi tornjeva bazni stanica. Gustoæa tornjeva dobro je korelirana s gustoæom populacije \cite{Gundlegard:2016.}.
-%The antenna density is strongly correlated to population density and hence we get a better spatial resolution of trips in areas with denser population. 
-Distribucija tornjeva nije homogena, niti na podruèju grada, niti na bilo kojem drugom podruèju. \cite{Goulding:2016.} predlaže grupiranje aktivnosti tornjeva koji se nalaze na udaljenosti manjoj od 75 m (dodjeljivanje aktivnosti najaktivnijem od tornjeva) kako bi se izbjegla prividna kretanja koja uzrokuje preusmjeravanje na bližnje bazne stanice prilikom uravnoteženja optereæenja mreže (engl. \textit{load balancing}). 
+Distribucija tornjeva nije homogena, niti na podruèju grada, niti na bilo kojem drugom podruèju. 
 
 \subsubsection{Kontekstualizacija}
 Objekt u æeliji je najmanja prostorno razluèiva jedinica\\
-- broj objekata u æeliji $n$\\
-- broj objekata pojedine kategorije $n_{a_{i}}$
 
 \begin{comment}
-Voronoi æelije moguæe je ugnijezditi (što se radi kod usporedbe s \gls{pom}-ma dobivenim drugim postupkom), a pritom se može u matricu zabilježiti i aproksimacija internog toka, odnosno broja putovanja unutar nove æelije (popuniti dijagonalu). Takva putovanja nazivaju se internim putovanjima. 
-\begin{definition}{Interno putovanje}\label{inter} je ono putovanje koje se odvija unutar jedne zone, odnosno èije se polazište i odredište nalaze unutar iste prostorne zone.  Suprotno internom je eksterno putovanje.
-\end{definition}
+\\-kako ne grupa objekata-kategorija?!\\
+- broj objekata u æeliji $n$\\
+- broj objekata pojedine kategorije $n_{a_{i}}$\\
+- površina æelije\\
+- gustoæa npr. objekata po $km^2$\\
+idealna situacija po 1 objekt za svaku od kategorija $n_{a_{i}}/n$? gustoæa 1, ali gustoæa 1 je i kad su svi objekti isti, tj. ne ovisi i kategorijama\\
+gustoæa informacija vektor neki?!\\
+
+-Karakteristike objekta: kategorija, radno vrijeme, površina\\
+
+-broj putovanja po objektu u æeliji- 
+tok širine 17, objekata 20, npr 4 + 5 + 6 + 3 + 3  \\
+- broj putovanja : floor area\\
+floor area : kategoriji
+
 \end{comment}
 
 
@@ -190,13 +234,36 @@ Voronoi æelije moguæe je ugnijezditi (što se radi kod usporedbe s \gls{pom}-ma d
 	\end{center}
 \end{figure}
 
-\subsection{Vremenska razluèivost}
 
+\subsection{Zrnatost}
+%Granularity is the extent to which a system is broken down into small parts, either the system itself or its description or observation. It is the "extent to which a larger entity is subdivided. 
+
+Rezolucija se odnosi na kolièinu detalja u reprezentaciji (stvarnosti) dok se zrnatost odnosi na spoznajni aspekt ukljuèen pri odabiru znaèajki \cite{Degbelo:2014.}. 
+Pojam zrnate podjele (engl. granular partition) ukljuèuje ne samo karte (podatke) veæ kategorizaciju koja nadilazi mjerenja i obzervaciju i zalazi u podruèje konceptualnog modeliranja \cite{Degbelo:2014.}.
+%Zrnatost se povezuje s uèinkovitim odabirom onih aspekata našeg okruženja koji su najvjerojatnije relevantni za naš interes.
+Za razliku od rezolucije prema \cite{Degbelo:2014.}, zrnatost i toènost su neovisne. Odgovori na pitanje "Gdje se nalazite?" "U Hrvatskoj", "U Rijeci", "U svojoj kuæi" i "Za svojim stolom" svi toèni u smislu da 'govore istinu'.
+
+%Resolution refers to the amount of detail in a representation, while granularity refers to the cognitive aspects involved in selection of features.
+
+%The notion of granular partition (see for example [2]) includes not only maps (i.e. data), but also categorizations (which go beyond measurement and observation, and enter the realm of conceptual modelling).
+
+%it relates to the efficient selection of the aspects of our environment that are most likely to be relevant to our interests. 
+
+\definition Zrnatost je stupanj do kojeg je sustav rastavljiv u manje dijelove, bilo sam sustav ili njegov opis ili opažanje. Stupanj do kojeg je veæi entitet djeljiv.
+\cite{zrno:2019.}  
+%Zrnatost se koristi za karakterizaciju razmjera ili razine detalja. %Što je zrnatost veæa, viša je razina detalja. Zrnatost definira razinu detalja korištenu u modeliranju situacije.
+
+
+%Data granularity
+%The granularity of data refers to the fineness with which data fields are sub-divided. For example, a postal address can be recorded, with low granularity, as one field: address = 200 2nd Ave. South #358, St. Petersburg, FL 33701-4313 USA or with high granularity, as many fields: street address = 200 2nd Ave. South #358 city = St. Petersburg postal code = FL 33701-4313 country = USA
+
+\subsection{Vremenska razluèivost (rezolucija)}
+\definition Vremenska razluèivost je najmanji vremenski odmak koji je moguæe identificirati.
 %Daily trips are estimated from filtered users by analyzing consecutive observations at different stay points during a given time window. They begin by defining an effective day as a period between 3 am one morning and 3 am on the next consecutive morning. This definition is used to minimize the number of trips that are prematurely ended due to the assumption that users start and end each day at home
-Dio putovanja zapoèinje u jednom a završava u drugom danu. Autori \cite{Schneider:2013.}\cite{Toole:2015.} zastupaju definiranje završetka dana u 3:00 iduæeg dana, umjesto u 0:00, kako dio putovanja ne bi bio izostavljen zato jer se proteže kroz 2 dana.
+
 
 %Kraj prethodnog odnosno poèetak novog dana 3:00 kako bi putovanja zapoèeta prethodnog dana, a koja prelaze u novi dan, u analizi spadala u raniji dan, odnosno kako dobar  \cite{Schneider:2013.}\cite{Toole:2015.}. 
-Najmanji spominjani interval u literaturi je 15 min \cite{Bera:2011.}, drugi najmanji 30 min \cite{Schneider:2013.}, kod \gls{pom}-a kreiranih iz podataka generiranih pametnim karticama u javnom prijevozu takoðer 15 min \cite{Travassoli:2016.}, a zastupljena je i dinamièkoj podjela na kratke intervale za najprometnija razdoblja u danu: jutarnji vrhunac (engl. \textit{morning peak}), poslijepodnevni vrhunac (engl. \textit{afternoon peak}) i duže intervale za ostala razdoblja. 
+Najmanji spominjani period u literaturi je 15 min \cite{Bera:2011.}, drugi najmanji 30 min \cite{Schneider:2013.}, kod \gls{pom}-a kreiranih iz podataka generiranih pametnim karticama u javnom prijevozu takoðer 15 min \cite{Travassoli:2016.}, a zastupljena je i dinamièkoj podjela na kratke intervale za najprometnija razdoblja u danu: jutarnji vrhunac (engl. \textit{morning peak}), poslijepodnevni vrhunac (engl. \textit{afternoon peak}) i duže intervale za ostala razdoblja. 
 
 \todo[inline]{Ispitati:\\
 	periode od\\
@@ -226,70 +293,12 @@ Najmanji spominjani interval u literaturi je 15 min \cite{Bera:2011.}, drugi naj
 -Kontekst vezan za vrijeme u kojem se odvija putovanje
 
 
-\subsection{Širina toka}-samo tok?!
-%- dakako za pojedinu matricu ovisi o prostornoj i vremenskoj rezoluciji \\
-%- najviše ipak vjerojatno ovisi o definiciji putovanja\\
-\begin{definition}
-	Ukupna širina toka podrazumijeva ukupan broj odlazaka/dolazaka po vremenskom okviru za cijelu matricu. Suma svih elemenata \gls{pom}-e. (vidi sliku \ref{fig:matrix} $F_ij$).
-\end{definition}
 
-Svi dosad spomenuti parametri utjecat æe na širinu toka. Velièina i reprezentativnost uzorka stanovništva te k-anonimizacija takoðer æe utjecati na širinu toka.
-
-Izdvajanje najaktivnijih korisnika (onih s najviše zapisa) zastupljeno je u istraživanjima procjene \gls{pom} iz \gls{cdr} \cite{Schneider:2013.} \cite{Toole:2015.}.
-%dok \cite{Gundlegard:2016.} filtrira samo "najljepša putovanja". 
-Podjelom korisnika u 3 skupine po kolièini podataka koju generiraju i analizom svake skupine zasebno, za podruèje francuske regije Picardie), studija \cite{Bonnel:2015.} pokazuje da frekvencija korištenja ne uvodi pristranost \cite{Bonnel:2015.}. 
-
-Calabrese \cite{Calabrese:2011.} uzima samo sluèajno odabranih 25\% korisnika (njih 1 milijun) da pojednostavi analizu, a \cite{Graells-Garrido:2016.} samo 100,000, kako bi procijenjena \gls{pom} bila usporediva s onom dobivenom iz ankete provedene na uzorku iste velièine.
-
-Slabo obuhvaæanje krajnjih dobnih skupina zbog slabe zastupljenosti mobilnih ureðaja kod najstarije i najmlaðe dobne skupine ne tumaèi se kao pristranost, uz napomenu da su to ujedno skupine sa generalno slabom mobilnosti u odnosu na ostale opæenito. \cite{Bonnel:2015.}. %Studija \cite{Goulding:2016.} istièe da usluge razlièitim demografskim skupinama, a najèešæe su izuzetak skupine slabijeg socio-ekonomskog stanja. 
-Kod tržišta gdje veliki postotak stanovništva posjeduje mobilni ureðaj (npr. 92\% za urbana podruèja Tanzanije) eventualno postojanje pristranosti može se smatrati zanemarivim  \cite{Goulding:2016.}.
-
-\gls{pom}-e dobivene iz anketa u kuæanstvima i  iz \gls{rsi} rijetko su popunjene, %pogotovo kod visoke vremenske i prostorne rezolucije,
-odnosno veæinski su ispunjene Nul-æelijama (eng. \textit{Null-cells, Zero-cells}) \cite{Cools:2010.}.
-% Cools \cite{Cools:2010.} zasebno analizira \gls{pom}-a sa i bez takvih æelija jer je od 589 $\times$ 589 æelija, èak 77.8\% njih bilo Nul-æelija. 
-%Ista situacija je s \gls{pom}-ma kreiranim iz \gls{rsi}, dok æe 
-\gls{pom}-e kreirane iz GPS ili \gls{cdr} zapisa gusto su ispunjene, najèešæe vrlo malim vrijednostima umjesto nula \cite{Vuren:2015.}.
-
-Broj aktivnih korisnika, a posljedièno i širina toka, znaèajno varira iz dana u dan unutar tjedna \cite{Bonnel:2015.} \cite{Graells-Garrido:2016.}.
-
-
-%- o tome æe ovisiti i Zero-cells (Nul-æelije)\\
-%- velièina uzorka (postotak stanovništva)\\
-%- k-anonimizacija\\
-%- prosjeèan broj putovanja po stanovniku/ispitaniku Netko:nekad nešto tipa 3 i 4.5, ugl. nešto veæi broj za CDR \\
-%- samo najaktivniji korisnici \cite{Schneider:2013.} \cite{Toole:2015.} (pristranost?) $\rightarrow$ jedno istraživanje podijelilo je korisnike u 3 skupine po kolièini podataka koju generiraju te su dokazali da frekvencija korištenja nije uvela pristranost. \cite{Bonnel:2015.}  \\
-%- za razliku od izvlaèenja najaktivnijih korisnika -\cite{Calabrese:2011.} uzima samo sluèajno odabranih 25\% korisnika (njih 1 milijun) da pojednostavi analizu. ...Dobro šta, da može pješke na prste raèunati?!\\
-%- broj aktivnih korisnika unutar jednog tjedna jako varira iz dana u dan.  \cite{Bonnel:2015.}\\ \cite{Graells-Garrido:2016.}\\
-%- Pristranost kolièine generiranih podataka s dobi \cite{Bonnel:2015.}$\rightarrow$ još uvijek su mobiteli slabije zastupljeni kod djece i starijih ali to su takoðer i skupine sa smanjenom mobilnosti.
-%\subsection{Geometrija prostorne podjele}
-%(ne)uniformna podjela ...
-%Interpolacija - ima li smisla 2 razlièite podjele?!
-
-\begin{comment}
-\subsubsection{Infrastruktura i sredstva kretanja}
-Kao što je veæ spomenuto u potpoglavlju \ref{sredstva}, \gls{pom}-e kreirane iz \gls{cdr} obuhvaæaju sva sredstva kretanja, pješaèki promet i podruèja bez prometne infrastrukture.
-
-%- cdr obuhvaæa sav, èak i pješaèki promet\\
-%\subsubsection{Sredstvo kretanja}
-- GPS najcesce komercijalna vozila\\
-- pametne kartice -javni prijevoz\\
--prebrojavanje vozila- samo motorna vozila ?!
-\end{comment}
-
-\subsubsection{Kontekstualizacija}
-- Razdioba toka prema objektima pojedine kategorije
-
-\todo[inline]{Ispitati:\\
-	- kako sve prethodno utjeèe na širinu toka/konaèan broj putovanja?!\\
-	- kontekstualizacija na osnovu analize više dana ( tjedan - 3 mjeseca)
-	pomaže da se rekonstruiraju putanje, nema potrebe za odbacivanjem velikog broja
-}
-
-\subsection{Gustoæa informacija - kontekst}
+\subsection{Gustoæa informacija}
 (...)\\
 -Informacija na razini putovanja \\
 -Informacija na razini toka (postotka toka) - metoda koja se oslanja na vanjske izvore konteksta može se primijeniti na matrice iz razlièitih izvora podataka.\\
-- nemam implementaciju funkcija s kampa za kontekstualizaciju objekata i tokova, imam za izvlaèenje objekata iz voronoi æelija
+- nemam implementaciju funkcija s kampa za kontekstualizaciju objekata i tokova, imam za izvlaèenje objekata iz voronoi æelija\\
 %Informacija na razini cijele matrice \\(...)
 Što je gušæe opisan prostor u æeliji to je moguæe ostvariti bolju rezoluciju
 
@@ -381,5 +390,63 @@ Najveæa je bila zastupljenost kratkih putovanja. \cite{Gundlegard:2016.} Distrib
 \subsubsection{Kontekstualizacija}
 -interna putovanja izmeðu objekata - možemo ih samo pretpostaviti?!
 
+\subsection{Širina toka}-samo tok?!
+%- dakako za pojedinu matricu ovisi o prostornoj i vremenskoj rezoluciji \\
+%- najviše ipak vjerojatno ovisi o definiciji putovanja\\
+\begin{definition}
+	Ukupna širina toka je ukupan broj odlazaka/dolazaka po vremenskom okviru za cijelu matricu - suma svih elemenata \gls{pom}-e. (vidi sliku \ref{fig:matrix} $F_ij$).
+\end{definition}
+
+Svi dosad spomenuti parametri utjecat æe na širinu toka. Velièina i reprezentativnost uzorka stanovništva te k-anonimizacija takoðer æe utjecati na širinu toka.
+
+Izdvajanje najaktivnijih korisnika (onih s najviše zapisa) zastupljeno je u istraživanjima procjene \gls{pom} iz \gls{cdr} \cite{Schneider:2013.} \cite{Toole:2015.}.
+%dok \cite{Gundlegard:2016.} filtrira samo "najljepša putovanja". 
+Podjelom korisnika u 3 skupine po kolièini podataka koju generiraju i analizom svake skupine zasebno, za podruèje francuske regije Picardie), studija \cite{Bonnel:2015.} pokazuje da frekvencija korištenja ne uvodi pristranost \cite{Bonnel:2015.}. 
+
+Calabrese \cite{Calabrese:2011.} uzima samo sluèajno odabranih 25\% korisnika (njih 1 milijun) da pojednostavi analizu, a \cite{Graells-Garrido:2016.} samo 100,000, kako bi procijenjena \gls{pom} bila usporediva s onom dobivenom iz ankete provedene na uzorku iste velièine.
+
+Slabo obuhvaæanje krajnjih dobnih skupina zbog slabe zastupljenosti mobilnih ureðaja kod najstarije i najmlaðe dobne skupine ne tumaèi se kao pristranost, uz napomenu da su to ujedno skupine sa generalno slabom mobilnosti u odnosu na ostale opæenito. \cite{Bonnel:2015.}. %Studija \cite{Goulding:2016.} istièe da usluge razlièitim demografskim skupinama, a najèešæe su izuzetak skupine slabijeg socio-ekonomskog stanja. 
+Kod tržišta gdje veliki postotak stanovništva posjeduje mobilni ureðaj (npr. 92\% za urbana podruèja Tanzanije) eventualno postojanje pristranosti može se smatrati zanemarivim  \cite{Goulding:2016.}.
+
+\gls{pom}-e dobivene iz anketa u kuæanstvima i  iz \gls{rsi} rijetko su popunjene, %pogotovo kod visoke vremenske i prostorne rezolucije,
+odnosno veæinski su ispunjene Nul-æelijama (eng. \textit{Null-cells, Zero-cells}) \cite{Cools:2010.}.
+% Cools \cite{Cools:2010.} zasebno analizira \gls{pom}-a sa i bez takvih æelija jer je od 589 $\times$ 589 æelija, èak 77.8\% njih bilo Nul-æelija. 
+%Ista situacija je s \gls{pom}-ma kreiranim iz \gls{rsi}, dok æe 
+\gls{pom}-e kreirane iz GPS ili \gls{cdr} zapisa gusto su ispunjene, najèešæe vrlo malim vrijednostima umjesto nula \cite{Vuren:2015.}.
+
+Broj aktivnih korisnika, a posljedièno i širina toka, znaèajno varira iz dana u dan unutar tjedna \cite{Bonnel:2015.} \cite{Graells-Garrido:2016.}.
+
+
+%- o tome æe ovisiti i Zero-cells (Nul-æelije)\\
+%- velièina uzorka (postotak stanovništva)\\
+%- k-anonimizacija\\
+%- prosjeèan broj putovanja po stanovniku/ispitaniku Netko:nekad nešto tipa 3 i 4.5, ugl. nešto veæi broj za CDR \\
+%- samo najaktivniji korisnici \cite{Schneider:2013.} \cite{Toole:2015.} (pristranost?) $\rightarrow$ jedno istraživanje podijelilo je korisnike u 3 skupine po kolièini podataka koju generiraju te su dokazali da frekvencija korištenja nije uvela pristranost. \cite{Bonnel:2015.}  \\
+%- za razliku od izvlaèenja najaktivnijih korisnika -\cite{Calabrese:2011.} uzima samo sluèajno odabranih 25\% korisnika (njih 1 milijun) da pojednostavi analizu. ...Dobro šta, da može pješke na prste raèunati?!\\
+%- broj aktivnih korisnika unutar jednog tjedna jako varira iz dana u dan.  \cite{Bonnel:2015.}\\ \cite{Graells-Garrido:2016.}\\
+%- Pristranost kolièine generiranih podataka s dobi \cite{Bonnel:2015.}$\rightarrow$ još uvijek su mobiteli slabije zastupljeni kod djece i starijih ali to su takoðer i skupine sa smanjenom mobilnosti.
+%\subsection{Geometrija prostorne podjele}
+%(ne)uniformna podjela ...
+%Interpolacija - ima li smisla 2 razlièite podjele?!
+
+\begin{comment}
+\subsubsection{Infrastruktura i sredstva kretanja}
+Kao što je veæ spomenuto u potpoglavlju \ref{sredstva}, \gls{pom}-e kreirane iz \gls{cdr} obuhvaæaju sva sredstva kretanja, pješaèki promet i podruèja bez prometne infrastrukture.
+
+%- cdr obuhvaæa sav, èak i pješaèki promet\\
+%\subsubsection{Sredstvo kretanja}
+- GPS najcesce komercijalna vozila\\
+- pametne kartice -javni prijevoz\\
+-prebrojavanje vozila- samo motorna vozila ?!
+\end{comment}
+
+\subsubsection{Kontekstualizacija}
+- Razdioba toka prema objektima pojedine kategorije
+
+\todo[inline]{Ispitati:\\
+	- kako sve prethodno utjeèe na širinu toka/konaèan broj putovanja?!\\
+	- kontekstualizacija na osnovu analize više dana ( tjedan - 3 mjeseca)
+	pomaže da se rekonstruiraju putanje, nema potrebe za odbacivanjem velikog broja
+}
 
 

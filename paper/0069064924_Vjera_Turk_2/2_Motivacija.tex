@@ -119,11 +119,11 @@ Poboljšanje kvalitete procjene omoguæeno je preslikavanjem POM-e na kontekst. Od
 %\subsection{Redefiniranje validacije \glstext{pom}}
 \subsection{Alternativni pristup vrednovanju \glstext{pom}}
 %moj pogled na validaciju pom
-Vrednovanje \gls{pom}-e je proces koji ima za cilj procjenu obilježja kvalitete te \gls{pom}-e i znaèi identifikaciju obilježja kvalitete \gls{pom}-e, njenog sadržaja, njene smislenosti, a izražava se slijedeæim  indikatorima: ... %\textit{prostorno obuhvaæanje (?), zrnatosti (?), definicija putovanja, prostorna rezolucija, vremenska rezolucija, širina toka i gustoæa informacija.}
+Vrednovanje \gls{pom}-e je proces koji ima za cilj procjenu obilježja kvalitete te \gls{pom}-e i znaèi identifikaciju obilježja kvalitete \gls{pom}-e, njenog sadržaja, njene smislenosti, a izražava se slijedeæim  indikatorima: prostorno obuhvaæanje, zrnatost, prostorna rezolucija ... %\textit{prostorno obuhvaæanje (?), zrnatosti (?), definicija putovanja, prostorna rezolucija, vremenska rezolucija, širina toka i gustoæa informacija.}
 
-Toènost, rezolucija i obujam podataka su kritièni parametri geografske informacije i znanje o èemu oni zavise je nužna baza za veæe pothvate procjene vrijednosti geografskih informacija kao društvenog dobra. \cite{Degbelo:2014.}
+Toènost, rezolucija i obujam podataka su kritièni parametri geografske informacije i znanje o èemu oni zavise je nužna baza za veæe pothvate procjene vrijednosti geografskih informacija kao društvenog dobra \cite{Degbelo:2014.}.
 
-ažurnost?!
+%ažurnost?!
 
 %Accuracy, resolution and data volume are critical parameters of geographic information, and knowledge about their dependencies is a necessary basis for the bigger undertaking of assessing the valuation of geographic information as a good in society.
 
@@ -141,9 +141,11 @@ ažurnost?!
 %Spatial coverage refers to a geographical area where data was collected, a place which is the subject of a collection, or a location which is the focus of an activity. This may be described using geospatial coordinates for a point or an area (for example, latitude and longitude), or through the use of place or regional names (for example, Barrow Island; Gippsland). Regional names may be based on legal jurisdiction (for example, South Australia).
 \definition{Prostorno obuhvaæanje} je geografsko podruèje gdje su prikupljani podatci, mjesto  koje je predmet opažanja ili lokacija u fokusu aktivnosti. \cite{prob:2019.}
 
+Prostorno obuhvaæanje kao kategorièka mjera podrazumijeva kategorije: 
+ 
 \begin{enumerate}
-\item prometna infrastruktura (ceste, željeznica, javni prijevoz)
-\item neovisno o prometnoj infrastrukturi (\gls{cdr}, \gls{gnss})
+\item iskljuèivo prometna infrastruktura (ceste, željeznica, javni prijevoz)
+\item podruèje neovisno o prometnoj infrastrukturi (\gls{cdr}, \gls{gnss})
 \end{enumerate}
 
 %Coverage: sampling intensity in space or time
@@ -153,18 +155,23 @@ ažurnost?!
 
 \subsection{Prostorna razluèivost (rezolucija)}
 
-Degbelo u radu "Pet opæih svojstava rezolucije" \cite{Degbelo:2014.} kao jedno od (uvijek toènih) svojstava navodi da je \textbf{rezolucija  (geografskih podataka) pozitivno korelirana s toènošæu}. Razmatra suprotnu tvrdnju - da je \textit{za oèekivati} da se toènost poveæava sa smanjenjem rezolucije. Njegova interpretacija te tvrdnje je da je toènost veæa, ako je zahtjev za specifiènosti manji \cite{Degbelo:2014.}.
+Degbelo u radu "Pet opæih svojstava rezolucije" \cite{Degbelo:2014.} kao jedno od svojstava navodi da je \textbf{rezolucija  (geografskih podataka) pozitivno korelirana s toènošæu}. 
 
-Taj drugi pristup toènosti zastupljen je u evaluaciji \gls{pom} \cite{Kuhlm:2015.}. 
+Razmatra tvrdnju - da je \textit{za oèekivati} da se toènost poveæava sa smanjenjem rezolucije, i istièe da je rijeè o dvije razlièite veze rezolucije i toènosti. Tvrdnja se odnosi na toènost \textit{prikaza}, koja jest veæa, ako je specifikacija manje zahtjevna \cite{Degbelo:2014.}.
 
-Toènost matrica u odnosu na referentnu provjerava se na 3 razlièite razine granularnosti (broja zona). Rezultat je veæa toènost/sliènost iskazana mjerom $r^2$ kod usporedba nižeg stupnja granularnosti (niže rezolucije u smislu broja zona). Odabirom nižeg stupnja granularnosti zapravo se smanjuje zahtjev za specifiènosti. 
+%Taj drugi pristup toènosti zastupljen je u evaluaciji \gls{pom} u odnosu na referentnu. 
+Kuhlm \cite{Kuhlm:2015.} usporeðuje \gls{pom}-e iz razlièitih izvora i dobivene razlièitim postupcima na 3 razlièite razine granularnosti (broja zona). Stupanj granularnosti utjeèe na $r^2$. Agregacija u veæe zone umanjuje razliku prisutnu bez agregacije. Parametri $a$ i $b$ ne poboljšavaju se sa smanjenjem broja zona.
 
-Zakljuèak: Poveæanje toènosti/sliènosti matrica iskazane mjerom $r^2$ koje je postignuto uzimanjem nižeg stupnja granularnosti posljedica je smanjenja zahtjeva za specifiènosti. 
+Veæa sliènosti matrica iskazana mjerom $r^2$ koja je postignuta agregacijom zona posljedica je manje zahtjevne specifikacije prikaza. 
 
+%Mjera toènosti koja raste sa sniženjem stupnja granularnosti nije u skladu s 
 %Resolution is positively correlated with accuracy and data volume
 
 \begin{definition}{Prostorna razluèivost} je najmanja preðena udaljenost koju je moguæe identificirati.
 \end{definition}
+
+to je zapravo:
+discrimination (smallest change in a quantity being measured that causes a perceptible change in the corresponding observation value) ?!
 
 Rezolucija \gls{pom}-e procijenjene iz \gls{cdr} ovisit æe o gustoæi tornjeva bazni stanica. Gustoæa tornjeva dobro je korelirana s gustoæom populacije \cite{Gundlegard:2016.}.
 Distribucija tornjeva nije homogena, niti na podruèju grada, niti na bilo kojem drugom podruèju. 

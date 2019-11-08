@@ -49,7 +49,7 @@ Analiza kretanja stanovništva koja uzima u obzir i kontekst proširuje podruèje p
 %\begin{definition}{Putovanje kao informacijski objekt} èine: polazišni položaj iz kojeg je putovanje krenulo, odredišni položaj u kojem se putovanje završava, vremenske oznake kada je poèelo i kada je završilo, a kada je poznat, u navedeno se ubraja i kontekst putovanja.\end{definition}
 \definition{Putovanje kao informacijski objekt} je %**
 
-\definition{Kontekst putovanja}{ je skup podataka koji definiraju polazište, odredište, naèin prijevoza, smisao i trajektoriju putovanja.}
+\definition{Kontekst putovanja}{ je skup podataka koji definiraju polazište, odredište, naèin prijevoza, svrhu i trajektoriju putovanja.}
 
 %\definition{Kontekst} putovanja je informacija vezana uz putovanje, njegovo polazište ili odredište koja procjenjuje ili upuæuje na motiv (svrhu) kretanja, naèin prijevoza ili željeni faktor po kojem se putovanja mogu kategorizirati i time preciznije definirati u informacijskom smislu.
 
@@ -81,6 +81,7 @@ Alhazzani i ostatak autora 2016. kvantizirali su vezu izmeðu ukupno 23 namjenske
  \cite{Alhazzani:2016.} 
 Zone su okarakterizirane objektima koji se nalaze u njima.
 \subsubsection{Studija B - Model Raspodjele Toka}
+\label{rad}
 Inovativni pristup kontekstualizaciji toka korištenjem OpenStreetMap baze predstavljen je u radu sa sudjelovanjem autora ovog diplomskog rada \cite{Stupar:2018.}. Prostorni objekti na podruèju interesa kategorizirani su na osnovu pripadajuæih opisnih podatak prema tipu socio-ekonomske aktivnosti u koju su ukljuèeni (vidi dodatak \ref{dodatak_osm} - OpenStreetMap). Definirano je ukupno 6 kategorija:
 Dom (Home), Posao (Work), Zdravlje (Health), Edukacija (Education), Zabava (Leisure) i Ostalo (Other). \textbf{Razvijen je vjerojatnosni model koji, na osnovu broja objekata pojedine kategorije u odredišnoj æeliji (zoni) i promatranog vremenskog okvira, ukupni ulazni tok u odredišnu æeliju dijeli na 6 tokova usmjerenih prema objektima tih kategorija.} Jedna \gls{pom} dijeli se na 6 kontekstualiziranih \gls{pom}-a, po jednu za svaku od kategorija. \gls{pom}-e dobivene iz javno dostupnih, anonimiziranih telekomunikacijskih zapisa na podruèju kineskog grada Shenzhena korištene su u demonstraciji modela \cite{Filic:2016.}\cite{data:2019.}.
 Definiranjem konteksta putovanja na ovaj naèin saèuvana je moguænost postizanja dobre rezolucije u vremenu, a istovremeno je dan kontekst koji ukljuèuje tipiène komutacijske \textit{Home} i \textit{Work} kategorije, te umjesto opæenite kategorije \textit{Other} precizira 4 kategorije. 
@@ -111,20 +112,22 @@ Predstavljen je unaprijeðeni model predviðanja odredišta koji koristi svrhu puto
 
 %\textit{Statistièka analiza podataka iz suvremenih informacijskih i komunikacijskih sustava sve više se koristi za procjenu \gls{pom}-a èime je omoguæeno poboljšanje kvalitete procjene preslikavanjem POM-e na kontekst.\\}
 
-Poboljšanje kvalitete procjene omoguæeno je preslikavanjem POM-e na kontekst. Odreðivanje konteksta proširuje podruèje pokrivanja u fizièkom i informacijskom smislu te poveæava toènost POM-e unosom relevantnih atributa vezanih za naèin i svrhu putovanja - èime je putovanje toènije opisano.
+Poboljšanje kvalitete procjene \gls{pom} omoguæeno je preslikavanjem POM-e na kontekst. Odreðivanje konteksta proširuje podruèje pokrivanja u fizièkom i informacijskom smislu te poveæava toènost POM-e unosom relevantnih atributa vezanih za naèin i svrhu putovanja - èime je putovanje toènije opisano.
 
 
 %* Izbor metode procjene definira preciznost odreðivanja konteksta.
 
 %\subsection{Redefiniranje validacije \glstext{pom}}
 \subsection{Alternativni pristup vrednovanju \glstext{pom}}
-%moj pogled na validaciju pom
-Vrednovanje \gls{pom}-e je proces koji ima za cilj procjenu obilježja kvalitete te \gls{pom}-e i znaèi identifikaciju obilježja kvalitete \gls{pom}-e, njenog sadržaja, njene smislenosti, a izražava se slijedeæim  indikatorima: prostorno obuhvaæanje, zrnatost, prostorna rezolucija ... %\textit{prostorno obuhvaæanje (?), zrnatosti (?), definicija putovanja, prostorna rezolucija, vremenska rezolucija, širina toka i gustoæa informacija.}
 
-Toènost, rezolucija i obujam podataka su kritièni parametri geografske informacije i znanje o èemu oni zavise je nužna baza za veæe pothvate procjene vrijednosti geografskih informacija kao društvenog dobra \cite{Degbelo:2014.}.
+\textit{Toènost, rezolucija i obujam podataka su kljuèni parametri geografske informacije i znanje o èemu oni zavise je nužna baza za veæe pothvate procjene vrijednosti geografskih informacija kao društvenog dobra }\cite{Degbelo:2014.}.
+
+
+%moj pogled na validaciju pom
+Vrednovanje \gls{pom}-e je proces koji ima za cilj procjenu obilježja kvalitete te \gls{pom}-e i znaèi identifikaciju obilježja kvalitete \gls{pom}-e, njenog sadržaja, njene smislenosti, a izražava se slijedeæim  indikatorima: prostorno obuhvaæanje, prostorna rezolucija, vremenska rezolucija, tematska rezolucija ...%, zrnatosti (?), definicija putovanja, prostorna rezolucija, vremenska rezolucija, širina toka i gustoæa informacija.}
+
 
 %ažurnost?!
-
 %Accuracy, resolution and data volume are critical parameters of geographic information, and knowledge about their dependencies is a necessary basis for the bigger undertaking of assessing the valuation of geographic information as a good in society.
 
 
@@ -139,9 +142,12 @@ Toènost, rezolucija i obujam podataka su kritièni parametri geografske informaci
 
 \subsection{Prostorno obuhvaæanje}
 %Spatial coverage refers to a geographical area where data was collected, a place which is the subject of a collection, or a location which is the focus of an activity. This may be described using geospatial coordinates for a point or an area (for example, latitude and longitude), or through the use of place or regional names (for example, Barrow Island; Gippsland). Regional names may be based on legal jurisdiction (for example, South Australia).
+
+Geoinformacijska znanost (geoinformatika) definira prostorno obuhvaæanje kao: 
+
 \definition{Prostorno obuhvaæanje} je geografsko podruèje gdje su prikupljani podatci, mjesto  koje je predmet opažanja ili lokacija u fokusu aktivnosti. \cite{prob:2019.}
 
-Prostorno obuhvaæanje kao kategorièka mjera podrazumijeva kategorije: 
+Definicija u ovom obliku odgovara definiciji prostornog obuhvaæanja kao parametra kavalitete \gls{pom}. Prostorno obuhvaæanje kao kategorièka mjera za kvalitetu \gls{pom} podrazumijeva kategorije: 
  
 \begin{enumerate}
 \item iskljuèivo prometna infrastruktura (ceste, željeznica, javni prijevoz)
@@ -153,31 +159,77 @@ Prostorno obuhvaæanje kao kategorièka mjera podrazumijeva kategorije:
 
 
 
-\subsection{Prostorna razluèivost (rezolucija)}
+%\subsection{Prostorna razluèivost (rezolucija)}
 
-Degbelo u radu "Pet opæih svojstava rezolucije" \cite{Degbelo:2014.} kao jedno od svojstava navodi da je \textbf{rezolucija  (geografskih podataka) pozitivno korelirana s toènošæu}. 
+\subsection{Rezolucija}
+Geoinformacijska znanost rezoluciju opæenito definira kao kolièinu detalja u setu podataka \cite{Degbelo:2014.}
+Degbelo u radu "Pet opæih svojstava rezolucije" \cite{Degbelo:2014.} kao jedno od svojstava navodi da je \textbf{rezolucija  (geografskih podataka) pozitivno korelirana s toènošæu i kolièinom podataka}. Što je veæa razina detalja u prikazu, veæa je sliènost tog prikaza 'istini' (savršenom prikazu). Što se više detalja pohranjuje, veæa je kolièina podataka.
 
-Razmatra tvrdnju - da je \textit{za oèekivati} da se toènost poveæava sa smanjenjem rezolucije, i istièe da je rijeè o dvije razlièite veze rezolucije i toènosti. Tvrdnja se odnosi na toènost \textit{prikaza}, koja jest veæa, ako je specifikacija manje zahtjevna \cite{Degbelo:2014.}.
+%Razmatra tvrdnju - da je \textit{za oèekivati} da se toènost poveæava sa smanjenjem rezolucije i istièe da je rijeè o dvije razlièite veze rezolucije i toènosti. Tvrdnja se odnosi na toènost \textit{prikaza}, koja jest veæa, ako je specifikacija prikaza manje zahtjevna \cite{Degbelo:2014.}. 
+
+%Geoinformacijska znanost (GIScience) je znanost u kojoj se studiraju problemi prikupljanja, programiranja, pohrane, analize, pretraživanja, sinteze i razdiobe geopodataka. 
+%Geoinformatika obuhvaæa znanstvene temelje suvremenih digitalnih metoda prikupljanja prostornih podataka, modeliranje prostornih informacija, metode apstrakcije i generalizacije geopodataka, specifiènosti prostornih i prostorno-vremenskih baza podataka, matematièko-statistièku obradu geopodataka i osmišljavanje usluga baziranih na lokaciji korisnika.
+
+ 
+\textit{Prisutnost rezolucije otvara pitanje "Koja je optimalna rezolucija i postoji li optimum?". Trud tek treba biti uložen u razvoj potpuno razraðene teorije optimalne \textbf{prostorne, vremenske i tematske rezolucije} koja æe uzeti u obzir specifiènosti prikupljanja podataka (osjetila, ljudska osjetila, anketa, jesu li podaci proizašli iz postojeæih opažanja ili ne) i zadatak od interesa} \cite{Degbelo:2014.}.
+
+%More specifically, efforts should be directed toward the development of a fully worked-out theory of optimum spatial, temporal, and thematic resolution, taking into account both the specificities of the data production process (e.g. whether the data was produced by remote sensing or ground survey, human or technical sensors, derived from existing observations or not) and the task at hand (e.g. detection of geographic entities or understanding of global warming).
+ 
+%The greater the amount of detail in a representation, the better the closeness of this representation to the ‘truth’ (or the perfect representation)1
+
+%\footnote{Razmatra tvrdnju - da je \textit{za oèekivati} da se toènost poveæava sa smanjenjem rezolucije, i istièe da je rijeè o dvije razlièite veze rezolucije i toènosti. Tvrdnja se odnosi na toènost \textit{prikaza}, koja jest veæa, ako je specifikacija prikaza manje zahtjevna \cite{Degbelo:2014.}.}
 
 %Taj drugi pristup toènosti zastupljen je u evaluaciji \gls{pom} u odnosu na referentnu. 
-Kuhlm \cite{Kuhlm:2015.} usporeðuje \gls{pom}-e iz razlièitih izvora i dobivene razlièitim postupcima na 3 razlièite razine granularnosti (broja zona). Stupanj granularnosti utjeèe na $r^2$. Agregacija u veæe zone umanjuje razliku prisutnu bez agregacije. Parametri $a$ i $b$ ne poboljšavaju se sa smanjenjem broja zona.
 
-Veæa sliènosti matrica iskazana mjerom $r^2$ koja je postignuta agregacijom zona posljedica je manje zahtjevne specifikacije prikaza. 
+%Kuhlm \cite{Kuhlm:2015.} usporeðuje \gls{pom}-e iz razlièitih izvora i dobivene razlièitim postupcima na 3 razlièite razine granularnosti (broja zona). Stupanj granularnosti jako utjeèe na $r^2$. \textbf{Agregacija u veæe zone umanjuje razliku prisutnu bez agregacije.} Parametri $a$ i $b$ se ne poboljšavaju agregacijom zona.
+
+%Veæa sliènosti matrica iskazana mjerom $r^2$ koja je postignuta agregacijom zona posljedica je manje zahtjevne specifikacije prikaza. 
 
 %Mjera toènosti koja raste sa sniženjem stupnja granularnosti nije u skladu s 
 %Resolution is positively correlated with accuracy and data volume
 
-\begin{definition}{Prostorna razluèivost} je najmanja preðena udaljenost koju je moguæe identificirati.
-\end{definition}
 
-to je zapravo:
-discrimination (smallest change in a quantity being measured that causes a perceptible change in the corresponding observation value) ?!
+%**?? discrimination (smallest change in a quantity being measured that causes a perceptible change in the corresponding observation value) ?!
 
-Rezolucija \gls{pom}-e procijenjene iz \gls{cdr} ovisit æe o gustoæi tornjeva bazni stanica. Gustoæa tornjeva dobro je korelirana s gustoæom populacije \cite{Gundlegard:2016.}.
-Distribucija tornjeva nije homogena, niti na podruèju grada, niti na bilo kojem drugom podruèju. 
+Vremenski nezavisna \gls{pom} ima prostornu, a vremenski zavisna \gls{pom} prostornu i vremensku rezoluciju.  Alternativni pristup vrednovanju \gls{pom} definira prostornu i vremensku rezoluciju kao:
 
-\subsubsection{Kontekstualizacija}
-Objekt u æeliji je najmanja prostorno razluèiva jedinica\\
+\definition{Prostorna rezolucija} je najmanja preðena udaljenost koju je moguæe identificirati.
+
+...
+
+Objekt u zoni je najmanja prostorno razluèiva jedinica kod procjene matrica koja ukljuèuje kontekstualizaciju toka na temelju objekata u odredišnoj zoni (studija B \ref{rad}).
+
+
+%Rezolucija \gls{pom}-e procijenjene iz \gls{cdr} ovisit æe o gustoæi tornjeva bazni stanica. Gustoæa tornjeva dobro je korelirana s gustoæom populacije \cite{Gundlegard:2016.}. Distribucija tornjeva nije homogena, niti na podruèju grada, niti na bilo kojem drugom podruèju. 
+\definition{Vremenska rezolucija} je najmanji vremenski odmak koji je moguæe identificirati. 
+%Daily trips are estimated from filtered users by analyzing consecutive observations at different stay points during a given time window. They begin by defining an effective day as a period between 3 am one morning and 3 am on the next consecutive morning. This definition is used to minimize the number of trips that are prematurely ended due to the assumption that users start and end each day at home
+
+
+%Kraj prethodnog odnosno poèetak novog dana 3:00 kako bi putovanja zapoèeta prethodnog dana, a koja prelaze u novi dan, u analizi spadala u raniji dan, odnosno kako dobar  \cite{Schneider:2013.}\cite{Toole:2015.}. 
+
+%Najmanji spominjani period u literaturi je 15 min \cite{Bera:2011.}, drugi najmanji 30 min \cite{Schneider:2013.}, kod \gls{pom}-a kreiranih iz podataka generiranih pametnim karticama u javnom prijevozu takoðer 15 min \cite{Travassoli:2016.}, a zastupljena je i dinamièkoj podjela na kratke intervale za najprometnija razdoblja u danu: jutarnji vrhunac (engl. \textit{morning peak}), poslijepodnevni vrhunac (engl. \textit{afternoon peak}) i duže intervale za ostala razdoblja. 
+%\todo[inline]{Ispitati:\\periode od\\- 15 min, 1h, 3h, 8h $\rightarrow$ pokazati da 8 gubi smisao, preveliki periodi da gube svrhu -kako to pokazati?}
+
+%\subsubsection{Kontekstualizacija}
+
+... 
+\subsubsection{Tematska rezolucija}
+
+Geoinformacijska znanosti definira tematsku rezolucija kao kolièinu kategorièkih detalja na \textit{tematskoj karti}. Izražava se brojem tipova pokrova (engl. land cover) ili brojem tipova namjene zemljišta (engl. land use) \cite{Smith:2017.}. Ovakva definicija dobro se uklapa u tematsku rezoluciju kao parametar kvalitete kontekstualiziranih \gls{pom} koje su procijenjene na temelju namjene zemljišta ili objekata.
+
+%Level of categorical detail on a thematic map as expressed by the number of classes (classification) included in production of the map.
+
+\definition{Tematska rezolucija je broj kategorija svrhe putovanja definirane iz namjene krajnjeg odredišta putovanja.}
+
+Primjer kategorija i njihovih tematskih rezolucija: 
+
+\begin{enumerate}
+	%\item home, work, other (3)
+	\item residential, industrial, comercial (3) \cite{Barbour:2019.} 
+	\item home, work, education, leasure, health, other (6) \cite{Stupar:2018.}
+	\item tvornice, ambasade, sveuèilišti objekti, bolnice, javne škole, ostali obrazovni objekti, stanice javnog prijevoza, knjižnice, klinike, religijski objekti, hoteli, sportski objekti, banke ... (23)  \cite{Alhazzani:2016.} 
+\end{enumerate}
+
 
 \begin{comment}
 \\-kako ne grupa objekata-kategorija?!\\
@@ -212,14 +264,7 @@ floor area : kategoriji
 \end{figure}
 %Ruralna podruèja rjeðe zahtijevaju agregiranje æelija.
 
-\todo[inline]{Ispitati:\\
-	- podijeliti u kategorièke vrijednosti:\\
-	- 0.2, 0.5, 1 km - što je previše, što je idealno, a što je premalo i opet ne valja  (prema literaturi ne valja manje od 75m, a idealno je 1 km)\\
-	- Na temelju èega grupirati BS- klasteri? Na osnovu blizine? Na osnovu broja objekata u æeliji kod odreðivanja konteksta?
-	Aglomerative clustering bez zadanog broja k?\\
-	-Na temelju èega u konaènici zakljuèiti da premalo ne valja, gubi smisao?\\
-	-Brzina kretanja
-}
+%\todo[inline]{Ispitati:\\	- podijeliti u kategorièke vrijednosti:\\	- 0.2, 0.5, 1 km - što je previše, što je idealno, a što je premalo i opet ne valja  (prema literaturi ne valja manje od 75m, a idealno je 1 km)\\- Na temelju èega grupirati BS- klasteri? Na osnovu blizine? Na osnovu broja objekata u æeliji kod odreðivanja konteksta?	Aglomerative clustering bez zadanog broja k?\\	-Na temelju èega u konaènici zakljuèiti da premalo ne valja, gubi smisao?\\-Brzina kretanja}
 
 %(*) macro - meso - micro level ? César A. Segovia
 
@@ -241,14 +286,20 @@ floor area : kategoriji
 	\end{center}
 \end{figure}
 
+\newpage
 
 \subsection{Zrnatost}
+
+\definition Zrnatost je stupanj do kojeg je sustav rastavljiv u manje dijelove, bilo sam sustav ili njegov opis ili opažanje - stupanj do kojeg je veæi entitet djeljiv.
+\cite{zrno:2019.}  
+%Zrnatost se koristi za karakterizaciju razmjera ili razine detalja. %Što je zrnatost veæa, viša je razina detalja. Zrnatost definira razinu detalja korištenu u modeliranju situacije.
+
 %Granularity is the extent to which a system is broken down into small parts, either the system itself or its description or observation. It is the "extent to which a larger entity is subdivided. 
 
-Rezolucija se odnosi na kolièinu detalja u reprezentaciji (stvarnosti) dok se zrnatost odnosi na spoznajni aspekt ukljuèen pri odabiru znaèajki \cite{Degbelo:2014.}. 
-Pojam zrnate podjele (engl. granular partition) ukljuèuje ne samo karte (podatke) veæ kategorizaciju koja nadilazi mjerenja i obzervaciju i zalazi u podruèje konceptualnog modeliranja \cite{Degbelo:2014.}.
-%Zrnatost se povezuje s uèinkovitim odabirom onih aspekata našeg okruženja koji su najvjerojatnije relevantni za naš interes.
-Za razliku od rezolucije prema \cite{Degbelo:2014.}, zrnatost i toènost su neovisne. Odgovori na pitanje "Gdje se nalazite?" "U Hrvatskoj", "U Rijeci", "U svojoj kuæi" i "Za svojim stolom" svi toèni u smislu da 'govore istinu'.
+%Rezolucija se odnosi na kolièinu detalja u prikazu (stvarnosti) dok se zrnatost odnosi na spoznajni aspekt ukljuèen pri odabiru znaèajki \cite{Degbelo:2014.}. 
+%\textit{Pojam zrnate podjele (engl. granular partition) ukljuèuje ne samo karte (podatke) veæ kategorizaciju koja nadilazi mjerenja i obzervaciju i zalazi u podruèje konceptualnog modeliranja} \cite{Degbelo:2014.}.
+%%Zrnatost se povezuje s uèinkovitim odabirom onih aspekata našeg okruženja koji su najvjerojatnije relevantni za naš interes.
+Za razliku od rezolucije prema \cite{Degbelo:2014.}, zrnatost i toènost su neovisne. Odgovori na pitanje "Gdje se nalazite?" "U Hrvatskoj", "U Rijeci", "U svojoj kuæi" i "Za svojim stolom" svi toèni u smislu da govore 100\%-tnu istinu'.
 
 %Resolution refers to the amount of detail in a representation, while granularity refers to the cognitive aspects involved in selection of features.
 
@@ -256,26 +307,9 @@ Za razliku od rezolucije prema \cite{Degbelo:2014.}, zrnatost i toènost su neovi
 
 %it relates to the efficient selection of the aspects of our environment that are most likely to be relevant to our interests. 
 
-\definition Zrnatost je stupanj do kojeg je sustav rastavljiv u manje dijelove, bilo sam sustav ili njegov opis ili opažanje. Stupanj do kojeg je veæi entitet djeljiv.
-\cite{zrno:2019.}  
-%Zrnatost se koristi za karakterizaciju razmjera ili razine detalja. %Što je zrnatost veæa, viša je razina detalja. Zrnatost definira razinu detalja korištenu u modeliranju situacije.
-
 
 %Data granularity
 %The granularity of data refers to the fineness with which data fields are sub-divided. For example, a postal address can be recorded, with low granularity, as one field: address = 200 2nd Ave. South #358, St. Petersburg, FL 33701-4313 USA or with high granularity, as many fields: street address = 200 2nd Ave. South #358 city = St. Petersburg postal code = FL 33701-4313 country = USA
-
-\subsection{Vremenska razluèivost (rezolucija)}
-\definition Vremenska razluèivost je najmanji vremenski odmak koji je moguæe identificirati.
-%Daily trips are estimated from filtered users by analyzing consecutive observations at different stay points during a given time window. They begin by defining an effective day as a period between 3 am one morning and 3 am on the next consecutive morning. This definition is used to minimize the number of trips that are prematurely ended due to the assumption that users start and end each day at home
-
-
-%Kraj prethodnog odnosno poèetak novog dana 3:00 kako bi putovanja zapoèeta prethodnog dana, a koja prelaze u novi dan, u analizi spadala u raniji dan, odnosno kako dobar  \cite{Schneider:2013.}\cite{Toole:2015.}. 
-Najmanji spominjani period u literaturi je 15 min \cite{Bera:2011.}, drugi najmanji 30 min \cite{Schneider:2013.}, kod \gls{pom}-a kreiranih iz podataka generiranih pametnim karticama u javnom prijevozu takoðer 15 min \cite{Travassoli:2016.}, a zastupljena je i dinamièkoj podjela na kratke intervale za najprometnija razdoblja u danu: jutarnji vrhunac (engl. \textit{morning peak}), poslijepodnevni vrhunac (engl. \textit{afternoon peak}) i duže intervale za ostala razdoblja. 
-
-\todo[inline]{Ispitati:\\
-	periode od\\
-	- 15 min, 1h, 3h, 8h $\rightarrow$ pokazati da 8 gubi smisao, preveliki periodi da gube svrhu -kako to pokazati?
-}
 
 %U praksi Teralytics procjenjuje \gls{pom}-e od 15 min, 1h i 1 dan.
 
@@ -296,9 +330,8 @@ Najmanji spominjani period u literaturi je 15 min \cite{Bera:2011.}, drugi najma
 %(...)\\
 %- morning peak
 
-\subsubsection{Kontekstualizacija}
--Kontekst vezan za vrijeme u kojem se odvija putovanje
 
+%Objekt u zoni je najmanja prostorno razluèiva jedinica kod procjene matrica koja ukljuèuje kontekstualizaciju toka na temelju objekata u odredišnoj zoni (studija B \ref{rad}).
 
 
 \subsection{Gustoæa informacija}
@@ -367,13 +400,7 @@ Najveæa je bila zastupljenost kratkih putovanja. \cite{Gundlegard:2016.} Distrib
 \textbf{O definiciji putovanja ovisit æe njihov konaèan broj, odnosno širina toka.}\\
 
 
-\newpage
-\todo[inline]{Ispitati:\\
-	- koliki se postotak putovanja gubi izbacivanjem putovanja u susjedne æelije?!\\ $\rightarrow$ ovisit æe o velièini æelija\\
-	- koliki se postotak putovanja gubi izbacivanjem putovanja koja prelaze iz perioda u period?!$\rightarrow$ ovisit æe o velièini perioda
-	\\ - u demonstraciji ovisit æe o simulaciji
-	
-}
+%\todo[inline]{Ispitati:\\	- koliki se postotak putovanja gubi izbacivanjem putovanja u susjedne æelije?!\\ $\rightarrow$ ovisit æe o velièini æelija\\- koliki se postotak putovanja gubi izbacivanjem putovanja koja prelaze iz perioda u period?!$\rightarrow$ ovisit æe o velièini perioda\\ - u demonstraciji ovisit æe o simulaciji}
 
 \begin{figure}[!htpb]
 	\begin{center}

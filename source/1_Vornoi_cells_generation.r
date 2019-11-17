@@ -44,23 +44,13 @@ file = paste(getwd(),"/LonLat_from_CDR_1090_pairs.RData", sep="")
 system.time(load(file = file))
 LonLat<-as.data.frame(LonLat)
 vor_pts <- SpatialPointsDataFrame(cbind(LonLat$Longitude, LonLat$Latitude), LonLat, match.ID=TRUE)
+
 vor <- SPointsDF_to_voronoi_SPolysDF(vor_pts)
 system.time(vor_df <- fortify(vor))
 
-save(vor_df, file = paste(getwd(),"/vor_df.RData", sep=""))
-save(vor, file = paste(getwd(),"/vor.RData", sep=""))
+  save(vor_df, file = paste(getwd(),"/vor_df.RData", sep=""))
+  save(vor, file = paste(getwd(),"/vor.RData", sep=""))
 
-"
-
-     PLEASE NOTE:  The components 'delsgs' and 'summary' of the
- object returned by deldir() are now DATA FRAMES rather than
- matrices (as they were prior to release 0.0-18).
- See help('deldir').
- 
-     PLEASE NOTE: The process that deldir() uses for determining
- duplicated points has changed from that used in version
- 0.0-9 of this package (and previously). See help('deldir').
-"
 
 #gg <- ggplot()
 # base map
@@ -71,8 +61,6 @@ save(vor, file = paste(getwd(),"/vor.RData", sep=""))
 #gg <- gg + coord_map("albers", lat0=30, lat1=40)
 #gg <- gg + theme_map()
 #gg <- gg + theme(legend.position="none")
-
-
 
 gg <- ggplot()
 # base map
@@ -85,3 +73,5 @@ gg <- gg + geom_map(data=vor_df, map=vor_df, aes(x=long, y=lat, map_id=id), colo
 #gg<- gg + geom_point(data=taxi_points, aes(x=coords.x1, y=coords.x2), size=1, shape=21, color="black", fill="yellow")
 
 #gg <- autoplot(map.latlon) + geom_point(data=LonLat, aes(x=Longitude, y=Latitude),size=1, shape=21, color="white", fill="steelblue")+ geom_map(data=vor_df, map=vor_df, aes(x=long, y=lat, map_id=id), color="#a5a5a5", fill="#FFFFFF00", size=0.25)
+gg
+

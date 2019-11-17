@@ -55,7 +55,8 @@ Analiza kretanja stanovništva koja uzima u obzir i kontekst proširuje podruèje p
 
 Kontekst može biti izvuèena iz samih podataka o kretanju ili iz dodatnih vanjskih izvora podataka. Putovanja svake kontekstne kategorije èine po jednu kontekstualiziranu POM-u.
 
-\textbf{Odreðivanje konteksta putovanja proširuje podruèje pokrivanja u fizièkom i informacijskom smislu te poveæava toènost \gls{pom}-e putem unosa relevantnih atributa vezanih za naèin i svrhu putovanja, èime je putovanje, kao informacijski objekt, toènije opisano}. Kontekst specificira socio-ekonomske aktivnosti koje su pokretaèi putovanja odnosno motivatori individualne i grupne mobilnosti. %razlozi kretanja stanovništva. %in the first place. 
+%\textbf{Odreðivanje konteksta putovanja proširuje podruèje pokrivanja u fizièkom i informacijskom smislu te poveæava toènost \gls{pom}-e putem unosa relevantnih atributa vezanih za naèin i svrhu putovanja, èime je putovanje, kao informacijski objekt, toènije opisano}. 
+Kontekst specificira socio-ekonomske aktivnosti koje su pokretaèi putovanja odnosno motivatori individualne i grupne mobilnosti. %razlozi kretanja stanovništva. %in the first place. 
 Preciznost odreðivanja konteksta definira izbor metode procjene \gls{pom}-e. %**
 %Moguænost preciznog odreðivanja konteksta zavisi o metodi procjene \gls{pom}-e.
 
@@ -154,6 +155,8 @@ Definicija u ovom obliku odgovara definiciji prostornog obuhvaæanja kao parametr
 \item podruèje neovisno o prometnoj infrastrukturi (\gls{cdr}, \gls{gnss})
 \end{enumerate}
 
+Prostorno obuhvaæanje uvjetuje koji naèini kretanja su obuhvaæeni \gls{pom}-om. 
+
 %Coverage: sampling intensity in space or time
 %discrimination: smallest change in a quantity being measured that causes a perceptible change in the corresponding observation value
 
@@ -162,7 +165,7 @@ Definicija u ovom obliku odgovara definiciji prostornog obuhvaæanja kao parametr
 %\subsection{Prostorna razluèivost (rezolucija)}
 
 \subsection{Rezolucija}
-Geoinformacijska znanost rezoluciju opæenito definira kao kolièinu detalja u setu podataka \cite{Degbelo:2014.}
+Geoinformacijska znanost rezoluciju opæenito definira kao kolièinu detalja u setu podataka. \cite{Degbelo:2014.}
 Degbelo u radu "Pet opæih svojstava rezolucije" \cite{Degbelo:2014.} kao jedno od svojstava navodi da je \textbf{rezolucija  (geografskih podataka) pozitivno korelirana s toènošæu i kolièinom podataka}. Što je veæa razina detalja u prikazu, veæa je sliènost tog prikaza 'istini' (savršenom prikazu). Što se više detalja pohranjuje, veæa je kolièina podataka.
 
 %Razmatra tvrdnju - da je \textit{za oèekivati} da se toènost poveæava sa smanjenjem rezolucije i istièe da je rijeè o dvije razlièite veze rezolucije i toènosti. Tvrdnja se odnosi na toènost \textit{prikaza}, koja jest veæa, ako je specifikacija prikaza manje zahtjevna \cite{Degbelo:2014.}. 
@@ -195,6 +198,10 @@ Vremenski nezavisna \gls{pom} ima prostornu, a vremenski zavisna \gls{pom} prost
 
 \definition{Prostorna rezolucija} je najmanja preðena udaljenost koju je moguæe identificirati.
 
+
+	\begin{enumerate}
+		\item
+	\end{enumerate}
 ...
 
 %Rezolucija \gls{pom}-e procijenjene iz \gls{cdr} ovisit æe o gustoæi tornjeva bazni stanica. Gustoæa tornjeva dobro je korelirana s gustoæom populacije \cite{Gundlegard:2016.}. Distribucija tornjeva nije homogena, niti na podruèju grada, niti na bilo kojem drugom podruèju. 
@@ -222,8 +229,8 @@ Primjer kategorija i njihovih tematskih rezolucija:
 
 \begin{enumerate}
 	%\item home, work, other (3)
-	\item residential, industrial, comercial (3) \cite{Barbour:2019.} 
-	\item home, work, education, leasure, health, other (6) \cite{Stupar:2018.}
+	\item stambeni, industrijski, komercijalni (3) \cite{Barbour:2019.} 
+	\item dom, posao, edukacija, razonoda, zdravlje, ostalo (6) \cite{Stupar:2018.}
 	\item tvornice, ambasade, sveuèilišti objekti, bolnice, javne škole, ostali obrazovni objekti, stanice javnog prijevoza, knjižnice, klinike, religijski objekti, hoteli, sportski objekti, banke ... (23)  \cite{Alhazzani:2016.} 
 \end{enumerate}
 
@@ -341,10 +348,10 @@ Objekt u zoni je najmanja prostorno razluèiva jedinica kod procjene matrica koja
 %Informacija na razini cijele matrice \\(...)
 Što je gušæe opisan prostor u æeliji to je moguæe ostvariti bolju rezoluciju
 
-\todo[inline]{
-Ispitati:\\
+%\todo[inline]{Ispitati:\\}
 
-}
+intervening opportunities
+\cite{Noulas:2011.}
 
 \subsection{Putovanje kao parametar}
 \label{trip_def}
@@ -476,10 +483,6 @@ Kao što je veæ spomenuto u potpoglavlju \ref{sredstva}, \gls{pom}-e kreirane iz 
 \subsubsection{Kontekstualizacija}
 - Razdioba toka prema objektima pojedine kategorije
 
-\todo[inline]{Ispitati:\\
-	- kako sve prethodno utjeèe na širinu toka/konaèan broj putovanja?!\\
-	- kontekstualizacija na osnovu analize više dana ( tjedan - 3 mjeseca)
-	pomaže da se rekonstruiraju putanje, nema potrebe za odbacivanjem velikog broja
-}
+%\todo[inline]{Ispitati:\\	- kako sve prethodno utjeèe na širinu toka/konaèan broj putovanja?!\\	- kontekstualizacija na osnovu analize više dana ( tjedan - 3 mjeseca)	pomaže da se rekonstruiraju putanje, nema potrebe za odbacivanjem velikog broja}
 
 

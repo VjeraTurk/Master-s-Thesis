@@ -307,6 +307,14 @@ mobilnih telefona},
   Timestamp                = {07.06.2019}
 }
 
+@Article{Noulas:2011.,
+  Title                    = {A tale of many cities: universal patterns in human urban mobility},
+  Author                   = {Anastasios Noulas and Salvatore Scellato and Renaud Lambiotte and Massimiliano Pontil and Cecilia Mascolo},
+  Year                     = {2011.},
+
+  Timestamp                = {09.11.2019}
+}
+
 @PhdThesis{Peterson:2007.,
   Title                    = {{The Origin-Destination Matrix Estimation Problem- Analysis and Computations}},
   Author                   = {Anders Peterson},
@@ -398,7 +406,7 @@ mobilnih telefona},
 }
 
 @Electronic{thematic:2019.,
-  Author                   = {The Geospatial Education Forum, Hong Kong},
+  Author                   = {The Geospatial Education Platform, Hong Kong},
   Note                     = {(8.10.2019.)},
   Url                      = {https://www.polyu.edu.hk/proj/gef/index.php/glossary/thematic-resolution/},
 

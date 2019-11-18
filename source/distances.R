@@ -54,6 +54,7 @@ paste(vor[nb_q[[i]][j],]$Longitude,vor[nb_q[[i]][j],]$Latitude,sep="_")
 
 ############ for each cell remove trips to all neighbouring voronoi cells
 #m<-TAXI_SH_21_24
+load("/home/adminuser/CODM/masters-thesis/data/zODout_SH_15_18.RData")
 m<-zODout_SH_15_18
 for( i in 1:size(m)[1]){
   for (j in 1:nb_q[[i]]) {
@@ -76,5 +77,10 @@ for( i in 1:size(m)[1]){
 # 21_24 0.3121036
 
 1 - sum(m)/sum(zODout_SH_15_18)
+
+heatmap(zODout_SH_15_18, Colv = NA, Rowv = NA, main = "CDR 15_18")
+heatmap(m, Colv = NA, Rowv = NA, main = "CDR 15_18 (bez_susjeda)")
+
 heatmap(m, breaks = col_breaks, col = colPal, Colv = NA, Rowv = NA, main = "CDR 15_18 (bez_susjeda)")
-#zCDR 15_18 -> 0.4673548 ->47% ukupne širine toka je u susjedne ćelije
+#zCDR 15_18 -> 0.4673548 -> 47% ukupne širine toka je u susjedne ćelije
+#sačuvana rezolucija

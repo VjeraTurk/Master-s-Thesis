@@ -43,6 +43,7 @@ setwd("~/CODM/masters-thesis/data")
 file = paste(getwd(),"/LonLat_from_CDR_1090_pairs.RData", sep="")
 system.time(load(file = file))
 LonLat<-as.data.frame(LonLat)
+
 vor_pts <- SpatialPointsDataFrame(cbind(LonLat$Longitude, LonLat$Latitude), LonLat, match.ID=TRUE)
 
 vor <- SPointsDF_to_voronoi_SPolysDF(vor_pts)

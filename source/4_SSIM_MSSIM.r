@@ -241,3 +241,25 @@ plot(mod1,1)
 #Normal Q-Q
 plot(mod1,2)
 
+####### linear model  form 3_heatmap data ########
+max(AA) #1757
+max(BB) #14079
+sum(AA) # 11953
+sum(BB) # 427646
+
+POM_A<-as.numeric(AA)
+POM_B<-as.numeric(BB)
+mod1 <- lm(POM_B ~ POM_A)
+mod1 #Intercept i slope
+summary(mod1)
+plot(POM_B ~ POM_A,asp=1,  xlim=c(0,max(POM_A)), ylim=c(0,max(POM_B))) #plot će ovisiti o prozoru u kojem se plota
+a<-abline(mod1, lwd=2, col="red")
+# calculate residuals and predicted values
+res <- signif(residuals(mod1), 5)
+pre <- predict(mod1) # plot distances between points and the regression line
+segments(POM_A, POM_B, POM_A, pre, col="gray")
+summary(mod1)
+
+#mod2 <- lm(log(POM_B[POM_B>0]) ~ log(POM_A[POM_A>0])) ->nemoguće jer "0" vrijednosti
+mod2
+summary(mod2)

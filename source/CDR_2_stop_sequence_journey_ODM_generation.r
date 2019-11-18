@@ -393,6 +393,17 @@ to_keep_df<<-data.frame()
 #journeys<<-data.frame()
 #c("Start_Time","Stop_Time","Origin","Destinaton")
 
+"
+
+require('optimbase')
+  #names(OD_0_24_SH)<- Lon_Lat# names je krivo, treba dimnames()
+  #http://www.r-tutor.com/r-introduction/matrix
+
+z<-zeros(length(Lon_Lat),length(Lon_Lat))
+dimnames(z)<-list(Lon_Lat,Lon_Lat)
+matrices<<-list(z,z,z,z,z,z,z,z) #<<- gobalna varijabla
+"
+
 journey_identification<-function(dataframe,t_min, t_max){
   
   for(i in 2:nrow(dataframe)){
@@ -409,6 +420,10 @@ journey_identification<-function(dataframe,t_min, t_max){
       
       orig = paste(prev$Latitude,prev$Longitude,sep = "_")
       dest = paste(curr$Latitude,curr$Longitude,sep = "_")
+      
+#      t<-as.integer(cut(as.POSIXct(format(first$Time,'%T'), format='%T'), breaks = seq(as.POSIXct(paste(Sys.Date(),'00:00:00')), as.POSIXct(paste(Sys.Date()+1,'00:00:00')), by = '3 hours')))
+#      try(matrices[[t]][orig,dest]<<- matrices[[t]][orig,dest] + 1)
+      
       OD_0_24_SH[orig,dest]<<- OD_0_24_SH[orig,dest] + 1
     }
   }

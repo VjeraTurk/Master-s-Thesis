@@ -41,18 +41,22 @@ Metodologija je izvedena u programskom okruženju za statistièko raèunarstvo R te
 
 \chapter{\glsfirst{pom}}
 %\section{\glsfirst{pom}}
+
+ \glsfirst{pom} (\textit{eng. \gls{odm}} ili \textit{Trip Table}) je alat  koji omoguæuje opis migracija stanovništva na nekom podruèju u prostorno-vremenskom okviru. \gls{pom}-a služi za opis grupne mobilnosti i mjerenje socio-ekonomske aktivnosti u nekoj regiji, a najèešæe se koristi u prometnoj znanosti za analizu i strateško planiranje prometnog optereæenja i prometne infrastrukture. \gls{pom}-e mogu opisivati prometnu potražnju samo na jednom raskrižju, na podruèju grada, na podruèju jedne regije, cijele države pa i šire. Velièinom podruèja na kojem se nastoje opisati kretanja poveæava se i zahtjevnost prikupljanja podataka za procjenu prometne potražnje i izradu \gls{pom}  stoga postoji više postupaka prikupljanja podataka i modela za procjenu prometa. %U ovom radu sagledana je \gls{pom}-a za opis urbanog kretanja na podruèju grada.
+ 
 \section{Definicija Polazišno odredišne matrice}
 
 \theoremstyle{definition}
 \begin{definition}{Polazišno-odredišna matrica} je matrica èiji svaki element predstavlja broj putovanja izmeðu odgovarajuæeg para zona unutar promatranog podruèja u promatranom vremenskom razdoblju $\tau$ , u svakom smjeru zasebno. Redovi u \gls{pom}-i $i = 1,2,3...n$ predstavljaju polazišta (izvore) prometnog toka, a stupci $j = 1,2,3...n$ njihova odredišta (ušæa). Element $f_{ij}$ predstavlja broj putovanja iz pripadajuæe polazišne zone $i$ u pripadajuæu ciljnu zonu $j$. Broj putovanja naziva se i širina prometnog toka (eng. \textit{flow}). (slika \ref{fig:matrix})
 \end{definition}
-\gls{pom}-a se može smatrati matriènim zapis težinskog, usmjerenog grafa, gdje su težinski faktori usmjerenih veza širine prometnih tokova izmeðu èvorova mreže koji predstavljaju zone na koje je promatrano podruèje podijeljeno (slika \ref{fig:matrix_2}). Zone u \gls{pom}-i su poredane od zapada prema istoku, te od od sjevera prema jugu. \cite{?}
+\newpage
+\gls{pom}-a se može smatrati matriènim zapis težinskog, usmjerenog grafa, gdje su težinski faktori usmjerenih veza širine prometnih tokova izmeðu èvorova mreže koji predstavljaju zone na koje je promatrano podruèje podijeljeno (slika \ref{fig:matrix_2}). Zone u \gls{pom}-i su poredane od zapada prema istoku, te od od sjevera prema jugu.
 
 %Also, the order of origins in rows and destinations in columns in reference and estimated OD matrix must be the same. 
 
-\begin{figure}[!htbp]
+\begin{figure}[t]
 	\begin{center}
-		\includegraphics[width=15cm,keepaspectratio=true]{POM}
+		\includegraphics[width=14cm,keepaspectratio=true]{POM}
 		\caption{Polazišno-Odredišna Matrica. Prema: \cite{njem:2019.}}
 		\label{fig:matrix}
 	\end{center}
@@ -65,6 +69,33 @@ Metodologija je izvedena u programskom okruženju za statistièko raèunarstvo R te
 \label{fig:matrix_2}
 \end{center}
 \end{figure}
+
+%Postoje brojni postupci procjene \gls{pom} o kojima je rijeè u narednim odlomcima.
+%Dok se još uvijek ulaže u razvoj matematièkih modela koji imaju za cilj poveæati kvalitetu \glsplural{pom} procijenjenih tradicionalnim postupcima, u novije vrijeme razvijaju se postupci koji imaju veliki potencijal. Ažurnost podataka o kretanju i moguænost obuhvaæanja mnogo veæeg uzorka stanovništva od tradicionalnih postupaka.
+% Kod pojedinih operatora radi se o oko èak 40-50\% svih stanovnika neke države \cite{Bonnel:2015.}.  (...)
+%zamijeniti tradicionalne metode i postati standard u analizi prometa pa tako i procjeni \gls{pom}-a.
+\gls{pom}-a može biti procijenjena za sadašnje ili planirano prometno optereæenje. Može biti prikazana ukupno ili po pojedinim naèinima prijevoza (modalitetima prometnog sustava - osobna vozila, vozila javnog prijevoza, teretna vozila, pješaci itd.) i/ili razlièitim svrhama putovanja (putovanja na posao, putovanja kuæi...). \cite{Jelusic:2016.}
+
+Tranzitna \gls{pom}-a (eng. t-ODM) je vrsta \gls{pom}-e u kojoj su zabilježene poznate tranzicije izmeðu zona. Svaka tranzicija predstavlja onaj dio putovanja koji je poznat, a poèetak i završetak cjelokupnog putovanja kojem pripada su nepoznati \cite{Peterson:2007.}. 
+
+\begin{comment}
+Odreðivanje konteksta putovanja proširuje podruèje pokrivanja u fizièkom i informacijskom smislu te poveæava toènost \gls{pom}-e putem unosa relevantnih atributa vezanih za naèin i svrhu putovanja, èime je putovanje toènije opisano. Specificira socio-ekonomske aktivnosti koje su pokretaèi putovanja odnosno motivatori individualne i grupne mobilnosti. %razlozi kretanja stanovništva. %in the first place. 
+Preciznost odreðivanja konteksta definira izbor metode procjene \gls{pom}-e.
+%Moguænost preciznog odreðivanja konteksta zavisi o metodi procjene \gls{pom}-e.
+
+
+Kada kontekst (svrha) putovanja nije izvorno navedena kao opisna velièina (prediktor) u ulaznim podatcima za razvoj \gls{pom}-e, 
+%%IZBACITI: razvijene su metode koje pomoæu vanjskih izvora o sadržaju procjenjuju kontekst putovanja.
+moguæe je o kontekstu putovanja zakljuèiti iz baza neizravnih kontekstualiziranih podataka treæih strana (npr. zapisi o korištenju telekomunikacijske mreže dopunjeni prostornim podatcima \glstext{gis}) uz korištenje odgovarajuæih postupaka prostorne statistike i analitike.
+%kada je rijeè o novijim metodama procjene POM-a, autori razlièito pristupaju kontekstualizaciji. (...)
+\end{comment}
+
+\section{Tradicionalni pristupi procjeni \\ \glstext{pom}}
+
+\subsection{Izvori ulaznih podataka}
+\subsubsection{Ankete}
+Tradicionalni pristupi procjeni \gls{pom}-a ukljuèuju metode provoðenja anketiranja. Vrste anketa su: ankete u kuæanstvima, presretanje vozila, anketiranje  prijevoznih kompanija i tvrtki, tranzit na granici, turisti u hotelima i parking \cite{Cools:2010.}. Ankete su zahtjevne iz perspektive utrošenog vremena, uloženog truda i radne snage stoga se ne provode èesto. Anketiranje putovanja u kuæanstvima provodi se na podruèjima veæine razvijenih svjetskih metropola tek \textbf{svakih 5 do 10 godina} \cite{Toole:2015.}. U veæini na provoðenje anketa odlazi najveæi postotak investicija u planiranje prometa, u prosjeku oko 7.4 milijuna dolara godišnje \cite{Cools:2010.}. Podaci koje ankete stanovništva bilježe osim broja stanovnika su broj vozila, broj zaposlenih, broj putovanja odreðenim naèinom prijevoza (automobil, javni prijevoz...) po kuæanstvu \cite{Espad:2013.}. Ostale ankete opæenito pokrivaju malen dio populacije te su POM-e dobivene iz anketa optereæene neizbježnom pristranošæu \cite{Alhazzani:2016.}. Studija provedena na podruèju Belgije pokazala je da se zadovoljavajuæa razina kvalitete \gls{pom}-a procijenjenih iskljuèivo iz anketa u kuæanstvima postiže tek ako uzorak obuhvaæa 50\% populacije \cite{Cools:2010.}. 
+%\todo[inline]{Podjela po subjektima anketa. Predlažem detaljniju razradu u metodološkom smislu, uz korištenje liteature poput:		Hyndman, R J, and Athanasopoulos, G. (2018). Forecasting: Principles and Practice (2nd ed). (Chapter 4: Judgemental Forecast)). Preuzeto s: https://otexts.com/fpp2/judgmental.html}
 
 \subsubsection{Prebrojavanje vozila (engl. \textit{Traffic Counts})}
 Metode koje ukljuèuju prebrojavanje vozila na kljuènim èvorištima prometne infrastrukture manje su zahtjevne za izvoðenje u odnosu na ankete i znaèajno smanjuju vrijeme i troškove prikupljanja podataka. Postupci ukljuèuju: analizu nadzornih snimaka prometa, automatski sustav za prepoznavanje i oèitovanje registarskih ploèica engl. \gls{anpr}, osjetila prometnog toka (radarska, magnetna, video-senzori, zvuèna..)  i  ruèno prebrojavanje.
@@ -270,7 +301,7 @@ Zapisuju se i podatci o prekapèanju pokretnog ureðaja na drugu baznu stanicu (en
 
 Novi postupci koriste upravo anonimizirane, èesto višemjeseène \gls{cdr}, kao izvor podataka za procjenu \glsplural{pom} \cite{Frias-Martinez:2012.}\cite{Gundlegard:2016.}\cite{Alhazzani:2016.}. Metodologija korištenja odnosnih elemenata CDR-a za procjenu POM predložena je još 1994. godine \cite{Gundlegard:2016.}. 
 %\textbf{U ostatku rada, na mjestima gdje nije izrièito naveden izvor podataka o kretanju, rijeè je o postupku ili \gls{pom}-i procijenoj iz \gls{cdr}}. %Pri procjeni \gls{pom}-e, ako su dostupni, i ranije navedeni dodatni podatci mogu se uzeti u obzir. 
-\newpage
+
 \begin{definition}{%u postupku putovanja promatranog iz perspektive telekomunikacijskih usluga 
 		\label{stop}
 		Skup minimalno \textit{n} dogaðaja (telekomunikacijskih aktivnosti) u nizu, istog korisnika, koji su zabilježeni na istom položaju unutar definiranog minimalnog vremenskog perioda èine jedno Zaustavljanje (engl.\textit{ Stop}}) . 
@@ -323,7 +354,10 @@ Kretanje pojedinca tokom dana najèešæe je rascjepkano, odnosno u nizu postoje "r
 	\begin{equation}
 	potpunost = \frac{n_L}{\tau \times \mathcal{T}}
 	\end{equation}
-	gdje je $n_L$ broj zabilježenih položaja (zaustavljanja), $\tau$ vremenski period, a $ \mathcal{T} $ duljina ukupnog vremenskog razdoblja za koje su dostupni zapisi.
+	gdje je:\\$n_L$ broj zabilježenih položaja (zaustavljanja)\\
+	$\tau$ vremenski period\\ $ \mathcal{T} $ duljina ukupnog vremenskog razdoblja za koje su dostupni zapisi.
+	
+	
 	Idealna potpunost je postignuta ako postoji barem jedan zabilježeni položaj (zaustavljanje) po periodu. \cite{Chen:2019.}
 	
 \end{definition}
@@ -365,7 +399,9 @@ Tehnika vrednovanja linearnom regresijom procjenjuje vrijednosti æelija jedne \g
 \begin{equation}
 	y_i = bx_i + a + \epsilon_i
 \end{equation}
-gdje je pogreška $\epsilon$ sluèajna varijabla s normalnom raspodjelom i oèekivanom vrijednošæu 0, $b$ koeficijent smjera pravca linearne regresije, $a$ slobodni èlan  (predstavlja križište linije regresije s $y$ osi). \cite{Kuhlm:2015.} (vidi sliku \ref{fig:lm})
+gdje je :\\ pogreška $\epsilon$ sluèajna varijabla s normalnom raspodjelom i oèekivanom vrijednošæu 0\\$b$ koeficijent smjera pravca linearne regresije\\ $a$ slobodni èlan  (predstavlja križište linije regresije s $y$ osi). 
+
+\cite{Kuhlm:2015.} (vidi sliku \ref{fig:lm})
 
 Korelacijski koeficijent odreðenja ili obuhvaæanja varijance $r^2$ je mjera koja %je statistik koji
 pokazuje koliko je slaganje izmeðu vrijednosti izraèunatih modelom procjene i izmjerenih vrijednosti (\textit{ground truth}). Opæenito, to je mjera dobrote pristajanja (engl. \textit{goodness of fit}) koja govori koliko uspješno model opisuje zavisnost (korelaciju) izmeðu zavisne i nezavisne varijable. $r^2$ predstavlja omjer modelom opisanih varijacija u odnosu na ukupne varijacije podataka:

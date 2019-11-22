@@ -81,6 +81,6 @@ for( i in 1:size(m)[1]){
 heatmap(zODout_SH_15_18, Colv = NA, Rowv = NA, main = "CDR 15_18")
 heatmap(m, Colv = NA, Rowv = NA, main = "CDR 15_18 (bez_susjeda)")
 
-heatmap(m, breaks = col_breaks, col = colPal, Colv = NA, Rowv = NA, main = "CDR 15_18 (bez_susjeda)")
+#heatmap(m, breaks = col_breaks, col = colPal, Colv = NA, Rowv = NA, main = "CDR 15_18 (bez_susjeda)")
 #zCDR 15_18 -> 0.4673548 -> 47% ukupne širine toka je u susjedne ćelije
 #sačuvana rezolucija

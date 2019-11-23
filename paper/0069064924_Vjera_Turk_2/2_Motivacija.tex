@@ -113,12 +113,18 @@ Predstavljen je unaprijeðeni model predviðanja odredišta koji koristi svrhu puto
 
 %\textit{Statistièka analiza podataka iz suvremenih informacijskih i komunikacijskih sustava sve više se koristi za procjenu \gls{pom}-a èime je omoguæeno poboljšanje kvalitete procjene preslikavanjem POM-e na kontekst.\\}
 
-Poboljšanje kvalitete procjene \gls{pom} omoguæeno je preslikavanjem POM-e na kontekst. Odreðivanje konteksta proširuje podruèje pokrivanja u fizièkom i informacijskom smislu te poveæava toènost POM-e unosom relevantnih atributa vezanih za naèin i svrhu putovanja - èime je putovanje toènije opisano.
-
-
 %* Izbor metode procjene definira preciznost odreðivanja konteksta.
 
 %\subsection{Redefiniranje validacije \glstext{pom}}
+
+\textbf{Postoji skup parametara kojima se objektivno mogu usporediti dvije na razlièiti naèin ili na isti naèin dobivene \gls{pom}-e.}
+
+Rad nastoji tezu potkrijepiti opisom metodologije za vrednovanje matrica prema njihovoj kvaliteti uvažavajuæi definirane odnosne parametre kvalitete.
+
+%metodologija kojom potkrepljujete tezu, metodologija kaže: imamo vrednovanje POM-a prema njihovoj kvaliteti uz uvažavanje odnosnih parametara kvalitete
+ 
+%Odreðivanje konteksta proširuje podruèje pokrivanja u fizièkom i informacijskom smislu te poveæava toènost POM-e unosom relevantnih atributa vezanih za naèin i svrhu putovanja - èime je putovanje toènije opisano. Preslikavanjem POM-e na kontekst omoguæeno je poboljšanje kvalitete %procjene %\gls{pom}.
+
 \subsection{Alternativni pristup vrednovanju \glstext{pom}}
 
 \textit{Toènost, rezolucija i obujam podataka su kljuèni parametri geografske informacije i znanje o èemu oni zavise je nužna baza za veæe pothvate procjene vrijednosti geografskih informacija kao društvenog dobra }\cite{Degbelo:2014.}.
@@ -140,7 +146,7 @@ Vrednovanje \gls{pom}-e je proces koji ima za cilj procjenu obilježja kvalitete 
 
 
 \section{Odnosni parametri kvalitete}
-
+\label{param}
 \subsection{Prostorno obuhvaæanje}
 %Spatial coverage refers to a geographical area where data was collected, a place which is the subject of a collection, or a location which is the focus of an activity. This may be described using geospatial coordinates for a point or an area (for example, latitude and longitude), or through the use of place or regional names (for example, Barrow Island; Gippsland). Regional names may be based on legal jurisdiction (for example, South Australia).
 
@@ -244,7 +250,7 @@ Geoinformacijska znanosti definira tematsku rezolucija kao kolièinu kategorièkih
 
 %Level of categorical detail on a thematic map as expressed by the number of classes (classification) included in production of the map.
 
-\definition{Tematska rezolucija je broj kategorija svrhe putovanja definirane iz namjene krajnjeg odredišta putovanja.}
+\definition{Tematska rezolucija svrhe je broj kategorija svrhe putovanja definirane iz namjene krajnjeg odredišta putovanja.}
 
 Primjer kategorija i njihovih tematskih rezolucija: 
 
@@ -311,6 +317,21 @@ floor area : kategoriji
 	\end{center}
 \end{figure}
 
+
+\definition{Tematska rezolucija naèina kretanja je broj kategorija naèina kretanja po kojim je moguæe razvrstati putovanja}
+
+Primjer kategorija i njihovih tematskih rezolucija: 
+
+\begin{enumerate}
+	%\item home, work, other (3)
+	\item osobna vozila, kamioni, javni prijevoz (3)
+	\item podzemna željeznica (javni prijevoz) (1)
+	\item taxi/ komercijalna vozila (1)
+	\item pješaci, osobna vozila, vozila javnog prijevoza, kamioni (4)
+\end{enumerate}
+
+
+
 \newpage
 
 \subsection{Zrnatost}
@@ -362,6 +383,9 @@ Objekt u zoni je najmanja prostorno razluèiva jedinica kod procjene matrica koja
 
 
 \subsection{Gustoæa informacija}
+
+0 æelije?!
+Skaliranje 0*x -> 0 
 (...)\\
 -Informacija na razini putovanja \\
 -Informacija na razini toka (postotka toka) - metoda koja se oslanja na vanjske izvore konteksta može se primijeniti na matrice iz razlièitih izvora podataka.\\

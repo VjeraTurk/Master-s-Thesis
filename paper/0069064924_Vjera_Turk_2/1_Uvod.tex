@@ -17,7 +17,8 @@
 %Naziv Izvorišno-Odredišna je struèni naziv
 
 \glsfirst{pom} %Izvorišno-Odredišna ili 
- \textit{eng. \gls{odm}} ili \textit{Trip Table} je alat  koji omoguæuje opis i sustavnu statistièku procjenu migracija stanovništva na nekom podruèju u zadanom prostorno-vremenskom okviru. \gls{pom}-a služi za opis grupne mobilnosti i mjerenje socio-ekonomske aktivnosti u nekoj regiji, a najèešæe se koristi u prometnoj znanosti za analizu i strateško planiranje prometnog optereæenja i prometne infrastrukture. 
+ %\textit{eng. \gls{odm}} ili \textit{Trip Table} 
+ je alat  koji omoguæuje opis i sustavnu statistièku procjenu migracija stanovništva na nekom podruèju u zadanom prostorno-vremenskom okviru. \gls{pom}-a služi za opis grupne mobilnosti i mjerenje socio-ekonomske aktivnosti u nekoj regiji, a najèešæe se koristi u prometnoj znanosti za analizu i strateško planiranje prometnog optereæenja i prometne infrastrukture. 
 
 Osim tradicionalnog pristupa prebrojavanja putovanja i putnika na raskrižjima, anketiranjem ili pomoæu razlièitih strateški postavljenih osjetila, za procjenu \gls{pom}-a koristi se i statistièka analiza podataka iz suvremenih informacijskih i komunikacijskih sustava (zapisi o aktivnostima u javnoj pokretnoj mreži, združena oèitanja prijamnika za satelitsku navigaciju i sl.). Takav moderan pristup omoguæuje poboljšanje kvalitete procjene preslikavanjem \gls{pom}-e na kontekst. Ako nosi informaciju o svrsi kretanja, \gls{pom}-a specificira socio-ekonomske aktivnosti koje su pokretaèi putovanja odnosno motivatori individualne i grupne mobilnosti.
 %Suvremeni izvori podataka o položaju kao što su zapisi o telekomunikacijskoj aktivnosti nisu vezani uz prometnu infrastrukturu niti odreðen naèin prijevoza (kretanja). 
@@ -42,7 +43,7 @@ Metodologija je izvedena u programskom okruženju za statistièko raèunarstvo R te
 \chapter{\glsfirst{pom}}
 %\section{\glsfirst{pom}}
 
- \glsfirst{pom} (\textit{eng. \gls{odm}} ili \textit{Trip Table}) je alat  koji omoguæuje opis migracija stanovništva na nekom podruèju u prostorno-vremenskom okviru. \gls{pom}-a služi za opis grupne mobilnosti i mjerenje socio-ekonomske aktivnosti u nekoj regiji, a najèešæe se koristi u prometnoj znanosti za analizu i strateško planiranje prometnog optereæenja i prometne infrastrukture. \gls{pom}-e mogu opisivati prometnu potražnju samo na jednom raskrižju, na podruèju grada, na podruèju jedne regije, cijele države pa i šire. Velièinom podruèja na kojem se nastoje opisati kretanja poveæava se i zahtjevnost prikupljanja podataka za procjenu prometne potražnje i izradu \gls{pom}  stoga postoji više postupaka prikupljanja podataka i modela za procjenu prometa. %U ovom radu sagledana je \gls{pom}-a za opis urbanog kretanja na podruèju grada.
+ \glsfirst{pom} (\textit{eng. \gls{odm}} ili \textit{Trip Table}) je uobièajeni naèin mjere pokretljivosti stanovništva na nekom podruèju u prostorno-vremenskom okviru. \gls{pom}-a služi za opis grupne mobilnosti i mjerenje socio-ekonomske aktivnosti u nekoj regiji, a najèešæe se koristi u prometnoj znanosti za analizu i strateško planiranje prometnog optereæenja i prometne infrastrukture. \gls{pom}-e mogu opisivati prometnu potražnju samo na jednom raskrižju, na podruèju grada, na podruèju jedne regije, cijele države pa i šire. Velièinom podruèja na kojem se nastoje opisati kretanja poveæava se i zahtjevnost prikupljanja podataka za procjenu prometne potražnje i izradu \gls{pom}  stoga postoji više postupaka prikupljanja podataka i modela za procjenu prometa. %U ovom radu sagledana je \gls{pom}-a za opis urbanog kretanja na podruèju grada.
  
 \section{Definicija Polazišno odredišne matrice}
 
@@ -54,7 +55,7 @@ Metodologija je izvedena u programskom okruženju za statistièko raèunarstvo R te
 
 %Also, the order of origins in rows and destinations in columns in reference and estimated OD matrix must be the same. 
 
-\begin{figure}[t]
+\begin{figure}[p]
 	\begin{center}
 		\includegraphics[width=14cm,keepaspectratio=true]{POM}
 		\caption{Polazišno-Odredišna Matrica. Prema: \cite{njem:2019.}}
@@ -62,7 +63,7 @@ Metodologija je izvedena u programskom okruženju za statistièko raèunarstvo R te
 	\end{center}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[p]
 \begin{center}
 \includegraphics[width=15cm,keepaspectratio=true]{POM_2}
 \caption{Usmjereni graf kretanja i pripadajuæa  Polazišno-Odredišna Matrica. (Zone su oznaèene slovima abecede). Prema: \cite{graf:2019.}}

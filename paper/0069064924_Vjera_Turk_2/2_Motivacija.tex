@@ -1,7 +1,7 @@
 % !TeX encoding = windows-1250
 %\chapter{Moj pogled na kvalitetu \glstext{pom} temeljem parametara}
 \chapter{$<Naslov>$}
-
+%\chapter{Kontekstualizacija Polazišno Odredišnih Matrica i metodologija za njihovu usporedbu}
 
 %\todo[inline]{motivacija, teza, formulacija problema}
 \section{Uvodna razmatranja i pregled istraživanja}
@@ -16,9 +16,9 @@ Analiza prometne potražnje tijekom dnevnih vrhunaca i pokazatelja kako æe se taj
 
 %Strateška planiranja izgradnje prometne infrastrukture, koja se vode vremenski nezavisnim modeliranjem potražnje, trebala bi uzeti u obzir vremenski zavisne modele. 
 
-\textbf{Pretpostavka da je referentna matrica \textit{a priori} toèna ne omoguæuje da se sagleda je li nova \gls{pom}-a toènija i/ili kvalitetnija od nje.} Kako prikazati kvalitetu \gls{pom}-e bez oslanjanja na \textit{grand turth} koja porastom znaèajnijih i bržih promjena poveæava utjecaj pristranosti kretanju u prošlosti? Postoji potreba za objektivnom procjenom kvalitete \gls{pom}-a definiranjem odnosnih parametara kvalitete.
+\textbf{Pretpostavka da je referentna matrica \textit{a priori} toèna ne omoguæuje da se sagleda je li nova \gls{pom}-a toènija i/ili kvalitetnija od nje.} Kako prikazati kvalitetu \gls{pom}-e bez oslanjanja na \textit{ground turth} koja porastom znaèajnijih i bržih promjena poveæava utjecaj pristranosti kretanju u prošlosti? Postoji potreba za objektivnom procjenom kvalitete \gls{pom}-a definiranjem odnosnih parametara kvalitete.
 
-\gls{cdr} se istièe kao izvor gotovo jednako zastupljen u zemljama u razvoju i razvijenim zemljama, s penetracijom oko 40\%-50\% stanovništva za pojedine operatore javene pokretne mreže \cite{Bonnel:2015.}.
+\gls{cdr} se istièe kao izvor gotovo jednako zastupljen u zemljama u razvoju i razvijenim zemljama, s penetracijom oko 40\%-50\% stanovništva za pojedine operatore javne pokretne mreže \cite{Bonnel:2015.}.
  %U Francuskoj je 2008. 80\% stanovništva starijeg od 12 godina posjedovalo mobilni ureðaj\cite{Bonnel:2015.}, a 2016. Èile je imao èak 132 mobilne pretplate na 100 stanovnika \cite{Graells-Garrido:2016.}. 
  \textbf{Praksa odbacivanja ogromnog dijela uzorka zbog niske potpunosti putanja može se zamijeniti rekonstrukcijom putanja uvažavajuæi njihov kontekst \cite{Chen:2019.}}.
 
@@ -36,7 +36,7 @@ Analiza prometne potražnje tijekom dnevnih vrhunaca i pokazatelja kako æe se taj
 		\subfloat[Predviðena širina vrhunca prometne potražnje]
 		{\label{fig:peak2046}
 			\includegraphics[width=12cm,keepaspectratio=true]{2046}}
-		\caption{Širina vrhunca prometne potražnje - vremenski zavisno modeliranje \cite{Thakur:2018.}}
+		\caption{Širina jutarnjeg vrhunca prometne potražnje - vremenski zavisno modeliranje \cite{Thakur:2018.}}
 		\label{fig:peak}
 	\end{center}
 \end{figure}
@@ -46,10 +46,10 @@ Analiza kretanja stanovništva koja uzima u obzir i kontekst proširuje podruèje p
 \section{Kontekstualizacija \glstext{pom}}
 
 %putovanje kao infromacijski objekt
-%\begin{definition}{Putovanje kao informacijski objekt} èine: polazišni položaj iz kojeg je putovanje krenulo, odredišni položaj u kojem se putovanje završava, vremenske oznake kada je poèelo i kada je završilo, a kada je poznat, u navedeno se ubraja i kontekst putovanja.\end{definition}
-\definition{Putovanje kao informacijski objekt} je %**
+\begin{definition}{Putovanje kao informacijski objekt} je entitet kojeg èine: polazišni položaj iz kojeg je putovanje krenulo, odredišni \textbf{položaj} u kojem se putovanje završava, \textbf{vremenske oznake} kada je poèelo i kada je završilo, a kada je poznat, u navedeno se ubraja i \textbf{kontekst} putovanja.\end{definition}
+%\definition{Putovanje kao informacijski objekt} je %**
 
-\definition{Kontekst putovanja}{ je skup podataka koji definiraju polazište, odredište, naèin prijevoza, svrhu i trajektoriju putovanja.}
+\definition{Kontekst putovanja}{ je skup podataka koji definiraju polazište, odredište, \textbf{naèin prijevoza}, \textbf{svrhu} i \textbf{trajektoriju} putovanja.}
 
 %\definition{Kontekst} putovanja je informacija vezana uz putovanje, njegovo polazište ili odredište koja procjenjuje ili upuæuje na motiv (svrhu) kretanja, naèin prijevoza ili željeni faktor po kojem se putovanja mogu kategorizirati i time preciznije definirati u informacijskom smislu.
 
@@ -78,20 +78,19 @@ A problem ostaje otvoren za raspravu, \textbf{koliki je udio populacije stvarno 
 
 \subsubsection{Studija A - 3 tipa privlaèenja}
 % We used a statistical significance testing approach to rigorously quantify the relationship between Points of Interests (POIs) types (services) and the 3 patterns of Urban Attractors we detected. \gls{pois} Points of Interes (Urban Attractors ima 22 kategorije koristi bazu s POI)
-Alhazzani i ostatak autora 2016. kvantizirali su vezu izmeðu ukupno 23 namjenske kategorije Toèaka interesa (engl. Points of Interest, \glstext{pois}) iz službene gradske baze (npr. tvornice, bolnice, javne škole, religijski objekti, hoteli, knjižnice, sportski objekti) i onoga što nazivaju 3 tipa privlaèenja. Dolaze do zakljuèka da \textbf{postoje 3 osnovna tipa privlaèenja od kojih svaki ima karakteristièan tok (gustoæu ukupnog toka, udaljenost i disperziju polazišta tokova usmjerenih prema objektu tog tipa privlaèenja). Svaku od kategorija karakterizira jedan od ta 3 tipa privlaèenja.} U radu koriste podatke iz službene baze s 12,000 \glstext{pois} i \gls{cdr} zapisima iz razdoblja od mjesec dana.
- \cite{Alhazzani:2016.} 
+Alhazzani i ostatak autora 2016. kvantizirali su vezu izmeðu ukupno 23 namjenske kategorije Toèaka Interesa (engl. Points of Interest, \glstext{pois}) iz službene gradske baze (npr. tvornice, bolnice, javne škole, religijski objekti, hoteli, knjižnice, sportski objekti) i onoga što nazivaju 3 tipa privlaèenja. Dolaze do zakljuèka da \textbf{postoje 3 osnovna tipa privlaèenja od kojih svaki ima karakteristièan tok (gustoæu ukupnog toka, udaljenost i disperziju polazišta tokova usmjerenih prema objektu tog tipa privlaèenja). Svaku od kategorija karakterizira jedan od ta 3 tipa privlaèenja.} U radu koriste podatke iz službene baze s 12,000 \glstext{pois} i \gls{cdr} zapisima iz razdoblja od mjesec dana
+\cite{Alhazzani:2016.}.
 Zone su okarakterizirane objektima koji se nalaze u njima.
 \subsubsection{Studija B - Model Raspodjele Toka}
 \label{rad}
 Inovativni pristup kontekstualizaciji toka korištenjem OpenStreetMap baze predstavljen je u radu sa sudjelovanjem autora ovog diplomskog rada \cite{Stupar:2018.}. Prostorni objekti na podruèju interesa kategorizirani su na osnovu pripadajuæih opisnih podatak prema tipu socio-ekonomske aktivnosti u koju su ukljuèeni (vidi dodatak \ref{dodatak_osm} - OpenStreetMap). Definirano je ukupno 6 kategorija:
-Dom (Home), Posao (Work), Zdravlje (Health), Edukacija (Education), Zabava (Leisure) i Ostalo (Other). \textbf{Razvijen je vjerojatnosni model koji, na osnovu broja objekata pojedine kategorije u odredišnoj æeliji (zoni) i promatranog vremenskog okvira, ukupni ulazni tok u odredišnu æeliju dijeli na 6 tokova usmjerenih prema objektima tih kategorija.} Jedna \gls{pom} dijeli se na 6 kontekstualiziranih \gls{pom}-a, po jednu za svaku od kategorija. \gls{pom}-e dobivene iz javno dostupnih, anonimiziranih telekomunikacijskih zapisa na podruèju kineskog grada Shenzhena korištene su u demonstraciji modela \cite{Filic:2016.}\cite{data:2019.}.
+Dom (Home), Posao (Work), Zdravlje (Health), Edukacija (Education), Zabava (Leisure) i Ostalo (Other). \textbf{Razvijen je vjerojatnosni model koji, na osnovu broja objekata pojedine kategorije u odredišnoj zoni i promatranog vremenskog okvira, ukupni ulazni tok u odredišnu æeliju dijeli na 6 tokova usmjerenih prema objektima tih kategorija.} Jedna \gls{pom} dijeli se na 6 kontekstualiziranih \gls{pom}-a, po jednu za svaku od kategorija. \gls{pom}-e dobivene iz javno dostupnih, anonimiziranih telekomunikacijskih zapisa na podruèju kineskog grada Shenzhena korištene su u demonstraciji modela \cite{Filic:2016.}\cite{data:2019.}.
 Definiranjem konteksta putovanja na ovaj naèin saèuvana je moguænost postizanja dobre rezolucije u vremenu, a istovremeno je dan kontekst koji ukljuèuje tipiène komutacijske \textit{Home} i \textit{Work} kategorije, te umjesto opæenite kategorije \textit{Other} precizira 4 kategorije. 
 
 \textbf{Definiranjem konteksta ulaznih tokova definiraju se nove informacije o kretanju unutar æelije, odnosno o konaènoj destinaciji nakon ulaska u æeliju. Saznaje se o internom kretanju, èak i za metodu procjene koja bez kontekstualizacije nema preciznost odreðivanja položaja veæu od prostorne zone (\gls{cdr}).}
 
 \subsubsection{Studija C - Planiranje održivih gradova}
-Modeli za procjenu potrošnje energije na razini zgrada, a posljedièno i na razini gradova temelje na prostornom kapacitetu zgrada, nedovoljno uvažavajuæi èinjenicu da ispunjenost tog kapaciteta varira u vremenu. \textbf{Analizom kretanja stanovništva moguæe je procijeniti ispunjenost kapaciteta zgrada i odrediti prosjeènu potrošnju energije}. Korištenje \gls{cdr} zapisa prikladno je za ovakvu analizu potrošnje energije na razini grada zbog velikog uzoraka stanovništva i neovisnosti o prometnoj infrastrukturi. Zgrade iz baze zgrada na podruèju od interesa (grad Boston) podijeljene su u 3 tipa - stambene, industrijske i komercijalne. Model uzima u obzir ukupnu površinu zgrada i "radno vrijeme" zgrada koje nisu stambene. Zgrade u zonama su u procesu  grupirane u blokove unutar zone, a vjerojatnosnim modelom ulazna putovanja su dodijeljena blokovima, a potom pojedinoj zgradi u bloku. Ovisno o pretpostavljenom odnosu izmeðu optereæenja i kapaciteta zgrada, u odnosu na standardne modele procjena potrošnje energije razlikuje se od +1\% do - 15\% za stambene te -4\% do -21\% za komercijalne zgrade 
-\cite{Barbour:2019.} 
+Modeli za procjenu potrošnje energije na razini zgrada, a posljedièno i na razini gradova temelje na prostornom kapacitetu zgrada, nedovoljno uvažavajuæi èinjenicu da ispunjenost tog kapaciteta varira u vremenu. \textbf{Analizom kretanja stanovništva moguæe je procijeniti ispunjenost kapaciteta zgrada i odrediti prosjeènu potrošnju energije}. Korištenje \gls{cdr} zapisa prikladno je za ovakvu analizu potrošnje energije na razini grada zbog velikog uzoraka stanovništva i neovisnosti o prometnoj infrastrukturi. Zgrade iz baze zgrada na podruèju od interesa (grad Boston) podijeljene su u 3 tipa - stambene, industrijske i komercijalne. Model uzima u obzir ukupnu površinu zgrada i "radno vrijeme" zgrada koje nisu stambene. Zgrade u zonama su u procesu  grupirane u blokove unutar zone, a vjerojatnosnim modelom ulazna putovanja su dodijeljena blokovima, a potom pojedinoj zgradi u bloku. Ovisno o pretpostavljenom odnosu izmeðu optereæenja i kapaciteta zgrada, u odnosu na standardne modele procjena potrošnje energije razlikuje se od +1\% do - 15\% za stambene te -4\% do -21\% za komercijalne zgrade \cite{Barbour:2019.} (standardni modeli precijenjuju potrošnju energije).
 
 \subsubsection{Studija D - Predviðanje odredišta u stvarnom vremenu}
 %Odreðivanjem položaja pomoæu \gls{gnss} prijemnika dovoljno je precizno da se odredište putovanja odredi na razini zgrade. 
@@ -131,7 +130,7 @@ Rad nastoji tezu potkrijepiti opisom metodologije za vrednovanje matrica prema n
 
 
 %moj pogled na validaciju pom
-Vrednovanje \gls{pom}-e je proces koji ima za cilj procjenu obilježja kvalitete te \gls{pom}-e i znaèi identifikaciju obilježja kvalitete \gls{pom}-e, njenog sadržaja, njene smislenosti, a izražava se slijedeæim  indikatorima: prostorno obuhvaæanje, prostorna rezolucija, vremenska rezolucija, tematska rezolucija ...%, zrnatosti (?), definicija putovanja, prostorna rezolucija, vremenska rezolucija, širina toka i gustoæa informacija.}
+Vrednovanje \gls{pom}-e je proces koji ima za cilj procjenu obilježja kvalitete \gls{pom}-e i znaèi identifikaciju obilježja kvalitete \gls{pom}-e, njenog sadržaja, njene smislenosti, a izražava se slijedeæim  indikatorima: prostorno obuhvaæanje, prostorna rezolucija, vremenska rezolucija, tematska rezolucija ...%, zrnatosti (?), definicija putovanja, prostorna rezolucija, vremenska rezolucija, širina toka i gustoæa informacija.}
 
 
 %ažurnost?!
@@ -179,7 +178,7 @@ Geoinformacijska znanost rezoluciju opæenito definira kao kolièinu detalja u set
 %Geoinformatika obuhvaæa znanstvene temelje suvremenih digitalnih metoda prikupljanja prostornih podataka, modeliranje prostornih informacija, metode apstrakcije i generalizacije geopodataka, specifiènosti prostornih i prostorno-vremenskih baza podataka, matematièko-statistièku obradu geopodataka i osmišljavanje usluga baziranih na lokaciji korisnika.
 
  
-\textit{Prisutnost rezolucije otvara pitanje "Koja je optimalna rezolucija i postoji li optimum?". Trud tek treba biti uložen u razvoj potpuno razraðene teorije optimalne \textbf{prostorne, vremenske i tematske rezolucije} koja æe uzeti u obzir specifiènosti prikupljanja podataka (osjetila, ljudska osjetila, anketa, jesu li podaci proizašli iz postojeæih opažanja ili ne) i zadatak od interesa} \cite{Degbelo:2014.}.
+Isti rad napominje da \textit{prisutnost rezolucije otvara pitanje "Koja je optimalna rezolucija i postoji li optimum?". Trud tek treba biti uložen u razvoj potpuno razraðene teorije optimalne \textbf{prostorne, vremenske i tematske rezolucije} koja æe uzeti u obzir specifiènosti prikupljanja podataka (osjetila, ljudska osjetila, anketa, jesu li podaci proizašli iz postojeæih opažanja ili ne) i zadatak od interesa} \cite{Degbelo:2014.}.
 
 %More specifically, efforts should be directed toward the development of a fully worked-out theory of optimum spatial, temporal, and thematic resolution, taking into account both the specificities of the data production process (e.g. whether the data was produced by remote sensing or ground survey, human or technical sensors, derived from existing observations or not) and the task at hand (e.g. detection of geographic entities or understanding of global warming).
  
@@ -199,39 +198,30 @@ Geoinformacijska znanost rezoluciju opæenito definira kao kolièinu detalja u set
 
 %**?? discrimination (smallest change in a quantity being measured that causes a perceptible change in the corresponding observation value) ?!
 
-Vremenski nezavisna \gls{pom} ima prostornu, a vremenski zavisna \gls{pom} prostornu i vremensku rezoluciju.  Alternativni pristup vrednovanju \gls{pom} definira prostornu i vremensku rezoluciju kao:
+Vremenski nezavisna \gls{pom} ima prostornu, a vremenski zavisna \gls{pom} prostornu i vremensku rezoluciju, kontekstualizirana ima tematsku rezoluciju.  Alternativni pristup vrednovanju \gls{pom} definira prostornu i vremensku rezoluciju kao:
 
-\definition{Prostorna rezolucija} je najmanja preðena udaljenost koju je moguæe identificirati.\\
-- ... najmanja/prosjeèna udaljenost izmeðu centara zona \\
-- ... broj zona na promatranom podruèju \\
-- ... broj zona na promatranom podruèju / površina podruèja
+\definition{Prostorna rezolucija} je najmanja prijeðena udaljenost koju je moguæe identificirati.\\
 
+Udaljenost je kontinuirana velièina, a radi pojednostavljenja metodologije definirana je kao kategorièka s kategorijama: 
 	\begin{enumerate}
-		\item $< 500 m$
-		\item $500 m$
-		\item $1 km$
-		\item $2 km$
-		\item $3 km$
+		\item $< 100 m$
+		\item $100 m-500 m$
+		\item $500 m - 1 km$
+		\item $1 km - 2 km$
+		\item $2 km - 3 km$
 		\item $> 3 km$
 	\end{enumerate}
-...
+%- ... najmanja/prosjeèna udaljenost izmeðu centara zona \\
+%- ... broj zona na promatranom podruèju \\
+%- ... broj zona na promatranom podruèju / površina podruèja
 
 %Rezolucija \gls{pom}-e procijenjene iz \gls{cdr} ovisit æe o gustoæi tornjeva bazni stanica. Gustoæa tornjeva dobro je korelirana s gustoæom populacije \cite{Gundlegard:2016.}. Distribucija tornjeva nije homogena, niti na podruèju grada, niti na bilo kojem drugom podruèju. 
-\definition{Vremenska rezolucija} je najmanji vremenski odmak koji je moguæe identificirati. \\
--...duljina trajanja perioda $\tau$
+\definition{Vremenska rezolucija} je 
+najmanji vremenski odmak koji je moguæe identificirati. \\
+%duljina trajanja vremenskog okvira $\tau$
+%Najmanji vremenski odmak uvjetuje širinu vremenskog okvira u kojem promatramo kretanja. 
 
-	\begin{enumerate}
-	\item $< 15$ min
-	\item 15 min \cite{Bera:2011.}\cite{Espad:2013.}
-	\item 30 min \cite{Schneider:2013.}
-	\item 1 h \cite{Mellegard:2011.} \cite{Gundlegard:2016.}
-	\item 3 h \cite{Filic:2016.}\cite{Chen:2019.}
-	\item 6 h
-	\item 8 h
-	\item 12 h
-	\item 24 h
-\end{enumerate}
-
+Kod suvremenih pristupa vremenska rezolucija ovisit æe o periodu uzorkovanja položaja.
 
 %Daily trips are estimated from filtered users by analyzing consecutive observations at different stay points during a given time window. They begin by defining an effective day as a period between 3 am one morning and 3 am on the next consecutive morning. This definition is used to minimize the number of trips that are prematurely ended due to the assumption that users start and end each day at home
 
@@ -243,23 +233,23 @@ Vremenski nezavisna \gls{pom} ima prostornu, a vremenski zavisna \gls{pom} prost
 
 %\subsubsection{Kontekstualizacija}
 
-... 
 \subsubsection{Tematska rezolucija}
 
 Geoinformacijska znanosti definira tematsku rezolucija kao kolièinu kategorièkih detalja na \textit{tematskoj karti}. Izražava se brojem tipova pokrova (engl. land cover) ili brojem tipova namjene zemljišta (engl. land use) \cite{Smith:2017.}. Ovakva definicija dobro se uklapa u tematsku rezoluciju kao parametar kvalitete kontekstualiziranih \gls{pom} koje su procijenjene na temelju namjene zemljišta ili objekata.
-
+Razvrstavanjem putovanja u zasebne \gls{pom} prema kategorijama dobije se broj \gls{pom} jednak tematskoj rezoluciji.
 %Level of categorical detail on a thematic map as expressed by the number of classes (classification) included in production of the map.
 
 \definition{Tematska rezolucija svrhe je broj kategorija svrhe putovanja definirane iz namjene krajnjeg odredišta putovanja.}
 
 Primjer kategorija i njihovih tematskih rezolucija: 
 
-\begin{enumerate}
+\begin{itemize}
 	%\item home, work, other (3)
+	\item dom, posao (2)
 	\item stambeni, industrijski, komercijalni (3) \cite{Barbour:2019.} 
 	\item dom, posao, edukacija, razonoda, zdravlje, ostalo (6) \cite{Stupar:2018.}
 	\item tvornice, ambasade, sveuèilišti objekti, bolnice, javne škole, ostali obrazovni objekti, stanice javnog prijevoza, knjižnice, klinike, religijski objekti, hoteli, sportski objekti, banke ... (23)  \cite{Alhazzani:2016.} 
-\end{enumerate}
+\end{itemize}
 
 
 \begin{comment}
@@ -280,63 +270,32 @@ floor area : kategoriji
 
 \end{comment}
 
-
-\begin{figure}[!htpb]
-	\begin{center}
-		\subfloat[Izvor podataka anketa ]{\label{fig:survey}
-			\includegraphics[height=9cm,keepaspectratio=true]{survey}}\\ 
-		%\hspace{10pt}
-		\subfloat[Izvor podataka \gls{cdr}]
-		{\label{fig:cdr}
-			\includegraphics[height=9cm,keepaspectratio=true]{cdr}}
-		\caption{Distribucija \acrshort{cdr} putovanja na podruèju Santiaga, Èile. \gls{pom} je normalizirana prema redovima (polazištima) (*) \cite{Graells-Garrido:2016.}}
-		\label{fig:diagonal}
-	\end{center}
-\end{figure}
 %Ruralna podruèja rjeðe zahtijevaju agregiranje æelija.
 
 %\todo[inline]{Ispitati:\\	- podijeliti u kategorièke vrijednosti:\\	- 0.2, 0.5, 1 km - što je previše, što je idealno, a što je premalo i opet ne valja  (prema literaturi ne valja manje od 75m, a idealno je 1 km)\\- Na temelju èega grupirati BS- klasteri? Na osnovu blizine? Na osnovu broja objekata u æeliji kod odreðivanja konteksta?	Aglomerative clustering bez zadanog broja k?\\	-Na temelju èega u konaènici zakljuèiti da premalo ne valja, gubi smisao?\\-Brzina kretanja}
 
 %(*) macro - meso - micro level ? César A. Segovia
 
-\begin{figure}[!htbp]
-	\begin{center}
-		\includegraphics[width=15cm,keepaspectratio=true]{Santiago_antenna_density}
-		\caption{Prostorna podjela na anketne jedinice u gradu Santiagu. Gustoæa tornjeva baznih stanica po anketnim jedinicama. Gustoæa varira od 1 do 250 tornjeva po anketnoj jedinici.
-			\cite{Graells-Garrido:2016.}}
-		\label{fig:density}
-	\end{center}
-\end{figure}
-
-\begin{figure}[!htbp]
-	\begin{center}
-		\includegraphics[width=8cm,keepaspectratio=true]{BS_density}
-		\caption{Gustoæa tornjeva baznih stanica po kvadratnom kilometru za pojedine države i grad-državu Singapur.
-			\cite{Chen:2018.}}
-		\label{fig:BS_density}
-	\end{center}
-\end{figure}
 
 
-\definition{Tematska rezolucija naèina kretanja je broj kategorija naèina kretanja po kojim je moguæe razvrstati putovanja}
+
+\definition{Tematska rezolucija naèina kretanja je broj kategorija naèina kretanja po kojim je moguæe razvrstati putovanja.}
 
 Primjer kategorija i njihovih tematskih rezolucija: 
 
-\begin{enumerate}
+\begin{itemize}
 	%\item home, work, other (3)
+	\item nadzemna željeznica (gradski javni prijevoz) (1) - izvor zapisi transakcija sustava Pametnih Kartica (engl. \textit{Smart Card}) za prijevoz \cite{Kuhlm:2015.}
+	\item taxi (1) - izvor zapisi GPS putanja taksi vozila
 	\item osobna vozila, kamioni, javni prijevoz (3)
-	\item podzemna željeznica (javni prijevoz) (1)
-	\item taxi/ komercijalna vozila (1)
+	\item auto, vlak, avion (3) - izvor CDR \cite{Teralytics:2017.}
 	\item pješaci, osobna vozila, vozila javnog prijevoza, kamioni (4)
-\end{enumerate}
+\end{itemize}
 
-
-
-\newpage
 
 \subsection{Zrnatost}
 
-\definition Zrnatost je stupanj do kojeg je sustav rastavljiv u manje dijelove, bilo sam sustav ili njegov opis ili opažanje - stupanj do kojeg je veæi entitet djeljiv.
+Zrnatost je stupanj do kojeg je sustav rastavljiv u manje dijelove, bilo sam sustav ili njegov opis ili opažanje - stupanj do kojeg je veæi entitet djeljiv.
 \cite{zrno:2019.}  
 %Zrnatost se koristi za karakterizaciju razmjera ili razine detalja. %Što je zrnatost veæa, viša je razina detalja. Zrnatost definira razinu detalja korištenu u modeliranju situacije.
 
@@ -345,19 +304,22 @@ Primjer kategorija i njihovih tematskih rezolucija:
 %Rezolucija se odnosi na kolièinu detalja u prikazu (stvarnosti) dok se zrnatost odnosi na spoznajni aspekt ukljuèen pri odabiru znaèajki \cite{Degbelo:2014.}. 
 %\textit{Pojam zrnate podjele (engl. granular partition) ukljuèuje ne samo karte (podatke) veæ kategorizaciju koja nadilazi mjerenja i obzervaciju i zalazi u podruèje konceptualnog modeliranja} \cite{Degbelo:2014.}.
 %%Zrnatost se povezuje s uèinkovitim odabirom onih aspekata našeg okruženja koji su najvjerojatnije relevantni za naš interes.
-Za razliku od rezolucije prema \cite{Degbelo:2014.}, zrnatost i toènost su neovisne. Odgovori na pitanje "Gdje se nalazite?" "U Hrvatskoj", "U Rijeci", "U svojoj kuæi" i "Za svojim stolom" svi toèni u smislu da govore 100\%-tnu istinu'.
+Za razliku od rezolucije prema \cite{Degbelo:2014.}, zrnatost i toènost su neovisne. Odgovori na pitanje "Gdje se nalazite?" "U Hrvatskoj", "U Rijeci", "U svojoj kuæi" i "Za svojim stolom" svaki je toèan u smislu da govori 100\%-tnu istinu'.
 
-Objekt u zoni je najmanja prostorno razluèiva jedinica kod procjene matrica koja ukljuèuje kontekstualizaciju.  %toka na temelju objekata u odredišnoj zoni (studija B \ref{rad}).
+Zrnatost postoji u prostoru i vremenu. Zrnatost se kao odnosni parametar kvalitete izražava kroz broj dijelova na koje je podruèje podijeljeno.
 
+\definition Prostorna zrnatost \gls{pom} je broj dijelova (zona) na podruèju od interesa. Išèitava se iz dimenzije \gls{pom}.\\
+
+Prostorna Zrnatost ovisit æe o prostornoj podjeli podruèja, gustoæi baznih stanica (Vidi sliku \ref{fig:BS_density}), stupnju agregacije zona i prostornoj rezoluciji.
+
+\definition Vremenska zrnatost je broj vremenskih okvira u jednom danu. Išèitava se iz broja \gls{pom} procijenjenih za vremensko razdoblje $ \mathcal{T} $ = 1 dan. 
+
+Kao kategorièka velièina, vremenska zrnatost sadrži kategorije definirane za vremenske okvire duljine trajanja (širine) djelitelja broja 24 u satima i 60 u minutama. Istaknute su one kategorije koje su zastupljene u literaturi. Vremenski okvir i pripadajuæa zrnatost:
 %Resolution refers to the amount of detail in a representation, while granularity refers to the cognitive aspects involved in selection of features.
 
 %The notion of granular partition (see for example [2]) includes not only maps (i.e. data), but also categorizations (which go beyond measurement and observation, and enter the realm of conceptual modelling).
 
 %it relates to the efficient selection of the aspects of our environment that are most likely to be relevant to our interests. 
-
-
-%Data granularity
-%The granularity of data refers to the fineness with which data fields are sub-divided. For example, a postal address can be recorded, with low granularity, as one field: address = 200 2nd Ave. South #358, St. Petersburg, FL 33701-4313 USA or with high granularity, as many fields: street address = 200 2nd Ave. South #358 city = St. Petersburg postal code = FL 33701-4313 country = USA
 
 %U praksi Teralytics procjenjuje \gls{pom}-e od 15 min, 1h i 1 dan.
 
@@ -378,25 +340,40 @@ Objekt u zoni je najmanja prostorno razluèiva jedinica kod procjene matrica koja
 %(...)\\
 %- morning peak
 
-
 %Objekt u zoni je najmanja prostorno razluèiva jedinica kod procjene matrica koja ukljuèuje kontekstualizaciju toka na temelju objekata u odredišnoj zoni (studija B \ref{rad}).
 
+	\begin{enumerate}
+	\item $< 15$ min ( $> 86$)
+	\item \textbf{15 min (86)} \cite{Bera:2011.}\cite{Espad:2013.} 
+	\item 20 min (72)
+	\item 30 min (48) \cite{Schneider:2013.} \\
+	\item \textbf{1 h (24)} \cite{Mellegard:2011.}\cite{Gundlegard:2016.}\cite{Teralytics:2017.}
+	\item 2 h (12)
+	\item \textbf{3 h (8)} \cite{Filic:2016.}\cite{Chen:2019.} 
+	\item 4 h (6)
+	\item 6 h (4)
+	\item \textbf{8 h (3)}
+	\item 12 h (2)
+	\item 24 h (1) \cite{Teralytics:2017.}
+\end{enumerate}
 
-\subsection{Gustoæa informacija}
+Najveæa Vremenska Zrnatost koju je moguæe postiæi procjenom \gls{pom} ovisit æe o vremenskoj rezoluciji u kojoj postoje podaci za procjenu.
 
-0 æelije?!
-Skaliranje 0*x $->$ 0 
-(...)\\
--Informacija na razini putovanja \\
--Informacija na razini toka (postotka toka) - metoda koja se oslanja na vanjske izvore konteksta može se primijeniti na matrice iz razlièitih izvora podataka.\\
-- nemam implementaciju funkcija s kampa za kontekstualizaciju objekata i tokova, imam za izvlaèenje objekata iz voronoi æelija\\
-%Informacija na razini cijele matrice \\(...)
-Što je gušæe opisan prostor u æeliji to je moguæe ostvariti bolju rezoluciju
+\definition Tematska zrnatost je %najmanja
+ prostorno razluèiva jedinica koja ima tematsku rezoluciju.
 
-%\todo[inline]{Ispitati:\\}
+\begin{enumerate}
+	\item zona
+	\item objekt \cite{Barbour:2019.}
+	\item tok %\cite{Stupar:2018.}
+	\item putovanje
+\end{enumerate}
 
-intervening opportunities
-\cite{Noulas:2011.}
+Objekt u zoni je najmanja prostorno razluèiva jedinica kod procjene matrica koja ukljuèuje kontekstualizaciju toka na temelju objekata u odredišnoj zoni (studija B \ref{rad}).
+
+*kontekstualizacija-  objekt u zoni ?!\\
+* neuniformnost prostorne podjele
+*Tematska zrnatost$->$ prostorna zrnatost?!\\
 
 \subsection{Putovanje kao parametar}
 \label{trip_def}
@@ -475,7 +452,24 @@ Najveæa je bila zastupljenost kratkih putovanja. \cite{Gundlegard:2016.} Distrib
 \subsubsection{Kontekstualizacija}
 -interna putovanja izmeðu objekata - možemo ih samo pretpostaviti?!
 
-\subsection{Širina toka}-samo tok?!
+\subsection{Gustoæa informacija}
+
+0 æelije?!
+Skaliranje 0*x $->$ 0 
+(...)\\
+%-Informacija na razini putovanja \\
+%-Informacija na razini toka (postotka toka) - metoda koja se oslanja na vanjske izvore konteksta može se primijeniti na matrice iz razlièitih izvora podataka.\\
+%- nemam implementaciju funkcija s kampa za kontekstualizaciju objekata i tokova, imam za izvlaèenje objekata iz voronoi æelija\\
+%Informacija na razini cijele matrice \\(...)
+Što je gušæe opisan prostor u æeliji to je moguæe ostvariti bolju rezoluciju?
+
+%\todo[inline]{Ispitati:\\}
+
+%intervening opportunities
+\cite{Noulas:2011.}
+
+
+\subsection{Širina toka}
 %- dakako za pojedinu matricu ovisi o prostornoj i vremenskoj rezoluciji \\
 %- najviše ipak vjerojatno ovisi o definiciji putovanja\\
 \begin{definition}
@@ -531,3 +525,20 @@ Kao što je veæ spomenuto u potpoglavlju \ref{sredstva}, \gls{pom}-e kreirane iz 
 %\todo[inline]{Ispitati:\\	- kako sve prethodno utjeèe na širinu toka/konaèan broj putovanja?!\\	- kontekstualizacija na osnovu analize više dana ( tjedan - 3 mjeseca)	pomaže da se rekonstruiraju putanje, nema potrebe za odbacivanjem velikog broja}
 
 
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=15cm,keepaspectratio=true]{Santiago_antenna_density}
+		\caption{Prostorna podjela na anketne jedinice u gradu Santiagu. Gustoæa tornjeva baznih stanica po anketnim jedinicama. Gustoæa varira od 1 do 250 tornjeva po anketnoj jedinici.
+			\cite{Graells-Garrido:2016.}}
+		\label{fig:density}
+	\end{center}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=8cm,keepaspectratio=true]{BS_density}
+		\caption{Gustoæa tornjeva baznih stanica po kvadratnom kilometru za pojedine države i grad-državu Singapur.
+			\cite{Chen:2018.}}
+		\label{fig:BS_density}
+	\end{center}
+\end{figure}

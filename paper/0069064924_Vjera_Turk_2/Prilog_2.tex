@@ -5,9 +5,21 @@
 Ako je toènost matrice definirana iskljuèivo kao sliènost svakog njenog elementa s ekvivalentnim u elementom u \textit{grand truth} matrici nužno je osigurati da prostorna podjela matrice odgovara prostornoj podjeli referentne ili je potrebno obje matrice svesti na zajednièku prostornu podjelu. 
 
 \section{Agregacija baznih stanica}
-Pregledom literature utvrðeno je da se koriste \textit{k-sredina} i \textit{mean-shift} algoritam za grupiranje baznih stanica u broj grupa jednak broju \gls{taz} na podruèju o interesa \cite{Goulding:2016.} \cite{Alhazzani:2016.} \cite{Mellegard:2011.} ili pak jedinicama samouprave (eng. \textit{municipalities}) kako bi  \gls{pom}-e u konaènici bile usporedive s postojeæima, dobivenim iz anketa \cite{Coscia:2015.} \cite{Frias-Martinez:2012.}. Nije utvrðivano kolika se greška uvodi ovim postupcima.
+Pregledom literature utvrðeno je da se koriste \textit{k-sredina} i \textit{mean-shift} algoritam za grupiranje baznih stanica u broj grupa jednak broju \gls{taz} na podruèju o interesa \cite{Goulding:2016.} \cite{Alhazzani:2016.} \cite{Mellegard:2011.} ili pak jedinicama samouprave (eng. \textit{municipalities}) kako bi  \gls{pom}-e u konaènici bile usporedive s postojeæima, dobivenim iz anketa \cite{Coscia:2015.} \cite{Frias-Martinez:2012.}. Nije utvrðivano kolika se greška uvodi ovim postupcima. Primjer gustoæe tornjeva baznih stanica na podruèjima anketnih jedinica prikazan je na slici \ref{fig:density}
 %\cite{Mellegard:2011.} ne definira unaprijed broj grupa veæ za grupaciju koristi \textit{mean-shift} algoritam koji sam odreðuje broj grupa na podruèju Švedske, potom koristeæi \gls{osm} grupe veže uz imena gradova i mjesta. 
 %U istraživanju \cite{Coscia:2015.} bazne stanice na podruèju Kolumbije grupiraju po jedinicama samouprave (eng. \textit{municipalities}). Isti postupak je korišten i u istraživanju na podruèju Madrida, kako bi  \gls{pom}-e u konaènici bile usporedive s onima dobivenim iz anketa \cite{Frias-Martinez:2012.}.
+
+\begin{figure}[!htbp]
+	
+	\begin{center}
+		\includegraphics[width=15cm,keepaspectratio=true]{Santiago_antenna_density}
+		\caption{Prostorna podjela na anketne jedinice u gradu Santiagu. Gustoæa tornjeva baznih stanica po anketnim jedinicama. Gustoæa varira od 1 do 250 tornjeva po anketnoj jedinici.
+			\cite{Graells-Garrido:2016.}}
+		\label{fig:density}
+	\end{center}
+\end{figure}
+
+
 \section{Interpolacija}
 \label{interpol}
 Postupak konverzije \gls{pom}-a iz prostorne podjele na Voronoi æelije u drugu prostornu podjelu, npr. uniformnu kvadratnu mrežu (æelije $1 km^2$), opisan u priruèniku \cite{Goulding:2016.}. U postupku odreðivanja postotka ukupnog toka Voronoi æelije koji æe se dodijeliti novoj kvadratnoj æeliji predlaže se uzeti u obzir: površinu preklapanja tih æelija, broj zgrada ili ukupnu površinu zgrada (ukljuèujuæi katove) na podruèju preklapanja tih æelija. 

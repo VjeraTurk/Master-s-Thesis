@@ -130,7 +130,7 @@ Rad nastoji tezu potkrijepiti opisom metodologije za vrednovanje matrica prema n
 
 
 %moj pogled na validaciju pom
-Vrednovanje \gls{pom}-e je proces koji ima za cilj procjenu obilježja kvalitete \gls{pom}-e i znaèi identifikaciju obilježja kvalitete \gls{pom}-e, njenog sadržaja, njene smislenosti, a izražava se slijedeæim  indikatorima: prostorno obuhvaæanje, prostorna rezolucija, vremenska rezolucija, tematska rezolucija ...%, zrnatosti (?), definicija putovanja, prostorna rezolucija, vremenska rezolucija, širina toka i gustoæa informacija.}
+Vrednovanje \gls{pom}-e je proces koji ima za cilj procjenu obilježja kvalitete \gls{pom}-e i znaèi identifikaciju obilježja kvalitete \gls{pom}-e, njenog sadržaja, njene smislenosti, a izražava se slijedeæim  indikatorima: prostorno obuhvaæanje, rezolucija (prostorna , vremenska i tematska), zrnatost  (prostorna , vremenska i tematska),  putovanje kao parametar, gustoæa informacija i širina toka.%, zrnatosti (?), definicija putovanja, prostorna rezolucija, vremenska rezolucija, širina toka i gustoæa informacija.}
 
 
 %ažurnost?!
@@ -306,7 +306,8 @@ Zrnatost je stupanj do kojeg je sustav rastavljiv u manje dijelove, bilo sam sus
 %%Zrnatost se povezuje s uèinkovitim odabirom onih aspekata našeg okruženja koji su najvjerojatnije relevantni za naš interes.
 Za razliku od rezolucije prema \cite{Degbelo:2014.}, zrnatost i toènost su neovisne. Odgovori na pitanje "Gdje se nalazite?" "U Hrvatskoj", "U Rijeci", "U svojoj kuæi" i "Za svojim stolom" svaki je toèan u smislu da govori 100\%-tnu istinu'.
 
-Zrnatost postoji u prostoru i vremenu. Zrnatost se kao odnosni parametar kvalitete izražava kroz broj dijelova na koje je podruèje podijeljeno.
+%Zrnatost postoji u prostoru i vremenu. 
+Prostorna zrnatost se kao odnosni parametar kvalitete izražava kroz broj dijelova na koje je podruèje podijeljeno.
 
 \definition Prostorna zrnatost \gls{pom} je broj dijelova (zona) na podruèju od interesa. Išèitava se iz dimenzije \gls{pom}.\\
 
@@ -314,7 +315,8 @@ Prostorna Zrnatost ovisit æe o prostornoj podjeli podruèja, gustoæi baznih stani
 
 \definition Vremenska zrnatost je broj vremenskih okvira u jednom danu. Išèitava se iz broja \gls{pom} procijenjenih za vremensko razdoblje $ \mathcal{T} $ = 1 dan. 
 
-Kao kategorièka velièina, vremenska zrnatost sadrži kategorije definirane za vremenske okvire duljine trajanja (širine) djelitelja broja 24 u satima i 60 u minutama. Istaknute su one kategorije koje su zastupljene u literaturi. Vremenski okvir i pripadajuæa zrnatost:
+%Kao kategorièka velièina, vremenska zrnatost sadrži kategorije definirane za vremenske okvire duljine trajanja (širine) djelitelja broja 24 u satima i 60 u minutama. 
+Istaknute su one kategorije koje su zastupljene u literaturi. Vremenski okvir i pripadajuæa zrnatost:
 %Resolution refers to the amount of detail in a representation, while granularity refers to the cognitive aspects involved in selection of features.
 
 %The notion of granular partition (see for example [2]) includes not only maps (i.e. data), but also categorizations (which go beyond measurement and observation, and enter the realm of conceptual modelling).
@@ -359,25 +361,25 @@ Kao kategorièka velièina, vremenska zrnatost sadrži kategorije definirane za vre
 
 Najveæa Vremenska Zrnatost koju je moguæe postiæi procjenom \gls{pom} ovisit æe o vremenskoj rezoluciji u kojoj postoje podaci za procjenu.
 
-\definition Tematska zrnatost je %najmanja
- prostorno razluèiva jedinica koja ima tematsku rezoluciju.
+\definition Tematska zrnatost je najmanja prostorno 
+ razluèiva jedinica koja ima tematsku rezoluciju.
 
 \begin{enumerate}
 	\item zona
-	\item objekt \cite{Barbour:2019.}
-	\item tok %\cite{Stupar:2018.}
-	\item putovanje
+	\item objekt \cite{Barbour:2019.} \cite{Stupar:2018.}
+%	\item tok \cite{Stupar:2018.}
+%	\item putovanje
 \end{enumerate}
 
 Objekt u zoni je najmanja prostorno razluèiva jedinica kod procjene matrica koja ukljuèuje kontekstualizaciju toka na temelju objekata u odredišnoj zoni (studija B \ref{rad}).
 
-*kontekstualizacija-  objekt u zoni ?!\\
-* neuniformnost prostorne podjele
-*Tematska zrnatost$->$ prostorna zrnatost?!\\
+%*kontekstualizacija-  objekt u zoni ?!\\
+%* neuniformnost prostorne podjele
+%*Tematska zrnatost$->$ prostorna zrnatost?!\\
 
 \subsection{Putovanje kao parametar}
 \label{trip_def}
-Putovanja koja se protežu kroz više perioda dodjeljuju se vremenskom okviru u kojem zapoèinju ili u kojem završavaju. Autori \cite{Bera:2011.} \cite{Filic:2016.} \cite{Gundlegard:2016.} sva putovanja dodjeljuju intervalu u kojem je putovanje zapoèeto ili procjenjuje obje vrste \gls{pom}-a \cite{Teralytics:2017.}. 
+Putovanja koja se protežu kroz više perioda u pravilu se dodjeljuju vremenskom okviru u kojem zapoèinju ili u kojem završavaju. Autori \cite{Bera:2011.} \cite{Filic:2016.} \cite{Gundlegard:2016.} sva putovanja dodjeljuju intervalu u kojem je putovanje zapoèeto, dok neki procjenjuje obje vrste \gls{pom}-a \cite{Teralytics:2017.}. Naredni odjeljci ne daju definiciju putovanja kao parametra veæ samo istièu problematiku koja se javlja kod definicije putovanja opæenito. 
 
 %Moguæe izbaciti putovanja koja ne poènu i završe u istom periodu, te promatrati samo ona èiji su poèetak i kraj u istom periodu. - Mia spomenula da su oni prvo tako
 
@@ -396,11 +398,19 @@ Putovanja koja se protežu kroz više perioda dodjeljuju se vremenskom okviru u ko
 \end{enumerate}
 \end{comment}
 
-Putovanja kod vremenski zavisnih \gls{pom}-a kreiranih iz \gls{cdr} moguæe je svrstati u nekoliko kategorija na osnovu prihvaæanja ili odbacivanja odreðenih kretanja kao putovanja.\\\\
+\subsubsection{Ogranièenja na putovanja iz istog izvora podataka - \glsfirst{cdr}}
+
+Putovanja kod vremenski zavisnih \gls{pom}-a kreiranih iz \gls{cdr} moguæe je svrstati u nekoliko kategorija na osnovu prihvaæanja ili odbacivanja odreðenih kretanja kao putovanja.
+Putovanjima se ne smije obuhvatiti lažno kretanje uzrokovano uravnoteženjem optereæenja i lažno zaustavljanje uzrokovano neuniformnom gustoæom zapisa pojedinaca u vremenu, što razlièiti autori nastoje postiæi postavljanjem navedenih ogranièenja:
+
 \begin{enumerate}
 	\item \label{itm:cat_1}putovanja u sve æelije, bez internih putovanja (bez dijagonale)
-	\item \label{itm:cat_2}putovanja u sve æelije osim u susjedne
+	\item \label{itm:cat_2}putovanja u sve æelije osim u susjedne %*slika
 	\item \label{itm:cat_3}agregacija susjednih æelija - \gls{pom}-e s internim putovanjima\\
+	
+	\begin{definition}{Interno putovanje}\label{inter} je svako putovanje koje se odvija unutar jedne zone, odnosno èije se polazište i odredište nalaze unutar iste prostorne zone.  Suprotno internom je eksterno putovanje.
+	\end{definition}
+	
 	\item \label{itm:cat_4}putovanja ogranièena minimalnom i/ili maksimalnom udaljenosti \cite{Graells-Garrido:2016.}
 	\item \label{itm:cat_5} putovanja ogranièena minimalnom duljinom trajanja zaustavljanja 
 	\item \label{itm:cat_6} putovanja ogranièena minimalnom i/ili maksimalnom duljinom trajanja kretanja
@@ -409,10 +419,10 @@ Putovanja kod vremenski zavisnih \gls{pom}-a kreiranih iz \gls{cdr} moguæe je sv
 
 %\textbf{Glavni razlog svih ogranièenja kod definicije putovanja je izbjeæi bilježenje lažnog kretanja uzrokovanog uravnoteženjem optereæenja mreže i lažnog zaustavljanja uzrokovanog neuniformnom gustoæom zapisa pojedinca u vremenu}.
 
-\textbf{Iskazivanje putovanja kao parametra ne smije obuhvatiti lažno kretanje uzrokovano uravnoteženjem optereæenja i lažnog zaustavljanja uzrokovanog neuniformnom gustoæom zapisa pojedinaca u vremenu, što se postiže postavljanjem navedenih ogranièenja.}
+
 
 %U istraživanju iz 2016. kod definiranja putovanja iz \gls{cdr} eliminirani su zapisi onih korisnika koju su radili dulja "neprekidna putovanja" od preko 100 km dnevno (kategorija 4) pod napomenom da se radi o taksistima i sl. te da ih neæe uzeti u obzir \cite{Graells-Garrido:2016.}.  
-Za 2 razlièite definicije putovanja, za \gls{pom}-e iz identiènih podataka na podruèju Senegala generirano je 0.7 putovanja dnevno po korisniku u jednom, a 0.06 u drugom. Ogranièenja su bila: vremensko na 1 sat minimalnog trajanja (kategorija \ref{itm:cat_6}) i prostorno na udaljenost od barem 5 udaljenosti baznih stanica (kategorija \ref{itm:cat_4}). 
+Za 2 razlièite definicije putovanja, za \gls{pom}-e iz identiènih podataka na podruèju Senegala generirano je u prosjeku 0.7 putovanja dnevno po korisniku u jednom, a 0.06 u drugom. Ogranièenja su bila: minimalna udaljenost 3 km, maksimalna 100 km \ref{itm:cat_4} u prvom i vremensko na 1 sat minimalnog trajanja (kategorija \ref{itm:cat_6}) i prostorno na udaljenost od barem 5 udaljenosti baznih stanica (kategorija \ref{itm:cat_4}). 
 Najveæa je bila zastupljenost kratkih putovanja. \cite{Gundlegard:2016.} Distribuciju možemo vidjeti na slici \ref{fig:trip_distance_distribution}
 %\textit{Commuting} putovanja takoðer mogu biti pod nekim ogranièenjima, osim što su najèešæe veæ ogranièena vremenskim periodom u kojem se odvijaju. Primjerice 
 %\cite{Gundlegard:2016.} definira minimalnu udaljenost od 3 km izmeðu prebivališta i mjesta rada (kategorija 4) i izvan susjednih æelija (kategorija 2).
@@ -420,12 +430,12 @@ Najveæa je bila zastupljenost kratkih putovanja. \cite{Gundlegard:2016.} Distrib
 \begin{figure}[!htbp]
 	\begin{center}
 		\includegraphics[width=11cm,keepaspectratio=true]{trip_distance_distribution}
-		\caption{Distribucija udaljenosti putovanja u kilometrima, Senegal 2016. \cite{Gundlegard:2016.}}
+		\caption{Distribucija udaljenosti putovanja u kilometrima, Senegal 2016. \cite{Gundlegard:2016.}. U studiji su izbaèena putovanja kraæa od $3km$ (prostorna rezolucija $>3 km$)}
 		\label{fig:trip_distance_distribution}
 	\end{center}
 \end{figure}
 
-\textbf{O definiciji putovanja ovisit æe njihov konaèan broj, odnosno širina toka.}\\
+\textbf{O ogranièenjima na putovanja ovisit æe njihov konaèan broj, odnosno širina toka.}\\
 
 
 %\todo[inline]{Ispitati:\\	- koliki se postotak putovanja gubi izbacivanjem putovanja u susjedne æelije?!\\ $\rightarrow$ ovisit æe o velièini æelija\\- koliki se postotak putovanja gubi izbacivanjem putovanja koja prelaze iz perioda u period?!$\rightarrow$ ovisit æe o velièini perioda\\ - u demonstraciji ovisit æe o simulaciji}
@@ -445,28 +455,50 @@ Najveæa je bila zastupljenost kratkih putovanja. \cite{Gundlegard:2016.} Distrib
 	
 \end{figure}
 
-\begin{definition}{Interno putovanje}\label{inter} je svako putovanje koje se odvija unutar jedne zone, odnosno èije se polazište i odredište nalaze unutar iste prostorne zone.  Suprotno internom je eksterno putovanje.
-\end{definition}
-
-
 \subsubsection{Kontekstualizacija}
--interna putovanja izmeðu objekata - možemo ih samo pretpostaviti?!
+
+Komutacijska putovanja (engl.\textit{commuting trips)}, odnosno putovanja na posao i putovanja kuæi znaèajna su po tome što su regularna - slijede dnevni ritam  \cite{Schneider:2013.}, što ih èini predvidivima \cite{Goulding:2016.}. Goulding u svom priruèniku za kreiranje \gls{pom} iz \gls{cdr} istièe da je važno definirati što se smatra putovanjem - zastane li netko na benzinskoj crpki na putu s posla kuæi, je li rijeè o jednom putovanju ili dva? Prihvaæanjem svakog zaustavljanja kao svojevrsnog \textit{kraja tranzicije} (primjerice ukidanjem ogranièenja \ref{itm:cat_5}) te prebrojavanjem tranzicija dobiva se tranzitna \gls{pom} (ranije spomenuta u \ref{tranzit}). Tranzitna \gls{pom} uopæe neæe opisivati kretanja izmeðu polazišta i odredišta \textit{u suštini} \cite{Goulding:2016.}.
+
+Ako nije poznat kontekst putovanja, nastoji se prema duljini zaustavljanja odrediti je li neko zaustavljanje doista kraj putovanja \cite{Goulding:2016.}. Poznavanjem konteksta putovanja, objekata u neposrednoj blizini zaustavljanja, omoguæuje da ne temeljimo kraj putovanja iskljuèivo na osnovu duljine trajanja zaustavljanja veæ da se u obzir uzme svrha zaustavljanja.
+
+Prednost suvremenih izvora podataka s višednevnim ili višemjeseènim vremenom promatranja je uoèavanje obrazaca i repetativnosti putovanja na dnevnoj ili tjednoj bazi \cite{Chen:2019.}. Poznavanje tipiènog kretanja pojedinca u to vrijeme omoguæuje se rekonstrukcija putovanja u onom periodu kada podaci nedostaju. Chen sva putovanja jednog pojedinca u prošlosti i buduænosti od promatranog putovanja naziva upravo \textit{kontekstom} u metodlogiji opisanoj u radu \cite{Chen:2019.}.
+
+Mjera koja bi govorila o kvaliteti odabrane definicije putovanja prema razmotrenoj problematici mogla bi biti omjer tranzitnih i ne-tranzitnih putovanja (putovanja sa svrhom)  zabilježenih u \gls{pom}, no kako izostaje konvencionalni dogovor oko definicije putovanja i tranzicije ova mjera nije obuhvaæena ovim radom.
+
+%Kontekst putovanja  
+%-Zaustavljanje sa svrhom, 
+%-putovanja sagledana kroz ponavljanje \\
+
+%...\\
+%
+ \todo[inline]{-Kontekstualizacija i interna putovanja- 
+ 	* kontekstualizacija donosi da znamo interna kretanja/ putovanja izmeðu objekata}
 
 \subsection{Gustoæa informacija}
 
-0 æelije?!
-Skaliranje 0*x $->$ 0 
-(...)\\
+\definition{Gustoæa informacija} je omjer Nul-æelija i ispunjenih æelija u \gls{pom}-i.
+
+
+\gls{pom}-e dobivene iz anketa u kuæanstvima i  iz \gls{rsi} rijetko su popunjene, %pogotovo kod visoke vremenske i prostorne rezolucije,
+odnosno veæinski su ispunjene Nul-æelijama (eng. \textit{Null-cells, Zero-cells}) \cite{Cools:2010.}.
+% Cools \cite{Cools:2010.} zasebno analizira \gls{pom}-a sa i bez takvih æelija jer je od 589 $\times$ 589 æelija, èak 77.8\% njih bilo Nul-æelija. 
+%Ista situacija je s \gls{pom}-ma kreiranim iz \gls{rsi}, dok æe 
+\gls{pom}-e kreirane iz GPS ili \gls{cdr} zapisa gusto su ispunjene, najèešæe vrlo malim vrijednostima umjesto nula \cite{Vuren:2015.}. 
+
+\gls{pom} izraðene iz reprezentativnih uzoraka nakon procjene se skaliraju da bi obuhvatile cijelu populaciju. Skaliranje nije obuhvaæeno ovim radom. Skaliranje ukljuèuje množenje faktorom, a u tom sluèaju Nul-æelija zapravo ne mijenja vrijednost.
+
+Dva su uzroka praznim poljima, nepostojanje putovanja izmeðu tih parova zona ili su postupkom procjene putovanja nezabilježena. 
+%0 æelije?!
+%Skaliranje 0*x $->$ 0 
 %-Informacija na razini putovanja \\
 %-Informacija na razini toka (postotka toka) - metoda koja se oslanja na vanjske izvore konteksta može se primijeniti na matrice iz razlièitih izvora podataka.\\
 %- nemam implementaciju funkcija s kampa za kontekstualizaciju objekata i tokova, imam za izvlaèenje objekata iz voronoi æelija\\
 %Informacija na razini cijele matrice \\(...)
-Što je gušæe opisan prostor u æeliji to je moguæe ostvariti bolju rezoluciju?
-
 %\todo[inline]{Ispitati:\\}
-
 %intervening opportunities
-\cite{Noulas:2011.}
+%\cite{Noulas:2011.}
+
+%\todo[inline]{* Što je gušæe opisan prostor u æeliji to je moguæe ostvariti bolju rezoluciju?}
 
 
 \subsection{Širina toka}
@@ -487,11 +519,9 @@ Calabrese \cite{Calabrese:2011.} uzima samo sluèajno odabranih 25\% korisnika (n
 Slabo obuhvaæanje krajnjih dobnih skupina zbog slabe zastupljenosti mobilnih ureðaja kod najstarije i najmlaðe dobne skupine ne tumaèi se kao pristranost, uz napomenu da su to ujedno skupine sa generalno slabom mobilnosti u odnosu na ostale opæenito. \cite{Bonnel:2015.}. %Studija \cite{Goulding:2016.} istièe da usluge razlièitim demografskim skupinama, a najèešæe su izuzetak skupine slabijeg socio-ekonomskog stanja. 
 Kod tržišta gdje veliki postotak stanovništva posjeduje mobilni ureðaj (npr. 92\% za urbana podruèja Tanzanije) eventualno postojanje pristranosti može se smatrati zanemarivim  \cite{Goulding:2016.}.
 
-\gls{pom}-e dobivene iz anketa u kuæanstvima i  iz \gls{rsi} rijetko su popunjene, %pogotovo kod visoke vremenske i prostorne rezolucije,
-odnosno veæinski su ispunjene Nul-æelijama (eng. \textit{Null-cells, Zero-cells}) \cite{Cools:2010.}.
 % Cools \cite{Cools:2010.} zasebno analizira \gls{pom}-a sa i bez takvih æelija jer je od 589 $\times$ 589 æelija, èak 77.8\% njih bilo Nul-æelija. 
 %Ista situacija je s \gls{pom}-ma kreiranim iz \gls{rsi}, dok æe 
-\gls{pom}-e kreirane iz GPS ili \gls{cdr} zapisa gusto su ispunjene, najèešæe vrlo malim vrijednostima umjesto nula \cite{Vuren:2015.}.
+%\gls{pom}-e kreirane iz GPS ili \gls{cdr} zapisa gusto su ispunjene, najèešæe vrlo malim vrijednostima umjesto nula \cite{Vuren:2015.}.
 
 Broj aktivnih korisnika, a posljedièno i širina toka, znaèajno varira iz dana u dan unutar tjedna \cite{Bonnel:2015.} \cite{Graells-Garrido:2016.}.
 

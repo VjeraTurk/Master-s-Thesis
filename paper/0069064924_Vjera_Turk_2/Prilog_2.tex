@@ -27,20 +27,17 @@ Na slici \ref{fig:interpolation} je prikazan treæi oblik interpolacije gdje su k
 
 \begin{figure}[!htbp]
 	\begin{center}
-		\includegraphics[width=7cm,keepaspectratio=true]{interpolation}
-		\caption{Primjer mozaika \textit{krhotina} koje dozvoljavaju interpolaciju izmeðu Voronoi æelija i kvadratne mreže. Nijansa odražava postotak površine zgrada u \textit{krhotini} u odnosu na cijelu Voronoi æeliju kojoj pripada. Rezultat se dobiva na osnovu tih \textit{težinskih faktora} polazišne i odredišne \textit{krhotine} te pripadajuæih ("roditeljskih") Vornoi æelija. Sumom svih rezultata krhotina jedne kvadratne æelije izraèuna se konaèni tok. \cite{Goulding:2016.}}
+		\includegraphics[width=6.5cm,keepaspectratio=true]{interpolation}
+		\caption{Primjer mozaika \textit{krhotina} za interpolaciju izmeðu Voronoi æelija i kvadratne mreže. Nijansa odražava postotak površine zgrada u \textit{krhotini} u odnosu na cijelu Voronoi æeliju kojoj pripada. Rezultat se dobiva na osnovu tih \textit{težinskih faktora} polazišne i odredišne \textit{krhotine} te pripadajuæih ("roditeljskih") Vornoi æelija. Sumom svih rezultata krhotina jedne kvadratne æelije izraèuna se konaèni tok. \cite{Goulding:2016.}}
 		\label{fig:interpolation}
 	\end{center}
 \end{figure}
 
 \section{Posljedice agregacije prostornih æelija}
 
-Voronoi æelije takoðer je moguæe ugnijezditi (što se èesto radi kod usporedbe s \gls{pom}-ma dobivenim drugim postupkom), a pritom se može u matricu bilježiti i aproksimacija internog toka, odnosno broja putovanja unutar nove æelije (dijagonala matrice). Takva putovanja nazivaju se internim putovanjima.  
-
-Na temelju usporedbi \gls{pom}-a dobivenih iz \gls{cdr} i iz anketa u 4 razlièita grada,% gdje je svaki grad u anketnim \gls{pom}-ma imao svoju prostornu podjelu odnosno rezoluciju, 
- studija \cite{Toole:2015.} je pokazala da sa \textbf{smanjenjem rezolucije (visokim stupnjem agregacije Voronoi æelija) stupanj korelacije s \gls{pom}-ma iz ankete (za isti grad) raste}. 
-No postotak eksternih putovanja koji se gubi u procesu agregacije Voronoi æelija analiziran je u studijama \cite{Graells-Garrido:2016.} (Vidi sliku \ref{fig:diagonal}) i \cite{Bahoken:2013.}. za \gls{pom}-e iz regije Picardie u Francuskoj.
-\textbf{Agregacijom Voronoi æelija na razinu \textit{Urban Areas} (podruèja oko gradova) 85\% svih putovanja postaje internim putovanjima, a na razini \textit{Urban Cores} (podruèja oko veæih gradova) èak 97\% poèetno zabilježenih putovanja je interno, te ostaje samo 3\% eksternih putovanja}. \cite{Bahoken:2013.}.
+Voronoi æelije takoðer je moguæe ugnijezditi (što se èesto radi kod usporedbe s \gls{pom}-ma dobivenim drugim postupkom), a pritom se može u matricu bilježiti i aproksimacija internog toka, odnosno broja putovanja unutar nove æelije (dijagonala matrice). Takva putovanja nazivaju se internim putovanjima. Studija \cite{Toole:2015.} je pokazala da sa \textbf{smanjenjem rezolucije (visokim stupnjem agregacije Voronoi æelija) stupanj korelacije s \gls{pom}-ma iz ankete (za isti grad) raste} (\gls{pom}-e dobivene iz \gls{cdr} i iz anketa u 4 razlièita grada). 
+Postotak eksternih putovanja koji se gubi u procesu agregacije Voronoi æelija analiziran je u studijama \cite{Graells-Garrido:2016.} (Vidi sliku \ref{fig:diagonal}) i \cite{Bahoken:2013.} za \gls{pom}-e iz regije Picardie u Francuskoj.
+\textbf{Agregacijom Voronoi æelija na razinu \textit{Urban Areas} (podruèja oko gradova) 85\% svih putovanja postaje internim putovanjima, a na razini \textit{Urban Cores} (podruèja oko veæih gradova) èak 97\% poèetno zabilježenih putovanja je interno, te ostaje samo 3\% eksternih putovanja} \cite{Bahoken:2013.}.
 
 \begin{figure}[!htpb]
 	\begin{center}

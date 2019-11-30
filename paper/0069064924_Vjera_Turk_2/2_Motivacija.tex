@@ -459,7 +459,7 @@ Najveæa je bila zastupljenost kratkih putovanja. \cite{Gundlegard:2016.} Distrib
 
 \subsubsection{Kontekstualizacija}
 
-Komutacijska putovanja (engl.\textit{commuting trips)}, odnosno putovanja na posao i putovanja kuæi znaèajna su po tome što su regularna - slijede dnevni ritam  \cite{Schneider:2013.}, što ih èini predvidivima \cite{Goulding:2016.}. Goulding u svom priruèniku za kreiranje \gls{pom} iz \gls{cdr} istièe da je važno definirati što se smatra putovanjem - zastane li netko na benzinskoj crpki na putu s posla kuæi, je li rijeè o jednom putovanju ili dva? Prihvaæanjem svakog zaustavljanja kao svojevrsnog \textit{kraja tranzicije} (primjerice ukidanjem ogranièenja \ref{itm:cat_5}) te prebrojavanjem tranzicija dobiva se tranzitna \gls{pom} (ranije spomenuta u \ref{tranzit}). Tranzitna \gls{pom} uopæe neæe opisivati kretanja izmeðu polazišta i odredišta \textit{u suštini} \cite{Goulding:2016.}.
+Komutacijska putovanja (engl.\textit{commuting trips)}, odnosno putovanja na posao i putovanja kuæi znaèajna su po tome što su regularna - slijede dnevni ritam  \cite{Schneider:2013.}, što ih èini predvidivima \cite{Goulding:2016.}. Goulding u svom priruèniku za kreiranje \gls{pom} iz \gls{cdr} istièe da je važno definirati što se smatra putovanjem - zastane li netko na benzinskoj crpki na putu s posla kuæi, je li rijeè o jednom putovanju ili dva? Prihvaæanjem svakog zaustavljanja kao svojevrsnog \textit{kraja tranzicije} (primjerice ukidanjem ogranièenja \ref{itm:cat_5}) te prebrojavanjem tranzicija dobiva se tranzitna \gls{pom} (spomenuta u \ref{tranzit}). Tranzitna \gls{pom} uopæe neæe opisivati kretanja izmeðu polazišta i odredišta \textit{u suštini} \cite{Goulding:2016.}.
 
 Ako nije poznat kontekst putovanja, nastoji se prema duljini zaustavljanja odrediti je li neko zaustavljanje doista kraj putovanja \cite{Goulding:2016.}. Poznavanjem konteksta putovanja, objekata u neposrednoj blizini zaustavljanja, omoguæuje da ne temeljimo kraj putovanja iskljuèivo na osnovu duljine trajanja zaustavljanja veæ da se u obzir uzme svrha zaustavljanja.
 
@@ -485,9 +485,7 @@ Mjera koja bi govorila o kvaliteti odabrane definicije putovanja prema razmotren
 odnosno veæinski su ispunjene Nul-æelijama (eng. \textit{Null-cells, Zero-cells}) \cite{Cools:2010.}.
 % Cools \cite{Cools:2010.} zasebno analizira \gls{pom}-a sa i bez takvih æelija jer je od 589 $\times$ 589 æelija, èak 77.8\% njih bilo Nul-æelija. 
 %Ista situacija je s \gls{pom}-ma kreiranim iz \gls{rsi}, dok æe 
-\gls{pom}-e kreirane iz GPS ili \gls{cdr} zapisa gusto su ispunjene, najèešæe vrlo malim vrijednostima umjesto nula \cite{Vuren:2015.}. 
-
-\gls{pom} izraðene iz reprezentativnih uzoraka nakon procjene se skaliraju da bi obuhvatile cijelu populaciju. Skaliranje nije obuhvaæeno ovim radom. Skaliranje ukljuèuje množenje faktorom, a u tom sluèaju Nul-æelija zapravo ne mijenja vrijednost.
+\gls{pom}-e kreirane iz GPS ili \gls{cdr} zapisa gusto su ispunjene, najèešæe vrlo malim vrijednostima umjesto nula \cite{Vuren:2015.}. \gls{pom} izraðene iz uzoraka nakon procjene se skaliraju da bi obuhvatile cijelu populaciju. Postupci skaliranja nisu obuhvaæeni ovim radom. Skaliranje ukljuèuje množenje \gls{pom}-e odreðenim faktorom, a u tom sluèaju Nul-æelija zapravo ne mijenja vrijednost.
 
 Dva su uzroka praznim poljima, nepostojanje putovanja izmeðu tih parova zona ili su postupkom procjene putovanja nezabilježena. 
 %0 æelije?!
@@ -510,16 +508,14 @@ Dva su uzroka praznim poljima, nepostojanje putovanja izmeðu tih parova zona ili
 	Ukupna širina toka je ukupan broj odlazaka/dolazaka po vremenskom okviru za cijelu matricu - suma svih elemenata \gls{pom}-e. (vidi sliku \ref{fig:matrix} $F_ij$).
 \end{definition}
 
-Svi dosad spomenuti parametri utjecat æe na širinu toka. Velièina i reprezentativnost uzorka stanovništva te k-anonimizacija takoðer æe utjecati na širinu toka.
+Svi dosad spomenuti parametri utjecat æe na širinu toka. Velièina i reprezentativnost uzorka stanovništva te k-anonimizacija \footnote{ K-anonimnost (engl. \textit{k-annonimity}) \label{k-an} $K$ predstavlja najmanju dozvoljenu širinu toka koja se dozvoljava, u suprotnom se tok u potpunosti zanemaruje (mièe iz \gls{pom}). Razlog je zaštita od eventualne moguænosti identificiranja kretanja pojedinaca u vrlo rijetko naseljenim podruèjima \cite{Goulding:2016.}. Teralytics predlaže odabrati $k$ u rasponu od 5 - 10 \cite{Teralytics:2017.}.}. 
 
 Izdvajanje najaktivnijih korisnika (onih s najviše zapisa) zastupljeno je u istraživanjima procjene \gls{pom} iz \gls{cdr} \cite{Schneider:2013.} \cite{Toole:2015.}.
 %dok \cite{Gundlegard:2016.} filtrira samo "najljepša putovanja". 
-Podjelom korisnika u 3 skupine po kolièini podataka koju generiraju i analizom svake skupine zasebno, za podruèje francuske regije Picardie), studija \cite{Bonnel:2015.} pokazuje da frekvencija korištenja ne uvodi pristranost \cite{Bonnel:2015.}. 
+Podjelom korisnika u 3 skupine po kolièini podataka koju generiraju i analizom svake skupine zasebno, za podruèje francuske regije Picardie), studija \cite{Bonnel:2015.} pokazuje da frekvencija korištenja ne uvodi pristranost \cite{Bonnel:2015.}. Calabrese \cite{Calabrese:2011.} uzima samo sluèajno odabranih 25\% korisnika (njih 1 milijun) da pojednostavi analizu, a \cite{Graells-Garrido:2016.} samo 100,000, kako bi procijenjena \gls{pom} bila usporediva s onom dobivenom iz ankete provedene na uzorku iste velièine.
 
-Calabrese \cite{Calabrese:2011.} uzima samo sluèajno odabranih 25\% korisnika (njih 1 milijun) da pojednostavi analizu, a \cite{Graells-Garrido:2016.} samo 100,000, kako bi procijenjena \gls{pom} bila usporediva s onom dobivenom iz ankete provedene na uzorku iste velièine.
-
-Slabo obuhvaæanje krajnjih dobnih skupina zbog slabe zastupljenosti mobilnih ureðaja kod najstarije i najmlaðe dobne skupine ne tumaèi se kao pristranost, uz napomenu da su to ujedno skupine sa generalno slabom mobilnosti u odnosu na ostale opæenito. \cite{Bonnel:2015.}. %Studija \cite{Goulding:2016.} istièe da usluge razlièitim demografskim skupinama, a najèešæe su izuzetak skupine slabijeg socio-ekonomskog stanja. 
-Kod tržišta gdje veliki postotak stanovništva posjeduje mobilni ureðaj (npr. 92\% za urbana podruèja Tanzanije) eventualno postojanje pristranosti može se smatrati zanemarivim  \cite{Goulding:2016.}.
+Slabo obuhvaæanje krajnjih dobnih skupina zbog slabe zastupljenosti mobilnih ureðaja kod najstarije i najmlaðe dobne skupine ne tumaèi se kao pristranost, uz napomenu da su to ujedno skupine sa generalno slabom mobilnosti u odnosu na ostale \cite{Bonnel:2015.}. %Studija \cite{Goulding:2016.} istièe da usluge razlièitim demografskim skupinama, a najèešæe su izuzetak skupine slabijeg socio-ekonomskog stanja. 
+Goulding smatra da se eventualno postojanje pristranosti može smatrati zanemarivim kod tržišta gdje veliki postotak stanovništva (npr. 92\%) posjeduje mobilni ureðaj \cite{Goulding:2016.}.
 
 % Cools \cite{Cools:2010.} zasebno analizira \gls{pom}-a sa i bez takvih æelija jer je od 589 $\times$ 589 æelija, èak 77.8\% njih bilo Nul-æelija. 
 %Ista situacija je s \gls{pom}-ma kreiranim iz \gls{rsi}, dok æe 
@@ -551,8 +547,8 @@ Kao što je veæ spomenuto u potpoglavlju \ref{sredstva}, \gls{pom}-e kreirane iz 
 -prebrojavanje vozila- samo motorna vozila ?!
 \end{comment}
 
-\subsubsection{Kontekstualizacija}
-- Razdioba toka prema objektima pojedine kategorije
+%\subsubsection{Kontekstualizacija}
+%- Razdioba toka prema objektima pojedine kategorije
 
 %\todo[inline]{Ispitati:\\	- kako sve prethodno utjeèe na širinu toka/konaèan broj putovanja?!\\	- kontekstualizacija na osnovu analize više dana ( tjedan - 3 mjeseca)	pomaže da se rekonstruiraju putanje, nema potrebe za odbacivanjem velikog broja}
 

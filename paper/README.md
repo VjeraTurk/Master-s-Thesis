@@ -95,3 +95,8 @@ parent={},%
 
 [error](https://tex.stackexchange.com/questions/328232/what-is-this-mysterious-ecrm1000-missing-file) after adding pdfcomment to riteh_preamble.tex
 `sudo apt-get install texlive-fonts-recommended` resolves it
+
+9.  
+Forcing linebreak in table cell [\makecell{First row\\Second row}](https://tex.stackexchange.com/a/176780/113519)  
+Forcing wide table to fit the page   
+[\hskip-2.0cm](https://tex.stackexchange.com/a/33350/113519)

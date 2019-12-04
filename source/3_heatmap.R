@@ -74,20 +74,20 @@ ggdensity(ODout_SH_15_18[ ODout_SH_15_18>0])
 #CDR matrice ne obuhvaćaju svih 1090 ćelija već samo jedan dio područja
 #Vraćanje 0 redova i stupaca u CDR matricu
   require(reshape2)
-  z<-zeros(nrow(TAXI_SH_15_18),ncol(TAXI_SH_15_18)) # 1090 x 1090!
-  dimnames(z)<-dimnames(TAXI_SH_15_18)
+  z<-zeros(nrow(TAXI_SH_3_6),ncol(TAXI_SH_3_6)) # 1090 x 1090!
+  dimnames(z)<-dimnames(TAXI_SH_3_6)
   
   #https://stackoverflow.com/questions/26042738/r-add-matrices-based-on-row-and-column-names
   cAB <- colnames(z)
   rAB <- rownames(z)
   A1 <- matrix(0, ncol=length(cAB), nrow=length(rAB), dimnames=list(rAB, cAB))
   B1 <- A1
-  indxA <- outer(rAB, cAB, FUN=paste) %in% outer(rownames(ODout_SH_15_18), colnames(ODout_SH_15_18), FUN=paste) 
+  indxA <- outer(rAB, cAB, FUN=paste) %in% outer(rownames(ODout_SH_3_6), colnames(ODout_SH_3_6), FUN=paste) 
   indxB <- outer(rAB, cAB, FUN=paste) %in% outer(rownames(z), colnames(z), FUN=paste)
-  A1[indxA] <- ODout_SH_15_18
+  A1[indxA] <- ODout_SH_3_6
   B1[indxB] <- z
-  zODout_SH_15_18=A1+B1
-  save(zODout_SH_15_18, file="zODout_SH_15_18.RData")
+  zODout_SH_3_6=A1+B1
+  save(zODout_SH_21_24, file="zODout_SH_6_9.RData")
 
 load("zODout_SH_15_18.RData")
 heatmap(zODout_SH_15_18, breaks = col_breaks, col = colPal, Colv = NA, Rowv = NA, main = "CDR 15_18 (proširena)")

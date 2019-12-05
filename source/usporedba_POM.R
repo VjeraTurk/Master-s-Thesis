@@ -96,14 +96,9 @@ heatmap.2(A_0_24, Rowv=NA, Colv=NA, dendrogram = "none", scale="none",
           lmat = rbind(c(2,4),c(3,1)), lhei = c(0.75,3), lwid = c(2,10), key.xlab="širina toka")
 
 #col_breaks <-c(0,5,25,50,100,250,500,750,1000,1500,2000,3716) #3716 je 4. najveći rezultat
-#col_breaks od A :|
-col = c("#000000",hcl.colors(10, "RdYlBu", rev = TRUE))
+#col = c("#000000",hcl.colors(10, "RdYlBu", rev = TRUE))
 
 heatmap.2(B_0_24, Rowv=NA, Colv=NA, dendrogram = "none", scale="none", 
           breaks =col_breaks, col = col, density.info="none", trace="none",  
           labRow = FALSE, labCol = FALSE, key=TRUE, key.title=NULL, 
           lmat = rbind(c(2,4),c(3,1)), lhei = c(0.75,3), lwid = c(2,10), key.xlab="širina toka")
-
-
-#heatmap.2(B_0_24, Colv = NA, Rowv = NA, main = "B_0_24", breaks = col_breaks, col =hcl.colors(10, "YlOrRd", rev = TRUE), scale="none", margins=c(10,10), dendrogram = "none", key=TRUE)
-

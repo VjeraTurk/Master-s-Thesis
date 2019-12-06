@@ -8,7 +8,7 @@ require("optimbase")
 LonLat<-cent_df
 distances<-zeros(length(LonLat),length(LonLat))
 require("fields")
-distances<- rdist.earth(LonLat, miles=FALSE) 
+distances<- rdist.earth(LonLat, miles=FALSE) #distances in kilometers
 diag(distances)<-0 #https://stackoverflow.com/questions/49245720/r-distance-matrix-with-non-zero-values-on-diagonal-rdist-earth
 
 Lon_Lat <- paste(LonLat$Longitude,LonLat$Latitude, sep= "_")
@@ -30,10 +30,19 @@ nb_q<-poly2nb(vor)#lista susjeda svih ćelija
 n=200
 nb_q[[n]]
 
+distances_n<<-c()
+  
+require(sp)
+#See spDistsN1() 
+
+library(geosphere)
+distm(c(lon1, lat1), c(lon2, lat2), fun = distHaversine)
+
 plot(vor[n,], col = "red")
 for (i in 1:nb_q[[n]]){
   plot(vor[nb_q[[n]][i],],add=TRUE, col = "green")
-}
+  distances_n<-c(distances_n,distm(c(lon1, lat1), c(lon2, lat2), fun = distHaversine))
+  }
 
 "
         46.2026

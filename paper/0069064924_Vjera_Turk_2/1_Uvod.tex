@@ -48,7 +48,7 @@ Metodologija je izvedena u programskom okruženju za statistièko raèunarstvo R te
 \section{Definicija Polazišno odredišne matrice}
 
 \theoremstyle{definition}
-\begin{definition}{Polazišno-odredišna matrica} je matrica èiji svaki element predstavlja broj putovanja izmeðu odgovarajuæeg para zona unutar promatranog podruèja u promatranom vremenskom razdoblju $\tau$ , u svakom smjeru zasebno. Redovi u \gls{pom}-i $i = 1,2,3...n$ predstavljaju polazišta (izvore) prometnog toka, a stupci $j = 1,2,3...n$ njihova odredišta (ušæa). Element $f_{ij}$ predstavlja broj putovanja iz pripadajuæe polazišne zone $i$ u pripadajuæu ciljnu zonu $j$. Broj putovanja naziva se i širina prometnog toka (eng. \textit{flow}). (slika \ref{fig:matrix})
+\begin{definition}{Polazišno-odredišna matrica} je matrica èiji svaki element predstavlja broj putovanja izmeðu odgovarajuæeg para zona unutar promatranog podruèja u promatranom vremenskom okviru $\tau$ , u svakom smjeru zasebno. Redovi u \gls{pom}-i $i = 1,2,3...n$ predstavljaju polazišta (izvore) prometnog toka, a stupci $j = 1,2,3...n$ njihova odredišta (ušæa). Element $f_{ij}$ predstavlja broj putovanja iz pripadajuæe polazišne zone $i$ u pripadajuæu ciljnu zonu $j$. Broj putovanja naziva se i širina prometnog toka (eng. \textit{flow}). (slika \ref{fig:matrix})
 \end{definition}
 \newpage
 \gls{pom}-a se može smatrati matriènim zapis težinskog, usmjerenog grafa, gdje su težinski faktori usmjerenih veza širine prometnih tokova izmeðu èvorova mreže koji predstavljaju zone na koje je promatrano podruèje podijeljeno (slika \ref{fig:matrix_2}). Zone u \gls{pom}-i su poredane od zapada prema istoku, te od od sjevera prema jugu.
@@ -256,7 +256,7 @@ Zapisi o telekomunikacijskoj aktivnosti i detaljima telekomunikacijskih transakc
 %Radi se o zapisima aktivnosti u mobilnoj mreži - pozivima, porukama (engl. Short Messaging Service - SMS) te zapoèetom prijenosu mobilnih podataka.
 CDR obuhvaæa transakcijske podatke o pozivima, razmjeni kratkih poruka (engl. Short Messaging System, \glstext{sms}) i prijenosu podataka pokretnim internetom. Transakcijski podatci ukljuèuju, izmeðu ostalog: vremenske trenutke poèetka i završetka telekomunikacijske transakcije (korištenja komunikacijske usluge), vrstu komunikacije, identifikacijske oznake pošiljatelja i primatelja, te identifikacijske oznake baznih stanica na koje su u trenutku zapoèinjanja i završetka transakcije bili spojeni pošiljatelj i primatelj. (Tabela \ref{tab:zapisi})
 
-\begin{table}[!htbp]
+\begin{table}[H]
 	
 	\renewcommand{\arraystretch}{1.2}
 	\caption{Primjeri zapisa o telekomunikacijskim aktivnostima (pozivi) \cite{Chen:2019.}}
@@ -272,8 +272,7 @@ CDR obuhvaæa transakcijske podatke o pozivima, razmjeni kratkih poruka (engl. Sh
 	\end{tabular}
 	\\ [5ex]
 	\renewcommand{\arraystretch}{1.2}
-	\caption{Primjeri zapisa o telekomunikacijskim aktivnostima \cite{Stupar:2018.}. Iz zapisa je uklonjen datum, a identifikacijska oznaka bazne stanice (pozivatelja) zamijenjena je njenim položajem. Podatci o baznim stanicama dostupni su u bazama poput OpenCellID (vidi Dodatak \ref{dodatak_OpenCellID})
-	}
+	\caption{Primjeri zapisa o telekomunikacijskim aktivnostima \cite{Stupar:2018.}. Iz zapisa je uklonjen datum, a identifikacijska oznaka bazne stanice (pozivatelja) zamijenjena je njenim položajem. Podatci o baznim stanicama dostupni su u bazama poput OpenCellID\protect\footnotemark	}
 	\begin{tabular}{|c|c|c|c|}
 		\hline
 		SIM Card ID&Time&Latitude&Longitude
@@ -296,7 +295,12 @@ CDR obuhvaæa transakcijske podatke o pozivima, razmjeni kratkih poruka (engl. Sh
 		\hline
 	\end{tabular}
 	\label{tab:zapisi}
+
 \end{table}
+
+\footnotetext{\gls{cdr} zapisi ne sadrže uvijek položaje baznih stanica veæ samo njihov ID. Postoji nekoliko javno dostupnih baza kao što je OpenCellID \cite{OpenCellID:2019.} nastalih volonterskim doprinosom koje pohranjuju podatke o procjenama položaja baznih stanica, snazi signala i sl. Položaji se prikupljaju pomoæu aplikacije instalirane na mobilnom ureðaju, registriranjem \gls{gps} položaja i identifikacijske oznake bazne stanice na koju je ureðaj trenutno spojen. %Dakle, ove baze ne sadrže "najtoènije" položaje baznih stanica veæ usrednjene položaje mobilnih ureðaja koji su u nekom trenutku bili spojeni na tu baznu stanicu. Tako procijenjeni položaj za potrebe izrada \gls{pom}-a èak i više odgovara od stvarnog položaja. \cite{Mellegard:2011.}
+}
+
 
 Zapisuju se i podatci o prekapèanju pokretnog ureðaja na drugu baznu stanicu (engl. \textit{handover data}) tijekom trajanja telekomunikacijske aktivnosti radi postizanja i održavanja potrebne kvalitete telekomunikacijske usluge, \textit{Location Area Updates} - podatci prikupljani svakih 20 min do 2 sata o tome na koju skupinu baznih stanica je pokretna stanica spojena (svaka LA skupina ima od 150 do 500 baznih stanica, \cite{Bonnel:2015.}), te podaci kada je pokretna stanica ukljuèena u mrežu i iskljuèena iz mreže i optereæenje pojedinog tornja \cite{Chen:2019.}. 
 

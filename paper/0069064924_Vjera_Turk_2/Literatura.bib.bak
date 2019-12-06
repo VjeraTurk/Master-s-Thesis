@@ -131,6 +131,14 @@
   Timestamp                = {05.11.2019}
 }
 
+@Article{Desic:2017.,
+  Title                    = {{Determination of origins and destinations for an O-D Matricx based on telecomunication activity records}},
+  Author                   = {Sasa Desic and Mia Fili\'c and Renato Filjar},
+  Year                     = {2017.},
+
+  Timestamp                = {06.12.2019}
+}
+
 @Article{Djukic:2013.,
   Title                    = {Reliability assessment of dynamic {OD} estimation methods based on structural similarity index},
   Author                   = {Tamara Djuki\'c},
@@ -562,10 +570,11 @@ Maozeng Xu and Yinhai Wang},
 }
 
 @Electronic{zrno:2019.,
+  Title                    = {Granularity},
   Note                     = {(4.10.2019.)},
   Url                      = {http://wiki.gis.com/wiki/index.php/Granularity},
 
-  Timestamp                = {04.11.2019}
+  Timestamp                = {02.12.2019}
 }
 
 @Electronic{OpenCellID:2019.,

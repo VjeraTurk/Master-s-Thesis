@@ -2,6 +2,22 @@
 \chapter{Rezultati}
 %\todo[inline]{iznošenje rezultata i analiza rezultata do kojih je došlo rješavanjem problematike zadatka, rezultati mjerenja}
 %\textit{ u poglavlju 6 æete staviti slike i napisati rezultate zbrajanja- ne više od toga.} 
+
+\section{Demonstracija metodologije}
+Metodologija je demonstrirana na sluèaju usporedbe dvije \gls{pom} dobivene iz razlièitih izvora, razlièitim postupcima procjene. Duljina razdoblja prikupljanja podataka za obje \gls{pom}-e je $\mathcal{T}$ je 24 sata, na isti datumu.
+
+Za implementaciju metodologije korišteno je programsko okruženje za statistièko raèunarstvo R.
+
+\subsubsection{Polazišno-Odredišna Matrica A}
+\gls{pom} je dobivena iz anonimiziranih javno dostupnih  telekomunikacijskih zapisa za grad Shenzhen \cite{Shenzhen:2017.} postupkom procjene opisanim u \cite{Filjar:2016.} \cite{Filic:2016.} \cite{Desic:2017.}. Rezultat procjene je 8 \gls{pom} za vremeske okvire od 3 sata i jedna \gls{pom} za cijeli dan (Vidi sliku \ref{fig:A})
+
+\subsubsection{Polazišno-Odredišna Matrica B}
+\gls{pom} je dobivena iz javno dostupnih zapisa položaja i statusa Taxi vozila u gradu Shenzhenu \cite{Shenzhen:2017.} postupkom procjene opisanim u dodatku \ref{dodatak_taxi}. Rezultat procjene je 8 \gls{pom} za vremeske okvire od 3 sata i jedna \gls{pom} za cijeli dan (Vidi sliku \ref{fig:B})
+\newline
+\newline
+
+
+
 \newpage
 \begin{figure}[H]
 	\begin{center}
@@ -38,7 +54,7 @@
 		&\makecell{Ukupna\\Širina\\Toka}
 		\\ [0.5ex]
 		\hline \hline
-		A& \cellcolor{green!25}\makecell{neovisno o\\prometnoj\\infrastrukturi}
+		A& {\cellcolor{green!25}}\makecell{neovisno o\\prometnoj\\infrastrukturi}
 		&0.008830772
 		&$1090\times1090$
 		&8
@@ -61,4 +77,36 @@
 		\hline
 		
 	\end{tabular}
+	
 \end{table}
+
+\begin{table}[!htpb]
+	\renewcommand{\arraystretch}{1.2}
+	
+	%\caption{Tablica usporedbe}
+	\centering
+	\hskip-2.0cm
+	%\tiny
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+		\hline
+		POM
+		&\makecell{Vremenska\\Rezolucija}
+		&\makecell{Prostorna\\Rezolucija}
+		\\ [0.5ex]
+		\hline \hline
+		A
+		& *
+		& $\approx 75 m $  *
+		\\ [0.5ex]
+		\hline
+		B
+		& \cellcolor{green!25}$5 s$
+		& \cellcolor{green!25}$\approx 10 m$ (GNSS)
+		\\ [0.5ex]
+		\hline
+		
+	\end{tabular}
+\\ * vremenska rezolucija je neodreðena, \\prostorna rezolucija za \gls{cdr} opæenito, prema preporukama \cite{Goulding:2016.}
+\end{table}
+
+Prema odnosnim parametrima kvalitete definiranim u odlomku \ref{param} i metodologiji usporedbe definiranoj u \ref{met} \gls{pom} B ukupno ostvaruje bolji rezultat.

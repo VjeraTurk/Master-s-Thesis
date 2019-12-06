@@ -1,6 +1,7 @@
 % !TeX encoding = windows-1250
 \chapter{Metodologija}
-\todo[inline]{opis sklopa/programske podrške. Opis rješavanja zadatka i odgovarajuæi proraèuni}
+\label{met}
+%\todo[inline]{opis sklopa/programske podrške. Opis rješavanja zadatka i odgovarajuæi proraèuni}
 
 %Studying the behaviour of moving objects over time and their interaction, either between objects or with environment, plays a crucial role in understanding how they use space and more importantly how they interact each other. Moving objects are moving within a particular area over time, thus a snapshot of a trajectory pattern might be seen as a spatial point pattern. This aspect then empowers us to study the behaviour of moving objects within space and over time. A set of locations, usually non-uniformly distributed within a certain region, can be considered as a realisation of a spatial point process.
 
@@ -73,16 +74,18 @@ Primjerice, rezolucija koja dobro odgovara za primjenu u jednom podruèju može bi
 	
 	\subitem Prostorna Zrnatost
 	\subitem  Vremenska Zrnatost
-	\subitem  Tematska Zrnatost\\
-	
+	\subitem  Tematska Zrnatost
 	\item Rezolucija:
 	Odlomak \ref{rez} govori o pozitivnoj korelaciji rezolucije i toènosti. Odbacivanjem toènost kao jedinog pokazatelj kvalitete pitanje postaje koja rezolucija je optimalna za prikaz dnevnih urbanih migracija u \gls{pom}. Niska zrnatost umanjuje potrebu za visokom rezolucijom, a visoka rezolucija omoguæuje visoku zrnatost. Primjerice ako je vremenski okvir širine 12 sati (2 perioda u danu) nema potrebe da je poèetak i završetak putovanja odreðen u minutu, no ako možemo odrediti završetak putovanja u minutu, vremenski okvir teoretski može biti $< 15 min$.
 	
-	*Rezolucija nije svojstvo \gls{pom} koliko je svojstvo izvora podataka i postupka procjene.*
-	
+	Rezolucija nije svojstvo \gls{pom} koliko je svojstvo izvora podataka i postupka procjene.
 	%Visoka rezolucija pogodovati samo internim putovanjima.
 	 
 	\subitem Prostorna Rezolucija
+	\definition Prostorna Rezolucija \gls{pom} iz CDR je najmanja udaljenost izmeðu središta 2 zone. 
+	
+	Pod ogranièenjem (kategorija \ref{itm:cat_2}) te dvije zone ne smiju biti susjedne.
+	
 	\subitem Vremenska Rezolucija
 	\subitem Tematska Rezolucija
 	
@@ -91,24 +94,28 @@ Primjerice, rezolucija koja dobro odgovara za primjenu u jednom podruèju može bi
 
 \subsection{Postupak odluèivanja}
 
-Metodologija definira svaki parametar kao jednako vrijedan u donošenju konaène odluke o kvaliteti matrice. Ona matrica koja je bolja u više parametara je kvalitetnija. Parametar koji se ne odnosi ni na jednu matricu se ne uzima u obzir.
+Metodologija definira svaki parametar kao jednako vrijedan u donošenju konaène odluke o kvaliteti matrice. POM koja je bolja u više parametara ukupno je kvalitetnija. Parametar koji se ne odnosi ni na jednu matricu se ne uzima u obzir. 
 
+\newpage
 
 %stavljen naglasak za demonstraciju metodologije je analiza kretanja cjelokupnog stanovništva grada za strateška planiranja na podruèju grada.\\
-
-
 %\textit{Ako je podruèje pokrivanja veæe, matrica je bolja, ako je gustoæa informacija takva i takva, matrica je bolja}\\
+
+\todo[inline]{Kontekstualizacija i interna putovanja-	* kontekstualizacija donosi da znamo interna kretanja/ putovanja izmeðu objekata}
+
+\todo[inline]{\textit{Mogli biste uz definiciju ovih kriterija, samo sliku ubacite iz ovih nekih simulacija, Varaždina, Koprivnice, kao ilustraciju (bez odlaska u dubinu). Imate sliku koja pokazuje da...(ne bi to spadalo u rezultate?) možete staviti u definiranju kreterija odluèivanja- koprivnica bez susjednih putovanja i koprivnica sa susjednim, evo ZAŠTO JE TO BOLJE (bez ièega drugog, kako su to radili drugi)}}
 
 \todo[inline]{
 \textit{Treba raspisati do kraja kako æu odluèiti je li nešto bolje po ovom ili onom kriteriju - poglavlje 5 - i tu smo jasni, opet slika ili prebrojavanje - nema drugog. U poglavlju 5. napisat æete samo da brojite, i gledate slike. A u poglavlju 6 æete staviti slike i napisati rezultate zbrajanja- ne više od toga.}
-
 \textit{I nakon toga na primjeru Èilea ili èega god hoæete}
-
 \textit{Koja ima najviše pluseva, ta æe ispasti bolja- sve je jednako vrijedno (svaki parametar?!)}
-
+}
+\todo[inline]{
 Simulirati kontekstualizaciju sa nekim random postocima na koje podijelim matricu?\\
 
-}
+Još je jedan postupak k-anonimizacije koji uvažava broj stanovnika u svakoj zoni}
+
+\todo[inline]{ Komentirati dobivene rezultate sa stajališta apsolutne i relativne toènosti matrica.}
 
 
 %\section{Brzina kretanja}

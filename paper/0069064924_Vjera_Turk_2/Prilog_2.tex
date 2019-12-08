@@ -73,5 +73,14 @@ Primjeri oznaka vezanih za èvorove:  \textit{office=company}, \textit{building=r
 %Raspodjela toka po prometnoj infrastrukturi nadilazi podruèje ovog rada no jest dio problematike modeliranja prometa.  
 \chapter{Procjena Polazišno-Odredišne Matrice B}
 \label{dodatak_taxi}
+Podatci u formatu \ref{fig:TaxiData} su grupirani prema Identifikacijskom broju i sortirani prema vremenskom žigu (Time). Poèetak putovanja definiran je kao prelazak Statusa (engl. Occupancy Status) iz $0$ u $1$, a kraj kao prelazak iz 1 u 0. Prostorna podjela POM je na Voronoi Æelije oko tornjeva baznih stanica jer podatci o \gls{taz} nisu javno dostupni. Generirano je 8 \gls{pom}, a sva putovanja su dodjeljivana periodu u kojem poèinju.
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=10cm,keepaspectratio=true]{TaxiData}
+		\caption{Format podataka iz kojih je procijenjena POM B}
+		\label{fig:TaxiData}
+	\end{center}
+\end{figure}
 
 

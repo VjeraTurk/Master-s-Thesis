@@ -36,12 +36,13 @@ require(sp)
 #See spDistsN1() 
 
 library(geosphere)
-distm(c(lon1, lat1), c(lon2, lat2), fun = distHaversine)
+#distm(c(lon1, lat1), c(lon2, lat2), fun = distHaversine)
 
 plot(vor[n,], col = "red")
 for (i in 1:nb_q[[n]]){
   plot(vor[nb_q[[n]][i],],add=TRUE, col = "green")
-  distances_n<-c(distances_n,distm(c(lon1, lat1), c(lon2, lat2), fun = distHaversine))
+
+  #  distances_n<-c(distances_n,distm(c(lon1, lat1), c(lon2, lat2), fun = distHaversine))
   }
 
 "
@@ -65,6 +66,8 @@ paste(vor[nb_q[[i]][j],]$Longitude,vor[nb_q[[i]][j],]$Latitude,sep="_")
 #m<-TAXI_SH_21_24
 load("/home/adminuser/CODM/masters-thesis/data/zODout_SH_15_18.RData")
 m<-zODout_SH_15_18
+
+m<-matrices[[1]]
 for( i in 1:size(m)[1]){
   for (j in 1:nb_q[[i]]) {
     m[i,j] = 0
@@ -93,3 +96,8 @@ heatmap(m, Colv = NA, Rowv = NA, main = "CDR 15_18 (bez_susjeda)")
 #heatmap(m, breaks = col_breaks, col = colPal, Colv = NA, Rowv = NA, main = "CDR 15_18 (bez_susjeda)")
 #zCDR 15_18 -> 0.4673548 -> 47% ukupne širine toka je u susjedne ćelije
 #sačuvana rezolucija
+
+heatmap(vz_sa, Colv = NA, Rowv = NA, dendogram=NULL, main = "sa tokovima u susjedne ćelije")
+heatmap(vz_bez, Colv = NA, Rowv = NA, dendogram=NULL, main = "bez tokova u susjedne ćelije")
+
+

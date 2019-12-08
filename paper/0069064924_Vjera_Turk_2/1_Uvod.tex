@@ -20,7 +20,7 @@
  %\textit{eng. \gls{odm}} ili \textit{Trip Table} 
  je alat  koji omoguæuje opis i sustavnu statistièku procjenu migracija stanovništva na nekom podruèju u zadanom prostorno-vremenskom okviru. \gls{pom}-a služi za opis grupne mobilnosti i mjerenje socio-ekonomske aktivnosti u nekoj regiji, a najèešæe se koristi u prometnoj znanosti za analizu i strateško planiranje prometnog optereæenja i prometne infrastrukture. 
 
-Osim tradicionalnog pristupa prebrojavanja putovanja i putnika na raskrižjima, anketiranjem ili pomoæu razlièitih strateški postavljenih osjetila, za procjenu \gls{pom}-a koristi se i statistièka analiza podataka iz suvremenih informacijskih i komunikacijskih sustava (zapisi o aktivnostima u javnoj pokretnoj mreži, združena oèitanja prijamnika za satelitsku navigaciju i sl.). Takav moderan pristup omoguæuje poboljšanje kvalitete procjene preslikavanjem \gls{pom}-e na kontekst. Ako nosi informaciju o svrsi kretanja, \gls{pom}-a specificira socio-ekonomske aktivnosti koje su pokretaèi putovanja odnosno motivatori individualne i grupne mobilnosti.
+Osim tradicionalnog pristupa prebrojavanja putovanja i putnika na raskrižjima, anketiranjem ili pomoæu razlièitih strateški postavljenih osjetila, za procjenu \gls{pom}-a koristi se i statistièka analiza podataka iz suvremenih informacijskih i komunikacijskih sustava (zapisi o aktivnostima u javnoj pokretnoj mreži, združena oèitanja prijamnika za satelitsku navigaciju i sl.). Takav moderan pristup omoguæuje poboljšanje kvalitete procjene preslikavanjem \gls{pom}-e na kontekst. Ako nosi informaciju o svrsi kretanja, \gls{pom}-a specificira socio-ekonomske aktivnosti koje su pokretaèi putovanja, odnosno motivatori individualne i grupne mobilnosti.
 %Suvremeni izvori podataka o položaju kao što su zapisi o telekomunikacijskoj aktivnosti nisu vezani uz prometnu infrastrukturu niti odreðen naèin prijevoza (kretanja). 
 
 Nedostatci kao što su mali uzorci stanovništva u anketama, neodreðenost polazišta i odredišta putovanja, korištenje podataka koji nisu ažurni, èine tradicionalne metode za procjenu \gls{pom}-a sve manje kompetentnima u rapidno promjenjivim urbanim sredinama.
@@ -385,13 +385,13 @@ Rekonstrukcija putanja na osnovu aktivnosti u cijelom vremenskom razdoblju proma
 
 Postupak vrednovanja %(modela, \gls{pom}-e, neèega)
 je objektivna procjena	kvalitete, vrijednosti objekta koji se vrednuje. Pregledom literature o vrednovanju \gls{pom} utvrðeno je da se jednoznaèno koriste pojmovi toènost, pouzdanost i kvaliteta \gls{pom}-a. Vrednovanje \gls{pom}-a vrši se postupcima koji koriste mjere
-razine sliènosti, odnosno razlike (greške) s referentnom matricom - a temelj je razlika na razni svakog elementa \gls{pom}. 
+razine sliènosti odnosno razlike (greške) s referentnom matricom - a temelj je razlika na razni svakog elementa \gls{pom}. 
 
-\textbf{Tradicionalni postupak vrednovanja \gls{pom}-e svodi se na odreðivanje njene sliènosti s \textit{ground truth} matricom}  \cite{Travassoli:2016.}. Ground truth \gls{pom}-a je \gls{pom}-a koja je uzeta kao ona koja najtoènije opisuje stvarno stanje. Ground truth \gls{pom}-a je dobivena tradicionalnim postupcima (anketiranje i/ili prebrojavanje vozila). Statistièke mjere kvantiziraju razliku procijenjenih i pravih vrijednosti (vidi dodatak \ref{dodatak_metrics} - Postojeæe metrike za vrednovanje \glstext{pom}). Iz statistièkih mjera sliènosti izdvojen je parametar $r^2$ koji je opisan u narednom potpoglavlju. % zašto je izdvojen?
+\textbf{Tradicionalni postupak vrednovanja \gls{pom}-e svodi se na odreðivanje njene sliènosti s \textit{ground truth} matricom}  \cite{Travassoli:2016.}. Ground truth \gls{pom}-a je \gls{pom}-a koja je uzeta kao ona koja najtoènije opisuje stvarno stanje. Ground truth \gls{pom}-a je dobivena tradicionalnim postupcima (anketiranje i/ili prebrojavanje vozila). Statistièke mjere kvantiziraju razliku procijenjenih i pravih vrijednosti (vidi dodatak \ref{dodatak_metrics} - Postojeæe metrike za vrednovanje \glstext{pom}). Iz statistièkih mjera sliènosti izdvojen je korelacijski koeficijent odreðenja $r^2$ koji je opisan u narednom potpoglavlju. % zašto je izdvojen?
 
 \textbf{Upravo ta \textit{ground truth} POM-a je ujedno i poèetna \gls{pom}-a (iz odlomka \ref{seed}) u postupku procjene nove \gls{pom}-e iz rezultata prebrojavanja vozila \cite{Segovi:2015.}. \gls{pom} æe biti vrednovana usporedbom s \gls{pom}-om koja se koristi u postupku procjene te iste \gls{pom}-e. Postupak vrednovanja nove \gls{pom}-e stoga je ovisan o kvaliteti poèetne \gls{pom}-e, koja je procijenjena u odnosu njenu poèetnu matricu i tako rekurzivno.}
 
-\subsection{Linearna regresija - mjera $r^2$}
+\subsection{Linearna regresija - Korelacijski koeficijent odreðenja $r^2$}
 
 %This technique estimates the cell values of one OD matrix (the dependent variable) based on the cell values of another OD matrix (the one independent variable). This results in three different parameters that can be assessed:
 

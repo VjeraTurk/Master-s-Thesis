@@ -1,4 +1,4 @@
-"Koprivnica, Zagreb osm and BS"
+"Koprivnica, Zagreb, Varaždin osm and BS"
 require(sp)
 require(rgdal)
 require(deldir)
@@ -19,6 +19,7 @@ base_stations<-fread(file=file, sep="auto", header=TRUE, quote="")
 15.9007  Zagreb  16.0540
         45.7523
         46.35
+
 16.27 Varaždin  16.39
         46.26
 

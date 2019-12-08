@@ -4,21 +4,21 @@
 %\textit{ u poglavlju 6 æete staviti slike i napisati rezultate zbrajanja- ne više od toga.} 
 
 \section{Demonstracija metodologije}
-Metodologija je demonstrirana na sluèaju usporedbe dvije \gls{pom} dobivene iz razlièitih izvora, razlièitim postupcima procjene. Duljina razdoblja prikupljanja podataka za obje \gls{pom}-e je $\mathcal{T}$ je 24 sata, na isti datumu.
+Metodologija je demonstrirana na sluèaju usporedbe dvije \gls{pom} dobivene s podatcima iz razlièitih izvora i razlièitim postupcima procjene. Duljina razdoblja prikupljanja podataka za obje \gls{pom}-e je $\mathcal{T} = 24 h$, na isti datumu.
 
-Za implementaciju metodologije korišteno je programsko okruženje za statistièko raèunarstvo R.
+Za implementaciju demonstracije metodologije korišteno je programsko okruženje za statistièko raèunarstvo R.
 
 \subsubsection{Polazišno-Odredišna Matrica A}
 \gls{pom} je dobivena iz anonimiziranih javno dostupnih  telekomunikacijskih zapisa za grad Shenzhen \cite{Shenzhen:2017.} postupkom procjene opisanim u \cite{Filjar:2016.} \cite{Filic:2016.} \cite{Desic:2017.}. Rezultat procjene je 8 \gls{pom} za vremeske okvire od 3 sata i jedna \gls{pom} za cijeli dan (Vidi sliku \ref{fig:A})
 
 \subsubsection{Polazišno-Odredišna Matrica B}
-\gls{pom} je dobivena iz javno dostupnih zapisa položaja i statusa Taxi vozila u gradu Shenzhenu \cite{Shenzhen:2017.} postupkom procjene opisanim u dodatku \ref{dodatak_taxi}. Rezultat procjene je 8 \gls{pom} za vremeske okvire od 3 sata i jedna \gls{pom} za cijeli dan (Vidi sliku \ref{fig:B})
-\newline
-\newline
+\gls{pom} je dobivena iz javno dostupnih zapisa položaja i statusa (ima putnika / nema putnika) Taxi vozila u gradu Shenzhenu \cite{Shenzhen:2017.} postupkom procjene opisanim u dodatku \ref{dodatak_taxi}. Rezultat procjene je 8 \gls{pom} za vremeske okvire od 3 sata i jedna \gls{pom} za cijeli dan (Vidi sliku \ref{fig:B})
+%\newline
+%\newline
 
 
 
-\newpage
+%\newpage
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=17cm,keepaspectratio=true]{A_0_24_lmat}
@@ -109,4 +109,9 @@ Za implementaciju metodologije korišteno je programsko okruženje za statistièko 
 \\ * vremenska rezolucija je neodreðena, \\prostorna rezolucija za \gls{cdr} opæenito, prema preporukama \cite{Goulding:2016.}
 \end{table}
 
-Prema odnosnim parametrima kvalitete definiranim u odlomku \ref{param} i metodologiji usporedbe definiranoj u \ref{met} \gls{pom} B ukupno ostvaruje bolji rezultat.
+Prema odnosnim parametrima kvalitete definiranim u odlomku \ref{param} i metodologiji usporedbe definiranoj u poglavlju \ref{met}, \gls{pom} B ukupno ostvaruje bolji rezultat.\\
+...
+\todo[inline]{ $-$ Komentirati dobivene rezultate sa stajališta apsolutne i relativne toènosti matrica.
+\url{http://www.mathos.unios.hr/pim/Materijali/p1_text.pdf}
+
+}

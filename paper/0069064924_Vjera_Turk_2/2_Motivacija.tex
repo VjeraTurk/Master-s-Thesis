@@ -207,7 +207,7 @@ Isti rad napominje da \textit{prisutnost rezolucije otvara pitanje "Koja je opti
 
 %**?? discrimination (smallest change in a quantity being measured that causes a perceptible change in the corresponding observation value) ?!
 
-Vremenski nezavisna \gls{pom} ima prostornu, a vremenski zavisna \gls{pom} prostornu i vremensku rezoluciju, kontekstualizirana ima tematsku rezoluciju.  Alternativni pristup vrednovanju \gls{pom} definira prostornu i vremensku rezoluciju kao:
+Vremenski nezavisna \gls{pom} ima prostornu, vremenski zavisna \gls{pom} prostornu i vremensku rezoluciju. Kontekstualizirana \gls{pom} ima tematsku rezoluciju.  Alternativni pristup vrednovanju \gls{pom} definira prostornu i vremensku rezoluciju kao:
 
 \definition{Prostorna rezolucija} je najmanja prijeðena udaljenost koju je moguæe identificirati.\\
 
@@ -234,7 +234,7 @@ najmanji vremenski odmak koji je moguæe identificirati. \\
 %duljina trajanja vremenskog okvira $\tau$
 %Najmanji vremenski odmak uvjetuje širinu vremenskog okvira u kojem promatramo kretanja. 
 
-Kod suvremenih pristupa vremenska rezolucija ovisit æe o periodu uzorkovanja položaja.
+Vremenska rezolucija ovisi o periodu uzorkovanja položaja.
 
 %Daily trips are estimated from filtered users by analyzing consecutive observations at different stay points during a given time window. They begin by defining an effective day as a period between 3 am one morning and 3 am on the next consecutive morning. This definition is used to minimize the number of trips that are prematurely ended due to the assumption that users start and end each day at home
 
@@ -248,11 +248,11 @@ Kod suvremenih pristupa vremenska rezolucija ovisit æe o periodu uzorkovanja pol
 
 \subsubsection{Tematska rezolucija}
 
-Geoinformacijska znanosti definira tematsku rezolucija kao kolièinu kategorièkih detalja na \textit{tematskoj karti}. Izražava se brojem tipova pokrova (engl. land cover) ili brojem tipova namjene zemljišta (engl. land use) \cite{Smith:2017.}. Ovakva definicija dobro se uklapa u tematsku rezoluciju kao parametar kvalitete kontekstualiziranih \gls{pom} koje su procijenjene na temelju namjene zemljišta ili objekata.
-Razvrstavanjem putovanja u zasebne \gls{pom} prema kategorijama dobije se broj \gls{pom} jednak tematskoj rezoluciji.
+Geoinformacijska znanosti definira tematsku rezolucija kao kolièinu kategorièkih detalja na \textit{tematskoj karti}. Izražava se brojem tipova pokrova (engl. land cover) ili brojem tipova namjene zemljišta (engl. land use) \cite{Smith:2017.}. Kontekstualizirane \gls{pom} su procijenjene na temelju namjene zemljišta ili objekata, dakle koriste tematsku rezoluciju. 
 %Level of categorical detail on a thematic map as expressed by the number of classes (classification) included in production of the map.
 
-\definition{Tematska rezolucija svrhe je broj kategorija svrhe putovanja definirane iz namjene krajnjeg odredišta putovanja.}
+
+\definition{Tematska rezolucija svrhe je broj kategorija svrhe putovanja definirane iz namjene krajnjeg odredišta.}
 
 Primjer kategorija i njihovih tematskih rezolucija: 
 
@@ -263,6 +263,8 @@ Primjer kategorija i njihovih tematskih rezolucija:
 	\item dom, posao, edukacija, razonoda, zdravlje, ostalo (6) \cite{Stupar:2018.}
 	\item tvornice, ambasade, sveuèilišti objekti, bolnice, javne škole, ostali obrazovni objekti, stanice javnog prijevoza, knjižnice, klinike, religijski objekti, hoteli, sportski objekti, banke ... (23)  \cite{Alhazzani:2016.} 
 \end{itemize}
+
+Razvrstavanjem putovanja u zasebne \gls{pom} prema kategorijama dobije se broj \gls{pom} jednak tematskoj rezoluciji.
 
 
 \begin{comment}
@@ -308,7 +310,7 @@ Primjer kategorija i njihovih tematskih rezolucija:
 
 \subsection{Zrnatost}
 
-Zrnatost je stupanj do kojeg je sustav rastavljiv u manje dijelove, bilo sam sustav ili njegov opis ili opažanje - stupanj do kojeg je veæi entitet djeljiv.
+Zrnatost je stupanj do kojeg je sustav rastavljiv u manje dijelove, bilo sam sustav, njegov opis ili opažanje - stupanj do kojeg je veæi entitet djeljiv.
 \cite{zrno:2019.}  
 %Zrnatost se koristi za karakterizaciju razmjera ili razine detalja. %Što je zrnatost veæa, viša je razina detalja. Zrnatost definira razinu detalja korištenu u modeliranju situacije.
 
@@ -321,16 +323,16 @@ Zrnatost je stupanj do kojeg je sustav rastavljiv u manje dijelove, bilo sam sus
 %Za razliku od rezolucije prema \cite{Degbelo:2014.}, zrnatost i toènost su neovisne. Odgovori na pitanje "Gdje se nalazite?" "U Hrvatskoj", "U Rijeci", "U svojoj kuæi" i "Za svojim stolom" svaki je toèan u smislu da govori 100\%-tnu istinu'.
 
 %Zrnatost postoji u prostoru i vremenu. 
-Prostorna zrnatost se kao odnosni parametar kvalitete izražava kroz broj dijelova na koje je podruèje podijeljeno.
+Prostorna zrnatost kao odnosni parametar kvalitete izražava se kroz broj dijelova na koje je podruèje podijeljeno.
 
-\definition Prostorna zrnatost \gls{pom} je broj dijelova (zona) na podruèju od interesa. Išèitava se iz dimenzije \gls{pom}.\\
+\definition Prostorna zrnatost \gls{pom} je broj dijelova (zona) na podruèju interesa. Išèitava se iz dimenzije \gls{pom}.\\
 
-Prostorna Zrnatost ovisit æe o prostornoj podjeli podruèja, gustoæi baznih stanica, stupnju agregacije zona i prostornoj rezoluciji.
+Prostorna zrnatost ovisit æe o prostornoj podjeli podruèja, gustoæi baznih stanica, stupnju agregacije zona i prostornoj rezoluciji.
 
 \definition Vremenska zrnatost je broj vremenskih okvira u jednom danu. Išèitava se iz broja \gls{pom} procijenjenih za vremensko razdoblje $ \mathcal{T} $ = 1 dan. 
 
 %Kao kategorièka velièina, vremenska zrnatost sadrži kategorije definirane za vremenske okvire duljine trajanja (širine) djelitelja broja 24 u satima i 60 u minutama. 
-Istaknute su one kategorije koje su zastupljene u literaturi. Vremenski okvir i pripadajuæa zrnatost:
+Kategorije vremenske zrnatosti (vremenski okvir i pripadajuæa zrnatost):
 %Resolution refers to the amount of detail in a representation, while granularity refers to the cognitive aspects involved in selection of features.
 
 %The notion of granular partition (see for example [2]) includes not only maps (i.e. data), but also categorizations (which go beyond measurement and observation, and enter the realm of conceptual modelling).
@@ -360,20 +362,20 @@ Istaknute su one kategorije koje su zastupljene u literaturi. Vremenski okvir i 
 
 	\begin{enumerate}
 	\item $< 15$ min ( $> 86$)
-	\item \textbf{15 min (86)} \cite{Bera:2011.}\cite{Espad:2013.} 
+	\textbf{\item 15 min (86)} \cite{Bera:2011.}\cite{Espad:2013.} 
 	\item 20 min (72)
 	\item 30 min (48) \cite{Schneider:2013.} \\
-	\item \textbf{1 h (24)} \cite{Mellegard:2011.}\cite{Gundlegard:2016.}\cite{Teralytics:2017.}
+	\textbf{\item 1 h (24)} \cite{Mellegard:2011.}\cite{Gundlegard:2016.}\cite{Teralytics:2017.}
 	\item 2 h (12)
-	\item \textbf{3 h (8)} \cite{Filic:2016.}\cite{Chen:2019.} 
+	\textbf{\item 3 h (8)} \cite{Filic:2016.}\cite{Chen:2019.} 
 	\item 4 h (6)
 	\item 6 h (4)
-	\item \textbf{8 h (3)}
+	\textbf{\item 8 h (3)}
 	\item 12 h (2)
 	\item 24 h (1) \cite{Teralytics:2017.}
 \end{enumerate}
-
-Najveæa Vremenska Zrnatost koju je moguæe postiæi procjenom \gls{pom} ovisit æe o vremenskoj rezoluciji u kojoj postoje podaci za procjenu.
+Masno otisnute kategorije zastupljene su u literaturi.\\
+Najveæa vremenska zrnatost koju je moguæe postiæi procjenom \gls{pom} ovisit æe o vremenskoj rezoluciji u kojoj postoje podaci za procjenu.
 
 \definition Tematska zrnatost je najmanja prostorno 
  razluèiva jedinica koja ima tematsku rezoluciju.
@@ -393,7 +395,7 @@ Objekt u zoni je najmanja prostorno razluèiva jedinica kod procjene matrica koja
 
 \subsection{Putovanje kao parametar}
 \label{trip_def}
-Putovanja koja se protežu kroz više perioda u pravilu se dodjeljuju vremenskom okviru u kojem zapoèinju ili u kojem završavaju. Autori \cite{Bera:2011.} \cite{Filic:2016.} \cite{Gundlegard:2016.} sva putovanja dodjeljuju intervalu u kojem je putovanje zapoèeto, dok neki procjenjuje obje vrste \gls{pom}-a \cite{Teralytics:2017.}. Naredni odjeljci ne daju definiciju putovanja kao parametra veæ samo istièu problematiku koja se javlja kod definicije putovanja opæenito. 
+Putovanja koja se protežu kroz više perioda u pravilu se dodjeljuju vremenskom okviru u kojem zapoèinju ili u kojem završavaju. Autori \cite{Bera:2011.} \cite{Filic:2016.} \cite{Gundlegard:2016.} sva putovanja dodjeljuju intervalu u kojem je putovanje zapoèeto, dok neki procjenjuje obje vrste \gls{pom}-a \cite{Teralytics:2017.}. Naredni odjeljci ne definiraju putovanje kao parametar, veæ samo istièu problematiku koja se javlja kod definicije putovanja opæenito. 
 
 %Moguæe izbaciti putovanja koja ne poènu i završe u istom periodu, te promatrati samo ona èiji su poèetak i kraj u istom periodu. - Mia spomenula da su oni prvo tako
 
@@ -415,7 +417,8 @@ Putovanja koja se protežu kroz više perioda u pravilu se dodjeljuju vremenskom o
 \subsubsection{Ogranièenja na putovanja iz istog izvora podataka - \glsfirst{cdr}}
 
 Putovanja kod vremenski zavisnih \gls{pom}-a kreiranih iz \gls{cdr} moguæe je svrstati u nekoliko kategorija na osnovu prihvaæanja ili odbacivanja odreðenih kretanja kao putovanja.
-Putovanjima se ne smije obuhvatiti lažno kretanje uzrokovano uravnoteženjem optereæenja i lažno zaustavljanje uzrokovano neuniformnom gustoæom zapisa pojedinaca u vremenu, što razlièiti autori nastoje postiæi postavljanjem navedenih ogranièenja:
+Putovanjima se ne smije obuhvatiti lažno kretanje uzrokovano uravnoteženjem optereæenja i lažno zaustavljanje uzrokovano neuniformnom gustoæom zapisa pojedinaca u vremenu.
+Lažna kretanja i zaustavljanja u literaturi nastoje se izbjeæi postavljanjem nekih od ogranièenja:
 
 \begin{enumerate}
 	\item \label{itm:cat_1}putovanja u sve æelije, bez internih putovanja (bez dijagonale)
@@ -424,11 +427,11 @@ Putovanjima se ne smije obuhvatiti lažno kretanje uzrokovano uravnoteženjem opte
 	\begin{figure}[!htpb]
 		\begin{center}
 			\subfloat[POM sa putovanjima u susjedne æelije. Ukupna širina toka 2587]{\label{fig:vz_sa}
-				\includegraphics[width=9cm,keepaspectratio=true]{vz_sa_bez}}\\ 
+				\includegraphics[width=9.5cm,keepaspectratio=true]{vz_sa_bez}}\\ 
 			%\hspace{10pt}
 			\subfloat[POM bez putovanja u susjedne æelije. Ukupna širina toka 2392]
 			{\label{fig:vz_bez}
-				\includegraphics[width=9cm,keepaspectratio=true]{vz_bez_bez}}
+				\includegraphics[width=9.5cm,keepaspectratio=true]{vz_bez_bez}}
 			\caption{Primjer POM sa i bez putovanja u susjedne æelije. } 
 			\label{fig:vz}
 		\end{center}
@@ -436,9 +439,8 @@ Putovanjima se ne smije obuhvatiti lažno kretanje uzrokovano uravnoteženjem opte
 	
 	
 	
-	\item \label{itm:cat_3}agregacija susjednih æelija - \gls{pom}-e s internim putovanjima\\
-	
-	\begin{definition}{Interno putovanje}\label{inter} je svako putovanje koje se odvija unutar jedne zone, odnosno èije se polazište i odredište nalaze unutar iste prostorne zone.  Suprotno internom je eksterno putovanje.
+	\item \label{itm:cat_3}agregacija susjednih æelija - \gls{pom}-e s internim putovanjima	
+	\begin{definition}{Interno putovanje}\label{inter} je putovanje koje se odvija unutar jedne zone, odnosno èije se polazište i odredište nalaze unutar iste prostorne zone.  Suprotno internom je eksterno putovanje.
 	\end{definition}
 	
 	\item \label{itm:cat_4}putovanja ogranièena minimalnom i/ili maksimalnom udaljenosti \cite{Graells-Garrido:2016.}
@@ -452,8 +454,16 @@ Putovanjima se ne smije obuhvatiti lažno kretanje uzrokovano uravnoteženjem opte
 
 
 %U istraživanju iz 2016. kod definiranja putovanja iz \gls{cdr} eliminirani su zapisi onih korisnika koju su radili dulja "neprekidna putovanja" od preko 100 km dnevno (kategorija 4) pod napomenom da se radi o taksistima i sl. te da ih neæe uzeti u obzir \cite{Graells-Garrido:2016.}.  
-Za 2 razlièite definicije putovanja, za \gls{pom}-e iz identiènih podataka na podruèju Senegala generirano je u prosjeku 0.7 putovanja dnevno po korisniku u jednom, a 0.06 u drugom. Ogranièenja su bila: minimalna udaljenost 3 km, maksimalna 100 km \ref{itm:cat_4} u prvom i vremensko na 1 sat minimalnog trajanja (kategorija \ref{itm:cat_6}) i prostorno na udaljenost od barem 5 udaljenosti baznih stanica (kategorija \ref{itm:cat_4}). 
-Najveæa je bila zastupljenost kratkih putovanja. \cite{Gundlegard:2016.} Distribuciju možemo vidjeti na slici \ref{fig:trip_distance_distribution}
+
+%za dvije razlièite definicije putovanja. 
+
+
+
+Studija provedena na \gls{cdr} podatcima za Senegal \cite{Gundlegard:2016.} koristila je dvije definicije putovanja. Generirano je u prosjeku 0.7 putovanja dnevno po korisniku u jednom sluèaju, a 0.06 u drugom.
+Ogranièenja u prvom sluèaju su bila:
+minimalna udaljenost 3 km, maksimalna 100 km \ref{itm:cat_4}. 
+Ogranièenja u drugom sluèaju su bila:
+vremensko na 1 sat minimalnog trajanja (kategorija \ref{itm:cat_6}) i prostorno na udaljenost od barem 5 udaljenosti baznih stanica (kategorija \ref{itm:cat_4}). Kratka putovanja bila su najzastupljenija. Distribuciju možemo vidjeti na slici \ref{fig:trip_distance_distribution}
 %\textit{Commuting} putovanja takoðer mogu biti pod nekim ogranièenjima, osim što su najèešæe veæ ogranièena vremenskim periodom u kojem se odvijaju. Primjerice 
 %\cite{Gundlegard:2016.} definira minimalnu udaljenost od 3 km izmeðu prebivališta i mjesta rada (kategorija 4) i izvan susjednih æelija (kategorija 2).
 
@@ -465,7 +475,9 @@ Najveæa je bila zastupljenost kratkih putovanja. \cite{Gundlegard:2016.} Distrib
 	\end{center}
 \end{figure}
 
-\textbf{O ogranièenjima na putovanja ovisit æe njihov konaèan broj, odnosno širina toka.}\\
+\textbf{Ogranièenja na putovanja uvjetuju njihov konaèan broj odnosno širinu toka.}
+
+%\textbf{O ogranièenjima na putovanja ovisit æe njihov konaèan broj, odnosno širina toka.}\\
 
 
 %\todo[inline]{Ispitati:\\	- koliki se postotak putovanja gubi izbacivanjem putovanja u susjedne æelije?!\\ $\rightarrow$ ovisit æe o velièini æelija\\- koliki se postotak putovanja gubi izbacivanjem putovanja koja prelaze iz perioda u period?!$\rightarrow$ ovisit æe o velièini perioda\\ - u demonstraciji ovisit æe o simulaciji}
@@ -488,13 +500,15 @@ Najveæa je bila zastupljenost kratkih putovanja. \cite{Gundlegard:2016.} Distrib
 
 \subsubsection{Kontekstualizacija}
 
-Komutacijska putovanja (engl.\textit{commuting trips)}, odnosno putovanja na posao i putovanja kuæi znaèajna su po tome što su regularna - slijede dnevni ritam  \cite{Schneider:2013.}, što ih èini predvidivima \cite{Goulding:2016.}. Goulding u svom priruèniku za kreiranje \gls{pom} iz \gls{cdr} istièe da je važno definirati što se smatra putovanjem - zastane li netko na benzinskoj crpki na putu s posla kuæi, je li rijeè o jednom putovanju ili dva? Prihvaæanjem svakog zaustavljanja kao svojevrsnog \textit{kraja tranzicije} (primjerice ukidanjem ogranièenja \ref{itm:cat_5}) te prebrojavanjem tranzicija dobiva se tranzitna \gls{pom} (spomenuta u \ref{tranzit}). Tranzitna \gls{pom} uopæe neæe opisivati kretanja izmeðu polazišta i odredišta \textit{u suštini} \cite{Goulding:2016.}.
+Komutacijska putovanja (engl.\textit{commuting trips)} odnosno putovanja na posao i putovanja kuæi znaèajna su po tome što su regularna - slijede dnevni ritam  \cite{Schneider:2013.}, što ih èini predvidivima \cite{Goulding:2016.}. Goulding u priruèniku za kreiranje \gls{pom} iz \gls{cdr} istièe da je važno definirati što se smatra putovanjem - zastane li netko na benzinskoj crpki na putu s posla kuæi, je li rijeè o jednom putovanju ili dva. Prihvaæanjem svakog zaustavljanja kao kraja (primjerice ukidanjem ogranièenja \ref{itm:cat_5}), u \gls{pom} se uvrštavaju pod-putovanja. Uvrštavanjem pod-putovanja dobiva se tranzitna \gls{pom} (spomenuta u \ref{tranzit}). Tranzitna \gls{pom} uopæe neæe opisivati kretanja izmeðu polazišta i odredišta \textit{u suštini} stoga treba izbjegavati usputna zaustavljanja \cite{Goulding:2016.}. 
 
-Ako nije poznat kontekst putovanja, nastoji se prema duljini zaustavljanja odrediti je li neko zaustavljanje doista kraj putovanja \cite{Goulding:2016.}. Poznavanjem konteksta putovanja, objekata u neposrednoj blizini zaustavljanja, omoguæuje da ne temeljimo kraj putovanja iskljuèivo na osnovu duljine trajanja zaustavljanja veæ da se u obzir uzme svrha zaustavljanja.
+% uvrštavanje pod-putovanja u \gls{pom} (prihvaæanje svakog zaustavljanja kao kraja primjerice ukidanjem ogranièenja \ref{itm:cat_5}) te prebrojavanjem tranzicija dobiva se tranzitna \gls{pom} (spomenuta u \ref{tranzit}). Tranzitna \gls{pom} uopæe neæe opisivati kretanja izmeðu polazišta i odredišta \textit{u suštini} \cite{Goulding:2016.}.
 
-Prednost suvremenih izvora podataka s višednevnim ili višemjeseènim vremenom promatranja je uoèavanje obrazaca i repetativnosti putovanja na dnevnoj ili tjednoj bazi \cite{Chen:2019.}. Poznavanje tipiènog kretanja pojedinca u to vrijeme omoguæuje se rekonstrukcija putovanja u onom periodu kada podaci nedostaju. Chen sva putovanja jednog pojedinca u prošlosti i buduænosti od promatranog putovanja naziva upravo \textit{kontekstom} u metodlogiji opisanoj u radu \cite{Chen:2019.}.
+Prema duljini zaustavljanja nastoji se odrediti je li neko zaustavljanje doista kraj putovanja \cite{Goulding:2016.}. Poznavanje konteksta putovanja, npr. objekata u blizini zaustavljanja, omoguæuje da se kraj putovanja ne temelji iskljuèivo na osnovu duljine trajanja zaustavljanja, veæ da se u obzir uzme svrha zaustavljanja.
 
-Mjera koja bi govorila o kvaliteti odabrane definicije putovanja prema razmotrenoj problematici mogla bi biti omjer tranzitnih i ne-tranzitnih putovanja (putovanja sa svrhom)  zabilježenih u \gls{pom}, no kako izostaje konvencionalni dogovor oko definicije putovanja i tranzicije ova mjera nije obuhvaæena ovim radom.
+Prednost suvremenih izvora podataka s višednevnim ili višemjeseènim razdobljem promatranja je uoèavanje obrazaca i ponovljivost putovanja na dnevnoj ili tjednoj bazi \cite{Chen:2019.}. Prepoznavanje obrasca putovanja pojedinca u tom razdoblju omoguæuje rekonstrukciju putovanja u periodima kada podaci nedostaju. Chen putovanja pojedinca u prošlosti i buduænosti od promatranog putovanja naziva upravo \textit{kontekstom} u metodlogiji opisanoj u radu \cite{Chen:2019.}. %\ref{Chen}
+
+Mjera koja bi govorila o kvaliteti odabrane definicije putovanja prema razmotrenoj problematici mogla bi biti omjer tranzitnih (pod-putovanja) i ne-tranzitnih putovanja (putovanja sa svrhom)  zabilježenih u \gls{pom}. Kako izostaje konvencionalni dogovor oko definicije putovanja i tranzicije (pod-putovanja) ova mjera nije obuhvaæena ovim radom.
 
 %Kontekst putovanja  
 %-Zaustavljanje sa svrhom, 
@@ -515,7 +529,7 @@ odnosno veæinski su ispunjene Nul-æelijama (eng. \textit{Null-cells, Zero-cells}
 %Ista situacija je s \gls{pom}-ma kreiranim iz \gls{rsi}, dok æe 
 \gls{pom}-e kreirane iz GPS ili \gls{cdr} zapisa gusto su ispunjene, najèešæe vrlo malim vrijednostima umjesto nula \cite{Vuren:2015.}. \gls{pom} izraðene iz uzoraka nakon procjene se skaliraju da bi obuhvatile cijelu populaciju. Postupci skaliranja nisu obuhvaæeni ovim radom. Skaliranje ukljuèuje množenje \gls{pom}-e odreðenim faktorom, a u tom sluèaju Nul-æelija zapravo ne mijenja vrijednost.
 
-Dva su uzroka praznim poljima, nepostojanje putovanja izmeðu tih parova zona ili su postupkom procjene putovanja nezabilježena. 
+Dva su uzroka praznim æelijama, nepostojanje putovanja izmeðu tih parova zona ili su postupkom procjene putovanja nezabilježena. 
 %0 æelije?!
 %Skaliranje 0*x $->$ 0 
 %-Informacija na razini putovanja \\

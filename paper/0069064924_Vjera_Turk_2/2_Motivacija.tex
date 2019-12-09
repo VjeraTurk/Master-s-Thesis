@@ -211,6 +211,8 @@ Vremenski nezavisna \gls{pom} ima prostornu, vremenski zavisna \gls{pom} prostor
 
 \definition{Prostorna rezolucija} je najmanja prijeðena udaljenost koju je moguæe identificirati.\\
 
+
+
 Udaljenost je kontinuirana velièina, a radi pojednostavljenja metodologije definirana je kao kategorièka s kategorijama: 
 	\begin{enumerate}
 		\item $< 15 m$
@@ -229,6 +231,10 @@ Udaljenost je kontinuirana velièina, a radi pojednostavljenja metodologije defin
 %- ... broj zona na promatranom podruèju / površina podruèja
 
 %Rezolucija \gls{pom}-e procijenjene iz \gls{cdr} ovisit æe o gustoæi tornjeva bazni stanica. Gustoæa tornjeva dobro je korelirana s gustoæom populacije \cite{Gundlegard:2016.}. Distribucija tornjeva nije homogena, niti na podruèju grada, niti na bilo kojem drugom podruèju. 
+
+Rezolucija nije svojstvo \gls{pom} koliko je svojstvo izvora podataka i postupka procjene. Prostorna rezolucija \gls{pom} iz CDR je najmanja udaljenost izmeðu središta 2 zone. (Pod niže navedenim ogranièenjem \ref{itm:cat_2} na putovanja iz istog izvora podataka - \gls{cdr} te dvije zone ne smiju biti susjedne).
+
+
 \definition{Vremenska rezolucija} je 
 najmanji vremenski odmak koji je moguæe identificirati. \\
 %duljina trajanja vremenskog okvira $\tau$
@@ -426,14 +432,15 @@ Lažna kretanja i zaustavljanja u literaturi nastoje se izbjeæi postavljanjem nek
 	
 	\begin{figure}[!htpb]
 		\begin{center}
-			\subfloat[POM sa putovanjima u susjedne æelije. Ukupna širina toka 2587]{\label{fig:vz_sa}
+			\subfloat[POM s putovanjima u susjedne æelije. Ukupna širina toka 2587]{\label{fig:vz_sa}
 				\includegraphics[width=9.5cm,keepaspectratio=true]{vz_sa_bez}}\\ 
 			%\hspace{10pt}
 			\subfloat[POM bez putovanja u susjedne æelije. Ukupna širina toka 2392]
 			{\label{fig:vz_bez}
 				\includegraphics[width=9.5cm,keepaspectratio=true]{vz_bez_bez}}
-			\caption{Primjer POM sa i bez putovanja u susjedne æelije. } 
+			\caption{Primjer POM s i bez putovanja u susjedne æelije. } 
 			\label{fig:vz}
+			%***prevelike slike
 		\end{center}
 	\end{figure}
 	
@@ -491,8 +498,8 @@ vremensko na 1 sat minimalnog trajanja (kategorija \ref{itm:cat_6}) i prostorno 
 		\subfloat[POM-a u kojoj je putovanje definirano kao promjena položaja u odnosu na položaj u prethodnom periodu. Položaj u periodu je onaj na kojem korisnik pretežito boravi. Za jedan period se pretpostavlja da je korisnik na prebivalištu, za drugi da je na radnom mjestu - matricu èine putovanja od prebivališta na posao engl. \textit{commuting trips} ]
 		{\label{fig:long_journeys}
 			\includegraphics[height=6.6cm,keepaspectratio=true]{long_journeys}}
-		\caption{ Dvije POM-e - produkti razlièitih definicija putovanja. Dobivene su iz potpuno istog izvora %\gls{cdr} 
-			\acrshort{cdr} zapisa. \cite{Gundlegard:2016.}}
+		\caption{ Dvije POM-e - produkti razlièitih definicija putovanja. Dobivene su iz istog izvora %\gls{cdr} 
+			\acrshort{cdr} zapisa \cite{Gundlegard:2016.}}.
 		\label{fig:journeys}
 	\end{center}
 	
@@ -550,14 +557,15 @@ Dva su uzroka praznim æelijama, nepostojanje putovanja izmeðu tih parova zona il
 	Ukupna širina toka je ukupan broj odlazaka/dolazaka po vremenskom okviru za cijelu matricu - suma svih elemenata \gls{pom}-e. (vidi sliku \ref{fig:matrix} $F_ij$).
 \end{definition}
 
-Svi dosad spomenuti parametri utjecat æe na ukupnu širinu toka. Velièina i reprezentativnost uzorka stanovništva te k-anonimizacija.
+Svi dosad spomenuti parametri utjecat æe na ukupnu širinu toka. Osim njih, utjecat æe velièina i reprezentativnost uzorka stanovništva te k-anonimizacija.
 
-Izdvajanje najaktivnijih korisnika (onih s najviše zapisa) zastupljeno je u istraživanjima procjene \gls{pom} iz \gls{cdr} \cite{Schneider:2013.} \cite{Toole:2015.}.
 %Podjelom korisnika u 3 skupine po kolièini podataka koju generiraju i analizom svake skupine zasebno, za podruèje francuske regije Picardie), studija \cite{Bonnel:2015.} pokazuje da frekvencija korištenja ne uvodi pristranost \cite{Bonnel:2015.}. 
-Calabrese \cite{Calabrese:2011.} uzima samo sluèajno odabranih 25\% korisnika (njih 1 milijun) da pojednostavi analizu, a \cite{Graells-Garrido:2016.} samo 100,000, kako bi procijenjena \gls{pom} bila usporediva s onom dobivenom iz ankete provedene na uzorku iste velièine. Rekonstrukciju putanja kao riješenje koje osigurava zadržavanje velikog broja (manje aktivnih) korisnika predlaže Chen (odlomak \ref{Chen}).
+Calabrese \cite{Calabrese:2011.} uzima samo sluèajno odabranih 25\% korisnika (1 milijun) da pojednostavi analiza. Graells-Garrido \cite{Graells-Garrido:2016.} uzima sluèajno odabranih 100,000 korisnika jer je referentna (\textit{ground truth}) \gls{pom} procijenjena iz ankete provedene na uzorku iste velièine.
+%Istraživanja  izdvajaju najaktivnije korisnike
+Uzimanje samo najaktivnijih korisnika (onih s najviše zapisa) zastupljeno je u istraživanjima procjene \gls{pom} iz \gls{cdr} \cite{Schneider:2013.} \cite{Toole:2015.} \cite{Chen:2019.}. Chen analizira razloge odbacivanja i predlaže riješenje. Rješenje je metoda rekonstrukcije putanja koja osigurava zadržavanje velikog broja (manje aktivnih) korisnika (odlomak \ref{Chen}).
 
-Slabo obuhvaæanje krajnjih dobnih skupina zbog slabe zastupljenosti mobilnih ureðaja kod najstarije i najmlaðe dobne skupine ne tumaèi se kao pristranost, uz napomenu da su to ujedno skupine sa generalno slabom mobilnosti u odnosu na ostale \cite{Bonnel:2015.}. %Studija \cite{Goulding:2016.} istièe da usluge razlièitim demografskim skupinama, a najèešæe su izuzetak skupine slabijeg socio-ekonomskog stanja. 
-Goulding smatra da se eventualno postojanje pristranosti može smatrati zanemarivim kod tržišta gdje veliki postotak stanovništva (npr. 92\%) posjeduje mobilni ureðaj \cite{Goulding:2016.}.
+Slabo obuhvaæanje krajnjih dobnih skupina (najstarije i najmlaðe dobne skupine ) u procjeni \gls{pom} iz \gls{cdr} zbog slabe zastupljenosti mobilnih ureðaja ne tumaèi se kao pristranost, uz napomenu da su to ujedno skupine sa generalno slabom mobilnosti u odnosu na ostale \cite{Bonnel:2015.}. %Studija \cite{Goulding:2016.} istièe da usluge razlièitim demografskim skupinama, a najèešæe su izuzetak skupine slabijeg socio-ekonomskog stanja. 
+Goulding smatra da se eventualna pristranost može zanemariti kod tržišta gdje veliki postotak stanovništva (npr. 92\%) posjeduje mobilni ureðaj \cite{Goulding:2016.}.
 
 % Cools \cite{Cools:2010.} zasebno analizira \gls{pom}-a sa i bez takvih æelija jer je od 589 $\times$ 589 æelija, èak 77.8\% njih bilo Nul-æelija. 
 %Ista situacija je s \gls{pom}-ma kreiranim iz \gls{rsi}, dok æe 
@@ -578,16 +586,18 @@ Goulding smatra da se eventualno postojanje pristranosti može smatrati zanemariv
 %(ne)uniformna podjela ...
 %Interpolacija - ima li smisla 2 razlièite podjele?!
 
-\subsubsection{K-anonimizacija} K-anonimnost (engl. \textit{k-annonimity}) \label{k-an} odreðuje najmanju dozvoljenu širinu toka koja se dozvoljava, u suprotnom se tok u potpunosti zanemaruje (postaje Nul-æelija). Razlog je smanjenje rizika od moguænosti identificiranja pojedinaca, pogotovo u vrlo rijetko naseljenim podruèjima \cite{Goulding:2016.}. K-anonimizacijom treba osigurati da tok u svakoj æeliji bude veæi od: 
+\subsubsection{K-anonimizacija} K-anonimnost (engl. \textit{k-annonimity}) \label{k-an} odreðuje najmanju dozvoljenu širinu toka ili najmanju dozvoljenu populaciju zone. Širina toka manja od dozvoljene se zanemaruje (postaje Nul-æelija). Razlog je smanjenje rizika od moguænosti identificiranja pojedinaca, pogotovo u vrlo rijetko naseljenim podruèjima \cite{Goulding:2016.}. K-anonimizacijom treba osigurati:\\
+
+%da tok u svakoj æeliji bude veæi od: 
 \begin{equation}
-k \times m
+ f_{ij} > k \times m, \forall  i,j 
 \end{equation}
 gdje je:\\
 $m$ -  maksimalni broj putovanja za svakog pojedinca\\
 $k$ - odabrana vrijednost kojom se želi osigurava da na temelju širine toka pojedinac ne bude razaznan izmeðu $k-1$ drugih pojedinaca.
 \newline
 
-ili, ako su dostupni, iz podataka o populaciji osigurati da je populacija u svakoj zoni veæa od $k$ \cite{Goulding:2016.}.
+Alternativno, ako su dostupni, iz podataka o populaciji kod definiranja zona k-anonimizacijom dovoljno je osigurati da je populacija u svakoj zoni veæa od $k$ \cite{Goulding:2016.}.
 
 \begin{comment}
 \subsubsection{Infrastruktura i sredstva kretanja}

@@ -9,10 +9,10 @@ Metodologija je demonstrirana na sluèaju usporedbe dvije \gls{pom} dobivene s po
 Za implementaciju demonstracije metodologije korišteno je programsko okruženje za statistièko raèunarstvo R.
 
 \subsubsection{Polazišno-Odredišna Matrica A}
-\gls{pom} je dobivena iz anonimiziranih javno dostupnih  telekomunikacijskih zapisa za grad Shenzhen \cite{Shenzhen:2017.} postupkom procjene opisanim u \cite{Filjar:2016.} \cite{Filic:2016.} \cite{Desic:2017.}. Rezultat procjene je 8 \gls{pom} za vremeske okvire od 3 sata i jedna \gls{pom} za cijeli dan (Vidi sliku \ref{fig:A})
+\gls{pom} je dobivena iz anonimiziranih javno dostupnih  telekomunikacijskih zapisa za grad Shenzhen (\gls{cdr}) \cite{Shenzhen:2017.} postupkom procjene opisanim u radovima \cite{Filjar:2016.} \cite{Filic:2016.} \cite{Desic:2017.}. Rezultat procjene je 8 \gls{pom} za vremeske okvire od 3 sata i jedna \gls{pom} za cijeli dan. (Vidi sliku \ref{fig:A})
 
 \subsubsection{Polazišno-Odredišna Matrica B}
-\gls{pom} je dobivena iz javno dostupnih zapisa položaja i statusa (ima putnika / nema putnika) Taxi vozila u gradu Shenzhenu \cite{Shenzhen:2017.} postupkom procjene opisanim u dodatku \ref{dodatak_taxi}. Rezultat procjene je 8 \gls{pom} za vremeske okvire od 3 sata i jedna \gls{pom} za cijeli dan (Vidi sliku \ref{fig:B})
+\gls{pom} je dobivena iz javno dostupnih zapisa položaja i statusa (ima putnika / nema putnika) Taxi vozila u gradu Shenzhenu \cite{Shenzhen:2017.} postupkom procjene opisanim u dodatku \ref{dodatak_taxi}. Rezultat procjene je 8 \gls{pom} za vremeske okvire od 3 sata i jedna \gls{pom} za cijeli dan. (Vidi sliku \ref{fig:B})
 %\newline
 %\newline
 
@@ -45,13 +45,13 @@ Za implementaciju demonstracije metodologije korišteno je programsko okruženje z
 	\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
 		\hline
 		POM
-		&\makecell{Prostorno\\Obuhvaæanje}
-		&\makecell{Gustoæa\\Informacija}
-		&\makecell{Prostorna\\Zrnatost}&\makecell{Vremenska\\Zrnatost}
+		&\makecell{prostorno\\obuhvaæanje}
+		&\makecell{gustoæa\\informacija}
+		&\makecell{prostorna\\zrnatost}&\makecell{vremenska\\zrnatost}
 		%&\makecell{Tematska\\Zrnatost}
 		%&\makecell{Tematska\\Rezolucija\\Svrhe}
-		&\makecell{Tematska\\Rezolucija\\Naèina kretanja}
-		&\makecell{Ukupna\\Širina\\Toka}
+		&\makecell{tematska\\rezolucija\\naèina kretanja}
+		&\makecell{ukupna\\širina\\toka}
 		\\ [0.5ex]
 		\hline \hline
 		A& {\cellcolor{green!25}}\makecell{neovisno o\\prometnoj\\infrastrukturi}
@@ -90,8 +90,8 @@ Za implementaciju demonstracije metodologije korišteno je programsko okruženje z
 	\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
 		\hline
 		POM
-		&\makecell{Vremenska\\Rezolucija}
-		&\makecell{Prostorna\\Rezolucija}
+		&\makecell{vremenska\\rezolucija}
+		&\makecell{prostorna\\rezolucija}
 		\\ [0.5ex]
 		\hline \hline
 		A
@@ -100,8 +100,10 @@ Za implementaciju demonstracije metodologije korišteno je programsko okruženje z
 		\\ [0.5ex]
 		\hline
 		B
-		& \cellcolor{green!25}$5 s$
-		& \cellcolor{green!25}$\approx 10 m$ (GNSS)
+		& %\cellcolor{green!25}
+		$5 s$
+		& %\cellcolor{green!25}
+		$\approx 10 m$ (GNSS)
 		\\ [0.5ex]
 		\hline
 		

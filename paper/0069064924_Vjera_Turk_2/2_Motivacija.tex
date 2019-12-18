@@ -87,7 +87,7 @@ Koriste podatke iz službene baze s 12,000 \glstext{pois} i \gls{cdr} zapisima iz
 Zone su okarakterizirane objektima koji se nalaze u njima.
 \subsubsection{Studija B - Model Raspodjele Toka}
 \label{rad}
-Inovativni pristup kontekstualizaciji toka predstavljen je u konferencijskom radu sa sudjelovanjem autora ovog diplomskog rada \cite{Stupar:2018.}. Prostorni objekti podijeljeni su na osnovu pripadajuæih opisnih podatak prema tipu socio-ekonomske aktivnosti uz koju su vezani (vidi dodatak \ref{dodatak_osm} - OpenStreetMap). Definirano je 6 kategorija socio-ekonomskih aktivnosti:
+Inovativni pristup kontekstualizaciji toka predstavljen je u konferencijskom radu sa sudjelovanjem autorice ovog diplomskog rada \cite{Stupar:2018.}. Prostorni objekti podijeljeni su na osnovu pripadajuæih opisnih podatak prema tipu socio-ekonomske aktivnosti uz koju su vezani (vidi dodatak \ref{dodatak_osm} - OpenStreetMap). Definirano je 6 kategorija socio-ekonomskih aktivnosti:
 Dom (Home), Posao (Work), Zdravlje (Health), Edukacija (Education), Zabava (Leisure) i Ostalo (Other). \textbf{Razvijen je vjerojatnosni model koji ukupni ulazni tok u odredišnu zonu dijeli na 6 tokova usmjerenih prema objektima tih kategorija. Distribucija toka u kategorije ovisi o broju objekata pojedine kategorije u odredišnoj zoni i promatranom vremenskom okviru}. Jedna \gls{pom} dijeli se na 6 kontekstualiziranih \gls{pom}-a, po jednu za svaku od kategorija. \gls{pom}-e dobivene iz javno dostupnih, anonimiziranih telekomunikacijskih zapisa na podruèju kineskog grada Shenzhena korištene su u demonstraciji modela \cite{Filic:2016.}\cite{Shenzhen:2017.}.
 %Definiranjem konteksta putovanja saèuvana je moguænost postizanja dobre rezolucije u vremenu, a istovremeno je dan kontekst koji ukljuèuje tipiène komutacijske \textit{Home} i \textit{Work} kategorije, te umjesto opæenite kategorije \textit{Other} precizira 4 kategorije. 
 
@@ -108,6 +108,7 @@ Unaprijeðeni model predviðanja odredišta koristi svrhu putovanja kao kontekst u 
 Rezultati pokazuju znaèajno poboljšanje u toènosti i brzini predviðanja u odnosu na predviðanje bez uzimanja svrhe u obzir. \cite{Krause:2018.}
 
 \subsubsection{Studija E - Rekonstrukcija rijetkih trajektorija}
+(...)
 \cite{Chen:2019.} 
 \label{Chen}
 
@@ -236,7 +237,7 @@ Rezolucija nije svojstvo \gls{pom} koliko je svojstvo izvora podataka i postupka
 
 
 \definition{Vremenska rezolucija} je 
-najmanji vremenski odmak koji je moguæe identificirati. \\
+najmanji vremenski odmak koji je moguæe identificirati. 
 %duljina trajanja vremenskog okvira $\tau$
 %Najmanji vremenski odmak uvjetuje širinu vremenskog okvira u kojem promatramo kretanja. 
 
@@ -382,7 +383,6 @@ Kategorije vremenske zrnatosti (vremenski okvir i pripadajuæa zrnatost):
 \end{enumerate}
 Masno otisnute kategorije zastupljene su u literaturi.\\
 Najveæa vremenska zrnatost koju je moguæe postiæi procjenom \gls{pom} ovisit æe o vremenskoj rezoluciji u kojoj postoje podaci za procjenu.
-
 \definition Tematska zrnatost je najmanja prostorno 
  razluèiva jedinica koja ima tematsku rezoluciju.
 
@@ -394,11 +394,9 @@ Najveæa vremenska zrnatost koju je moguæe postiæi procjenom \gls{pom} ovisit æe 
 \end{enumerate}
 
 Objekt u zoni je najmanja prostorno razluèiva jedinica kod procjene matrica koja ukljuèuje kontekstualizaciju toka na temelju objekata u odredišnoj zoni (studija B \ref{rad}).
-
 %*kontekstualizacija-  objekt u zoni ?!\\
 %* neuniformnost prostorne podjele
 %*Tematska zrnatost$->$ prostorna zrnatost?!\\
-
 \subsection{Putovanje kao parametar}
 \label{trip_def}
 Putovanja koja se protežu kroz više perioda u pravilu se dodjeljuju vremenskom okviru u kojem zapoèinju ili u kojem završavaju. Autori \cite{Bera:2011.} \cite{Filic:2016.} \cite{Gundlegard:2016.} sva putovanja dodjeljuju intervalu u kojem je putovanje zapoèeto, dok neki procjenjuje obje vrste \gls{pom}-a \cite{Teralytics:2017.}. Naredni odjeljci ne definiraju putovanje kao parametar, veæ samo istièu problematiku koja se javlja kod definicije putovanja opæenito. 
@@ -412,15 +410,13 @@ Putovanja koja se protežu kroz više perioda u pravilu se dodjeljuju vremenskom o
 %Važno je definirati završava li putovanje bilo koje zaustavljanje ili ono kojem je odreðen kontekst od interesa.
 
 %Podjela na \gls{pom}-e koje sadrže iskljuèivo komutacijska (\gls{hw} i \gls{wh}) putovanja i one koje u obzir uzimaju i ostala putovanja, bilo pod kategorijom \textit{Ostalo} (engl. \textit{Other}), preciznijom podjelom ili bez podjele po svrsi. Prva vrsta obièno je povezana s tradicionalnim postupcima procjene (osobito ankete) dok su ostale prisutne u vremenski zavisnim \gls{pom}-ma, procijenjenim modernim postupcima.\\
-
 \begin{comment}
 \begin{enumerate}
 \item \textit{commuting trips} - iskljuèivo Home-Work i Work-Home putovanja
 \item -bilo koje kretanje koje zadovoljava uvjete putovanja\\
 \end{enumerate}
 \end{comment}
-
-\subsubsection{Ogranièenja na putovanja iz istog izvora podataka - \glsfirst{cdr}}
+\subsubsection{Ogranièenja na putovanja iz izvora podataka - \glsfirst{cdr}}
 
 Putovanja kod vremenski zavisnih \gls{pom}-a kreiranih iz \gls{cdr} moguæe je svrstati u nekoliko kategorija na osnovu prihvaæanja ili odbacivanja odreðenih kretanja kao putovanja.
 Putovanjima se ne smije obuhvatiti lažno kretanje uzrokovano uravnoteženjem optereæenja i lažno zaustavljanje uzrokovano neuniformnom gustoæom zapisa pojedinaca u vremenu.
@@ -468,9 +464,9 @@ Lažna kretanja i zaustavljanja u literaturi nastoje se izbjeæi postavljanjem nek
 
 Studija provedena na \gls{cdr} podatcima za Senegal \cite{Gundlegard:2016.} koristila je dvije definicije putovanja. Generirano je u prosjeku 0.7 putovanja dnevno po korisniku u jednom sluèaju, a 0.06 u drugom.
 Ogranièenja u prvom sluèaju su bila:
-minimalna udaljenost 3 km, maksimalna 100 km \ref{itm:cat_4}. 
+minimalna udaljenost 3 km, maksimalna 100 km (ogranièenje \ref{itm:cat_4}). 
 Ogranièenja u drugom sluèaju su bila:
-vremensko na 1 sat minimalnog trajanja (kategorija \ref{itm:cat_6}) i prostorno na udaljenost od barem 5 udaljenosti baznih stanica (kategorija \ref{itm:cat_4}). Kratka putovanja bila su najzastupljenija. Distribuciju možemo vidjeti na slici \ref{fig:trip_distance_distribution}
+vremensko na 1 sat minimalnog trajanja (ogranièenje \ref{itm:cat_6}) i prostorno na udaljenost od barem 5 udaljenosti baznih stanica (ogranièenje \ref{itm:cat_4}). Kratka putovanja bila su najzastupljenija. Distribuciju možemo vidjeti na slici \ref{fig:trip_distance_distribution}
 %\textit{Commuting} putovanja takoðer mogu biti pod nekim ogranièenjima, osim što su najèešæe veæ ogranièena vremenskim periodom u kojem se odvijaju. Primjerice 
 %\cite{Gundlegard:2016.} definira minimalnu udaljenost od 3 km izmeðu prebivališta i mjesta rada (kategorija 4) i izvan susjednih æelija (kategorija 2).
 
@@ -556,7 +552,6 @@ Dva su uzroka praznim æelijama, nepostojanje putovanja izmeðu tih parova zona il
 \begin{definition}
 	Ukupna širina toka je ukupan broj odlazaka/dolazaka po vremenskom okviru za cijelu matricu - suma svih elemenata \gls{pom}-e. (vidi sliku \ref{fig:matrix} $F_ij$).
 \end{definition}
-
 Svi dosad spomenuti parametri utjecat æe na ukupnu širinu toka. Osim njih, utjecat æe velièina i reprezentativnost uzorka stanovništva te k-anonimizacija.
 
 %Podjelom korisnika u 3 skupine po kolièini podataka koju generiraju i analizom svake skupine zasebno, za podruèje francuske regije Picardie), studija \cite{Bonnel:2015.} pokazuje da frekvencija korištenja ne uvodi pristranost \cite{Bonnel:2015.}. 
@@ -586,8 +581,7 @@ Goulding smatra da se eventualna pristranost može zanemariti kod tržišta gdje ve
 %(ne)uniformna podjela ...
 %Interpolacija - ima li smisla 2 razlièite podjele?!
 
-\subsubsection{K-anonimizacija} K-anonimnost (engl. \textit{k-annonimity}) \label{k-an} odreðuje najmanju dozvoljenu širinu toka ili najmanju dozvoljenu populaciju zone. Širina toka manja od dozvoljene se zanemaruje (postaje Nul-æelija). Razlog je smanjenje rizika od moguænosti identificiranja pojedinaca, pogotovo u vrlo rijetko naseljenim podruèjima \cite{Goulding:2016.}. K-anonimizacijom treba osigurati:\\
-
+\subsubsection{K-anonimizacija} K-anonimnost (engl. \textit{k-annonimity}) \label{k-an} odreðuje najmanju dozvoljenu širinu toka ili najmanju dozvoljenu populaciju zone. Širina toka manja od dozvoljene se zanemaruje (postaje Nul-æelija). Razlog je smanjenje rizika od moguænosti identificiranja pojedinaca, pogotovo u vrlo rijetko naseljenim podruèjima \cite{Goulding:2016.}. K-anonimizacijom treba osigurati:
 %da tok u svakoj æeliji bude veæi od: 
 \begin{equation}
  f_{ij} > k \times m, \forall  i,j 

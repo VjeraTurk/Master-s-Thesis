@@ -2,10 +2,10 @@
 \chapter{Prilagodba prostorne podjele}
 \label{dodatak_ppp}
 
-Ako je toènost matrice definirana iskljuèivo kao sliènost svakog njenog elementa s ekvivalentnim u elementom u \textit{grand truth} matrici nužno je osigurati da prostorna podjela matrice odgovara prostornoj podjeli referentne ili je potrebno obje matrice svesti na zajednièku prostornu podjelu. 
+Definiramo li toènost matrice iskljuèivo na temelju sliènosti svakog njenog elementa s ekvivalentnim elementom u \textit{grand truth} matrici nužno je osigurati da prostorna podjela matrice odgovara prostornoj podjeli referentne ili je potrebno obje matrice svesti na zajednièku prostornu podjelu. 
 
-\section{Agregacija baznih stanica}
-Pregledom literature utvrðeno je da se koriste \textit{k-sredina} i \textit{mean-shift} algoritam za grupiranje baznih stanica u broj grupa jednak broju \gls{taz} na podruèju o interesa \cite{Goulding:2016.} \cite{Alhazzani:2016.} \cite{Mellegard:2011.} ili pak jedinicama samouprave (eng. \textit{municipalities}) kako bi  \gls{pom}-e u konaènici bile usporedive s postojeæima, dobivenim iz anketa \cite{Coscia:2015.} \cite{Frias-Martinez:2012.}. Nije utvrðivano kolika se greška uvodi ovim postupcima. Primjer gustoæe tornjeva baznih stanica na podruèjima anketnih jedinica prikazan je na slici \ref{fig:density}
+\section{Objedinjenje baznih stanica}
+Pregledom literature utvrðeno je da se koriste \textit{k-sredina} i \textit{mean-shift} algoritam za grupiranje baznih stanica u broj grupa jednak broju \gls{taz} na podruèju interesa \cite{Goulding:2016.} \cite{Alhazzani:2016.} \cite{Mellegard:2011.} ili pak jedinicama samouprave (eng. \textit{municipalities}) kako bi  \gls{pom}-e u konaènici bile usporedive s postojeæima, dobivenim iz anketa \cite{Coscia:2015.} \cite{Frias-Martinez:2012.}. Nije utvrðivano kolika se greška uvodi ovim postupcima. Primjer gustoæe tornjeva baznih stanica na podruèjima anketnih jedinica prikazan je na slici \ref{fig:density}
 %\cite{Mellegard:2011.} ne definira unaprijed broj grupa veæ za grupaciju koristi \textit{mean-shift} algoritam koji sam odreðuje broj grupa na podruèju Švedske, potom koristeæi \gls{osm} grupe veže uz imena gradova i mjesta. 
 %U istraživanju \cite{Coscia:2015.} bazne stanice na podruèju Kolumbije grupiraju po jedinicama samouprave (eng. \textit{municipalities}). Isti postupak je korišten i u istraživanju na podruèju Madrida, kako bi  \gls{pom}-e u konaènici bile usporedive s onima dobivenim iz anketa \cite{Frias-Martinez:2012.}.
 
@@ -22,7 +22,7 @@ Pregledom literature utvrðeno je da se koriste \textit{k-sredina} i \textit{mean
 
 \section{Interpolacija}
 \label{interpol}
-Postupak konverzije \gls{pom}-a iz prostorne podjele na Voronoi æelije u drugu prostornu podjelu, npr. uniformnu kvadratnu mrežu (æelije $1 km^2$), opisan u priruèniku \cite{Goulding:2016.}. U postupku odreðivanja postotka ukupnog toka Voronoi æelije koji æe se dodijeliti novoj kvadratnoj æeliji predlaže se uzeti u obzir: površinu preklapanja tih æelija, broj zgrada ili ukupnu površinu zgrada (ukljuèujuæi katove) na podruèju preklapanja tih æelija. 
+Postupak konverzije \gls{pom}-a iz prostorne podjele na Voronoi æelije u drugu prostornu podjelu, npr. uniformnu kvadratnu mrežu (æelije $1 km^2$), opisan u priruèniku \cite{Goulding:2016.}. U postupku odreðivanja postotka ukupnog toka Voronoi æelije koji æe se dodijeliti novoj kvadratnoj æeliji predlaže uzeti u obzir: površinu preklapanja tih æelija, broj zgrada ili ukupnu površinu zgrada (ukljuèujuæi katove) na podruèju preklapanja tih æelija. 
 Na slici \ref{fig:interpolation} je prikazan treæi oblik interpolacije gdje su korišteni podaci o ukupnoj kvadratnoj površini zgrada. 
 
 \begin{figure}[!htbp]
@@ -33,11 +33,11 @@ Na slici \ref{fig:interpolation} je prikazan treæi oblik interpolacije gdje su k
 	\end{center}
 \end{figure}
 
-\section{Posljedice agregacije prostornih æelija}
+\section{Posljedice objedinjenja prostornih zona}
 
-Voronoi æelije takoðer je moguæe ugnijezditi (što se èesto radi kod usporedbe s \gls{pom}-ma dobivenim drugim postupkom), a pritom se može u matricu bilježiti i aproksimacija internog toka, odnosno broja putovanja unutar nove æelije (dijagonala matrice). Takva putovanja nazivaju se internim putovanjima. Studija \cite{Toole:2015.} je pokazala da sa \textbf{smanjenjem rezolucije (visokim stupnjem agregacije Voronoi æelija) stupanj korelacije s \gls{pom}-ma iz ankete (za isti grad) raste} (\gls{pom}-e dobivene iz \gls{cdr} i iz anketa u 4 razlièita grada). 
-Postotak eksternih putovanja koji se gubi u procesu agregacije Voronoi æelija analiziran je u studijama \cite{Graells-Garrido:2016.} (Vidi sliku \ref{fig:diagonal}) i \cite{Bahoken:2013.} za \gls{pom}-e iz regije Picardie u Francuskoj.
-\textbf{Agregacijom Voronoi æelija na razinu \textit{Urban Areas} (podruèja oko gradova) 85\% svih putovanja postaje internim putovanjima, a na razini \textit{Urban Cores} (podruèja oko veæih gradova) èak 97\% poèetno zabilježenih putovanja je interno, te ostaje samo 3\% eksternih putovanja} \cite{Bahoken:2013.}.
+Voronoi æelije takoðer je moguæe objediniti u veæe zone. Pritom se može u matricu bilježiti i aproksimacija internog toka, odnosno broja putovanja unutar nove æelije (dijagonala matrice). Takva putovanja nazivaju se internim putovanjima. Studija \cite{Toole:2015.} je pokazala da sa \textbf{smanjenjem rezolucije (visokim stupnjem objedinjenja Voronoi æelija) stupanj korelacije s \gls{pom}-ma iz ankete (za isti grad) raste} (\gls{pom}-e dobivene iz \gls{cdr} i iz anketa u 4 razlièita grada). 
+Postotak eksternih putovanja koji se gubi u procesu objedinjenja Voronoi æelija analiziran je u studijama \cite{Graells-Garrido:2016.} (Vidi sliku \ref{fig:diagonal}) i \cite{Bahoken:2013.} za \gls{pom}-e iz regije Picardie u Francuskoj.
+\textbf{Objedinjenjem Voronoi æelija na razinu \textit{Urban Areas} (podruèja oko gradova) 85\% svih putovanja postaje internim putovanjima, a na razini \textit{Urban Cores} (podruèja oko veæih gradova) èak 97\% poèetno zabilježenih putovanja je interno, te ostaje samo 3\% eksternih putovanja} \cite{Bahoken:2013.}.
 
 \begin{figure}[!htpb]
 	\begin{center}
@@ -56,24 +56,24 @@ Postotak eksternih putovanja koji se gubi u procesu agregacije Voronoi æelija an
 
 \chapter{OpenStreetMap}
 \label{dodatak_osm}
-\gls{osm} je svjetski raširen projekt koji kreira i pruža slobodne zemljopisne podatke (zemljovide gradova i naselja) temeljen na volonterskom doprinosu zajednice. Projekt pruža detaljne i ažurne digitalne zemljovide kompatibilne s \gls{gis} aplikacijama. 
-Zapoèet je prije 15 godina, u Ujedinjenom Kraljevstvu, kao odgovor na tehnièka ili pravna ogranièenja postojeæih "slobodnih" baza prostornih podataka kao što je GoogleMaps. Zajednièki doprinos i meðusobna kontrola unosa održavaju kartu na visokoj razini kvalitete i toènosti.
+\gls{osm} je svjetski raširen projekt koji kreira i pruža slobodne zemljopisne podatke (zemljovide gradova i naselja) temeljen na volonterskom doprinosu zajednice. Projekt pruža detaljne, ažurne digitalne zemljovide kompatibilne s \gls{gis} aplikacijama. 
+Zapoèet je prije 15 godina u Ujedinjenom Kraljevstvu kao odgovor na tehnièka ili pravna ogranièenja postojeæih "slobodnih" baza prostornih podataka kao što je GoogleMaps. Kartu svijeta na visokoj razini kvalitete i toènosti održavaju zajednièki doprinos i meðusobna kontrola unosa.
 
 Struktura osnovnih elemenata na toj rasterskoj karti je hijerarhijska. Element u hijerarhiji može biti: èvor (engl. \textit{node}), put (engl. \textit{way}) ili relacija (engl. \textit{relation}). Uz hijerarhijske postoji i opisni element koji se naziva oznakom (engl. \textit{tag}), a njegova funkcija je opisati znaèajke hijerarhijskog elementa uz koji je vezan. 
 
-Èvor je jedinstvena toèka u prostoru (sa identifikacijskom oznakom, zemljopisnom širinom i dužinom) koja najèešæe predstavlja fizièki objekt (zgrada, dio ceste...) te sadrži jedan ili više \textit{kljuè=vrijednost} oznaka (engl. \textit{key=value tag}) koji definiraju razne znaèajke objekta.
+Èvor je jedinstvena toèka u prostoru (sa identifikacijskom oznakom, zemljopisnom širinom i dužinom) koja najèešæe predstavlja fizièki objekt (zgrada, dio ceste...) te sadrži jedan ili više \textit{kljuè = vrijednost} oznaka (engl. \textit{key = value tag}) koji definiraju razne znaèajke objekta.
 
-Put je ureðena lista 2 do 2,000 èvorova, koja takoðer može biti opisana \textit{kljuè=vrijednost} oznakama. 
+Put je ureðena lista 2 do 2,000 èvorova, koja takoðer može biti opisana \textit{kljuè = vrijednost} oznakama. 
 
 Relacija je ureðena lista èvorova, puteva i/ili relacija. Definira logièku ili geografsku povezanost èlanova.
  
-Primjeri oznaka vezanih za èvorove:  \textit{office=company}, \textit{building=residential}, \textit{building=hotel}, \textit{building=church}, \textit{leisure=sports\_centre} , \textit{amenity=school}. Primjer žiga vezanog uz put \textit{highway=residential}.
+Primjeri oznaka vezanih za èvorove:  \textit{office=company}, \textit{building=residential}, \textit{building=hotel}, \textit{building=church}, \textit{leisure=sports\_centre}, \textit{amenity=school}. Primjer žiga vezanog uz put \textit{highway=residential}.
 
-\gls{osm} doprinosi istraživanjima u podruèju analize kretanja stanovništva i kao izvor prometne infrastrukture i pripadajuæih meta podataka (kolnik, mostovi, ogranièenja brzine i dr.)\cite{Toole:2015.} i kao izvor podataka o podnoj površini objekata (engl. floor area) \cite{Goulding:2016.}. 
+\gls{osm} doprinosi istraživanjima analize kretanja stanovništva i kao izvor prometne infrastrukture, njenih meta podataka (kolnik, mostovi, ogranièenja brzine i dr.)\cite{Toole:2015.} i podataka o podnoj površini objekata (engl. floor area) \cite{Goulding:2016.}. 
 %Raspodjela toka po prometnoj infrastrukturi nadilazi podruèje ovog rada no jest dio problematike modeliranja prometa.  
 \chapter{Procjena Polazišno-Odredišne Matrice B}
 \label{dodatak_taxi}
-Podatci u formatu \ref{fig:TaxiData} su grupirani prema Identifikacijskom broju i sortirani prema vremenskom žigu (Time). Poèetak putovanja definiran je kao prelazak Statusa (engl. Occupancy Status) iz $0$ u $1$, a kraj kao prelazak iz 1 u 0. Prostorna podjela POM je na Voronoi Æelije oko tornjeva baznih stanica jer podatci o \gls{taz} nisu javno dostupni. Generirano je 8 \gls{pom}, a sva putovanja su dodjeljivana periodu u kojem poèinju.
+Podatci u formatu \ref{fig:TaxiData} su grupirani prema identifikacijskoj oznaci (Taxi Id) i sortirani prema vremenskom žigu (Time). Poèetak putovanja definiran je kao prelazak statusa ( Occupancy Status) iz $0$ u $1$, a kraj kao prelazak iz 1 u 0. Prostorna podjela POM je na Voronoi æelije oko tornjeva baznih stanica jer podatci o \gls{taz} nisu javno dostupni. Generirano je 8 \gls{pom}, a sva putovanja su dodjeljivana periodu u kojem poèinju.
 
 \begin{figure}[!htbp]
 	\begin{center}

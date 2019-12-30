@@ -1,0 +1,27 @@
++ 2. Naslovi poglavlja trebaju biti isključivo na hrvatskom jeziku (napr. 2.2.2)
++ 3. Pogl. 3: Pregled postupaka i istraživanja o vrednovanju polazišno-odredišnih matrica -> Tradicionalni pristupi vrednovanju polazišno-odredišnih matrica (obzirom na naslov sljedećeg poglavlja)
++ 4. Pogl. 4: Kontekstualizacija i novi pristup vrednovanju Polazišno-Odredišnih Matrica -> Na kontekstualizaciji zasnovan pristup vrednovanju polazišno-odredišnih matrica (ako je naziv prethodno pisan malim slovima, onda to tako treba i nastaviti, u cijelom tekstu)
++ 5. Odlučiti se: ili polazišno-odrdišna matrica ili Polazišno-Odredišna Matrica, dosljedno u cijelom tekstu!
++ 6. Pogl. 4.1: Uvodna razmatranja i pregled istraživanja -> Uvodna razmatranja (pregled je dan u prethodnim poglavljima)
++ 7. Sažetak A: Postojeće metrike ... -> Metrike ...
++ 8. U cijelom tekstu: Korištenje kratice POM. POM = polazišno-odredišna matrica. Dakle: ... procjena polazišno-odredišne matrice ... -> ... procjena POM-e ... (NE: procjena POM-a). Alternativno, koristiti samo POM. Odluku potrebno dosljedno koristiti u cijelom tekstu.
++ 9. (eng. ODM, ODM ili Trip Table) Pri citiranju izraza na engleskom ili bilo kojem drugom stranom jeziku, najprije navesti puni izraz, a nakon tog kraticu. Dakle: (engl. Origin-Destination Matrix, ODM)
++ 12. Pogl. 2.2.2. Preciznost određivanja položaja. Preciznost se veže za ponovljivost. Ukoliko želite razmotriti pogrešku u određivanju položaja, primjerenije bi bilo govoriti o točnosti.
++ 13. str. 20: [33] (vidi sliku 3.1)  ?
++11. Držati dosljedno razmake na početku/kraju poglavlja.
++16. Popraviti format Definicija 4.4.9. (uvučena)
++14. ground truth.  Nije loše spomenuti kao izvorni naziv u engleskom jeziku. U HR bismo rekli: pravi (stvarni) položaj ili trajektorija (putanja).
+
++ 10. U tekstu nema referenci. Pravilo kojeg bi se trebalo držati: svaka rečenica mora biti ili rezultat Vašeg istraživanja ili Vaša interpretacije, ili uz nju treba stajati referenca iz koje je preuzeta. Posebno vrijedi za linjenice i definicije. Ako uz definiciju nema reference, tada se smatra Vašom.
+___________________________________
+17. 5.1 Uvjeti usporedbe -> Pretpostavke usporedbe ?
+
+15. str 31: Studija E - Rekonstrukcija rijetkih trajektorija(...) [23] ??
+Proći po tekstu i izbaciti ovakve oznake
+
+0. Zaključak 
+
+1. Umetnite scan službenog zadatka. 
+Trebat će mi Klasa i Urbr kad budem radio provjeru originalnosti.
+
+

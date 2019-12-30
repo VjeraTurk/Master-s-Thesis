@@ -9,7 +9,7 @@ Tradicionalni modeli procjene pretpostavljaju da se širina vremenskog vrhunca u 
 
 \textbf{Pretpostavka da je referentna matrica \textit{a priori} toèna onemoguæuje da se sagleda je li nova \gls{pom} toènija i/ili kvalitetnija.}
 %od nje.} 
-Kako prikazati kvalitetu \gls{pom}-e bez oslanjanja na \textit{ground turth} koja porastom znaèajnijih i bržih promjena poveæava utjecaj pristranosti kretanju u prošlosti? Postoji potreba za objektivnom procjenom kvalitete \gls{pom}-e definiranjem odnosnih parametara kvalitete.
+Kako prikazati kvalitetu \gls{pom}-e bez oslanjanja na istinitu referentnu POM-u koja porastom znaèajnijih i bržih promjena poveæava utjecaj pristranosti kretanju u prošlosti? Postoji potreba za objektivnom procjenom kvalitete \gls{pom}-e definiranjem odnosnih parametara kvalitete.
 
 \gls{cdr} je kao izvor podjednako zastupljen u zemljama u razvoju i razvijenim zemljama s penetracijom oko 40\%-50\% stanovništva za pojedine operatore javne pokretne mreže \cite{Bonnel:2015.}.
 \textbf{Praksa odbacivanja velikog dijela uzorka zbog niske potpunosti putanja može se zamijeniti rekonstrukcijom putanja uvažavajuæi njihov kontekst \cite{Chen:2019.}}.
@@ -81,7 +81,8 @@ Unaprijeðeni model predviðanja odredišta koristi svrhu putovanja kao kontekst u 
 Rezultati pokazuju znaèajno poboljšanje u toènosti i brzini predviðanja u odnosu na predviðanje bez uzimanja svrhe u obzir. \cite{Krause:2018.}
 
 \subsubsection{Studija E - Rekonstrukcija rijetkih trajektorija}
-(...)
+Rekonstrukcija rijetkih trajektorija ima za cilj poveæanje potpunosti (izraz \ref{eq:potpunost}) poznatih trajektorija definiranih iz \gls{cdr}. 
+
 \cite{Chen:2019.} 
 \label{Chen}
 
@@ -341,7 +342,7 @@ Dva su uzroka praznim æelijama, nepostojanje putovanja izmeðu tih parova zona il
 Svi dosad spomenuti parametri utjecat æe na ukupnu širinu toka. Osim njih, utjecat æe velièina i reprezentativnost uzorka stanovništva te k-anonimizacija.
 
 %Podjelom korisnika u 3 skupine po kolièini podataka koju generiraju i analizom svake skupine zasebno, za podruèje francuske regije Picardie), studija \cite{Bonnel:2015.} pokazuje da frekvencija korištenja ne uvodi pristranost \cite{Bonnel:2015.}. 
-Calabrese \cite{Calabrese:2011.} uzima samo sluèajno odabranih 25\% korisnika (1 milijun) da pojednostavi analiza. Graells-Garrido \cite{Graells-Garrido:2016.} uzima sluèajno odabranih 100,000 korisnika jer je referentna (\textit{ground truth}) \gls{pom} procijenjena iz ankete provedene na uzorku iste velièine.
+Calabrese \cite{Calabrese:2011.} uzima samo sluèajno odabranih 25\% korisnika (1 milijun) da pojednostavi analiza. Graells-Garrido \cite{Graells-Garrido:2016.} uzima sluèajno odabranih 100,000 korisnika jer je referentna \gls{pom} procijenjena iz ankete provedene na uzorku iste velièine.
 %Istraživanja  izdvajaju najaktivnije korisnike
 Uzimanje samo najaktivnijih korisnika (onih s najviše zapisa) zastupljeno je u istraživanjima procjene \gls{pom}-e iz \gls{cdr} \cite{Schneider:2013.} \cite{Toole:2015.} \cite{Chen:2019.}. Chen analizira razloge odbacivanja i predlaže riješenje. Rješenje je metoda rekonstrukcije putanja koja osigurava zadržavanje velikog broja (manje aktivnih) korisnika (odlomak \ref{Chen}).
 

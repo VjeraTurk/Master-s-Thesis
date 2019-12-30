@@ -130,7 +130,7 @@ Izvedene verzije gravitacijskog modela integriraju i neke druge (socio-ekonomske
 
 Modeliranje prometa dijeli se na dvije grane: vremenski nezavisnu (statièku, analitièku) i vremenski zavisnu (simulacijsku) %, od kojih svaka ima \textit{makro} i \textit{mikro} razinu
 \cite{Espad:2013.}. \textbf{Cilj statièkog modeliranja je analiza prometa za strateška, investicijska planiranja izgradnje nove infrastrukture. Modeli procjenjuju prosjeènu dnevnu prometnu potražnju (period od 16 ili 24 sata) \cite{Espad:2013.} %29:21
-. Radi se o vremenski nezavisnoj analizi} \cite{Segovi:2015.}.
+. Radi se o vremenski nezavisnoj analizi}. %\cite{Segovi:2015.}.
 %***** The traditional, trip-based models assume that the shape of the peak in future years is the same as the shape of the peak today.
 
 \subsubsection{Vremenski zavisno modeliranje}
@@ -167,7 +167,7 @@ Ukoliko pokretno osjetilo nije specijalizirani ureðaj veæ pametni telefon korist
 Položaj pokretne stanice unutar javne pokretne mreže može se odrediti na dva naèina. Prvi je triangulacija signala koje pokretna stanica hvata iz više baznih stanica. Drugi je izjednaèavanje položaja pokretne stanice s položajem (podruèjem pokrivanja) bazne stanice s kojom je pokretna stanica povezana u trenutku oèitavanja položaja \cite{Jelusic:2016.} \cite{LBS:2018.}.
 \subsubsection{Toènost odreðivanja položaja}\label{gnss}
 Osnovni postupak odreðivanja položaja pomoæu \glsfirst{gnss} prijamnika sadržani neke pogreške.  Toènost u rangu od 10-20 m je moguæa uz dostupnost signala od najmanje 4 satelita. U urbanom okruženju zgrade i visoke strukture èesto blokiraju vidljivost izmeðu satelita i prijamnika. Rezultat toga je degradacija toènosti odreðenog položaja. 
-Napredno odreðivanje položaja podrazumijeva usporedbu i usklaðivanje inicijalno odreðene putanje kretanja s kontekstom (npr. poznatom infrastrukturom) (engl. \textit{map matching}). Njime se postiže toènost u rangu 0-15 m. \cite{Jagadeesh:2004.}\cite{LBS:2018.}
+Napredno odreðivanje položaja podrazumijeva usporedbu i usklaðivanje inicijalno odreðene putanje kretanja s kontekstom (npr. poznatom infrastrukturom) (engl. \textit{map matching})\cite{LBS:2018.}. Njime se postiže toènost u rangu 0-15 m \cite{Jagadeesh:2004.}\cite{LBS:2018.}.
 
 \subsection{Polazišno-odredišna matrica iz zapisa o telekomunikacijskim aktivnostima u javnoj pokretnoj mreži}
 U postupku praæenja aktivnosti za potrebe pružanja i naplatu usluga te za održavanje operativnosti same mreže zapisuju se podaci o aktivnostima u javnoj pokretnoj mreži.
@@ -278,10 +278,11 @@ Još jedna od zastupljenih podjela je na specifiène periode - \textit{radni sati}
 
 Kretanje pojedinca tokom dana najèešæe je rascjepkano, odnosno u nizu postoje "rupe" kada je informacija o kretanju nepoznata zbog nepostojanja aktivnosti u tom vremenu.
 
-\begin{definition}{Potpunost} putanje definirana je izrazom 
+\begin{definition}{Potpunost} putanje definirana je izrazom \cite{Chen:2019.}:
 	
 	\begin{equation}
 	potpunost = \frac{n_L}{\tau \times \mathcal{T}}
+	\label{eq:potpunost}
 	\end{equation}
 	gdje je:\\$n_L$ broj zabilježenih položaja (zaustavljanja)\\
 	$\tau$ vremenski period\\ $ \mathcal{T} $ duljina ukupnog vremenskog razdoblja za koje su dostupni zapisi.
@@ -301,16 +302,15 @@ Rekonstrukcija putanja na osnovu aktivnosti u cijelom vremenskom razdoblju proma
 \label{valid}
 \chapter{Tradicionalni pristupi vrednovanju polazišno-odredišnih matrica}
 Postupak vrednovanja %(modela, \gls{pom}-e, neèega)
-je objektivna procjena	kvalitete, vrijednosti objekta koji se vrednuje. Pregledom literature o vrednovanju \gls{pom}-e utvrðeno je da se jednoznaèno koriste pojmovi toènost, pouzdanost i kvaliteta \gls{pom}-e. Vrednovanje \gls{pom}-e vrši se postupcima koji koriste mjere
-razine sliènosti odnosno razlike (greške) s referentnom matricom - a temelj je razlika na razni svakog elementa \gls{pom}-e. 
+je objektivna procjena	kvalitete, vrijednosti objekta koji se vrednuje. Pregledom literature o vrednovanju \gls{pom}-e utvrðeno je da se jednoznaèno koriste pojmovi toènost, pouzdanost i kvaliteta \gls{pom}-e. Vrednovanje \gls{pom}-e vrši se postupcima koji koriste mjere razine sliènosti odnosno razlike (greške) s referentnom matricom - a temelj je razlika na razni svakog elementa \gls{pom}-e. 
 
-\textbf{Tradicionalni postupak vrednovanja \gls{pom}-e svodi se na odreðivanje njene sliènosti s \textit{ground truth} POM-om}  \cite{Travassoli:2016.}. Ground truth \gls{pom}-a je POM-a uzeta kao najtoèniji opis stvarnog stanja. Ground truth \gls{pom}-a dobivena je tradicionalnim postupcima (anketiranje i/ili prebrojavanje vozila). Statistièke mjere kvantiziraju razliku procijenjenih i pravih vrijednosti (vidi dodatak \ref{dodatak_metrics} - Metrike za vrednovanje polazišno-odredišne matrice). Iz statistièkih mjera sliènosti izdvojen je korelacijski koeficijent odreðenja $R^2$ koji je opisan u narednom potpoglavlju. % zašto je izdvojen?
+\textbf{Tradicionalni postupak vrednovanja \gls{pom}-e svodi se na odreðivanje njene sliènosti sa istinitom (engl. \textit{ground truth}) POM-om}  \cite{Travassoli:2016.}. Istinita \gls{pom}-a je POM-a uzeta kao najtoèniji opis stvarnog stanja. Istinita \gls{pom}-a dobivena je tradicionalnim postupcima (anketiranje i/ili prebrojavanje vozila) \cite{Calabrese:2011.}. Statistièke mjere kvantiziraju razliku procijenjenih i pravih vrijednosti (vidi dodatak \ref{dodatak_metrics} - Metrike za vrednovanje polazišno-odredišne matrice). Iz statistièkih mjera sliènosti izdvojen je korelacijski koeficijent odreðenja $R^2$ koji je opisan u narednom potpoglavlju. % zašto je izdvojen?
 
-\textbf{Upravo ta \textit{ground truth} POM je ujedno i poèetna \gls{pom} (iz odlomka \ref{seed}) u postupku procjene nove \gls{pom}-e iz rezultata prebrojavanja vozila \cite{Segovi:2015.}. \gls{pom} æe biti vrednovana usporedbom s \gls{pom}-om koja se koristi u postupku procjene te iste \gls{pom}-e. Postupak vrednovanja nove \gls{pom}-e stoga je ovisan o kvaliteti poèetne \gls{pom}-e, koja je procijenjena u odnosu njenu poèetnu matricu i tako rekurzivno.}
+\textbf{Upravo ta referentna instinita  POM je ujedno i poèetna \gls{pom} (iz odlomka \ref{seed}) u postupku procjene nove \gls{pom}-e iz rezultata prebrojavanja vozila \cite{Segovi:2015.}. \gls{pom} æe biti vrednovana usporedbom s \gls{pom}-om koja se koristi u postupku procjene te iste \gls{pom}-e. Postupak vrednovanja nove \gls{pom}-e stoga je ovisan o kvaliteti poèetne \gls{pom}-e, koja je procijenjena u odnosu njenu poèetnu matricu i tako rekurzivno.}
 
 \subsection{Linearna regresija - Korelacijski koeficijent odreðenja $R^2$}
 
-Tehnika vrednovanja linearnom regresijom procjenjuje vrijednosti æelija jedne \gls{pom}-e (zavisna varijabla - $y$) na temelju vrijednosti druge - referentne \textit{ground truth} \gls{pom}-e (nezavisna varijabla - $x$). Vrijednosti u \gls{pom}-i promatraju se kao skup vrijednosti $i = 1, 2, 3, ...n^2$ ne uzimajuæi u obzir njihovu matriènu strukturu. Pretpostavka kod linearne zavisnosti je da postoje koeficijenti $a$ i $b$ takvi da se za svaku vrijednost nezavisne varijable $x_i$ zavisna varijabla $y_i$ može napisati kao \cite{Kuhlm:2015.}:
+Tehnika vrednovanja linearnom regresijom procjenjuje vrijednosti æelija jedne \gls{pom}-e (zavisna varijabla - $y$) na temelju vrijednosti druge - referentne istinite \gls{pom}-e (nezavisna varijabla - $x$). Vrijednosti u \gls{pom}-i promatraju se kao skup vrijednosti $i = 1, 2, 3, ...n^2$ ne uzimajuæi u obzir njihovu matriènu strukturu. Pretpostavka kod linearne zavisnosti je da postoje koeficijenti $a$ i $b$ takvi da se za svaku vrijednost nezavisne varijable $x_i$ zavisna varijabla $y_i$ može napisati kao \cite{Kuhlm:2015.}:
 \begin{equation}
 	y_i = bx_i + a + \epsilon_i
 \end{equation}
@@ -319,7 +319,8 @@ gdje je :\\ pogreška $\epsilon$ sluèajna varijabla s normalnom raspodjelom i oèe
 Linija linearne regresije prikazana je na slici \ref{fig:lm}.
 
 Korelacijski koeficijent odreðenja ili obuhvaæanja varijance $R^2$ je mjera koja %je statistik koji
-pokazuje koliko je slaganje izmeðu vrijednosti izraèunatih modelom procjene i izmjerenih vrijednosti (\textit{ground truth}). Opæenito, to je mjera dobrote pristajanja (engl. \textit{goodness of fit}) koja govori koliko uspješno model opisuje zavisnost (korelaciju) izmeðu zavisne i nezavisne varijable \cite{Cizmesija:2019.}. $R^2$ predstavlja omjer modelom opisanih varijacija u odnosu na ukupne varijacije podataka \cite{Cizmesija:2019.}:
+pokazuje koliko je slaganje izmeðu vrijednosti izraèunatih modelom procjene i izmjerenih, empirijskih vrijednosti %(\textit{ground truth})
+. Opæenito, to je mjera dobrote pristajanja (engl. \textit{goodness of fit}) koja govori koliko uspješno model opisuje zavisnost (korelaciju) izmeðu zavisne i nezavisne varijable \cite{Cizmesija:2019.}. $R^2$ predstavlja omjer modelom opisanih varijacija u odnosu na ukupne varijacije podataka \cite{Cizmesija:2019.}:
 
 	 
 	 \begin{equation}
@@ -330,9 +331,9 @@ Raspon mjere $R^2$ je od 0 do 1, 0 ukazuje na nepostojanje objašnjenja varijance
 
 Ako su matrice potpuno iste, vrijednost $R^2$ = 1, $a$ = 0 i $b$ = 1. Matrice su sliènije što su vrijednosti bliže navedenima \cite{Kuhlm:2015.}. %predictet vs observed observed vs. predicted
 % zadovoljavajuæe
-Kod usporedbe dvije POM-e u odnosnu na referentnu \textit{ground truth}, ona koja je sliènija referentnoj bolje opisuje kretanje.
+Kod usporedbe dvije POM-e u odnosnu na referentnu istinitu POM-u, ona koja je sliènija referentnoj bolje opisuje kretanje.
 
-Zadovoljavajuæa vrijednost $R^2$ u usporedbi s \textit{ground truth} navodi se 0.99 \cite{Kuhlm:2015.} Ta vrijednost ne smatra se praktiènom za usporedbu POM-a dobivenih razlièitim pristupima procijeni što dolazi do izražaja i kada se radi o \gls{pom}-i iz suvremenih izvora \cite{Kuhlm:2015.}.
+Zadovoljavajuæa vrijednost $R^2$ u usporedbi s referentnom istinitom POM-om navodi se 0.99 \cite{Kuhlm:2015.} Ta vrijednost ne smatra se praktiènom za usporedbu POM-a dobivenih razlièitim pristupima procijeni što dolazi do izražaja i kada se radi o \gls{pom}-i iz suvremenih izvora \cite{Kuhlm:2015.}.
 
 \begin{figure}[!htbp]
 	\begin{center}
@@ -404,7 +405,7 @@ MSSIM(X,Y) =  \frac{1}{M} \sum_{m=1}^{M} SSIM(x_m,y_m) \label{eq:mssim}
 
 \begin{figure}[!htpb]
 	\begin{center}
-		\subfloat[Vrijednost metrike toènosti MSE jednak je za obje \gls{pom}-e b) i c) u odnosu na referentnu \textit{ground truth} \gls{pom}-u a). Indeks strukturalne sliènosti se znatno razlikuje, gdje \gls{pom} b) ima veæu strukturalnu sliènost s a) nego što ima c). Podsjetimo se da za \glstext{ssim} vrijedi (\ref{subeq:obje}). Lako je na matrici c) \textit{golim okom } uoèiti narušenost strukturalne sliènosti. ]{\label{fig:mssim_1}
+		\subfloat[Vrijednost metrike toènosti MSE jednak je za obje \gls{pom}-e b) i c) u odnosu na referentnu istinitu \gls{pom}-u a). Indeks strukturalne sliènosti se znatno razlikuje, gdje \gls{pom} b) ima veæu strukturalnu sliènost s a) nego što ima c). Podsjetimo se da za \glstext{ssim} vrijedi (\ref{subeq:obje}). Lako je na matrici c) \textit{golim okom } uoèiti narušenost strukturalne sliènosti. ]{\label{fig:mssim_1}
 			\includegraphics[width=14cm,keepaspectratio=true]{mssim_1}}\\ 
 		%\hspace{10pt}
 		\subfloat[Vrijednost metrike strukturalne sliènosti iznosi 0.904 za obje \gls{pom}-e b) i c) u odnosu na referentnu \gls{pom}-u a), dok se MSE razlikuje (veæi MSE znaèi veæu razliku). Obje \gls{pom}-e dobivene su dodavanjem Gaussianovog šuma na referentnu matricu.]

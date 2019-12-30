@@ -333,6 +333,21 @@ odnosno veæinski su ispunjene Nul-æelijama (eng. \textit{Null-cells, Zero-cells}
 
 Dva su uzroka praznim æelijama, nepostojanje putovanja izmeðu tih parova zona ili su postupkom procjene putovanja nezabilježena. 
 
+\subsection{Ukupna širina toka}
+
+\begin{definition}
+	Ukupna širina toka je ukupan broj odlazaka/dolazaka po vremenskom okviru za cijelu matricu - suma svih elemenata \gls{pom}-e. (vidi sliku \ref{fig:matrix} $F_ij$).
+\end{definition}
+Svi dosad spomenuti parametri utjecat æe na ukupnu širinu toka. Osim njih, utjecat æe velièina i reprezentativnost uzorka stanovništva te k-anonimizacija.
+
+%Podjelom korisnika u 3 skupine po kolièini podataka koju generiraju i analizom svake skupine zasebno, za podruèje francuske regije Picardie), studija \cite{Bonnel:2015.} pokazuje da frekvencija korištenja ne uvodi pristranost \cite{Bonnel:2015.}. 
+Calabrese \cite{Calabrese:2011.} uzima samo sluèajno odabranih 25\% korisnika (1 milijun) da pojednostavi analiza. Graells-Garrido \cite{Graells-Garrido:2016.} uzima sluèajno odabranih 100,000 korisnika jer je referentna (\textit{ground truth}) \gls{pom} procijenjena iz ankete provedene na uzorku iste velièine.
+%Istraživanja  izdvajaju najaktivnije korisnike
+Uzimanje samo najaktivnijih korisnika (onih s najviše zapisa) zastupljeno je u istraživanjima procjene \gls{pom}-e iz \gls{cdr} \cite{Schneider:2013.} \cite{Toole:2015.} \cite{Chen:2019.}. Chen analizira razloge odbacivanja i predlaže riješenje. Rješenje je metoda rekonstrukcije putanja koja osigurava zadržavanje velikog broja (manje aktivnih) korisnika (odlomak \ref{Chen}).
+
+Slabo obuhvaæanje krajnjih dobnih skupina (najstarije i najmlaðe dobne skupine ) u procjeni \gls{pom}-a iz \gls{cdr} zbog slabe zastupljenosti mobilnih ureðaja ne tumaèi se kao pristranost, uz napomenu da su to ujedno skupine sa generalno slabom mobilnosti u odnosu na ostale \cite{Bonnel:2015.}. %Studija \cite{Goulding:2016.} istièe da usluge razlièitim demografskim skupinama, a najèešæe su izuzetak skupine slabijeg socio-ekonomskog stanja. 
+Goulding smatra da se eventualna pristranost može zanemariti kod tržišta gdje veliki postotak stanovništva (npr. 92\%) posjeduje mobilni ureðaj \cite{Goulding:2016.}.
+
 \subsubsection{K-anonimizacija} K-anonimnost (engl. \textit{k-annonimity}) \label{k-an} odreðuje najmanju dozvoljenu širinu toka ili najmanju dozvoljenu populaciju zone. Širina toka manja od dozvoljene se zanemaruje (postaje Nul-æelija). Razlog je smanjenje rizika od moguænosti identificiranja pojedinaca, pogotovo u vrlo rijetko naseljenim podruèjima \cite{Goulding:2016.}. K-anonimizacijom treba osigurati:
 %da tok u svakoj æeliji bude veæi od: 
 \begin{equation}

@@ -81,17 +81,25 @@ Unaprijeðeni model predviðanja odredišta koristi svrhu putovanja kao kontekst u 
 Rezultati pokazuju znaèajno poboljšanje u toènosti i brzini predviðanja u odnosu na predviðanje bez uzimanja svrhe u obzir. \cite{Krause:2018.}
 
 \subsubsection{Studija E - Rekonstrukcija rijetkih trajektorija}\label{Chen}
-Rekonstrukcija rijetkih trajektorija predstavljena u radu \cite{Chen:2019.} ima za cilj poveæanje potpunosti (izraz \ref{eq:potpunost}) trajektorija definiranih iz \gls{cdr}. Temeljna ideja je iz poznatih lokacija zakljuèiti o nepoznatima pojedinca.
+Rekonstrukcija rijetkih trajektorija predstavljena u radu \cite{Chen:2019.} ima za cilj poveæanje potpunosti (izraz \ref{eq:potpunost}) trajektorija definiranih iz \gls{cdr}. Temeljna ideja je iz poznatih položaja pojedinca zakljuèiti o nepoznatima (vidi sliku \ref{fig:trajekt}).
 \gls{cdr} je izor visoke ne regularnost uzorkovanja i dugog razdoblja promatranja.
-Metodologija iskorištava redundantnost za oporavak podataka koji nedostaju. Redudantnost proizlazi iz regularnosti ljudskog kretanja, koje kreira uzorke posjeæenih lokacija kroz mnoge dane i tjedne razdoblja promatranja. Faktorizacija tenzora
-
-\begin{figure}[!htbp]
+Metodologija iskorištava redundantnost za oporavak podataka koji nedostaju. Redudantnost proizlazi iz regularnosti ljudskog kretanja, koje kreira uzorke posjeæenih položaja kroz mnoge dane i tjedne razdoblja promatranja. Faktorizacija tenzora na kojoj se temelji metoda rekonstrukcije prikazana je na na slici \ref{fig:tenzor}
+\newpage
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=9.5cm,keepaspectratio=true]{trajektorija}
+		\caption{Primjer trajektorije jednog korisnika, $\mathcal{T}$ = 15 dana, $\tau$ = 1 h. Svako polje predstavlja interval od 1h, boje predstavljaju razlièite položaje, a bijela polja su položaji koji nedostaju. $Potpunost = 0.27$.  Prema \cite{Chen:2019.}}
+		\label{fig:trajekt}
+	\end{center}
+\end{figure}
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=9.5cm,keepaspectratio=true]{tenzorhr}
-		\caption{ . Prema \cite{Chen:2019.}}
+		\caption{Primjer tenzora položaja jednog korisnika. Trajektorija je predstavljena kao kombinacije jednodnevnih trajektorija na dnevnoj i tjednoj bazi. Temelj rekonstrukcije je imati uvid u to - gdje je korisnik u periodu $\tau_{n}$ svaki dan u danom tjednu i gdje je korisnik u periodu $\tau_{n}$ tog dana u tjednu svaki tjedan kroz $ \mathcal{T}$. Prema \cite{Chen:2019.}}
 		\label{fig:tenzor}
 	\end{center}
 \end{figure}
+\newpage
 
 \section{Teza}
 \label{teza}
@@ -318,7 +326,7 @@ Komutacijska putovanja (engl. \textit{commuting trips)} odnosno putovanja na pos
 
 Prema duljini zaustavljanja nastoji se odrediti je li neko zaustavljanje doista kraj putovanja \cite{Goulding:2016.}. Poznavanje konteksta putovanja, npr. objekata u blizini zaustavljanja, omoguæuje da se kraj putovanja ne temelji iskljuèivo na osnovu duljine trajanja zaustavljanja, veæ da se u obzir uzme svrha zaustavljanja.
 
-Prednost suvremenih izvora podataka s višednevnim ili višemjeseènim razdobljem promatranja je uoèavanje obrazaca i ponovljivost putovanja na dnevnoj ili tjednoj bazi \cite{Chen:2019.}. Prepoznavanje obrasca putovanja pojedinca u tom razdoblju omoguæuje rekonstrukciju putovanja u periodima kada podaci nedostaju. Chen putovanja pojedinca u prošlosti i buduænosti od promatranog putovanja naziva upravo \textit{kontekstom} u metodlogiji opisanoj u radu \cite{Chen:2019.}. %\ref{Chen}
+Prednost suvremenih izvora podataka s višednevnim ili višemjeseènim razdobljem promatranja je uoèavanje obrazaca i ponovljivost putovanja na dnevnoj ili tjednoj bazi \cite{Chen:2019.}. Prepoznavanje obrasca putovanja pojedinca u tom razdoblju omoguæuje rekonstrukciju putovanja u periodima kada podaci nedostaju (odlomak \ref{Chen}). Chen putovanja pojedinca u prošlosti i buduænosti od promatranog putovanja naziva upravo \textit{kontekstom} u metodlogiji opisanoj u radu \cite{Chen:2019.}. %\ref{Chen}
 
 Mjera koja bi govorila o kvaliteti odabrane definicije putovanja prema razmotrenoj problematici mogla bi biti omjer tranzitnih (pod-putovanja) i ne-tranzitnih putovanja (putovanja sa svrhom)  zabilježenih u \gls{pom}-i. Kako izostaje konvencionalni dogovor oko definicije putovanja i tranzicije (pod-putovanja) ova mjera nije obuhvaæena ovim radom.
 

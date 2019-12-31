@@ -80,11 +80,18 @@ prepoznavanja svrhe putovanja. Svrha putovanja odreðuje se metodama strojnog uèe
 Unaprijeðeni model predviðanja odredišta koristi svrhu putovanja kao kontekst u odreðivanju krajnjeg odredišta. 
 Rezultati pokazuju znaèajno poboljšanje u toènosti i brzini predviðanja u odnosu na predviðanje bez uzimanja svrhe u obzir. \cite{Krause:2018.}
 
-\subsubsection{Studija E - Rekonstrukcija rijetkih trajektorija}
-Rekonstrukcija rijetkih trajektorija ima za cilj poveæanje potpunosti (izraz \ref{eq:potpunost}) poznatih trajektorija definiranih iz \gls{cdr}. 
+\subsubsection{Studija E - Rekonstrukcija rijetkih trajektorija}\label{Chen}
+Rekonstrukcija rijetkih trajektorija predstavljena u radu \cite{Chen:2019.} ima za cilj poveæanje potpunosti (izraz \ref{eq:potpunost}) trajektorija definiranih iz \gls{cdr}. Temeljna ideja je iz poznatih lokacija zakljuèiti o nepoznatima pojedinca.
+\gls{cdr} je izor visoke ne regularnost uzorkovanja i dugog razdoblja promatranja.
+Metodologija iskorištava redundantnost za oporavak podataka koji nedostaju. Redudantnost proizlazi iz regularnosti ljudskog kretanja, koje kreira uzorke posjeæenih lokacija kroz mnoge dane i tjedne razdoblja promatranja. Faktorizacija tenzora
 
-\cite{Chen:2019.} 
-\label{Chen}
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=9.5cm,keepaspectratio=true]{tenzorhr}
+		\caption{ . Prema \cite{Chen:2019.}}
+		\label{fig:tenzor}
+	\end{center}
+\end{figure}
 
 \section{Teza}
 \label{teza}
@@ -95,7 +102,6 @@ Rad nastoji tezu potkrijepiti opisom metodologije za vrednovanje matrica prema k
 \subsection{Alternativni pristup vrednovanju polazišno-odredišne matrice}
 
 \textit{Toènost, rezolucija i obujam podataka  kljuèni su parametri geografske informacije. Znanje o èemu parametri zavise je nužna baza za veæe pothvate procjene vrijednosti geografskih informacija kao društvenog dobra} \cite{Degbelo:2014.}.
-
 
 %moj pogled na validaciju pom
 Vrednovanje \gls{pom}-e je proces koji ima za cilj procjenu obilježja kvalitete \gls{pom}-e i znaèi identifikaciju obilježja kvalitete \gls{pom}-e, njenog sadržaja, njene smislenosti, a izražava se slijedeæim  indikatorima: prostorno obuhvaæanje, rezolucija (prostorna , vremenska i tematska), zrnatost  (prostorna , vremenska i tematska),  putovanje kao parametar, gustoæa informacija i širina toka.%, zrnatosti (?), definicija putovanja, prostorna rezolucija, vremenska rezolucija, širina toka i gustoæa informacija.}
@@ -247,11 +253,12 @@ Lažna kretanja i zaustavljanja u literaturi nastoje se izbjeæi postavljanjem nek
 	\begin{figure}[!htpb]
 		\begin{center}
 			\subfloat[POM s putovanjima u susjedne æelije. Ukupna širina toka 2587]{\label{fig:vz_sa}
-				\includegraphics[width=9.5cm,keepaspectratio=true]{vz_sa_bez}}\\ 
+				\includegraphics[width=8.5cm,keepaspectratio=true]{vz_sa_bez}}\\ 
 			%\hspace{10pt}
+		
 			\subfloat[POM bez putovanja u susjedne æelije. Ukupna širina toka 2392]
 			{\label{fig:vz_bez}
-				\includegraphics[width=9.5cm,keepaspectratio=true]{vz_bez_bez}}
+				\includegraphics[width=8.5cm,keepaspectratio=true]{vz_bez_bez}}
 			\caption{Primjer POM-e s i bez putovanja u susjedne æelije. } 
 			\label{fig:vz}
 			%***prevelike slike
@@ -346,7 +353,7 @@ Calabrese \cite{Calabrese:2011.} uzima samo sluèajno odabranih 25\% korisnika (1
 %Istraživanja  izdvajaju najaktivnije korisnike
 Uzimanje samo najaktivnijih korisnika (onih s najviše zapisa) zastupljeno je u istraživanjima procjene \gls{pom}-e iz \gls{cdr} \cite{Schneider:2013.} \cite{Toole:2015.} \cite{Chen:2019.}. Chen analizira razloge odbacivanja i predlaže riješenje. Rješenje je metoda rekonstrukcije putanja koja osigurava zadržavanje velikog broja (manje aktivnih) korisnika (odlomak \ref{Chen}).
 
-Slabo obuhvaæanje krajnjih dobnih skupina (najstarije i najmlaðe dobne skupine ) u procjeni \gls{pom}-a iz \gls{cdr} zbog slabe zastupljenosti mobilnih ureðaja ne tumaèi se kao pristranost, uz napomenu da su to ujedno skupine sa generalno slabom mobilnosti u odnosu na ostale \cite{Bonnel:2015.}. %Studija \cite{Goulding:2016.} istièe da usluge razlièitim demografskim skupinama, a najèešæe su izuzetak skupine slabijeg socio-ekonomskog stanja. 
+Slabo obuhvaæanje krajnjih dobnih skupina (najstarije i najmlaðe dobne skupine) u procjeni \gls{pom}-a iz \gls{cdr} zbog slabe zastupljenosti mobilnih ureðaja ne tumaèi se kao pristranost, uz napomenu da su to ujedno skupine sa generalno slabom mobilnosti u odnosu na ostale \cite{Bonnel:2015.}. %Studija \cite{Goulding:2016.} istièe da usluge razlièitim demografskim skupinama, a najèešæe su izuzetak skupine slabijeg socio-ekonomskog stanja. 
 Goulding smatra da se eventualna pristranost može zanemariti kod tržišta gdje veliki postotak stanovništva (npr. 92\%) posjeduje mobilni ureðaj \cite{Goulding:2016.}.
 
 \subsubsection{K-anonimizacija} K-anonimnost (engl. \textit{k-annonimity}) \label{k-an} odreðuje najmanju dozvoljenu širinu toka ili najmanju dozvoljenu populaciju zone. Širina toka manja od dozvoljene se zanemaruje (postaje Nul-æelija). Razlog je smanjenje rizika od moguænosti identificiranja pojedinaca, pogotovo u vrlo rijetko naseljenim podruèjima \cite{Goulding:2016.}. K-anonimizacijom treba osigurati:

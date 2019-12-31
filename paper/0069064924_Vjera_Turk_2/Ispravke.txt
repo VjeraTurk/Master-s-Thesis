@@ -13,15 +13,20 @@
 +14. ground truth.  Nije loše spomenuti kao izvorni naziv u engleskom jeziku. U HR bismo rekli: pravi (stvarni) položaj ili trajektorija (putanja).
 
 + 10. U tekstu nema referenci. Pravilo kojeg bi se trebalo držati: svaka rečenica mora biti ili rezultat Vašeg istraživanja ili Vaša interpretacije, ili uz nju treba stajati referenca iz koje je preuzeta. Posebno vrijedi za linjenice i definicije. Ako uz definiciju nema reference, tada se smatra Vašom.
+
++1. Umetnite scan službenog zadatka. 
+
+-17. 5.1 Uvjeti usporedbe -> Pretpostavke usporedbe ?
 ___________________________________
-17. 5.1 Uvjeti usporedbe -> Pretpostavke usporedbe ?
 
 15. str 31: Studija E - Rekonstrukcija rijetkih trajektorija(...) [23] ??
 Proći po tekstu i izbaciti ovakve oznake
 
 0. Zaključak 
 
-1. Umetnite scan službenog zadatka. 
+
 Trebat će mi Klasa i Urbr kad budem radio provjeru originalnosti.
 
-
+Šifra diplomskog studija računarstva: 1400
+Šifra modula diplomskog studija računarstva:
+Programsko inženjerstvo: 1441

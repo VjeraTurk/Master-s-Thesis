@@ -19,9 +19,8 @@
 +17. 5.1 Uvjeti usporedbe -> Pretpostavke usporedbe ?
 + 15. str 31: Studija E - Rekonstrukcija rijetkih trajektorija(...) [23] ??
 Proći po tekstu i izbaciti ovakve oznake
-___________________________________
++0. Zaključak ___________________________________
 
-0. Zaključak 
 
 Trebat će mi Klasa i Urbr kad budem radio provjeru originalnosti.
 

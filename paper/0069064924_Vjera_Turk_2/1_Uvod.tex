@@ -21,7 +21,7 @@ doprinosa u procjeni \gls{pom}-e te je definiran alternativni pristup vrednovanj
 \section{Definicija polazišno-odredišne matrice}
 
 \theoremstyle{definition}
-\begin{definition}{Polazišno-odredišna matrica} je matrica èiji svaki element predstavlja broj putovanja izmeðu odgovarajuæeg para zona unutar promatranog podruèja u promatranom vremenskom okviru $\tau$ , u svakom smjeru zasebno. Redovi u \gls{pom}-i $i = 1,2,3...n$ predstavljaju polazišta (izvore) prometnog toka, a stupci $j = 1,2,3...n$ njihova odredišta (ušæa). Element $f_{ij}$ predstavlja broj putovanja iz pripadajuæe polazišne zone $i$ u pripadajuæu ciljnu zonu $j$. Broj putovanja naziva se i širina prometnog toka (eng. \textit{flow}). (slika \ref{fig:matrix}) %\cite{njem:2019.}
+\begin{definition}{Polazišno-odredišna matrica} je matrica èiji svaki element predstavlja broj putovanja izmeðu odgovarajuæeg para zona unutar promatranog podruèja u promatranom vremenskom okviru $\tau$ , u svakom smjeru zasebno. Redovi u \gls{pom}-i $i = 1,2,3...n$ predstavljaju polazišta (izvore) prometnih tokova, a stupci $j = 1,2,3...n$ njihova odredišta (ušæa). Element $f_{ij}$ predstavlja broj putovanja iz pripadajuæe polazišne zone $i$ u pripadajuæu ciljnu zonu $j$. Broj putovanja naziva se i širina prometnog toka (eng. \textit{flow}). (slika \ref{fig:matrix}) %\cite{njem:2019.}
 \end{definition}
 \newpage
 \gls{pom} se može smatrati matriènim zapis težinskog, usmjerenog grafa, gdje su težinski faktori usmjerenih veza širine prometnih tokova izmeðu èvorova mreže \cite{njem:2019.}. Èvorovi predstavljaju zone na koje je promatrano podruèje podijeljeno (slika \ref{fig:matrix_2}). Zone u \gls{pom}-i su poredane od zapada prema istoku, te od sjevera prema jugu.
@@ -56,7 +56,7 @@ Tradicionalni pristupi procjeni \gls{pom}-e ukljuèuju metode provoðenja anketira
 
 \subsubsection{Prebrojavanje vozila }
 Metode prebrojavanja vozila (engl. \textit{Traffic Counts}) na kljuènim èvorištima prometne infrastrukture manje su zahtjevne za izvoðenje u odnosu na ankete i smanjuju vrijeme i troškove prikupljanja podataka. Postupci ukljuèuju:  ruèno prebrojavanje, analizu nadzornih snimaka prometa, osjetila prometnog toka (radarska, magnetna, video-senzori, zvuèna), automatski sustav za prepoznavanje i oèitovanje registarskih ploèica (engl. \textit{ \glstext{anpr}}, ANPR) \cite{Jelusic:2016.}.
-\textbf{Navedenim postupcima nije moguæe pouzdano odrediti stvarna polazišta i odredišta putovanja \cite{Bonnel:2015.}, veæ se ona odreðuju modeliranjem uz uvažavanje pretpostavki} (odlomak \ref{modeling}). Toènost procijenjenih matrica ovisi o: korištenom modelu procjene, grešci ulaznih podataka i infrastrukturi detektora %koju je skupo izmijeniti ili proširiti zbog troškova održavanja i instalacije 
+\textbf{Navedenim postupcima nije moguæe pouzdano odrediti stvarna polazišta i odredišta putovanja \cite{Bonnel:2015.}, veæ se ona odreðuju modeliranjem uz uvažavanje pretpostavki} (sekcija \ref{modeling}). Toènost procijenjenih matrica ovisi o: korištenom modelu procjene, grešci ulaznih podataka i infrastrukturi detektora %koju je skupo izmijeniti ili proširiti zbog troškova održavanja i instalacije 
 \cite{Bera:2011.} \cite{Kuharic:2016.}. 
 Podaci dobiveni opremom koja radi na temelju vizualne percepcije nisu uvijek iskoristivi ako su vremenski uvjeti loši, a nadomjestak kod lošeg vremena je ruèno prebrojavanje \cite{Iqbal:2014.}. 
 \subsubsection{Raspored stanica za prebrojavanje}
@@ -120,7 +120,7 @@ Izvedene verzije gravitacijskog modela integriraju i neke druge (socio-ekonomske
 	
 	\item Poèetnu \gls{pom}-u  modificirati iterativnim procesom evaluacije omjera tokova dodijeljenih prometnim vezama iz \gls{pom}-e i prebrojenih tokova na vezama gdje se promet prebrojavao  \cite{Segovi:2015.}.
 	
-	U tom iterativnom procesu prometni tokovi iz modificirane \gls{pom}-e ponovno se dodjeljuju prometnoj infrastrukturi (sve dok se ne postigne zadani broj iteracija ili zadovoljavajuæi stupanj sliènosti poèetne i nove \gls{pom}-e - detaljnije u poglavlju \ref{valid}). 
+	U tom iterativnom procesu prometni tokovi iz modificirane \gls{pom}-e ponovno se dodjeljuju prometnoj infrastrukturi (sve dok se ne postigne zadani broj iteracija ili zadovoljavajuæi stupanj sliènosti poèetne i nove \gls{pom}-e - detaljnije u sekciji \ref{valid}). 
 	%Ulaz u svaku iteraciju je i zapis \textit{najmanjih} puteva, izraèunat tijekom uravnotežene raspodjele po prometnoj infrastrukturi. \cite{Segovi:2015.} 
 	
 \end{enumerate}
@@ -305,7 +305,7 @@ Rekonstrukcija putanja na osnovu aktivnosti u cijelom vremenskom razdoblju proma
 Postupak vrednovanja %(modela, \gls{pom}-e, neèega)
 je objektivna procjena	kvalitete, vrijednosti objekta koji se vrednuje. Pregledom literature o vrednovanju \gls{pom}-e utvrðeno je da se jednoznaèno koriste pojmovi toènost, pouzdanost i kvaliteta \gls{pom}-e. Vrednovanje \gls{pom}-e vrši se postupcima koji koriste mjere razine sliènosti odnosno razlike (greške) s referentnom matricom - a temelj je razlika na razni svakog elementa \gls{pom}-e. 
 
-\textbf{Tradicionalni postupak vrednovanja \gls{pom}-e svodi se na odreðivanje njene sliènosti sa istinitom (engl. \textit{ground truth}) POM-om}  \cite{Travassoli:2016.}. Istinita \gls{pom}-a je POM-a uzeta kao najtoèniji opis stvarnog stanja. Istinita \gls{pom}-a dobivena je tradicionalnim postupcima (anketiranje i/ili prebrojavanje vozila) \cite{Calabrese:2011.}. Statistièke mjere kvantiziraju razliku procijenjenih i pravih vrijednosti (vidi dodatak \ref{dodatak_metrics} - Metrike za vrednovanje polazišno-odredišne matrice). Iz statistièkih mjera sliènosti izdvojen je korelacijski koeficijent odreðenja $R^2$ koji je opisan u narednom potpoglavlju. % zašto je izdvojen?
+\textbf{Tradicionalni postupak vrednovanja \gls{pom}-e svodi se na odreðivanje njene sliènosti sa istinitom (engl. \textit{ground truth}) POM-om}  \cite{Travassoli:2016.}. Istinita \gls{pom}-a je POM-a uzeta kao najtoèniji opis stvarnog stanja. Istinita \gls{pom}-a dobivena je tradicionalnim postupcima (anketiranje i/ili prebrojavanje vozila) \cite{Calabrese:2011.}. Statistièke mjere kvantiziraju razliku procijenjenih i pravih vrijednosti (vidi dodatak \ref{dodatak_metrics} - Metrike za vrednovanje polazišno-odredišne matrice). Iz statistièkih mjera sliènosti izdvojen je korelacijski koeficijent odreðenja $R^2$ koji je opisan u narednoj sekciji. % zašto je izdvojen?
 
 \textbf{Upravo ta referentna instinita  POM je ujedno i poèetna \gls{pom} (iz odlomka \ref{seed}) u postupku procjene nove \gls{pom}-e iz rezultata prebrojavanja vozila \cite{Segovi:2015.}. \gls{pom} æe biti vrednovana usporedbom s \gls{pom}-om koja se koristi u postupku procjene te iste \gls{pom}-e. Postupak vrednovanja nove \gls{pom}-e stoga je ovisan o kvaliteti poèetne \gls{pom}-e, koja je procijenjena u odnosu njenu poèetnu matricu i tako rekurzivno.}
 

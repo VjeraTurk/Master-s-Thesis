@@ -13,10 +13,7 @@ Kako prikazati kvalitetu \gls{pom}-e bez oslanjanja na istinitu referentnu POM-u
 
 \gls{cdr} je kao izvor podjednako zastupljen u zemljama u razvoju i razvijenim zemljama s penetracijom oko 40\%-50\% stanovništva za pojedine operatore javne pokretne mreže \cite{Bonnel:2015.}.
 \textbf{Praksa odbacivanja velikog dijela uzorka zbog niske potpunosti putanja može se zamijeniti rekonstrukcijom putanja uvažavajuæi njihov kontekst \cite{Chen:2019.}}.
-
-
 %***strateško planiranje izgradnje prometne infrastrukture i urbanizacija moraju uzeti u obzir dinamiku promjena - èlanak gdje se objašnjava da je pretpostavka kod strateškog planiranja da æe peak-hour ostati isti, to su projektiranja koja moraju razmišljati unaprijed desetcima godina (a to znaci uzeti u obzir mnog faktora ) https://home.kpmg/au/en/home/insights/2018/07/avoid-peak-hour-new-transport-models.html ***
-
 \begin{figure}[!htpb]
 	\begin{center}
 		\subfloat[\textit{Širina} jutarnjeg vrhunca prometne potražnje u 3 grada (oznake vremena su u lokalnom vremenu za svaki grad)]{\label{fig:peakcity}
@@ -165,7 +162,7 @@ najmanji vremenski odmak koji je moguæe identificirati.
 
 Vremenska rezolucija ovisi o periodu uzorkovanja položaja.
 
-\subsubsection{Tematska rezolucija}
+%\subsubsection{Tematska rezolucija}
 
 Geoinformacijska znanosti definira tematsku rezolucija kao kolièinu kategorièkih detalja na \textit{tematskoj karti}. Izražava se brojem tipova pokrova (engl. \textit{land cover}) ili brojem tipova namjene zemljišta (engl. \textit{land use}) \cite{Smith:2017.}. Kontekstualizirane \gls{pom}-e su procijenjene na temelju namjene zemljišta ili objekata, dakle koriste tematsku rezoluciju. 
 %Level of categorical detail on a thematic map as expressed by the number of classes (classification) included in production of the map.
@@ -287,14 +284,11 @@ Lažna kretanja i zaustavljanja u literaturi nastoje se izbjeæi postavljanjem nek
 	\item \label{itm:cat_6} putovanja ogranièena minimalnom i/ili maksimalnom duljinom trajanja kretanja
 	\item \label{itm:cat_7} putovanja ogranièena bojem dogaðaja koji potvrðuju zaustavljanje i maksimalnim vremenskim razmakom izmeðu dva uzastopna dogaðaja\\
 \end{enumerate}
-
-
 Studija provedena na \gls{cdr} podatcima za Senegal \cite{Gundlegard:2016.} koristila je dvije definicije putovanja. Generirano je u prosjeku 0.7 putovanja dnevno po korisniku u jednom sluèaju, a 0.06 u drugom.
 Ogranièenja u prvom sluèaju su bila:
 minimalna udaljenost 3 km, maksimalna 100 km (ogranièenje \ref{itm:cat_4}). 
 Ogranièenja u drugom sluèaju su bila:
 vremensko na 1 sat minimalnog trajanja (ogranièenje \ref{itm:cat_6}) i prostorno na udaljenost od barem 5 udaljenosti baznih stanica (ogranièenje \ref{itm:cat_4}). Kratka putovanja bila su najzastupljenija. Distribuciju možemo vidjeti na slici \ref{fig:trip_distance_distribution}
-
 \begin{figure}[!htbp]
 	\begin{center}
 		\includegraphics[width=11cm,keepaspectratio=true]{trip_distance_distribution}
@@ -302,7 +296,6 @@ vremensko na 1 sat minimalnog trajanja (ogranièenje \ref{itm:cat_6}) i prostorno
 		\label{fig:trip_distance_distribution}
 	\end{center}
 \end{figure}
-
 \textbf{Ogranièenja na putovanja uvjetuju njihov konaèan broj odnosno širinu toka.}
 
 \begin{figure}[!htpb]
@@ -364,7 +357,7 @@ Uzimanje samo najaktivnijih korisnika (onih s najviše zapisa) zastupljeno je u i
 Slabo obuhvaæanje krajnjih dobnih skupina (najstarije i najmlaðe dobne skupine) u procjeni \gls{pom}-a iz \gls{cdr} zbog slabe zastupljenosti mobilnih ureðaja ne tumaèi se kao pristranost, uz napomenu da su to ujedno skupine sa generalno slabom mobilnosti u odnosu na ostale \cite{Bonnel:2015.}. %Studija \cite{Goulding:2016.} istièe da usluge razlièitim demografskim skupinama, a najèešæe su izuzetak skupine slabijeg socio-ekonomskog stanja. 
 Goulding smatra da se eventualna pristranost može zanemariti kod tržišta gdje veliki postotak stanovništva (npr. 92\%) posjeduje mobilni ureðaj \cite{Goulding:2016.}.
 
-\subsubsection{K-anonimizacija} K-anonimnost (engl. \textit{k-annonimity}) \label{k-an} odreðuje najmanju dozvoljenu širinu toka ili najmanju dozvoljenu populaciju zone. Širina toka manja od dozvoljene se zanemaruje (postaje Nul-æelija). Razlog je smanjenje rizika od moguænosti identificiranja pojedinaca, pogotovo u vrlo rijetko naseljenim podruèjima \cite{Goulding:2016.}. K-anonimizacijom treba osigurati:
+\subsection{K-anonimizacija} K-anonimnost (engl. \textit{k-annonimity}) \label{k-an} odreðuje najmanju dozvoljenu širinu toka ili najmanju dozvoljenu populaciju zone. Širina toka manja od dozvoljene se zanemaruje (postaje Nul-æelija). Razlog je smanjenje rizika od moguænosti identificiranja pojedinaca, pogotovo u vrlo rijetko naseljenim podruèjima \cite{Goulding:2016.}. K-anonimizacijom treba osigurati:
 %da tok u svakoj æeliji bude veæi od: 
 \begin{equation}
  f_{ij} > k \times m, \forall  i,j 

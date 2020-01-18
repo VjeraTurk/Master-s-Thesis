@@ -20,11 +20,16 @@ Proći po tekstu i izbaciti ovakve oznake
 +18.Trebat će mi Klasa i Urbr kad budem radio provjeru originalnosti.
 ___________________________________
 
-+19. \ref poglavlje/potpoglavlje/odlomak -> sekcija
-20. naslovi bez brojke 3.0.3 3.0.3.1 
-11. Držati dosljedno razmake na početku/kraju poglavlja. (Revisit 11)
-21. Ako ima, izbaciti reference iz zaključka i sažetka ->vjerujem da nema, provjeriti
-22. maknuti naslov sekcije 6.1. jer je jedina sekcija u poglavlju 6 (str 25.)
-23. Diskusija -Naglasak na pozitivno, Diskusija je vezana uz rezultate "napravljen je pregled istraživanja->utvrđeno što nisu napravila->kako to riješiti->problem riješen osim u ...a to bi se moglo riješiti..."
++ 19. \ref poglavlje/potpoglavlje/odlomak -> sekcija
++ 20. naslovi bez brojke 3.0.3 3.0.3.1 
++ 21. Ako ima, izbaciti reference iz zaključka i sažetka ->vjerujem da nema, provjeriti ->bilo je referenca na sekcije, ne na literaturu, maknute
++ 22. maknuti naslov sekcije 6.1. jer je jedina sekcija u poglavlju 6 (str 25.)
++ 25. preoblikovati "prilično neodređeno"->nije egzaktno definirano
+
 24. str 56. Maknuti "Zadatak za diplomski ..."
-25. preoblikovati "prilično neodređeno"->nije egzaktno definirano
+23. Diskusija -Naglasak na pozitivno, Diskusija je vezana uz rezultate "napravljen je pregled istraživanja->utvrđeno što nisu napravila->kako to riješiti->problem riješen osim u ...a to bi se moglo riješiti..."
+
++ 11. Držati dosljedno razmake na početku/kraju poglavlja. (Revisit 11)
+
+
+

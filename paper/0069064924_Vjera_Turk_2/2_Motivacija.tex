@@ -51,7 +51,7 @@ moguæe je o kontekstu putovanja zakljuèiti iz baza neizravnih kontekstualizirani
 
 \subsubsection{Studija A - 3 tipa privlaèenja}
 
-Alhazzani i ostatak autora kvantizirali su vezu izmeðu  23 namjenske kategorije Toèaka Interesa (engl. \textit{Points of Interest}, \glstext{pois}) i onoga što nazivaju tipovi privlaèenja. Namjenske kategorije definirane su iz službene gradske baze (npr. tvornice, bolnice, javne škole, religijski objekti, hoteli, knjižnice, sportski objekti). Namjenske kategorije mogu se podjeliti u tri skupine prema tipu privlaèenja. Tipovi se razlikuju po gustoæi ukupnog ulaznog toka, udaljenosti i disperziji polazišta. Primjerice, sveuèilišta æe privalèiti stanovnike sa svih strana grada (disperzija), podjednako iz udaljenih i bližih dijelova(udaljenost), dok æe osnovne škole privlaèiti samo iz bližih djelova.
+Alhazzani i ostatak autora kvantizirali su vezu izmeðu  23 namjenske kategorije Toèaka Interesa (engl. \textit{Points of Interest}, \glstext{pois}) i onoga što nazivaju tipovi privlaèenja. Namjenske kategorije definirane su iz službene gradske baze (npr. tvornice, bolnice, javne škole, religijski objekti, hoteli, knjižnice, sportski objekti). Namjenske kategorije mogu se podijeliti u tri skupine prema tipu privlaèenja. Tipovi se razlikuju po gustoæi ukupnog ulaznog toka, udaljenosti i disperziji polazišta. Primjerice, sveuèilišta æe privlaèiti stanovnike sa svih strana grada (disperzija), podjednako iz udaljenih i bližih dijelova(udaljenost), dok æe osnovne škole privlaèiti samo iz bližih dijelova.
 Koriste podatke iz službene baze s 12,000 \glstext{pois} i \gls{cdr} zapisima iz razdoblja od mjesec dana
 \cite{Alhazzani:2016.}.
 Zone su okarakterizirane objektima koji se nalaze u njima.
@@ -68,7 +68,7 @@ Saznaje se o internom kretanju, èak i za metodu procjene koja bez kontekstualiza
 Modeli za procjenu potrošnje energije na razini zgrada temelje se na prostornom kapacitetu zgrada.
 Ispunjenost kapaciteta zgrade varira u vremenu što utjeèe na pogrešku u procjeni. 
 Primjenom istog modela na razini grada pogreška raste s brojem zgrada.
-\textbf{Analizom kretanja stanovništva omoguæuje procjenu ispunjenost kapaciteta zgrada i prosjeèe potrošnje energije}. Procjena kretanja iz \gls{cdr} zapisa prikladna je za analizu potrošnje energije na razini grada zbog velikog uzoraka stanovništva i neovisnosti o prometnoj infrastrukturi. Zgrade iz baze zgrada na podruèju od interesa (grad Boston) podijeljene su u 3 tipa - stambene, industrijske i komercijalne. Model uzima u obzir ukupnu površinu zgrada i "radno vrijeme" zgrada koje nisu stambene. Zgrade unutar zone grupirane su u blokove. Ulazna putovanja dodijeljena su blokovima, a potom pojedinoj zgradi u bloku. Ovisno o pretpostavljenom odnosu izmeðu optereæenja i kapaciteta zgrada, u odnosu na standardne modele procjena potrošnje energije razlikuje se od +1\% do - 15\% za stambene te -4\% do -21\% za komercijalne zgrade \cite{Barbour:2019.} (standardni modeli precijenjuju potrošnju energije).
+\textbf{Analizom kretanja stanovništva omoguæuje procjenu ispunjenost kapaciteta zgrada i prosjeène potrošnje energije}. Procjena kretanja iz \gls{cdr} zapisa prikladna je za analizu potrošnje energije na razini grada zbog velikog uzoraka stanovništva i neovisnosti o prometnoj infrastrukturi. Zgrade iz baze zgrada na podruèju od interesa (grad Boston) podijeljene su u 3 tipa - stambene, industrijske i komercijalne. Model uzima u obzir ukupnu površinu zgrada i "radno vrijeme" zgrada koje nisu stambene. Zgrade unutar zone grupirane su u blokove. Ulazna putovanja dodijeljena su blokovima, a potom pojedinoj zgradi u bloku. Ovisno o pretpostavljenom odnosu izmeðu optereæenja i kapaciteta zgrada, u odnosu na standardne modele procjena potrošnje energije razlikuje se od +1\% do - 15\% za stambene te -4\% do -21\% za komercijalne zgrade \cite{Barbour:2019.} (standardni modeli precjenjuju potrošnju energije).
 
 \subsubsection{Studija D - Predviðanje odredišta u stvarnom vremenu}
 %Odreðivanjem položaja pomoæu \gls{gnss} prijemnika dovoljno je precizno da se odredište putovanja odredi na razini zgrade. 
@@ -79,13 +79,13 @@ Rezultati pokazuju znaèajno poboljšanje u toènosti i brzini predviðanja u odnosu
 
 \subsubsection{Studija E - Rekonstrukcija rijetkih trajektorija}\label{Chen}
 Rekonstrukcija rijetkih trajektorija predstavljena u radu \cite{Chen:2019.} ima za cilj poveæanje potpunosti (izraz \ref{eq:potpunost}) trajektorija definiranih iz \gls{cdr}. Temeljna ideja je iz poznatih položaja pojedinca zakljuèiti o nepoznatima (vidi sliku \ref{fig:trajekt}).
-\gls{cdr} je izor visoke ne regularnost uzorkovanja i dugog razdoblja promatranja.
-Metodologija iskorištava redundantnost za oporavak podataka koji nedostaju. Redudantnost proizlazi iz regularnosti ljudskog kretanja, koje kreira uzorke posjeæenih položaja kroz mnoge dane i tjedne razdoblja promatranja. Faktorizacija tenzora na kojoj se temelji metoda rekonstrukcije prikazana je na na slici \ref{fig:tenzor}
+\gls{cdr} je izvor visoke ne regularnost uzorkovanja i dugog razdoblja promatranja.
+Metodologija iskorištava redundantnost za oporavak podataka koji nedostaju. Redundantnost proizlazi iz regularnosti ljudskog kretanja, koje kreira uzorke posjeæenih položaja kroz mnoge dane i tjedne razdoblja promatranja. Faktorizacija tenzora na kojoj se temelji metoda rekonstrukcije prikazana je na na slici \ref{fig:tenzor}
 \newpage
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=9.5cm,keepaspectratio=true]{trajektorija}
-		\caption{Primjer trajektorije jednog korisnika, $\mathcal{T}$ = 15 dana, $\tau$ = 1 h. Svako polje predstavlja interval od 1h, boje predstavljaju razlièite položaje, a bijela polja su položaji koji nedostaju. $Potpunost = 0.27$.  Prema \cite{Chen:2019.}}
+		\caption{Primjer trajektorije jednog korisnika, $\mathcal{T}$ = 15 dana, $\tau$ = 1 h. Svako polje predstavlja interval od 1 h, boje predstavljaju razlièite položaje, a bijela polja su položaji koji nedostaju. $Potpunost = 0.27$.  Prema \cite{Chen:2019.}}
 		\label{fig:trajekt}
 	\end{center}
 \end{figure}
@@ -109,7 +109,7 @@ Rad nastoji tezu potkrijepiti opisom metodologije za vrednovanje matrica prema k
 \textit{Toènost, rezolucija i obujam podataka  kljuèni su parametri geografske informacije. Znanje o èemu parametri zavise je nužna baza za veæe pothvate procjene vrijednosti geografskih informacija kao društvenog dobra} \cite{Degbelo:2014.}.
 
 %moj pogled na validaciju pom
-Vrednovanje \gls{pom}-e je proces koji ima za cilj procjenu obilježja kvalitete \gls{pom}-e i znaèi identifikaciju obilježja kvalitete \gls{pom}-e, njenog sadržaja, njene smislenosti, a izražava se slijedeæim  indikatorima: prostorno obuhvaæanje, rezolucija (prostorna, vremenska i tematska), zrnatost  (prostorna, vremenska i tematska),  putovanje kao parametar, gustoæa informacija i širina toka.%, zrnatosti (?), definicija putovanja, prostorna rezolucija, vremenska rezolucija, širina toka i gustoæa informacija.}
+Vrednovanje \gls{pom}-e je proces koji ima za cilj procjenu obilježja kvalitete \gls{pom}-e i znaèi identifikaciju obilježja kvalitete \gls{pom}-e, njenog sadržaja, njene smislenosti, a izražava se sljedeæim  indikatorima: prostorno obuhvaæanje, rezolucija (prostorna, vremenska i tematska), zrnatost  (prostorna, vremenska i tematska),  putovanje kao parametar, gustoæa informacija i širina toka.%, zrnatosti (?), definicija putovanja, prostorna rezolucija, vremenska rezolucija, širina toka i gustoæa informacija.}
 
 \section{Odnosni parametri kvalitete}
 \label{param}
@@ -118,7 +118,7 @@ Geoinformacijska znanost (geoinformatika) definira prostorno obuhvaæanje kao:
 
 \definition{Prostorno obuhvaæanje} je geografsko podruèje gdje su prikupljani podatci, mjesto  koje je predmet opažanja ili lokacija u fokusu aktivnosti. \cite{prob:2019.}
 
-Definicija u ovom obliku odgovara definiciji prostornog obuhvaæanja kao parametra kavalitete \gls{pom}-e. Prostorno obuhvaæanje kao kategorièka mjera za kvalitetu \gls{pom}-e podrazumijeva kategorije: 
+Definicija u ovom obliku odgovara definiciji prostornog obuhvaæanja kao parametra kvalitete \gls{pom}-e. Prostorno obuhvaæanje kao kategorièka mjera za kvalitetu \gls{pom}-e podrazumijeva kategorije: 
  
 \begin{enumerate}
 \item iskljuèivo prometna infrastruktura (ceste, željeznica, javni prijevoz)
@@ -176,7 +176,7 @@ Primjer kategorija i njihovih tematskih rezolucija:
 	\item dom, posao (2)
 	\item stambeni, industrijski, komercijalni (3) \cite{Barbour:2019.} 
 	\item dom, posao, edukacija, razonoda, zdravlje, ostalo (6) \cite{Stupar:2018.}
-	\item tvornice, ambasade, sveuèilišti objekti, bolnice, javne škole, ostali obrazovni objekti, stanice javnog prijevoza, knjižnice, klinike, religijski objekti, hoteli, sportski objekti, banke itd. (23)  \cite{Alhazzani:2016.} 
+	\item tvornice, ambasade, sveuèilišni objekti, bolnice, javne škole, ostali obrazovni objekti, stanice javnog prijevoza, knjižnice, klinike, religijski objekti, hoteli, sportski objekti, banke itd. (23)  \cite{Alhazzani:2016.} 
 \end{itemize}
 
 Razvrstavanjem putovanja u zasebne \gls{pom}-e prema kategorijama dobije se broj \gls{pom}-a jednak tematskoj rezoluciji.
@@ -319,7 +319,7 @@ Komutacijska putovanja (engl. \textit{commuting trips)} odnosno putovanja na pos
 
 Prema duljini zaustavljanja nastoji se odrediti je li neko zaustavljanje doista kraj putovanja \cite{Goulding:2016.}. Poznavanje konteksta putovanja, npr. objekata u blizini zaustavljanja, omoguæuje da se kraj putovanja ne temelji iskljuèivo na osnovu duljine trajanja zaustavljanja, veæ da se u obzir uzme svrha zaustavljanja.
 
-Prednost suvremenih izvora podataka s višednevnim ili višemjeseènim razdobljem promatranja je uoèavanje obrazaca i ponovljivost putovanja na dnevnoj ili tjednoj bazi \cite{Chen:2019.}. Prepoznavanje obrasca putovanja pojedinca u tom razdoblju omoguæuje rekonstrukciju putovanja u periodima kada podaci nedostaju (sekcija \ref{Chen}). Chen putovanja pojedinca u prošlosti i buduænosti od promatranog putovanja naziva upravo \textit{kontekstom} u metodlogiji opisanoj u radu \cite{Chen:2019.}. %\ref{Chen}
+Prednost suvremenih izvora podataka s višednevnim ili višemjeseènim razdobljem promatranja je uoèavanje obrazaca i ponovljivost putovanja na dnevnoj ili tjednoj bazi \cite{Chen:2019.}. Prepoznavanje obrasca putovanja pojedinca u tom razdoblju omoguæuje rekonstrukciju putovanja u periodima kada podaci nedostaju (sekcija \ref{Chen}). Chen putovanja pojedinca u prošlosti i buduænosti od promatranog putovanja naziva upravo \textit{kontekstom} u metodologiji opisanoj u radu \cite{Chen:2019.}. %\ref{Chen}
 
 Mjera koja bi govorila o kvaliteti odabrane definicije putovanja prema razmotrenoj problematici mogla bi biti omjer tranzitnih (pod-putovanja) i ne-tranzitnih putovanja (putovanja sa svrhom)  zabilježenih u \gls{pom}-i. Kako izostaje konvencionalni dogovor oko definicije putovanja i tranzicije (pod-putovanja) ova mjera nije obuhvaæena ovim radom.
 
@@ -352,7 +352,7 @@ Svi dosad spomenuti parametri utjecat æe na ukupnu širinu toka. Osim njih, utjec
 %Podjelom korisnika u 3 skupine po kolièini podataka koju generiraju i analizom svake skupine zasebno, za podruèje francuske regije Picardie), studija \cite{Bonnel:2015.} pokazuje da frekvencija korištenja ne uvodi pristranost \cite{Bonnel:2015.}. 
 Calabrese \cite{Calabrese:2011.} uzima samo sluèajno odabranih 25\% korisnika (1 milijun) da pojednostavi analiza. Graells-Garrido \cite{Graells-Garrido:2016.} uzima sluèajno odabranih 100,000 korisnika jer je referentna \gls{pom} procijenjena iz ankete provedene na uzorku iste velièine.
 %Istraživanja  izdvajaju najaktivnije korisnike
-Uzimanje samo najaktivnijih korisnika (onih s najviše zapisa) zastupljeno je u istraživanjima procjene \gls{pom}-e iz \gls{cdr} \cite{Schneider:2013.} \cite{Toole:2015.} \cite{Chen:2019.}. Chen analizira razloge odbacivanja i predlaže riješenje. Rješenje je metoda rekonstrukcije putanja koja osigurava zadržavanje velikog broja (manje aktivnih) korisnika (sekcija \ref{Chen}).
+Uzimanje samo najaktivnijih korisnika (onih s najviše zapisa) zastupljeno je u istraživanjima procjene \gls{pom}-e iz \gls{cdr} \cite{Schneider:2013.} \cite{Toole:2015.} \cite{Chen:2019.}. Chen analizira razloge odbacivanja i predlaže rješenje. Rješenje je metoda rekonstrukcije putanja koja osigurava zadržavanje velikog broja (manje aktivnih) korisnika (sekcija \ref{Chen}).
 
 Slabo obuhvaæanje krajnjih dobnih skupina (najstarije i najmlaðe dobne skupine) u procjeni \gls{pom}-a iz \gls{cdr} zbog slabe zastupljenosti mobilnih ureðaja ne tumaèi se kao pristranost, uz napomenu da su to ujedno skupine sa generalno slabom mobilnosti u odnosu na ostale \cite{Bonnel:2015.}. %Studija \cite{Goulding:2016.} istièe da usluge razlièitim demografskim skupinama, a najèešæe su izuzetak skupine slabijeg socio-ekonomskog stanja. 
 Goulding smatra da se eventualna pristranost može zanemariti kod tržišta gdje veliki postotak stanovništva (npr. 92\%) posjeduje mobilni ureðaj \cite{Goulding:2016.}.
@@ -364,7 +364,7 @@ Goulding smatra da se eventualna pristranost može zanemariti kod tržišta gdje ve
 \end{equation}
 gdje je:\\
 $m$ -  maksimalni broj putovanja za svakog pojedinca\\
-$k$ - odabrana vrijednost kojom se želi osigurava da na temelju širine toka pojedinac ne bude razaznan izmeðu $k-1$ drugih pojedinaca.
+$k$ - odabrana vrijednost kojom se želi osigurava da na temelju širine toka pojedinac ne bude razaznat izmeðu $k-1$ drugih pojedinaca.
 \newline
 
 Alternativno, ako su dostupni, iz podataka o populaciji kod definiranja zona k-anonimizacijom dovoljno je osigurati da je populacija u svakoj zoni veæa od $k$ \cite{Goulding:2016.}.

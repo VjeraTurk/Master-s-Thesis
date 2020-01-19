@@ -1,14 +1,14 @@
 % !TeX encoding = windows-1250
 \chapter{Diskusija}
 
-
-Podruèje vrednovanja polazišno-odredišnih matrica, osobito onih iz suvremenih izvora, nije egzaktno definirano. 
+%Podruèje vrednovanja polazišno-odredišnih matrica, osobito onih iz suvremenih izvora, nije egzaktno definirano. 
 Ovaj rad uvodi novi pogled na usporedbu i vrednovanje \gls{pom}-a dobivenih iz razlièitih izvora i razlièitim postupcima procjene temeljen na vlastitim definicijama
 parametara kvalitete. Osim parametara kvalitete, rad definira pretpostavke usporedbe dvije \gls{pom}-e te postupak odluèivanja o njihovoj odnosnoj kvaliteti. Rezultat istraživanja je okvirna metodologija za usporedbu kontekstualiziranih \gls{pom}-a. Rezultat istraživanja podržavaju poèetnu tezu.
 
-Okvirna metodologija koja je predstavljena i demonstrirana u ovom radu u postupku odluèivanja definira sve parametre kvalitete kao jednako vrijedne, što ima veliki utjecaj na konaène rezultate usporedbe. Drugaèije postavljeni odnosi parametara, primjerice dodjeljivanjem razlièite \textit{težine} svakom parametru utjecali bi na konaèni rezultat vrednovanja. Procijenjeni nedostaci metodologije zahtijevaju dublju analizu svakog definiranog parametra kvalitete i kriterija usporedbe zasebno, kao i njihovih meðusobnih ovisnost. Cilj daljnjih istraživanja treba biti i odreðivanje optimalnih vrijednosti parametara. 
-
-Istraživanjem nije obuhvaæena analiza \gls{pom}-a svedenih s apsolutnih na relativne vrijednosti te razmatranje apsolutne i relativne toènosti \gls{pom}-e:
+Rezultat demonstracije metodologije je tablica \ref{tab:usporedbe} u kojoj je \gls{pom}-a B ukupno ostvarila bolji rezultat odnosno kvalitetu. 
+Metodologija nudi rješenje za objektivno vrednovanje matrica, temeljeno na parametrima kvalitete. Uzmemo li \gls{pom} A kao referentnu matricu, a \gls{pom} B kao onu koju se vrednuje, \gls{pom} B ostvaruje bolji rezultat od referentne zbog boljih vrijednosti na podruèju tematske rezolucije, ukupne širine toka i gustoæe informacija. 
+ 
+Okvirna metodologija koja je predstavljena i demonstrirana u ovom radu u postupku odluèivanja definira sve parametre kvalitete kao jednako vrijedne, što ima veliki utjecaj na konaène rezultate usporedbe. Drugaèije postavljeni odnosi parametara, primjerice dodjeljivanjem razlièite \textit{težine} svakom parametru utjecali bi na konaèni rezultat vrednovanja. Procijenjeni nedostaci metodologije zahtijevaju dublju analizu svakog definiranog parametra kvalitete i kriterija usporedbe zasebno, kao i njihovih meðusobnih ovisnost. Cilj daljnjih istraživanja treba biti i odreðivanje optimalnih vrijednosti parametara te analiza \gls{pom}-a svedenih s apsolutnih na relativne vrijednosti te razmatranje apsolutne i relativne toènosti \gls{pom}-e:
 %Transformacija 
 \begin{equation}
 X \rightarrow Z = \frac{x - \bar{x}}{\sigma}
@@ -16,8 +16,8 @@ X \rightarrow Z = \frac{x - \bar{x}}{\sigma}
 
 gdje je $Z$ transformirana \gls{pom} $X$.
 
-Potrebno je ispitati ideju razlièite kvalitete u pojedinim dijelovima \gls{pom}-e u vremenskoj i prostornoj domeni i sagledati neuniformnost vremenske i prostorne rezolucije podataka i procijeniti njen utjecaj na kvalitetu dijelova \gls{pom}.
-U praksi se putovanja dodjeljuju vremenskom okviru u kojem zapoèinju ili završavaju bez obzira što se protežu kroz više perioda. \textit{Klizeæi prozor} zamišljen je kao pomièni vremenski okvir koji obuhvaæa samo putovanja koja mu u cijelosti pripadaju tj. zapoèinju i završavaju unutar vremenskog okvira. \textit{Klizeæi} iz razloga što razdoblje promatranja ne mora biti podijeljeno u odreðen broj vremenskih okvira veæ se vremenski okvir može postaviti bilo kad. Prijedlog za danja istraživanja je i analiza kako i koliko \textit{klizeæi prozori} mogu utjecati na kvalitetu matrice te koji su izvori podataka pogodni za primjenu \textit{klizeæih prozora}. 
+Buduæa istraživanja mogu ovom metodom ispitati ideju razlièite kvalitete u pojedinim dijelovima \gls{pom}-e u vremenskoj i prostornoj domeni i sagledati neuniformnost vremenske i prostorne rezolucije podataka i procijeniti njen utjecaj na kvalitetu dijelova \gls{pom}.
+Putovanja se u praksi  dodjeljuju vremenskom okviru u kojem zapoèinju ili završavaju bez obzira što se protežu kroz više perioda. \textit{Klizeæi prozor} zamišljen je kao pomièni vremenski okvir koji obuhvaæa samo putovanja koja mu u cijelosti pripadaju tj. zapoèinju i završavaju unutar vremenskog okvira. \textit{Klizeæi} iz razloga što razdoblje promatranja ne mora biti podijeljeno u odreðen broj vremenskih okvira veæ se vremenski okvir može postaviti bilo kad. Prijedlog za danja istraživanja je i analiza kako i koliko \textit{klizeæi prozori} mogu utjecati na kvalitetu matrice te koji su izvori podataka pogodni za primjenu \textit{klizeæih prozora}. 
 Potrebno ispitati utjecaj vrijednosti $k$ u k-anonimizaciji na kvalitetu \gls{pom}-e.
 
 %Markovljevi lanci
@@ -47,12 +47,12 @@ Neuniformnost  i rezolucija, nema "konstantnog uzorkovanja"
 
 %(iv) Vas doprinos rjesenju kojeg drugi nisu postigli I razumijevanju problema opcenito.
 
-Zadatak za diplomski rad bilo je definirati skup parametara kojima se objektivno mogu usporediti dvije polazišno-odredišne matrice, osmisliti i demonstrirati metodologiju vrednovanja matrica prema kvaliteti uvažavajuæi definirane odnosne parametre kvalitete.
+Cilj rad bilo je definirati skup parametara kojima se objektivno mogu usporediti dvije polazišno-odredišne matrice, osmisliti i demonstrirati metodologiju vrednovanja matrica prema kvaliteti uvažavajuæi definirane odnosne parametre kvalitete.
 
 %Motivacija za rad proizlazi iz  èinjenice da postoji  više razlièitih izvora podataka o kretanju i postupaka procjene \gls{pom}-e. iz istraživanja o ulozi konteksta putovanja u procjeni \gls{pom}. 
 %%Rad u prvim poglavljima sagledava razlike u postupcima procjene koji u konaènosti utjeèu na procijenjenu \gls{pom}-u i njenu kvalitetu i daje pregled postojeæih postupaka vrednovanja \gls{pom}.
 
-Postupci vrednovanja \gls{pom}-e temelje se na sliènosti \gls{pom}-e s \textit{a priori} toènom (istinitom) referentnom \gls{pom}-om. Toènost, odnosno sliènost nove \gls{pom}-e s postojeæom \gls{pom}-om uzima se kao jedini parametar kvalitete nove \gls{pom}-e.
+Napravljen je pregled prethodnih istraživanja kojim je utvrðeno da se postupci vrednovanja \gls{pom}-e temelje na sliènosti \gls{pom}-e s \textit{a priori} toènom (istinitom) referentnom \gls{pom}-om. Toènost, odnosno sliènost nove \gls{pom}-e s postojeæom \gls{pom}-om uzima se kao jedini parametar kvalitete nove \gls{pom}-e.
 Postupci vrednovanja nisu usmjereni na objektivno vrednovanje.
 Objektivno vrednovanje trebalo bi omoguæiti da \gls{pom} koju se vrednuje eventualno pokaže bolju kvalitetu od referentne, istinite \gls{pom}-e.
 Doprinos nove \gls{pom}-e i postupka procjene na podruèju odreðivanja konteksta putovanja, prostorne i vremenske rezolucije, podruèja obuhvaæanja slabo je mjerljiv postojeæim postupcima vrednovanja. %\gls{pom} procijenjene iz suvremenih izvora pasivno prikupljanih podataka o kretanju  

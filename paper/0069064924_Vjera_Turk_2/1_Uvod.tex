@@ -16,7 +16,7 @@ Rad zapoèinje pregledom postupaka procjene \gls{pom}-e i ukazuje na velike razli
 doprinosa u procjeni \gls{pom}-e te je definiran alternativni pristup vrednovanju \gls{pom}-e koji uvažava kontekstualizaciju. Predstavljena je metodologija usporedbe \gls{pom}-a koju èine odnosni parametri kvalitete, pretpostavke usporedbe i postupak odluèivanja. Metodologija je demonstrirana na usporedbi dvije \gls{pom}-e dobivene iz razlièitih izvora razlièitim postupcima procjene. %Rad predstavlja okvir za donošenje odluka o kvaliteti \gls{pom}-a koje se usporeðuju.
 
 \chapter{Polazišno-odredišna matrica}
- Polazišno-odredišna matrica (\textit{eng. Origin-Destination Matrix}, ODM ili \textit{Trip Table}) je naèin mjerenja pokretljivosti stanovništva na nekom podruèju u prostorno-vremenskom okviru. \gls{pom} služi za opis grupne mobilnosti i mjerenje socio-ekonomske aktivnosti stanovništva nekog podruèja. Najèešæe se koristi u prometnoj znanosti za analizu i strateško planiranje prometnog optereæenja i prometne infrastrukture \cite{Jelusic:2016.}. \gls{pom} može opisivati prometnu potražnju na jednom raskrižju, na podruèju grada, regije, države i šireg podruèja. Poveæenjem opisnog podruèja poveæava se i zahtjevnost prikupljanja podataka za procjenu prometa i za izradu \gls{pom}-e stoga postoji više postupaka prikupljanja podataka i modela za procjenu prometa. %U ovom radu sagledana je \gls{pom}-a za opis urbanog kretanja na podruèju grada.
+ Polazišno-odredišna matrica (\textit{eng. Origin-Destination Matrix}, ODM ili \textit{Trip Table}) je naèin mjerenja pokretljivosti stanovništva na nekom podruèju u prostorno-vremenskom okviru. \gls{pom} služi za opis grupne mobilnosti i mjerenje socio-ekonomske aktivnosti stanovništva nekog podruèja. Najèešæe se koristi u prometnoj znanosti za analizu i strateško planiranje prometnog optereæenja i prometne infrastrukture \cite{Jelusic:2016.}. \gls{pom} može opisivati prometnu potražnju na jednom raskrižju, na podruèju grada, regije, države i šireg podruèja. Poveæanjem opisnog podruèja poveæava se i zahtjevnost prikupljanja podataka za procjenu prometa i za izradu \gls{pom}-e stoga postoji više postupaka prikupljanja podataka i modela za procjenu prometa. %U ovom radu sagledana je \gls{pom}-a za opis urbanog kretanja na podruèju grada.
  
 \section{Definicija polazišno-odredišne matrice}
 
@@ -152,7 +152,7 @@ Važno je osigurati anonimnost i dozvolu pojedinca da se podaci koriste u jasno d
 \subsection{Pokretna osjetila}
 
 Pokretno osjetilo je ureðaj koji prikuplja opaža vrijednosti definiranih parametara gibanja vozila na koje je postavljeno te ih pohranjuje i prenosi
-radi naknadnog procesiranja \cite{Jelusic:2016.}. Vozilo  se kreæe prometnom infrestrukturom, postajuæi tako dijelom prometnog toka. Osnovni podatci koje osjetilo prikuplja su položaj, brzina i smjer kretanja vozila \cite{Jelusic:2016.}.
+radi naknadnog procesiranja \cite{Jelusic:2016.}. Vozilo  se kreæe prometnom infrastrukturom, postajuæi tako dijelom prometnog toka. Osnovni podatci koje osjetilo prikuplja su položaj, brzina i smjer kretanja vozila \cite{Jelusic:2016.}.
 
 %localization data, speed, direction of travel, and time information
 
@@ -261,7 +261,7 @@ Toèke skupa su položaji baznih stanice, a æelije oko njih aproksimacija površine
 %*** Latitude Longitude zemljopisna širina/dužina, pozadina?
 \end{figure}
 
-\textbf{Gustoæa Voronoi æelija dobro je korelirana s gustoæom stanovništva te stoga bolju prostornu rezoluciju ima na podruèjima veæe gustoæe populacije \cite{Gundlegard:2016.}}. Poistovjeti li se položaj korisnika s položajem tornja bazne stanice, \textbf{mjerna nesigurnost odreðivanja položaja iznosi od približno stotinu metara u gusto naseljenom, do nekoliko kilometara u ruralnom podruèju \cite{Calabrese:2011.}}.  Problem predstavlja preklapanje podruèja pokrivanja u stvarnosti \cite{Gundlegard:2016.}. Zbog uravnoteženja optereæenja u mreži (eng. \textit{load balancing}) ureðaj mijenja baznu stanicu na koju je spojen iako svo vrijeme zadržava isti položaj.
+\textbf{Gustoæa Voronoi æelija dobro je korelirana s gustoæom stanovništva te stoga bolju prostornu rezoluciju ima na podruèjima veæe gustoæe populacije \cite{Gundlegard:2016.}}. Poistovjeti li se položaj korisnika s položajem tornja bazne stanice, \textbf{mjerna nesigurnost odreðivanja položaja iznosi od približno stotinu metara u gusto naseljenom, do nekoliko kilometara u ruralnom podruèju \cite{Calabrese:2011.}}.  Problem predstavlja preklapanje podruèja pokrivanja u stvarnosti \cite{Gundlegard:2016.}. Zbog uravnoteženja optereæenja u mreži (eng. \textit{load balancing}) ureðaj mijenja baznu stanicu na koju je spojen iako sve vrijeme zadržava isti položaj.
 \label{load_balancing} \textbf{Uèinak koji uravnoteženje optereæenja ima na definiranje putovanja može se ublažiti odreðivanjem minimalne udaljenost putovanja, zanemarivanjem putovanja u susjedne æelije \cite{Gundlegard:2016.} ili agregacijom podruèja pokrivanja baznih stanica èija je udaljenost manja od 75 m (s dodjelom dogaðaja najaktivnijem tornju) \cite{Goulding:2016.}}.
 
 Analiza snage signala i trenutnih optereæenja okolnih baznih stanica mogu dati jasniji uvid u optereæenje mreže u vremenu poèetka (i trajanja) telekomunikacijske aktivnosti \cite{Chen:2019.}.
@@ -297,7 +297,7 @@ Kretanje pojedinca tokom dana najèešæe je rascjepkano, odnosno u nizu postoje "r
 
 
 Veæa potpunost putanja postiže se ako se osim poziva kao komunikacijskih aktivnosti u obzir uzmu \glstext{sms} poruke i prijenos mobilnih podataka \cite{Chen:2019.}. 
-\textbf{Odbacivanje korisnika s niskim stupnjem \textit{potpunosti}  zastupljeno je u istraživanjima razvoja \gls{pom}-a iz \gls{cdr} što dovodi do iskorštavanja tek vrlo malog dijela korisnika - tek 1.67\% i 0.45\% u nekim istraživanjima} \cite{Chen:2019.}.
+\textbf{Odbacivanje korisnika s niskim stupnjem \textit{potpunosti}  zastupljeno je u istraživanjima razvoja \gls{pom}-a iz \gls{cdr} što dovodi do iskorištavanja tek vrlo malog dijela korisnika - tek 1.67\% i 0.45\% u nekim istraživanjima} \cite{Chen:2019.}.
 
 Rekonstrukcija putanja na osnovu aktivnosti u cijelom vremenskom razdoblju promatranja $ \mathcal{T} $  (npr. 7, 15, 30, 90 dana) nameæe se kao novi postupak koji poveæava broj i toènost rekonstruiranih putanja i smanjuje moguænost povratnog inženjeringa identiteta \label{re-engineering}. Rekonstrukcijom putanja dolazi do poveæanja broja istih putanja (više pojedinaca) koje se odvijaju isto vrijeme, èime se štite pojedinci koji prije postupka jedini imaju veliku potpunost putanja \cite{Chen:2019.}. %**revisit recenicu
 
@@ -308,7 +308,7 @@ je objektivna procjena	kvalitete, vrijednosti objekta koji se vrednuje. Pregledo
 
 \textbf{Tradicionalni postupak vrednovanja \gls{pom}-e svodi se na odreðivanje njene sliènosti sa istinitom (engl. \textit{ground truth}) POM-om}  \cite{Travassoli:2016.}. Istinita \gls{pom}-a je POM-a uzeta kao najtoèniji opis stvarnog stanja. Istinita \gls{pom}-a dobivena je tradicionalnim postupcima (anketiranje i/ili prebrojavanje vozila) \cite{Calabrese:2011.}. Statistièke mjere kvantiziraju razliku procijenjenih i pravih vrijednosti (vidi dodatak \ref{dodatak_metrics} - Metrike za vrednovanje polazišno-odredišne matrice). Iz statistièkih mjera sliènosti izdvojen je korelacijski koeficijent odreðenja $R^2$ koji je opisan u narednoj sekciji. % zašto je izdvojen?
 
-\textbf{Upravo ta referentna instinita  POM je ujedno i poèetna \gls{pom} (iz odlomka \ref{seed}) u postupku procjene nove \gls{pom}-e iz rezultata prebrojavanja vozila \cite{Segovi:2015.}. \gls{pom} æe biti vrednovana usporedbom s \gls{pom}-om koja se koristi u postupku procjene te iste \gls{pom}-e. Postupak vrednovanja nove \gls{pom}-e stoga je ovisan o kvaliteti poèetne \gls{pom}-e, koja je procijenjena u odnosu njenu poèetnu matricu i tako rekurzivno.}
+\textbf{Upravo ta referentna istinita  POM je ujedno i poèetna \gls{pom} (iz sekcije \ref{seed}) u postupku procjene nove \gls{pom}-e iz rezultata prebrojavanja vozila \cite{Segovi:2015.}. \gls{pom} æe biti vrednovana usporedbom s \gls{pom}-om koja se koristi u postupku procjene te iste \gls{pom}-e. Postupak vrednovanja nove \gls{pom}-e stoga je ovisan o kvaliteti poèetne \gls{pom}-e, koja je procijenjena u odnosu njenu poèetnu matricu i tako rekurzivno.}
 
 \section{Linearna regresija - Korelacijski\\ koeficijent odreðenja $R^2$}
 
@@ -389,7 +389,7 @@ Opæa forma SSIM definira se kao \cite{Renieblas:2017.}:
 SSIM(x,y) =[l(x,y)^\alpha][c(x,y)^\beta][s(x,y)^\gamma]\label{eq:ssim}
 \end{equation}
 %where ?, ?, and ? are parameters that define the relative importance of each component
-gdje su $\alpha$, $\beta$ i $\gamma$ parametri relativne važnosti svake komponente. Za SSIM vrijedi slijedeæe:
+gdje su $\alpha$, $\beta$ i $\gamma$ parametri relativne važnosti svake komponente. Za SSIM vrijedi sljedeæe:
 \begin{subequations}
 	\begin{align}
 		SSIM(x,y)\leq 1  	\label{subeq:boundry} \\

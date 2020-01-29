@@ -7,8 +7,6 @@ require(dplyr)
 require(ggplot2)
 require(ggthemes)
 
-### All packages loaded
-
 SPointsDF_to_voronoi_SPolysDF <- function(sp) {
   
   # tile.list extracts the polygon data from the deldir computation

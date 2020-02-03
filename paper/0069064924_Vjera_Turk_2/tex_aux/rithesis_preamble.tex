@@ -10,7 +10,7 @@
 \usepackage[cp1250]{inputenc}	% this ensures croatian special letters are correctly printed with Windows
 %\usepackage[utf8]{inputenc}		% allegedly this will produc Croatian special letter correctly in Linux
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-\usepackage{comment}
+\usepackage{comment} %za komentiranje \begin{comment}content...\end{comment}
 \usepackage{enumitem}  % za reguliranje vertikalnoga razmaka izmedju stavki u listi
 %\setlist{noitemsep} % or \setlist{nolistsep} to cancel all separations
 \setlist[itemize]{itemsep=0pt, topsep=4pt, partopsep=0pt, parsep=1ex}
@@ -20,6 +20,7 @@
 %\setlist[enumerate,2]{leftmargin=1.5cm}
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 \usepackage{datetime}  % automatic months, years, days
+%\newcommand{\MONTH}{% daje error, zamijenjena sa renew:
 \renewcommand{\MONTH}{% renew
   \ifcase\the\month
   \or sijeèanj% 1
@@ -92,19 +93,21 @@ urlcolor=black
 \usepackage{amsthm}
 \theoremstyle{definition}
 \newtheorem{definition}{Definicija}[section]
+%\begin{definition}{pojam} je to i to.\end{definition}
+%\definition Pojam je to i to
 
-\usepackage{todonotes}
-\usepackage{cancel}
+\usepackage{todonotes} % \todo[inline]{Todo}
+\usepackage{cancel} % prekrizeni tekst \cancel{expression}
 \usepackage{ulem}
-\usepackage{upgreek}
-\usepackage{amssymb}
-\usepackage{float}
-\usepackage[numbers]{natbib}
-\usepackage{notoccite}
-\usepackage{makecell}
-\usepackage[table]{colortbl}
-\usepackage{pdfpages}
+\usepackage{upgreek} % grcki alabet
+\usepackage{amssymb} % matematicki simboli
+\usepackage{float} % forsira pozicioniranje slike (u odnos na tekst) tamo gdje je komanda \begin{figure}[H] \end{figure}
+%\usepackage[numbers]{natbib} % citiranje 2 autora za redom u formatu [3,5] \cite{bibtexkey3,bibtexkey5}
+%\usepackage{notoccite}
+\usepackage{makecell} % linebreak u celiji tablice:  & \makecell{Prvi red pa\\drugi red u celiji}
+\usepackage[table]{colortbl} % oboji celiju tablice &{\cellcolor{green!<tekst celije>}}
+\usepackage{pdfpages} % za umetnuti skenirani zadatak (za vlastiti primjerak rada) ili pdf prilog umjeto :\begin{assignmentpage} \end{assignmentpage} staviti: \includepdf[pages=-]{zadatak.pdf}
 %\usepackage{subfig}
 %\usepackage{floatrow}
-\setcounter{tocdepth}{3}
-\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3} % numerira 3. razinu sekcija (4.2.1.1) - (tipicno se koriste samo poglavlje i 2 razine sekcija)
+\setcounter{secnumdepth}{3} % dodaje 3. razinu sekcija u Sadrzaj

@@ -1,0 +1,43 @@
+% !TeX encoding = windows-1250
+\chapter{Metrike za vrednovanje polazišno-odredišne matrice}
+\label{dodatak_metrics}
+
+\subsection{Metrike za procjenu sliènosti polazišno-odredišne matrice s referentnom}
+
+Za procjenu kvalitete \gls{pom}-a dobivenih iskljuèivo anketiranjem u radu \cite{Cools:2010.} korištena je mjera srednja apsolutna postotna pogreška (engl. Mean Absolute Percentage Error, MAPE), te je prikazano da se zadovoljavajuæa razina kvalitete takvih \gls{pom}-a postiže ako uzorak obuhvaæa 50\% populacije. Autor Cools istièe važnost korištenja drugih izvora uz ankete za izradu \gls{pom}-a.
+
+U radu \cite{Bera:2011.} navedene su statistièke mjere relativna pogreška (engl. Relative Error, RE), devijacija ukupne potražnje (engl. Total Demand Deviation, TDD), srednja apsolutna pogreška (engl. Mean Absolute Error, MAE), korijen iz srednje kvadratne pogreške (engl. Root Mean Square Error, RMSE) te najveæa moguæa relativna pogreška (engl. Maximum Possible Relative Error, MPRE) i razina prometne potražnje (engl. Travel Demand Scale, TDS) koji procjenjuju kvalitetu neovisno o referentnoj matrici (no MPRE ne dopušta pogreške u prebrojavanju prometa, dok TDS ovisi o topologiji mreže i odabiru ruta) \cite{Djukic:2013.}.
+
+U \cite{Frias-Martinez:2012.} korišten je \textit{Pearsonov koeficijent korelacije} -  $r$ da bi se utvrdila \textbf{sliènost svakog retka \gls{pom}-e} dobivene iz CDR \textbf{s retkom referentne} (ukupni izlazni tok iz svake polazišne æelije). Isti postupak korišten je za kontekstualizirane \gls{hw} i \gls{wh} \gls{pom}-e  dobivene iz \gls{cdr} u usporedbi s referentnim \gls{pom}-ma dobivenim anketiranjem. %**
+
+U svome radu \cite{Travassoli:2016.} navodi se nekoliko mjera - {$R^{2}$, Geoffrey E. Havers statistika (GEH),  korijen iz postotak srednje kvadratne pogreške (engl. Root Mean Squared Error percentage, \%RMSE), uvodi novu mjeru  Eigenvalue-Based Measure (EBM) (temeljenu na svojstvenim vrijednostima matrica) i procjenjuje pouzdanost \gls{pom}-e dobivene iz sustava automatskog prikupljanja podataka u javnom prijevozu (autobus, vlak i trajekt). Spominje i Wasserstein metriku, mjeru koja ne usporeðuje samo vrijednosti parova istih æelija (\textit{elementwise}). 
+	
+Spearmanov koeficijent korelacije ranga korišten je u \cite{Graells-Garrido:2016.} za procjenu sliènosti \gls{pom}-a dobivenih iz \gls{cdr} sa tada aktualnim \gls{pom}-ma dobivenim anketiranjem.
+	
+	%(...)
+	%Dynamic Travel Demand \cite{Gundlegard:2016.}
+	
+	\begin{comment}
+	
+	mozda po jednu recenicu za svako
+	\subsubsection{$R^{2}$ }
+	The R-squared (R2), as one of the most commonly and widely used (Washington et al., 2011), is a statistical measure of how close the data are to the fitted regression line, and itused for comparing between origin-destination pairs of two ODMs. R2 values rang from 0 to 1, with higher values indicating less difference between ODMs. 
+	Along with considering higher value of R2 as a higher level of similarity, the regression line should be close to a 45-degree line through the origin. In this condition, the coefficient of the line should be closer to one and the intercept should be closer to zero. The lower and greater coefficient values indicate the tendency of the pattern to overestimate or underestimate values in the reference OD matrix.\cite{Travassoli:2016.}
+	
+	\subsubsection{GEH}
+	Geoffrey E. Havers (GEH) statistic
+	The GEH statistic is used to evaluate the level of closeness between origin-destination pairs of two ODMs. The GEH is applied to every pair in the two ODMs, with a GEH of less than 5 indicating a good fit (Hollander and Liu 2008). Then, the percentage of OD pairs that have a GEH equal to or less than 5 is calculated to indicate the level of closeness between two ODMs.
+	\cite{Travassoli:2016.}   
+	
+	\subsection{RMSE i \%RMSE} 
+	The root mean squared error (RMSE) and accordingly the percent root mean squared error(%RMSE) are used to evaluate the closeness of the ODMs. The %RMSE is where the variability of the demand is most evident: if two demand ODMs were identical, the %RMSE would be equal to zero.
+	\subsubsection{ MSE, SEM, EBM (SAE)} 
+	(How close the models are to the reality)
+	
+	\subsubsection{Pearson korelacija redova}
+	
+	\subsubsection{Sperman rank korelacija}
+	
+	\subsubsection{Wasserstein Metric} (?)
+	
+	\end{comment}

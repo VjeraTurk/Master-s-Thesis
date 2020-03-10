@@ -1,0 +1,64 @@
+% !TeX encoding = windows-1250
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ovo je jednostavniji (ali neautomatski) primjer definiranja liste akronima, a student neka to zamijeni svojim kraticama i doda sve koje zeli
+%% ako se ne zeli deklarirati popis kratica, onda ga staviti pod komentar u glavnoj datoteci
+%
+%   \item[{\bf HTML}]	Hypertext Markup Language
+%   \item[{\bf AJAX}]	Asynchronous JavaScript and XML
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Sofisticiraniji nacin definiranja i uporabe kratica je preko sljedeæe sintakse
+
+ \addcontentsline{toc}{chapter}{Pojmovnik}
+% primjeri definicije kratica
+% ove pojmove zamijenite nekim svojima i po tom predlosku nadogradite listu po potrebi
+\newacronym{pom}{POM}{Polazišno-odredišna matrica}
+%(izvorišno-odredišna matrica)} 
+\newacronym{taz}{TAZ}{Traffic Analisys Zone - prometna zona}
+\newacronym{iom}{IOM}{Izvorišno-odredišna matrica}
+\newacronym{odm}{ODM}{Origin-Destination Martix} 
+\newacronym{cdr}{\textnormal{CDR}}{Call Data Records \textnormal{ili} Charging Data Records} 
+\newacronym{gsm}{GSM}{Global System for Mobile (Communications)}
+\newacronym{rsi}{RSI}{Road Side Interview}
+\newacronym{pois}{POIs}{Toèke interesa (engl. Points of Interest)}
+\newacronym{hw}{HW}{Home-Work}
+\newacronym{wh}{WH}{Work-Home}
+\newacronym{ebm}{EBM}{Work-Home}
+\newacronym{ssim}{SSIM}{Indeks strukturalne sliènosti (engl.  Structural Similarity Index)}
+\newacronym{mssim}{MSSIM}{Više-razinski indeks strukturalne sliènosti (engl. Mean Structural Similarity Index)}
+\newacronym{anpr}{ANPR}{Automatic Number Plate Recognition}
+\newacronym{fcd}{FCD}{Floating Car Data}
+\newacronym{fpd}{FPD}{Floating Phone Data}
+\newacronym{gnss}{GNSS}{Globalni navigacijski satelitski sustav}
+\newacronym{gps}{GPS}{Global Positioning System}
+\newacronym{gis}{GIS}{Geoprostorni informacijski sustav}
+\newacronym{osm}{OSM}{OpenStreetMap}
+\newacronym{d4d}{D4D}{Data for Development}
+\newacronym{its}{ITS}{Inteligentni transportni sustav (engl. \textit{Intelligent Transportation System})}
+\newacronym{gdpr}{GDPR}{General Data Protection Regulation}
+\newacronym{sms}{SMS}{Short Messaging System}
+%::::::::: UPORABA KRATICA U TEKSTU :::::::::::::::::
+% u tekstu jednostavno na mjestu gdje želite koristiti odreðenu kraticu, upotrijebite naredbu 
+%  \gls{id_kratice}, kao npr. \gls{nfc}
+% i u tekstu æe vam automatski biti ubaèena kratica kako je definirana u drugoj zagradi u gornjim definicijama, a ako je u uporabi prvi puta, tada æe prvo biti naveden puni naziv, kako je definiran u treæoj zagradi, a potom kratica. Za sve ostale sluèajeve uporabe, bit æe navedena samo kratica.
+
+%:::::::::::::::::::::::::::::::::::::::::::::::::::::
+%  podsjetnik nekoliko moguæih oblika sintakse
+% opæa uporaba: \gls{nfc} % može i za rjeènik i za kratice. Prvi poziv daje dugi i kratki naziv (redoslijedom koji je specificiran u preambuli pomocu \setacronymstyle, a od drugi puta nadalje samo kraticu.
+% ako želite nametnuti baš neki oblik korištenja kratice, imate sljedeæe naredbe
+%\acrshort{nfc} \\  % samo akronim
+%\acrfull{nfc} \\   % akronim i puni naziv
+%\acrlong{nfc} \\   % samo puni naziv
+
+%::::::::::::::::::::::::::::::::::::::::::::::::::::
+% Kako se generira Pojmovnik u tekstu:
+%1. pokrenite LaTeX kompilaciju 1x
+%2. u Command Promptu odite radnu mapu gdje su vam datoteke diplomskog rada i utipkajte
+%	makeindex -s myDoc.ist -o myDoc.gls   myDoc.glo
+%	
+%	gdje myDoc zamijenite imenom svoje glavne .tex datoteke (JMBAG_Ime_Prezime.tex)
+%3. pokrenite LaTeX kompilaciju jos jednom
+
+%::::::::::::::::::::::::::::::::::::::::::::::::::::
